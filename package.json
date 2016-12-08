@@ -1,6 +1,6 @@
 {
   "name": "docute-client",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "./dist/docute-client.js",
   "license": "MIT",
   "style": "./dist/docute-client.css",
