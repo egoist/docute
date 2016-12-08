@@ -10,7 +10,7 @@ export default {
     ]
   },
   devServer(app) {
-    app.use('/', express.static('docs')
+    app.use('/', express.static('docs'))
   },
   production: {
     hash: false,
