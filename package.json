@@ -1,0 +1,28 @@
+{
+  "name": "docute-client",
+  "version": "0.0.0",
+  "main": "./dist/docute-client.js",
+  "license": "MIT",
+  "style": "./dist/docute-client.css",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vbuild -d",
+    "build": "vbuild"
+  },
+  "devDependencies": {
+    "axios": "^0.15.3",
+    "cssbag": "^0.1.0",
+    "github-markdown-css": "^2.4.1",
+    "highlight.js": "^9.8.0",
+    "jump.js": "^1.0.1",
+    "marked": "^0.3.6",
+    "uid": "^0.0.2",
+    "vue": "^2.1.4",
+    "vue-router": "^2.1.1",
+    "vuex": "^2.0.0",
+    "vuex-router-sync": "next",
+    "yaml": "^0.3.0"
+  }
+}
