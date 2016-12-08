@@ -77,9 +77,9 @@
           return `<a target="_blank" href="${href}" title="${title}">${text}</a>`
         }
 
-        let file = '/README.md'
+        let file = './README.md'
         if (this.$route.meta && this.$route.meta.name === 'page') {
-          file = `/${this.$route.params.page}.md`
+          file = `./${this.$route.params.page}.md`
         }
 
         const text = await axios.get(file)
