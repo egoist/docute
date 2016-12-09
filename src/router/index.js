@@ -15,7 +15,7 @@ export default new Router({
       }
     },
     {
-      path: '/:page',
+      path: '/*',
       component: Page,
       meta: {
         name: 'page'

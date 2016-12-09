@@ -30,7 +30,7 @@
   import HomeHeader from 'components/HomeHeader.vue'
   import highlight from 'utils/highlight'
   import frontMatter from 'utils/front-matter'
-  import {mapState} from 'vuex'
+  import {mapState, mapGetters} from 'vuex'
 
   marked.setOptions({
     highlight(code) {
@@ -50,25 +50,23 @@
     created() {
       this.fetchReadme()
       this.$watch('id', val => {
-        this.jumpTo(val)
+        if (val) this.jumpTo(val)
       })
     },
     computed: {
       ...mapState({
         id: state => state.route.query.id
-      })
+      }),
+      ...mapGetters(['currentTitle'])
     },
     methods: {
       async fetchReadme() {
         const renderer = new marked.Renderer()
 
-        let defaultTitle
         renderer.heading = (text, level) => {
           const hash = uid()
           const slug = text.toLowerCase().replace(/\s/g, '')
-          if (level === 1) {
-            defaultTitle = text
-          } else {
+          if (level !== 1) {
             this.headings.push({level, text, slug, hash})
           }
           return `<h${level} id="${slug}" class="markdown-heading" data-hash="${hash}">${text}</h${level}>`
@@ -79,7 +77,7 @@
 
         let file = './README.md'
         if (this.$route.meta && this.$route.meta.name === 'page') {
-          file = `./${this.$route.params.page}.md`
+          file = `./${this.$route.params[0]}.md`
         }
 
         const text = await axios.get(file)
@@ -90,8 +88,8 @@
 
         if (this.attributes.title) {
           document.title = this.attributes.title
-        } else if (defaultTitle) {
-          document.title = defaultTitle
+        } else {
+          document.title = this.currentTitle
         }
       },
       jumpTo(slug) {
