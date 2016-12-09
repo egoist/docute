@@ -138,7 +138,7 @@
   .sidebar {
     margin: 0;
     width: 280px;
-    border-right: 1px solid #e2e2e2;
+    border-right: 1px solid rgba(0,0,0,.07);
     overflow: auto;
     position: fixed;
     left: 0;
