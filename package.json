@@ -13,7 +13,7 @@
     "node": ">=4"
   },
   "scripts": {
-    "test": "jest && eslint *.js",
+    "test": "npm run build",
     "build": "vbuild",
     "dev": "vbuild -d"
   },
