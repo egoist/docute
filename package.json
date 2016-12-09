@@ -18,10 +18,12 @@
     "dev": "vbuild -d"
   },
   "files": [
-    "index.js"
+    "dist"
   ],
+  "main": "./dist/docute.js",
+  "style": "./dist/docute.css",
   "keywords": [
-    ""
+    "doc"
   ],
   "devDependencies": {
     "axios": "^0.15.3",
