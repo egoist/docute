@@ -1,38 +1,81 @@
-# docute-client
+# docute
 
-The client bundle for docute
+Writing docs without build process.
 
-## How to use
+## Install
 
-Simply hot-link the script and css in your html file:
+Use `docute-cli` to initial the docs folder.
 
-```html
-<link rel="stylesheet" href="/path/to/docute-client.css">
+Using npm:
 
-<script src="/path/to/config.js"></script>
-<!-- client should be right after config.js -->
-<script src="/path/to/docute-client.js"></script>
+```bash
+npm i -g docute-cli
 ```
 
-For more usage please head to https://docute.js.org
+Using Yarn:
 
-## CDN
+```bash
+yarn global add docute-cli
+```
 
-Load docute-client from CDN.
+## Quick Start
 
-### unpkg
+Assume that the folder you want for docs is `./docs`:
 
-JS: https://unpkg.com/docute-client/dist/docute-client.js<br>
-CSS: https://unpkg.com/docute-client/dist/docute-client.css
+```bash
+docute init ./docs
+```
 
-## Notes
+Now you're good to go, add a README.md as the homepage for your doc！Then just preview the `./docs` by running:
 
-Make sure you have at least a `README.md` in your served folder.
+```bash
+docute ./docs
+```
 
-## Examples
+Open http://localhost:8080 and you'll see it in action。
 
-Actually what you're seeing right now is built with `docute-client`!
+## Configuration
 
-## License
+There will be a `config.js` in your doc directory after running `docute init`:
 
-MIT
+```js
+self.$config = {
+  // blah...
+}
+```
+
+### Multi-pages
+
+`README.md` will be treated as homepage for your website, you can also add more markdown files to display more pages. For example, adding `chinese.md` to your doc folder so that you got a new page at `/#/chinese`!
+
+It supports directory too, just try adding a new file at `language/chinese.md`, then you'll get `/#/lanaguage/chinese`.
+
+### Navbar
+
+You may need a navbar to as the entrance for the pages:
+
+```js
+self.$config = {
+  nav: [
+    // homepage
+    {title: 'Home', link: '/'},
+    // chinese doc
+    {title: 'Chinese', link: '/language/chinese'}
+  ]
+}
+```
+
+#### Dropdown menu
+
+The item in navbar could also be a dropdown menu:
+
+```js
+self.$config = {
+  nav: [
+    {title: 'Languages', type: 'dropdown', items: [
+      {title: 'Chinese', link: '/language/chinese'},
+      {title: 'Japanese', link: '/language/japanese'}
+    ]}
+  ]
+}
+```

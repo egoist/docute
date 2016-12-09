@@ -8,6 +8,6 @@ hljs.registerLanguage('cpp', require('highlight.js/lib/languages/cpp'))
 hljs.registerLanguage('rust', require('highlight.js/lib/languages/rust'))
 hljs.registerLanguage('ocaml', require('highlight.js/lib/languages/ocaml'))
 hljs.registerLanguage('php', require('highlight.js/lib/languages/php'))
-
+hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'))
 
 export default hljs
