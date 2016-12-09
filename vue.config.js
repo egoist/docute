@@ -15,6 +15,6 @@ export default {
   production: {
     hash: false,
     html: false,
-    filename: 'docute-client'
+    filename: 'docute'
   }
 }

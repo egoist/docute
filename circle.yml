@@ -1,0 +1,13 @@
+machine:
+  pre:
+    - mkdir ~/.yarn-cache
+  node:
+    version: 7
+
+dependencies:
+  pre:
+    - curl -o- -L https://yarnpkg.com/install.sh | bash
+  cache_directories:
+    - "~/.yarn-cache"
+  override:
+    - yarn install

@@ -1,21 +1,36 @@
 {
   "name": "docute-client",
-  "version": "0.0.2",
-  "main": "./dist/docute-client.js",
+  "version": "0.0.0",
+  "description": "Effortlessly documentation done right.",
   "license": "MIT",
-  "style": "./dist/docute-client.css",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "dev": "vbuild -d",
-    "build": "vbuild"
+  "repository": "egoist/docute-client",
+  "author": {
+    "name": "EGOIST",
+    "email": "0x142857@gmail.com",
+    "url": "github.com/egoist"
   },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "jest && eslint *.js",
+    "build": "vbuild",
+    "dev": "vbuild -d"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    ""
+  ],
   "devDependencies": {
     "axios": "^0.15.3",
     "cssbag": "^0.1.0",
+    "eslint": "latest",
+    "eslint-config-rem": "latest",
     "github-markdown-css": "^2.4.1",
     "highlight.js": "^9.8.0",
+    "jest-cli": "^15.1.1",
     "jump.js": "^1.0.1",
     "marked": "^0.3.6",
     "uid": "^0.0.2",
@@ -24,5 +39,11 @@
     "vuex": "^2.0.0",
     "vuex-router-sync": "next",
     "yaml": "^0.3.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "eslintConfig": {
+    "extends": "rem/esnext"
   }
 }
