@@ -1892,6 +1892,10 @@ normalize-path@^2.0.1:
   version "2.0.1"
   resolved "http://registry.npm.taobao.org/normalize-path/download/normalize-path-2.0.1.tgz#47886ac1662760d4261b7d979d241709d3ce3f7a"
 
+nprogress:
+  version "0.2.0"
+  resolved "http://registry.npm.taobao.org/nprogress/download/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+
 number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/number-is-nan/download/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"

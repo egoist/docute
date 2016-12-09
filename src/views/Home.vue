@@ -31,6 +31,7 @@
   import highlight from 'utils/highlight'
   import frontMatter from 'utils/front-matter'
   import {mapState, mapGetters} from 'vuex'
+  import nprogress from 'nprogress'
 
   marked.setOptions({
     highlight(code) {
@@ -46,6 +47,10 @@
         attributes: null,
         headings: []
       }
+    },
+    beforeRouteEnter(to, from, next) {
+      nprogress.start()
+      next()
     },
     created() {
       this.fetchReadme()
@@ -82,6 +87,9 @@
 
         const text = await axios.get(file)
           .then(res => res.data)
+
+        nprogress.set(0.6)
+
         const parsed = frontMatter(text)
         this.attributes = parsed.attributes
         this.html = marked(parsed.body, {renderer})
@@ -91,6 +99,8 @@
         } else {
           document.title = this.currentTitle
         }
+
+        nprogress.done()
       },
       jumpTo(slug) {
         jump(`#${slug}`)
@@ -103,6 +113,7 @@
 
 </script>
 
+<style src="css/nprogress.css"></style>
 <style src="highlight.js/styles/github.css"></style>
 <style src="github-markdown-css/github-markdown.css"></style>
 <style>
