@@ -58,9 +58,9 @@ self.$config = {
 self.$config = {
   nav: [
     // 首页
-    {title: 'Home', link: '/'},
+    {title: 'Home', path: '/'},
     // 中文文档
-    {title: '中文文档', link: '/language/chinese'}
+    {title: '中文文档', path: '/language/chinese'}
   ]
 }
 ```
@@ -73,8 +73,8 @@ self.$config = {
 self.$config = {
   nav: [
     {title: '其他语言', type: 'dropdown', items: [
-      {title: '中文', link: '/language/chinese'},
-      {title: '日语', link: '/language/japanese'}
+      {title: '中文', path: '/language/chinese'},
+      {title: '日语', path: '/language/japanese'}
     ]}
   ]
 }

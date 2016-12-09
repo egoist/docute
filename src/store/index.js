@@ -43,7 +43,7 @@ const store = new Vuex.Store({
     currentTitle(state) {
       const path = state.route.path
       const current = flatten(state.config.nav).filter(item => {
-        return item.link === path
+        return item.path === path
       })[0]
       return current && current.title
     }

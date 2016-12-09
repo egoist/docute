@@ -58,9 +58,9 @@ You may need a navbar as the entrance for the pages:
 self.$config = {
   nav: [
     // homepage
-    {title: 'Home', link: '/'},
+    {title: 'Home', path: '/'},
     // chinese doc
-    {title: 'Chinese', link: '/language/chinese'}
+    {title: 'Chinese', path: '/language/chinese'}
   ]
 }
 ```
@@ -73,8 +73,8 @@ The item in navbar could also be a dropdown menu:
 self.$config = {
   nav: [
     {title: 'Languages', type: 'dropdown', items: [
-      {title: 'Chinese', link: '/language/chinese'},
-      {title: 'Japanese', link: '/language/japanese'}
+      {title: 'Chinese', path: '/language/chinese'},
+      {title: 'Japanese', path: '/language/japanese'}
     ]}
   ]
 }

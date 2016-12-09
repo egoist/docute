@@ -1,12 +1,12 @@
 self.$config = {
   nav: [
     {
-      title: 'Home', link: '/'
+      title: 'Home', path: '/'
     },
     {
       title: 'Languages', type: 'dropdown', items: [
-        {title: '简体中文', link: '/lang/zh-Hans'},
-        {title: '繁体中文', link: '/lang/zh-Hant'}
+        {title: '简体中文', path: '/lang/zh-Hans'},
+        {title: '繁体中文', path: '/lang/zh-Hant'}
       ]
     }
   ]
