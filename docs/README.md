@@ -48,11 +48,11 @@ self.$config = {
 
 `README.md` will be treated as homepage for your website, you can also add more markdown files to display more pages. For example, adding `chinese.md` to your doc folder so that you got a new page at `/#/chinese`!
 
-It supports directory too, just try adding a new file at `language/chinese.md`, then you'll get `/#/lanaguage/chinese`.
+It supports directory too, just try adding a new file at `language/chinese.md`, then you'll get `/#/language/chinese`.
 
 ### Navbar
 
-You may need a navbar to as the entrance for the pages:
+You may need a navbar as the entrance for the pages:
 
 ```js
 self.$config = {
