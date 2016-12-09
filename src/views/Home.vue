@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="page">
     <figure class="sidebar">
       <ul class="sidebar-headings">
         <li
@@ -124,7 +124,7 @@
   * {
     box-sizing: border-box;
   }
-  html, body, #app {
+  html, body, #app, .page {
     height: 100%;
   }
   body {

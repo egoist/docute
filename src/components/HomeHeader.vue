@@ -13,8 +13,7 @@
               class="dropdown-item">
               <router-link
                 class="router-link"
-                :to="subItem.link"
-                exact>
+                :to="subItem.link">
                 {{ subItem.title }}
               </router-link>
             </li>
@@ -23,6 +22,7 @@
         <router-link
           v-else
           class="router-link"
+          :class="{'router-link-active': navItem.link === $route.path}"
           :to="navItem.link"
           exact>
           {{ navItem.title }}
