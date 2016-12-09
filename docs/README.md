@@ -44,7 +44,7 @@ self.$config = {
 }
 ```
 
-### Multi-pages
+### Pages
 
 `README.md` will be treated as homepage for your website, you can also add more markdown files to display more pages. For example, adding `chinese.md` to your doc folder so that you got a new page at `/#/chinese`!
 
