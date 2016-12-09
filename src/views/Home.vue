@@ -103,7 +103,11 @@
         nprogress.done()
       },
       jumpTo(slug) {
-        jump(`#${slug}`)
+        jump(`#${slug}`, {
+          duration: 300,
+          a11y: true,
+          offset: -10
+        })
       }
     },
     components: {
@@ -168,5 +172,11 @@
   .main {
     padding: 20px;
     padding-left: 300px;
+  }
+  .markdown-body {
+    .markdown-heading:focus {
+      color: #42b983;
+      outline: none;
+    }
   }
 </style>
