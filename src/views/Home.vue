@@ -99,7 +99,12 @@
 
         let file = './README.md'
         if (this.$route.meta && this.$route.meta.name === 'page') {
-          file = `./${this.$route.params[0]}.md`
+          const name = this.$route.params[0]
+          if (/\/$/.test(name)) {
+            file = `./${name}README.md`
+          } else {
+            file = `./${name}.md`
+          }
         }
 
         let text
