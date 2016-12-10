@@ -24,7 +24,8 @@ const store = new Vuex.Store({
     attributes: null,
     page: {
       html: '',
-      attributes: null
+      attributes: null,
+      headings: []
     },
     loaded: false
   },

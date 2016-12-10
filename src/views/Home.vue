@@ -4,7 +4,7 @@
       <ul class="sidebar-headings">
         <li
           class="sidebar-heading"
-          v-for="heading in headings"
+          v-for="heading in page.headings"
           :data-level="heading.level">
           <router-link
             exact
@@ -46,7 +46,6 @@
     name: 'home',
     data() {
       return {
-        headings: [],
         sidebarActive: null
       }
     },
@@ -78,6 +77,7 @@
       async fetchData() {
         const renderer = new marked.Renderer()
 
+        const headings = []
         renderer.heading = (text, level) => {
           const hash = uid()
           const slug = text.replace(/[:\/\?#\[\]@!$&'()*+,;=\\%<>\|\^~£"]/g, '')
@@ -88,7 +88,7 @@
             // Make the whole thing lowercase
             .toLowerCase()
           if (level !== 1) {
-            this.headings.push({level, text, slug, hash})
+            headings.push({level, text, slug, hash})
           }
           return `<h${level} id="${slug}" class="markdown-heading" data-hash="${hash}">${text}</h${level}>`
         }
@@ -125,7 +125,8 @@
 
         this.updatePage({
           html: marked(parsed.body, {renderer}),
-          attributes: parsed.attributes
+          attributes: parsed.attributes,
+          headings
         })
 
         const title = this.config.title
