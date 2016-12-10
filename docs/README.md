@@ -2,9 +2,13 @@
 
 Writing docs without build process.
 
-## Install
+## Introduction
 
-Use `docute-cli` to initial the docs folder.
+`docute` simply allows you to write markdown files and populate them in `./docs` folder directly without being built to static html files, only `index.html` and `config.js` are required! It smartly reads and parses the markdown files and finally displays them as a single page website.
+
+## Installation
+
+Use `docute-cli` to initialize the docs folder.
 
 Using npm:
 
