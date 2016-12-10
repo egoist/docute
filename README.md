@@ -21,6 +21,14 @@ For detailed usage please head to https://docute.js.org 😎
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
+## Prior art
+
+`docute` wouldn't exist if it wasn't for excellent prior art, docute is inspired by these projects:
+
+- [docpress](https://github.com/docpress/docpress)
+- [docsify](https://github.com/QingWei-Li/docsify)
+- [vue.js](https://vuejs.org/)
+
 ## Author
 
 **docute** © [EGOIST](https://github.com/egoist), Released under the [MIT](https://egoist.mit-license.org/) License.<br>
