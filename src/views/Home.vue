@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <figure class="sidebar">
+    <figure class="sidebar" v-if="loaded">
       <ul class="sidebar-headings">
         <li
           class="sidebar-heading"
@@ -16,7 +16,7 @@
       </ul>
     </figure>
     <section class="main">
-      <home-header></home-header>
+      <home-header v-if="loaded"></home-header>
       <div class="markdown-body content" v-html="html"></div>
     </section>
   </div>
@@ -30,7 +30,7 @@
   import HomeHeader from 'components/HomeHeader.vue'
   import highlight from 'utils/highlight'
   import frontMatter from 'utils/front-matter'
-  import {mapState, mapGetters} from 'vuex'
+  import {mapState, mapGetters, mapActions} from 'vuex'
   import nprogress from 'nprogress'
 
   marked.setOptions({
@@ -45,7 +45,8 @@
       return {
         html: null,
         attributes: null,
-        headings: []
+        headings: [],
+        loaded: false
       }
     },
     beforeRouteEnter(to, from, next) {
@@ -65,6 +66,7 @@
       ...mapGetters(['currentTitle'])
     },
     methods: {
+      ...mapActions(['updateAttributes']),
       async fetchReadme() {
         const renderer = new marked.Renderer()
 
@@ -94,6 +96,8 @@
         this.attributes = parsed.attributes
         this.html = marked(parsed.body, {renderer})
 
+        this.updateAttributes(this.attributes)
+
         if (this.attributes.title) {
           document.title = this.attributes.title
         } else {
@@ -101,6 +105,7 @@
         }
 
         nprogress.done()
+        this.loaded = true
       },
       jumpTo(slug) {
         jump(`#${slug}`, {

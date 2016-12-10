@@ -1,7 +1,9 @@
 <template>
   <header class="header">
-    <ul class="nav" v-if="nav && nav.length > 1">
-      <li v-for="(navItem, index) in nav" class="nav-item">
+    <ul class="nav" v-if="currentNav">
+      <li
+        v-for="(navItem, index) in currentNav"
+        class="nav-item">
         <div
           class="nav-item-dropdown"
           v-if="navItem.type === 'dropdown'">
@@ -13,7 +15,9 @@
               class="dropdown-item">
               <router-link
                 class="router-link"
-                :to="subItem.path">
+                :class="{'router-link-active': subItem.path === $route.path}"
+                :to="subItem.path"
+                exact>
                 {{ subItem.title }}
               </router-link>
             </li>
@@ -38,9 +42,10 @@
   export default {
     computed: {
       ...mapState({
-        nav: state => state.config.nav
+        nav: state => state.config.nav,
+        attributes: state => state.attributes
       }),
-      ...mapGetters(['currentTitle'])
+      ...mapGetters(['currentTitle', 'currentNav']),
     },
     methods: {
       ...mapActions(['toggleDropdown'])
