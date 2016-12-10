@@ -75,7 +75,13 @@
 
         renderer.heading = (text, level) => {
           const hash = uid()
-          const slug = text.toLowerCase().replace(/\s/g, '')
+          const slug = text.replace(/[:\/\?#\[\]@!$&'()*+,;=\\%<>\|\^~£"]/g, '')
+            // Replace dots and spaces with a sepeator
+            .replace(/(\s|\.)/g, '-')
+            // Convert 2 or more sepeators into just one sepeator
+            .replace(/-+/g, '-')
+            // Make the whole thing lowercase
+            .toLowerCase()
           if (level !== 1) {
             this.headings.push({level, text, slug, hash})
           }
