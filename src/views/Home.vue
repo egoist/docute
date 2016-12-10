@@ -106,6 +106,13 @@
 
         nprogress.done()
         this.loaded = true
+
+        // scroll to id (the url query `id`)
+        this.$nextTick(() => {
+          if (this.id) {
+            this.jumpTo(this.id)
+          }
+        })
       },
       jumpTo(slug) {
         jump(`#${slug}`, {

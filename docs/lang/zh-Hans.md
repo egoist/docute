@@ -119,7 +119,7 @@ navbar: chinese
 
 ```html
 <script src="/path/to/docute.js"></script>
-<!-- add your language after the main docute bundle -->
+<!-- 添加你要高亮的语言 -->
 <script src="https://unpkg.com/highlight-languages/python.js"></script>
 ```
 
