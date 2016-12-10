@@ -5969,10 +5969,6 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue:
-  version "2.1.4"
-  resolved "http://registry.npm.taobao.org/vue/download/vue-2.1.4.tgz#d490f8fcf696847d8cf7f8eb9168e9a5dd806bfc"
-
 vue-hot-reload-api@^2.0.1:
   version "2.0.6"
   resolved "http://registry.npm.taobao.org/vue-hot-reload-api/download/vue-hot-reload-api-2.0.6.tgz#817d4bfb30f55428aa1012d029499e07f3147d21"
