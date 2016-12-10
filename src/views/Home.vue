@@ -87,8 +87,18 @@
           file = `./${this.$route.params[0]}.md`
         }
 
-        const text = await axios.get(file)
-          .then(res => res.data)
+        let text
+        try {
+          text = await axios.get(file).then(res => res.data)
+        } catch (err) {
+          if (err.response) {
+            if (err.response.status === 404) {
+              this.$router.go('/404')
+            }
+          }
+          nprogress.done()
+          return
+        }
 
         nprogress.set(0.6)
 
