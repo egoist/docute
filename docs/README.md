@@ -145,7 +145,7 @@ def fib(n):
 print fib(5)
 ```
 
-The built-in languages are: `javascript` `cpp` `css` `xml` `php` `bash` `markdown`
+The built-in languages are: `javascript` `cpp` `css` `xml` `bash` `markdown`
 
 ### Deploy to GitHub
 
