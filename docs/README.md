@@ -67,6 +67,17 @@ self.$config = {
 }
 ```
 
+#### Icons
+
+```js
+self.$config = {
+  // slug for your github repo
+  repo: 'tj/co',
+  // twitter username
+  twitter: 'realDonaldTrump'
+}
+```
+
 #### Dropdown menu
 
 The item in navbar could also be a dropdown menu:

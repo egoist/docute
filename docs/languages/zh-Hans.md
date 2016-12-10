@@ -71,6 +71,17 @@ self.$config = {
 }
 ```
 
+#### 图标
+
+```js
+self.$config = {
+  // github repo 的缩略名
+  repo: 'tj/co',
+  // twitter 用户名
+  twitter: 'realDonaldTrump'
+}
+```
+
 #### 下拉菜单
 
 显示一个下拉菜单以容纳多个页面:
