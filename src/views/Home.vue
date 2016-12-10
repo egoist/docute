@@ -54,9 +54,12 @@
       next()
     },
     created() {
-      this.fetchReadme()
+      this.fetchData()
       this.$watch('id', val => {
         if (val) this.jumpTo(val)
+      })
+      this.$watch('$route.path', () => {
+        this.fetchData()
       })
     },
     computed: {
@@ -67,7 +70,7 @@
     },
     methods: {
       ...mapActions(['updateAttributes']),
-      async fetchReadme() {
+      async fetchData() {
         const renderer = new marked.Renderer()
 
         renderer.heading = (text, level) => {
@@ -94,7 +97,7 @@
           nprogress.set(0.4)
           if (err.response) {
             if (err.response.status === 404) {
-              this.$router.push('/404')
+              this.$router.replace('/404')
             }
           }
           return
