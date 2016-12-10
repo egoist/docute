@@ -30,7 +30,7 @@ yarn global add docute-cli
 docute init ./docs
 ```
 
-这样就成功初始化了该目录，常识添加一个 README.md 作为文档的首页吧！然后在本地预览文档 `./docs` 目录:
+这样就成功初始化了该目录，尝试添加一个 README.md 作为文档的首页吧！然后在本地预览文档 `./docs` 目录:
 
 ```bash
 docute ./docs
@@ -145,7 +145,7 @@ def fib(n):
 print fib(5)
 ```
 
-docute 已经对一些语言内置了代码高亮 `javascript` `cpp` `css` `xml` `php` `bash` `markdown`，你不用添加任何代码就能高亮这些语言。
+docute 已经对一些语言内置了代码高亮 `javascript` `cpp` `css` `xml` `bash` `markdown`，你不用添加任何代码就能高亮这些语言。
 
 ### 部署到 GitHub
 
