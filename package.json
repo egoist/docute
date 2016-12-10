@@ -34,6 +34,7 @@
     "highlight.js": "^9.8.0",
     "jest-cli": "^15.1.1",
     "jump.js": "^1.0.1",
+    "lodash.throttle": "^4.1.1",
     "marked": "^0.3.6",
     "nprogress": "^0.2.0",
     "raw-loader": "^0.5.1",

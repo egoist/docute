@@ -9,6 +9,7 @@
           <router-link
             exact
             class="sidebar-heading-anchor"
+            :class="{active: sidebarActive === heading.slug}"
             :to="{query: {id: heading.slug}}">
             {{ heading.text }}
           </router-link>
@@ -32,6 +33,8 @@
   import frontMatter from 'utils/front-matter'
   import {mapState, mapGetters, mapActions} from 'vuex'
   import nprogress from 'nprogress'
+  import {findMin, findMax} from 'utils'
+  import throttle from 'lodash.throttle'
 
   marked.setOptions({
     highlight(code) {
@@ -46,7 +49,8 @@
         html: null,
         attributes: null,
         headings: [],
-        loaded: false
+        loaded: false,
+        sidebarActive: null
       }
     },
     beforeRouteEnter(to, from, next) {
@@ -55,6 +59,7 @@
     },
     created() {
       this.fetchData()
+      this.scrollSpy()
       this.$watch('id', val => {
         if (val) this.jumpTo(val)
       })
@@ -139,6 +144,28 @@
           a11y: true,
           offset: -10
         })
+      },
+      scrollSpy() {
+        const handleScroll = () => {
+          const headings = document.querySelectorAll('.markdown-heading')
+          const els = [...headings].map(heading => {
+            return {
+              top: heading.getBoundingClientRect().top,
+              slug: heading.id
+            }
+          })
+          const lastNegative = findMax(els.filter(el => el.top < 0), 'top')[0]
+          const firstPositive = findMin(els.filter(el => el.top > 0), 'top')[0]
+
+          let el = {slug: ''}
+          if (lastNegative && firstPositive && firstPositive.top > 200) {
+            el = lastNegative
+          } else if (firstPositive) {
+            el = firstPositive
+          }
+          this.sidebarActive = el.slug
+        }
+        document.addEventListener('scroll', throttle(handleScroll, 200))
       }
     },
     components: {
@@ -193,7 +220,7 @@
         }
 
         .sidebar-heading-anchor {
-          &.router-link-active {
+          &.active {
             color: #42b983;
           }
         }
