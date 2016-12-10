@@ -21,7 +21,12 @@ function flatten(nav) {
 const store = new Vuex.Store({
   state: {
     config: self.$config,
-    attributes: null
+    attributes: null,
+    page: {
+      html: '',
+      attributes: null
+    },
+    loaded: false
   },
   mutations: {
     TOGGLE_DROPDOWN(state, index) {
@@ -35,16 +40,17 @@ const store = new Vuex.Store({
         return item
       })
     },
-    UPDATE_ATTRIBUTES(state, attributes) {
-      state.attributes = attributes
+    UPDATE_PAGE(state, page) {
+      state.page = page
+      state.loaded = true
     }
   },
   actions: {
     toggleDropdown({commit}, index) {
       commit('TOGGLE_DROPDOWN', index)
     },
-    updateAttributes({commit}, payload) {
-      commit('UPDATE_ATTRIBUTES', payload)
+    updatePage({commit}, payload) {
+      commit('UPDATE_PAGE', payload)
     }
   },
   getters: {

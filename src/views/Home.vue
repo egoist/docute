@@ -18,7 +18,7 @@
     </figure>
     <section class="main">
       <home-header v-if="loaded"></home-header>
-      <div class="markdown-body content" v-html="html"></div>
+      <div class="markdown-body content" v-html="page.html"></div>
     </section>
   </div>
 </template>
@@ -46,10 +46,7 @@
     name: 'home',
     data() {
       return {
-        html: null,
-        attributes: null,
         headings: [],
-        loaded: false,
         sidebarActive: null
       }
     },
@@ -70,12 +67,14 @@
     computed: {
       ...mapState({
         id: state => state.route.query.id,
-        config: state => state.config
+        config: state => state.config,
+        page: state => state.page,
+        loaded: state => state.loaded
       }),
       ...mapGetters(['currentTitle'])
     },
     methods: {
-      ...mapActions(['updateAttributes']),
+      ...mapActions(['updatePage']),
       async fetchData() {
         const renderer = new marked.Renderer()
 
@@ -123,20 +122,20 @@
         nprogress.set(0.6)
 
         const parsed = frontMatter(text)
-        this.attributes = parsed.attributes
-        this.html = marked(parsed.body, {renderer})
 
-        this.updateAttributes(this.attributes)
+        this.updatePage({
+          html: marked(parsed.body, {renderer}),
+          attributes: parsed.attributes
+        })
 
         const title = this.config.title
-        if (this.attributes.title) {
-          document.title = title ? `${this.attributes.title} - ${title}` : this.attributes.title
+        if (parsed.attributes.title) {
+          document.title = title ? `${parsed.attributes.title} - ${title}` : parsed.attributes.title
         } else if (this.currentTitle) {
           document.title = title ? `${this.currentTitle} - ${title}` : this.currentTitle
         }
 
         nprogress.done()
-        this.loaded = true
 
         // scroll to id (the url query `id`)
         this.$nextTick(() => {
