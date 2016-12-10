@@ -91,12 +91,12 @@
         try {
           text = await axios.get(file).then(res => res.data)
         } catch (err) {
+          nprogress.set(0.4)
           if (err.response) {
             if (err.response.status === 404) {
-              this.$router.go('/404')
+              this.$router.push('/404')
             }
           }
-          nprogress.done()
           return
         }
 

@@ -10,6 +10,8 @@
 </template>
 
 <script>
+  import nprogress from 'nprogress'
+
   export default {
     name: 'not-found',
     data() {
@@ -21,6 +23,9 @@
       next(vm => {
         vm.from = from
       })
+    },
+    mounted() {
+      nprogress.done()
     }
   }
 </script>
