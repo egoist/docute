@@ -106,3 +106,28 @@ navbar: chinese
 <!-- this page use the `chinese` navbar -->
 你好世界！
 ```
+
+## Recipes
+
+### Code Highlight
+
+`docute` uses `highlight.js` to highlight your code blocks, however only a few languages are supported by default, you can highlight other languages by:
+
+```html
+<script src="/path/to/docute.js"></script>
+<!-- add your language after the main docute bundle -->
+<script src="https://unpkg.com/highlight-languages/python.js"></script>
+```
+
+Now the `python` code will get highlighten!
+
+```python
+def fib(n):
+ a,b = 1,1
+ for i in range(n-1):
+  a,b = b,a+b
+ return a
+print fib(5)
+```
+
+The built-in languages are: `javascript` `cpp` `css` `xml` `php` `bash` `markdown`

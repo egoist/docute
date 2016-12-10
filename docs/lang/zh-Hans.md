@@ -110,3 +110,28 @@ navbar: chinese
 <!-- 现在这个页面的导航栏就是叫 chinese 的这个了 -->
 你好世界！
 ```
+
+## 指南
+
+### 代码高亮
+
+`docute` 使用 `highlight.js` 来高亮代码:
+
+```html
+<script src="/path/to/docute.js"></script>
+<!-- add your language after the main docute bundle -->
+<script src="https://unpkg.com/highlight-languages/python.js"></script>
+```
+
+现在 `python` 代码就会被高亮了！
+
+```python
+def fib(n):
+ a,b = 1,1
+ for i in range(n-1):
+  a,b = b,a+b
+ return a
+print fib(5)
+```
+
+docute 已经对一些语言内置了代码高亮 `javascript` `cpp` `css` `xml` `php` `bash` `markdown`，你不用添加任何代码就能高亮这些语言。
