@@ -130,7 +130,7 @@ navbar: chinese
 
 ## 指南
 
-### 代码高亮
+### 代码高亮
 
 `docute` 使用 `highlight.js` 来高亮代码:
 
@@ -140,7 +140,7 @@ navbar: chinese
 <script src="https://unpkg.com/highlight-languages/python.js"></script>
 ```
 
-现在 `python` 代码就会被高亮了！
+现在 `python` 代码就会被高亮了！
 
 ```python
 def fib(n):
@@ -155,7 +155,7 @@ docute 已经对一些语言内置了代码高亮 `javascript` `cpp` `css` `xml`
 
 ### 部署到 GitHub
 
-有三个地方可供你存储文档:
+有三个地方可供你存储文档:
 
 - `./docs` 目录
 - master 分支
