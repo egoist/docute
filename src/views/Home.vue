@@ -69,7 +69,8 @@
     },
     computed: {
       ...mapState({
-        id: state => state.route.query.id
+        id: state => state.route.query.id,
+        config: state => state.config
       }),
       ...mapGetters(['currentTitle'])
     },
@@ -122,10 +123,11 @@
 
         this.updateAttributes(this.attributes)
 
+        const title = this.config.title
         if (this.attributes.title) {
-          document.title = this.attributes.title
-        } else {
-          document.title = this.currentTitle
+          document.title = title ? `${this.attributes.title} - ${title}` : this.attributes.title
+        } else if (this.currentTitle) {
+          document.title = title ? `${this.currentTitle} - ${title}` : this.currentTitle
         }
 
         nprogress.done()

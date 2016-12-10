@@ -5,6 +5,7 @@ var langs = [
 ]
 
 self.$config = {
+  title: 'Docute',
   repo: 'egoist/docute',
   twitter: 'rem_rin_rin',
   nav: {
