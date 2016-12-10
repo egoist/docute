@@ -135,3 +135,15 @@ print fib(5)
 ```
 
 docute 已经对一些语言内置了代码高亮 `javascript` `cpp` `css` `xml` `php` `bash` `markdown`，你不用添加任何代码就能高亮这些语言。
+
+### 部署到 GitHub
+
+有三个地方可供你存储文档:
+
+- `./docs` 目录
+- master 分支
+- gh-pages 分支
+
+把文件 push 到 GitHub 之后在项目的 settings 里选择其中一个就可以了:
+
+<img src="./assets/deploy.png" alt="deploy" width="500">

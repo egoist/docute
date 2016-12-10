@@ -131,3 +131,15 @@ print fib(5)
 ```
 
 The built-in languages are: `javascript` `cpp` `css` `xml` `php` `bash` `markdown`
+
+### Deploy to GitHub
+
+There're three places to populate your docs:
+
+- `./docs` folder
+- master branch
+- gh-pages branch
+
+Just select it in repo's settings page after pushed files:
+
+<img src="./assets/deploy.png" alt="deploy" width="500">
