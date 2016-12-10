@@ -66,7 +66,7 @@ const store = new Vuex.Store({
           nav[attributes.nav] :
           nav.default
       }
-      return false
+      return []
     }
   }
 })

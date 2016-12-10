@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <ul class="nav" v-if="currentNav">
+    <ul class="nav" v-if="currentNav && currentNav.length > 0">
       <li
         v-for="(navItem, index) in currentNav"
         class="nav-item">
