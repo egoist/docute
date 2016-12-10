@@ -33,15 +33,33 @@
         </router-link>
       </li>
     </ul>
+    <div class="header-icons">
+      <a
+        v-if="config.repo"
+        class="header-icon"
+        target="_blank"
+        :href="`https://github.com/${config.repo}`">
+        <svg-icon name="github"></svg-icon>
+      </a>
+      <a
+        v-if="config.twitter"
+        class="header-icon"
+        target="_blank"
+        :href="`https://twitter.com/${config.twitter}`">
+        <svg-icon name="twitter"></svg-icon>
+      </a>
+    </div>
   </header>
 </template>
 
 <script>
   import {mapState, mapActions, mapGetters} from 'vuex'
+  import SvgIcon from 'components/SvgIcon'
 
   export default {
     computed: {
       ...mapState({
+        config: state => state.config,
         nav: state => state.config.nav,
         attributes: state => state.attributes
       }),
@@ -49,6 +67,9 @@
     },
     methods: {
       ...mapActions(['toggleDropdown'])
+    },
+    components: {
+      SvgIcon
     }
   }
 </script>
@@ -56,14 +77,23 @@
 <style>
   .header {
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
     &:empty {
       display: none;
+    }
+    .header-icons {
+      .header-icon {
+        margin-left: 20px;
+      }
+      svg {
+        width: 22px;
+      }
     }
     .nav {
       list-style: none;
       padding-left: 0;
       margin: 0;
-      display: inline-block;
       line-height: 30px;
       height: 30px;
       .nav-item {

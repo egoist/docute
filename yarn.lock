@@ -4966,6 +4966,10 @@ raw-body@~2.1.5:
     iconv-lite "0.4.13"
     unpipe "1.0.0"
 
+raw-loader:
+  version "0.5.1"
+  resolved "http://registry.npm.taobao.org/raw-loader/download/raw-loader-0.5.1.tgz#0c3d0beaed8a01c966d9787bf778281252a979aa"
+
 rc@^1.0.1, rc@^1.1.6, rc@~1.1.6:
   version "1.1.6"
   resolved "http://registry.npm.taobao.org/rc/download/rc-1.1.6.tgz#43651b76b6ae53b5c802f1151fa3fc3b059969c9"
@@ -5972,6 +5976,12 @@ vm-browserify@0.0.4:
 vue-hot-reload-api@^2.0.1:
   version "2.0.6"
   resolved "http://registry.npm.taobao.org/vue-hot-reload-api/download/vue-hot-reload-api-2.0.6.tgz#817d4bfb30f55428aa1012d029499e07f3147d21"
+
+vue-inline:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/vue-inline/download/vue-inline-1.0.1.tgz#925fc87213f7fc6a67d55d99e9bbe9f8d5b46090"
+  dependencies:
+    object-assign "^4.1.0"
 
 vue-loader@^10.0.0:
   version "10.0.2"

@@ -5,6 +5,8 @@ var langs = [
 ]
 
 self.$config = {
+  repo: 'egoist/docute',
+  twitter: 'rem_rin_rin',
   nav: {
     default: [
       {
