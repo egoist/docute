@@ -26,8 +26,7 @@ const store = new Vuex.Store({
       attributes: null,
       headings: []
     },
-    loaded: false,
-    showSidebar: false
+    loaded: false
   },
   mutations: {
     TOGGLE_DROPDOWN(state, index) {
@@ -44,10 +43,6 @@ const store = new Vuex.Store({
     UPDATE_PAGE(state, page) {
       state.page = page
       state.loaded = true
-    },
-    TOGGLE_SIDEBAR(state, payload) {
-      if (payload !== undefined) state.showSidebar = payload
-      else state.showSidebar = !state.showSidebar
     }
   },
   actions: {
@@ -56,9 +51,6 @@ const store = new Vuex.Store({
     },
     updatePage({commit}, payload) {
       commit('UPDATE_PAGE', payload)
-    },
-    toggleSidebar({commit}, payload) {
-      commit('TOGGLE_SIDEBAR', payload)
     }
   },
   getters: {

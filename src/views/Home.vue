@@ -1,6 +1,5 @@
 <template>
   <div class="page">
-    <sidebar-overlay></sidebar-overlay>
     <figure class="sidebar" v-if="loaded">
       <header-nav class="is-mobile"></header-nav>
       <toc :headings="page.headings" :active="activeId"></toc>
@@ -20,7 +19,6 @@
   import HomeHeader from 'components/HomeHeader.vue'
   import MobileHeader from 'components/MobileHeader.vue'
   import HeaderNav from 'components/HeaderNav.vue'
-  import SidebarOverlay from 'components/SidebarOverlay.vue'
   import Toc from 'components/Toc.vue'
   import highlight from 'utils/highlight'
   import frontMatter from 'utils/front-matter'
@@ -48,7 +46,6 @@
       next()
     },
     created() {
-      this.toggleSidebar(false)
       this.fetchData()
       this.scrollSpy()
       this.$watch('id', val => {
@@ -63,13 +60,12 @@
         id: state => state.route.query.id,
         config: state => state.config,
         page: state => state.page,
-        loaded: state => state.loaded,
-        showSidebar: state => state.showSidebar
+        loaded: state => state.loaded
       }),
       ...mapGetters(['documentTitle'])
     },
     methods: {
-      ...mapActions(['updatePage', 'toggleSidebar']),
+      ...mapActions(['updatePage']),
       async fetchData() {
         const renderer = new marked.Renderer()
 
@@ -107,7 +103,7 @@
         try {
           text = await axios.get(file).then(res => res.data)
         } catch (err) {
-          nprogress.set(0.4)
+          nprogress.set(0.6)
           if (err.response) {
             if (err.response.status === 404) {
               this.$router.replace('/404')
@@ -186,8 +182,7 @@
       HomeHeader,
       MobileHeader,
       Toc,
-      HeaderNav,
-      SidebarOverlay
+      HeaderNav
     }
   }
 
@@ -223,7 +218,6 @@
     bottom: 0;
     padding: 20px;
     background-color: white;
-    z-index: 8000;
   }
   .main {
     padding: 20px;
