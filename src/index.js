@@ -1,3 +1,6 @@
 import app from './app'
 
-app.$mount('#app')
+// ensure dom is ready
+document.addEventListener('DOMContentLoaded', () => {
+  app.$mount('#app')
+})
