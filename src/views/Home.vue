@@ -38,6 +38,7 @@
     name: 'home',
     data() {
       return {
+        jumping: false,
         activeId: null,
         isMobile: Math.max(document.documentElement.clientWidth, window.innerWidth || 0) <= 768
       }
@@ -136,14 +137,20 @@
         })
       },
       jumpTo(slug) {
+        this.jumping = true
         jump(`#${slug}`, {
           duration: 300,
           a11y: true,
-          offset: this.isMobile ? -60 : -10
+          offset: this.isMobile ? -60 : -10,
+          callback: () => {
+            this.activeId = this.$route.query.id
+            this.jumping = false
+          }
         })
       },
       scrollSpy() {
         const handleScroll = () => {
+          if (this.jumping) return
           const headings = $$('.markdown-heading')
           const els = [...headings].map(heading => {
             return {
