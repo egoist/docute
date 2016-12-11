@@ -46,6 +46,7 @@
       next()
     },
     created() {
+      this.toggleSidebar(false)
       this.fetchData()
       this.scrollSpy()
       this.$watch('id', val => {
@@ -65,7 +66,7 @@
       ...mapGetters(['documentTitle'])
     },
     methods: {
-      ...mapActions(['updatePage']),
+      ...mapActions(['updatePage', 'toggleSidebar']),
       async fetchData() {
         const renderer = new marked.Renderer()
 

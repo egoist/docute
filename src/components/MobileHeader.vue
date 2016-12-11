@@ -1,6 +1,6 @@
 <template>
   <header class="mobile-header is-mobile-flex" ref="header">
-    <div class="header-left" @click="showSidebar = !showSidebar">
+    <div class="header-left" @click="toggleSidebar()">
       <h1 class="site-title">
         <svg-icon class="svg-icon" name="menu" ref="icon"></svg-icon>
         {{ config.title }}
@@ -18,13 +18,8 @@
   import SvgIcon from 'components/SvgIcon'
 
   export default {
-    data() {
-      return {
-        showSidebar: false
-      }
-    },
     computed: {
-      ...mapState(['config'])
+      ...mapState(['config', 'showSidebar'])
     },
     mounted() {
       this.$watch('showSidebar', () => {
@@ -32,11 +27,9 @@
         const el = document.querySelector('.sidebar')
         if (el.classList.contains('visible')) {
           el.classList.remove('visible')
-          document.body.style.overflow = 'auto'
           icon.style.color = '#999'
         } else {
           el.classList.add('visible')
-          document.body.style.overflow = 'hidden'
           icon.style.color = '#333'
         }
       })
@@ -48,9 +41,12 @@
           !document.querySelector('.sidebar').contains(e.target) &&
           !header.contains(e.target)
         ) {
-          this.showSidebar = false
+          this.toggleSidebar(false)
         }
       })
+    },
+    methods: {
+      ...mapActions(['toggleSidebar'])
     },
     components: {
       HeaderIcons,
