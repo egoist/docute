@@ -1,5 +1,6 @@
 <template>
   <div class="page">
+    <sidebar-overlay></sidebar-overlay>
     <figure class="sidebar" v-if="loaded">
       <header-nav class="is-mobile"></header-nav>
       <toc :headings="page.headings" :active="activeId"></toc>
@@ -19,6 +20,7 @@
   import HomeHeader from 'components/HomeHeader.vue'
   import MobileHeader from 'components/MobileHeader.vue'
   import HeaderNav from 'components/HeaderNav.vue'
+  import SidebarOverlay from 'components/SidebarOverlay.vue'
   import Toc from 'components/Toc.vue'
   import highlight from 'utils/highlight'
   import frontMatter from 'utils/front-matter'
@@ -37,7 +39,8 @@
     name: 'home',
     data() {
       return {
-        activeId: null
+        activeId: null,
+        isMobile: Math.max(document.documentElement.clientWidth, window.innerWidth || 0) <= 768
       }
     },
     beforeRouteEnter(to, from, next) {
@@ -45,6 +48,7 @@
       next()
     },
     created() {
+      this.toggleSidebar(false)
       this.fetchData()
       this.scrollSpy()
       this.$watch('id', val => {
@@ -59,12 +63,13 @@
         id: state => state.route.query.id,
         config: state => state.config,
         page: state => state.page,
-        loaded: state => state.loaded
+        loaded: state => state.loaded,
+        showSidebar: state => state.showSidebar
       }),
       ...mapGetters(['documentTitle'])
     },
     methods: {
-      ...mapActions(['updatePage']),
+      ...mapActions(['updatePage', 'toggleSidebar']),
       async fetchData() {
         const renderer = new marked.Renderer()
 
@@ -136,7 +141,7 @@
         jump(`#${slug}`, {
           duration: 300,
           a11y: true,
-          offset: -10
+          offset: this.isMobile ? -60 : -10
         })
       },
       scrollSpy() {
@@ -181,7 +186,8 @@
       HomeHeader,
       MobileHeader,
       Toc,
-      HeaderNav
+      HeaderNav,
+      SidebarOverlay
     }
   }
 
@@ -217,6 +223,7 @@
     bottom: 0;
     padding: 20px;
     background-color: white;
+    z-index: 8000;
   }
   .main {
     padding: 20px;
@@ -256,7 +263,7 @@
       top: 0;
       border-right: none;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      transform: translateX(-100%);
+      transform: translateX(-120%);
       transition: transform .3s cubic-bezier(0.4, 0, 0, 1);
       &.visible {
         transform: translateX(0);

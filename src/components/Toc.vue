@@ -73,17 +73,18 @@
     list-style: none;
     padding-left: 0;
     margin: 0;
-    line-height: 1.7;
     .sidebar-heading {
-      margin-bottom: 5;
+      line-height: 1.4;
+      margin-bottom: 3px;
       &:not(.visible) {
         display: none;
       }
       &[data-level="2"] {
         font-weight: bold;
+        margin-bottom: 5px;
         &:not(:first-child) {
-          margin-top: 3px;
-          padding-top: 3px;
+          margin-top: 5px;
+          padding-top: 5px;
         }
         .sidebar-heading-anchor {
           color: #333;

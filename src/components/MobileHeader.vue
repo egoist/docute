@@ -1,8 +1,8 @@
 <template>
   <header class="mobile-header is-mobile-flex">
-    <div class="header-left" @click="toggleSidebar">
+    <div class="header-left" @click="toggleSidebar()">
       <h1 class="site-title">
-        <svg-icon class="svg-icon" name="menu"></svg-icon>
+        <svg-icon class="svg-icon" name="menu" ref="icon"></svg-icon>
         {{ config.title }}
       </h1>
     </div>
@@ -13,28 +13,31 @@
 </template>
 
 <script>
-  import {mapState} from 'vuex'
+  import {mapState, mapActions} from 'vuex'
   import HeaderIcons from 'components/HeaderIcons.vue'
   import SvgIcon from 'components/SvgIcon'
 
   export default {
     computed: {
-      ...mapState(['config'])
+      ...mapState(['config', 'showSidebar'])
     },
-    methods: {
-      // a little hacky
-      toggleSidebar({currentTarget}) {
+    mounted() {
+      this.$watch('showSidebar', () => {
+        const {icon} = this.$refs
         const el = document.querySelector('.sidebar')
         if (el.classList.contains('visible')) {
           el.classList.remove('visible')
           document.body.style.overflow = 'auto'
-          currentTarget.querySelector('.svg-icon').style.color = '#999'
+          icon.style.color = '#999'
         } else {
           el.classList.add('visible')
           document.body.style.overflow = 'hidden'
-          currentTarget.querySelector('.svg-icon').style.color = '#333'
+          icon.style.color = '#333'
         }
-      }
+      })
+    },
+    methods: {
+      ...mapActions(['toggleSidebar'])
     },
     components: {
       HeaderIcons,
@@ -56,7 +59,7 @@
     height: 50px;
     left: 0;
     right: 0;
-    z-index: 9999;
+    z-index: 9900;
     background-color: white;
 
     .site-title {
@@ -78,3 +81,5 @@
     }
   }
 </style>
+
+
