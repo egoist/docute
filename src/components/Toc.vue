@@ -85,6 +85,9 @@
           margin-top: 3px;
           padding-top: 3px;
         }
+        .sidebar-heading-anchor {
+          color: #333;
+        }
       }
       &[data-level="4"] {
         padding-left: 15px;
@@ -94,6 +97,7 @@
       }
 
       .sidebar-heading-anchor {
+        color: #666;
         &.active {
           color: #42b983;
         }
