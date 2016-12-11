@@ -28,7 +28,6 @@
   "devDependencies": {
     "axios": "^0.15.3",
     "cssbag": "^0.1.0",
-    "detect-mobile-browser": "^5.0.0",
     "eslint": "latest",
     "eslint-config-rem": "latest",
     "github-markdown-css": "^2.4.1",
@@ -40,7 +39,6 @@
     "marked": "^0.3.6",
     "nprogress": "^0.2.0",
     "raw-loader": "^0.5.1",
-    "uid": "^0.0.2",
     "vbuild": "egoist/vbuild",
     "vue-inline": "^1.0.1",
     "vue-router": "^2.1.1",

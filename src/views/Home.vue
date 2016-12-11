@@ -2,7 +2,7 @@
   <div class="page">
     <figure class="sidebar" v-if="loaded">
       <header-nav class="is-mobile"></header-nav>
-      <toc :headings="page.headings" :active="sidebarActive"></toc>
+      <toc :headings="page.headings" :active="activeId"></toc>
     </figure>
     <mobile-header v-if="loaded"></mobile-header>
     <section class="main">
@@ -15,7 +15,6 @@
 <script>
   import marked from 'marked'
   import axios from 'axios'
-  import uid from 'uid'
   import jump from 'jump.js'
   import HomeHeader from 'components/HomeHeader.vue'
   import MobileHeader from 'components/MobileHeader.vue'
@@ -27,9 +26,6 @@
   import nprogress from 'nprogress'
   import {findMin, findMax} from 'utils'
   import throttle from 'lodash.throttle'
-  import detectMobileBrowser from 'detect-mobile-browser'
-
-  const detectMobile = detectMobileBrowser(false)
 
   marked.setOptions({
     highlight(code) {
@@ -41,8 +37,7 @@
     name: 'home',
     data() {
       return {
-        sidebarActive: null,
-        isMobile: detectMobile.isAny()
+        activeId: null
       }
     },
     beforeRouteEnter(to, from, next) {
@@ -73,9 +68,9 @@
       async fetchData() {
         const renderer = new marked.Renderer()
 
-        const headings = []
+        let headings = []
         renderer.heading = (text, level) => {
-          const hash = uid()
+          const index = headings.length
           const slug = text.replace(/[:\/\?#\[\]@!$&'()*+,;=\\%<>\|\^~£"]/g, '')
             // Replace dots and spaces with a sepeator
             .replace(/(\s|\.)/g, '-')
@@ -84,13 +79,14 @@
             // Make the whole thing lowercase
             .toLowerCase()
           if (level !== 1) {
-            headings.push({level, text, slug, hash})
+            headings.push({level, text, slug, index})
           }
-          return `<h${level} id="${slug}" class="markdown-heading" data-hash="${hash}">${text}</h${level}>`
+          return `<h${level} id="${slug}-${index}" class="markdown-heading">${text}</h${level}>`
         }
         renderer.link = (href, title, text) => {
           return `<a target="_blank" href="${href}" title="${title}">${text}</a>`
         }
+
 
         let file = './README.md'
         if (this.$route.meta && this.$route.meta.name === 'page') {
@@ -122,7 +118,7 @@
         this.updatePage({
           html: marked(parsed.body, {renderer}),
           attributes: parsed.attributes,
-          headings
+          headings: this.handleRelation(headings)
         })
 
         document.title = this.documentTitle
@@ -149,21 +145,36 @@
           const els = [...headings].map(heading => {
             return {
               top: heading.getBoundingClientRect().top,
-              slug: heading.id
+              id: heading.id
             }
           })
           const lastNegative = findMax(els.filter(el => el.top < 0), 'top')[0]
           const firstPositive = findMin(els.filter(el => el.top > 0), 'top')[0]
 
-          let el = {slug: ''}
+          let el = {}
           if (lastNegative && firstPositive && firstPositive.top > 200) {
             el = lastNegative
           } else if (firstPositive) {
             el = firstPositive
           }
-          this.sidebarActive = el.slug
+          if (el.id) this.activeId = el.id
         }
         document.addEventListener('scroll', throttle(handleScroll, 200))
+      },
+      handleRelation(array) {
+        function getParent(parentLevel, end) {
+          const filtered = array
+            .slice(0, end)
+            .filter(item => item.level === parentLevel)
+          const nearest = filtered[filtered.length - 1]
+          return nearest && nearest.index
+        }
+        return array.map((item, index) => {
+          if (item.level > 2) {
+            item.parent = getParent(item.level - 1, index)
+          }
+          return item
+        })
       }
     },
     components: {
