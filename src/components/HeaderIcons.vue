@@ -6,7 +6,7 @@
       :class="{'hint--bottom': config.repo, 'hint-bottom-left': !config.repo}"
       target="_blank"
       aria-label="Edit this page"
-      :href="`${config['edit-link']}${$route.path}.md`">
+      :href="editLink">
       <svg-icon name="edit" class="svg-icon"></svg-icon>
     </a>
     <a
@@ -35,7 +35,12 @@
 
   export default {
     computed: {
-      ...mapState(['config'])
+      ...mapState(['config']),
+      editLink() {
+        let filename = this.$route.path
+        if (/\/$/.test(filename)) filename += 'README'
+        return `${this.config['edit-link']}${filename}.md`
+      }
     },
     components: {
       SvgIcon
