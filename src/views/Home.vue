@@ -26,6 +26,7 @@
   import nprogress from 'nprogress'
   import {findMin, findMax} from 'utils'
   import throttle from 'lodash.throttle'
+  import {$$} from 'utils/dom'
 
   marked.setOptions({
     highlight(code) {
@@ -143,7 +144,7 @@
       },
       scrollSpy() {
         const handleScroll = () => {
-          const headings = document.querySelectorAll('.markdown-heading')
+          const headings = $$('.markdown-heading')
           const els = [...headings].map(heading => {
             return {
               top: heading.getBoundingClientRect().top,

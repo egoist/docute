@@ -16,6 +16,7 @@
   import {mapState, mapActions} from 'vuex'
   import HeaderIcons from 'components/HeaderIcons.vue'
   import SvgIcon from 'components/SvgIcon'
+  import {$} from 'utils/dom'
 
   export default {
     computed: {
@@ -24,7 +25,7 @@
     mounted() {
       this.$watch('showSidebar', () => {
         const {icon} = this.$refs
-        const el = document.querySelector('.sidebar')
+        const el = $('.sidebar')
         if (el.classList.contains('visible')) {
           el.classList.remove('visible')
           icon.style.color = '#999'
@@ -36,9 +37,10 @@
 
       document.addEventListener('click', e => {
         const {header} = this.$refs
+        const sidebar = $('.sidebar')
         if (
           header &&
-          !document.querySelector('.sidebar').contains(e.target) &&
+          !sidebar.contains(e.target) &&
           !header.contains(e.target)
         ) {
           this.toggleSidebar(false)
