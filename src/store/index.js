@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import {isType} from 'utils'
 
 Vue.use(Vuex)
 
@@ -68,7 +67,7 @@ const store = new Vuex.Store({
       if (Array.isArray(nav)) {
         return nav
       }
-      if (isType(nav, 'Object')) {
+      if (Vue.util.isPlainObject(nav)) {
         return (attributes && attributes.nav) ?
           nav[attributes.nav] :
           nav.default
