@@ -162,3 +162,35 @@ There're three places to populate your docs:
 Just select it in repo's settings page after pushed files:
 
 <img src="./assets/deploy.png" alt="deploy" width="500">
+
+### Deploy to VPS
+
+#### Using nginx
+
+Try following nginx conf:
+
+```nginx
+server {
+  listen 80;
+  server_name  your.domain.com;
+
+  location / {
+    alias /path/to/dir/of/docs;
+    index index.html;
+  }
+}
+```
+
+Or if you want to serve it at sub path like `/docs`, try:
+
+```nginx
+server {
+  listen 80;
+  server_name  your.domain.com;
+
+  location /docs {
+    alias /path/to/dir/of/docs;
+    index index.html;
+  }
+}
+```

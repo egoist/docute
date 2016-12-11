@@ -166,3 +166,35 @@ docute 已经对一些语言内置了代码高亮 `javascript` `cpp` `css` `xml`
 把文件 push 到 GitHub 之后在项目的 settings 里选择其中一个就可以了:
 
 <img src="./assets/deploy.png" alt="deploy" width="500">
+
+### 部署到 VPS
+
+#### 使用 nginx
+
+nginx conf 示例:
+
+```nginx
+server {
+  listen 80;
+  server_name  your.domain.com;
+
+  location / {
+    alias /path/to/dir/of/docs;
+    index index.html;
+  }
+}
+```
+
+如果你想让网站通过子路径比如 `/docs` 来访问, 可以:
+
+```nginx
+server {
+  listen 80;
+  server_name  your.domain.com;
+
+  location /docs {
+    alias /path/to/dir/of/docs;
+    index index.html;
+  }
+}
+```
