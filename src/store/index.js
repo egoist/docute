@@ -64,7 +64,7 @@ const store = new Vuex.Store({
     },
     currentNav(state) {
       const nav = state.config.nav
-      const attributes = state.attributes
+      const attributes = state.page.attributes
       if (Array.isArray(nav)) {
         return nav
       }

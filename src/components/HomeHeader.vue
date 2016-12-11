@@ -60,7 +60,6 @@
     computed: {
       ...mapState({
         config: state => state.config,
-        nav: state => state.config.nav,
         attributes: state => state.attributes
       }),
       ...mapGetters(['currentTitle', 'currentNav']),
