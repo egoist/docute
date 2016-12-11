@@ -1805,6 +1805,10 @@ detect-installed@^1.0.4:
   dependencies:
     global-modules "^0.2.0"
 
+detect-mobile-browser:
+  version "5.0.0"
+  resolved "http://registry.npm.taobao.org/detect-mobile-browser/download/detect-mobile-browser-5.0.0.tgz#688c2594e941ce8b7298a6a2c642019e1a1a3af5"
+
 detect-port@^1.0.5:
   version "1.0.6"
   resolved "http://registry.npm.taobao.org/detect-port/download/detect-port-1.0.6.tgz#44b57a9be268ee235d441395b4619b78a41545ef"

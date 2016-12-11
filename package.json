@@ -28,6 +28,7 @@
   "devDependencies": {
     "axios": "^0.15.3",
     "cssbag": "^0.1.0",
+    "detect-mobile-browser": "^5.0.0",
     "eslint": "latest",
     "eslint-config-rem": "latest",
     "github-markdown-css": "^2.4.1",

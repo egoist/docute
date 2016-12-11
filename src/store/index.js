@@ -73,6 +73,15 @@ const store = new Vuex.Store({
           nav.default
       }
       return []
+    },
+    documentTitle(state, {currentTitle}) {
+      const {config: {title}, page: {attributes}} = state
+      if (attributes && attributes.title) {
+        return title ? `${attributes.title} - ${title}` : attributes.title
+      } else if (currentTitle) {
+        return title ? `${currentTitle} - ${title}` : currentTitle
+      }
+      return document.title
     }
   }
 })

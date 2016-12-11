@@ -1,21 +1,10 @@
 <template>
   <div class="page">
     <figure class="sidebar" v-if="loaded">
-      <ul class="sidebar-headings">
-        <li
-          class="sidebar-heading"
-          v-for="heading in page.headings"
-          :data-level="heading.level">
-          <router-link
-            exact
-            class="sidebar-heading-anchor"
-            :class="{active: sidebarActive === heading.slug}"
-            :to="{query: {id: heading.slug}}">
-            {{ heading.text }}
-          </router-link>
-        </li>
-      </ul>
+      <header-nav class="is-mobile"></header-nav>
+      <toc :headings="page.headings" :active="sidebarActive"></toc>
     </figure>
+    <mobile-header v-if="loaded"></mobile-header>
     <section class="main">
       <home-header v-if="loaded"></home-header>
       <div class="markdown-body content" v-html="page.html"></div>
@@ -29,12 +18,18 @@
   import uid from 'uid'
   import jump from 'jump.js'
   import HomeHeader from 'components/HomeHeader.vue'
+  import MobileHeader from 'components/MobileHeader.vue'
+  import HeaderNav from 'components/HeaderNav.vue'
+  import Toc from 'components/Toc.vue'
   import highlight from 'utils/highlight'
   import frontMatter from 'utils/front-matter'
   import {mapState, mapGetters, mapActions} from 'vuex'
   import nprogress from 'nprogress'
   import {findMin, findMax} from 'utils'
   import throttle from 'lodash.throttle'
+  import detectMobileBrowser from 'detect-mobile-browser'
+
+  const detectMobile = detectMobileBrowser(false)
 
   marked.setOptions({
     highlight(code) {
@@ -46,7 +41,8 @@
     name: 'home',
     data() {
       return {
-        sidebarActive: null
+        sidebarActive: null,
+        isMobile: detectMobile.isAny()
       }
     },
     beforeRouteEnter(to, from, next) {
@@ -70,7 +66,7 @@
         page: state => state.page,
         loaded: state => state.loaded
       }),
-      ...mapGetters(['currentTitle'])
+      ...mapGetters(['documentTitle'])
     },
     methods: {
       ...mapActions(['updatePage']),
@@ -129,12 +125,7 @@
           headings
         })
 
-        const title = this.config.title
-        if (parsed.attributes.title) {
-          document.title = title ? `${parsed.attributes.title} - ${title}` : parsed.attributes.title
-        } else if (this.currentTitle) {
-          document.title = title ? `${this.currentTitle} - ${title}` : this.currentTitle
-        }
+        document.title = this.documentTitle
 
         nprogress.done()
 
@@ -176,7 +167,10 @@
       }
     },
     components: {
-      HomeHeader
+      HomeHeader,
+      MobileHeader,
+      Toc,
+      HeaderNav
     }
   }
 
@@ -211,29 +205,7 @@
     top: 0;
     bottom: 0;
     padding: 20px;
-    .sidebar-headings {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-      line-height: 1.7;
-      .sidebar-heading {
-        &[data-level="3"] {
-          padding-left: 20px;
-        }
-        &[data-level="4"] {
-          padding-left: 40px;
-        }
-        &[data-level="5"] {
-          padding-left: 60px;
-        }
-
-        .sidebar-heading-anchor {
-          &.active {
-            color: #42b983;
-          }
-        }
-      }
-    }
+    background-color: white;
   }
   .main {
     padding: 20px;
@@ -243,6 +215,41 @@
     .markdown-heading:focus {
       color: #42b983;
       outline: none;
+    }
+  }
+</style>
+
+<style>
+  [class*="is-mobile"] {
+    display: none !important;
+  }
+  @media screen and (max-width: 768px) {
+    .is-desktop {
+      display: none !important;
+    }
+    .is-mobile {
+      display: block !important;
+    }
+    .is-mobile-flex {
+      display: flex !important;
+    }
+    .main {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 70px;
+    }
+    .sidebar {
+      width: calc(100% - 50px);
+      padding: 10px;
+      padding-top: 60px;
+      top: 0;
+      border-right: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      transform: translateX(-100%);
+      transition: transform .3s cubic-bezier(0.4, 0, 0, 1);
+      &.visible {
+        transform: translateX(0);
+      }
     }
   }
 </style>
