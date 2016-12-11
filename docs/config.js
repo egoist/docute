@@ -8,6 +8,7 @@ self.$config = {
   title: 'Docute',
   repo: 'egoist/docute',
   twitter: 'rem_rin_rin',
+  'edit-link': 'https://github.com/egoist/docute/blob/master/docs',
   nav: {
     default: [
       {

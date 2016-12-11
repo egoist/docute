@@ -185,6 +185,7 @@
 <style src="css/nprogress.css"></style>
 <style src="css/highlight.css"></style>
 <style src="github-markdown-css/github-markdown.css"></style>
+<style src="hint.css/hint.css"></style>
 <style>
   * {
     box-sizing: border-box;

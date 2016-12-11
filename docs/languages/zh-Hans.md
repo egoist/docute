@@ -84,7 +84,9 @@ self.$config = {
   // github repo 的缩略名
   repo: 'tj/co',
   // twitter 用户名
-  twitter: 'realDonaldTrump'
+  twitter: 'realDonaldTrump',
+  // 页面源文件地址
+  'edit-link': 'https://github.com/egoist/docute/blob/master/docs'
 }
 ```
 

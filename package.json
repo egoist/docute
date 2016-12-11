@@ -32,6 +32,7 @@
     "eslint-config-rem": "latest",
     "github-markdown-css": "^2.4.1",
     "highlight.js": "^9.8.0",
+    "hint.css": "^2.4.1",
     "jest-cli": "^15.1.1",
     "jump.js": "^1.0.1",
     "lodash.throttle": "^4.1.1",

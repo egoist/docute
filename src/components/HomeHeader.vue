@@ -35,16 +35,28 @@
     </ul>
     <div class="header-icons">
       <a
-        v-if="config.repo"
-        class="header-icon"
+        v-if="config['edit-link']"
+        class="header-icon hint--bottom hint--rounded"
+        :class="{'hint--bottom': config.repo, 'hint-bottom-left': !config.repo}"
         target="_blank"
+        aria-label="Edit this page"
+        :href="`${config['edit-link']}${$route.path}.md`">
+        <svg-icon name="edit"></svg-icon>
+      </a>
+      <a
+        v-if="config.repo"
+        class="header-icon hint--rounded"
+        :class="{'hint--bottom': config.twitter, 'hint-bottom-left': !config.twitter}"
+        target="_blank"
+        aria-label="Start me on GitHub"
         :href="`https://github.com/${config.repo}`">
         <svg-icon name="github"></svg-icon>
       </a>
       <a
         v-if="config.twitter"
-        class="header-icon"
+        class="header-icon hint--bottom-left hint--rounded"
         target="_blank"
+        aria-label="Follow me on Twitter"
         :href="`https://twitter.com/${config.twitter}`">
         <svg-icon name="twitter"></svg-icon>
       </a>
@@ -81,12 +93,20 @@
     &:empty {
       display: none;
     }
+    &:hover {
+      .header-icons {
+        svg {
+          color: #333;
+        }
+      }
+    }
     .header-icons {
       .header-icon {
         margin-left: 20px;
       }
       svg {
         width: 22px;
+        color: #666;
       }
     }
     .nav {

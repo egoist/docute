@@ -80,7 +80,9 @@ self.$config = {
   // slug for your github repo
   repo: 'tj/co',
   // twitter username
-  twitter: 'realDonaldTrump'
+  twitter: 'realDonaldTrump',
+  // the link to source file of current page
+  'edit-link': 'https://github.com/egoist/docute/blob/master/docs'
 }
 ```
 
