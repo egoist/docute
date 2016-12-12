@@ -155,6 +155,8 @@ print fib(5)
 
 docute 已经对一些语言内置了代码高亮 `javascript` `cpp` `css` `xml` `bash` `markdown`，你不用添加任何代码就能高亮这些语言。
 
+访问 https://unpkg.com/highlight-languages/ 查看所有可添加的代码语言。
+
 ### 部署到 GitHub
 
 有三个地方可供你存储文档:

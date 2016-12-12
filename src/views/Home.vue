@@ -88,7 +88,8 @@
           return `<h${level} id="${slug}-${index}" class="markdown-heading">${text}</h${level}>`
         }
         renderer.link = (href, title, text) => {
-          return `<a target="_blank" href="${href}" title="${title}">${text}</a>`
+          const getTitle = title ? ` title="${title}"` : ''
+          return `<a target="_blank" href="${href}"${getTitle}>${text}</a>`
         }
 
 

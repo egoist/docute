@@ -151,6 +151,8 @@ print fib(5)
 
 The built-in languages are: `javascript` `cpp` `css` `xml` `bash` `markdown`
 
+Visit https://unpkg.com/highlight-languages/ for all available programming languages.
+
 ### Deploy to GitHub
 
 There're three places to populate your docs:
