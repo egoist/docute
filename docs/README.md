@@ -128,6 +128,19 @@ navbar: chinese
 
 ## Recipes
 
+### Page title
+
+The title in browser tab is the `title` you defined in `nav` property in config file, this value will also be used in navbar item.
+
+However, you can use front-matter in markdown to override this:
+
+```markdown
+---
+title: Home
+---
+For example, I want this page to be shown as 'English' in navbar but 'Home' in browser tab.
+```
+
 ### Code Highlight
 
 `docute` uses `highlight.js` to highlight your code blocks, however only a few languages are supported by default, you can highlight other languages by:
