@@ -10,6 +10,9 @@ export default {
   resolve: true,
   postcss() {
     return [
+      require('autoprefixer')({
+        browsers: ['ie > 8', 'last 4 versions']
+      }),
       require('cssbag')()
     ]
   },
