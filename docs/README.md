@@ -128,7 +128,7 @@ navbar: chinese
 
 ## Recipes
 
-### Page title
+### Page Title
 
 The title in browser tab is the `title` you defined in `nav` property in config file, this value will also be used in navbar item.
 

@@ -75,17 +75,25 @@
         let headings = []
         renderer.heading = (text, level) => {
           const index = headings.length
-          const slug = text.replace(/[:\/\?#\[\]@!$&'()*+,;=\\%<>\|\^~£"]/g, '')
+          let slug = text.replace(/[:\/\?#\[\]@!$&'()*+,;=\\%<>\|\^~£"]/g, '')
             // Replace dots and spaces with a sepeator
             .replace(/(\s|\.)/g, '-')
             // Convert 2 or more sepeators into just one sepeator
             .replace(/-+/g, '-')
             // Make the whole thing lowercase
             .toLowerCase()
+
+          // check if there's already a same slug
+          const sameSlugs = headings.filter(heading => {
+            return heading.slug === slug
+          })
+          if (sameSlugs.length > 0) {
+            slug += sameSlugs.length
+          }
           if (level !== 1) {
             headings.push({level, text, slug, index})
           }
-          return `<h${level} id="${slug}-${index}" class="markdown-heading">${text}</h${level}>`
+          return `<h${level} id="${slug}" class="markdown-heading">${text}</h${level}>`
         }
         renderer.link = (href, title, text) => {
           const getTitle = title ? ` title="${title}"` : ''

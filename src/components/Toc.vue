@@ -8,8 +8,8 @@
       <router-link
         exact
         class="sidebar-heading-anchor"
-        :class="{active: active === `${heading.slug}-${heading.index}`}"
-        :to="{query: {id: heading.slug + '-' + heading.index}}">
+        :class="{active: active === heading.slug}"
+        :to="{query: {id: heading.slug}}">
         {{ heading.text }}
       </router-link>
     </li>
@@ -37,8 +37,11 @@
         if (!this.active) return []
         const indexes = []
 
-        const activeIndex = parseInt(this.active.match(/-([\d]+)$/)[1])
-        indexes.push(activeIndex)
+        const active = this.headings.filter(heading => {
+          return this.active === heading.slug
+        })[0]
+        if (!active) return []
+        indexes.push(active.index)
 
         const getParent = heading => {
           indexes.push(heading.parent)
@@ -48,7 +51,7 @@
           if (parent) getParent(parent)
         }
 
-        const parent = this.headings[activeIndex]
+        const parent = this.headings[active.index]
         if (parent) getParent(parent)
 
         return indexes.filter(i => i >= 0)
