@@ -5,6 +5,7 @@ const externals = Object.keys(pkg.dependencies).map(name => {
 })
 
 export default {
+  entry: './src/app.js',
   title: 'docute-server',
   resolve: true,
   postcss() {
