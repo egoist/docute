@@ -136,7 +136,7 @@ navbar: chinese
 
 每个页面在浏览器标签栏中显示的标题默认是配置文件中 `nav` 里你定义的 `title` 的值，这个 `title` 的值也会被用作导航栏中显示的文字。
 
-不过对于浏览器标签栏，你也可以直接通过 markdown 文件里的 front-matter 来覆盖:
+不过对于浏览器标签栏，你也可以直接通过 markdown 文件里的 front-matter 来覆盖页面在标签栏中显示的标题:
 
 ```markdown
 ---

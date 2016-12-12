@@ -132,7 +132,7 @@ navbar: chinese
 
 The title in browser tab is the `title` you defined in `nav` property in config file, this value will also be used in navbar item.
 
-However, you can use front-matter in markdown to override this:
+However, you can use front-matter in markdown to override page title:
 
 ```markdown
 ---
