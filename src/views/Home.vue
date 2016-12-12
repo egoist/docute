@@ -233,6 +233,7 @@
   body {
     margin: 0;
     font: 14px/1.4 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    text-rendering: geometricPrecision;
   }
   a {
     color: #34495e;

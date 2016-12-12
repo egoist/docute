@@ -6,6 +6,9 @@ export default {
   template: 'template.html',
   postcss() {
     return [
+      require('autoprefixer')({
+        browsers: ['ie > 8', 'last 4 versions']
+      }),
       require('cssbag')()
     ]
   },
