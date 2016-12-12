@@ -29,7 +29,20 @@
   import {$$} from 'utils/dom'
 
   marked.setOptions({
-    highlight(code) {
+    highlight(code, lang) {
+      if (lang === 'markdown') {
+        const parsed = frontMatter(code)
+        const markdown = highlight.highlight('markdown', parsed.body).value
+        if (!parsed.frontmatter) return markdown
+        const yaml = highlight.highlight('yaml', parsed.frontmatter).value
+        return `<span class="hljs-comment">---</span>\n${yaml}\n<span class="hljs-comment">---</span>\n${markdown}`
+      }
+      if (lang === 'vue') {
+        lang = 'html'
+      }
+      if (highlight.listLanguages().indexOf(lang) !== -1) {
+        return highlight.highlight(lang, code).value
+      }
       return highlight.highlightAuto(code).value
     }
   })

@@ -6,6 +6,7 @@ hljs.registerLanguage('css', require('highlight.js/lib/languages/css'))
 hljs.registerLanguage('cpp', require('highlight.js/lib/languages/cpp'))
 hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'))
 hljs.registerLanguage('markdown', require('highlight.js/lib/languages/markdown'))
+hljs.registerLanguage('yaml', require('highlight.js/lib/languages/yaml'))
 
 self.hljs = hljs
 

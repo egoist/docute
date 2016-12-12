@@ -166,7 +166,7 @@ def fib(n):
 print fib(5)
 ```
 
-docute 已經對一些語言內置了代碼高亮 `javascript` `cpp` `css` `xml` `bash` `markdown`，你不用添加任何代碼就能高亮這些語言。
+docute 已經對一些語言內置了代碼高亮 `javascript` `cpp` `css` `xml` `bash` `markdown` `yaml`，你不用添加任何代碼就能高亮這些語言。
 
 訪問 https://unpkg.com/highlight-languages/ 查看所有可添加的代碼語言。
 

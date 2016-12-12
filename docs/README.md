@@ -162,7 +162,7 @@ def fib(n):
 print fib(5)
 ```
 
-The built-in languages are: `javascript` `cpp` `css` `xml` `bash` `markdown`
+The built-in languages are: `javascript` `cpp` `css` `xml` `bash` `markdown` `yaml`
 
 Visit https://unpkg.com/highlight-languages/ for all available programming languages.
 
