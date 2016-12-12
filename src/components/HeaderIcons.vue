@@ -14,7 +14,7 @@
       class="header-icon hint--rounded"
       :class="{'hint--bottom': config.twitter, 'hint-bottom-left': !config.twitter}"
       target="_blank"
-      aria-label="Start me on GitHub"
+      aria-label="Star me on GitHub"
       :href="`https://github.com/${config.repo}`">
       <svg-icon name="github" class="svg-icon"></svg-icon>
     </a>
