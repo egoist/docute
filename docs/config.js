@@ -2,7 +2,7 @@ var langs = [
   {title: 'English', path: '/'},
   {title: '简体中文', path: '/languages/zh-Hans'},
   {title: '繁體中文', path: '/languages/zh-Hant'},
-  {title: 'Japanese', path: '/languages/jp'}
+  {title: '日本語', path: '/languages/jp'}
 ]
 
 self.$config = {
