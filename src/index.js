@@ -1,3 +1,4 @@
+import './promise'
 import app from './app'
 
 // ensure dom is ready
