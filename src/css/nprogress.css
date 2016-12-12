@@ -34,7 +34,7 @@
 #nprogress .spinner {
   display: block;
   position: fixed;
-  z-index: 1031;
+  z-index: 9999;
   top: 15px;
   right: 15px;
 }
