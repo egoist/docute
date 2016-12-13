@@ -1,8 +1,8 @@
 var langs = [
   {title: 'English', path: '/'},
-  {title: '简体中文', path: '/languages/zh-Hans'},
-  {title: '繁體中文', path: '/languages/zh-Hant'},
-  {title: '日本語', path: '/languages/jp'}
+  {title: '简体中文', path: '/zh-Hans/'},
+  {title: '繁體中文', path: '/zh-Hant/'},
+  {title: '日本語', path: '/jp/'}
 ]
 
 self.$config = {
@@ -21,7 +21,7 @@ self.$config = {
     ],
     'zh-Hans': [
       {
-        title: '首页', path: '/languages/zh-Hans'
+        title: '首页', path: '/zh-Hans/'
       },
       {
         title: '选择语言', type: 'dropdown', items: langs
@@ -29,7 +29,7 @@ self.$config = {
     ],
     'zh-Hant': [
       {
-        title: '首頁', path: '/languages/zh-Hant'
+        title: '首頁', path: '/zh-Hant/'
       },
       {
         title: '選擇語言', type: 'dropdown', items: langs
