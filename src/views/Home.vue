@@ -26,7 +26,7 @@
   import nprogress from 'nprogress'
   import {findMin, findMax} from 'utils'
   import throttle from 'lodash.throttle'
-  import {$$} from 'utils/dom'
+  import {inBrowser, $$} from 'utils/dom'
 
   marked.setOptions({
     highlight(code, lang) {
@@ -53,7 +53,7 @@
       return {
         jumping: false,
         activeId: null,
-        isMobile: Math.max(document.documentElement.clientWidth, window.innerWidth || 0) <= 768
+        isMobile: inBrowser && (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) <= 768)
       }
     },
     beforeRouteEnter(to, from, next) {
@@ -63,6 +63,8 @@
     created() {
       this.toggleSidebar(false)
       this.fetchData()
+    },
+    mounted() {
       this.scrollSpy()
       this.$watch('id', val => {
         if (val) this.jumpTo(val)

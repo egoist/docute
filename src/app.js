@@ -6,8 +6,10 @@ import App from 'components/App.vue'
 
 sync(store, router)
 
-export default new Vue({
+const app = new Vue({
   router,
   store,
   ...App
 })
+
+export {app, store, router}

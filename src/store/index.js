@@ -19,7 +19,7 @@ function flatten(nav) {
 
 const store = new Vuex.Store({
   state: {
-    config: self.$config,
+    config: typeof window === 'undefined' ? {} : (window.$config || {}),
     attributes: null,
     page: {
       html: '',
@@ -89,7 +89,7 @@ const store = new Vuex.Store({
       } else if (currentTitle) {
         return title ? `${currentTitle} - ${title}` : currentTitle
       }
-      return document.title
+      return state.config.title
     }
   }
 })

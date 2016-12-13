@@ -8,6 +8,8 @@ hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'))
 hljs.registerLanguage('markdown', require('highlight.js/lib/languages/markdown'))
 hljs.registerLanguage('yaml', require('highlight.js/lib/languages/yaml'))
 
-self.hljs = hljs
+if (typeof window !== 'undefined') {
+  window.hljs = hljs
+}
 
 export default hljs

@@ -1,3 +1,5 @@
-export const $ = document.querySelector.bind(document)
+export const inBrowser = typeof document !== 'undefined'
 
-export const $$ = document.querySelectorAll.bind(document)
+export const $ = inBrowser && document.querySelector.bind(document)
+
+export const $$ = inBrowser && document.querySelectorAll.bind(document)
