@@ -56,10 +56,6 @@
         isMobile: inBrowser && (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) <= 768)
       }
     },
-    beforeRouteEnter(to, from, next) {
-      nprogress.start()
-      next()
-    },
     created() {
       this.toggleSidebar(false)
       this.fetchData()
