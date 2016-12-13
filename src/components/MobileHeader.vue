@@ -16,7 +16,7 @@
   import {mapState, mapActions} from 'vuex'
   import HeaderIcons from 'components/HeaderIcons.vue'
   import SvgIcon from 'components/SvgIcon'
-  import {$} from 'utils/dom'
+  import {$, isMobile} from 'utils/dom'
 
   export default {
     computed: {
@@ -39,6 +39,7 @@
         const {header} = this.$refs
         const sidebar = $('.sidebar')
         if (
+          isMobile &&
           header &&
           !sidebar.contains(e.target) &&
           !header.contains(e.target)

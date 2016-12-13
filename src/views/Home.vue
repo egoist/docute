@@ -25,7 +25,7 @@
   import nprogress from 'nprogress'
   import {findMin, findMax} from 'utils'
   import throttle from 'lodash.throttle'
-  import {inBrowser, $$} from 'utils/dom'
+  import {inBrowser, $$, isMobile} from 'utils/dom'
   import marked from 'utils/marked'
 
   marked.setOptions({
@@ -52,13 +52,8 @@
     data() {
       return {
         jumping: false,
-        activeId: null,
-        isMobile: inBrowser && (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) <= 768)
+        activeId: null
       }
-    },
-    beforeRouteEnter(to, from, next) {
-      nprogress.start()
-      next()
     },
     created() {
       this.toggleSidebar(false)
@@ -85,6 +80,8 @@
     methods: {
       ...mapActions(['updatePage', 'toggleSidebar']),
       async fetchData() {
+        nprogress.start()
+
         const renderer = new marked.Renderer()
 
         let headings = []
@@ -150,10 +147,9 @@
 
         document.title = this.documentTitle
 
-        nprogress.done()
-
         // scroll to id (the url query `id`)
         this.$nextTick(() => {
+          nprogress.done()
           if (this.id) {
             this.jumpTo(this.id)
           }
@@ -164,7 +160,7 @@
         jump(`#${slug}`, {
           duration: 300,
           a11y: true,
-          offset: this.isMobile ? -60 : -10,
+          offset: isMobile ? -60 : -10,
           callback: () => {
             this.activeId = this.$route.query.id
             this.jumping = false
