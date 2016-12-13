@@ -30,7 +30,14 @@ Assume that the folder you want for docs is `./docs`:
 docute init ./docs
 ```
 
-Now you're good to go, add a README.md as the homepage for your doc！Then just preview the `./docs` by running:
+Now the `./docs` folder is ready, so far we got:
+
+- README.md: Used as content of homepage
+- index.html: The html that contains the scripts and styles you need
+- config.js: Configuration file
+- .nojekyll: Indicates that this is not a jekyll website, ignore this if you're not deploying to github pages
+
+Then you can preview the docs locally:
 
 ```bash
 docute ./docs

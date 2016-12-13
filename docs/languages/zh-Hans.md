@@ -34,7 +34,14 @@ yarn global add docute-cli
 docute init ./docs
 ```
 
-这样就成功初始化了该目录，尝试添加一个 README.md 作为文档的首页吧！然后在本地预览文档 `./docs` 目录:
+这样就成功初始化了该目录，目前为止你的文档目录中有:
+
+- README.md: 作为文档首页的内容显示
+- index.html: 访问网站时渲染的 html
+- config.js: 配置文件
+- .nojekyll: 表明这不是一个 jekyll 网站，如果你不是要发布到 github pages 那么可以忽略它
+
+然后你可以在本地预览文档:
 
 ```bash
 docute ./docs
