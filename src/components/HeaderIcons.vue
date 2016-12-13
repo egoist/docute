@@ -58,10 +58,15 @@
     display: flex;
     .header-icon {
       margin-left: 20px;
+      &:hover {
+        svg {
+          color: #333;
+        }
+      }
     }
     svg {
       width: 22px;
-      color: #999;
+      color: #666;
     }
   }
 </style>

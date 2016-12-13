@@ -26,12 +26,5 @@
     &:empty {
       display: none;
     }
-    &:hover {
-      .header-icons {
-        svg {
-          color: #333;
-        }
-      }
-    }
   }
 </style>

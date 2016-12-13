@@ -59,10 +59,15 @@
       float: left;
       margin-right: 20px;
       >a, >div {
+        color: #666;
         border-bottom: 3px solid transparent;
         display: block;
         &.router-link-active {
           border-bottom-color: #42b983;
+          color: #333;
+        }
+        &:hover {
+          color: #333;
         }
       }
       .arrow {
