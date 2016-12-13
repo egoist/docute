@@ -70,7 +70,6 @@
         vertical-align: middle;
         margin-top: -1px;
         margin-left: 6px;
-        margin-right: -14px;
         width: 0;
         height: 0;
         border-left: 4px solid transparent;

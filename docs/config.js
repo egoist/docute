@@ -25,6 +25,9 @@ self.$config = {
       },
       {
         title: '选择语言', type: 'dropdown', items: langs
+      },
+      {
+        title: '命令行工具', path: '/zh-Hans/cli'
       }
     ],
     'zh-Hant': [
