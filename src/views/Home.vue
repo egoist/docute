@@ -13,7 +13,6 @@
 </template>
 
 <script>
-  import marked from 'marked'
   import axios from 'axios'
   import jump from 'jump.js'
   import HomeHeader from 'components/HomeHeader.vue'
@@ -27,6 +26,7 @@
   import {findMin, findMax} from 'utils'
   import throttle from 'lodash.throttle'
   import {inBrowser, $$} from 'utils/dom'
+  import marked from 'utils/marked'
 
   marked.setOptions({
     highlight(code, lang) {
@@ -114,7 +114,6 @@
           const getTitle = title ? ` title="${title}"` : ''
           return `<a target="_blank" href="${href}"${getTitle}>${text}</a>`
         }
-
 
         let file = './README.md'
         if (this.$route.meta && this.$route.meta.name === 'page') {
@@ -261,6 +260,21 @@
     .markdown-heading:focus {
       color: #42b983;
       outline: none;
+    }
+    pre {
+      position: relative;
+      &:after {
+        content: attr(data-lang);
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: #ccc;
+        text-align: right;
+        font-size: 0.75em;
+        padding: 5px 10px 0;
+        line-height: 15px;
+        height: 15px;
+      }
     }
   }
 </style>
