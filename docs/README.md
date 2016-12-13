@@ -183,7 +183,7 @@ There're three places to populate your docs:
 
 Just select it in repo's settings page after pushed files:
 
-<img src="./assets/deploy.png" alt="deploy" width="500">
+<img src="https://docute.js.org/assets/deploy.png" alt="deploy" width="500">
 
 ### Deploy to VPS
 

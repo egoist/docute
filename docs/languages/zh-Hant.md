@@ -185,7 +185,7 @@ docute 已經對一些語言內置了代碼高亮 `javascript` `cpp` `css` `xml`
 
 把文件 push 到 GitHub 之後在項目的 settings 裡選擇其中一個就可以了:
 
-<img src="./assets/deploy.png" alt="deploy" width="500">
+<img src="https://docute.js.org/assets/deploy.png" alt="deploy" width="500">
 
 ### 部署到 VPS
 
