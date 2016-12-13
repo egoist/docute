@@ -247,7 +247,7 @@
     bottom: 0;
     padding: 20px;
     background-color: white;
-    z-index: 1;
+    z-index: 1000;
   }
   .main {
     padding: 20px;
