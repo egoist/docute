@@ -1,5 +1,6 @@
 import './promise'
 import {app} from './app'
+import 'utils/globals'
 
 // ensure dom is ready
 document.addEventListener('DOMContentLoaded', () => {

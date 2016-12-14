@@ -16,7 +16,8 @@
     "test": "npm run build",
     "build": "vbuild && npm run build:server",
     "build:server": "vbuild --config vue.config.server.js",
-    "dev": "vbuild -d"
+    "dev": "vbuild -d",
+    "prepublish": "npm run build"
   },
   "files": [
     "dist/docute.js",

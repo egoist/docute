@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import {isType} from 'utils'
 
 Vue.use(Vuex)
 
@@ -20,7 +21,6 @@ function flatten(nav) {
 const store = new Vuex.Store({
   state: {
     config: typeof window === 'undefined' ? {} : (window.$config || {}),
-    attributes: null,
     page: {
       html: '',
       attributes: null,
@@ -75,7 +75,7 @@ const store = new Vuex.Store({
       if (Array.isArray(nav)) {
         return nav
       }
-      if (Vue.util.isPlainObject(nav)) {
+      if (isType(nav, 'Object')) {
         return (attributes && attributes.nav) ?
           nav[attributes.nav] :
           nav.default
@@ -90,6 +90,56 @@ const store = new Vuex.Store({
         return title ? `${currentTitle} - ${title}` : currentTitle
       }
       return state.config.title
+    },
+    currentIcons(state) {
+      const defaultIcons = []
+
+      const {
+        disableDefaultIcons,
+        icons = [],
+        'edit-link': editLink,
+        repo,
+        twitter
+      } = state.config
+
+      const {path} = state.route
+      const {attributes} = state.page
+
+      if (!disableDefaultIcons) {
+        if (editLink) {
+          let filename = path
+          if (/\/$/.test(filename)) filename += 'README'
+          defaultIcons.push({
+            link: `${editLink}${filename}.md`,
+            label: 'Edit this page',
+            svg: 'edit'
+          })
+        }
+        if (repo) {
+          defaultIcons.push({
+            link: `https://github.com/${repo}`,
+            label: 'Star me on GitHub',
+            svg: 'github'
+          })
+        }
+        if (twitter) {
+          defaultIcons.push({
+            link: `https://twitter.com/${twitter}`,
+            label: 'Follow me on Twitter',
+            svg: 'twitter'
+          })
+        }
+      }
+
+      let currentIcons
+      if (isType(icons, 'Object') && attributes) {
+        currentIcons = icons[attributes.icons] || icons.default
+      } else {
+        currentIcons = icons.default || icons
+      }
+      console.log(attributes)
+
+      return defaultIcons.concat(currentIcons)
     }
   }
 })

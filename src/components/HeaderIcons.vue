@@ -1,46 +1,27 @@
 <template>
   <div class="header-icons">
     <a
-      v-if="config['edit-link']"
-      class="header-icon hint--bottom hint--rounded"
-      :class="{'hint--bottom': config.repo, 'hint-bottom-left': !config.repo}"
-      target="_blank"
-      aria-label="Edit this page"
-      :href="editLink">
-      <svg-icon name="edit" class="svg-icon"></svg-icon>
-    </a>
-    <a
-      v-if="config.repo"
+      v-for="(icon, index) in currentIcons"
       class="header-icon hint--rounded"
-      :class="{'hint--bottom': config.twitter, 'hint-bottom-left': !config.twitter}"
+      :class="{
+        'hint--bottom': index !== currentIcons.length - 1,
+        'hint--bottom-left': index === currentIcons.length - 1
+      }"
       target="_blank"
-      aria-label="Star me on GitHub"
-      :href="`https://github.com/${config.repo}`">
-      <svg-icon name="github" class="svg-icon"></svg-icon>
-    </a>
-    <a
-      v-if="config.twitter"
-      class="header-icon hint--bottom-left hint--rounded"
-      target="_blank"
-      aria-label="Follow me on Twitter"
-      :href="`https://twitter.com/${config.twitter}`">
-      <svg-icon name="twitter" class="svg-icon"></svg-icon>
+      :aria-label="icon.label"
+      :href="icon.link">
+      <svg-icon v-if="icon.svg" :name="icon.svg" class="svg-icon"></svg-icon>
     </a>
   </div>
 </template>
 
 <script>
-  import {mapState} from 'vuex'
+  import {mapGetters} from 'vuex'
   import SvgIcon from 'components/SvgIcon'
 
   export default {
     computed: {
-      ...mapState(['config']),
-      editLink() {
-        let filename = this.$route.path
-        if (/\/$/.test(filename)) filename += 'README'
-        return `${this.config['edit-link']}${filename}.md`
-      }
+      ...mapGetters(['currentIcons'])
     },
     components: {
       SvgIcon

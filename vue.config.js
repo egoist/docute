@@ -1,9 +1,13 @@
 import express from 'express'
+import pkg from './package'
 
 export default {
   title: 'docute-client',
   resolve: true,
   template: 'template.html',
+  replace: {
+    '__DOCUTE_VERSION__': JSON.stringify(pkg.version)
+  },
   postcss() {
     return [
       require('autoprefixer')({
