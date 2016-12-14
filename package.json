@@ -43,8 +43,7 @@
     "vue-inline": "^1.0.1",
     "vue-router": "^2.1.1",
     "vuex": "^2.0.0",
-    "vuex-router-sync": "next",
-    "yaml": "^0.3.0"
+    "vuex-router-sync": "next"
   },
   "devDependencies": {
     "cssbag": "^0.1.0",

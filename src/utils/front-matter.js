@@ -1,4 +1,4 @@
-import parser from 'yaml'
+import parser from './yaml'
 
 var optionalByteOrderMark = '\\ufeff?'
 var pattern = '^(' +
@@ -38,7 +38,7 @@ function parse (string) {
   }
 
   var yaml = match[match.length - 1].replace(/^\s+|\s+$/g, '')
-  var attributes = parser.eval(yaml) || {}
+  var attributes = parser(yaml) || {}
   var body = string.replace(match[0], '')
 
   return { attributes: attributes, body: body, frontmatter: yaml }

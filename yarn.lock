@@ -6146,10 +6146,6 @@ yallist@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-2.0.0.tgz#306c543835f09ee1a4cb23b7bce9ab341c91cdd4"
 
-yaml@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/yaml/-/yaml-0.3.0.tgz#c31a616d07acdbc2012d73a6ba5b1b0bdd185a7f"
-
 yargs-parser@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-3.2.0.tgz#5081355d19d9d0c8c5d81ada908cb4e6d186664f"
