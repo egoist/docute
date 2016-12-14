@@ -5,7 +5,7 @@ import store from 'store'
 window.docute = {
   version: __DOCUTE_VERSION__,
   router,
-  store,
+  store
 }
 
 window.Vue = Vue

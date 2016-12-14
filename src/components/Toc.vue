@@ -7,8 +7,9 @@
       :data-level="heading.level">
       <router-link
         exact
+        @click.native="navigate($event, heading.slug)"
         class="sidebar-heading-anchor"
-        :class="{active: active === heading.slug}"
+        :class="{active: activeId === heading.slug}"
         :to="{query: {id: heading.slug}}">
         {{ heading.text }}
       </router-link>
@@ -17,28 +18,25 @@
 </template>
 
 <script>
-  import {mapState} from 'vuex'
+  import {mapState, mapActions} from 'vuex'
+  import {$, isMobile} from 'utils/dom'
+  import jump from 'jump.js'
 
   export default {
     props: {
       headings: {
         type: Array,
         required: true
-      },
-      active: {
-        required: true
       }
     },
     computed: {
-      ...mapState({
-        id: state => state.route.query.id
-      }),
+      ...mapState(['jumping', 'activeId']),
       visibleBlockIndexes() {
-        if (!this.active) return []
+        if (!this.activeId) return []
         const indexes = []
 
         const active = this.headings.filter(heading => {
-          return this.active === heading.slug
+          return this.activeId === heading.slug
         })[0]
         if (!active) return []
         indexes.push(active.index)
@@ -58,6 +56,7 @@
       }
     },
     methods: {
+      ...mapActions(['startJumping', 'stopJumping', 'updateActiveId']),
       hasChildren(index) {
         return this.headings.filter(heading => {
           return heading.parent === index
@@ -66,6 +65,20 @@
       isVisible(level, index) {
         if (level <= 3) return true
         return this.visibleBlockIndexes.indexOf(index) !== -1
+      },
+      navigate({target}, slug) {
+        this.updateActiveId(slug)
+        this.startJumping()
+        jump($(`#${slug}`), {
+          duration: 300,
+          a11y: true,
+          offset: isMobile ? -60 : -10,
+          callback: () => {
+            setTimeout(() => {
+              this.stopJumping()
+            }, 400)
+          }
+        })
       }
     }
   }

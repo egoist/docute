@@ -2,7 +2,7 @@
   <div class="page">
     <figure class="sidebar" v-if="loaded">
       <header-nav class="is-mobile"></header-nav>
-      <toc :headings="page.headings" :active="activeId"></toc>
+      <toc :headings="page.headings"></toc>
     </figure>
     <mobile-header v-if="loaded"></mobile-header>
     <section class="main">
@@ -23,9 +23,7 @@
   import frontMatter from 'utils/front-matter'
   import {mapState, mapGetters, mapActions} from 'vuex'
   import nprogress from 'nprogress'
-  import {findMin, findMax} from 'utils'
-  import throttle from 'lodash.throttle'
-  import {inBrowser, $$, isMobile} from 'utils/dom'
+  import {inBrowser, $, $$, isMobile} from 'utils/dom'
   import marked from 'utils/marked'
 
   marked.setOptions({
@@ -49,21 +47,11 @@
 
   export default {
     name: 'home',
-    data() {
-      return {
-        jumping: false,
-        activeId: null
-      }
-    },
     created() {
       this.toggleSidebar(false)
       this.fetchData()
     },
     mounted() {
-      this.scrollSpy()
-      this.$watch('id', val => {
-        if (val) this.jumpTo(val)
-      })
       this.$watch('$route.path', () => {
         this.fetchData()
       })
@@ -73,12 +61,14 @@
         id: state => state.route.query.id,
         config: state => state.config,
         page: state => state.page,
-        loaded: state => state.loaded
+        loaded: state => state.loaded,
+        jumping: state => state.jumping,
+        activeId: state => state.activeId
       }),
       ...mapGetters(['documentTitle'])
     },
     methods: {
-      ...mapActions(['updatePage', 'toggleSidebar']),
+      ...mapActions(['updatePage', 'toggleSidebar', 'startJumping', 'stopJumping', 'updateActiveId']),
       async fetchData() {
         nprogress.start()
 
@@ -105,7 +95,8 @@
           if (level !== 1) {
             headings.push({level, text, slug, index})
           }
-          return `<h${level} id="${slug}" class="markdown-heading">${text}</h${level}>`
+          const className = level === 1 ? 'markdown-heading' : 'markdown-heading markdown-toc-heading'
+          return `<h${level} id="${slug}" class="${className}">${text}</h${level}>`
         }
         renderer.link = (href, title, text) => {
           const getTitle = title ? ` title="${title}"` : ''
@@ -156,39 +147,16 @@
         })
       },
       jumpTo(slug) {
-        this.jumping = true
+        this.startJumping()
         jump(`#${slug}`, {
           duration: 300,
           a11y: true,
           offset: isMobile ? -60 : -10,
           callback: () => {
-            this.activeId = this.$route.query.id
-            this.jumping = false
+            this.updateActiveId(slug)
+            setTimeout(() => this.stopJumping(), 400)
           }
         })
-      },
-      scrollSpy() {
-        const handleScroll = () => {
-          if (this.jumping) return
-          const headings = $$('.markdown-heading')
-          const els = [...headings].map(heading => {
-            return {
-              top: heading.getBoundingClientRect().top,
-              id: heading.id
-            }
-          })
-          const lastNegative = findMax(els.filter(el => el.top < 0), 'top')[0]
-          const firstPositive = findMin(els.filter(el => el.top > 0), 'top')[0]
-
-          let el = {}
-          if (lastNegative && firstPositive && firstPositive.top > 200) {
-            el = lastNegative
-          } else if (firstPositive) {
-            el = firstPositive
-          }
-          if (el.id) this.activeId = el.id
-        }
-        document.addEventListener('scroll', throttle(handleScroll, 200))
       },
       handleRelation(array) {
         function getParent(parentLevel, end) {
