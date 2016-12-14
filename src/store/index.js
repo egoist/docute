@@ -137,7 +137,6 @@ const store = new Vuex.Store({
       } else {
         currentIcons = icons.default || icons
       }
-      console.log(attributes)
 
       return defaultIcons.concat(currentIcons)
     }

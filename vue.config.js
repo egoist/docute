@@ -3,6 +3,7 @@ import pkg from './package'
 
 export default {
   title: 'docute-client',
+  port: 5000,
   resolve: true,
   template: 'template.html',
   replace: {
