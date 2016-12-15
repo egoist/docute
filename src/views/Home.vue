@@ -13,7 +13,6 @@
 </template>
 
 <script>
-  import jump from 'jump.js'
   import HomeHeader from 'components/HomeHeader.vue'
   import MobileHeader from 'components/MobileHeader.vue'
   import HeaderNav from 'components/HeaderNav.vue'

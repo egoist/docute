@@ -9,7 +9,6 @@
   import throttle from 'lodash.throttle'
   import {findMax, findMin} from 'utils'
   import {$$} from 'utils/dom'
-  import jump from 'utils/jump'
 
   export default {
     computed: {
