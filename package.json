@@ -48,7 +48,6 @@
     "cssbag": "^0.1.0",
     "eslint": "latest",
     "eslint-config-rem": "latest",
-    "github-markdown-css": "^2.4.1",
     "hint.css": "^2.4.1",
     "jest-cli": "^15.1.1",
     "raw-loader": "^0.5.1",

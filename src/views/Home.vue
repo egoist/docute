@@ -67,7 +67,7 @@
       ...mapGetters(['documentTitle'])
     },
     methods: {
-      ...mapActions(['updatePage', 'toggleSidebar', 'startJumping', 'stopJumping', 'updateActiveId']),
+      ...mapActions(['updatePage', 'toggleSidebar', 'jumpToId']),
       async fetchData() {
         nprogress.start()
 
@@ -95,7 +95,8 @@
             headings.push({level, text, slug, index})
           }
           const className = level === 1 ? 'markdown-heading' : 'markdown-heading markdown-toc-heading'
-          return `<h${level} id="${slug}" class="${className}">${text}</h${level}>`
+          const attr = level === 1 ? '' : ` jump-to-id="${slug}"`
+          return `<h${level} id="${slug}"${attr} class="${className}">${text}</h${level}>`
         }
         renderer.link = (href, title, text) => {
           const getTitle = title ? ` title="${title}"` : ''
@@ -136,19 +137,7 @@
         this.$nextTick(() => {
           nprogress.done()
           if (this.id) {
-            this.jumpTo(this.id)
-          }
-        })
-      },
-      jumpTo(slug) {
-        this.startJumping()
-        jump(`#${slug}`, {
-          duration: 300,
-          a11y: true,
-          offset: isMobile ? -60 : -10,
-          callback: () => {
-            this.updateActiveId(slug)
-            setTimeout(() => this.stopJumping(), 400)
+            this.jumpToId(this.id)
           }
         })
       },
@@ -180,7 +169,7 @@
 
 <style src="css/nprogress.css"></style>
 <style src="css/highlight.css"></style>
-<style src="github-markdown-css/github-markdown.css"></style>
+<style src="css/markdown.css"></style>
 <style src="hint.css/hint.css"></style>
 <style>
   * {

@@ -9,6 +9,7 @@
   import throttle from 'lodash.throttle'
   import {findMax, findMin} from 'utils'
   import {$$} from 'utils/dom'
+  import jump from 'utils/jump'
 
   export default {
     computed: {
@@ -16,9 +17,10 @@
     },
     mounted() {
       this.scrollSpy()
+      this.detectClick()
     },
     methods: {
-      ...mapActions(['updateActiveId']),
+      ...mapActions(['updateActiveId', 'jumpToId']),
       scrollSpy() {
         const handleScroll = () => {
           if (this.jumping) return
@@ -42,6 +44,14 @@
         }
 
         document.addEventListener('scroll', throttle(handleScroll, 300))
+      },
+      detectClick() {
+        document.addEventListener('click', e => {
+          const id = e.target.getAttribute('jump-to-id')
+          if (id) {
+            this.jumpToId(id)
+          }
+        })
       }
     }
   }

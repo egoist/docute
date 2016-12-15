@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import {isType} from 'utils'
+import jump from 'utils/jump'
 
 Vue.use(Vuex)
 
@@ -77,6 +78,13 @@ const store = new Vuex.Store({
     },
     updateActiveId({commit}, payload) {
       commit('UPDATE_ACTIVE_ID', payload)
+    },
+    jumpToId({dispatch}, id) {
+      dispatch('updateActiveId', id)
+      dispatch('startJumping')
+      jump(id, () => setTimeout(() => {
+        dispatch('stopJumping')
+      }, 400))
     }
   },
   getters: {
