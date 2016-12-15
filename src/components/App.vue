@@ -38,7 +38,6 @@
           } else if (firstPositive) {
             el = firstPositive
           }
-          console.log('fuck')
           if (el.id) this.updateActiveId(el.id)
         }
 
