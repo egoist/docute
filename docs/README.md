@@ -262,7 +262,7 @@ Visit https://unpkg.com/highlight-languages/ for all available programming langu
 
 #### CSS Helpers
 
-CSS helpers make you docs even more readable.
+CSS helpers make your docs even more readable.
 
 ##### p.tip
 
