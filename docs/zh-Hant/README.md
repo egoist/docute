@@ -47,6 +47,8 @@ docute init ./docs
 docute ./docs
 ```
 
+打開 http://localhost:8080 就能看到你的網站了。
+
 ## 配置文件
 
 執行 `docute init` 後你的文檔目錄會有一個 `config.js` 配置文件:
@@ -84,6 +86,8 @@ self.$config = {
 
 #### 圖標
 
+##### 內置圖標
+
 ```js
 self.$config = {
   // github repo 的縮略名
@@ -93,6 +97,88 @@ self.$config = {
   // 頁面源文件地址
   'edit-link': 'https://github.com/egoist/docute/blob/master/docs'
 }
+```
+
+##### 自定義圖標
+
+你可以指定一個 SVG symbol 的 id 來添加自定義圖標，[SVG symbols](https://css-tricks.com/svg-symbol-good-choice-icons/) 讓你能夠輕鬆地使用 inline SVG 圖標。
+
+首先，把 SVG 圖標添加到 HTML 中，這裡是 `index.html`:
+
+```html
+<body>
+  <div id="app"></div>
+  <!-- 添加到任意 #app 以外的地方-->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="my-icon" viewBox="0 0 22 22">
+      <!-- 圖標裡的圖形比如 `<path>` 放在這裡 -->
+    </symbol>
+    <!-- ... 其它 symbols -->
+  </svg>
+</body>
+```
+
+然後在 `config.js` 中定義:
+
+```js
+self.$config = {
+  icons: [
+    {
+      label: '鼠標移上來了!', // 鼠標移到圖標上顯示的提示
+      svgId: 'my-icon' // symbol 的 id
+    }
+  ]
+}
+```
+
+你也可以添加一個 `svgClass` 以便你能通過 CSS 來控製圖標樣式:
+
+```js
+self.$config = {
+  icons: [
+    {
+      label: '鼠標移上來了!',
+      svgId: 'my-icon',
+      svgClass: 'my-icon-class'
+    }
+  ]
+}
+```
+
+```css
+/*
+  比如讓自定義圖標和內置圖標的 hover 效果相同
+*/
+.my-icon-class {
+  fill: #ccc;
+}
+.my-icon-class:hover {
+  fill: #333;
+}
+```
+
+網絡上有很多免費的優質 SVG 圖標資源，比如 [bytesize-icons](https://github.com/danklammer/bytesize-icons) 和 [simple icons](https://simpleicons.org/)。
+
+##### 具名圖標
+
+你可以設置多套圖標，然後給不同頁面指定不同圖標:
+
+```js
+self.$config = {
+  icons: {
+    default: [{label: 'hello'}],
+    chinese: [{label: '你好'}]
+  }
+}
+```
+
+現在所有頁面都會使用 `default` 這套圖標，你可以通過 front-matter 指定頁面使用其它圖標，比如使用 `chinese`:
+
+```markdown
+---
+icons: chinese
+---
+你好世界
 ```
 
 #### 下拉菜單

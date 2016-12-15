@@ -86,6 +86,8 @@ self.$config = {
 
 #### 图标
 
+##### 内置图标
+
 ```js
 self.$config = {
   // github repo 的缩略名
@@ -95,6 +97,88 @@ self.$config = {
   // 页面源文件地址
   'edit-link': 'https://github.com/egoist/docute/blob/master/docs'
 }
+```
+
+##### 自定义图标
+
+你可以指定一个 SVG symbol 的 id 来添加自定义图标，[SVG symbols](https://css-tricks.com/svg-symbol-good-choice-icons/) 让你能够轻松地使用 inline SVG 图标。
+
+首先，把 SVG 图标添加到 HTML 中，这里是 `index.html`:
+
+```html
+<body>
+  <div id="app"></div>
+  <!-- 添加到任意 #app 以外的地方-->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="my-icon"  viewBox="0 0 22 22">
+      <!-- 图标里的图形比如 `<path>` 放在这里 -->
+    </symbol>
+    <!-- ... 其它 symbols -->
+  </svg>
+</body>
+```
+
+然后在 `config.js` 中定义:
+
+```js
+self.$config = {
+  icons: [
+    {
+      label: '鼠标移上来了!', // 鼠标移到图标上显示的提示
+      svgId: 'my-icon' // symbol 的 id
+    }
+  ]
+}
+```
+
+你也可以添加一个 `svgClass` 以便你能通过 CSS 来控制图标样式:
+
+```js
+self.$config = {
+  icons: [
+    {
+      label: '鼠标移上来了!',
+      svgId: 'my-icon',
+      svgClass: 'my-icon-class'
+    }
+  ]
+}
+```
+
+```css
+/*
+  比如让自定义图标和内置图标的 hover 效果相同
+*/
+.my-icon-class {
+  fill: #ccc;
+}
+.my-icon-class:hover {
+  fill: #333;
+}
+```
+
+网络上有很多免费的优质 SVG 图标资源，比如 [bytesize-icons](https://github.com/danklammer/bytesize-icons) 和 [simple icons](https://simpleicons.org/)。
+
+##### 具名图标
+
+你可以设置多套图标，然后给不同页面指定不同图标:
+
+```js
+self.$config = {
+  icons: {
+    default: [{label: 'hello'}],
+    chinese: [{label: '你好'}]
+  }
+}
+```
+
+现在所有页面都会使用 `default` 这套图标，你可以通过 front-matter 指定页面使用其它图标，比如使用 `chinese`:
+
+```markdown
+---
+icons: chinese
+---
+你好世界
 ```
 
 #### 下拉菜单

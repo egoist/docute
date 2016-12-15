@@ -82,6 +82,8 @@ self.$config = {
 
 #### Icons
 
+##### Built-in Icons
+
 ```js
 self.$config = {
   // slug for your github repo
@@ -91,6 +93,89 @@ self.$config = {
   // the link to source file of current page
   'edit-link': 'https://github.com/egoist/docute/blob/master/docs'
 }
+```
+
+##### Custom Icons
+
+You can set custom icon by providing the id of SVG symbol, [SVG symbols](https://css-tricks.com/svg-symbol-good-choice-icons/) is just a simple way to use inline SVG around.
+
+First, add it to your HTML file, which is `index.html` here:
+
+```html
+<body>
+  <div id="app"></div>
+  <!-- you can add it everywhere outside #app -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="my-icon"  viewBox="0 0 22 22">
+      <!-- all shapes like `<path>` go here -->
+    </symbol>
+    <!-- ... other symbols -->
+  </svg>
+</body>
+```
+
+Then use it in `config.js`:
+
+```js
+self.$config = {
+  icons: [
+    {
+      label: 'Hovered!', // the text for tooltip
+      svgId: 'my-icon' // the id of symbol
+    }
+  ]
+}
+```
+
+You can also add `svgClass` property to use CSS to control the style of your icon
+
+```js
+self.$config = {
+  icons: [
+    {
+      label: 'Hovered!',
+      svgId: 'my-icon',
+      svgClass: 'my-icon-class'
+    }
+  ]
+}
+```
+
+```css
+/*
+  To make consistent with default icon hover effect
+  You can:
+*/
+.my-icon-class {
+  fill: #ccc;
+}
+.my-icon-class:hover {
+  fill: #333;
+}
+```
+
+There're many resources for good free SVG icons, check out [bytesize-icons](https://github.com/danklammer/bytesize-icons) and [simple icons](https://simpleicons.org/).
+
+##### Named Icons
+
+You can have multiple sets of icons and use different set for different pages, just set the `icons` to a plain object:
+
+```js
+self.$config = {
+  icons: {
+    default: [{label: 'hello'}],
+    chinese: [{label: '你好'}]
+  }
+}
+```
+
+Now, every page would use `default` icons, to use `chinese` icons just add front-matter in your page:
+
+```markdown
+---
+icons: chinese
+---
+hello world!
 ```
 
 #### Dropdown menu

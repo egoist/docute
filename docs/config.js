@@ -44,5 +44,13 @@ self.$config = {
         title: '命令行工具', path: '/zh-Hant/cli'
       }
     ]
-  }
+  },
+  icons: [
+    {
+      label: '关注我的微博',
+      svgId: 'i-weibo',
+      svgClass: 'weibo-icon',
+      link: 'http://weibo.com/zengxinyu'
+    }
+  ]
 }
