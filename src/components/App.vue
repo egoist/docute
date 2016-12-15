@@ -46,9 +46,14 @@
       },
       detectClick() {
         document.addEventListener('click', e => {
-          const id = e.target.getAttribute('jump-to-id')
+          const el = e.target
+          const id = el.getAttribute('jump-to-id')
           if (id) {
-            this.jumpToId(id)
+            return this.jumpToId(id)
+          }
+          const link = el.getAttribute('router-link')
+          if (link) {
+            return this.$router.push(link)
           }
         })
       }
