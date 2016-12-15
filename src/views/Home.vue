@@ -13,7 +13,6 @@
 </template>
 
 <script>
-  import $fetch from 'cash-fetch'
   import jump from 'jump.js'
   import HomeHeader from 'components/HomeHeader.vue'
   import MobileHeader from 'components/MobileHeader.vue'
@@ -113,20 +112,15 @@
           }
         }
 
-        let text
-        try {
-          text = await $fetch(file).then(res => res.text())
-        } catch (err) {
-          nprogress.set(0.6)
-          if (err.response) {
-            if (err.response.status === 404) {
-              this.$router.replace('/404')
-            }
-          }
+        const res = await fetch(file)
+        nprogress.inc()
+
+        if (res.status === 404) {
+          this.$router.replace('/404')
           return
         }
 
-        nprogress.set(0.6)
+        const text = await res.text()
 
         const parsed = frontMatter(text)
 

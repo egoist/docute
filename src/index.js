@@ -1,4 +1,5 @@
 import './promise'
+import 'isomorphic-fetch'
 import {app} from './app'
 import 'utils/globals'
 
