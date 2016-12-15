@@ -62,7 +62,7 @@
         }).length > 0
       },
       isVisible(level, index) {
-        if (level <= 3) return true
+        if (level <= 4) return true
         return this.visibleBlockIndexes.indexOf(index) !== -1
       },
       navigate(slug) {
@@ -96,9 +96,11 @@
       }
       &[data-level="4"] {
         padding-left: 15px;
+        font-size: 13px;
       }
       &[data-level="5"] {
         padding-left: 30px;
+        font-size: 13px;
       }
 
       .sidebar-heading-anchor {

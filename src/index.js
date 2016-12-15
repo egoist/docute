@@ -1,5 +1,6 @@
 import './promise'
 import 'isomorphic-fetch'
+import 'element-closest'
 import {app} from './app'
 import 'utils/globals'
 

@@ -19,12 +19,21 @@
 
 <style>
   .header {
+    padding: 0 30px;
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     &:empty {
       display: none;
+    }
+  }
+</style>
+
+<style>
+  @media screen and (max-width: 768px) {
+    .header {
+      padding: 0 10px;
     }
   }
 </style>

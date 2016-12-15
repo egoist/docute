@@ -23,6 +23,7 @@
   import nprogress from 'nprogress'
   import {inBrowser, $, $$, isMobile} from 'utils/dom'
   import marked from 'utils/marked'
+  import LinkIcon from '!raw-loader!svg/link.svg'
 
   marked.setOptions({
     highlight(code, lang) {
@@ -33,12 +34,9 @@
         const yaml = highlight.highlight('yaml', parsed.frontmatter).value
         return `<span class="hljs-comment">---</span>\n${yaml}\n<span class="hljs-comment">---</span>\n${markdown}`
       }
-      if (lang === 'vue') {
-        lang = 'html'
-      }
-      if (highlight.listLanguages().indexOf(lang) !== -1) {
-        return highlight.highlight(lang, code).value
-      }
+
+      const isValid = !!(lang && highlight.getLanguage(lang))
+      if (isValid) return highlight.highlight(lang, code).value
       return highlight.highlightAuto(code).value
     }
   })
@@ -94,8 +92,11 @@
             headings.push({level, text, slug, index})
           }
           const className = level === 1 ? 'markdown-heading' : 'markdown-heading markdown-toc-heading'
-          const attr = level === 1 ? '' : ` jump-to-id="${slug}"`
-          return `<h${level} id="${slug}"${attr} class="${className}">${text}</h${level}>`
+          const anchor = level === 1 ? '' : ` <span class="anchor" jump-to-id="${slug}">${LinkIcon}</span>`
+          return `<h${level} id="${slug}" class="${className}">
+              ${anchor}
+              ${text}
+            </h${level}>`
         }
         renderer.link = (href, title, text) => {
           const getTitle = title ? ` title="${title}"` : ''
@@ -200,29 +201,8 @@
     z-index: 1000;
   }
   .main {
-    padding: 20px;
-    padding-left: 300px;
-  }
-  .markdown-body {
-    .markdown-heading:focus {
-      color: #42b983;
-      outline: none;
-    }
-    pre {
-      position: relative;
-      &:after {
-        content: attr(data-lang);
-        position: absolute;
-        top: 0;
-        right: 0;
-        color: #ccc;
-        text-align: right;
-        font-size: 0.75em;
-        padding: 5px 10px 0;
-        line-height: 15px;
-        height: 15px;
-      }
-    }
+    padding: 20px 0;
+    padding-left: 280px;
   }
 </style>
 
@@ -241,8 +221,7 @@
       display: flex !important;
     }
     .main {
-      padding-left: 10px;
-      padding-right: 10px;
+      padding-left: 0;
       padding-top: 70px;
     }
     .sidebar {

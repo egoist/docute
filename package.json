@@ -32,6 +32,7 @@
   ],
   "dependencies": {
     "babel-runtime": "^6.20.0",
+    "element-closest": "^2.0.2",
     "highlight.js": "^9.8.0",
     "isomorphic-fetch": "^2.2.1",
     "jump.js": "^1.0.1",

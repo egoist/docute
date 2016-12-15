@@ -55,7 +55,7 @@ docute ./docs
 
 ```js
 self.$config = {
-  // 站点名称
+  // 站点名称
   title: 'My Website Name'
   // 其它配置...
 }
@@ -260,6 +260,100 @@ print fib(5)
 docute 已经对一些语言内置了代码高亮 `javascript` `cpp` `css` `xml` `bash` `markdown` `yaml`，你不用添加任何代码就能高亮这些语言。
 
 访问 https://unpkg.com/highlight-languages/ 查看所有可添加的代码语言。
+
+### 文档助手
+
+#### 预置 CSS 样式
+
+使用预置的 CSS 样式能让你的文档更易读。
+
+##### p.tip
+
+显示一段提示
+
+```html
+<p class="tip">
+  docute 对新手和专家都很实用！
+</p>
+```
+
+它的呈现效果是:
+
+<p class="tip">
+  docute 对新手和专家都很实用！
+</p>
+
+##### p.warning
+
+类似 `p.tip` 但更为强调:
+
+```html
+<p class="warning">
+  雷神小动，刺云雨零耶，君将留？<br>
+  雷神小动，虽不零，吾将留妹留者。<br>
+  <strong>日文</strong>：<br><br>
+  鸣神の 少しとよみて さし昙り 雨も降らんか 君を留めん<br>
+  鸣神の 少しとよみて 降らずとも 我は止まらん 妹し留めば<br>
+  <strong>译文：</strong><br><br>
+  隐约雷鸣 阴霾天空 但盼风雨来 能留你在此<br>
+  隐约雷鸣 阴霾天空 即使天无雨 我亦留此地<br>
+</p>
+```
+
+它的呈现效果是:
+
+<p class="warning">
+  雷神小动，刺云雨零耶，君将留？<br>
+  雷神小动，虽不零，吾将留妹留者。<br><br>
+  <strong>日文</strong>：<br>
+  鸣神の 少しとよみて さし昙り 雨も降らんか 君を留めん<br>
+  鸣神の 少しとよみて 降らずとも 我は止まらん 妹し留めば<br><br>
+  <strong>译文：</strong><br>
+  隐约雷鸣 阴霾天空 但盼风雨来 能留你在此<br>
+  隐约雷鸣 阴霾天空 即使天无雨 我亦留此地<br>
+</p>
+
+#### HTML 属性
+
+你可以用内置的 HTML DOM 属性实现一些 JS 效果:
+
+##### jump-to-id
+
+跳到一个标题，比如 `/#/?id=install`:
+
+```html
+<a href="#" jump-to-id="install">查看安装提示!</a>
+```
+
+<p class="tip">
+  注意这种方法智能在当前页面是用，他并不能跳到其它的页面的标题。跨页面跳转请使用 <a href="#" jump-to-id="router-link">router-link</a> 属性。
+</p>
+
+##### router-link
+
+页面间跳转，支持 URL 和查询参数 (query):
+
+```html
+<a href="#" router-link="/">首页</a>
+<a href="#" router-link="/chinese?id=install">查看中文安装指南</a>
+```
+
+<p class="warning">
+  请勿用 <code>router-link</code> 来跳到当前页面的一个标题处，这样使用会导致没有滑动效果，应该用 <a href="#" jump-to-id="jump-to-id">jump-to-id</a> 属性来实现。
+</p>
+
+#### 全局变量
+
+你可能会需要这些全局变量:
+
+```js
+docute
+docute.version // docute 的版本号
+docute.store // Vuex store 实例
+docute.router // Vue router 实例
+
+Vue // Vue 构造函数
+```
 
 ### 部署到 GitHub
 

@@ -46,16 +46,26 @@
       },
       detectClick() {
         document.addEventListener('click', e => {
-          const el = e.target
-          const id = el.getAttribute('jump-to-id')
-          if (id) {
-            return this.jumpToId(id)
-          }
-          const link = el.getAttribute('router-link')
-          if (link) {
-            return this.$router.push(link)
-          }
+          this.handleNavigateAttribute(e)
         })
+      },
+      handleNavigateAttribute(e) {
+        const jumpEl = e.target.closest('[jump-to-id]')
+        if (!jumpEl) return
+        const id = jumpEl.getAttribute('jump-to-id')
+        if (id) {
+          e.preventDefault()
+          this.$router.push({query: {id}})
+          return this.jumpToId(id)
+        }
+
+        const linkEl = e.target.closest('[router-link]')
+        if (!linkEl) return
+        const link = linkEl.getAttribute('router-link')
+        if (link) {
+          e.preventDefault()
+          return this.$router.push(link)
+        }
       }
     }
   }

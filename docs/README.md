@@ -258,6 +258,86 @@ The built-in languages are: `javascript` `cpp` `css` `xml` `bash` `markdown` `ya
 
 Visit https://unpkg.com/highlight-languages/ for all available programming languages.
 
+### Doc Helpers
+
+#### CSS Helpers
+
+CSS helpers make you docs even more readable.
+
+##### p.tip
+
+Show some tips in your doc:
+
+```html
+<p class="tip">
+  This is for beginners and pros, just enjoy!
+</p>
+```
+
+And you get:
+
+<p class="tip">
+  This is for beginners and pros, just enjoy!
+</p>
+
+##### p.warning
+
+Similar to `p.tip` but it looks more serious:
+
+```html
+<p class="warning">
+  Do not do like this, do it that way please. If you still can't help doing such way, we will call your mom and order some pizza to let you know, you're in trouble!
+</p>
+```
+
+And you get:
+
+<p class="warning">
+  Do not do like this, do it that way please. If you still can't help doing such way, we will call you mom and order some pizza to let you know, you're in trouble!
+</p>
+
+#### HTML Attributes
+
+docute gives you some built-in html attributes for shot-hand use:
+
+##### jump-to-id
+
+Jump to a heading anchor, for `/#/?id=install` you can do:
+
+```html
+<a href="#" jump-to-id="install">Check out install intructions!</a>
+```
+
+<p class="tip">
+  Note that you can only navigate id in the same page, it <strong>cannot</strong> jump to another page! For cross-page navigation, use <a href="#" jump-to-id="router-link">router-link</a> attribute.
+</p>
+
+##### router-link
+
+Navigate to a new page, support both URL path and query:
+
+```html
+<a href="#" router-link="/">Go Home</a>
+<a href="#" router-link="/chinese?id=install">Checkout Chinese Installation guide!</a>
+```
+
+<p class="warning">
+  Do not use <code>router-link</code> to jump to an id in the same page, it will not give you the smooth-scroll effect if it's in the same page, use <a href="#" jump-to-id="jump-to-id">jump-to-id</a> instead.
+</p>
+
+#### Global Variables
+
+You can access following global variables if you need:
+
+```js
+docute
+docute.version // the version of docute
+docute.store // Vuex store instance
+docute.router // Vue router instance
+
+Vue // Vue constructor
+```
+
 ### Deploy to GitHub
 
 There're three places to populate your docs:
