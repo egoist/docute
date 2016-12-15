@@ -326,7 +326,7 @@ docute 已经对一些语言内置了代码高亮 `javascript` `cpp` `css` `xml`
 ```
 
 <p class="tip">
-  注意这种方法智能在当前页面是用，他并不能跳到其它的页面的标题。跨页面跳转请使用 <a href="#" jump-to-id="router-link">router-link</a> 属性。
+  注意这种方法智能在当前页面使用，他并不能跳到其它的页面的标题。跨页面跳转请使用 <a href="#" jump-to-id="router-link">router-link</a> 属性。
 </p>
 
 ##### router-link

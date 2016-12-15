@@ -326,7 +326,7 @@ docute 已經對一些語言內置了代碼高亮 `javascript` `cpp` `css` `xml`
 ```
 
 <p class="tip">
-  注意這種方法智能在當前頁面是用，他並不能跳到其它的頁面的標題。跨頁面跳轉請使用 <a href="#" jump-to-id="router-link">router-link</a> 屬性。
+  注意這種方法智能在當前頁面使用，他並不能跳到其它的頁面的標題。跨頁面跳轉請使用 <a href="#" jump-to-id="router-link">router-link</a> 屬性。
 </p>
 
 ##### router-link
