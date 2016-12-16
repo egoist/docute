@@ -31,7 +31,7 @@
     ga('create', 'UA-54857209-11', 'auto');
     ga('send', 'pageview');
     docute.router.afterEach(function (to) {
-      ga('set', 'page', to);
+      ga('set', 'page', to.fullPath);
       ga('send', 'pageview');
     });
   </script>
