@@ -381,3 +381,19 @@ server {
   }
 }
 ```
+
+## FAQ
+
+### Where's my sidebar from?
+
+The sidebar (or the TOC) is coming from your markdown files, we parse markdown content and get headings (h2 to h5) to group a nested TOC.
+
+### Is is like gitbook?
+
+Yes and No. Yes is because they are both for writing documentation and they have the similar UI, but docute does not require you to **generate** static html files, and have less configurations while still keeping the most useful features for writing elegant docs.
+
+docute is also built by what I've learned from using gitbook/hexo/jekyll in the past years.
+
+### What's wrong with build before publish?
+
+It's not wrong, but we don't always need it that way, sometimes a simple Single Page Application is good enough for our docs while we can get rid of some verbose steps to publish docs. In fact, we're also looking forward to [supporting this feature and server-side rendering](https://github.com/egoist/docute/issues/12) at some point, I know many SEO guys and girls would like this even if Google already supports retrieving data from SPA website.

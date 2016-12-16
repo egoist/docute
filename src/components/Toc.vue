@@ -10,8 +10,8 @@
         @click.native="navigate(heading.slug)"
         class="sidebar-heading-anchor"
         :class="{active: activeId === heading.slug}"
-        :to="{query: {id: heading.slug}}">
-        {{ heading.text }}
+        :to="{query: {id: heading.slug}}"
+        v-html="heading.text">
       </router-link>
     </li>
   </ul>
