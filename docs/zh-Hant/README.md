@@ -407,7 +407,7 @@ server {
 
 ### 這和 gitbook 有什麽不同?
 
-首先 docute 和 gitbook 其實很類似，因為它們都是用來寫文檔並且布局很像，但是 docute 不需要妳在發布文檔前先把它編譯到 HTML 文件，並且配置很少的同時保證的實用性，妳可以用 docute 寫出很優雅的文檔。
+首先 docute 和 gitbook 其實很類似，因為它們都是用來寫文檔並且布局很像，但是 docute 不需要妳在發布文檔前先把它編譯到 HTML 文件，並且配置很少的同時保證了實用性，妳可以用 docute 寫出很優雅的文檔。
 
 docute 同時總結了我們近幾年使用 gitbook/hexo/jekyll 這類工具撰寫文檔的經驗。
 
