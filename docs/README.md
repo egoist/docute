@@ -338,6 +338,31 @@ docute.router // Vue router instance
 Vue // Vue constructor
 ```
 
+### Analytics
+
+#### Google Analytics
+
+Since a docute website is purely SPA, it's a bit different from using Google Analytics in traditional website, just add following markup to the end of your HTML file (within `<body>` but after loading `docute.js`):
+
+```html
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-XXXXX-Y', 'auto');
+ga('send', 'pageview');
+docute.router.afterEach(function (to) {
+  ga('set', 'page', to);
+  ga('send', 'pageview');
+});
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+```
+
+<p class="warning">
+  Note that the <code>UA-XXXXX-Y</code> indicates your own track id.
+</p>
+
 ### Deploy to GitHub
 
 There're three places to populate your docs:

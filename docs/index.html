@@ -23,8 +23,18 @@
   <div id="app"></div>
   <script src="./config.js"></script>
   <script src="https://unpkg.com/docute@0.8.1/dist/docute.js"></script>
+  <!-- don't remove this part -->
   <script src="https://unpkg.com/highlight-languages/python.js"></script>
   <script src="https://unpkg.com/highlight-languages/nginx.js"></script>
-  <!-- don't remove this part -->
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-54857209-11', 'auto');
+    ga('send', 'pageview');
+    docute.router.afterEach(function (to) {
+      ga('set', 'page', to);
+      ga('send', 'pageview');
+    });
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
 </body>
 </html>

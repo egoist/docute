@@ -355,6 +355,31 @@ docute.router // Vue router 實例
 Vue // Vue 構造函數
 ```
 
+### 流量統計
+
+#### Google Analytics
+
+因為 docute 是壹個單頁應用，所以和傳統網站相比使用 Google Analytics 的方法略有不同，把下面的代碼添加到 HTML 文件裏即可 (放到 `body` 裏並且在加載 `docute.js` 之後):
+
+```html
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-XXXXX-Y', 'auto');
+ga('send', 'pageview');
+docute.router.afterEach(function (to) {
+  ga('set', 'page', to);
+  ga('send', 'pageview');
+});
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!-- End Google Analytics -->
+```
+
+<p class="warning">
+  註意請把 <code>UA-XXXXX-Y</code> 替換成妳自己的跟蹤 ID.
+</p>
+
 ### 部署到 GitHub
 
 有三個地方可供妳存儲文檔:
