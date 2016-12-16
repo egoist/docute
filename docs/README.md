@@ -388,7 +388,7 @@ server {
 
 The sidebar (or the TOC) is coming from your markdown files, we parse markdown content and get headings (h2 to h5) to group a nested TOC.
 
-### Is is like gitbook?
+### Is it like gitbook?
 
 Yes and No. Yes is because they are both for writing documentation and they have the similar UI, but docute does not require you to **generate** static html files, and have less configurations while still keeping the most useful features for writing elegant docs.
 
