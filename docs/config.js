@@ -9,6 +9,7 @@ self.$config = {
   title: 'Docute',
   repo: 'egoist/docute',
   twitter: 'rem_rin_rin',
+  url: 'https://docute.js.org',
   'edit-link': 'https://github.com/egoist/docute/blob/master/docs',
   nav: {
     default: [
@@ -16,10 +17,13 @@ self.$config = {
         title: 'Home', path: '/'
       },
       {
-        title: 'Languages', type: 'dropdown', items: langs
+        title: 'Plugins', path: '/plugins'
       },
       {
         title: 'Command-Line Tool', path: '/cli'
+      },
+      {
+        title: 'Languages', type: 'dropdown', items: langs
       }
     ],
     'zh-Hans': [
@@ -27,10 +31,13 @@ self.$config = {
         title: '首页', path: '/zh-Hans/'
       },
       {
-        title: '选择语言', type: 'dropdown', items: langs
+        title: '插件', path: '/zh-Hans/plugins'
       },
       {
         title: '命令行工具', path: '/zh-Hans/cli'
+      },
+      {
+        title: '选择语言', type: 'dropdown', items: langs
       }
     ],
     'zh-Hant': [
@@ -38,10 +45,13 @@ self.$config = {
         title: '首頁', path: '/zh-Hant/'
       },
       {
-        title: '選擇語言', type: 'dropdown', items: langs
+        title: '插件', path: '/zh-Hant/plugins'
       },
       {
         title: '命令行工具', path: '/zh-Hant/cli'
+      },
+      {
+        title: '選擇語言', type: 'dropdown', items: langs
       }
     ]
   },
@@ -52,5 +62,12 @@ self.$config = {
       svgClass: 'weibo-icon',
       link: 'http://weibo.com/zengxinyu'
     }
+  ],
+  plugins: [
+    docsearch({
+      apiKey: '65360cf9a91d87cd455d2b286d0d89ee',
+      indexName: 'docute',
+      tags: ['english', 'zh-Hans', 'zh-Hant']
+    })
   ]
 }

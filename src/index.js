@@ -1,7 +1,7 @@
 import './promise'
 import 'isomorphic-fetch'
 import 'element-closest'
-import {app} from './app'
+import {app, store} from './app'
 import 'utils/globals'
 
 // ensure dom is ready

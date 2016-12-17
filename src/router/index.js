@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from 'store'
 import Home from 'views/Home.vue'
 import Page from 'views/Page.vue'
 import NotFound from 'views/404.vue'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -31,3 +32,5 @@ export default new Router({
     }
   ]
 })
+
+export default router

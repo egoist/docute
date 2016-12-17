@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import {isType} from 'utils'
 import jump from 'utils/jump'
+import nprogress from 'nprogress'
 
 Vue.use(Vuex)
 
@@ -30,7 +31,10 @@ const store = new Vuex.Store({
     loaded: false,
     showSidebar: false,
     jumping: false,
-    activeId: ''
+    activeId: '',
+    searching: false,
+    searchResult: null,
+    searchKeyword: ''
   },
   mutations: {
     TOGGLE_DROPDOWN(state, index) {
@@ -58,6 +62,16 @@ const store = new Vuex.Store({
     },
     UPDATE_ACTIVE_ID(state, payload) {
       state.activeId = payload
+    },
+    START_SEARCHING(state) {
+      state.searching = true
+    },
+    STOP_SEARCHING(state, payload) {
+      state.searching = false
+      state.searchResult = payload
+    },
+    UPDATE_SEARCH_KEYWORD(state, payload) {
+      state.searchKeyword = payload
     }
   },
   actions: {
@@ -85,6 +99,21 @@ const store = new Vuex.Store({
       jump(id, () => setTimeout(() => {
         dispatch('stopJumping')
       }, 400))
+    },
+    startSearching({commit}) {
+      nprogress.start()
+      commit('START_SEARCHING')
+    },
+    stopSearching({commit}, payload) {
+      nprogress.done()
+      commit('STOP_SEARCHING', payload)
+    },
+    updateSearchKeyword({commit}, payload) {
+      commit('UPDATE_SEARCH_KEYWORD', payload)
+    },
+    searchReset({commit}) {
+      commit('UPDATE_SEARCH_KEYWORD', '')
+      commit('STOP_SEARCHING', null)
     }
   },
   getters: {
@@ -165,6 +194,16 @@ const store = new Vuex.Store({
       }
 
       return defaultIcons.concat(currentIcons)
+    },
+    currentTags(state) {
+      const {attributes} = state.page
+      if (typeof attributes.search === 'string') {
+        return [attributes.search]
+      }
+      if (Array.isArray(attributes.search)) {
+        return attributes.search
+      }
+      return []
     }
   }
 })
