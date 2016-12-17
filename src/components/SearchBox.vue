@@ -12,7 +12,7 @@
       @focus="toggleFocus"
       @blur="toggleFocus"
       @keydown.enter="handleSearch(keyword)">
-    <svg-icon name="close" class="svg-icon" v-if="keyword" @click="handleClear"></svg-icon>
+    <svg-icon name="close" class="svg-icon close" v-if="keyword" @click="handleClear"></svg-icon>
     <svg-icon name="search" class="svg-icon" v-else></svg-icon>
   </div>
 </template>
@@ -85,7 +85,7 @@
         width: 14px;
         height: 14px;
       }
-      &:hover {
+      &.close:hover {
         color: #f66;
       }
     }
@@ -96,7 +96,5 @@
     width: 100%;
     outline: none;
     font-size: 14px;
-  }
-  .search-icon {
   }
 </style>
