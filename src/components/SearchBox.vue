@@ -3,7 +3,6 @@
     :class="{focus}">
     <input
       type="text"
-      autofocus
       placeholder="Type to search..."
       class="search-box inner-x"
       ref="input"
