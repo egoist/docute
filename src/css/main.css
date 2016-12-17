@@ -1,0 +1,16 @@
+.inner-x {
+  padding: 0 20px;
+}
+
+.inner-y {
+  padding: 20px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .inner-x {
+    padding: 0 10px;
+  }
+  .inner-y {
+    padding: 10px 0;
+  }
+}

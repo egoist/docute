@@ -1,5 +1,5 @@
 <template>
-  <ul class="sidebar-headings">
+  <ul class="sidebar-headings inner-x">
     <li
       class="sidebar-heading"
       :class="{'has-children': hasChildren(heading.index), visible: isVisible(heading.level, heading.parent)}"
@@ -77,6 +77,7 @@
     list-style: none;
     padding-left: 0;
     margin: 0;
+    margin-top: 20px;
     .sidebar-heading {
       line-height: 1.4;
       margin-bottom: 3px;

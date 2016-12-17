@@ -1,5 +1,6 @@
 ---
 nav: zh-Hant
+search: zh-Hant
 ---
 
 # docute-cli

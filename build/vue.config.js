@@ -1,7 +1,7 @@
-import express from 'express'
-import pkg from './package'
+const express = require('express')
+const pkg = require('../package')
 
-export default {
+module.exports = {
   title: 'docute-client',
   port: 5000,
   resolve: true,

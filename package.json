@@ -14,16 +14,19 @@
   },
   "scripts": {
     "test": "npm run build",
-    "build": "vbuild && npm run build:server",
-    "build:server": "vbuild --config vue.config.server.js",
-    "dev": "vbuild -d",
+    "build": "vbuild --config build/vue.config.js",
+    "build:server": "vbuild --config build/vue.config.server.js",
+    "dev": "vbuild -d --config build/vue.config.js",
+    "dev:docsearch": "vbuild -d --config build/vue.config.docsearch.js",
+    "build:docsearch": "vbuild --config build/vue.config.docsearch.js",
     "prepublish": "npm run build"
   },
   "files": [
     "dist/docute.js",
     "dist/docute.css",
     "dist/docute.js.map",
-    "dist/docute.css.map"
+    "dist/docute.css.map",
+    "plugins/docsearch.js"
   ],
   "main": "./dist/docute.js",
   "style": "./dist/docute.css",
@@ -31,6 +34,7 @@
     "doc"
   ],
   "dependencies": {
+    "algoliasearch": "^3.20.0",
     "babel-runtime": "^6.20.0",
     "element-closest": "^2.0.2",
     "highlight.js": "^9.8.0",
@@ -52,6 +56,7 @@
     "hint.css": "^2.4.1",
     "jest-cli": "^15.1.1",
     "raw-loader": "^0.5.1",
+    "url-loader": "^0.5.7",
     "vbuild": "^4.2.2"
   },
   "jest": {

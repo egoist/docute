@@ -55,7 +55,7 @@
         const id = jumpEl.getAttribute('jump-to-id')
         if (id) {
           e.preventDefault()
-          this.$router.push({query: {id}})
+          this.$router.push({query: {...this.$route.query, id}})
           return this.jumpToId(id)
         }
 
@@ -70,3 +70,5 @@
     }
   }
 </script>
+
+<style src="css/main.css"></style>

@@ -1,3 +1,7 @@
+---
+search: english
+---
+
 # docute-cli
 
 `docute-cli` help you kick start a directory with `index.html` `config.js` `README.md` inside, as well as a dev server and some more features.

@@ -1,3 +1,7 @@
+---
+search: english
+---
+
 # docute
 
 Writing docs without build process.

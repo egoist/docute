@@ -1,7 +1,9 @@
 <template>
   <div class="page">
     <figure class="sidebar" v-if="loaded">
-      <header-nav class="is-mobile"></header-nav>
+      <search-box></search-box>
+      <search-result></search-result>
+      <header-nav class="is-mobile inner-x"></header-nav>
       <toc :headings="page.headings"></toc>
     </figure>
     <mobile-header v-if="loaded"></mobile-header>
@@ -17,6 +19,8 @@
   import MobileHeader from 'components/MobileHeader.vue'
   import HeaderNav from 'components/HeaderNav.vue'
   import Toc from 'components/Toc.vue'
+  import SearchBox from 'components/SearchBox.vue'
+  import SearchResult from 'components/SearchResult.vue'
   import highlight from 'utils/highlight'
   import frontMatter from 'utils/front-matter'
   import {mapState, mapGetters, mapActions} from 'vuex'
@@ -54,13 +58,9 @@
     },
     computed: {
       ...mapState({
-        id: state => state.route.query.id,
-        config: state => state.config,
-        page: state => state.page,
-        loaded: state => state.loaded,
-        jumping: state => state.jumping,
-        activeId: state => state.activeId
+        id: state => state.route.query.id
       }),
+      ...mapState(['config', 'page', 'loaded', 'jumping', 'activeId']),
       ...mapGetters(['documentTitle'])
     },
     methods: {
@@ -161,7 +161,9 @@
       HomeHeader,
       MobileHeader,
       Toc,
-      HeaderNav
+      HeaderNav,
+      SearchBox,
+      SearchResult
     }
   }
 
@@ -191,12 +193,12 @@
     margin: 0;
     width: 280px;
     border-right: 1px solid rgba(0,0,0,.07);
-    overflow: auto;
+    overflow-y: auto;
     position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
-    padding: 20px;
+    padding: 0 0 20px 0;
     background-color: white;
     z-index: 1000;
   }
@@ -226,8 +228,8 @@
     }
     .sidebar {
       width: calc(100% - 50px);
-      padding: 10px;
-      padding-top: 60px;
+      padding-top: 50px;
+      padding-bottom: 10px;
       top: 0;
       border-right: none;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -236,6 +238,12 @@
       &.visible {
         transform: translateX(0);
       }
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .main {
+      max-width: 1280px;
+      margin: 0 auto;
     }
   }
 </style>

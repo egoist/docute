@@ -6,6 +6,13 @@ import App from 'components/App.vue'
 
 sync(store, router)
 
+const plugins = store.state.config.plugins
+if (Array.isArray(plugins)) {
+  for (const plugin of plugins) {
+    if (typeof plugin === 'function') plugin({store, router})
+  }
+}
+
 const app = new Vue({
   router,
   store,
