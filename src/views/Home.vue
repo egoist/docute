@@ -1,8 +1,8 @@
 <template>
   <div class="page">
     <figure class="sidebar" v-if="loaded">
-      <search-box></search-box>
-      <search-result></search-result>
+      <search-box v-if="pluginSearch"></search-box>
+      <search-result v-if="pluginSearch && searchResult && searchKeyword"></search-result>
       <header-nav class="is-mobile inner-x"></header-nav>
       <toc :headings="page.headings"></toc>
     </figure>
@@ -60,7 +60,7 @@
       ...mapState({
         id: state => state.route.query.id
       }),
-      ...mapState(['config', 'page', 'loaded', 'jumping', 'activeId']),
+      ...mapState(['config', 'page', 'loaded', 'jumping', 'activeId', 'pluginSearch', 'searchResult', 'searchKeyword']),
       ...mapGetters(['documentTitle'])
     },
     methods: {

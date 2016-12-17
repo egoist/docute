@@ -1,5 +1,5 @@
 <template>
-  <div class="search-result" v-if="pluginSearch && searchResult && searchKeyword">
+  <div class="search-result">
     <div class="empty-search-result inner-x" v-if="!searching && searchResult.length === 0">
       No search results :(
     </div>
@@ -19,7 +19,7 @@
 
   export default {
     computed: {
-      ...mapState(['searchResult', 'searchKeyword', 'searching', 'pluginSearch'])
+      ...mapState(['searchResult', 'searching', 'pluginSearch'])
     },
     methods: {
       ...mapActions(['jumpToId']),

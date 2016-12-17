@@ -2,7 +2,6 @@
   <div class="search-form"
     :class="{focus}">
     <input
-      v-if="pluginSearch"
       type="text"
       autofocus
       placeholder="Type to search..."
@@ -35,7 +34,7 @@
       })
     },
     computed: {
-      ...mapState(['config', 'searchKeyword', 'pluginSearch'])
+      ...mapState(['config', 'searchKeyword'])
     },
     methods: {
       ...mapActions(['search', 'updateSearchKeyword', 'searchReset']),
