@@ -38,6 +38,8 @@
             el = lastNegative
           } else if (firstPositive) {
             el = firstPositive
+          } else {
+            el = els[els.length - 1]
           }
           if (el.id) this.updateActiveId(el.id)
         }
