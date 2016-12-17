@@ -1,6 +1,6 @@
 # docute
 
-[![NPM version](https://img.shields.io/npm/v/docute.svg?style=flat)](https://npmjs.com/package/docute-client) [![Build Status](https://img.shields.io/circleci/project/egoist/docute/master.svg?style=flat)](https://circleci.com/gh/egoist/docute) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/egoist/donate)
+[![NPM version](https://img.shields.io/npm/v/docute.svg?style=flat)](https://npmjs.com/package/docute) [![Build Status](https://img.shields.io/circleci/project/egoist/docute/master.svg?style=flat)](https://circleci.com/gh/egoist/docute) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/egoist/donate)
 
 ## Quick Start
 
