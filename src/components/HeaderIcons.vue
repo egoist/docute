@@ -1,5 +1,5 @@
 <template>
-  <div class="header-icons">
+  <div class="header-icons" v-if="currentIcons.length > 0">
     <a
       v-for="(icon, index) in currentIcons"
       class="header-icon hint--rounded"
