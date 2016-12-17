@@ -19,7 +19,10 @@
 
   export default {
     computed: {
-      ...mapState(['searchResult', 'searching', 'pluginSearch'])
+      ...mapState(['searching', 'pluginSearch']),
+      ...mapState({
+        searchResult: state => state.searchResult.filter(item => (!!item.title || !!item.content))
+      })
     },
     methods: {
       ...mapActions(['jumpToId']),
