@@ -66,7 +66,7 @@ Easy?
 
 ## Write A Plugin
 
-A plugin is simply a function that takes `context` which hash `router` and `store` (for now) as arguments.
+A plugin is simply a function that takes `context` which has `router` and `store` (for now) as arguments.
 
 ```js
 // config.js
