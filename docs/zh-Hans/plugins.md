@@ -7,7 +7,7 @@ search: zh-Hans
 
 插件提供了一些额外的功能同时不让 docute 本身变得臃肿。
 
-## 搜索
+## 插件列表
 
 ### DocSearch
 
@@ -63,3 +63,40 @@ search:
 ---
 挺简单吧 :)
 ```
+
+## 开发一个插件
+
+一个插件就是一个函数，它的第一个参数 `context` 可以访问 `router` 和 `store`:
+
+```js
+// config.js
+self.$config = {
+  plugins: [
+    function myPlugin(context) {
+      // context.store
+      // context.router
+    }
+  ]
+}
+```
+
+如果你的插件是需要用户提供参数的，那么用一个高阶函数就行了:
+
+```js
+self.$config = {
+  plugins: [
+    myPlugin(options)
+  ]
+}
+
+function myPlugin(options) {
+  return function (context) {
+    // context.store
+    // context.router
+  }
+}
+```
+
+<p class="tip">
+  你的插件也可以访问 `window.fetch` 方法并且不需要任何 polyfill，因为我们已经加上了。
+</p>

@@ -6,7 +6,7 @@ search: english
 
 Plugins give you extra features without bloating docute itself.
 
-## Search
+## List of Plugins
 
 ### DocSearch
 
@@ -63,3 +63,40 @@ search:
 ---
 Easy?
 ```
+
+## Write A Plugin
+
+A plugin is simply a function that takes `context` which hash `router` and `store` (for now) as arguments.
+
+```js
+// config.js
+self.$config = {
+  plugins: [
+    function myPlugin(context) {
+      // context.store
+      // context.router
+    }
+  ]
+}
+```
+
+If your plugin needs options, use a higher-order function instead:
+
+```js
+self.$config = {
+  plugins: [
+    myPlugin(options)
+  ]
+}
+
+function myPlugin(options) {
+  return function (context) {
+    // context.store
+    // context.router
+  }
+}
+```
+
+<p class="tip">
+  You can also access `window.fetch` here without any polyfill, we already did that for you!
+</p>

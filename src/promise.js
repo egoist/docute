@@ -1,5 +1,7 @@
 import Promise from 'promise-polyfill'
 
-if (!window.Promise) {
-  window.Promise = Promise
+if (typeof window !== 'undefined') {
+  window.Promise = window.Promise || Promise
+} else if (typeof global !== 'undefined') {
+  global.Promise = global.Promise || Promise
 }

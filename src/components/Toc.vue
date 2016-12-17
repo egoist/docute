@@ -1,5 +1,5 @@
 <template>
-  <ul class="sidebar-headings inner-x">
+  <ul class="sidebar-headings">
     <li
       class="sidebar-heading"
       :class="{'has-children': hasChildren(heading.index), visible: isVisible(heading.level, heading.parent)}"
@@ -75,7 +75,7 @@
 <style>
   .sidebar-headings {
     list-style: none;
-    padding-left: 0;
+    padding: 0 20px;
     margin: 0;
     margin-top: 20px;
     .sidebar-heading {
@@ -115,6 +115,7 @@
   @media screen and (max-width: 768px) {
     .sidebar-headings {
       border-top: 1px solid #e2e2e2;
+      padding: 0 10px;
       padding-top: 10px;
       margin-top: 10px;
     }

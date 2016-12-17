@@ -43,7 +43,7 @@
     "lodash.throttle": "^4.1.1",
     "nprogress": "^0.2.0",
     "promise-polyfill": "^6.0.2",
-    "vue": "2.1.3",
+    "vue": "^2.1.6",
     "vue-inline": "^1.0.1",
     "vue-router": "^2.1.1",
     "vuex": "^2.0.0",
@@ -57,7 +57,9 @@
     "jest-cli": "^15.1.1",
     "raw-loader": "^0.5.1",
     "url-loader": "^0.5.7",
-    "vbuild": "^4.2.2"
+    "vbuild": "^4.3.2",
+    "vue-loader": "^10.0.2",
+    "vue-template-compiler": "^2.1.6"
   },
   "jest": {
     "testEnvironment": "node"
