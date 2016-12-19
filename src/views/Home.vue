@@ -197,6 +197,17 @@
     color: #34495e;
     text-decoration: none;
   }
+  .page {
+    position: absolute;
+    top: 0;
+    left: 280px;
+    right: 0;
+    bottom: 0;
+
+    &.no-sidebar {
+      left: 0;
+    }
+  }
   .sidebar {
     margin: 0;
     width: 280px;
@@ -211,8 +222,8 @@
     z-index: 1000;
   }
   .main {
+    margin: 0 auto;
     padding: 20px 0;
-    padding-left: 280px;
     background-color: white;
     min-height: 100vmin;
   }
@@ -228,8 +239,6 @@
   @media screen and (min-width: 768px) {
     .no-sidebar {
       .main {
-        margin: 0 auto;
-        padding-left: 0;
         padding-bottom: 50px;
         max-width: 900px;
         border: 1px solid rgba(0,0,0,.07);
@@ -249,8 +258,10 @@
     .is-mobile-flex {
       display: flex !important;
     }
+    .page {
+      left: 0;
+    }
     .main {
-      padding-left: 0;
       padding-top: 70px;
     }
     .sidebar {
@@ -269,8 +280,11 @@
   }
   @media screen and (min-width: 1280px) {
     .main {
-      max-width: 1280px;
-      margin: 0 auto;
+      max-width: 1000px;
+
+      .no-sidebar & {
+        max-width: 80%;
+      }
     }
   }
 </style>
