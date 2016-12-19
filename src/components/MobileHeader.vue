@@ -1,6 +1,6 @@
 <template>
   <header class="mobile-header is-mobile-flex" ref="header">
-    <div class="header-left" @click="toggleSidebar()">
+    <div class="header-left" @click="toggleMobileSidebar()">
       <h1 class="site-title">
         <svg-icon class="svg-icon" name="menu" ref="icon"></svg-icon>
         {{ config.title }}
@@ -13,17 +13,17 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex'
+  import {mapState, mapGetters, mapActions} from 'vuex'
   import HeaderIcons from 'components/HeaderIcons.vue'
   import SvgIcon from 'components/SvgIcon'
   import {$, isMobile} from 'utils/dom'
 
   export default {
     computed: {
-      ...mapState(['config', 'showSidebar'])
+      ...mapState(['config', 'showMobileSidebar']),
     },
     mounted() {
-      this.$watch('showSidebar', () => {
+      this.$watch('showMobileSidebar', () => {
         const {icon} = this.$refs
         const el = $('.sidebar')
         if (el.classList.contains('visible')) {
@@ -44,12 +44,12 @@
           !sidebar.contains(e.target) &&
           !header.contains(e.target)
         ) {
-          this.toggleSidebar(false)
+          this.toggleMobileSidebar(false)
         }
       })
     },
     methods: {
-      ...mapActions(['toggleSidebar'])
+      ...mapActions(['toggleMobileSidebar'])
     },
     components: {
       HeaderIcons,

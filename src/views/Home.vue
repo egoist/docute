@@ -1,6 +1,6 @@
 <template>
-  <div class="page">
-    <figure class="sidebar" v-if="loaded">
+  <div class="page" :class="{'no-sidebar': !showSidebar}">
+    <figure class="sidebar" v-if="loaded && (showSidebar || isMobile)">
       <search-box v-if="pluginSearch"></search-box>
       <search-result v-if="pluginSearch && searchResult && searchKeyword"></search-result>
       <header-nav class="is-mobile inner-x"></header-nav>
@@ -47,8 +47,13 @@
 
   export default {
     name: 'home',
+    data() {
+      return {
+        isMobile
+      }
+    },
     created() {
-      this.toggleSidebar(false)
+      this.toggleMobileSidebar(false)
       this.fetchData()
     },
     mounted() {
@@ -61,10 +66,10 @@
         id: state => state.route.query.id
       }),
       ...mapState(['config', 'page', 'loaded', 'jumping', 'activeId', 'pluginSearch', 'searchResult', 'searchKeyword']),
-      ...mapGetters(['documentTitle'])
+      ...mapGetters(['documentTitle', 'showSidebar'])
     },
     methods: {
-      ...mapActions(['updatePage', 'toggleSidebar', 'jumpToId']),
+      ...mapActions(['updatePage', 'toggleMobileSidebar', 'jumpToId']),
       async fetchData() {
         nprogress.start()
 
@@ -204,13 +209,24 @@
   }
   .main {
     padding: 20px 0;
-    padding-left: 280px;
+    margin-left: 280px;
   }
 </style>
 
 <style>
   [class*="is-mobile"] {
     display: none !important;
+  }
+  @media screen and (min-width: 768px) {
+    .no-sidebar {
+      .main {
+        margin: 0 auto;
+        margin-left: auto;
+        max-width: 900px;
+        border-left: 1px solid rgba(0,0,0,.07);
+        border-right: 1px solid rgba(0,0,0,.07);
+      }
+    }
   }
   @media screen and (max-width: 768px) {
     .is-desktop {
@@ -223,7 +239,7 @@
       display: flex !important;
     }
     .main {
-      padding-left: 0;
+      margin-left: 0;
       padding-top: 70px;
     }
     .sidebar {
@@ -242,7 +258,7 @@
   }
   @media screen and (min-width: 1280px) {
     .main {
-      max-width: 1280px;
+      max-width: 1000px;
       margin: 0 auto;
     }
   }

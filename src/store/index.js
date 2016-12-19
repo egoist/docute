@@ -25,11 +25,11 @@ const store = new Vuex.Store({
     config: typeof window === 'undefined' ? {} : (window.$config || {}),
     page: {
       html: '',
-      attributes: null,
+      attributes: {},
       headings: []
     },
     loaded: false,
-    showSidebar: false,
+    showMobileSidebar: false,
     jumping: false,
     activeId: '',
     searching: false,
@@ -53,9 +53,9 @@ const store = new Vuex.Store({
       state.loaded = true
       state.activeId = ''
     },
-    TOGGLE_SIDEBAR(state, payload) {
-      if (payload !== undefined) state.showSidebar = payload
-      else state.showSidebar = !state.showSidebar
+    TOGGLE_MOBILE_SIDEBAR(state, payload) {
+      if (payload !== undefined) state.showMobileSidebar = payload
+      else state.showMobileSidebar = !state.showMobileSidebar
     },
     UPDATE_JUMPING(state, payload) {
       state.jumping = payload
@@ -81,8 +81,8 @@ const store = new Vuex.Store({
     updatePage({commit}, payload) {
       commit('UPDATE_PAGE', payload)
     },
-    toggleSidebar({commit}, payload) {
-      commit('TOGGLE_SIDEBAR', payload)
+    toggleMobileSidebar({commit}, payload) {
+      commit('TOGGLE_MOBILE_SIDEBAR', payload)
     },
     startJumping({commit}) {
       commit('UPDATE_JUMPING', true)
@@ -209,6 +209,14 @@ const store = new Vuex.Store({
         return attributes.search
       }
       return []
+    },
+    showSidebar(state) {
+      const {sidebar = true} = state.config
+      const {attributes} = state.page
+      if (typeof attributes.sidebar !== 'undefined') {
+        return attributes.sidebar
+      }
+      return sidebar
     }
   }
 })
