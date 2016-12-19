@@ -213,7 +213,7 @@
   }
   .main {
     padding: 20px 0;
-    margin-left: 280px;
+    padding-left: 280px;
     background-color: white;
     min-height: 100vmin;
   }
@@ -230,7 +230,7 @@
     .no-sidebar {
       .main {
         margin: 0 auto;
-        margin-left: auto;
+        padding-left: 0;
         padding-bottom: 50px;
         max-width: 900px;
         border: 1px solid rgba(0,0,0,.07);
@@ -251,7 +251,7 @@
       display: flex !important;
     }
     .main {
-      margin-left: 0;
+      padding-left: 0;
       padding-top: 70px;
     }
     .sidebar {
