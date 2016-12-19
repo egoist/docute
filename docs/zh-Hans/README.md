@@ -70,6 +70,34 @@ self.$config = {
 
 注意: 像 `about/README.md` 这样的文件对应的路由是 `/#/about/`， 而对于路由 `/#/about` 它的源文件是 `about.md`。
 
+### 侧边栏
+
+To disable the sidebar globally, set it to `false` in `config.js`:
+想默认隐藏侧边栏，可以在 `config.js` 中将其设置为 `false`:
+
+```js
+self.$config = {
+  sidebar: false
+}
+```
+
+或者只隐藏某个页面的侧边栏:
+
+```markdown
+---
+sidebar: false
+---
+用 front-matter 隐藏这个页面的侧边栏
+```
+
+左下角也会有个按钮用于切换侧边栏，你也可以隐藏它:
+
+```js
+self.$config = {
+  disableSidebarToggle: true
+}
+```
+
 ### 导航栏
 
 当你有多个页面的时候你很可能需要一个导航栏方便用户浏览，你可以通过配置文件添加导航栏:

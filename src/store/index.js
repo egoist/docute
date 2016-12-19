@@ -49,13 +49,32 @@ const store = new Vuex.Store({
       })
     },
     UPDATE_PAGE(state, page) {
-      state.page = page
+      state.page = {
+        attributes: {
+          title: null,
+          sidebar: state.config.sidebar,
+          search: null,
+          icons: null,
+          ...page.attributes
+        },
+        html: page.html,
+        headings: page.headings
+      }
       state.loaded = true
       state.activeId = ''
     },
     TOGGLE_MOBILE_SIDEBAR(state, payload) {
       if (payload !== undefined) state.showMobileSidebar = payload
       else state.showMobileSidebar = !state.showMobileSidebar
+    },
+    TOGGLE_SIDEBAR(state, payload) {
+      if (payload !== undefined) {
+        state.page.attributes.sidebar = payload
+      } else {
+        state.page.attributes.sidebar = state.page.attributes.sidebar === undefined ?
+          false :
+          !state.page.attributes.sidebar
+      }
     },
     UPDATE_JUMPING(state, payload) {
       state.jumping = payload
@@ -83,6 +102,9 @@ const store = new Vuex.Store({
     },
     toggleMobileSidebar({commit}, payload) {
       commit('TOGGLE_MOBILE_SIDEBAR', payload)
+    },
+    toggleSidebar({commit}, payload) {
+      commit('TOGGLE_SIDEBAR', payload)
     },
     startJumping({commit}) {
       commit('UPDATE_JUMPING', true)

@@ -36,14 +36,24 @@
 
 <script>
   import {mapState, mapActions, mapGetters} from 'vuex'
+  import SvgIcon from 'components/SvgIcon'
+  import {isMobile} from 'utils/dom'
 
   export default {
+    data() {
+      return {
+        isMobile
+      }
+    },
     computed: {
       ...mapState(['attributes']),
       ...mapGetters(['currentTitle', 'currentNav']),
     },
     methods: {
-      ...mapActions(['toggleDropdown'])
+      ...mapActions(['toggleDropdown', 'toggleSidebar'])
+    },
+    components: {
+      SvgIcon
     }
   }
 </script>
@@ -121,6 +131,9 @@
             color: #42b983;
           }
         }
+      }
+      .dropdown-list {
+        background-color: transparent;
       }
       .nav-item-dropdown {
         .dropdown-list {

@@ -1,5 +1,6 @@
 <template>
   <div class="page" :class="{'no-sidebar': !showSidebar}">
+    <sidebar-toggle v-if="!isMobile && !config.disableSidebarToggle"></sidebar-toggle>
     <figure class="sidebar" v-if="loaded && (showSidebar || isMobile)">
       <search-box v-if="pluginSearch"></search-box>
       <search-result v-if="pluginSearch && searchResult && searchKeyword"></search-result>
@@ -21,6 +22,7 @@
   import Toc from 'components/Toc.vue'
   import SearchBox from 'components/SearchBox.vue'
   import SearchResult from 'components/SearchResult.vue'
+  import SidebarToggle from 'components/SidebarToggle.vue'
   import highlight from 'utils/highlight'
   import frontMatter from 'utils/front-matter'
   import {mapState, mapGetters, mapActions} from 'vuex'
@@ -168,7 +170,8 @@
       Toc,
       HeaderNav,
       SearchBox,
-      SearchResult
+      SearchResult,
+      SidebarToggle
     }
   }
 
@@ -189,6 +192,7 @@
     margin: 0;
     font: 14px/1.4 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
     text-rendering: geometricPrecision;
+    background-color: #fcfcfc;
   }
   a {
     color: #34495e;
@@ -203,13 +207,18 @@
     left: 0;
     top: 0;
     bottom: 0;
-    padding: 0 0 20px 0;
-    background-color: white;
+    padding: 0 0 70px 0;
+    background-color: #fcfcfc;
     z-index: 1000;
   }
   .main {
     padding: 20px 0;
     margin-left: 280px;
+    background-color: white;
+    min-height: 100vmin;
+  }
+  .content {
+    padding-top: 20px;
   }
 </style>
 
@@ -222,9 +231,12 @@
       .main {
         margin: 0 auto;
         margin-left: auto;
+        padding-bottom: 50px;
         max-width: 900px;
-        border-left: 1px solid rgba(0,0,0,.07);
-        border-right: 1px solid rgba(0,0,0,.07);
+        border: 1px solid rgba(0,0,0,.07);
+        border-top: none;
+        border-radius: 0 0 4px 4px;
+        margin-bottom: 40px;
       }
     }
   }

@@ -70,6 +70,34 @@ self.$config = {
 
 註意: 像 `about/README.md` 這樣的文件對應的路由是 `/#/about/`， 而對於路由 `/#/about` 它的源文件是 `about.md`。
 
+### 側邊欄
+
+To disable the sidebar globally, set it to `false` in `config.js`:
+想默認隱藏側邊欄，可以在 `config.js` 中將其設置為 `false`:
+
+```js
+self.$config = {
+  sidebar: false
+}
+```
+
+或者只隱藏某個頁面的側邊欄:
+
+```markdown
+---
+sidebar: false
+---
+用 front-matter 隱藏這個頁面的側邊欄
+```
+
+左下角也會有個按鈕用於切換側邊欄，妳也可以隱藏它:
+
+```js
+self.$config = {
+  disableSidebarToggle: true
+}
+```
+
 ### 導航欄
 
 當妳有多個頁面的時候妳很可能需要壹個導航欄方便用戶瀏覽，妳可以通過配置文件添加導航欄:

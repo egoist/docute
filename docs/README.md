@@ -69,6 +69,33 @@ It supports directory too, just try adding a new file at `language/chinese.md`, 
 
 Note: file like `about/README.md` will be mapping to `/#/about/`, while the `/#/about` is for `about.md`.
 
+### Sidebar
+
+To disable the sidebar globally, set it to `false` in `config.js`:
+
+```js
+self.$config = {
+  sidebar: false
+}
+```
+
+Or disable it for specific page:
+
+```markdown
+---
+sidebar: false
+---
+disable sidebar for this page.
+```
+
+There will be a toggle button for switching sidebar on and off, to hide this button:
+
+```js
+self.$config = {
+  disableSidebarToggle: true
+}
+```
+
 ### Navbar
 
 You may need a navbar as the entrance for the pages:

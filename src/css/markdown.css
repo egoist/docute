@@ -242,15 +242,16 @@
   h1 {
     padding-bottom: 0.3em;
     font-size: 2em;
-    border-bottom: 1px solid #eee;
   }
   h2 {
     padding-bottom: 0.3em;
     font-size: 1.5em;
-    border-bottom: 1px solid #eee;
+    margin-top: 50px;
+    margin-bottom: 15px;
   }
   h3 {
     font-size: 1.25em;
+
   }
   h4 {
     font-size: 1em;
