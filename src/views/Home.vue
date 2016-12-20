@@ -225,6 +225,7 @@
     margin: 0 auto;
     padding: 20px 0;
     background-color: white;
+    max-width: 1000px;
     min-height: 100vmin;
   }
   .content {
@@ -240,7 +241,6 @@
     .no-sidebar {
       .main {
         padding-bottom: 50px;
-        max-width: 900px;
         border: 1px solid rgba(0,0,0,.07);
         border-top: none;
         border-radius: 0 0 4px 4px;
@@ -275,15 +275,6 @@
       transition: transform .3s cubic-bezier(0.4, 0, 0, 1);
       &.visible {
         transform: translateX(0);
-      }
-    }
-  }
-  @media screen and (min-width: 1280px) {
-    .main {
-      max-width: 1000px;
-
-      .no-sidebar & {
-        max-width: 80%;
       }
     }
   }
