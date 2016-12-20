@@ -61,9 +61,20 @@ self.$config = {
 }
 ```
 
+### Home Page
+
+`README.md` in your docs folder will be treated as homepage for your website, but sometimes you may need to serve another file as your homepage. For example you're deploying `./docs` for `github pages` but already have `README.md` in your repo, why do you have to populate another file at `./docs/README.md`, right? Then just tell it which file we should use:
+
+```js
+self.$config = {
+  // use the readme in repo
+  home: 'https://raw.githubusercontent.com/egoist/docute/master/README.md'
+}
+```
+
 ### Pages
 
-`README.md` will be treated as homepage for your website, you can also add more markdown files to display more pages. For example, adding `chinese.md` to your doc folder so that you got a new page at `/#/chinese`!
+You can also add more markdown files to display more pages. For example, adding `chinese.md` to your doc folder so that you got a new page at `/#/chinese`!
 
 It supports directory too, just try adding a new file at `language/chinese.md`, then you'll get `/#/language/chinese`.
 

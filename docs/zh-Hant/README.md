@@ -62,9 +62,20 @@ self.$config = {
 }
 ```
 
+### 首頁
+
+文檔目錄裏的 `README.md` 文件會渲染為文檔首頁，，但有時妳可能會想使用其它文件。比如妳將 `./docs` 目錄裏的文件作為 github pages 使用的時候妳可能想直接使用項目根目錄裏的 `README.md`，妳可以通過配置指向該文件:
+
+```js
+self.$config = {
+  // 項目根目錄裏的 README.md
+  home: 'https://raw.githubusercontent.com/egoist/docute/master/README.md'
+}
+```
+
 ### 多頁面
 
-`README.md` 文件會渲染為文檔首頁，當然妳也可以添加更多頁面來顯示不同內容。比如添加壹個 `chinese.md` 用作文檔的中文翻譯，然後就能通過 `/#/chinese` 訪問到這個頁面了！
+當然妳也可以添加更多頁面來顯示不同內容。比如添加壹個 `chinese.md` 用作文檔的中文翻譯，然後就能通過 `/#/chinese` 訪問到這個頁面了！
 
 多頁面支持子目錄，比如壹個文件被放到 `language/chinese.md` 那麽它的訪問路徑就是 `/#/lanaguage/chinese`。
 

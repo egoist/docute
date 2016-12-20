@@ -7,6 +7,7 @@ var langs = [
 
 self.$config = {
   title: 'Docute',
+  // home: 'https://raw.githubusercontent.com/egoist/docute/master/README.md',
   repo: 'egoist/docute',
   twitter: 'rem_rin_rin',
   url: 'https://docute.js.org',

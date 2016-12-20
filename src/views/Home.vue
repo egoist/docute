@@ -110,7 +110,7 @@
           return `<a target="_blank" href="${href}"${getTitle}>${text}</a>`
         }
 
-        let file = './README.md'
+        let file = this.config.home || './README.md'
         if (this.$route.meta && this.$route.meta.name === 'page') {
           const name = this.$route.params[0]
           if (/\/$/.test(name)) {
