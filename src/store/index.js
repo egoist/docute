@@ -157,12 +157,7 @@ const store = new Vuex.Store({
           nav[attributes.nav] :
           nav.default
       }
-      return [
-        {
-          title: 'Home',
-          path: '/'
-        }
-      ]
+      return []
     },
     documentTitle(state, {currentTitle}) {
       const {config: {title}, page: {attributes}} = state

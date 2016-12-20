@@ -42,12 +42,14 @@
   .header-icons {
     display: flex;
     .header-icon {
-      margin-left: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       color: #666;
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
       &:hover {
         color: #333;
         svg {

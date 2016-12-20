@@ -1,15 +1,19 @@
 <template>
-  <header class="header is-desktop">
+  <header class="header is-desktop" v-if="currentNav.length > 0 || currentIcons.length > 0">
     <header-nav></header-nav>
     <header-icons></header-icons>
   </header>
 </template>
 
 <script>
+  import {mapGetters} from 'vuex'
   import HeaderNav from 'components/HeaderNav.vue'
   import HeaderIcons from 'components/HeaderIcons.vue'
 
   export default {
+    computed: {
+      ...mapGetters(['currentNav', 'currentIcons'])
+    },
     components: {
       HeaderNav,
       HeaderIcons
