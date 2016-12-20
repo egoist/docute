@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="not-found">
     <div class="message" v-if="from">
       <h2>
         Cannot find resource at {{ from.path }}
@@ -31,7 +31,8 @@
 </script>
 
 <style scoped>
-  .page {
+  .not-found {
+    height: 100%;
     background-color: #f0f0f0;
     display: flex;
     align-items: center;
@@ -39,6 +40,7 @@
     text-align: center;
   }
 </style>
+
 <style>
   .message {
     font-size: 30px;
