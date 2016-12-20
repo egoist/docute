@@ -29,7 +29,7 @@
       }
     },
     computed: {
-      ...mapState(['activeId']),
+      ...mapState(['activeId', 'config']),
       visibleBlockIndexes() {
         if (!this.activeId) return []
         const indexes = []
@@ -62,7 +62,7 @@
         }).length > 0
       },
       isVisible(level, index) {
-        if (level <= 4) return true
+        if (level <= (this.config.tocVisibleDepth || 4)) return true
         return this.visibleBlockIndexes.indexOf(index) !== -1
       },
       navigate(slug) {

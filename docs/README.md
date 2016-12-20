@@ -107,6 +107,19 @@ self.$config = {
 }
 ```
 
+#### TOC
+
+The TOC is coming from your markdown files, we parse markdown content and get headings (h2 to h5+) to group a nested TOC.
+
+In sidebar we will show h2 to h4 headings by default, h5+ only will be visible when the main content scrolls there, you can update this by:
+
+```js
+self.$config = {
+  // to show h2 to h3 only
+  tocVisibleDepth: 3
+}
+```
+
 ### Navbar
 
 You may need a navbar as the entrance for the pages:
@@ -450,10 +463,6 @@ server {
 ```
 
 ## FAQ
-
-### Where's my sidebar from?
-
-The sidebar (or the TOC) is coming from your markdown files, we parse markdown content and get headings (h2 to h5) to group a nested TOC.
 
 ### Is it like gitbook?
 
