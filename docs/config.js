@@ -69,6 +69,9 @@ self.$config = {
       apiKey: '65360cf9a91d87cd455d2b286d0d89ee',
       indexName: 'docute',
       tags: ['english', 'zh-Hans', 'zh-Hant']
+    }),
+    disqus({
+      shortname: 'docute'
     })
   ]
 }

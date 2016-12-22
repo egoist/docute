@@ -10,7 +10,9 @@
     <mobile-header v-if="loaded"></mobile-header>
     <section class="main">
       <home-header v-if="loaded"></home-header>
+      <custom-components place="content:start"></custom-components>
       <div class="markdown-body content" v-html="page.html"></div>
+      <custom-components place="content:end"></custom-components>
     </section>
   </div>
 </template>
@@ -23,6 +25,7 @@
   import SearchBox from 'components/SearchBox.vue'
   import SearchResult from 'components/SearchResult.vue'
   import SidebarToggle from 'components/SidebarToggle.vue'
+  import CustomComponents from 'components/CustomComponents'
   import highlight from 'utils/highlight'
   import frontMatter from 'utils/front-matter'
   import {mapState, mapGetters, mapActions} from 'vuex'
@@ -171,7 +174,8 @@
       HeaderNav,
       SearchBox,
       SearchResult,
-      SidebarToggle
+      SidebarToggle,
+      CustomComponents
     }
   }
 

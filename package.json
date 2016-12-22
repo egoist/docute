@@ -19,6 +19,8 @@
     "dev": "vbuild -d --config build/vue.config.js",
     "dev:docsearch": "vbuild -d --config build/vue.config.docsearch.js",
     "build:docsearch": "vbuild --config build/vue.config.docsearch.js",
+    "dev:disqus": "vbuild -d --config build/vue.config.disqus.js",
+    "build:disqus": "vbuild --config build/vue.config.disqus.js",
     "prepublish": "npm run build"
   },
   "files": [

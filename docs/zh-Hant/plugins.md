@@ -64,9 +64,33 @@ search:
 挺簡單吧 :)
 ```
 
+### Disqus
+
+整合 `disqus` 評論到妳的文檔中，它會在文檔區域下方顯示:
+
+首先用壹個 `script` 標簽引入:
+
+```html
+<script src="https://unpkg.com/docute/plugins/disqus.js"></script>
+```
+
+然後在 `config.js` 中配置壹下:
+
+```js
+self.$config = {
+  plugins: [
+    disqus({
+      shortname: 'SHORT_NAME' // 把這個替換為妳的 disqus 站點縮略名
+    })
+  ]
+}
+```
+
+我們將來也考慮加入 medium.com 那種的段落內評論的功能。
+
 ## 開發壹個插件
 
-壹個插件就是壹個函數，它的第壹個參數 `context` 可以訪問 `router` 和 `store`:
+壹個插件就是壹個函數，它接受壹個 `context 參數:
 
 ```js
 // config.js
@@ -100,3 +124,27 @@ function myPlugin(options) {
 <p class="tip">
   妳的插件也可以訪問 `window.fetch` 方法並且不需要任何 polyfill，因為我們已經加上了。
 </p>
+
+### Context
+
+`Context` 參數有以下屬性:
+
+- store: vuex store 實例
+- router: vue-router 實例
+- registerComponent: 用於在頁面裏插入壹個組件的函數
+
+#### registerComponent
+
+這個函數需要兩個參數: `registerComponent(position, component)`
+
+##### position
+
+Value: `oneOf(['content:start', 'content:end'])`
+
+要插入的位置。
+
+##### component
+
+Type: `VueComponent`
+
+任意的 Vue 組件對象。

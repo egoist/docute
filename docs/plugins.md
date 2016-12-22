@@ -6,6 +6,10 @@ search: english
 
 Plugins give you extra features without bloating docute itself.
 
+<p class="warning">
+  All plugins should be load before `config.js`!
+</p>
+
 ## List of Plugins
 
 ### DocSearch
@@ -64,9 +68,33 @@ search:
 Easy?
 ```
 
+### Disqus
+
+Integrate Disqus to your docs, it will show after the main content.
+
+First include the plugin via `script` tag:
+
+```html
+<script src="https://unpkg.com/docute/plugins/disqus.js"></script>
+```
+
+Add configure it in `config.js`:
+
+```js
+self.$config = {
+  plugins: [
+    disqus({
+      shortname: 'SHORT_NAME' // replace this with your own shortname
+    })
+  ]
+}
+```
+
+We may add `inline comment` support in the future, just like the way medium.com did.
+
 ## Write A Plugin
 
-A plugin is simply a function that takes `context` which has `router` and `store` (for now) as arguments.
+A plugin is simply a function that takes `context` as arguments.
 
 ```js
 // config.js
@@ -75,6 +103,7 @@ self.$config = {
     function myPlugin(context) {
       // context.store
       // context.router
+      // context....
     }
   ]
 }
@@ -100,3 +129,25 @@ function myPlugin(options) {
 <p class="tip">
   You can also access `window.fetch` here without any polyfill, we already did that for you!
 </p>
+
+### Context
+
+The argument `context` has following prorerties:
+
+- store: the vuex store instance
+- router: the vue-router instance
+- registerComponent: register a component to a specific position of the document
+
+#### registerComponent
+
+The function requires two arguments: `registerComponent(position, component)`
+
+##### position
+
+Value: `oneOf(['content:start', 'content:end'])`
+
+##### component
+
+Type: `VueComponent`
+
+Any Vue component can be accepted as component argument.

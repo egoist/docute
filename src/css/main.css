@@ -6,9 +6,13 @@
   padding: 20px 0;
 }
 
+.custom-components {
+  padding: 30px;
+}
+
 @media screen and (max-width: 768px) {
-  .inner-x {
-    padding: 0 10px;
+  .inner-x, .custom-components {
+    padding: 10px;
   }
   .inner-y {
     padding: 10px 0;
