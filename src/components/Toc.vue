@@ -75,38 +75,50 @@
 <style>
   .sidebar-headings {
     list-style: none;
-    padding: 0 20px;
     margin: 0;
     margin-top: 20px;
+    padding-left: 0;
     .sidebar-heading {
       line-height: 1.4;
-      margin-bottom: 3px;
       &:not(.visible) {
         display: none;
       }
       &[data-level="2"] {
         font-weight: bold;
-        margin-bottom: 5px;
-        &:not(:first-child) {
-          margin-top: 5px;
-          padding-top: 5px;
-        }
         .sidebar-heading-anchor {
           color: #333;
         }
       }
       &[data-level="4"] {
-        padding-left: 15px;
         font-size: 13px;
+        .sidebar-heading-anchor {
+          padding-left: 32px;
+        }
       }
       &[data-level="5"] {
-        padding-left: 30px;
         font-size: 13px;
+        .sidebar-heading-anchor {
+          padding-left: 47px;
+        }
+      }
+      &[data-level="6"] {
+        font-size: 12px;
+        .sidebar-heading-anchor {
+          padding-left: 62px;
+        }
       }
 
       .sidebar-heading-anchor {
         color: #666;
+        padding: 7px 20px;
+        padding-left: 17px;
+        display: block;
+        border-left: 3px solid transparent;
         &.active {
+          border-left-color: #42b983;
+          color: #42b983;
+        }
+        &:hover {
           color: #42b983;
         }
       }
@@ -115,9 +127,11 @@
   @media screen and (max-width: 768px) {
     .sidebar-headings {
       border-top: 1px solid #e2e2e2;
-      padding: 0 10px;
       padding-top: 10px;
       margin-top: 10px;
+    }
+    .sidebar-heading-anchor {
+      padding: 7px 10px;
     }
   }
 </style>
