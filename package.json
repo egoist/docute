@@ -28,7 +28,7 @@
     "dist/docute.css",
     "dist/docute.js.map",
     "dist/docute.css.map",
-    "plugins/docsearch.js"
+    "plugins"
   ],
   "main": "./dist/docute.js",
   "style": "./dist/docute.css",
