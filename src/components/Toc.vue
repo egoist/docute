@@ -76,7 +76,7 @@
   .sidebar-headings {
     list-style: none;
     margin: 0;
-    margin-top: 20px;
+    margin-top: 10px;
     padding-left: 0;
     .sidebar-heading {
       line-height: 1.4;
@@ -92,19 +92,19 @@
       &[data-level="4"] {
         font-size: 13px;
         .sidebar-heading-anchor {
-          padding-left: 32px;
+          padding-left: 35px;
         }
       }
       &[data-level="5"] {
         font-size: 13px;
         .sidebar-heading-anchor {
-          padding-left: 47px;
+          padding-left: 50px;
         }
       }
       &[data-level="6"] {
         font-size: 12px;
         .sidebar-heading-anchor {
-          padding-left: 62px;
+          padding-left: 66px;
         }
       }
 
@@ -113,12 +113,7 @@
         padding: 7px 20px;
         padding-left: 17px;
         display: block;
-        border-left: 3px solid transparent;
-        &.active {
-          border-left-color: #42b983;
-          color: #42b983;
-        }
-        &:hover {
+        &.active, &:hover {
           color: #42b983;
         }
       }
@@ -128,7 +123,6 @@
     .sidebar-headings {
       border-top: 1px solid #e2e2e2;
       padding-top: 10px;
-      margin-top: 10px;
     }
     .sidebar-heading-anchor {
       padding: 7px 10px;
