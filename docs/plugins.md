@@ -132,7 +132,7 @@ function myPlugin(options) {
 
 ### Context
 
-The argument `context` has following prorerties:
+The argument `context` has following properties:
 
 - store: the vuex store instance
 - router: the vue-router instance

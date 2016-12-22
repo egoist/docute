@@ -90,7 +90,7 @@ self.$config = {
 
 ## 开发一个插件
 
-一个插件就是一个函数，它接受一个 `context 参数:
+一个插件就是一个函数，它接受一个 `context` 参数:
 
 ```js
 // config.js
@@ -127,7 +127,7 @@ function myPlugin(options) {
 
 ### Context
 
-`Context` 参数有以下属性:
+`context` 参数有以下属性:
 
 - store: vuex store 实例
 - router: vue-router 实例

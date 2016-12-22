@@ -90,7 +90,7 @@ self.$config = {
 
 ## 開發壹個插件
 
-壹個插件就是壹個函數，它接受壹個 `context 參數:
+壹個插件就是壹個函數，它接受壹個 `context` 參數:
 
 ```js
 // config.js
@@ -127,7 +127,7 @@ function myPlugin(options) {
 
 ### Context
 
-`Context` 參數有以下屬性:
+`context` 參數有以下屬性:
 
 - store: vuex store 實例
 - router: vue-router 實例
