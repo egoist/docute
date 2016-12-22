@@ -10,9 +10,9 @@
     <mobile-header v-if="loaded"></mobile-header>
     <section class="main">
       <home-header v-if="loaded"></home-header>
-      <custom-components place="content:start"></custom-components>
+      <custom-components place="content:start" v-if="loaded"></custom-components>
       <div class="markdown-body content" v-html="page.html"></div>
-      <custom-components place="content:end"></custom-components>
+      <custom-components place="content:end" v-if="loaded"></custom-components>
     </section>
   </div>
 </template>
