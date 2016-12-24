@@ -222,7 +222,7 @@
     top: 0;
     bottom: 0;
     padding: 0 0 70px 0;
-    background-color: #fcfcfc;
+    background-color: white;
     z-index: 1000;
   }
   .main {
