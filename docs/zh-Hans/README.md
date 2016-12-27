@@ -73,6 +73,27 @@ self.$config = {
 }
 ```
 
+### Landing 页面
+
+你可以开启 `landing` 选项来启用 Landing 页面:
+
+```js
+self.$config = {
+  // true 将会默认使用 `landing.html`
+  landing: true,
+  // 也可以用自定义页面
+  landing: '_my-landing.html',
+  // 当然 markdown 文件也可以
+  landing: 'landing.md'
+}
+```
+
+如果你开启了这个功能，Landing 页面的路由将是 `/`，而文档的首页将改为用 `/home` 访问。
+
+<p class="warning">
+  你不能再动态添加的页面里使用 <code>script</code> 标签，因为动态添加的内容 JS 不会被浏览器执行。
+</p>
+
 ### 多页面
 
 当然你也可以添加更多页面来显示不同内容。比如添加一个 `chinese.md` 用作文档的中文翻译，然后就能通过 `/#/chinese` 访问到这个页面了！

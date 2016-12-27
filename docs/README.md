@@ -72,6 +72,27 @@ self.$config = {
 }
 ```
 
+### Landing Page
+
+You can set the `landing` option to `true` or a custom path:
+
+```js
+self.$config = {
+  // true means using `landing.html`
+  landing: true,
+  // or custom path
+  landing: '_my-landing.html',
+  // or even markdown file
+  landing: 'landing.md'
+}
+```
+
+If you enable landing page, the route `/` will match landing page, and `/home` will be the homepage of docs.
+
+<p class="warning">
+  You cannot use <code>script</code> tag in pages, since dynamically added scripts will not be evaluated by your browser.
+</p>
+
 ### Pages
 
 You can also add more markdown files to display more pages. For example, adding `chinese.md` to your doc folder so that you got a new page at `/#/chinese`!

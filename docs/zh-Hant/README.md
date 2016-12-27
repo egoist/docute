@@ -73,6 +73,27 @@ self.$config = {
 }
 ```
 
+### Landing 頁面
+
+妳可以開啟 `landing` 選項來啟用 Landing 頁面:
+
+```js
+self.$config = {
+  // true 將會默認使用 `landing.html`
+  landing: true,
+  // 也可以用自定義頁面
+  landing: '_my-landing.html',
+  // 當然 markdown 文件也可以
+  landing: 'landing.md'
+}
+```
+
+如果妳開啟了這個功能，Landing 頁面的路由將是 `/`，而文檔的首頁將改為用 `/home` 訪問。
+
+<p class="warning">
+  妳不能再動態添加的頁面裏使用 <code>script</code> 標簽，因為動態添加的內容 JS 不會被瀏覽器執行。
+</p>
+
 ### 多頁面
 
 當然妳也可以添加更多頁面來顯示不同內容。比如添加壹個 `chinese.md` 用作文檔的中文翻譯，然後就能通過 `/#/chinese` 訪問到這個頁面了！
