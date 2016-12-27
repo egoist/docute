@@ -22,7 +22,9 @@
       ...mapActions(['updateActiveId', 'jumpToId']),
       scrollSpy() {
         const handleScroll = () => {
-          if (this.jumping) return
+          const name = this.$route.meta && this.$route.meta.name
+          const isDocPage = ['home', 'page'].indexOf(name) > -1
+          if (this.jumping || !isDocPage) return
           const headings = $$('.markdown-toc-heading')
           const els = [...headings].map(heading => {
             return {
