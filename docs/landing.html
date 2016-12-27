@@ -34,10 +34,19 @@
     letter-spacing: 1px;
   }
   .landing {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     height: 100%;
   }
   .features {
@@ -53,6 +62,8 @@
     background-color: white;
     display: inline-block;
     margin-right: 20px;
+    -webkit-user-select: none;
+    user-select: none;
   }
   .landing-button:hover {
     border-color: #42b983;
