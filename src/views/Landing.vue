@@ -1,7 +1,5 @@
 <template>
-  <div class="landing" v-html="html">
-
-  </div>
+  <div class="landing" v-html="html"></div>
 </template>
 
 <script>
