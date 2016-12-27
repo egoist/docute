@@ -73,6 +73,7 @@ self.$config = {
     }),
     disqus({
       shortname: 'docute'
-    })
+    }),
+    evanyou()
   ]
 }
