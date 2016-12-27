@@ -88,6 +88,10 @@ self.$config = {
 
 我們將來也考慮加入 medium.com 那種的段落內評論的功能。
 
+## 社區插件
+
+- [evanyou](https://github.com/egoist/docute-evanyou): 給 Landing 頁面添加彩帶效果, 就像 [evanyou.me](http://evanyou.me) 那樣
+
 ## 開發壹個插件
 
 壹個插件就是壹個函數，它接受壹個 `context` 參數:

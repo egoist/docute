@@ -92,6 +92,10 @@ self.$config = {
 
 We may add `inline comment` support in the future, just like the way medium.com did.
 
+## Community Plugins
+
+- [evanyou](https://github.com/egoist/docute-evanyou): Add colorful ribbon effect to your landing page, just like [evanyou.me](http://evanyou.me)!
+
 ## Write A Plugin
 
 A plugin is simply a function that takes `context` as arguments.
