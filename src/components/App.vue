@@ -53,8 +53,7 @@
       },
       handleNavigateAttribute(e) {
         const jumpEl = e.target.closest('[jump-to-id]')
-        if (!jumpEl) return
-        const id = jumpEl.getAttribute('jump-to-id')
+        const id = jumpEl && jumpEl.getAttribute('jump-to-id')
         if (id) {
           e.preventDefault()
           this.$router.push({query: {...this.$route.query, id}})
@@ -62,8 +61,7 @@
         }
 
         const linkEl = e.target.closest('[router-link]')
-        if (!linkEl) return
-        const link = linkEl.getAttribute('router-link')
+        const link = linkEl && linkEl.getAttribute('router-link')
         if (link) {
           e.preventDefault()
           return this.$router.push(link)

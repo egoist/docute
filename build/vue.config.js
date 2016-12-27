@@ -9,6 +9,9 @@ module.exports = {
   replace: {
     '__DOCUTE_VERSION__': JSON.stringify(pkg.version)
   },
+  alias: {
+    'vue$': 'vue/dist/vue.common.js'
+  },
   postcss() {
     return [
       require('autoprefixer')({

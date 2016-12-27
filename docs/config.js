@@ -1,11 +1,12 @@
 var langs = [
-  {title: 'English', path: '/'},
+  {title: 'English', path: '/home'},
   {title: '简体中文', path: '/zh-Hans/'},
   {title: '繁體中文', path: '/zh-Hant/'},
   {title: '日本語', path: '/jp/'}
 ]
 
 self.$config = {
+  landing: true,
   title: 'Docute',
   // home: 'https://raw.githubusercontent.com/egoist/docute/master/README.md',
   repo: 'egoist/docute',
@@ -15,7 +16,7 @@ self.$config = {
   nav: {
     default: [
       {
-        title: 'Home', path: '/'
+        title: 'Home', path: '/home'
       },
       {
         title: 'Plugins', path: '/plugins'

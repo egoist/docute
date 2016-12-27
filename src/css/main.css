@@ -22,3 +22,7 @@
 [aria-label] {
   text-rendering: optimizeSpeed;
 }
+
+[router-link], [jump-to-id] {
+  cursor: pointer;
+}
