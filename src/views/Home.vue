@@ -34,6 +34,7 @@
   import marked from 'utils/marked'
   import renderer from 'utils/marked-renderer'
   import LinkIcon from '!raw-loader!svg/link.svg'
+  import slugify from 'utils/slugify'
 
   marked.setOptions({
     highlight(code, lang) {
@@ -82,13 +83,7 @@
         let headings = []
         renderer.heading = (text, level) => {
           const index = headings.length
-          let slug = text.replace(/[:\/\?#\[\]@!$&'()*+,;=\\%<>\|\^~£"]/g, '')
-            // Replace dots and spaces with a sepeator
-            .replace(/(\s|\.)/g, '-')
-            // Convert 2 or more sepeators into just one sepeator
-            .replace(/-+/g, '-')
-            // Make the whole thing lowercase
-            .toLowerCase()
+          let slug = slugify(text)
 
           // check if there's already a same slug
           const sameSlugs = headings.filter(heading => {
