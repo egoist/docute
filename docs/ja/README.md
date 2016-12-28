@@ -7,7 +7,7 @@ search: ja
 
 docuteを使い、ビルドプロセス（build process）なしにドキュメントを作りましょう。
 
-## docuteとは
+## はじめに
 
 `docute`を利用して、markdownファイルを直接にHTMLコードとして変換して出力することができます。ホームページの`index.html`と設定ファイルの`config.js`だけあれば、`docute`は自動的にmarkdownファイルをSPAに作成できます。
 
@@ -27,9 +27,9 @@ Yarn：
 yarn global add docute-cli
 ```
 
-## はじめに
+## 初期化
 
-markdownファイルを`./docs`ディレクトリに置いた場合：
+markdownファイルを`./docs`ディレクトリに置いた場合には：
 
 ```bash
 docute init ./docs
@@ -38,9 +38,9 @@ docute init ./docs
 これで`./docs`での初期化が完了します。このディレクトリには、以下のファイルがあります：
 
 - README.md：ホームページとして表示されています。
-- index.html：必要なscriptとstyleファイルが含まれており、サイトへアクセスする時に使うHTMLファイルです。
+- index.html：必要なscriptとstyleファイルを含んで、サイトへアクセスする時に使うHTMLファイルです。
 - config.js：設定ファイル。
-- .nojekyll：jekyllのサイトではないことを示すファイルです。Github pagesに発表するつもりのない場合は、無視してください。
+- .nojekyll：jekyllのサイトではないことを表すファイルです。Github pagesに発表するつもりのない場合は、無視してください。
 
 すると、ローカルでプレビューできます：
 
@@ -49,6 +49,37 @@ docute ./docs
 ```
 
 http://localhost:8080でサイトを見てみましょう。
+
+### 手動で初期化
+
+node.jsやnpmが好きではない方に対して、ただ一つの`index.html`ファイルを作るのは十分です：
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>My Awesome Doc</title>
+  <!-- docuteのスタイルファイル -->
+  <link rel="stylesheet" href="https://unpkg.com/docute/dist/docute.css">
+</head>
+<body>
+  <div id="app"></div>
+  <!-- $configを含んだ設定ファイルも使えます -->
+  <!-- 例えばconfig.js -->
+  <script>
+    self.$config = {
+      // configs...
+    }
+  </script>
+  <!-- load the docute client library -->
+  <script src="https://unpkg.com/docute/dist/docute.js"></script>
+</body>
+</html>
+```
+
 
 ## 設定ファイル
 
@@ -285,11 +316,26 @@ self.$config = {
 
 ```markdown
 ---
-navbar: chinese
+navbar: japanese
 ---
-<!-- このページのナビバーはchinese -->
-こんにちは
+<!-- このページのナビバーはjapaneseです -->
+こんにちは！
 ```
+
+### Markdownの設定
+
+docuteは[marked](https://github.com/chjj/marked)を使ってmarkdownを解析しています。以下のようにmarkedのオプションを変更できます：
+
+```js
+self.$config = {
+  marked: {
+    smartypants: true
+    // ...
+  }
+}
+```
+
+詳しくのは[公式サイト](https://github.com/chjj/marked#options-1)に参考してください。
 
 ## ガイド
 
