@@ -294,6 +294,21 @@ navbar: chinese
 你好世界！
 ```
 
+### Markdown Settings
+
+docute uses [marked](https://github.com/chjj/marked) to parse markdown code，you can adjust marked's settings by:
+
+```js
+self.$config = {
+  marked: {
+    smartypants: true
+    // ...
+  }
+}
+```
+
+Please refer to the [official docs](https://github.com/chjj/marked#options-1) for details about its options.
+
 ## Recipes
 
 ### Page Title

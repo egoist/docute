@@ -129,9 +129,9 @@
         const text = await res.text()
 
         const parsed = frontMatter(text)
-
+        marked.setOptions({...this.config.marked, renderer})
         this.updatePage({
-          html: marked(parsed.body, {renderer}),
+          html: marked(parsed.body),
           attributes: parsed.attributes,
           headings: this.handleRelation(headings)
         })

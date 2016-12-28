@@ -295,6 +295,21 @@ navbar: chinese
 妳好世界！
 ```
 
+### Markdown 配置
+
+docute 使用 [marked](https://github.com/chjj/marked) 來解析 markdown 代碼，妳可以調整 marked 的默認參數:
+
+```js
+self.$config = {
+  marked: {
+    smartypants: true
+    // ...
+  }
+}
+```
+
+完整的參數說明請參考[官方文檔](https://github.com/chjj/marked#options-1)。
+
 ## 指南
 
 ### 頁面標題
