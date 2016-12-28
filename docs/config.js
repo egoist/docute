@@ -2,7 +2,7 @@ var langs = [
   {title: 'English', path: '/home'},
   {title: '简体中文', path: '/zh-Hans/'},
   {title: '繁體中文', path: '/zh-Hant/'},
-  {title: '日本語', path: '/jp/'}
+  {title: '日本語', path: '/ja/'}
 ]
 
 self.$config = {
@@ -55,6 +55,20 @@ self.$config = {
       {
         title: '選擇語言', type: 'dropdown', items: langs
       }
+    ],
+    'ja': [
+      {
+        title: 'ホームページ', path: '/ja/'
+      },
+      {
+        title: 'プラグイン', path: '/ja/plugins'
+      },
+      {
+        title: 'コマンドラインツール', path: '/ja/cli'
+      },
+      {
+        title: '言語', type: 'dropdown', items: langs
+      }
     ]
   },
   icons: [
@@ -69,7 +83,7 @@ self.$config = {
     docsearch({
       apiKey: '65360cf9a91d87cd455d2b286d0d89ee',
       indexName: 'docute',
-      tags: ['english', 'zh-Hans', 'zh-Hant']
+      tags: ['english', 'zh-Hans', 'zh-Hant', 'ja']
     }),
     disqus({
       shortname: 'docute'
