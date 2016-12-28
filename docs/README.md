@@ -26,6 +26,10 @@ Using Yarn:
 yarn global add docute-cli
 ```
 
+<p class="tip">
+  You don't really need <code>docute-cli</code>, it's just a tool for scaffolding out a doc folder and bringing you a dev-server with live reloading support. You can use any similar tool, for example, <a href="https://github.com/tapio/live-server" target="_blank">live-server</a> + <a href="http://yeoman.io/" target="_blank">yeoman generator</a>, or simply crafted by hand if you like, there's not much work you have to do!
+</p>
+
 ## Quick Start
 
 Assume that the folder you want for docs is `./docs`:
@@ -49,6 +53,38 @@ docute ./docs
 
 Open http://localhost:8080 and you'll see it in action.
 
+### Manually
+
+Do you hate node.js or npm? Or just being too lazy to install them? You know you don't need to install `docute-cli` at all!
+
+What we really need is an `index.html`:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>My Awesome Doc</title>
+  <!-- the docute client styles -->
+  <link rel="stylesheet" href="https://unpkg.com/docute/dist/docute.css">
+</head>
+<body>
+  <div id="app"></div>
+  <!-- you can put the script which contains config in another file -->
+  <!-- like config.js -->
+  <script>
+    self.$config = {
+      // configs...
+    }
+  </script>
+  <!-- load the docute client library -->
+  <script src="https://unpkg.com/docute/dist/docute.js"></script>
+</body>
+</html>
+```
+ 
 ## Configuration
 
 There will be a `config.js` in your doc directory after running `docute init`:

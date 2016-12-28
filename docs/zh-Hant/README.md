@@ -50,6 +50,36 @@ docute ./docs
 
 打開 http://localhost:8080 就能看到妳的網站了。
 
+### 手動開始
+
+妳可能並不喜歡 node.js 或 npm，也可能覺得安裝它們很麻煩，其實妳並不需要 `docute-cli`，我們唯壹需要的只是壹個 `index.html` 文件:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>My Awesome Doc</title>
+  <!-- docute 的 CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/docute/dist/docute.css">
+</head>
+<body>
+  <div id="app"></div>
+  <!-- 妳也可以把包含 $config 配置的腳本放到單獨的文件裏 -->
+  <!-- 比如 config.js -->
+  <script>
+    self.$config = {
+      // 配置...
+    }
+  </script>
+  <!-- 加載 docute 的 js 庫 -->
+  <script src="https://unpkg.com/docute/dist/docute.js"></script>
+</body>
+</html>
+```
+
 ## 配置文件
 
 執行 `docute init` 後妳的文檔目錄會有壹個 `config.js` 配置文件:

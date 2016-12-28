@@ -20,9 +20,11 @@ function flatten(nav) {
   }, [])
 }
 
+const userConfig = typeof window === 'undefined' ? {} : (window.$config || {})
+
 const store = new Vuex.Store({
   state: {
-    config: typeof window === 'undefined' ? {} : (window.$config || {}),
+    config: {title: document.title, ...userConfig},
     page: {
       html: '',
       attributes: {},
