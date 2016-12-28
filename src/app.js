@@ -12,7 +12,11 @@ sync(store, router)
 const plugins = store.state.config.plugins
 if (Array.isArray(plugins)) {
   for (const plugin of plugins) {
-    if (typeof plugin === 'function') plugin({store, router, registerComponent})
+    if (typeof plugin === 'function') plugin({
+      store,
+      router,
+      registerComponent
+    })
   }
 }
 

@@ -32,6 +32,7 @@
   import nprogress from 'nprogress'
   import {inBrowser, $, $$, isMobile} from 'utils/dom'
   import marked from 'utils/marked'
+  import renderer from 'utils/marked-renderer'
   import LinkIcon from '!raw-loader!svg/link.svg'
 
   marked.setOptions({
@@ -78,8 +79,6 @@
       async fetchData() {
         nprogress.start()
 
-        const renderer = new marked.Renderer()
-
         let headings = []
         renderer.heading = (text, level) => {
           const index = headings.length
@@ -107,10 +106,6 @@
               ${anchor}
               ${text}
             </h${level}>`
-        }
-        renderer.link = (href, title, text) => {
-          const getTitle = title ? ` title="${title}"` : ''
-          return `<a target="_blank" href="${href}"${getTitle}>${text}</a>`
         }
 
         let file = this.config.home || './README.md'
