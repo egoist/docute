@@ -83,7 +83,7 @@
         let headings = []
         renderer.heading = (text, level) => {
           const index = headings.length
-          let slug = slugify(text)
+          let slug = this.config.slugify ? this.config.slugify(text) : slugify(text)
 
           // check if there's already a same slug
           const sameSlugs = headings.filter(heading => {
