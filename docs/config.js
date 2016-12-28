@@ -58,7 +58,7 @@ self.$config = {
     ],
     'ja': [
       {
-        title: 'ホームページ', path: '/ja/'
+        title: 'はじめに', path: '/ja/'
       },
       {
         title: 'プラグイン', path: '/ja/plugins'
