@@ -186,7 +186,7 @@ const store = new Vuex.Store({
 
       if (!disableDefaultIcons) {
         if (editLink) {
-          let filename = path
+          let filename = state.config.landing ? '/' : path
           if (/\/$/.test(filename)) filename += 'README'
           defaultIcons.push({
             link: `${editLink}${filename}.md`,
