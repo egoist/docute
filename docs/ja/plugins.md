@@ -5,20 +5,20 @@ search: ja
 
 # プラグイン
 
-プラグイン（plugins）は、いろいろな機能を追加しながら、docute自体を太くないようにしています。
+プラグイン（plugins）は、いろいろな機能を追加しながら、docute 自体を太くないようにしています。
 
 ## プラグインリスト
 
 ### DocSearch
 
-DocSearchは[algolia.com](http://algolia.com)が提供して、無料の検索サービスです。これは今にとって最も簡単な検索サービスだと思われています。
+DocSearch は[algolia.com](http://algolia.com)が提供して、無料の検索サービスです。これは今にとって最も簡単な検索サービスだと思われています。
 
-このプラグインを使うには、[docsearchプロジェクト](https://community.algolia.com/docsearch/)に登録しなければなりません。すると、API keyとindexName、または使い方を含んだメールが送られます。
+このプラグインを使うには、[docsearchプロジェクト](https://community.algolia.com/docsearch/)に登録しなければなりません。すると、API key と indexName 、または使い方を含んだメールが送られます。
 
-しかし、公式の方法と違い、docuteにはdocsearchプラグインだけを導入すればいいです：
+しかし、公式の方法と違い、docute には docsearch プラグインだけを導入すればいいです：
 
 ```html
-<!-- docsearchを最優先に -->
+<!-- docsearch を最優先に -->
 <script src="https://unpkg.com/docute/plugins/docsearch.js"></script>
 <script src="config.js"></script>
 <script src="https://unpkg.com/docute/dist/docute.js"></script>
@@ -29,7 +29,7 @@ DocSearchは[algolia.com](http://algolia.com)が提供して、無料の検索�
 ```js
 self.$config = {
   plugins: [
-  　// docsearch関数はプラグインが提供しています
+  　// docsearch 関数はプラグインが提供しています
     docsearch({
       apiKey: 'あなたのAPI Key',
       indexName: 'あなたのIndex Name',
@@ -37,21 +37,21 @@ self.$config = {
       tags: ['english', 'zh-Hans', 'zh-Hant']
     })
   ],
-  // サイトのURLも必要です
+  // サイトの URL も必要です
   url: 'https://docute.js.org'
 }
 ```
 
-docute.js.orgの[設定ファイル](https://github.com/algolia/docsearch-configs/blob/master/configs/docute.json)を参考してください。通常、すべての内容が検索されていますが、front-matterを使って、特定のタグを検索できます：
+docute.js.org の[設定ファイル](https://github.com/algolia/docsearch-configs/blob/master/configs/docute.json)を参考してください。通常、すべての内容が検索されていますが、front-matter を使って、特定のタグを検索できます：
 
 ```markdown
 ---
 search: english
 ---
-このページでenglishタグの内容しか検索されていません
+このページで english タグの内容しか検索されていません
 ```
 
-searchプロパティを配列に設定したら、複数のタグが検索されることになります：
+search プロパティを配列に設定したら、複数のタグが検索されることになります：
 
 ```markdown
 ---
@@ -78,13 +78,13 @@ search:
 self.$config = {
   plugins: [
     disqus({
-      shortname: 'SHORT_NAME' // あなたのdisqusサート名に変更
+      shortname: 'SHORT_NAME' // あなたの disqus サート名に変更
     })
   ]
 }
 ```
 
-medium.comのような段落内コメント機能は、計画中です。
+medium.com のような段落内コメント機能は、計画中です。
 
 ## コミュニティプラグイン
 
@@ -124,7 +124,7 @@ function myPlugin(options) {
 ```
 
 <p class="tip">
-　`window.fetch`はpolyfillなしで使えます。
+　`window.fetch`は polyfill なしで使えます。
 </p>
 
 ### Context
@@ -149,4 +149,4 @@ function myPlugin(options) {
 
 型：`VueComponent`
 
-任意なVueコンポーネント。
+任意な Vue コンポーネント。

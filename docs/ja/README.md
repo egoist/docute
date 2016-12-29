@@ -5,11 +5,11 @@ search: ja
 
 # docute
 
-docuteを使い、ビルドプロセス（build process）なしにドキュメントを作りましょう。
+docute を使い、ビルドプロセス（build process）なしにドキュメントを作りましょう。
 
-## docuteとは
+## はじめに
 
-`docute`を利用して、markdownファイルを直接にHTMLコードとして変換して出力することができます。ホームページの`index.html`と設定ファイルの`config.js`だけあれば、`docute`は自動的にmarkdownファイルをSPAに作成できます。
+`docute`を利用して、markdown ファイルを直接に HTML コードとして変換して出力することができます。ホームページの`index.html`と設定ファイルの`config.js`だけあれば、`docute`は自動的に markdown ファイルを SPA に作成できます。
 
 ## インストール
 
@@ -27,20 +27,20 @@ Yarn：
 yarn global add docute-cli
 ```
 
-## はじめに
+## 初期化
 
-markdownファイルを`./docs`ディレクトリに置いた場合：
+markdown ファイルを`./docs`ディレクトリに置いた場合には：
 
 ```bash
 docute init ./docs
 ```
 
-これで`./docs`での初期化が完了します。このディレクトリには、以下のファイルがあります：
+これで`./docs`での初期化が完了します。このディレクトリには、以下のファイルが作り出されます：
 
 - README.md：ホームページとして表示されています。
-- index.html：必要なscriptとstyleファイルが含まれており、サイトへアクセスする時に使うHTMLファイルです。
+- index.html：必要な script と style ファイルを含んで、サイトへアクセスする時に使うHTMLファイルです。
 - config.js：設定ファイル。
-- .nojekyll：jekyllのサイトではないことを示すファイルです。Github pagesに発表するつもりのない場合は、無視してください。
+- .nojekyll：jekyll のサイトではないことを表すファイルです。Github pages にデプロイするつもりのない場合は、無視してください。
 
 すると、ローカルでプレビューできます：
 
@@ -50,9 +50,40 @@ docute ./docs
 
 http://localhost:8080でサイトを見てみましょう。
 
+### 手動で初期化
+
+node.js や npm が好きではない方に対して、ただ一つの`index.html`ファイルを作るのは十分です：
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>My Awesome Doc</title>
+  <!-- docuteのスタイルファイル -->
+  <link rel="stylesheet" href="https://unpkg.com/docute/dist/docute.css">
+</head>
+<body>
+  <div id="app"></div>
+  <!-- $config を含んだ設定ファイルも使えます -->
+  <!-- 例えばconfig.js -->
+  <script>
+    self.$config = {
+      // configs...
+    }
+  </script>
+  <!-- docute ライブラリを導入します  -->
+  <script src="https://unpkg.com/docute/dist/docute.js"></script>
+</body>
+</html>
+```
+
+
 ## 設定ファイル
 
-`docute init`を実行したら、ディレクトリに`config.js`というファイルがあります。
+`docute init`を実行したら、ディレクトリに`config.js`というファイルが作り出されます。
 
 ```js
 self.$config = {
@@ -64,11 +95,11 @@ self.$config = {
 
 ### ホームページ
 
-`README.md`ファイルはドクモンドのホームページとしてレンダリングされていますが、別のファイルをホームページに使いたい場合は、以下のように設定してください：
+`README.md`ファイルはドキュメントのホームページとしてレンダリングされていますが、別のファイルをホームページにしたい場合は、以下のように設定してください：
 
 ```js
 self.$config = {
-  // ルート・ディレクトリの中のREADME.md
+  // ルート・ディレクトリの中の README.md
   home: 'https://raw.githubusercontent.com/egoist/docute/master/README.md'
 }
 ```
@@ -88,20 +119,19 @@ self.$config = {
 }
 ```
 
-ランディングページを有効にすれば、ルーターには`/`がランディングページ、`/home`がドクモンドのホームページとなります。
+ランディングページを有効にすれば、ルーターには`/`がランディングページ、`/home`がドキュメントのホームページとなります。
 
 ### マルチページ
 
-それぞれのページを使い、それぞれの内容を表示することもできます。例えば、`chinese.md`ファイルを作成すれば、`/#/chinese`に通してアクセスできます。
+複数の markdown ファイルを作り、マルチページで表示できます。例えば、`chinese.md`を作成すると、`/#/chinese`ページがレンダリングされます。
 
-サブディレクトリの場合も利用可能です。例えば、`language/chinese.md`を作成すると、`/#/language/chinese`で訪問できます。
+サブディレクトリの場合も利用可能です。例えば、`language/chinese.md`を作成すれば、`/#/language/chinese`に通してアクセスできます。
 
-注意点：`about/README.md`ファイルに対してのルーターは`/#/about/`ですが、`/#/about`（末尾の／なし）ルーターには、`about.md`ファイルとなります。
+注意点：`about/README.md`ファイルに対してのルーターは`/#/about/`ですが、`/#/about`（末尾の／なし）ルーターには、`about.md`ファイルとなっています。
 
 ### サイドバー
 
-`sidebar`オプションを`false`に設定すると、サイドバーは全体的に
-無効になります。
+`sidebar`オプションを`false`に設定すると、サイドバーは全体的に無効になります。
 
 ```js
 self.$config = {
@@ -128,13 +158,13 @@ self.$config = {
 
 #### 目次
 
-サイドバーにある目次は、markdownファイルから作られたものです。h2 ~ h5タイトルを利用して目次を作り出します。
+サイドバーにある目次は、markdownファイルから作られたものです。h2 ~ h5 タイトルを利用して目次を作り出します。
 
-通常、h5レベル以降のタイトルは、ページがこのエリアにスクロールした時しか表示されていませんが、オプションに変更できます：
+通常、h5 レベル以降のタイトルは、ページがこのエリアにスクロールした時しか表示されていませんが、オプションに変更できます：
 
 ```js
 self.$config = {
-  // h2からh4までのタイトルを表示します
+  // h2 から h4 までのタイトルを表示します
   tocVisibleDepth: 3
 }
 ```
@@ -160,9 +190,9 @@ self.$config = {
 
 ```js
 self.$config = {
-  // githubリポジトリの略
+  // github リポジトリの略
   repo: 'tj/co',
-  // twitterユーザーネーム
+  // twitter ユーザーネーム
   twitter: 'realDonaldTrump',
   // ソースファイルのアドレス
   'edit-link': 'https://github.com/egoist/docute/blob/master/docs'
@@ -171,7 +201,7 @@ self.$config = {
 
 ##### カスタムアイコン
 
-SVGの[シンボル要素](https://css-tricks.com/svg-symbol-good-choice-icons/)のidを指定して、カスタムアイコンを使います。
+SVG の[シンボル要素](https://css-tricks.com/svg-symbol-good-choice-icons/)の id を指定して、カスタムアイコンを使います。
 
 まず、SVG要素を`index.html`に追加しましょう：
 
@@ -195,13 +225,13 @@ self.$config = {
   icons: [
     {
       label: 'マウスオーバー！', // マウスオーバーした時のツールチップ
-      svgId: 'my-icon' // シンボル要素のid
+      svgId: 'my-icon' // シンボル要素の id
     }
   ]
 }
 ```
 
-`svgClass`を追加したら、CSSを使って便利にアイコンをカスタマイズしたりできるようになります：
+`svgClass`を追加したら、CSS を使って便利にアイコンをカスタマイズしたりできるようになります：
 
 ```js
 self.$config = {
@@ -242,7 +272,7 @@ self.$config = {
 }
 ```
 
-これですべてのページは`default`アイコンを使うことになります。front-matterで特定のページを設定してみましょう：
+これですべてのページは`default`アイコンを使うことになります。front-matter で特定のページを設定してみましょう：
 
 ```markdown
 ---
@@ -281,27 +311,42 @@ self.$config = {
 }
 ```
 
-すると、2つの名付けたナビバーができましたが、未だ全部のページは`default`のまま表示しています。markdownファイルにfront-matterを追加して変更してみましょう：
+すると、2つの名付けたナビバーができましたが、未だ全部のページは`default`のまま表示しています。markdown ファイルに front-matter を追加して変更してみましょう：
 
 ```markdown
 ---
-navbar: chinese
+navbar: japanese
 ---
-<!-- このページのナビバーはchinese -->
-こんにちは
+<!-- このページのナビバーは japanese です -->
+こんにちは！
 ```
+
+### Markdownの設定
+
+docute は[marked](https://github.com/chjj/marked)を使って markdown を解析しています。以下のように marked のオプションを変更できます：
+
+```js
+self.$config = {
+  marked: {
+    smartypants: true
+    // ...
+  }
+}
+```
+
+詳しくのは[公式サイト](https://github.com/chjj/marked#options-1)に参考してください。
 
 ## ガイド
 
 ### ページのタイトル
 
-各々のページは、`nav`オプションの`title`をページのタイトルとして表示していますが、front-matterで表示タイトルを変えられます：
+各々のページは、`nav`オプションの`title`をページのタイトルとして表示していますが、front-matter で表示タイトルを変えられます：
 
 ```markdown
 ---
 title: ホームページ
 ---
-ナビバーにこのページは「日本語」ですが、ブラウザのタブには「ホームページ」が表示されています
+ナビバーにこのページの名は「日本語」ですが、ブラウザのタブには「ホームページ」として表示されています
 ```
 
 ### シンタックスハイライト
@@ -325,13 +370,13 @@ def fib(n):
 print fib(5)
 ```
 
-`docute`に次の言語のハイライト機能がついています：`javascript` `cpp` `css` `xml` `bash` `markdown` `yaml`。https://unpkg.com/highlight-languages/で利用できるプログラミング言語を探しましょう。
+`docute`に次の言語のハイライト機能がついています：`javascript` `cpp` `css` `xml` `bash` `markdown` `yaml`。https://unpkg.com/highlight-languages/ で利用できるプログラミング言語を探しましょう。
 
-### ドクモンドヘルパー
+### ドキュメントヘルパー
 
 #### 内蔵CSSスタイル
 
-内蔵CSSスタイルは、読みやすさに目指して作られたものです。
+内蔵 CSS スタイルは、読みやすさに目指して作られたものです。
 
 ##### p.tip
 
@@ -346,7 +391,7 @@ print fib(5)
 以下のように表示されています：
 
 <p class="tip">
-  docuteは初心者からベテランまでも実用的だ！
+  docute は初心者からベテランまでも実用的だ！
 </p>
 
 ##### p.warning
@@ -382,7 +427,7 @@ print fib(5)
 
 #### HTMLの属性
 
-docuteは、いろいろな内蔵HTMLの属性を提供しています。
+docute は、いろいろな内蔵 HTML の属性を提供しています。
 
 ##### jump-to-id
 
@@ -398,7 +443,7 @@ docuteは、いろいろな内蔵HTMLの属性を提供しています。
 
 ##### router-link
 
-別のページへ移動します。URLとqueryが使えます：
+別のページへ移動します。URL と query が使えます：
 
 ```html
 <a href="#" router-link="/">ホームページ</a>
@@ -406,7 +451,7 @@ docuteは、いろいろな内蔵HTMLの属性を提供しています。
 ```
 
 <p class="warning">
-  smoothスクロールエフェクトがないため、タイトルへのジャンプは、<code>router-link</code> を使わないでください。<a href="#" jump-to-id="jump-to-id">jump-to-id</a> 属性を利用してください。
+  smooth スクロールエフェクトがないため、タイトルへのジャンプは、<code>router-link</code> を使わないでください。<a href="#" jump-to-id="jump-to-id">jump-to-id</a> 属性を利用してください。
 </p>
 
 #### グローバル変数
@@ -426,7 +471,7 @@ Vue // Vueコンストラクタ関数
 
 #### Google Analytics
 
-docuteはSPAであるため、普通のWebサイトと比べると、Google Analyticsの使い方は違っています。以下のコードをHTMLに追加すると、アクセス解析ができます：
+docute は SPA であるため、普通の Web サイトと比べると、Google Analytics の使い方は違っています。以下のコードを HTML に追加すると、アクセス解析ができます：
 
 ```html
 <!-- Google Analytics -->
@@ -444,7 +489,7 @@ docute.router.afterEach(function (to) {
 ```
 
 <p class="warning">
-  <code>UA-XXXXX-Y</code>を自分のIDに変更してください。
+  <code>UA-XXXXX-Y</code>を自分の ID に変更してください。
 </p>
 
 ### GitHubにデプロイ
@@ -455,7 +500,7 @@ docute.router.afterEach(function (to) {
 - master ブランチ
 - gh-pages ブランチ
 
-GitHubにpushした後、プロジェクトのsettingsでいずれのオプションを選びましょう：
+GitHub に push した後、プロジェクトの settings でいずれのオプションを選びましょう：
 
 <img src="https://docute.js.org/assets/deploy.png" alt="deploy" width="500">
 
@@ -463,7 +508,7 @@ GitHubにpushした後、プロジェクトのsettingsでいずれのオプシ�
 
 #### nginxの場合
 
-以下のnginx confを試してみましょう：
+以下の nginx conf を試してみましょう：
 
 ```nginx
 server {
@@ -495,12 +540,12 @@ server {
 
 ### gitbookとの違いは何ですか。
 
-確かにdocuteとgitbookは似っています。両方もドクモンドを作るためのものだけでなく、レイアウトも相似していますが、docuteはHTMLへコンパイルなしにデプロイできます。それに設定ファイルも簡単ですし。docuteを利用してエレガントなドクモンドを作りましょう！
+確かに docute と gitbook は似っています。両方もドキュメントを作るためのものだけでなく、レイアウトも相似していますが、docute は HTML へのコンパイルなしにデプロイできます。それに設定ファイルも簡単ですし。docute を利用してエレガントなドキュメントを作りましょう！
 
-このほか、docuteは我々がgitbook/hexo/jekyllなどを使った経験をまとめ、その上で作り出したものです。
+このほか、docute は我々が gitbook/hexo/jekyll などを使った経験をまとめ、その上で作り出したものです。
 
 ### 発表前にビルドするのは、何かが悪いのか。
 
-悪くないですが、そうする必要はないということです。SPAだけで十分なので、それにいろんなビルドプロセスから解放したいです。
+悪くないですが、そうする必要はないということです。SPA だけで十分なので、それにいろんなビルドプロセスから解放したいです。
 
-かといって、HTMLへのコンピレーションもこれからの計画の一つです。それだけじゃなく、[サバーでのレンダリング](https://github.com/egoist/docute/issues/12)（SSR）機能もどんどん開発しています。今のGoogleはダイナミックサイトに対応可能ですが、SSRができれば、さらによいSEO体験もできるでしょう。
+かといって、HTML へのコンピレーションもこれからの計画の一つです。それだけじゃなく、[サバーでのレンダリング](https://github.com/egoist/docute/issues/12)（SSR）機能もどんどん開発しています。今の Google はダイナミックサイトに対応可能ですが、SSR ができれば、さらによい SEO 体験もできるでしょう。
