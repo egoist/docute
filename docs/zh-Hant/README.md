@@ -86,9 +86,7 @@ docute ./docs
 
 ```js
 self.$config = {
-  // 站點名稱
-  title: 'My Website Name'
-  // 其它配置...
+  // 配置...
 }
 ```
 

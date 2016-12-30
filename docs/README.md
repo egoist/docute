@@ -91,8 +91,6 @@ There will be a `config.js` in your doc directory after running `docute init`:
 
 ```js
 self.$config = {
-  // site name
-  title: 'My Website Name'
   // blah...
 }
 ```

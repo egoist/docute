@@ -87,8 +87,6 @@ node.js や npm が好きではない方に対して、ただ一つの`index.htm
 
 ```js
 self.$config = {
-  // サイト名
-  title: '私のサイト'
   // blah...
 }
 ```
