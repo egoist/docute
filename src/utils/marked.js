@@ -4,8 +4,6 @@
  * https://github.com/chjj/marked
  */
 
-;(function() {
-
 /**
  * Block-Level Grammar
  */
@@ -1277,14 +1275,4 @@ marked.inlineLexer = InlineLexer.output;
 
 marked.parse = marked;
 
-if (typeof module !== 'undefined' && typeof exports === 'object') {
-  module.exports = marked;
-} else if (typeof define === 'function' && define.amd) {
-  define(function() { return marked; });
-} else {
-  this.marked = marked;
-}
-
-}).call(function() {
-  return this || (typeof window !== 'undefined' ? window : global);
-}());
+export default marked
