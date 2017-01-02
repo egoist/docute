@@ -92,7 +92,7 @@ self.$config = {
 
 ### 首页
 
-文档目录里的 `README.md` 文件会渲染为文档首页，，但有时你可能会想使用其它文件。比如你将 `./docs` 目录里的文件作为 github pages 使用的时候你可能想直接使用项目根目录里的 `README.md`，你可以通过配置指向该文件:
+文档目录里的 `README.md` 文件会渲染为文档首页，但有时你可能会想使用其它文件。比如你将 `./docs` 目录里的文件作为 github pages 使用的时候你可能想直接使用项目根目录里的 `README.md`，你可以通过配置指向该文件:
 
 ```js
 self.$config = {
@@ -132,7 +132,6 @@ self.$config = {
 
 ### 侧边栏
 
-To disable the sidebar globally, set it to `false` in `config.js`:
 想默认隐藏侧边栏，可以在 `config.js` 中将其设置为 `false`:
 
 ```js
