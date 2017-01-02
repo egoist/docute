@@ -13,9 +13,6 @@ var pattern = '^(' +
 // need to be moved down into the functions that use it.
 var regex = new RegExp(pattern, 'm')
 
-module.exports = extractor
-module.exports.test = test
-
 function extractor (string) {
   string = string || ''
 
@@ -49,3 +46,5 @@ function test (string) {
 
   return regex.test(string)
 }
+
+export default extractor
