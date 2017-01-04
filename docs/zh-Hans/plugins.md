@@ -152,3 +152,12 @@ Value: `oneOf(['content:start', 'content:end'])`
 Type: `VueComponent`
 
 任意的 Vue 组件对象。
+
+```js
+registerComponent('content:end', {
+  template: '<div>{{name}}</div>',
+  data() {
+    return {name: 'hello'}
+  }
+})
+```

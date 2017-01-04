@@ -154,4 +154,13 @@ Value: `oneOf(['content:start', 'content:end'])`
 
 Type: `VueComponent`
 
-Any Vue component can be accepted as component argument.
+Any Vue component (plain object works too) can be accepted as component argument.
+
+```js
+registerComponent('content:end', {
+  template: '<div>{{name}}</div>',
+  data() {
+    return {name: 'hello'}
+  }
+})
+```

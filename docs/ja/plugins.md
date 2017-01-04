@@ -150,3 +150,12 @@ function myPlugin(options) {
 型：`VueComponent`
 
 任意な Vue コンポーネント。
+
+```js
+registerComponent('content:end', {
+  template: '<div>{{name}}</div>',
+  data() {
+    return {name: 'hello'}
+  }
+})
+```
