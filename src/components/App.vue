@@ -11,6 +11,7 @@
   import {$$} from 'utils/dom'
 
   export default {
+    name: 'app',
     computed: {
       ...mapState(['jumping'])
     },
