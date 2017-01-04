@@ -8,6 +8,7 @@
   import nprogress from 'nprogress'
 
   export default {
+    name: 'landing',
     data() {
       return {
         html: ''
