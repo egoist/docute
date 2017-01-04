@@ -1,3 +1,12 @@
+## [Version 1.7.1](https://github.com/egoist/docute/releases/tag/v1.7.1) (2017-1-5)
+
+### Patches
+
+- add missing name for root component: [`d6002e0`](https://github.com/egoist/docute/commit/d6002e0)
+- check if toc exists: [`16dc78d`](https://github.com/egoist/docute/commit/16dc78d)
+
+[...full changes](https://github.com/egoist/docute/compare/v1.7.0...v1.7.1)
+
 ## [Version 1.7.0](https://github.com/egoist/docute/releases/tag/v1.7.0) (2017-1-5)
 
 ### Minor Changes
