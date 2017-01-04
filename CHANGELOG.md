@@ -1,3 +1,11 @@
+## [Version 1.7.0](https://github.com/egoist/docute/releases/tag/v1.7.0) (2017-1-5)
+
+### Minor Changes
+
+- add event system and debug mode: [`d95c699`](https://github.com/egoist/docute/commit/d95c699)
+
+[...full changes](https://github.com/egoist/docute/compare/v1.6.3...v1.7.0)
+
 ## [Version 1.6.3](https://github.com/egoist/docute/releases/tag/v1.6.3) (2017-1-4)
 
 ### Patches
