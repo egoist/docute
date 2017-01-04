@@ -13,6 +13,7 @@ const plugins = store.state.config.plugins
 if (Array.isArray(plugins)) {
   for (const plugin of plugins) {
     if (typeof plugin === 'function') plugin({
+      Vue,
       store,
       router,
       registerComponent
