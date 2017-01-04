@@ -133,6 +133,7 @@ function myPlugin(options) {
 
 `context` 參數有以下屬性:
 
+- Vue: `Vue` 构造函數
 - store: vuex store 實例
 - router: vue-router 實例
 - registerComponent: 用於在頁面裏插入壹個組件的函數

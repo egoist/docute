@@ -138,6 +138,7 @@ function myPlugin(options) {
 
 The argument `context` has following properties:
 
+- Vue: the `Vue` constructor
 - store: the vuex store instance
 - router: the vue-router instance
 - registerComponent: register a component to a specific position of the document

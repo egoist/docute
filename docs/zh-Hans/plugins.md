@@ -133,6 +133,7 @@ function myPlugin(options) {
 
 `context` 参数有以下属性:
 
+- Vue: `Vue` 构造函数
 - store: vuex store 实例
 - router: vue-router 实例
 - registerComponent: 用于在页面里插入一个组件的函数
