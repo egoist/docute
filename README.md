@@ -20,6 +20,11 @@ docute
 
 For detailed usage please head to https://docute.js.org 😎
 
+## Projects Using Docute
+
+- [sao](https://sao.js.org/): ⚔️ Futuristic scaffolding tool.
+- Feel free to add yours here :)
+
 ## Contributing
 
 1. Fork it!
