@@ -8,6 +8,7 @@ var langs = [
 self.$config = {
   marked: {smartypants: true},
   landing: true,
+  debug: true,
   // home: 'https://raw.githubusercontent.com/egoist/docute/master/README.md',
   repo: 'egoist/docute',
   twitter: 'rem_rin_rin',
