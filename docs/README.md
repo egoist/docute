@@ -343,6 +343,16 @@ self.$config = {
 
 Please refer to the [official docs](https://github.com/chjj/marked#options-1) for details about its options.
 
+### debug
+
+Set `debug` to `true` to enable vue-devtools:
+
+```js
+self.$config = {
+  debug: true
+}
+```
+
 ## Recipes
 
 ### Page Title

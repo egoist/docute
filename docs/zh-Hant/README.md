@@ -338,6 +338,16 @@ self.$config = {
 
 完整的參數說明請參考[官方文檔](https://github.com/chjj/marked#options-1)。
 
+### debug
+
+Set `debug` to `true` to enable vue-devtools:
+
+```js
+self.$config = {
+  debug: true
+}
+```
+
 ## 指南
 
 ### 頁面標題

@@ -35,6 +35,7 @@
   import renderer from 'utils/marked-renderer'
   import LinkIcon from '!raw-loader!svg/link.svg'
   import slugify from 'utils/slugify'
+  import event from 'utils/event'
 
   marked.setOptions({
     highlight(code, lang) {
@@ -136,6 +137,7 @@
         // scroll to id (the url query `id`)
         this.$nextTick(() => {
           nprogress.done()
+          event.emit('content:updated', this)
           if (this.id) {
             this.jumpToId(this.id)
           }

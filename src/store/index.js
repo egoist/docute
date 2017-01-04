@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import {isType} from 'utils'
 import jump from 'utils/jump'
 import nprogress from 'nprogress'
+import event from 'utils/event'
 
 Vue.use(Vuex)
 
@@ -120,8 +121,10 @@ const store = new Vuex.Store({
     jumpToId({dispatch}, id) {
       dispatch('updateActiveId', id)
       dispatch('startJumping')
+      event.emit('jump:started', id)
       jump(id, () => setTimeout(() => {
         dispatch('stopJumping')
+        event.emit('jump:stopped', id)
       }, 400))
     },
     startSearching({commit}) {

@@ -337,6 +337,16 @@ self.$config = {
 
 完整的参数说明请参考[官方文档](https://github.com/chjj/marked#options-1)。
 
+### debug
+
+将 `debug` 设置为 `true` 来启用浏览器的 vue-devtools 插件:
+
+```js
+self.$config = {
+  debug: true
+}
+```
+
 ## 指南
 
 ### 页面标题

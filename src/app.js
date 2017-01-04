@@ -6,8 +6,13 @@ import store from 'store'
 import {sync} from 'vuex-router-sync'
 import App from 'components/App.vue'
 import {registerComponent} from 'utils/component-manager'
+import event from 'utils/event'
 
 sync(store, router)
+
+if (store.state.config.debug) {
+  Vue.config.devtools = true
+}
 
 const plugins = store.state.config.plugins
 if (Array.isArray(plugins)) {
@@ -16,7 +21,8 @@ if (Array.isArray(plugins)) {
       Vue,
       store,
       router,
-      registerComponent
+      registerComponent,
+      event
     })
   }
 }

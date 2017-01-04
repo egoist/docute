@@ -2221,6 +2221,10 @@ events@^1.0.0, events@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/events/-/events-1.1.1.tgz#9ebdb7635ad099c70dcc4c2a1f5004288e8bd924"
 
+eventstop:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/eventstop/-/eventstop-0.1.0.tgz#1fccc8e3457d3e60cdedf2f36b44227a530220a1"
+
 evp_bytestokey@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/evp_bytestokey/-/evp_bytestokey-1.0.0.tgz#497b66ad9fef65cd7c08a6180824ba1476b66e53"

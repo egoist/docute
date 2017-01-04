@@ -135,6 +135,19 @@ function myPlugin(options) {
 - router: vue-router インスタンス
 - registerComponent: ページにコンポーネントを追加する関数
 
+#### event
+
+We use [eventstop](https://github.com/egoist/eventstop) as the event system. Basically the only thing you need is using `event.subscribe` to subscribe some inner events in docute.
+
+List of events:
+
+- `content:updated`: emitted after the main content gets updated
+  - the first argument is the `vm` which you can use to access the current Vue component
+- `jump:started`: emitted before the jumping to id action
+  - the first argument is the `id` it jumps to
+- `jump:stopped`: emitted after the jumping to id action
+  - the first argument is the `id` it jumps to
+
 #### registerComponent
 
 この関数には、２つの引数があります：`registerComponent(position, component)`

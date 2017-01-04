@@ -334,6 +334,16 @@ self.$config = {
 
 詳しくのは[公式サイト](https://github.com/chjj/marked#options-1)に参考してください。
 
+### debug
+
+Set `debug` to `true` to enable vue-devtools:
+
+```js
+self.$config = {
+  debug: true
+}
+```
+
 ## ガイド
 
 ### ページのタイトル

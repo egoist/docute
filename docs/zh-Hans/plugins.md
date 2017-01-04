@@ -138,6 +138,19 @@ function myPlugin(options) {
 - router: vue-router 实例
 - registerComponent: 用于在页面里插入一个组件的函数
 
+#### event
+
+事件系统使用了 [eventstop](https://github.com/egoist/eventstop) 这个库。 B简单来说你可以使用 `event.subscribe` 来订阅一些 docute 内部事件。
+
+事件列表:
+
+- `content:updated`: 在页面切换并且 dom 内容更新之后出发
+  - 第一个参数是 `vm` 当前组件的实例
+- `jump:started`: 在跳转到一个 id 之前触发
+  - 第一个参数是 id
+- `jump:stopped`: 在跳转到一个 id 之后触发
+  - 第一个参数是 id
+
 #### registerComponent
 
 这个函数需要两个参数: `registerComponent(position, component)`
