@@ -316,7 +316,7 @@ self.$config = {
 
 ```markdown
 ---
-navbar: chinese
+nav: chinese
 ---
 <!-- 现在这个页面的导航栏就是叫 chinese 的这个了 -->
 你好世界！

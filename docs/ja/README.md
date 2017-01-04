@@ -313,7 +313,7 @@ self.$config = {
 
 ```markdown
 ---
-navbar: japanese
+nav: japanese
 ---
 <!-- このページのナビバーは japanese です -->
 こんにちは！

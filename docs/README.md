@@ -322,7 +322,7 @@ For now all pages will still use the `default` navbar, but you can switch this b
 
 ```markdown
 ---
-navbar: chinese
+nav: chinese
 ---
 <!-- this page use the `chinese` navbar -->
 你好世界！
