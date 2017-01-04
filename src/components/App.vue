@@ -25,8 +25,8 @@
         const handleScroll = () => {
           const name = this.$route.meta && this.$route.meta.name
           const isDocPage = ['home', 'page'].indexOf(name) > -1
-          if (this.jumping || !isDocPage) return
           const headings = $$('.markdown-toc-heading')
+          if (this.jumping || !isDocPage || headings.length === 0) return
           const els = [...headings].map(heading => {
             return {
               top: heading.getBoundingClientRect().top,
