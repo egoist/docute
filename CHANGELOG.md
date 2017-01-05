@@ -1,3 +1,17 @@
+## [Version 1.8.0](https://github.com/egoist/docute/releases/tag/v1.8.0) (2017-1-5)
+
+### Minor Changes
+
+- allow path to be external url: [`1cfdc18`](https://github.com/egoist/docute/commit/1cfdc18)
+- add source option for nav item: [`03f7ff5`](https://github.com/egoist/docute/commit/03f7ff5)
+- allow to disable toc: [`dde619f`](https://github.com/egoist/docute/commit/dde619f)
+
+### Patches
+
+- add missing name for landing component: [`028a0d1`](https://github.com/egoist/docute/commit/028a0d1)
+
+[...full changes](https://github.com/egoist/docute/compare/v1.7.1...v1.8.0)
+
 ## [Version 1.7.1](https://github.com/egoist/docute/releases/tag/v1.7.1) (2017-1-5)
 
 ### Patches
