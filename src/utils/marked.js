@@ -681,7 +681,9 @@ InlineLexer.prototype.output = function(src) {
     // text
     if (cap = this.rules.text.exec(src)) {
       src = src.substring(cap[0].length);
-      out += this.renderer.text(escape(this.smartypants(cap[0])));
+      // no need to escape text
+      // out += this.renderer.text(escape(this.smartypants(cap[0])));
+      out += this.renderer.text(this.smartypants(cap[0]));
       continue;
     }
 
