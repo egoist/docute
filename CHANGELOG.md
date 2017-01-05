@@ -1,3 +1,11 @@
+## [Version 1.9.2](https://github.com/egoist/docute/releases/tag/v1.9.2) (2017-1-6)
+
+### Patches
+
+- use relative path for absolute url: [`6674856`](https://github.com/egoist/docute/commit/6674856)
+
+[...full changes](https://github.com/egoist/docute/compare/v1.9.1...v1.9.2)
+
 ## [Version 1.9.1](https://github.com/egoist/docute/releases/tag/v1.9.1) (2017-1-5)
 
 ### Patches
