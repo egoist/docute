@@ -70,6 +70,9 @@
       this.$watch('$route.path', () => {
         this.fetchData()
       })
+      if (!this.id) {
+        window.scroll(0, 0)
+      }
     },
     computed: {
       ...mapState({
