@@ -569,7 +569,7 @@ Since dynamically added script tags won't be executed by browser, you can manual
 
 ```js
 function evalPlugin(ctx) {
-  ctx.event.subscribe('content:updated', () => {
+  ctx.event.subscribe('content:updated', function () {
     document.querySelectorAll('.content script').forEach(function (el) {
       var execute = new Function(el.innerHTML)
       execute()
