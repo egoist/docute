@@ -154,7 +154,7 @@ List of events:
 
 ##### position
 
-値：`oneOf(['content:start', 'content:end'])`
+値：`oneOf(['content:start', 'content:end', 'sidebar:start', 'sidebar:end'])`
 
 追加したい位置。
 

@@ -164,7 +164,7 @@ The function requires two arguments: `registerComponent(position, component)`
 
 ##### position
 
-Value: `oneOf(['content:start', 'content:end'])`
+Value: `oneOf(['content:start', 'content:end', 'sidebar:start', 'sidebar:end'])`
 
 ##### component
 

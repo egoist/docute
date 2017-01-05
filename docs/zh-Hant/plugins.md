@@ -157,7 +157,7 @@ List of events:
 
 ##### position
 
-Value: `oneOf(['content:start', 'content:end'])`
+Value: `oneOf(['content:start', 'content:end', 'sidebar:start', 'sidebar:end'])`
 
 要插入的位置。
 
