@@ -175,6 +175,8 @@ self.$config = {
 }
 ```
 
+To disable TOC entirely, set `toc` to `false`.
+
 ### Navbar
 
 You may need a navbar as the entrance for the pages:
@@ -189,6 +191,11 @@ self.$config = {
   ]
 }
 ```
+
+<p class="tip">
+  The `path` could also be an external URL, it will work exactly like a normal hyperlink.<br><br>
+  Besides this, as you've learned in <span jump-to-id="pages">Pages</span> section, something like <code>/language/chinese</code> will fetch `/language/chinese.md`, if you want to fetch an external file just set the <code>source</code> option like `source: 'https://foo.com/bar.md'`
+</p>
 
 #### Icons
 
@@ -430,6 +437,8 @@ And you get:
 <p class="warning">
   Do not do like this, do it that way please. If you still can't help doing such way, we will call you mom and order some pizza to let you know, you're in trouble!
 </p>
+
+**Note that you can still use markdown inside the HTML!**
 
 #### HTML Attributes
 

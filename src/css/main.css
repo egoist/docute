@@ -25,4 +25,8 @@
 
 [router-link], [jump-to-id] {
   cursor: pointer;
+  color: #4078c0;
+  &:hover {
+    text-decoration: underline;
+  }
 }
