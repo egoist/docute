@@ -70,9 +70,6 @@
       this.$watch('$route.path', () => {
         this.fetchData()
       })
-      if (!this.id) {
-        window.scroll(0, 0)
-      }
     },
     computed: {
       ...mapState({
@@ -173,6 +170,8 @@
           event.emit('content:updated', this)
           if (this.id) {
             this.jumpToId(this.id)
+          } else {
+            window.scroll(0, 0)
           }
         })
       },
