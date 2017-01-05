@@ -13,14 +13,14 @@
 </template>
 
 <script>
-  import {mapState, mapGetters, mapActions} from 'vuex'
+  import {mapState, mapActions} from 'vuex'
   import HeaderIcons from 'components/HeaderIcons.vue'
   import SvgIcon from 'components/SvgIcon'
   import {$, isMobile} from 'utils/dom'
 
   export default {
     computed: {
-      ...mapState(['config', 'showMobileSidebar']),
+      ...mapState(['config', 'showMobileSidebar'])
     },
     mounted() {
       this.$watch('showMobileSidebar', () => {

@@ -30,7 +30,7 @@
   import frontMatter from 'utils/front-matter'
   import {mapState, mapGetters, mapActions} from 'vuex'
   import nprogress from 'nprogress'
-  import {inBrowser, $, $$, isMobile} from 'utils/dom'
+  import {isMobile} from 'utils/dom'
   import marked from 'utils/marked'
   import renderer from 'utils/marked-renderer'
   import LinkIcon from '!raw-loader!svg/link.svg'
@@ -47,7 +47,7 @@
         return `<span class="hljs-comment">---</span>\n${yaml}\n<span class="hljs-comment">---</span>\n${markdown}`
       }
 
-      const isValid = !!(lang && highlight.getLanguage(lang))
+      const isValid = Boolean(lang && highlight.getLanguage(lang))
       if (isValid) return highlight.highlight(lang, code).value
       return highlight.highlightAuto(code).value
     }
@@ -74,14 +74,52 @@
         id: state => state.route.query.id
       }),
       ...mapState(['config', 'page', 'loaded', 'jumping', 'activeId', 'pluginSearch', 'searchResult', 'searchKeyword']),
-      ...mapGetters(['documentTitle', 'showSidebar'])
+      ...mapGetters(['documentTitle', 'showSidebar', 'currentNav']),
+      currentNavSource() {
+        const route = this.$route
+        const config = this.config
+        const currentNav = this.currentNav
+        const currentPath = route.path
+
+        // get custom source
+        const match = currentNav.filter(nav => {
+          return nav.path === currentPath
+        })[0]
+
+        const matchedSource = match && match.source
+        const isHome = route.meta && (route.meta.name === 'home')
+        const home = config.home || './README.md'
+
+        // if there's custom source, use it
+        // otherwise if it's home use config.home or README.md
+        // otherwise use route.path
+        let customSource = matchedSource || (isHome ? home : currentPath)
+        const isExternal = /^https?:\/\//.test(customSource)
+
+        if (!isExternal) {
+          // turn non ./ and / to ./
+          customSource = /^\.?\//.test(customSource) ? customSource : `./${customSource}`
+          const notMarkdown = !/\.md$/.test(customSource)
+          // since route.path is not ended with .md
+          // we need to append this
+          if (notMarkdown) {
+            if (/\/$/.test(customSource)) {
+              customSource += 'README.md'
+            } else {
+              customSource += '.md'
+            }
+          }
+        }
+
+        return customSource
+      }
     },
     methods: {
       ...mapActions(['updatePage', 'toggleMobileSidebar', 'jumpToId']),
       async fetchData() {
         nprogress.start()
 
-        let headings = []
+        const headings = []
         renderer.heading = (text, level) => {
           const index = headings.length
           let slug = this.config.slugify ? this.config.slugify(text) : slugify(text)
@@ -104,17 +142,7 @@
             </h${level}>`
         }
 
-        let file = this.config.home || './README.md'
-        if (this.$route.meta && this.$route.meta.name === 'page') {
-          const name = this.$route.params[0]
-          if (/\/$/.test(name)) {
-            file = `./${name}README.md`
-          } else {
-            file = `./${name}.md`
-          }
-        }
-
-        const res = await fetch(file)
+        const res = await fetch(this.currentNavSource)
         nprogress.inc()
 
         if (res.status === 404) {

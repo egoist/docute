@@ -26,6 +26,21 @@ module.exports = {
   production: {
     hash: false,
     html: false,
-    filename: 'docute'
+    filename: 'docute',
+    eslint: {
+      configFile: 'eslint-config-rem/esnext-browser',
+      plugins: [
+        'vue'
+      ],
+      globals: [
+        '__DOCUTE_VERSION__',
+        'global',
+        'require'
+      ],
+      rules: {
+        'vue/jsx-uses-vars': 2,
+        'no-unused-vars': ['error', { argsIgnorePattern: '^h$' }]
+      }
+    }
   }
 }

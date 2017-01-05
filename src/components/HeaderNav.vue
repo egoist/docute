@@ -35,7 +35,7 @@
     },
     computed: {
       ...mapState(['attributes']),
-      ...mapGetters(['currentTitle', 'currentNav']),
+      ...mapGetters(['currentTitle', 'currentNav'])
     },
     methods: {
       ...mapActions(['toggleDropdown', 'toggleSidebar'])

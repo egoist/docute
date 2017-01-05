@@ -17,13 +17,15 @@ if (store.state.config.debug) {
 const plugins = store.state.config.plugins
 if (Array.isArray(plugins)) {
   for (const plugin of plugins) {
-    if (typeof plugin === 'function') plugin({
-      Vue,
-      store,
-      router,
-      registerComponent,
-      event
-    })
+    if (typeof plugin === 'function') {
+      plugin({
+        Vue,
+        store,
+        router,
+        registerComponent,
+        event
+      })
+    }
   }
 }
 

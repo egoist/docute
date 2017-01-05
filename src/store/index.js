@@ -67,16 +67,16 @@ const store = new Vuex.Store({
       state.activeId = ''
     },
     TOGGLE_MOBILE_SIDEBAR(state, payload) {
-      if (payload !== undefined) state.showMobileSidebar = payload
-      else state.showMobileSidebar = !state.showMobileSidebar
+      if (payload === undefined) state.showMobileSidebar = !state.showMobileSidebar
+      else state.showMobileSidebar = payload
     },
     TOGGLE_SIDEBAR(state, payload) {
-      if (payload !== undefined) {
-        state.page.attributes.sidebar = payload
-      } else {
+      if (payload === undefined) {
         state.page.attributes.sidebar = state.page.attributes.sidebar === undefined ?
           false :
           !state.page.attributes.sidebar
+      } else {
+        state.page.attributes.sidebar = payload
       }
     },
     UPDATE_JUMPING(state, payload) {

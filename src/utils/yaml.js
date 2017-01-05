@@ -1,3 +1,4 @@
+/* eslint-disable */
 /*
 YAML parser for Javascript
 Author: Diogo Costa

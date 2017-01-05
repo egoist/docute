@@ -19,7 +19,6 @@
 
 <script>
   import {mapState, mapActions} from 'vuex'
-  import {$, isMobile} from 'utils/dom'
 
   export default {
     props: {

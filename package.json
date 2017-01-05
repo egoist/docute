@@ -55,7 +55,8 @@
   "devDependencies": {
     "cssbag": "^0.1.0",
     "eslint": "latest",
-    "eslint-config-rem": "latest",
+    "eslint-config-rem": "^2.0.2",
+    "eslint-plugin-vue": "^1.0.0",
     "hint.css": "^2.4.1",
     "jest-cli": "^15.1.1",
     "raw-loader": "^0.5.1",

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import parser from './yaml'
 
 var optionalByteOrderMark = '\\ufeff?'

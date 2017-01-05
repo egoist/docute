@@ -21,7 +21,9 @@
     computed: {
       ...mapState(['searching', 'pluginSearch']),
       ...mapState({
-        searchResult: state => state.searchResult.filter(item => (!!item.title || !!item.content))
+        searchResult: state => state.searchResult.filter(item => {
+          return Boolean(item.title) || Boolean(item.content)
+        })
       })
     },
     methods: {
