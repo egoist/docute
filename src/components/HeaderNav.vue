@@ -12,24 +12,11 @@
           <li
             v-for="subItem in navItem.items"
             class="dropdown-item">
-            <router-link
-              class="router-link"
-              :class="{'router-link-active': subItem.path === $route.path}"
-              :to="subItem.path"
-              exact>
-              {{ subItem.title }}
-            </router-link>
+            <nav-link :item="subItem"></nav-link>
           </li>
         </ul>
       </div>
-      <router-link
-        v-else
-        class="router-link"
-        :class="{'router-link-active': navItem.path === $route.path}"
-        :to="navItem.path"
-        exact>
-        {{ navItem.title }}
-      </router-link>
+      <nav-link v-else :item="navItem"></nav-link>
     </li>
   </ul>
 </template>
@@ -37,6 +24,7 @@
 <script>
   import {mapState, mapActions, mapGetters} from 'vuex'
   import SvgIcon from 'components/SvgIcon'
+  import NavLink from 'components/NavLink'
   import {isMobile} from 'utils/dom'
 
   export default {
@@ -53,7 +41,8 @@
       ...mapActions(['toggleDropdown', 'toggleSidebar'])
     },
     components: {
-      SvgIcon
+      SvgIcon,
+      NavLink
     }
   }
 </script>
