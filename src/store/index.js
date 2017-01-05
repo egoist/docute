@@ -232,13 +232,23 @@ const store = new Vuex.Store({
       }
       return []
     },
-    showSidebar(state) {
-      const {sidebar = true} = state.config
-      const {attributes} = state.page
-      if (typeof attributes.sidebar !== 'undefined') {
+    showSidebar({config, page: {attributes}}) {
+      if (attributes.sidebar !== undefined) {
         return attributes.sidebar
       }
-      return sidebar
+      if (config.sidebar !== undefined) {
+        return config.sidebar
+      }
+      return true
+    },
+    showToc({config, page: {attributes}}) {
+      if (attributes.toc !== undefined) {
+        return attributes.toc
+      }
+      if (config.toc !== undefined) {
+        return config.toc
+      }
+      return true
     }
   }
 })

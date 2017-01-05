@@ -6,7 +6,7 @@
       <search-result v-if="pluginSearch && searchResult && searchKeyword"></search-result>
       <header-nav class="is-mobile inner-x"></header-nav>
       <custom-components place="sidebar:start" v-if="loaded"></custom-components>
-      <toc v-if="config.toc !== false" :headings="page.headings"></toc>
+      <toc v-if="showToc" :headings="page.headings"></toc>
       <custom-components place="sidebar:end" v-if="loaded"></custom-components>
     </figure>
     <mobile-header v-if="loaded"></mobile-header>
@@ -76,7 +76,7 @@
         id: state => state.route.query.id
       }),
       ...mapState(['config', 'page', 'loaded', 'jumping', 'activeId', 'pluginSearch', 'searchResult', 'searchKeyword']),
-      ...mapGetters(['documentTitle', 'showSidebar', 'currentNav']),
+      ...mapGetters(['documentTitle', 'showSidebar', 'currentNav', 'showToc']),
       currentNavSource() {
         const route = this.$route
         const config = this.config
