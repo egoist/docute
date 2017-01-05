@@ -1,3 +1,17 @@
+## [Version 1.9.0](https://github.com/egoist/docute/releases/tag/v1.9.0) (2017-1-5)
+
+### Minor Changes
+
+- allow to set toc via front-matter: [`2aac9c0`](https://github.com/egoist/docute/commit/2aac9c0)
+- no need to escape html: [`43b5bfd`](https://github.com/egoist/docute/commit/43b5bfd)
+
+### Patches
+
+- scroll top if no anchor: [`511e834`](https://github.com/egoist/docute/commit/511e834)
+- tweaks: [`abd6958`](https://github.com/egoist/docute/commit/abd6958)
+
+[...full changes](https://github.com/egoist/docute/compare/v1.8.0...v1.9.0)
+
 ## [Version 1.8.0](https://github.com/egoist/docute/releases/tag/v1.8.0) (2017-1-5)
 
 ### Minor Changes
