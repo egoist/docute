@@ -4,7 +4,12 @@ export default {
   props: {
     place: {
       validator(value) {
-        return ['content:start', 'content:end'].indexOf(value) > -1
+        return [
+          'content:start',
+          'content:end',
+          'sidebar:start',
+          'sidebar:end'
+        ].indexOf(value) > -1
       }
     }
   },

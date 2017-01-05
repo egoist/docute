@@ -5,7 +5,9 @@
       <search-box v-if="pluginSearch"></search-box>
       <search-result v-if="pluginSearch && searchResult && searchKeyword"></search-result>
       <header-nav class="is-mobile inner-x"></header-nav>
-      <toc :headings="page.headings"></toc>
+      <custom-components place="sidebar:start" v-if="loaded"></custom-components>
+      <toc v-if="config.toc !== false" :headings="page.headings"></toc>
+      <custom-components place="sidebar:end" v-if="loaded"></custom-components>
     </figure>
     <mobile-header v-if="loaded"></mobile-header>
     <section class="main">

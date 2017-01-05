@@ -3,6 +3,7 @@ import 'isomorphic-fetch'
 import Vue from 'vue'
 import router from 'router'
 import store from 'store'
+import {mapState, mapGetters, mapActions, mapMutations} from 'vuex'
 import {sync} from 'vuex-router-sync'
 import App from 'components/App.vue'
 import {registerComponent} from 'utils/component-manager'
@@ -23,7 +24,11 @@ if (Array.isArray(plugins)) {
         store,
         router,
         registerComponent,
-        event
+        event,
+        mapState,
+        mapGetters,
+        mapActions,
+        mapMutations
       })
     }
   }

@@ -13,10 +13,12 @@
   export default {
     name: 'app',
     computed: {
-      ...mapState(['jumping'])
+      ...mapState(['jumping', 'config'])
     },
     mounted() {
-      this.scrollSpy()
+      if (this.config.toc !== false) {
+        this.scrollSpy()
+      }
       this.detectClick()
     },
     methods: {
