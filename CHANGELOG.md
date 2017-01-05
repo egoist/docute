@@ -1,3 +1,11 @@
+## [Version 1.9.1](https://github.com/egoist/docute/releases/tag/v1.9.1) (2017-1-5)
+
+### Patches
+
+- should scroll after content loaded: [`e2e356c`](https://github.com/egoist/docute/commit/e2e356c)
+
+[...full changes](https://github.com/egoist/docute/compare/v1.9.0...v1.9.1)
+
 ## [Version 1.9.0](https://github.com/egoist/docute/releases/tag/v1.9.0) (2017-1-5)
 
 ### Minor Changes
