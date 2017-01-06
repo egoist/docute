@@ -1,3 +1,13 @@
+## [Version 1.9.3](https://github.com/egoist/docute/releases/tag/v1.9.3) (2017-1-6)
+
+### Patches
+
+- replace dot with dash: [`29c6eb0`](https://github.com/egoist/docute/commit/29c6eb0)
+- improve zh-Hant translation: [`32a3309`](https://github.com/egoist/docute/commit/32a3309) ([#43](https://github.com/egoist/docute/issues/43))
+- fix edit-link for custom source page: [`3bed630`](https://github.com/egoist/docute/commit/3bed630)
+
+[...full changes](https://github.com/egoist/docute/compare/v1.9.2...v1.9.3)
+
 ## [Version 1.9.2](https://github.com/egoist/docute/releases/tag/v1.9.2) (2017-1-6)
 
 ### Patches
