@@ -9,12 +9,12 @@ search: zh-Hant
 
 ## 初始化目錄
 
-初始化一個文件夾用來存放文檔，比如 `./docs`:
+初始化一個文件夾用來存放文檔，例如 `./docs`:
 
 ```bash
-# 默認的目錄就是 ./docs
+# 預設的目錄就是 ./docs
 docute init
-# 你可以指定其它目錄
+# 你可以指定其他目錄
 docute init ./my-docs
 ```
 
@@ -22,7 +22,7 @@ docute init ./my-docs
 
 ## 本地預覽
 
-`docute preview` 是默認的命令，也就是相當於直接執行 `docute`。執行 `docute` 的效果:
+`docute preview` 是預設的命令，也就是相當於直接執行 `docute`。執行 `docute` 的效果:
 
 <img src="./assets/command-preview.png" alt="preview" width="500">
 
