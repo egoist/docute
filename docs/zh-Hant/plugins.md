@@ -5,17 +5,17 @@ search: zh-Hant
 
 # 插件
 
-插件提供了壹些額外的功能同時不讓 docute 本身變得臃腫。
+插件提供了一些額外的功能同時不讓 docute 本身變得臃腫。
 
 ## 插件列表
 
 ### DocSearch
 
-DocSearch 是壹個 [algolia.com](http://algolia.com) 提供的免費搜索服務，這大概是最簡單的整合搜索到妳的文檔的方式。
+DocSearch 是一個 [algolia.com](http://algolia.com) 提供的免費搜尋服務，這大概是最簡單的整合搜尋到你的文檔的方式。
 
-要是用這個插件，先[申請加入 docsearch 項目](https://community.algolia.com/docsearch/)，然後他們會通過郵件發送 API key 和 indexName 給妳，並且告訴妳壹些使用方法。
+要是用這個插件，先[申請加入 docsearch 項目](https://community.algolia.com/docsearch/)，然後他們會通過郵件發送 API key 和 indexName 給你，並且告訴你一些使用方法。
 
-不過和他們的方法有所不同，在 docute 妳只需要引入我們提供的 docsearch 插件就行了:
+不過和他們的方法有所不同，在 docute 你只需要引入我們提供的 docsearch 插件就行了:
 
 ```html
 <!-- 把 docsearch 插件放在最前面 -->
@@ -24,36 +24,36 @@ DocSearch 是壹個 [algolia.com](http://algolia.com) 提供的免費搜索服�
 <script src="https://unpkg.com/docute/dist/docute.js"></script>
 ```
 
-最後在 `config.js` 中配置壹下:
+最後在 `config.js` 中配置一下:
 
 ```js
 self.$config = {
   // docsearch 方法由插件提供
   plugins: [
     docsearch({
-      apiKey: '妳的 API Key',
-      indexName: '妳的 Index Name',
-      // docsearch 允許妳把抓取的內容按照 tag 分類
-      // 詳情請聯系 algolia 客服，這裏妳只需要把妳想搜索的 tag 填進來就行了
+      apiKey: '你的 API Key',
+      indexName: '你的 Index Name',
+      // docsearch 允許你把抓取的內容按照 tag 分類
+      // 詳情請聯系 algolia 客服，這裏你只需要把你想搜尋的 tag 填進來就行了
       tags: ['english', 'zh-Hans', 'zh-Hant']
     })
   ],
-  // 這個插件同時需要妳的 URL
-  // 因為 docsearch 是按照妳的線上 URL 抓取內容的
+  // 這個插件同時需要你的 URL
+  // 因為 docsearch 是按照你的線上 URL 抓取內容的
   url: 'https://docute.js.org'
 }
 ```
 
-妳可以查看 docute.js.org 在 algolia docsearch 的[配置文件](https://github.com/algolia/docsearch-configs/blob/master/configs/docute.json)，他們為這個網站按照 `english` `zh-Hans` `zh-Hant` 這些 tag 抓取內容。默認情況下搜索框會搜索所有內容，但是比如妳在英文頁面只想搜索英文內容，那麽妳可以用 front-matter 設置妳想搜索的 tag:
+你可以查看 docute.js.org 在 algolia docsearch 的[配置文件](https://github.com/algolia/docsearch-configs/blob/master/configs/docute.json)，他們為這個網站按照 `english` `zh-Hans` `zh-Hant` 這些 tag 抓取內容。預設情況下搜尋框會搜尋所有內容，但是例如你在英文頁面只想搜尋英文內容，那麽你可以用 front-matter 設置你想搜尋的 tag:
 
 ```markdown
 ---
 search: english
 ---
-現在這個頁面上的搜索框只會搜索 english tag 下抓取到的內容。
+現在這個頁面上的搜尋框只會搜尋 english tag 下抓取到的內容。
 ```
 
-這個 `search` 屬性也可以是壹個數組，這樣妳可以在多個 tag 中搜索:
+這個 `search` 屬性也可以是一個數組，這樣你可以在多個 tag 中搜尋:
 
 ```markdown
 ---
@@ -66,21 +66,21 @@ search:
 
 ### Disqus
 
-整合 `disqus` 評論到妳的文檔中，它會在文檔區域下方顯示:
+整合 `disqus` 評論到你的文檔中，它會在文檔區域下方顯示:
 
-首先用壹個 `script` 標簽引入:
+首先用一個 `script` 標簽引入:
 
 ```html
 <script src="https://unpkg.com/docute/plugins/disqus.js"></script>
 ```
 
-然後在 `config.js` 中配置壹下:
+然後在 `config.js` 中配置一下:
 
 ```js
 self.$config = {
   plugins: [
     disqus({
-      shortname: 'SHORT_NAME' // 把這個替換為妳的 disqus 站點縮略名
+      shortname: 'SHORT_NAME' // 把這個替換為你的 disqus 站點縮略名
     })
   ]
 }
@@ -92,9 +92,9 @@ self.$config = {
 
 - [evanyou](https://github.com/egoist/docute-evanyou): 給 Landing 頁面添加彩帶效果, 就像 [evanyou.me](http://evanyou.me) 那樣
 
-## 開發壹個插件
+## 開發一個插件
 
-壹個插件就是壹個函數，它接受壹個 `context` 參數:
+一個插件就是一個函數，它接受一個 `context` 參數:
 
 ```js
 // config.js
@@ -108,7 +108,7 @@ self.$config = {
 }
 ```
 
-如果妳的插件是需要用戶提供參數的，那麽用壹個高階函數就行了:
+如果你的插件是需要用戶提供參數的，那麽用一個高階函數就行了:
 
 ```js
 self.$config = {
@@ -126,17 +126,17 @@ function myPlugin(options) {
 ```
 
 <p class="tip">
-  妳的插件也可以訪問 `window.fetch` 方法並且不需要任何 polyfill，因為我們已經加上了。
+  你的插件也可以訪問 `window.fetch` 方法並且不需要任何 polyfill，因為我們已經加上了。
 </p>
 
 ### Context
 
 `context` 參數有以下屬性:
 
-- Vue: `Vue` 构造函數
+- Vue: `Vue` 構造函數
 - store: vuex store 實例
 - router: vue-router 實例
-- registerComponent: 用於在頁面裏插入壹個組件的函數
+- registerComponent: 用於在頁面裏插入一個組件的函數
 
 #### event
 
