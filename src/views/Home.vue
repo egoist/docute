@@ -132,13 +132,12 @@
           twitter
         } = state.config
 
-        const {path} = state.route
         const {attributes} = state.page
 
         if (!disableDefaultIcons) {
           if (editLink) {
             const isExternal = /^https?:\/\//.test(this.currentNavSource)
-            let source = isExternal ?
+            const source = isExternal ?
               this.currentNavSource :
               `${editLink}${this.currentNavSource.replace(/^./, '')}`
             defaultIcons.push({
