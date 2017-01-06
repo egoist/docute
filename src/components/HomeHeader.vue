@@ -1,7 +1,7 @@
 <template>
   <header class="header is-desktop" v-if="currentNav.length > 0 || currentIcons.length > 0">
     <header-nav></header-nav>
-    <header-icons></header-icons>
+    <header-icons :current-icons="currentIcons"></header-icons>
   </header>
 </template>
 
@@ -11,8 +11,13 @@
   import HeaderIcons from 'components/HeaderIcons.vue'
 
   export default {
+    props: {
+      currentIcons: {
+        type: Array
+      }
+    },
     computed: {
-      ...mapGetters(['currentNav', 'currentIcons'])
+      ...mapGetters(['currentNav'])
     },
     components: {
       HeaderNav,

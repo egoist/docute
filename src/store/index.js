@@ -173,55 +173,6 @@ const store = new Vuex.Store({
       }
       return state.config.title
     },
-    currentIcons(state) {
-      const defaultIcons = []
-
-      const {
-        disableDefaultIcons,
-        icons = [],
-        'edit-link': editLink,
-        repo,
-        twitter
-      } = state.config
-
-      const {path} = state.route
-      const {attributes} = state.page
-
-      if (!disableDefaultIcons) {
-        if (editLink) {
-          let filename = state.config.landing ? '/' : path
-          if (/\/$/.test(filename)) filename += 'README'
-          defaultIcons.push({
-            link: `${editLink}${filename}.md`,
-            label: 'Edit this page',
-            svg: 'edit'
-          })
-        }
-        if (repo) {
-          defaultIcons.push({
-            link: `https://github.com/${repo}`,
-            label: 'Star me on GitHub',
-            svg: 'github'
-          })
-        }
-        if (twitter) {
-          defaultIcons.push({
-            link: `https://twitter.com/${twitter}`,
-            label: 'Follow me on Twitter',
-            svg: 'twitter'
-          })
-        }
-      }
-
-      let currentIcons
-      if (isType(icons, 'Object') && attributes) {
-        currentIcons = icons[attributes.icons] || icons.default
-      } else {
-        currentIcons = icons.default || icons
-      }
-
-      return defaultIcons.concat(currentIcons)
-    },
     currentTags(state) {
       const {attributes} = state.page
       if (typeof attributes.search === 'string') {

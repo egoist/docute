@@ -11,7 +11,7 @@
     </figure>
     <mobile-header v-if="loaded"></mobile-header>
     <section class="main">
-      <home-header v-if="loaded"></home-header>
+      <home-header :current-icons="currentIcons" v-if="loaded"></home-header>
       <custom-components place="content:start" v-if="loaded"></custom-components>
       <div class="markdown-body content" v-html="page.html"></div>
       <custom-components place="content:end" v-if="loaded"></custom-components>
@@ -38,6 +38,7 @@
   import LinkIcon from '!raw-loader!svg/link.svg'
   import slugify from 'utils/slugify'
   import event from 'utils/event'
+  import {isType} from 'utils'
 
   marked.setOptions({
     highlight(code, lang) {
@@ -118,6 +119,58 @@
         }
 
         return customSource
+      },
+      currentIcons() {
+        const {state} = this.$store
+        const defaultIcons = []
+
+        const {
+          disableDefaultIcons,
+          icons = [],
+          'edit-link': editLink,
+          repo,
+          twitter
+        } = state.config
+
+        const {path} = state.route
+        const {attributes} = state.page
+
+        if (!disableDefaultIcons) {
+          if (editLink) {
+            const isExternal = /^https?:\/\//.test(this.currentNavSource)
+            let source = isExternal ?
+              this.currentNavSource :
+              `${editLink}${this.currentNavSource.replace(/^./, '')}`
+            defaultIcons.push({
+              link: source,
+              label: isExternal ? 'View page source' : 'Edit this page',
+              svg: 'edit'
+            })
+          }
+          if (repo) {
+            defaultIcons.push({
+              link: `https://github.com/${repo}`,
+              label: 'Star me on GitHub',
+              svg: 'github'
+            })
+          }
+          if (twitter) {
+            defaultIcons.push({
+              link: `https://twitter.com/${twitter}`,
+              label: 'Follow me on Twitter',
+              svg: 'twitter'
+            })
+          }
+        }
+
+        let currentIcons
+        if (isType(icons, 'Object') && attributes) {
+          currentIcons = icons[attributes.icons] || icons.default
+        } else {
+          currentIcons = icons.default || icons
+        }
+
+        return defaultIcons.concat(currentIcons)
       }
     },
     methods: {

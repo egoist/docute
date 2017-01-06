@@ -24,8 +24,11 @@
   import SvgIcon from 'components/SvgIcon'
 
   export default {
-    computed: {
-      ...mapGetters(['currentIcons'])
+    props: {
+      currentIcons: {
+        type: Array,
+        default: () => []
+      }
     },
     components: {
       SvgIcon
