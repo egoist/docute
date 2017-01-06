@@ -22,23 +22,13 @@
 </template>
 
 <script>
-  import {mapState, mapActions, mapGetters} from 'vuex'
+  import {mapGetters} from 'vuex'
   import SvgIcon from 'components/SvgIcon'
   import NavLink from 'components/NavLink'
-  import {isMobile} from 'utils/dom'
 
   export default {
-    data() {
-      return {
-        isMobile
-      }
-    },
     computed: {
-      ...mapState(['attributes']),
-      ...mapGetters(['currentTitle', 'currentNav'])
-    },
-    methods: {
-      ...mapActions(['toggleDropdown', 'toggleSidebar'])
+      ...mapGetters(['currentNav'])
     },
     components: {
       SvgIcon,
