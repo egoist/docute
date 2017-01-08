@@ -310,6 +310,16 @@ self.$config = {
 }
 ```
 
+To make dropdown menu display the actual title of active page, for example, show `Chinese` instead of `Languages` as the dropdown title when user enters relevant page, just set `exact` to `true`:
+
+```js
+self.$config = {
+  nav: [
+    {title: 'Languages', type: 'dropdown', exact: true, items: []}
+  ]
+}
+```
+
 #### Named navbar
 
 You can have multipage navbar and use different navbar for different pages.
