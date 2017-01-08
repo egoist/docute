@@ -1,3 +1,11 @@
+## [Version 1.10.1](https://github.com/egoist/docute/releases/tag/v1.10.1) (2017-1-8)
+
+### Patches
+
+- fix mobile nav: [`abbe79c`](https://github.com/egoist/docute/commit/abbe79c)
+
+[...full changes](https://github.com/egoist/docute/compare/v1.10.0...v1.10.1)
+
 ## [Version 1.10.0](https://github.com/egoist/docute/releases/tag/v1.10.0) (2017-1-8)
 
 ### Minor Changes
