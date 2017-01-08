@@ -13,8 +13,11 @@
           <ul class="dropdown-list">
             <li
               v-for="subItem in navItem.items"
+              :style="{padding: subItem.type === 'sep' ? '0' : '0 20px'}"
               class="dropdown-item">
-              <nav-link :item="subItem"></nav-link>
+              <span v-if="subItem.type === 'sep'" class="sep"></span>
+              <span v-else-if="subItem.type ==='label'" class="label">{{ subItem.title }}</span>
+              <nav-link v-else :item="subItem"></nav-link>
             </li>
           </ul>
         </div>
@@ -78,6 +81,18 @@
     margin: 0;
     line-height: 30px;
     height: 30px;
+    .sep {
+      height: 1px;
+      background-color: #f0f0f0;
+      display: block;
+      margin: 8px 0;
+    }
+    .label {
+      display: block;
+      margin-top: 5px;
+      font-weight: bold;
+      font-size: 14px;
+    }
     .nav-item {
       float: left;
       margin-right: 20px;
@@ -121,7 +136,8 @@
         white-space: nowrap;
         padding: 10px 0;
         .dropdown-item {
-          padding: 0 20px;
+          font-size: 13px;
+          line-height: 28px;
           .router-link:hover, .router-link-active {
             color: #42b983;
           }

@@ -310,12 +310,37 @@ self.$config = {
 }
 ```
 
+##### exact
+
 To make dropdown menu display the actual title of active page, for example, show `Chinese` instead of `Languages` as the dropdown title when user enters relevant page, just set `exact` to `true`:
 
 ```js
 self.$config = {
   nav: [
     {title: 'Languages', type: 'dropdown', exact: true, items: []}
+  ]
+}
+```
+
+##### `label` and `sep`
+
+To have such dropdown menu:
+
+<img src="assets/dropdown-label-sep.png" alt="label" width="300">
+
+You will need the `label` and `sep` helper:
+
+```js
+self.$config = {
+  nav: [
+    {
+      title: 'Ecosystem', type: 'dropdown', items: [
+        {type: 'label', title: 'Help'},
+        // ... items
+        {type: 'sep'} // separator
+        // ... other items
+      ]
+    }
   ]
 }
 ```
