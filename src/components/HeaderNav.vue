@@ -1,44 +1,63 @@
 <template>
-  <ul class="header-nav" v-if="currentNav && currentNav.length > 0">
-    <li
-      v-for="(navItem, index) in currentNav"
-      class="nav-item">
-      <div
-        class="nav-item-dropdown"
-        v-if="navItem.type === 'dropdown'">
-        {{ navItem.title }}
-        <span class="arrow"></span>
-        <ul class="dropdown-list">
-          <li
-            v-for="subItem in navItem.items"
-            class="dropdown-item">
-            <nav-link :item="subItem"></nav-link>
-          </li>
-        </ul>
-      </div>
-      <nav-link v-else :item="navItem"></nav-link>
-    </li>
-  </ul>
+  <div class="header-nav" v-if="showNav">
+    <custom-components place="nav:start"></custom-components>
+    <ul class="nav-list" v-if="hasNav">
+      <li
+        v-for="(navItem, index) in currentNav"
+        class="nav-item">
+        <div
+          class="nav-item-dropdown"
+          v-if="navItem.type === 'dropdown'">
+          {{ navItem.title }}
+          <span class="arrow"></span>
+          <ul class="dropdown-list">
+            <li
+              v-for="subItem in navItem.items"
+              class="dropdown-item">
+              <nav-link :item="subItem"></nav-link>
+            </li>
+          </ul>
+        </div>
+        <nav-link v-else :item="navItem"></nav-link>
+      </li>
+    </ul>
+    <custom-components place="nav:end"></custom-components>
+  </div>
 </template>
 
 <script>
   import {mapGetters} from 'vuex'
   import SvgIcon from 'components/SvgIcon'
   import NavLink from 'components/NavLink'
+  import CustomComponents from 'components/CustomComponents'
+  import componentManager from 'utils/component-manager'
 
   export default {
     computed: {
-      ...mapGetters(['currentNav'])
+      ...mapGetters(['currentNav']),
+      hasNav() {
+        return this.currentNav && this.currentNav.length > 0
+      },
+      showNav() {
+        const hasNavStart = componentManager.count('nav:start') > 0
+        const hasNavEnd = componentManager.count('nav:end') > 0
+        return this.hasNav || hasNavStart || hasNavEnd
+      }
     },
     components: {
       SvgIcon,
-      NavLink
+      NavLink,
+      CustomComponents
     }
   }
 </script>
 
 <style>
   .header-nav {
+    display: flex;
+    align-items: center;
+  }
+  .nav-list {
     list-style: none;
     padding-left: 0;
     margin: 0;
@@ -96,31 +115,6 @@
       &:hover {
         .dropdown-list {
           display: block;
-        }
-      }
-    }
-    &.is-mobile {
-      height: auto;
-      line-height: auto;
-      .nav-item {
-        float: none;
-        >a, >div {
-          border-bottom: none;
-          &.router-link-active {
-            color: #42b983;
-          }
-        }
-      }
-      .dropdown-list {
-        background-color: transparent;
-      }
-      .nav-item-dropdown {
-        .dropdown-list {
-          position: initial;
-          display: block;
-          transform: none;
-          border: none;
-          padding: 0;
         }
       }
     }

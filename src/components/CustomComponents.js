@@ -8,7 +8,9 @@ export default {
           'content:start',
           'content:end',
           'sidebar:start',
-          'sidebar:end'
+          'sidebar:end',
+          'nav:start',
+          'nav:end'
         ].indexOf(value) > -1
       }
     }

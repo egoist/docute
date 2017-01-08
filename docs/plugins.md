@@ -164,7 +164,14 @@ The function requires two arguments: `registerComponent(position, component)`
 
 ##### position
 
-Value: `oneOf(['content:start', 'content:end', 'sidebar:start', 'sidebar:end'])`
+The value is one of followings:
+
+- `content:start`: at the start of main content (no sidebar, no header)
+- `content:end`: at the end of main content
+- `sidebar:start`: at the start of sidebar (after search element)
+- `sidebar:end`: at the end of sidebar
+- `nav:start`: at the start of `nav` items
+- `nav:end`: at the end of `nav` items
 
 ##### component
 
