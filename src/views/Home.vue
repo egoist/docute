@@ -9,7 +9,7 @@
       <toc v-if="showToc" :headings="page.headings"></toc>
       <custom-components place="sidebar:end" v-if="loaded"></custom-components>
     </figure>
-    <mobile-header v-if="loaded"></mobile-header>
+    <mobile-header :current-icons="currentIcons" v-if="loaded"></mobile-header>
     <section class="main">
       <home-header :current-icons="currentIcons" v-if="loaded"></home-header>
       <custom-components place="content:start" v-if="loaded"></custom-components>

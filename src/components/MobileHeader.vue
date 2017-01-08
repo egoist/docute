@@ -7,7 +7,7 @@
       </h1>
     </div>
     <div class="header-right">
-      <header-icons></header-icons>
+      <header-icons :current-icons="currentIcons"></header-icons>
     </div>
   </header>
 </template>
@@ -19,6 +19,12 @@
   import {$, isMobile} from 'utils/dom'
 
   export default {
+    props: {
+      currentIcons: {
+        type: Array,
+        default: () => []
+      }
+    },
     computed: {
       ...mapState(['config', 'showMobileSidebar'])
     },

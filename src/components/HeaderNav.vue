@@ -74,6 +74,33 @@
   .header-nav {
     display: flex;
     align-items: center;
+    &.is-mobile {
+      .nav-list {
+        height: auto;
+        line-height: auto;
+        .nav-item {
+          float: none;
+          >a, >div {
+            border-bottom: none;
+            &.router-link-active {
+              color: #42b983;
+            }
+          }
+        }
+        .dropdown-list {
+          background-color: transparent;
+        }
+        .nav-item-dropdown {
+          .dropdown-list {
+            position: initial;
+            display: block;
+            transform: none;
+            border: none;
+            padding: 0;
+          }
+        }
+      }
+    }
   }
   .nav-list {
     list-style: none;
