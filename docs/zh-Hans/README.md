@@ -7,6 +7,10 @@ search: zh-Hans
 
 docute 让你无需编译文件享受到无缝的文档撰写、发布体验。
 
+<p class="warning">
+  文档翻译可能不完整，请以 <a router-link="/home">英文文档</a> 为准。
+</p>
+
 ## 简介
 
 `docute` 让你直接写 markdown 文件作为文档来显示而不需要编译成 html 这一步，你的文档目录里只需要一个首页 `index.html` 和你的配置文件 `config.js`。`docute` 会直接渲染这些 markdown 文件为一个单页应用。
