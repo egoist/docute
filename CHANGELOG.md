@@ -1,3 +1,11 @@
+## [Version 1.10.2](https://github.com/egoist/docute/releases/tag/v1.10.2) (2017-1-9)
+
+### Patches
+
+- strip tags in toc title: [`b62543c`](https://github.com/egoist/docute/commit/b62543c)
+
+[...full changes](https://github.com/egoist/docute/compare/v1.10.1...v1.10.2)
+
 ## [Version 1.10.1](https://github.com/egoist/docute/releases/tag/v1.10.1) (2017-1-8)
 
 ### Patches
