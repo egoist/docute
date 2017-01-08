@@ -7,7 +7,8 @@
         class="nav-item">
         <div
           class="nav-item-dropdown"
-          v-if="navItem.type === 'dropdown'">
+          v-if="navItem.type === 'dropdown'"
+          onClick="return true">
           {{ getTitle(navItem) }}
           <span class="arrow"></span>
           <ul class="dropdown-list">
