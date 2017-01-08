@@ -1,3 +1,13 @@
+## [Version 1.10.0](https://github.com/egoist/docute/releases/tag/v1.10.0) (2017-1-8)
+
+### Minor Changes
+
+- allow to register components in nav: [`3232902`](https://github.com/egoist/docute/commit/3232902)
+- add `exact` to set actual dropdown title: [`dc41783`](https://github.com/egoist/docute/commit/dc41783)
+- better dropdown support, add type `label` and `sep`: [`4c11f2f`](https://github.com/egoist/docute/commit/4c11f2f)
+
+[...full changes](https://github.com/egoist/docute/compare/v1.9.3...v1.10.0)
+
 ## [Version 1.9.3](https://github.com/egoist/docute/releases/tag/v1.9.3) (2017-1-6)
 
 ### Patches
