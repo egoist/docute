@@ -4,6 +4,8 @@ export default function (input) {
     .replace(/(\s|\.)/g, '-')
     // Convert 2 or more sepeators into just one sepeator
     .replace(/-+/g, '-')
+    // remove html tags
+    .replace(/<(?:.|\n)*?>/gm, '')
     // Make the whole thing lowercase
     .toLowerCase()
   // make sure the string does not start with number
