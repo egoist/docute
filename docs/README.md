@@ -505,8 +505,25 @@ Jump to a heading anchor, for `/#/?id=install` you can do:
 <a href="#" jump-to-id="install">Check out install intructions!</a>
 ```
 
+This is also available in markdown, and maybe even more handy:
+
+```markdown
+<!-- if the link value is `jump-to-id`, it automatically generates from text -->
+[I am a title](jump-to-id)
+<!-- yields: -->
+<a href="#/?id=i-am-a-title" jump-to-id="i-am-a-tite">I am a title</a>
+
+<!-- the value could also be an id prefixed with `#` -->
+<!-- this way we will also convert the value to `jump-to-id` attribute -->
+[Goto](#i-am-a-title)
+<!-- yields: -->
+<a href="#/?id=i-am-a-title" jump-to-id="i-am-a-tite">Goto</a>
+```
+
+You should always prefer using markdown to automatically generate `jump-to-id` attribute, since this would also generate `href` for your, which allows user to open the link in a new tab.
+
 <p class="tip">
-  Note that you can only navigate id in the same page, it <strong>cannot</strong> jump to another page! For cross-page navigation, use <a href="#" jump-to-id="router-link">router-link</a> attribute.
+  Note that you can only navigate id in the same page, it <strong>cannot</strong> jump to another page! For cross-page navigation, use [router-link](jump-to-id) attribute.
 </p>
 
 ##### router-link

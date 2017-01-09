@@ -211,7 +211,15 @@
         const text = await res.text()
 
         const parsed = frontMatter(text)
-        marked.setOptions({...this.config.marked, renderer})
+
+        marked.setOptions({
+          ...this.config.marked,
+          renderer,
+          context: {
+            path: this.$route.path,
+            routerMode: this.$router.mode
+          }
+        })
         this.updatePage({
           html: marked(parsed.body),
           attributes: parsed.attributes,

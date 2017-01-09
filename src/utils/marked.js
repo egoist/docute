@@ -1,4 +1,5 @@
 /* eslint-disable */
+import slugify from 'utils/slugify'
 /**
  * marked - a markdown parser
  * Copyright (c) 2011-2014, Christopher Jeffrey. (MIT Licensed)
@@ -880,11 +881,28 @@ Renderer.prototype.link = function(href, title, text) {
       return '';
     }
   }
+  // To allow [Get Started](jump-to-id)
+  // to be generated to <a href="#/?get-started" jump-to-id="get-started">Get Started</a>
+  var isJump = href === 'jump-to-id'
+  var isId = href && (href.charAt(0) === '#')
+  var slug
+
+  if (isJump || isId) {
+    slug = isJump ? slugify(text) : href.substring(1)
+    var path = this.options.context.routerMode === 'hash' ?
+    `#${this.options.context.path}` :
+    this.options.context.path
+    href = `${path}?id=${slug}`
+  }
+
   var out = '<a href="' + href + '"';
   if (title) {
     out += ' title="' + title + '"';
   }
-  if (this.options.targetBlank) {
+  if (isJump || isId) {
+    out += ` jump-to-id="${slug}"`
+  }
+  if (this.options.targetBlank && !isId) {
     out += ' target="_blank"'
   }
   out += '>' + text + '</a>';
@@ -1258,7 +1276,8 @@ marked.defaults = {
   headerPrefix: '',
   renderer: new Renderer,
   xhtml: false,
-  targetBlank: true
+  targetBlank: true,
+  context: {}
 };
 
 /**
