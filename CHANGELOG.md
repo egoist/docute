@@ -1,3 +1,11 @@
+## [Version 1.12.2](https://github.com/egoist/docute/releases/tag/v1.12.2) (2017-1-9)
+
+### Patches
+
+- tweak regexp order: [`07f2f8a`](https://github.com/egoist/docute/commit/07f2f8a)
+
+[...full changes](https://github.com/egoist/docute/compare/v1.12.1...v1.12.2)
+
 ## [Version 1.12.1](https://github.com/egoist/docute/releases/tag/v1.12.1) (2017-1-9)
 
 ### Patches
