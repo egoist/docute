@@ -7,6 +7,10 @@ search: zh-Hant
 
 插件提供了一些額外的功能同時不讓 docute 本身變得臃腫。
 
+<p class="warning">
+  文档翻译可能不完整，请以 <a router-link="/home">英文文档</a> 为准。
+</p>
+
 ## 插件列表
 
 ### DocSearch
