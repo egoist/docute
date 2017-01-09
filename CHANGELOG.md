@@ -1,3 +1,11 @@
+## [Version 1.12.3](https://github.com/egoist/docute/releases/tag/v1.12.3) (2017-1-10)
+
+### Patches
+
+- tweak mobile header: [`23a8953`](https://github.com/egoist/docute/commit/23a8953)
+
+[...full changes](https://github.com/egoist/docute/compare/v1.12.2...v1.12.3)
+
 ## [Version 1.12.2](https://github.com/egoist/docute/releases/tag/v1.12.2) (2017-1-9)
 
 ### Patches
