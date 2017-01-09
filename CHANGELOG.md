@@ -1,3 +1,11 @@
+## [Version 1.12.0](https://github.com/egoist/docute/releases/tag/v1.12.0) (2017-1-9)
+
+### Minor Changes
+
+- add algolia logo: [`36a601e`](https://github.com/egoist/docute/commit/36a601e)
+
+[...full changes](https://github.com/egoist/docute/compare/v1.11.0...v1.12.0)
+
 ## [Version 1.11.0](https://github.com/egoist/docute/releases/tag/v1.11.0) (2017-1-9)
 
 ### Minor Changes
