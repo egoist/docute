@@ -523,7 +523,7 @@ This is also available in markdown, and maybe even more handy:
 You should always prefer using markdown to automatically generate `jump-to-id` attribute, since this would also generate `href` for your, which allows user to open the link in a new tab.
 
 <p class="tip">
-  Note that you can only navigate id in the same page, it <strong>cannot</strong> jump to another page! For cross-page navigation, use [router-link](jump-to-id) attribute.
+  Note that you can only navigate id in the same page, it <strong>cannot</strong> jump to another page! For cross-page navigation, use [router-link](#router-link) attribute.
 </p>
 
 ##### router-link

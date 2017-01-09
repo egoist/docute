@@ -196,6 +196,24 @@ self.$config = {
   除此之外你也可以用 `source` 来指定一个自定义的 markdown 文件而不是默认的 `路径加.md` 这种形式，比如 `source: 'https://foo.com/bar.md'`
 </p>
 
+#### Custom source
+
+A path like `/language/chinese` will make docute fetch `/language/chinese.md`, you can use `source` option to fetch another file:
+
+```js
+{
+  title: 'Chinese', 
+  path: '/language/chinese', 
+  source: '/language/chinese-foo.md'
+  // or even external file
+  source: 'https://raw.githubusercontent.com/user/repo/master/file.md'
+}
+```
+
+<p class="tip">
+  You may wonder why there's `$config.home` option when we already have `source` option, that's because `source` option is only available for nav item, while `$config.home` is always available no matter if you add `/` to nav.
+</p>
+
 #### 图标
 
 ##### 内置图标
@@ -304,6 +322,41 @@ self.$config = {
       {title: '中文', path: '/language/chinese'},
       {title: '日语', path: '/language/japanese'}
     ]}
+  ]
+}
+```
+
+##### exact
+
+To make dropdown menu display the actual title of active page, for example, show `Chinese` instead of `Languages` as the dropdown title when user enters relevant page, just set `exact` to `true`:
+
+```js
+self.$config = {
+  nav: [
+    {title: 'Languages', type: 'dropdown', exact: true, items: []}
+  ]
+}
+```
+
+##### `label` and `sep`
+
+To have such dropdown menu:
+
+<img src="assets/dropdown-label-sep.png" alt="label" width="300">
+
+You will need the `label` and `sep` helper:
+
+```js
+self.$config = {
+  nav: [
+    {
+      title: 'Ecosystem', type: 'dropdown', items: [
+        {type: 'label', title: 'Help'},
+        // ... items
+        {type: 'sep'} // separator
+        // ... other items
+      ]
+    }
   ]
 }
 ```
@@ -464,8 +517,25 @@ docute 已经对一些语言内置了代码高亮 `javascript` `cpp` `css` `xml`
 <a href="#" jump-to-id="install">查看安装提示!</a>
 ```
 
+This is also available in markdown, and maybe even more handy:
+
+```markdown
+<!-- if the link value is `jump-to-id`, it automatically generates from text -->
+[I am a title](jump-to-id)
+<!-- yields: -->
+<a href="#/?id=i-am-a-title" jump-to-id="i-am-a-tite">I am a title</a>
+
+<!-- the value could also be an id prefixed with `#` -->
+<!-- this way we will also convert the value to `jump-to-id` attribute -->
+[Goto](#i-am-a-title)
+<!-- yields: -->
+<a href="#/?id=i-am-a-title" jump-to-id="i-am-a-tite">Goto</a>
+```
+
+You should always prefer using markdown to automatically generate `jump-to-id` attribute, since this would also generate `href` for your, which allows user to open the link in a new tab.
+
 <p class="tip">
-  注意这种方法只能在当前页面使用，他并不能跳到其它的页面的标题。跨页面跳转请使用 <a href="#" jump-to-id="router-link">router-link</a> 属性。
+  注意这种方法只能在当前页面使用，他并不能跳到其它的页面的标题。跨页面跳转请使用 [router-link](#router-link) 属性。
 </p>
 
 ##### router-link
@@ -576,3 +646,20 @@ docute 同时总结了我们近几年使用 gitbook/hexo/jekyll 这类工具撰�
 这并不是不好，只是有时候我们并不需要。使用一个单页应用就足够了，并且免去了很多啰嗦的构建程序。
 
 不过我们也有计划支持「编译到 HTML 文件」这一功能，同时也有支持[服务器端渲染的计划](https://github.com/egoist/docute/issues/12)，后者意味着你不需要构建的同时也能享受更好的 SEO 体验，虽然现在 Google 已经支持抓取动态网页上的内容了。
+
+### How to evaluate script tag inside markdown?
+
+Since dynamically added script tags won't be executed by browser, you can manually implement this by a plugin:
+
+```js
+function evalPlugin(ctx) {
+  ctx.event.subscribe('content:updated', function () {
+    document.querySelectorAll('.content script').forEach(function (el) {
+      var execute = new Function(el.innerHTML)
+      execute()
+    })
+  })
+}
+```
+
+For docs about plugins please head to <span router-link="/plugins">plugins</span>.
