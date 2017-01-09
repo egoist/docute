@@ -1,3 +1,15 @@
+## [Version 1.11.0](https://github.com/egoist/docute/releases/tag/v1.11.0) (2017-1-9)
+
+### Minor Changes
+
+- enable jump-to-id feature in markdown, closed [#47](https://github.com/egoist/docute/issues/47): [`f12917b`](https://github.com/egoist/docute/commit/f12917b)
+
+### Patches
+
+- fix ipad nav: [`ab7511d`](https://github.com/egoist/docute/commit/ab7511d) ([#46](https://github.com/egoist/docute/issues/46))
+
+[...full changes](https://github.com/egoist/docute/compare/v1.10.2...v1.11.0)
+
 ## [Version 1.10.2](https://github.com/egoist/docute/releases/tag/v1.10.2) (2017-1-9)
 
 ### Patches
