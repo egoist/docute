@@ -3,7 +3,7 @@
     <div class="header-left" @click="toggleMobileSidebar()">
       <h1 class="site-title">
         <svg-icon class="svg-icon" name="menu" ref="icon"></svg-icon>
-        {{ config.title }}
+        <span v-if="!config.disableHeaderTitle">{{ config.title }}</span>
       </h1>
     </div>
     <div class="header-right">
@@ -83,7 +83,7 @@
     .site-title {
       margin: 0;
       font-weight: 300;
-      font-size: 20x;
+      font-size: 20px;
       display: flex;
     }
 
