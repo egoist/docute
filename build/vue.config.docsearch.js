@@ -6,7 +6,7 @@ module.exports = {
   dist: 'plugins',
   template: false,
   umd: 'docsearch',
-  entry: './src/plugins/docsearch.js',
+  entry: './src/plugins/docsearch',
   filename: 'docsearch',
   clean: false,
   production: {

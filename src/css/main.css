@@ -2,16 +2,16 @@
   padding: 0 20px;
 }
 
+.inner-2x {
+  padding: 0 30px;
+}
+
 .inner-y {
   padding: 20px 0;
 }
 
-.custom-components {
-  padding: 30px;
-}
-
 @media screen and (max-width: 768px) {
-  .inner-x, .custom-components {
+  .inner-x, .inner-2x {
     padding: 10px;
   }
   .inner-y {
