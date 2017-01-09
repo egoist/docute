@@ -52,6 +52,7 @@
       },
       handleClear() {
         this.searchReset()
+        this.keyword = ''
         this.$refs.input.focus()
       }
     },
