@@ -41,6 +41,11 @@
 
 <style>
   .search-result {
+    .empty-search-result {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color: #8a8a8a;
+    }
     .result-item {
       cursor: pointer;
       padding-top: 20px;
