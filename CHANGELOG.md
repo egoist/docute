@@ -1,3 +1,15 @@
+## [Version 1.12.1](https://github.com/egoist/docute/releases/tag/v1.12.1) (2017-1-9)
+
+### Patches
+
+- tweak disqus style: [`8bf9567`](https://github.com/egoist/docute/commit/8bf9567)
+- tweak style of empty state for search result: [`7dd5543`](https://github.com/egoist/docute/commit/7dd5543)
+- tweak sidebar order in mobile device: [`4a3d262`](https://github.com/egoist/docute/commit/4a3d262)
+- reset local keyword: [`1622b06`](https://github.com/egoist/docute/commit/1622b06)
+- strip html tags in slug too: [`8349c53`](https://github.com/egoist/docute/commit/8349c53)
+
+[...full changes](https://github.com/egoist/docute/compare/v1.12.0...v1.12.1)
+
 ## [Version 1.12.0](https://github.com/egoist/docute/releases/tag/v1.12.0) (2017-1-9)
 
 ### Minor Changes
