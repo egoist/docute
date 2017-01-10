@@ -1,3 +1,11 @@
+## [Version 1.12.5](https://github.com/egoist/docute/releases/tag/v1.12.5) (2017-1-10)
+
+### Patches
+
+- preserve query: [`740c2bb`](https://github.com/egoist/docute/commit/740c2bb)
+
+[...full changes](https://github.com/egoist/docute/compare/v1.12.4...v1.12.5)
+
 ## [Version 1.12.4](https://github.com/egoist/docute/releases/tag/v1.12.4) (2017-1-10)
 
 ### Patches
