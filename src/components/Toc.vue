@@ -11,7 +11,7 @@
         class="sidebar-heading-anchor"
         :class="{active: activeId === heading.slug}"
         :to="{query: {id: heading.slug}}"
-        v-text="heading.text.replace(/<(?:.|\n)*?>/gm, '')">
+        v-html="heading.text.replace(/<(?:.|\n)*?>/gm, '')">
       </router-link>
     </li>
   </ul>
