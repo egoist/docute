@@ -1,3 +1,11 @@
+## [Version 1.12.4](https://github.com/egoist/docute/releases/tag/v1.12.4) (2017-1-10)
+
+### Patches
+
+- show toc title as html: [`b57476a`](https://github.com/egoist/docute/commit/b57476a)
+
+[...full changes](https://github.com/egoist/docute/compare/v1.12.3...v1.12.4)
+
 ## [Version 1.12.3](https://github.com/egoist/docute/releases/tag/v1.12.3) (2017-1-10)
 
 ### Patches
