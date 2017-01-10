@@ -10,7 +10,7 @@
         @click.native="navigate(heading.slug)"
         class="sidebar-heading-anchor"
         :class="{active: activeId === heading.slug}"
-        :to="{query: {id: heading.slug}}"
+        :to="{query: getQuery(heading)}"
         v-html="heading.text.replace(/<(?:.|\n)*?>/gm, '')">
       </router-link>
     </li>
@@ -55,6 +55,9 @@
     },
     methods: {
       ...mapActions(['jumpToId']),
+      getQuery(heading) {
+        return {...this.$route.query, id: heading.slug}
+      },
       hasChildren(index) {
         return this.headings.filter(heading => {
           return heading.parent === index
