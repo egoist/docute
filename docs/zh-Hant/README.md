@@ -365,15 +365,15 @@ title: 首頁
 
 ### 代碼高亮
 
-`docute` 使用 `highlight.js` 來高亮代碼:
+`docute` uses `Prism.js` to highlight your code blocks, however only a few languages are supported by default, you can highlight other languages by:
 
 ```html
 <script src="/path/to/docute.js"></script>
-<!-- 添加你要高亮的語言 -->
-<script src="https://unpkg.com/highlight-languages/python.js"></script>
+<!-- add your language after the main docute bundle -->
+<script src="https://unpkg.com/prismjs/components/prism-python.js"></script>
 ```
 
-現在 `python` 代碼就會被高亮了！
+Now the `python` code will get highlighten!
 
 ```python
 def fib(n):
@@ -384,9 +384,24 @@ def fib(n):
 print fib(5)
 ```
 
-docute 已經對一些語言內置了代碼高亮 `javascript` `cpp` `css` `xml` `bash` `markdown` `yaml`，你不用添加任何代碼就能高亮這些語言。
+The built-in languages are: 
 
-訪問 https://unpkg.com/highlight-languages/ 查看所有可添加的代碼語言。
+```js
+[ 'markup',
+  'xml',
+  'html',
+  'mathml',
+  'svg',
+  'css',
+  'clike',
+  'javascript',
+  'js',
+  'bash',
+  'yaml',
+  'markdown' ]
+```
+
+Visit https://unpkg.com/prismjs/components/ for all available programming languages.
 
 ### 文檔助手
 

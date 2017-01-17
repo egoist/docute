@@ -430,12 +430,12 @@ For example, I want this page to be shown as 'English' in navbar but 'Home' in b
 
 ### Code Highlight
 
-`docute` uses `highlight.js` to highlight your code blocks, however only a few languages are supported by default, you can highlight other languages by:
+`docute` uses `Prism.js` to highlight your code blocks, however only a few languages are supported by default, you can highlight other languages by:
 
 ```html
 <script src="/path/to/docute.js"></script>
 <!-- add your language after the main docute bundle -->
-<script src="https://unpkg.com/highlight-languages/python.js"></script>
+<script src="https://unpkg.com/prismjs/components/prism-python.js"></script>
 ```
 
 Now the `python` code will get highlighten!
@@ -449,9 +449,24 @@ def fib(n):
 print fib(5)
 ```
 
-The built-in languages are: `javascript` `cpp` `css` `xml` `bash` `markdown` `yaml`
+The built-in languages are: 
 
-Visit https://unpkg.com/highlight-languages/ for all available programming languages.
+```js
+[ 'markup',
+  'xml',
+  'html',
+  'mathml',
+  'svg',
+  'css',
+  'clike',
+  'javascript',
+  'js',
+  'bash',
+  'yaml',
+  'markdown' ]
+```
+
+Visit https://unpkg.com/prismjs/components/ for all available programming languages.
 
 ### Doc Helpers
 

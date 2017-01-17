@@ -359,15 +359,15 @@ title: ホームページ
 
 ### シンタックスハイライト
 
-`docute`は`highlight.js`を利用してシンタックスハイライトを行っています。
+`docute` uses `Prism.js` to highlight your code blocks, however only a few languages are supported by default, you can highlight other languages by:
 
 ```html
 <script src="/path/to/docute.js"></script>
-<!-- ハイライトしたい言語を追加します -->
-<script src="https://unpkg.com/highlight-languages/python.js"></script>
+<!-- add your language after the main docute bundle -->
+<script src="https://unpkg.com/prismjs/components/prism-python.js"></script>
 ```
 
-すると`python`コードはハイライトしたようになります：
+Now the `python` code will get highlighten!
 
 ```python
 def fib(n):
@@ -378,7 +378,24 @@ def fib(n):
 print fib(5)
 ```
 
-`docute`に次の言語のハイライト機能がついています：`javascript` `cpp` `css` `xml` `bash` `markdown` `yaml`。https://unpkg.com/highlight-languages/ で利用できるプログラミング言語を探しましょう。
+The built-in languages are: 
+
+```js
+[ 'markup',
+  'xml',
+  'html',
+  'mathml',
+  'svg',
+  'css',
+  'clike',
+  'javascript',
+  'js',
+  'bash',
+  'yaml',
+  'markdown' ]
+```
+
+Visit https://unpkg.com/prismjs/components/ for all available programming languages.
 
 ### ドキュメントヘルパー
 

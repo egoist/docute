@@ -44,15 +44,13 @@
     highlight(code, lang) {
       if (lang === 'markdown') {
         const parsed = frontMatter(code)
-        const markdown = highlight.highlight('markdown', parsed.body).value
+        const markdown = highlight(parsed.body, 'markdown')
         if (!parsed.frontmatter) return markdown
-        const yaml = highlight.highlight('yaml', parsed.frontmatter).value
-        return `<span class="hljs-comment">---</span>\n${yaml}\n<span class="hljs-comment">---</span>\n${markdown}`
+        const yaml = highlight(parsed.frontmatter, 'yaml')
+        return `<span class="token comment">---</span>\n${yaml}\n<span class="token comment">---</span>\n${markdown}`
       }
 
-      const isValid = Boolean(lang && highlight.getLanguage(lang))
-      if (isValid) return highlight.highlight(lang, code).value
-      return highlight.highlightAuto(code).value
+      return highlight(code, lang)
     }
   })
 
