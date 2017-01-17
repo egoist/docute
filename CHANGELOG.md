@@ -1,3 +1,15 @@
+## [Version 2.0.0](https://github.com/egoist/docute/releases/tag/v2.0.0) (2017-1-17)
+
+### Major Changes
+
+- use prismjs instead of highlightjs: [`3ea2ee0`](https://github.com/egoist/docute/commit/3ea2ee0)
+
+### Minor Changes
+
+- expose highlight function: [`613df64`](https://github.com/egoist/docute/commit/613df64)
+
+[...full changes](https://github.com/egoist/docute/compare/v1.12.5...v2.0.0)
+
 ## [Version 1.12.5](https://github.com/egoist/docute/releases/tag/v1.12.5) (2017-1-10)
 
 ### Patches
