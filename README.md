@@ -23,6 +23,7 @@ For detailed usage please head to https://docute.js.org 😎
 ## Projects Using Docute
 
 - [sao](https://sao.js.org/): ⚔️ Futuristic scaffolding tool.
+- [service-mocker](https://service-mocker.js.org/): 🚀 The next generation front-end API mocking framework.
 - Feel free to add yours here :)
 
 ## Contributing
