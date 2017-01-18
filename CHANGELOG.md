@@ -1,3 +1,11 @@
+## [Version 2.1.1](https://github.com/egoist/docute/releases/tag/v2.1.1) (2017-1-18)
+
+### Patches
+
+- fix eventstop version in package.json: [`d57bec0`](https://github.com/egoist/docute/commit/d57bec0)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.1.0...v2.1.1)
+
 ## [Version 2.1.0](https://github.com/egoist/docute/releases/tag/v2.1.0) (2017-1-18)
 
 ### Minor Changes
