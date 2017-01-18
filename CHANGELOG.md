@@ -1,3 +1,11 @@
+## [Version 2.1.0](https://github.com/egoist/docute/releases/tag/v2.1.0) (2017-1-18)
+
+### Minor Changes
+
+- upgrade eventstop: [`c8481b6`](https://github.com/egoist/docute/commit/c8481b6)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.0.0...v2.1.0)
+
 ## [Version 2.0.0](https://github.com/egoist/docute/releases/tag/v2.0.0) (2017-1-17)
 
 ### Major Changes
