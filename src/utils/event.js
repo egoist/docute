@@ -1,3 +1,3 @@
-import EventStop from 'eventstop'
+import eventstop from 'eventstop'
 
-export default new EventStop()
+export default eventstop()

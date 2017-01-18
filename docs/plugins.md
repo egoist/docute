@@ -146,7 +146,7 @@ The argument `context` has following properties:
 
 #### event
 
-We use [eventstop](https://github.com/egoist/eventstop) as the event system. Basically the only thing you need is using `event.subscribe` to subscribe some inner events in docute.
+We use [eventstop](https://github.com/egoist/eventstop) as the event system. Basically the only thing you need is using `event.on` to subscribe some inner events in docute.
 
 List of events:
 
