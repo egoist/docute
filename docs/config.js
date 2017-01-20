@@ -85,9 +85,6 @@ self.$config = {
       indexName: 'docute',
       tags: ['english', 'zh-Hans', 'zh-Hant', 'ja']
     }),
-    disqus({
-      shortname: 'docute'
-    }),
     evanyou()
   ]
 }
