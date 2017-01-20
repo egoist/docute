@@ -1,3 +1,15 @@
+## [Version 2.2.0](https://github.com/egoist/docute/releases/tag/v2.2.0) (2017-1-20)
+
+### Minor Changes
+
+- update css helpers: [`f0c4819`](https://github.com/egoist/docute/commit/f0c4819)
+
+### Patches
+
+- tweaks jump behavior: [`8b95e59`](https://github.com/egoist/docute/commit/8b95e59)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.1.1...v2.2.0)
+
 ## [Version 2.1.1](https://github.com/egoist/docute/releases/tag/v2.1.1) (2017-1-18)
 
 ### Patches
