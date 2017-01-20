@@ -227,10 +227,11 @@
         document.title = this.documentTitle
 
         // scroll to id (the url query `id`)
-        this.$nextTick(() => {
+        setTimeout(() => {
           nprogress.done()
           event.emit('content:updated', this)
           if (this.id) {
+            console.log('lol')
             this.jumpToId(this.id)
           } else {
             window.scroll(0, 0)

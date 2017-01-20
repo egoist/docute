@@ -39,7 +39,7 @@
           const firstPositive = findMin(els.filter(el => el.top > 0), 'top')[0]
 
           let el = {}
-          if (lastNegative && firstPositive && firstPositive.top > 200) {
+          if (lastNegative && firstPositive && firstPositive.top > 100) {
             el = lastNegative
           } else if (firstPositive) {
             el = firstPositive
