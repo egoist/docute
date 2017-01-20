@@ -7,6 +7,10 @@ search: ja
 
 docute を使い、ビルドプロセス（build process）なしにドキュメントを作りましょう。
 
+<p class="danger">
+  This transilation is kind of out-dated, you may check out the <a href="#" router-link="/home">English docs</a> instead.
+</p>
+
 ## はじめに
 
 `docute`を利用して、markdown ファイルを直接に HTML コードとして変換して出力することができます。ホームページの`index.html`と設定ファイルの`config.js`だけあれば、`docute`は自動的に markdown ファイルを SPA に作成できます。
@@ -378,7 +382,7 @@ def fib(n):
 print fib(5)
 ```
 
-The built-in languages are: 
+The built-in languages are:
 
 ```js
 [ 'markup',

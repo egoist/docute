@@ -464,11 +464,10 @@
   }
 }
 
-p.warning, p.tip {
+p.warning, p.tip, p.danger {
   padding: 12px 24px 12px 20px;
   margin: 2em 0;
   border-left: 4px solid;
-  background-color: #f8f8f8;
   position: relative;
   border-bottom-right-radius: 2px;
   border-top-right-radius: 2px;
@@ -486,11 +485,23 @@ p.warning, p.tip {
     font-weight: bold;
     font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   }
+  &.no-bg {
+    background-color: #f8f8f8;
+  }
 }
 
 p.warning {
+  border-left-color: #f7d24c;
+  background-color: #fefbed;
+  &:before {
+    background-color: #f7d24c;
+  }
+}
+
+p.danger {
   $red: #f66;
   border-left-color:  $red;
+  background-color: rgba(255, 102, 102, 0.11);
   &:before {
     background-color: $red;
   }
@@ -499,6 +510,7 @@ p.warning {
 p.tip {
   $green: #3c763d;
   border-left-color: $green;
+  background-color: rgb(241, 249, 241);
   &:before {
     background-color: $green;
   }

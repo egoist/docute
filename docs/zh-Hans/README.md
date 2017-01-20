@@ -202,8 +202,8 @@ A path like `/language/chinese` will make docute fetch `/language/chinese.md`, y
 
 ```js
 {
-  title: 'Chinese', 
-  path: '/language/chinese', 
+  title: 'Chinese',
+  path: '/language/chinese',
   source: '/language/chinese-foo.md'
   // or even external file
   source: 'https://raw.githubusercontent.com/user/repo/master/file.md'
@@ -447,7 +447,7 @@ def fib(n):
 print fib(5)
 ```
 
-The built-in languages are: 
+The built-in languages are:
 
 ```js
 [ 'markup',
@@ -519,6 +519,18 @@ Visit https://unpkg.com/prismjs/components/ for all available programming langua
 </p>
 
 **小提示: 在 HTML 中也可以使用 Markdown!**
+
+##### p.danger
+
+```html
+<p class="danger">
+  This is dangerous!
+</p>
+```
+
+---
+
+如果你不想 tip 有红绿黄这些背景颜色，可以添加一个 `no-bg` 类。
 
 #### HTML 属性
 

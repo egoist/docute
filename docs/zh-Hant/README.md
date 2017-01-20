@@ -7,6 +7,10 @@ search: zh-Hant
 
 docute 讓你無需編譯文件享受到無縫的文檔撰寫、發布體驗。
 
+<p class="warning">
+  This transilation is kind of out-dated, you may check out the <a href="#" router-link="/home">English docs</a> instead.
+</p>
+
 ## 簡介
 
 `docute` 讓你直接寫 markdown 文件作為文檔來顯示而不需要編譯成 html 這一步，你的文檔目錄裏只需要一個首頁 `index.html` 和你的配置文件 `config.js`。`docute` 會直接渲染這些 markdown 文件為一個單頁應用。
@@ -384,7 +388,7 @@ def fib(n):
 print fib(5)
 ```
 
-The built-in languages are: 
+The built-in languages are:
 
 ```js
 [ 'markup',

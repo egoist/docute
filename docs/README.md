@@ -84,7 +84,7 @@ What we really need is an `index.html`:
 </body>
 </html>
 ```
- 
+
 ## Configuration
 
 There will be a `config.js` in your doc directory after running `docute init`:
@@ -203,8 +203,8 @@ A path like `/language/chinese` will make docute fetch `/language/chinese.md`, y
 
 ```js
 {
-  title: 'Chinese', 
-  path: '/language/chinese', 
+  title: 'Chinese',
+  path: '/language/chinese',
   source: '/language/chinese-foo.md'
   // or even external file
   source: 'https://raw.githubusercontent.com/user/repo/master/file.md'
@@ -449,7 +449,7 @@ def fib(n):
 print fib(5)
 ```
 
-The built-in languages are: 
+The built-in languages are:
 
 ```js
 [ 'markup',
@@ -490,6 +490,8 @@ And you get:
   This is for beginners and pros, just enjoy!
 </p>
 
+**Note that you can still use markdown inside the HTML!**
+
 ##### p.warning
 
 Similar to `p.tip` but it looks more serious:
@@ -506,7 +508,35 @@ And you get:
   Do not do like this, do it that way please. If you still can't help doing such way, we will call you mom and order some pizza to let you know, you're in trouble!
 </p>
 
-**Note that you can still use markdown inside the HTML!**
+##### p.danger
+
+```html
+<p class="danger">
+  This is really dangerouse, watch out!
+</p>
+```
+
+And you get:
+
+<p class="danger">
+  This is really dangerous, watch out!
+</p>
+
+---
+
+If you don't like tips with background color, remove it by adding `no-bg` class name:
+
+```html
+<p class="warning no-bg">
+  How is it going?
+</p>
+```
+
+And you get:
+
+<p class="warning no-bg">
+  How is it going?
+</p>
 
 #### HTML Attributes
 
