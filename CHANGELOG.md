@@ -1,3 +1,11 @@
+## [Version 2.2.2](https://github.com/egoist/docute/releases/tag/v2.2.2) (2017-1-20)
+
+### Patches
+
+- use native scrollIntoViewIfNeeded if possible: [`ae96113`](https://github.com/egoist/docute/commit/ae96113)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.2.1...v2.2.2)
+
 ## [Version 2.2.1](https://github.com/egoist/docute/releases/tag/v2.2.1) (2017-1-20)
 
 ### Patches
