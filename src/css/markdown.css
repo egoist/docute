@@ -501,7 +501,7 @@ p.warning {
 p.danger {
   $red: #f66;
   border-left-color:  $red;
-  background-color: rgba(255, 102, 102, 0.11);
+  background-color: rgba(255, 102, 102, 0.06);
   &:before {
     background-color: $red;
   }
@@ -510,7 +510,7 @@ p.danger {
 p.tip {
   $green: #3c763d;
   border-left-color: $green;
-  background-color: rgb(241, 249, 241);
+  background-color: rgba(241, 249, 241, 0.83);
   &:before {
     background-color: $green;
   }
