@@ -8,7 +8,8 @@
   import {mapState, mapActions} from 'vuex'
   import throttle from 'lodash.throttle'
   import {findMax, findMin} from 'utils'
-  import {$$} from 'utils/dom'
+  import {$, $$} from 'utils/dom'
+  import scrollIntoView from 'dom-scroll-into-view'
 
   export default {
     name: 'app',
@@ -46,7 +47,18 @@
           } else {
             el = els[els.length - 1]
           }
-          if (el.id) this.updateActiveId(el.id)
+          if (el.id) {
+            this.updateActiveId(el.id)
+            console.log($('.sidebar-heading-anchor.active'))
+            scrollIntoView(
+              $('.sidebar-heading-anchor.active'),
+              $('.sidebar'),
+              {
+                onlyScrollIfNeeded: true,
+                offsetBottom: 60
+              }
+            )
+          }
         }
 
         document.addEventListener('scroll', throttle(handleScroll, 300))
