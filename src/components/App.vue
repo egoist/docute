@@ -14,13 +14,30 @@
   export default {
     name: 'app',
     computed: {
-      ...mapState(['jumping', 'config'])
+      ...mapState(['jumping', 'config', 'activeId'])
     },
     mounted() {
       if (this.config.toc !== false) {
         this.scrollSpy()
       }
       this.detectClick()
+      this.$watch('activeId', () => {
+        const el = $('.sidebar-heading-anchor.active')
+        if (el) {
+          if (el.scrollIntoViewIfNeeded) {
+            el.scrollIntoViewIfNeeded()
+          } else {
+            scrollIntoView(
+              el,
+              $('.sidebar'),
+              {
+                onlyScrollIfNeeded: true,
+                offsetBottom: 100
+              }
+            )
+          }
+        }
+      })
     },
     methods: {
       ...mapActions(['updateActiveId', 'jumpToId']),
@@ -49,15 +66,6 @@
           }
           if (el.id) {
             this.updateActiveId(el.id)
-            console.log($('.sidebar-heading-anchor.active'))
-            scrollIntoView(
-              $('.sidebar-heading-anchor.active'),
-              $('.sidebar'),
-              {
-                onlyScrollIfNeeded: true,
-                offsetBottom: 60
-              }
-            )
           }
         }
 
