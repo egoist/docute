@@ -1,3 +1,12 @@
+## [Version 2.2.1](https://github.com/egoist/docute/releases/tag/v2.2.1) (2017-1-20)
+
+### Patches
+
+- scroll active heading into view if needed: [`683b91a`](https://github.com/egoist/docute/commit/683b91a)
+- tweak tip color: [`5f0e823`](https://github.com/egoist/docute/commit/5f0e823)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.2.0...v2.2.1)
+
 ## [Version 2.2.0](https://github.com/egoist/docute/releases/tag/v2.2.0) (2017-1-20)
 
 ### Minor Changes
