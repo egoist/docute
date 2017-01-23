@@ -152,6 +152,7 @@
       position: relative;
       .dropdown-list {
         position: absolute;
+        z-index: 9999;
         top: 100%;
         left: 50%;
         transform: translateX(-50%);
