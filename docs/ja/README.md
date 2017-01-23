@@ -579,3 +579,20 @@ server {
 悪くないですが、そうする必要はないということです。SPA だけで十分なので、それにいろんなビルドプロセスから解放したいです。
 
 かといって、HTML へのコンピレーションもこれからの計画の一つです。それだけじゃなく、[サバーでのレンダリング](https://github.com/egoist/docute/issues/12)（SSR）機能もどんどん開発しています。今の Google はダイナミックサイトに対応可能ですが、SSR ができれば、さらによい SEO 体験もできるでしょう。
+
+### How to evaluate script tag inside markdown?
+
+Since dynamically added script tags won't be executed by browser, you can manually implement this by a plugin:
+
+```js
+function evalPlugin(ctx) {
+  ctx.event.on('content:updated', function () {
+    document.querySelectorAll('.content script').forEach(function (el) {
+      var execute = new Function(el.innerHTML)
+      execute()
+    })
+  })
+}
+```
+
+For docs about plugins please head to <span router-link="/plugins">plugins</span>.

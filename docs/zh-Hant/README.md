@@ -584,3 +584,20 @@ docute 同時總結了我們近幾年使用 gitbook/hexo/jekyll 這類工具撰�
 這並不是不好，只是有時候我們並不需要。使用一個單頁應用就足夠了，並且免去了很多啰嗦的構建程序。
 
 不過我們也有計劃支持「編譯到 HTML 文件」這一功能，同時也有支持[服務器端渲染的計劃](https://github.com/egoist/docute/issues/12)，後者意味著你不需要構建的同時也能享受更好的 SEO 體驗，雖然現在 Google 已經支持抓取動態網頁上的內容了。
+
+### How to evaluate script tag inside markdown?
+
+Since dynamically added script tags won't be executed by browser, you can manually implement this by a plugin:
+
+```js
+function evalPlugin(ctx) {
+  ctx.event.on('content:updated', function () {
+    document.querySelectorAll('.content script').forEach(function (el) {
+      var execute = new Function(el.innerHTML)
+      execute()
+    })
+  })
+}
+```
+
+For docs about plugins please head to <span router-link="/plugins">plugins</span>.
