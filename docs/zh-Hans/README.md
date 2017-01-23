@@ -459,6 +459,7 @@ The built-in languages are:
   'clike',
   'javascript',
   'js',
+  'json',
   'bash',
   'yaml',
   'markdown' ]
