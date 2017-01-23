@@ -22,7 +22,7 @@
       }
       this.detectClick()
       this.$watch('activeId', () => {
-        if (!this.store.state.config.syncTocPosition) return
+        if (!this.$store.state.config.syncTocPosition) return
         const el = $('.sidebar-heading-anchor.active')
         if (el) {
           if (el.scrollIntoViewIfNeeded) {
