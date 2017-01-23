@@ -6,6 +6,7 @@ search: english
 
 Writing docs without build process.
 
+
 ## Introduction
 
 `docute` simply allows you to write markdown files and populate them in `./docs` folder directly without being built to static html files, only `index.html` and `config.js` are required! It smartly reads and parses the markdown files on the fly and finally displays them as a single page website.
