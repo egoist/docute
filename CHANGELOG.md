@@ -1,3 +1,12 @@
+## [Version 2.3.0](https://github.com/egoist/docute/releases/tag/v2.3.0) (2017-1-23)
+
+### Minor Changes
+
+- highlight json: [`c39b424`](https://github.com/egoist/docute/commit/c39b424)
+- support gfm task list, closed [#57](https://github.com/egoist/docute/issues/57): [`50ec46a`](https://github.com/egoist/docute/commit/50ec46a)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.2.2...v2.3.0)
+
 ## [Version 2.2.2](https://github.com/egoist/docute/releases/tag/v2.2.2) (2017-1-20)
 
 ### Patches
