@@ -1,3 +1,11 @@
+## [Version 2.3.2](https://github.com/egoist/docute/releases/tag/v2.3.2) (2017-1-23)
+
+### Patches
+
+- fix stupid typo: [`b71e716`](https://github.com/egoist/docute/commit/b71e716)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.3.1...v2.3.2)
+
 ## [Version 2.3.1](https://github.com/egoist/docute/releases/tag/v2.3.1) (2017-1-23)
 
 ### Patches
