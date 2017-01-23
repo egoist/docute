@@ -1,3 +1,11 @@
+## [Version 2.3.1](https://github.com/egoist/docute/releases/tag/v2.3.1) (2017-1-23)
+
+### Patches
+
+- disable syncTocPosition by default: [`1ae2c8a`](https://github.com/egoist/docute/commit/1ae2c8a)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.3.0...v2.3.1)
+
 ## [Version 2.3.0](https://github.com/egoist/docute/releases/tag/v2.3.0) (2017-1-23)
 
 ### Minor Changes
