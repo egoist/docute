@@ -1,3 +1,11 @@
+## [Version 2.3.3](https://github.com/egoist/docute/releases/tag/v2.3.3) (2017-1-23)
+
+### Patches
+
+- add z-index to dropdown list, fixed [#56](https://github.com/egoist/docute/issues/56): [`40e8087`](https://github.com/egoist/docute/commit/40e8087)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.3.2...v2.3.3)
+
 ## [Version 2.3.2](https://github.com/egoist/docute/releases/tag/v2.3.2) (2017-1-23)
 
 ### Patches
