@@ -1,3 +1,12 @@
+## [Version 2.3.4](https://github.com/egoist/docute/releases/tag/v2.3.4) (2017-2-22)
+
+### Bug fixes
+
+- update vbuild: [`2e6146e`](https://github.com/egoist/docute/commit/2e6146e)
+- tweaks: [`faeb39d`](https://github.com/egoist/docute/commit/faeb39d)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.3.3...v2.3.4)
+
 ## [Version 2.3.3](https://github.com/egoist/docute/releases/tag/v2.3.3) (2017-1-23)
 
 ### Patches
