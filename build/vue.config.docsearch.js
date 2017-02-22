@@ -1,18 +1,14 @@
 const config = require('./vue.config')
 
 module.exports = {
-  ...config,
   port: 5001,
+  cleanDist: false,
   dist: 'plugins',
-  template: false,
-  umd: 'docsearch',
+  html: false,
+  format: 'umd',
+  moduleName: 'docsearch',
   entry: './src/plugins/docsearch',
-  filename: 'docsearch',
-  clean: false,
-  production: {
-    filename: 'docsearch',
-    devtool: false,
-    compress: true
-  },
-  live: true
+  filename: {
+    js: 'docsearch.js'
+  }
 }

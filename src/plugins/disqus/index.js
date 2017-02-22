@@ -1,4 +1,4 @@
-import Disqus from './Disqus.vue'
+const Disqus = require('./Disqus.vue')
 
 module.exports = ({
   shortname

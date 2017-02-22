@@ -1,5 +1,5 @@
-import algoliasearch from 'algoliasearch/lite'
-import Logo from './Logo.vue'
+const algoliasearch = require('algoliasearch/lite')
+const Logo = require('./Logo.vue')
 
 module.exports = function ({
   apiKey,

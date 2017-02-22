@@ -14,8 +14,7 @@
   },
   "scripts": {
     "test": "npm run build",
-    "build": "vbuild --config build/vue.config.js",
-    "build:server": "vbuild --config build/vue.config.server.js",
+    "build": "vbuild -c build/vue.config.js",
     "dev": "vbuild -d --config build/vue.config.js",
     "dev:docsearch": "vbuild -d --config build/vue.config.docsearch.js",
     "build:docsearch": "vbuild --config build/vue.config.docsearch.js",
@@ -48,7 +47,6 @@
     "nprogress": "^0.2.0",
     "prismjs": "^1.6.0",
     "promise-polyfill": "^6.0.2",
-    "vue": "^2.1.6",
     "vue-inline": "^1.0.1",
     "vue-router": "^2.1.1",
     "vuex": "^2.0.0",
@@ -56,16 +54,10 @@
   },
   "devDependencies": {
     "cssbag": "^0.1.0",
-    "eslint": "latest",
-    "eslint-config-rem": "^2.0.2",
-    "eslint-plugin-vue": "^1.0.0",
     "hint.css": "^2.4.1",
     "jest-cli": "^15.1.1",
     "raw-loader": "^0.5.1",
-    "url-loader": "^0.5.7",
-    "vbuild": "^4.3.2",
-    "vue-loader": "^10.0.2",
-    "vue-template-compiler": "^2.1.6"
+    "vbuild": "^6.16.4"
   },
   "jest": {
     "testEnvironment": "node"

@@ -1,46 +1,37 @@
+const path = require('path')
 const express = require('express')
 const pkg = require('../package')
 
 module.exports = {
-  title: 'docute-client',
+  entry: 'src/index.js',
+  html: {
+    title: 'docute-client',
+    template: 'template.html',
+    inject: false
+  },
   port: 5000,
-  resolve: true,
-  template: 'template.html',
-  replace: {
+  define: {
     '__DOCUTE_VERSION__': JSON.stringify(pkg.version)
   },
-  alias: {
-    'vue$': 'vue/dist/vue.common.js'
+  webpack(config) {
+    config.resolve.alias = {
+      'vue$': 'vue/dist/vue.common.js'
+    }
+    config.resolve.modules.push(path.resolve('src'))
+    return config
   },
-  postcss() {
-    return [
-      require('autoprefixer')({
-        browsers: ['ie > 8', 'last 4 versions']
-      }),
-      require('cssbag')()
-    ]
-  },
-  devServer(app) {
+  postcss: [
+    require('cssbag')()
+  ],
+  setup(app) {
     app.use('/', express.static('docs'))
   },
   production: {
-    hash: false,
     html: false,
-    filename: 'docute',
-    eslint: {
-      configFile: 'eslint-config-rem/esnext-browser',
-      plugins: [
-        'vue'
-      ],
-      globals: [
-        '__DOCUTE_VERSION__',
-        'global',
-        'require'
-      ],
-      rules: {
-        'vue/jsx-uses-vars': 2,
-        'no-unused-vars': ['error', { argsIgnorePattern: '^h$' }]
-      }
+    vendor: false,
+    filename: {
+      js: 'docute.js',
+      css: 'docute.css'
     }
   }
 }
