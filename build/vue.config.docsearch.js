@@ -4,6 +4,7 @@ module.exports = {
   port: 5001,
   cleanDist: false,
   dist: 'plugins',
+  postcss: config.postcss,
   html: false,
   format: 'umd',
   moduleName: 'docsearch',
