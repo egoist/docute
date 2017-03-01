@@ -85,12 +85,6 @@ self.$config = {
       indexName: 'docute',
       tags: ['english', 'zh-Hans', 'zh-Hant', 'ja']
     }),
-    evanyou(),
-    function({router}) {
-      router.beforeEach((to, from, next) => {
-        console.log('hi')
-        next()
-      })
-    }
+    evanyou()
   ]
 }
