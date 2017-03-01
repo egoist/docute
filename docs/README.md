@@ -558,13 +558,13 @@ This is also available in markdown, and maybe even more handy:
 <!-- if the link value is `jump-to-id`, it automatically generates from text -->
 [I am a title](jump-to-id)
 <!-- yields: -->
-<a href="#/?id=i-am-a-title" jump-to-id="i-am-a-tite">I am a title</a>
+<a href="#/?id=i-am-a-title" jump-to-id="i-am-a-title">I am a title</a>
 
 <!-- the value could also be an id prefixed with `#` -->
 <!-- this way we will also convert the value to `jump-to-id` attribute -->
 [Goto](#i-am-a-title)
 <!-- yields: -->
-<a href="#/?id=i-am-a-title" jump-to-id="i-am-a-tite">Goto</a>
+<a href="#/?id=i-am-a-title" jump-to-id="i-am-a-title">Goto</a>
 ```
 
 You should always prefer using markdown to automatically generate `jump-to-id` attribute, since this would also generate `href` for your, which allows user to open the link in a new tab.
