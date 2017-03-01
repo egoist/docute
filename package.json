@@ -35,27 +35,26 @@
     "doc"
   ],
   "dependencies": {
-    "algoliasearch": "^3.20.0",
+    "algoliasearch": "^3.21.1",
     "babel-runtime": "^6.20.0",
     "dom-scroll-into-view": "^1.2.1",
     "element-closest": "^2.0.2",
     "eventstop": "^2.1.0",
-    "highlight.js": "^9.8.0",
     "isomorphic-fetch": "^2.2.1",
-    "jump.js": "^1.0.1",
+    "jump.js": "^1.0.2",
     "lodash.throttle": "^4.1.1",
     "nprogress": "^0.2.0",
     "prismjs": "^1.6.0",
     "promise-polyfill": "^6.0.2",
     "vue-inline": "^1.0.1",
-    "vue-router": "^2.1.1",
-    "vuex": "^2.0.0",
-    "vuex-router-sync": "next"
+    "vue-router": "^2.3.0",
+    "vuex": "^2.2.1",
+    "vuex-router-sync": "^4.1.2"
   },
   "devDependencies": {
     "cssbag": "^0.1.0",
     "hint.css": "^2.4.1",
-    "jest-cli": "^15.1.1",
+    "jest-cli": "^19.0.2",
     "raw-loader": "^0.5.1",
     "vbuild": "^6.20.1"
   },

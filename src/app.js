@@ -9,8 +9,6 @@ import App from 'components/App.vue'
 import {registerComponent} from 'utils/component-manager'
 import event from 'utils/event'
 
-sync(store, router)
-
 if (store.state.config.debug) {
   Vue.config.devtools = true
 }
@@ -33,6 +31,8 @@ if (Array.isArray(plugins)) {
     }
   }
 }
+
+sync(store, router)
 
 const app = new Vue({
   router,
