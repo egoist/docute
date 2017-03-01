@@ -1,3 +1,13 @@
+## [Version 2.4.0](https://github.com/egoist/docute/releases/tag/v2.4.0) (2017-3-1)
+
+### New features
+
+- tweak prism css: [`878d64e`](https://github.com/egoist/docute/commit/878d64e)
+- update vbuild: [`d9858b5`](https://github.com/egoist/docute/commit/d9858b5)
+- sync router state after loading plugins: [`decf098`](https://github.com/egoist/docute/commit/decf098)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.3.4...v2.4.0)
+
 ## [Version 2.3.4](https://github.com/egoist/docute/releases/tag/v2.3.4) (2017-2-22)
 
 ### Bug fixes
