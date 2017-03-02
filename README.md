@@ -25,6 +25,7 @@ For detailed usage please head to https://docute.js.org 😎
 - [koel](https://koel.phanan.net/docs): 🎵 Music streaming app that works.
 - [sao](https://sao.js.org/): ⚔️ Futuristic scaffolding tool.
 - [service-mocker](https://service-mocker.js.org/): 🚀 The next generation front-end API mocking framework.
+- [vuejs-component-style-guide](https://pablohpsilva.github.io/vuejs-component-style-guide/#/): Vue component style guide
 - Feel free to add yours here :)
 
 ## Contributing
