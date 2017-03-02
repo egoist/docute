@@ -85,6 +85,7 @@
       font-weight: 300;
       font-size: 20px;
       display: flex;
+      align-items: center;
     }
 
     .header-left {
@@ -93,7 +94,6 @@
       .svg-icon {
         margin-right: 10px;
         color: #999;
-        margin-top: 1px;
         width: 24px;
       }
     }
