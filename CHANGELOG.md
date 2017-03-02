@@ -1,3 +1,12 @@
+## [Version 2.4.1](https://github.com/egoist/docute/releases/tag/v2.4.1) (2017-3-2)
+
+### Bug fixes
+
+- Enable momentum scrolling on iOS: [`3cd7ebc`](https://github.com/egoist/docute/commit/3cd7ebc) ([#66](https://github.com/egoist/docute/issues/66))
+- Center the mobile header vertically: [`77a41cd`](https://github.com/egoist/docute/commit/77a41cd) ([#67](https://github.com/egoist/docute/issues/67))
+
+[...full changes](https://github.com/egoist/docute/compare/v2.4.0...v2.4.1)
+
 ## [Version 2.4.0](https://github.com/egoist/docute/releases/tag/v2.4.0) (2017-3-1)
 
 ### New features
