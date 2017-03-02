@@ -363,6 +363,10 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
       transform: translateX(-120%);
       transition: transform .3s cubic-bezier(0.4, 0, 0, 1);
+      /* Enable scroll with momentum on iOS devices */
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+
       &.visible {
         transform: translateX(0);
       }
