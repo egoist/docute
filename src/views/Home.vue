@@ -66,9 +66,8 @@
       this.fetchData()
     },
     mounted() {
-      this.$watch('$route.path', () => {
-        this.fetchData()
-      })
+      this.$watch('$route.path', () => this.fetchData())
+      event.on('reload', () => this.fetchData())
     },
     computed: {
       ...mapState({

@@ -148,7 +148,7 @@ The argument `context` has following properties:
 
 We use [eventstop](https://github.com/egoist/eventstop) as the event system. Basically the only thing you need is using `event.on` to subscribe some inner events in docute.
 
-List of events:
+List of events you can subscribe:
 
 - `content:updated`: emitted after the main content gets updated
   - the first argument is the `vm` which you can use to access the current Vue component
@@ -157,6 +157,10 @@ List of events:
 - `jump:stopped`: emitted after the jumping to id action
   - the first argument is the `id` it jumps to
 
+
+List of events you can emit:
+
+- `reload`: reload current page, eg: you changed the `store` state and want to refetch data.
 
 #### registerComponent
 
