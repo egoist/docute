@@ -1,3 +1,11 @@
+## [Version 2.5.0](https://github.com/egoist/docute/releases/tag/v2.5.0) (2017-3-2)
+
+### New features
+
+- allow to manually reload page: [`3132da0`](https://github.com/egoist/docute/commit/3132da0)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.4.1...v2.5.0)
+
 ## [Version 2.4.1](https://github.com/egoist/docute/releases/tag/v2.4.1) (2017-3-2)
 
 ### Bug fixes
