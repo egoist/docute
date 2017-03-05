@@ -177,18 +177,21 @@
         const headings = []
         renderer.heading = (text, level) => {
           const index = headings.length
-          let slug = this.config.slugify ? this.config.slugify(text) : slugify(text)
+          const directSlug = this.config.slugify ? this.config.slugify(text) : slugify(text)
+          let slug = directSlug
 
           // check if there's already a same slug
           const sameSlugs = headings.filter(heading => {
-            return heading.slug === slug
+            return heading.directSlug === directSlug
           })
           if (sameSlugs.length > 0) {
             slug += sameSlugs.length
           }
+
           if (level !== 1) {
-            headings.push({level, text, slug, index})
+            headings.push({level, text, slug, directSlug, index})
           }
+
           const className = level === 1 ? 'markdown-heading' : 'markdown-heading markdown-toc-heading'
           const anchor = level === 1 ? '' : ` <span class="anchor" jump-to-id="${slug}">${LinkIcon}</span>`
           return `<h${level} id="${slug}" class="${className}">
