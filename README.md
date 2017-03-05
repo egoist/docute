@@ -50,7 +50,7 @@ npm run dev
 
 `docute` wouldn't exist if it wasn't for excellent prior art, docute is inspired by these projects:
 
-- [docpress](https://github.com/docpress/docpress)
+- [flatdoc](https://github.com/rstacruz/flatdoc)
 - [docsify](https://github.com/QingWei-Li/docsify)
 - [vue.js](https://vuejs.org/)
 
