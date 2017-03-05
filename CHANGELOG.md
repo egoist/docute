@@ -1,3 +1,11 @@
+## [Version 2.7.0](https://github.com/egoist/docute/releases/tag/v2.7.0) (2017-3-6)
+
+### New features
+
+- add a github theme: [`7ddf102`](https://github.com/egoist/docute/commit/7ddf102)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.6.3...v2.7.0)
+
 ## [Version 2.6.3](https://github.com/egoist/docute/releases/tag/v2.6.3) (2017-3-5)
 
 ### Bug fixes
