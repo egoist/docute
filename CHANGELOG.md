@@ -1,3 +1,11 @@
+## [Version 2.7.1](https://github.com/egoist/docute/releases/tag/v2.7.1) (2017-3-6)
+
+### Bug fixes
+
+- make slug unique: [`c97da1e`](https://github.com/egoist/docute/commit/c97da1e)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.7.0...v2.7.1)
+
 ## [Version 2.7.0](https://github.com/egoist/docute/releases/tag/v2.7.0) (2017-3-6)
 
 ### New features
