@@ -1,3 +1,11 @@
+## [Version 2.6.0](https://github.com/egoist/docute/releases/tag/v2.6.0) (2017-3-5)
+
+### New features
+
+- fixed navbar, close [#70](https://github.com/egoist/docute/issues/70): [`4f71c06`](https://github.com/egoist/docute/commit/4f71c06)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.5.0...v2.6.0)
+
 ## [Version 2.5.0](https://github.com/egoist/docute/releases/tag/v2.5.0) (2017-3-2)
 
 ### New features
