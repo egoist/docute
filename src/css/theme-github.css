@@ -1,0 +1,48 @@
+$github-blue: #0366d6;
+$code-string-blue: #183691;
+$light-blue: #f6f8fa;
+
+/* background color of code block */
+.markdown-body pre {
+  background-color: $light-blue;
+}
+
+/* anchors in markdown */
+.markdown-body a,
+.markdown-body .markdown-heading:focus {
+  color: $github-blue;
+}
+
+/* highlight string */
+.token.string {
+  color: $code-string-blue;
+}
+
+/* navbar */
+.nav-list .nav-item >a.router-link-active, .nav-list .nav-item >div.router-link-active {
+  color: $github-blue;
+  border-bottom-color: $github-blue;
+}
+
+.nav-list .nav-item-dropdown .dropdown-list .dropdown-item .router-link:hover, .nav-list .nav-item-dropdown .dropdown-list .dropdown-item .router-link-active {
+  color: $github-blue;
+}
+
+/* headings in markdown */
+.sidebar-headings .sidebar-heading .sidebar-heading-anchor.active, .sidebar-headings .sidebar-heading .sidebar-heading-anchor:hover {
+  color: $github-blue;
+}
+
+/* nprogress */
+#nprogress .bar {
+  background: $github-blue;
+}
+#nprogress .spinner-icon {
+  border-top-color: $github-blue;
+  border-left-color: $github-blue;
+}
+
+/* search icon */
+.search-form .svg-icon.do-search:hover {
+  color: $github-blue;
+}

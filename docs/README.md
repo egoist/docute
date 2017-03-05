@@ -415,6 +415,16 @@ self.$config = {
 
 ## Recipes
 
+### Themes
+
+You can use some CSS to customize the look, beside the gorgeous them now you're looking at, we provide the `theme-github.css` to make it more similar to the color scheme that github uses. You can load the CSS after `docute.css` to apply it:
+
+```html
+<link ref="stylesheet" href="https://unpkg.com/docute/dist/theme-github.css" />
+```
+
+To build another theme, you can check out https://github.com/egoist/docute/blob/master/src/css/theme-github.css for reference.
+
 ### Page Title
 
 The title in browser tab is the `title` you defined in `nav` property in config file, this value will also be used in navbar item.

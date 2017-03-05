@@ -27,6 +27,8 @@
     "dist/docute.css",
     "dist/docute.js.map",
     "dist/docute.css.map",
+    "dist/theme-github.css",
+    "dist/theme-github.css.map",
     "plugins"
   ],
   "main": "./dist/docute.js",
