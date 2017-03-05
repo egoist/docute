@@ -104,6 +104,7 @@
   h2 {
     font-size: 24px;
     font-weight: 600;
+    border-bottom: 1px solid #eaecef;
   }
   h3 {
     font-size: 20px;
