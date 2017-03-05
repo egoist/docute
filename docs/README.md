@@ -417,7 +417,7 @@ self.$config = {
 
 ### Themes
 
-You can use some CSS to customize the look, beside the gorgeous them now you're looking at, we provide the `theme-github.css` to make it more similar to the color scheme that github uses. You can load the CSS after `docute.css` to apply it:
+You can use some CSS to customize the look. Beside the gorgeous default theme now you're looking at, we provide the `theme-github.css` to make it look more similar to the color scheme that github uses. You can load the CSS after `docute.css` to apply it:
 
 ```html
 <link ref="stylesheet" href="https://unpkg.com/docute/dist/theme-github.css" />
