@@ -1,3 +1,11 @@
+## [Version 2.7.2](https://github.com/egoist/docute/releases/tag/v2.7.2) (2017-3-6)
+
+### Bug fixes
+
+- bring back border for h2: [`df9011a`](https://github.com/egoist/docute/commit/df9011a)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.7.1...v2.7.2)
+
 ## [Version 2.7.1](https://github.com/egoist/docute/releases/tag/v2.7.1) (2017-3-6)
 
 ### Bug fixes
