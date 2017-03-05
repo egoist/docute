@@ -5,7 +5,7 @@ export default function (id, callback) {
   jump(`#${id}`, {
     duration: 300,
     a11y: true,
-    offset: isMobile ? -60 : -10,
+    offset: isMobile ? -60 : -50,
     callback
   })
 }

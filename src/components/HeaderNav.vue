@@ -83,6 +83,7 @@
           float: none;
           >a, >div {
             border-bottom: none;
+            height: auto;
             &.router-link-active {
               color: #42b983;
             }
@@ -107,8 +108,8 @@
     list-style: none;
     padding-left: 0;
     margin: 0;
-    line-height: 30px;
-    height: 30px;
+    line-height: 40px;
+    height: 40px;
     .sep {
       height: 1px;
       background-color: #f0f0f0;
@@ -126,6 +127,7 @@
       margin-right: 20px;
       >a, >div {
         color: #666;
+        height: 40px;
         border-bottom: 3px solid transparent;
         display: block;
         &.router-link-active {
@@ -134,6 +136,9 @@
         }
         &:hover {
           color: #333;
+          &:not(.router-link-active) {
+            border-bottom-color: #e2e2e2;
+          }
         }
       }
       .arrow {

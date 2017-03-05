@@ -312,7 +312,8 @@
   }
   .main {
     margin: 0 auto;
-    padding: 20px 0;
+    padding-bottom: 20px;
+    padding-top: 50px;
     background-color: white;
     max-width: 1000px;
     min-height: 100vmin;
@@ -349,9 +350,6 @@
     }
     .page {
       left: 0;
-    }
-    .main {
-      padding-top: 70px;
     }
     .sidebar {
       width: calc(100% - 50px);
