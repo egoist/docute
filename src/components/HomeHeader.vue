@@ -54,6 +54,14 @@
       padding: 0 30px;
     }
   }
+
+  .no-sidebar .header {
+    left: 0;
+    margin: 0 auto;
+    max-width: 1000px;
+    border-left: 1px solid rgba(0,0,0,.07);
+    border-right: 1px solid rgba(0,0,0,.07);
+  }
 </style>
 
 <style>
