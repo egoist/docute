@@ -1,3 +1,11 @@
+## [Version 2.6.2](https://github.com/egoist/docute/releases/tag/v2.6.2) (2017-3-5)
+
+### Bug fixes
+
+- align correctly on wide screen: [`57865a2`](https://github.com/egoist/docute/commit/57865a2)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.6.1...v2.6.2)
+
 ## [Version 2.6.1](https://github.com/egoist/docute/releases/tag/v2.6.1) (2017-3-5)
 
 ### Bug fixes
