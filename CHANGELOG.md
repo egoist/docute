@@ -1,3 +1,11 @@
+## [Version 2.6.1](https://github.com/egoist/docute/releases/tag/v2.6.1) (2017-3-5)
+
+### Bug fixes
+
+- tweak line-height of nav item on smaller screen: [`1ffac39`](https://github.com/egoist/docute/commit/1ffac39)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.6.0...v2.6.1)
+
 ## [Version 2.6.0](https://github.com/egoist/docute/releases/tag/v2.6.0) (2017-3-5)
 
 ### New features
