@@ -84,6 +84,7 @@
           >a, >div {
             border-bottom: none;
             height: auto;
+            line-height: 30px;
             &.router-link-active {
               color: #42b983;
             }
