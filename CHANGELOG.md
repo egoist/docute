@@ -1,3 +1,11 @@
+## [Version 2.6.3](https://github.com/egoist/docute/releases/tag/v2.6.3) (2017-3-5)
+
+### Bug fixes
+
+- fix header when the sidebar is closed: [`d315d7c`](https://github.com/egoist/docute/commit/d315d7c)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.6.2...v2.6.3)
+
 ## [Version 2.6.2](https://github.com/egoist/docute/releases/tag/v2.6.2) (2017-3-5)
 
 ### Bug fixes
