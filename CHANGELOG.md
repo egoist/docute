@@ -1,3 +1,11 @@
+## [Version 2.7.4](https://github.com/egoist/docute/releases/tag/v2.7.4) (2017-3-6)
+
+### Bug fixes
+
+- jump to top when clicked the nav item and it's already current page: [`a8c27d8`](https://github.com/egoist/docute/commit/a8c27d8)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.7.3...v2.7.4)
+
 ## [Version 2.7.3](https://github.com/egoist/docute/releases/tag/v2.7.3) (2017-3-6)
 
 ### Bug fixes
