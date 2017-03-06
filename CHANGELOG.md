@@ -1,3 +1,11 @@
+## [Version 2.7.5](https://github.com/egoist/docute/releases/tag/v2.7.5) (2017-3-6)
+
+### Bug fixes
+
+- Revert "jump to top when clicked the nav item and it's already current page": [`0afe4f8`](https://github.com/egoist/docute/commit/0afe4f8)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.7.4...v2.7.5)
+
 ## [Version 2.7.4](https://github.com/egoist/docute/releases/tag/v2.7.4) (2017-3-6)
 
 ### Bug fixes
