@@ -50,12 +50,9 @@
     },
     methods: {
       getTitle(item) {
-        if (!item.exact) {
-          return item.title
-        }
         const subItems = item.items
         const match = subItems.filter(subItem => {
-          return subItem.path === this.$route.path
+          return subItem.matchPath && subItem.matchPath.test(this.$route.path)
         })[0]
         if (match) {
           return match.title

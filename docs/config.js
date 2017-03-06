@@ -1,8 +1,8 @@
 var langs = [
-  {title: 'English', path: '/home'},
-  {title: '简体中文', path: '/zh-Hans/'},
-  {title: '繁體中文', path: '/zh-Hant/'},
-  {title: '日本語', path: '/ja/'}
+  {title: 'English', path: '/home', matchPath: /^\/(home|plugin|cli)/},
+  {title: '简体中文', path: '/zh-Hans/', matchPath: /^\/zh-Hans/},
+  {title: '繁體中文', path: '/zh-Hant/', matchPath: /^\/zh-Hant/},
+  {title: '日本語', path: '/ja/', matchPath: /^\/ja/}
 ]
 
 self.$config = {

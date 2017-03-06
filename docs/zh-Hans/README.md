@@ -326,17 +326,27 @@ self.$config = {
 }
 ```
 
-##### exact
+##### matchPath
 
-To make dropdown menu display the actual title of active page, for example, show `Chinese` instead of `Languages` as the dropdown title when user enters relevant page, just set `exact` to `true`:
+Type: `RegExp`
+
+To make dropdown menu display the actual title of active page, for example, show `Chinese` instead of `Languages` as the dropdown title when user enters relevant page, use `matchPath`. The target of `matchPath` is `this.$route.path`,eg: in `https://example.com/en/get-started` the target is `/en/get-started`
 
 ```js
 self.$config = {
-  nav: [
-    {title: 'Languages', type: 'dropdown', exact: true, items: []}
-  ]
+  nav: [{
+    title: 'Languages', type: 'dropdown', items: [{
+      path: '/en',
+      title: 'English',
+      // show `English` instead of `Languages` as the dropdown title
+      // only match `/en` and `/en/xxx` not `/enxxx`
+      matchPath: /^\/en($|\/)/
+    }]
+  }]
 }
 ```
+
+If no macthed item was found, it uses the title of `dropdown` menu instead.
 
 ##### `label` and `sep`
 
