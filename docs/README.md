@@ -348,7 +348,7 @@ self.$config = {
       title: 'English',
       // show `English` instead of `Languages` as the dropdown title
       // only match `/en` and `/en/xxx` not `/enxxx`
-      matchPath: /^\/en($|\/)/
+      matchPath: /^\/en[\/$]/
     }]
   }]
 }
