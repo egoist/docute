@@ -3,6 +3,7 @@
     class="router-link"
     :class="{'router-link-active': item.path === $route.path}"
     :to="item.path"
+    @click.native="handleClickNavLink(item.path)"
     v-if="!isExternal(item.path)"
     exact>
     {{ item.title }}
@@ -17,6 +18,8 @@
 </template>
 
 <script>
+  import jump from 'jump.js'
+
   export default {
     props: {
       item: {
@@ -26,6 +29,13 @@
     methods: {
       isExternal(link) {
         return /^https?:\/\//.test(link)
+      },
+      handleClickNavLink(path) {
+        if (path === this.$route.path) {
+          jump('#app', {
+            duration: 300
+          })
+        }
       }
     }
   }
