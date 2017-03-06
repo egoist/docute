@@ -39,7 +39,7 @@ self.$config = {
         title: '命令行工具', path: '/zh-Hans/cli'
       },
       {
-        title: '选择语言', type: 'dropdown', items: langs, exact: true
+        title: '选择语言', type: 'dropdown', items: langs
       }
     ],
     'zh-Hant': [
@@ -53,7 +53,7 @@ self.$config = {
         title: '命令行工具', path: '/zh-Hant/cli'
       },
       {
-        title: '選擇語言', type: 'dropdown', items: langs, exact: true
+        title: '選擇語言', type: 'dropdown', items: langs
       }
     ],
     'ja': [
@@ -67,7 +67,7 @@ self.$config = {
         title: 'コマンドラインツール', path: '/ja/cli'
       },
       {
-        title: '言語', type: 'dropdown', items: langs, exact: true
+        title: '言語', type: 'dropdown', items: langs
       }
     ]
   },
