@@ -1,3 +1,11 @@
+## [Version 2.7.3](https://github.com/egoist/docute/releases/tag/v2.7.3) (2017-3-6)
+
+### Bug fixes
+
+- use `matchPath` instead of `exact` to set dropdown title: [`d4df886`](https://github.com/egoist/docute/commit/d4df886)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.7.2...v2.7.3)
+
 ## [Version 2.7.2](https://github.com/egoist/docute/releases/tag/v2.7.2) (2017-3-6)
 
 ### Bug fixes
