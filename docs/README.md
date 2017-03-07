@@ -741,7 +741,3 @@ function evalPlugin(ctx) {
 ```
 
 For docs about plugins please head to <span router-link="/plugins">plugins</span>.
-
-### How to hide the docute credit in the sidebar?
-
-You may notice the `Published with Docute` section in sidebar, if it's annoying to you, set `hideDocuteCredit` to `true` in your config file. But in this way it will be hard for your users to know how you wrote such a great documentation.
