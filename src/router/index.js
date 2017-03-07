@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import store from 'store'
-import Home from 'views/Home.vue'
 import Page from 'views/Page.vue'
 import NotFound from 'views/404.vue'
 import Landing from 'views/Landing.vue'
@@ -13,7 +12,7 @@ const {landing} = store.state.config
 const routes = [
   {
     path: landing ? '/home' : '/',
-    component: Home,
+    component: Page,
     meta: {
       name: 'home'
     }
