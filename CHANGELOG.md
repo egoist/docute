@@ -1,3 +1,11 @@
+## [Version 2.7.8](https://github.com/egoist/docute/releases/tag/v2.7.8) (2017-3-7)
+
+### Bug fixes
+
+- allow user to hide docute credit: [`2d9808b`](https://github.com/egoist/docute/commit/2d9808b)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.7.7...v2.7.8)
+
 ## [Version 2.7.7](https://github.com/egoist/docute/releases/tag/v2.7.7) (2017-3-7)
 
 ### Bug fixes
