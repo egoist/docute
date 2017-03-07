@@ -1,3 +1,11 @@
+## [Version 2.7.6](https://github.com/egoist/docute/releases/tag/v2.7.6) (2017-3-7)
+
+### Bug fixes
+
+- use `icon` instead of `svg`, fixed [#72](https://github.com/egoist/docute/issues/72): [`f330b6d`](https://github.com/egoist/docute/commit/f330b6d)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.7.5...v2.7.6)
+
 ## [Version 2.7.5](https://github.com/egoist/docute/releases/tag/v2.7.5) (2017-3-6)
 
 ### Bug fixes
