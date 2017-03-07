@@ -1,3 +1,11 @@
+## [Version 2.7.10](https://github.com/egoist/docute/releases/tag/v2.7.10) (2017-3-7)
+
+### Bug fixes
+
+- no need to use two view components: [`273e0b4`](https://github.com/egoist/docute/commit/273e0b4)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.7.9...v2.7.10)
+
 ## [Version 2.7.9](https://github.com/egoist/docute/releases/tag/v2.7.9) (2017-3-7)
 
 ### Bug fixes
