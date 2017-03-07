@@ -1,3 +1,11 @@
+## [Version 2.7.7](https://github.com/egoist/docute/releases/tag/v2.7.7) (2017-3-7)
+
+### Bug fixes
+
+- introduce a wonderful feature: [`22f2dd5`](https://github.com/egoist/docute/commit/22f2dd5)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.7.6...v2.7.7)
+
 ## [Version 2.7.6](https://github.com/egoist/docute/releases/tag/v2.7.6) (2017-3-7)
 
 ### Bug fixes
