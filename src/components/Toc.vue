@@ -113,7 +113,6 @@
       .sidebar-heading-anchor {
         color: #666;
         padding: 7px 20px;
-        padding-left: 17px;
         display: block;
         &.active, &:hover {
           color: #42b983;

@@ -8,7 +8,7 @@
       <header-nav class="is-mobile inner-x"></header-nav>
       <toc v-if="showToc" :headings="page.headings"></toc>
       <custom-components place="sidebar:end" v-if="loaded"></custom-components>
-      <div class="inner-x" :class="$style.credit">
+      <div v-if="!config.hideDocuteCredit" class="inner-x" :class="$style.credit">
         <a class="link" href="https://docute.js.org" target="_blank">Published with Docute</a>
       </div>
     </figure>
