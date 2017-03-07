@@ -140,21 +140,21 @@
             defaultIcons.push({
               link: source,
               label: isExternal ? 'View page source' : 'Edit this page',
-              svg: 'edit'
+              icon: 'edit'
             })
           }
           if (repo) {
             defaultIcons.push({
               link: `https://github.com/${repo}`,
               label: 'Star me on GitHub',
-              svg: 'github'
+              icon: 'github'
             })
           }
           if (twitter) {
             defaultIcons.push({
               link: `https://twitter.com/${twitter}`,
               label: 'Follow me on Twitter',
-              svg: 'twitter'
+              icon: 'twitter'
             })
           }
         }

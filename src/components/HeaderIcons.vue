@@ -10,7 +10,7 @@
       target="_blank"
       :aria-label="icon.label"
       :href="icon.link">
-      <svg-icon v-if="icon.svg" :name="icon.svg" class="svg-icon"></svg-icon>
+      <svg-icon v-if="icon.icon" :name="icon.icon" class="svg-icon"></svg-icon>
       <span class="icon-html" v-if="icon.html" v-html="icon.html"></span>
       <svg v-if="icon.svgId" :class="icon.svgClass">
         <use :xlink:href="`#${icon.svgId}`" />

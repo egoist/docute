@@ -192,60 +192,78 @@ self.$config = {
 
 #### 圖標
 
-##### 內置圖標
+##### Icon short-hand
 
 ```js
 self.$config = {
-  // github repo 的縮略名
+  // slug for your github repo
   repo: 'tj/co',
-  // twitter 用戶名
+  // twitter username
   twitter: 'realDonaldTrump',
-  // 頁面源文件地址
+  // the link to source file of current page
   'edit-link': 'https://github.com/egoist/docute/blob/master/docs'
 }
 ```
 
-##### 自定義圖標
+To fully customize the `label`, `link` or use custom svg icons, see below.
 
-你可以指定一個 SVG symbol 的 id 來添加自定義圖標，[SVG symbols](https://css-tricks.com/svg-symbol-good-choice-icons/) 讓你能夠輕鬆地使用 inline SVG 圖標。
+##### Custom Icons
 
-首先，把 SVG 圖標添加到 HTML 中，這裏是 `index.html`:
+The built-in svg icons: `github` `twitter` `edit` `menu` `link` `search` `close`, which you can use in the `icon` attribute in `icons` option:
+
+```js
+self.$config = {
+  icons: [{
+    icon: 'github',
+    label: 'Contribute on GitHub',
+    link: 'https://github.com/owner/repo'
+  }]
+}
+```
+
+This example will have the same effect as using `repo: 'owner/repo'` but with custom label text here.
+
+If you want to use your own SVG, you can set custom icon by providing the id of SVG symbol, [SVG symbols](https://css-tricks.com/svg-symbol-good-choice-icons/) is just a simple way to use inline SVG.
+
+First, add it to your HTML file, which is `index.html` here:
 
 ```html
 <body>
   <div id="app"></div>
-  <!-- 添加到任意 #app 以外的地方-->
+  <!-- you can add it everywhere outside #app -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
     <symbol id="my-icon"  viewBox="0 0 22 22">
-      <!-- 圖標裏的圖形例如 `<path>` 放在這裏 -->
+      <!-- all shapes like `<path>` go here -->
     </symbol>
-    <!-- ... 其他 symbols -->
+    <!-- ... other symbols -->
   </svg>
 </body>
 ```
 
-然後在 `config.js` 中定義:
+Then use it in `config.js`:
 
 ```js
 self.$config = {
   icons: [
     {
-      label: '鼠標移上來了!', // 鼠標移到圖標上顯示的提示
-      svgId: 'my-icon' // symbol 的 id
+      label: 'Hovered!', // the text for tooltip
+      svgId: 'my-icon', // the id of symbol
+      link: 'http://blah.blah'
     }
   ]
 }
 ```
 
-你也可以添加一個 `svgClass` 以便你能通過 CSS 來控制圖標樣式:
+You can also add `svgClass` property to use CSS to control the style of your icon
 
 ```js
 self.$config = {
   icons: [
     {
-      label: '鼠標移上來了!',
+      label: 'Hovered!',
       svgId: 'my-icon',
-      svgClass: 'my-icon-class'
+      svgClass: 'my-icon-class',
+      link: 'http://blah.blah'
     }
   ]
 }
@@ -253,7 +271,8 @@ self.$config = {
 
 ```css
 /*
-  例如讓自定義圖標和內置圖標的 hover 效果相同
+  To make consistent with default icon hover effect
+  You can:
 */
 .my-icon-class {
   fill: #ccc;
@@ -263,7 +282,9 @@ self.$config = {
 }
 ```
 
-網絡上有很多免費的優質 SVG 圖標資源，例如 [bytesize-icons](https://github.com/danklammer/bytesize-icons) 和 [simple icons](https://simpleicons.org/)。
+Check out [index.html](https://github.com/egoist/docute/blob/8aa85c42251aaa7298bd19562f961e59e781717c/docs/index.html#L20-L22) and [config.js](https://github.com/egoist/docute/blob/ab83d3a769b97e77887ccaf124168e88dc4c1c85/docs/config.js#L75-L80) of this doc to see how we add a custom icon for weibo.com (the last icon in the header).
+
+There're many resources for good free SVG icons, for example: [bytesize-icons](https://github.com/danklammer/bytesize-icons) and [simple icons](https://simpleicons.org/).
 
 ##### 具名圖標
 

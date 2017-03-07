@@ -216,60 +216,78 @@ A path like `/language/chinese` will make docute fetch `/language/chinese.md`, y
 
 #### 图标
 
-##### 内置图标
+##### Icon short-hand
 
 ```js
 self.$config = {
-  // github repo 的缩略名
+  // slug for your github repo
   repo: 'tj/co',
-  // twitter 用户名
+  // twitter username
   twitter: 'realDonaldTrump',
-  // 页面源文件地址
+  // the link to source file of current page
   'edit-link': 'https://github.com/egoist/docute/blob/master/docs'
 }
 ```
 
-##### 自定义图标
+To fully customize the `label`, `link` or use custom svg icons, see below.
 
-你可以指定一个 SVG symbol 的 id 来添加自定义图标，[SVG symbols](https://css-tricks.com/svg-symbol-good-choice-icons/) 让你能够轻松地使用 inline SVG 图标。
+##### Custom Icons
 
-首先，把 SVG 图标添加到 HTML 中，这里是 `index.html`:
+The built-in svg icons: `github` `twitter` `edit` `menu` `link` `search` `close`, which you can use in the `icon` attribute in `icons` option:
+
+```js
+self.$config = {
+  icons: [{
+    icon: 'github',
+    label: 'Contribute on GitHub',
+    link: 'https://github.com/owner/repo'
+  }]
+}
+```
+
+This example will have the same effect as using `repo: 'owner/repo'` but with custom label text here.
+
+If you want to use your own SVG, you can set custom icon by providing the id of SVG symbol, [SVG symbols](https://css-tricks.com/svg-symbol-good-choice-icons/) is just a simple way to use inline SVG.
+
+First, add it to your HTML file, which is `index.html` here:
 
 ```html
 <body>
   <div id="app"></div>
-  <!-- 添加到任意 #app 以外的地方-->
+  <!-- you can add it everywhere outside #app -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
     <symbol id="my-icon"  viewBox="0 0 22 22">
-      <!-- 图标里的图形比如 `<path>` 放在这里 -->
+      <!-- all shapes like `<path>` go here -->
     </symbol>
-    <!-- ... 其它 symbols -->
+    <!-- ... other symbols -->
   </svg>
 </body>
 ```
 
-然后在 `config.js` 中定义:
+Then use it in `config.js`:
 
 ```js
 self.$config = {
   icons: [
     {
-      label: '鼠标移上来了!', // 鼠标移到图标上显示的提示
-      svgId: 'my-icon' // symbol 的 id
+      label: 'Hovered!', // the text for tooltip
+      svgId: 'my-icon', // the id of symbol
+      link: 'http://blah.blah'
     }
   ]
 }
 ```
 
-你也可以添加一个 `svgClass` 以便你能通过 CSS 来控制图标样式:
+You can also add `svgClass` property to use CSS to control the style of your icon
 
 ```js
 self.$config = {
   icons: [
     {
-      label: '鼠标移上来了!',
+      label: 'Hovered!',
       svgId: 'my-icon',
-      svgClass: 'my-icon-class'
+      svgClass: 'my-icon-class',
+      link: 'http://blah.blah'
     }
   ]
 }
@@ -277,7 +295,8 @@ self.$config = {
 
 ```css
 /*
-  比如让自定义图标和内置图标的 hover 效果相同
+  To make consistent with default icon hover effect
+  You can:
 */
 .my-icon-class {
   fill: #ccc;
@@ -287,7 +306,9 @@ self.$config = {
 }
 ```
 
-网络上有很多免费的优质 SVG 图标资源，比如 [bytesize-icons](https://github.com/danklammer/bytesize-icons) 和 [simple icons](https://simpleicons.org/)。
+Check out [index.html](https://github.com/egoist/docute/blob/8aa85c42251aaa7298bd19562f961e59e781717c/docs/index.html#L20-L22) and [config.js](https://github.com/egoist/docute/blob/ab83d3a769b97e77887ccaf124168e88dc4c1c85/docs/config.js#L75-L80) of this doc to see how we add a custom icon for weibo.com (the last icon in the header).
+
+There're many resources for good free SVG icons, for example: [bytesize-icons](https://github.com/danklammer/bytesize-icons) and [simple icons](https://simpleicons.org/).
 
 ##### 具名图标
 

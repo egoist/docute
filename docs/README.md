@@ -223,7 +223,7 @@ A path like `/language/chinese` will make docute fetch `/language/chinese.md`, y
 
 #### Icons
 
-##### Built-in Icons
+##### Icon short-hand
 
 ```js
 self.$config = {
@@ -236,9 +236,25 @@ self.$config = {
 }
 ```
 
+To fully customize the `label`, `link` or use custom svg icons, see below.
+
 ##### Custom Icons
 
-You can set custom icon by providing the id of SVG symbol, [SVG symbols](https://css-tricks.com/svg-symbol-good-choice-icons/) is just a simple way to use inline SVG around.
+The built-in svg icons: `github` `twitter` `edit` `menu` `link` `search` `close`, which you can use in the `icon` attribute in `icons` option:
+
+```js
+self.$config = {
+  icons: [{
+    icon: 'github',
+    label: 'Contribute on GitHub',
+    link: 'https://github.com/owner/repo'
+  }]
+}
+```
+
+This example will have the same effect as using `repo: 'owner/repo'` but with custom label text here.
+
+If you want to use your own SVG, you can set custom icon by providing the id of SVG symbol, [SVG symbols](https://css-tricks.com/svg-symbol-good-choice-icons/) is just a simple way to use inline SVG.
 
 First, add it to your HTML file, which is `index.html` here:
 
@@ -262,7 +278,8 @@ self.$config = {
   icons: [
     {
       label: 'Hovered!', // the text for tooltip
-      svgId: 'my-icon' // the id of symbol
+      svgId: 'my-icon', // the id of symbol
+      link: 'http://blah.blah'
     }
   ]
 }
@@ -276,7 +293,8 @@ self.$config = {
     {
       label: 'Hovered!',
       svgId: 'my-icon',
-      svgClass: 'my-icon-class'
+      svgClass: 'my-icon-class',
+      link: 'http://blah.blah'
     }
   ]
 }
@@ -295,7 +313,9 @@ self.$config = {
 }
 ```
 
-There're many resources for good free SVG icons, check out [bytesize-icons](https://github.com/danklammer/bytesize-icons) and [simple icons](https://simpleicons.org/).
+Check out [index.html](https://github.com/egoist/docute/blob/8aa85c42251aaa7298bd19562f961e59e781717c/docs/index.html#L20-L22) and [config.js](https://github.com/egoist/docute/blob/ab83d3a769b97e77887ccaf124168e88dc4c1c85/docs/config.js#L75-L80) of this doc to see how we add a custom icon for weibo.com (the last icon in the header).
+
+There're many resources for good free SVG icons, for example: [bytesize-icons](https://github.com/danklammer/bytesize-icons) and [simple icons](https://simpleicons.org/).
 
 ##### Named Icons
 

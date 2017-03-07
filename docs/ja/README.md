@@ -188,60 +188,78 @@ self.$config = {
 
 #### アイコン
 
-##### 内蔵アイコン
+##### Icon short-hand
 
 ```js
 self.$config = {
-  // github リポジトリの略
+  // slug for your github repo
   repo: 'tj/co',
-  // twitter ユーザーネーム
+  // twitter username
   twitter: 'realDonaldTrump',
-  // ソースファイルのアドレス
+  // the link to source file of current page
   'edit-link': 'https://github.com/egoist/docute/blob/master/docs'
 }
 ```
 
-##### カスタムアイコン
+To fully customize the `label`, `link` or use custom svg icons, see below.
 
-SVG の[シンボル要素](https://css-tricks.com/svg-symbol-good-choice-icons/)の id を指定して、カスタムアイコンを使います。
+##### Custom Icons
 
-まず、SVG要素を`index.html`に追加しましょう：
+The built-in svg icons: `github` `twitter` `edit` `menu` `link` `search` `close`, which you can use in the `icon` attribute in `icons` option:
+
+```js
+self.$config = {
+  icons: [{
+    icon: 'github',
+    label: 'Contribute on GitHub',
+    link: 'https://github.com/owner/repo'
+  }]
+}
+```
+
+This example will have the same effect as using `repo: 'owner/repo'` but with custom label text here.
+
+If you want to use your own SVG, you can set custom icon by providing the id of SVG symbol, [SVG symbols](https://css-tricks.com/svg-symbol-good-choice-icons/) is just a simple way to use inline SVG.
+
+First, add it to your HTML file, which is `index.html` here:
 
 ```html
 <body>
   <div id="app"></div>
-  <!-- #app 以外のところで -->
+  <!-- you can add it everywhere outside #app -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
     <symbol id="my-icon"  viewBox="0 0 22 22">
-      <!-- `<path>`などのグラフィックはここに -->
+      <!-- all shapes like `<path>` go here -->
     </symbol>
-    <!-- ... 他のシンボル要素 -->
+    <!-- ... other symbols -->
   </svg>
 </body>
 ```
 
-次に、`config.js`に追加しましょう：
+Then use it in `config.js`:
 
 ```js
 self.$config = {
   icons: [
     {
-      label: 'マウスオーバー！', // マウスオーバーした時のツールチップ
-      svgId: 'my-icon' // シンボル要素の id
+      label: 'Hovered!', // the text for tooltip
+      svgId: 'my-icon', // the id of symbol
+      link: 'http://blah.blah'
     }
   ]
 }
 ```
 
-`svgClass`を追加したら、CSS を使って便利にアイコンをカスタマイズしたりできるようになります：
+You can also add `svgClass` property to use CSS to control the style of your icon
 
 ```js
 self.$config = {
   icons: [
     {
-      label: 'マウスオーバー！',
+      label: 'Hovered!',
       svgId: 'my-icon',
-      svgClass: 'my-icon-class'
+      svgClass: 'my-icon-class',
+      link: 'http://blah.blah'
     }
   ]
 }
@@ -249,7 +267,8 @@ self.$config = {
 
 ```css
 /*
-  カスタムアイコンを内蔵アイコンのスタイルに変換します
+  To make consistent with default icon hover effect
+  You can:
 */
 .my-icon-class {
   fill: #ccc;
@@ -259,7 +278,9 @@ self.$config = {
 }
 ```
 
-[bytesize-icons](https://github.com/danklammer/bytesize-icons)や[simple icons](https://simpleicons.org/)などのサイトには、フリーアイコンがたくさんあります。
+Check out [index.html](https://github.com/egoist/docute/blob/8aa85c42251aaa7298bd19562f961e59e781717c/docs/index.html#L20-L22) and [config.js](https://github.com/egoist/docute/blob/ab83d3a769b97e77887ccaf124168e88dc4c1c85/docs/config.js#L75-L80) of this doc to see how we add a custom icon for weibo.com (the last icon in the header).
+
+There're many resources for good free SVG icons, for example: [bytesize-icons](https://github.com/danklammer/bytesize-icons) and [simple icons](https://simpleicons.org/).
 
 ##### 名付けたアイコン
 
