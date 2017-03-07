@@ -8,6 +8,9 @@
       <header-nav class="is-mobile inner-x"></header-nav>
       <toc v-if="showToc" :headings="page.headings"></toc>
       <custom-components place="sidebar:end" v-if="loaded"></custom-components>
+      <div class="inner-x" :class="$style.credit">
+        <a class="link" href="https://docute.js.org" target="_blank">Published with Docute</a>
+      </div>
     </figure>
     <mobile-header :current-icons="currentIcons" v-if="loaded"></mobile-header>
     <section class="main">
@@ -371,5 +374,14 @@
         transform: translateX(0);
       }
     }
+  }
+</style>
+
+<style module>
+  .credit {
+    border-top: 1px solid rgba(0,0,0,.07);
+    margin-top: 20px;
+    padding-top: 15px;
+    font-size: 13px;
   }
 </style>

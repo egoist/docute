@@ -1,21 +1,26 @@
 .inner-x {
-  padding: 0 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .inner-2x {
-  padding: 0 30px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .inner-y {
-  padding: 20px 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 @media screen and (max-width: 768px) {
   .inner-x, .inner-2x {
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .inner-y {
-    padding: 10px 0;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
@@ -28,5 +33,11 @@
   color: #4078c0;
   &:hover {
     text-decoration: underline;
+  }
+}
+
+.link {
+  &:hover {
+    color: #42b983
   }
 }

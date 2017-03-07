@@ -46,3 +46,10 @@ $light-blue: #f6f8fa;
 .search-form .svg-icon.do-search:hover {
   color: $github-blue;
 }
+
+/* color for anchors */
+.link {
+  &:hover {
+   color: $github-blue;
+  }
+}
