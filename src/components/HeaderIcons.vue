@@ -3,10 +3,7 @@
     <a
       v-for="(icon, index) in currentIcons"
       class="header-icon hint--rounded"
-      :class="{
-        'hint--bottom': index !== currentIcons.length - 1,
-        'hint--bottom-left': index === currentIcons.length - 1
-      }"
+      :class="hintPosition(index)"
       target="_blank"
       :aria-label="icon.label"
       :href="icon.link">
@@ -21,12 +18,27 @@
 
 <script>
   import SvgIcon from 'components/SvgIcon'
+  import { isMobile } from 'utils/dom'
 
   export default {
     props: {
       currentIcons: {
         type: Array,
         default: () => []
+      },
+      showNav: {
+        type: Boolean
+      }
+    },
+    methods: {
+      hintPosition(index) {
+        // if it's on (mobile device) or (desktop and has nav)
+        // the hint of last icon shoule also always be placed at bottom left
+        if (this.showNav || isMobile) {
+          return index === this.currentIcons.length - 1 ? 'hint--bottom-left' : 'hint--bottom'
+        }
+
+        return 'hint--bottom'
       }
     },
     components: {

@@ -30,22 +30,21 @@
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
   import SvgIcon from 'components/SvgIcon'
   import NavLink from 'components/NavLink'
   import CustomComponents from 'components/CustomComponents'
-  import componentManager from 'utils/component-manager'
 
   export default {
-    computed: {
-      ...mapGetters(['currentNav']),
-      hasNav() {
-        return this.currentNav && this.currentNav.length > 0
+    props: {
+      currentNav: {
+        type: Array,
+        default: () => []
       },
-      showNav() {
-        const hasNavStart = componentManager.count('nav:start') > 0
-        const hasNavEnd = componentManager.count('nav:end') > 0
-        return this.hasNav || hasNavStart || hasNavEnd
+      hasNav: {
+        type: Boolean
+      },
+      showNav: {
+        type: Boolean
       }
     },
     methods: {
