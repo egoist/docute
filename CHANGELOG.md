@@ -1,3 +1,11 @@
+## [Version 2.7.12](https://github.com/egoist/docute/releases/tag/v2.7.12) (2017-3-8)
+
+### Bug fixes
+
+- respect global sidebar state: [`8594eb1`](https://github.com/egoist/docute/commit/8594eb1)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.7.11...v2.7.12)
+
 ## [Version 2.7.11](https://github.com/egoist/docute/releases/tag/v2.7.11) (2017-3-8)
 
 ### Bug fixes
