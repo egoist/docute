@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import defined from 'defined'
 import {isType} from 'utils'
 import jump from 'utils/jump'
 import nprogress from 'nprogress'
@@ -55,7 +56,7 @@ const store = new Vuex.Store({
       state.page = {
         attributes: {
           title: null,
-          sidebar: state.config.sidebar,
+          sidebar: defined(state.page.attributes.sidebar, state.config.sidebar),
           search: null,
           icons: null,
           ...page.attributes
