@@ -3,7 +3,7 @@
     :class="{focus}">
     <input
       type="text"
-      placeholder="Type to search..."
+      :placeholder="searchState.placeHolder"
       class="search-box inner-x"
       ref="input"
       v-model="keyword"
@@ -33,7 +33,7 @@
       })
     },
     computed: {
-      ...mapState(['config', 'searchKeyword'])
+      ...mapState(['config', 'searchKeyword', 'searchState'])
     },
     methods: {
       ...mapActions(['search', 'updateSearchKeyword', 'searchReset']),

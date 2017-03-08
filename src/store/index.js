@@ -36,6 +36,10 @@ const store = new Vuex.Store({
     showMobileSidebar: false,
     jumping: false,
     activeId: '',
+    searchState: {
+      placeHolder: 'Type to search',
+      emptyState: 'No results'
+    },
     searching: false,
     searchResult: null,
     searchKeyword: '',
@@ -135,10 +139,12 @@ const store = new Vuex.Store({
     startSearching({commit}) {
       nprogress.start()
       commit('START_SEARCHING')
+      event.emit('search:started')
     },
     stopSearching({commit}, payload) {
       nprogress.done()
       commit('STOP_SEARCHING', payload)
+      event.emit('search:stopped', payload)
     },
     updateSearchKeyword({commit}, payload) {
       commit('UPDATE_SEARCH_KEYWORD', payload)

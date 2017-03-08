@@ -156,7 +156,8 @@ List of events you can subscribe:
   - the first argument is the `id` it jumps to
 - `jump:stopped`: emitted after the jumping to id action
   - the first argument is the `id` it jumps to
-
+- `search:started`: emitted after user performs a search action (hit enter in search box)
+- `search:stopped`: emitted after app received search results, the first argument of callback function is the result.
 
 List of events you can emit:
 
