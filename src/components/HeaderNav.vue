@@ -1,60 +1,50 @@
 <template>
-  <div class="header-container">
-    <div class="header-nav" v-if="showNav">
-      <custom-components place="nav:start"></custom-components>
-      <ul class="nav-list" v-if="hasNav">
-        <li
-          v-for="(navItem, index) in currentNav"
-          class="nav-item">
-          <div
-            class="nav-item-dropdown"
-            v-if="navItem.type === 'dropdown'"
-            onClick="return true">
-            {{ getTitle(navItem) }}
-            <span class="arrow"></span>
-            <ul class="dropdown-list">
-              <li
-                v-for="subItem in navItem.items"
-                :style="{padding: subItem.type === 'sep' ? '0' : '0 20px'}"
-                class="dropdown-item">
-                <span v-if="subItem.type === 'sep'" class="sep"></span>
-                <span v-else-if="subItem.type ==='label'" class="label">{{ subItem.title }}</span>
-                <nav-link v-else :item="subItem"></nav-link>
-              </li>
-            </ul>
-          </div>
-          <nav-link v-else :item="navItem"></nav-link>
-        </li>
-      </ul>
-      <custom-components place="nav:end"></custom-components>
-    </div>
-    <header-icons :current-icons="currentIcons" :has-nav-items="showNav"></header-icons>
+  <div class="header-nav" v-if="showNav">
+    <custom-components place="nav:start"></custom-components>
+    <ul class="nav-list" v-if="hasNav">
+      <li
+        v-for="(navItem, index) in currentNav"
+        class="nav-item">
+        <div
+          class="nav-item-dropdown"
+          v-if="navItem.type === 'dropdown'"
+          onClick="return true">
+          {{ getTitle(navItem) }}
+          <span class="arrow"></span>
+          <ul class="dropdown-list">
+            <li
+              v-for="subItem in navItem.items"
+              :style="{padding: subItem.type === 'sep' ? '0' : '0 20px'}"
+              class="dropdown-item">
+              <span v-if="subItem.type === 'sep'" class="sep"></span>
+              <span v-else-if="subItem.type ==='label'" class="label">{{ subItem.title }}</span>
+              <nav-link v-else :item="subItem"></nav-link>
+            </li>
+          </ul>
+        </div>
+        <nav-link v-else :item="navItem"></nav-link>
+      </li>
+    </ul>
+    <custom-components place="nav:end"></custom-components>
   </div>
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
-  import HeaderIcons from 'components/HeaderIcons.vue'
   import SvgIcon from 'components/SvgIcon'
   import NavLink from 'components/NavLink'
   import CustomComponents from 'components/CustomComponents'
-  import componentManager from 'utils/component-manager'
 
   export default {
     props: {
-      currentIcons: {
-        type: Array
-      }
-    },
-    computed: {
-      ...mapGetters(['currentNav']),
-      hasNav() {
-        return this.currentNav && this.currentNav.length > 0
+      currentNav: {
+        type: Array,
+        default: () => []
       },
-      showNav() {
-        const hasNavStart = componentManager.count('nav:start') > 0
-        const hasNavEnd = componentManager.count('nav:end') > 0
-        return this.hasNav || hasNavStart || hasNavEnd
+      hasNav: {
+        type: Boolean
+      },
+      showNav: {
+        type: Boolean
       }
     },
     methods: {
@@ -70,7 +60,6 @@
       }
     },
     components: {
-      HeaderIcons,
       SvgIcon,
       NavLink,
       CustomComponents
@@ -79,17 +68,6 @@
 </script>
 
 <style>
-  .header {
-    .header-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1000px;
-      height: 100%;
-      margin: 0 auto;
-      padding: 0 30px;
-    }
-  }
   .header-nav {
     display: flex;
     align-items: center;

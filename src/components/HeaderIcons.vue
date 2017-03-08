@@ -4,8 +4,8 @@
       v-for="(icon, index) in currentIcons"
       class="header-icon hint--rounded"
       :class="{
-        'hint--bottom': !hasNavItems || index !== currentIcons.length - 1,
-        'hint--bottom-left': hasNavItems && index === currentIcons.length - 1
+        'hint--bottom': !showNav || index !== currentIcons.length - 1,
+        'hint--bottom-left': showNav && index === currentIcons.length - 1
       }"
       target="_blank"
       :aria-label="icon.label"
@@ -28,7 +28,7 @@
         type: Array,
         default: () => []
       },
-      hasNavItems: {
+      showNav: {
         type: Boolean
       }
     },

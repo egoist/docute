@@ -1,12 +1,24 @@
 <template>
   <header class="header is-desktop is-fixed" v-if="currentNav.length > 0 || currentIcons.length > 0">
-    <header-nav :current-icons="currentIcons"></header-nav>
+    <div class="header-container">
+      <header-nav
+        :current-nav="currentNav"
+        :has-nav="hasNav"
+        :show-nav="showNav">
+      </header-nav>
+      <header-icons
+        :current-icons="currentIcons"
+        :show-nav="showNav">
+      </header-icons>
+    </div>
   </header>
 </template>
 
 <script>
   import {mapGetters} from 'vuex'
   import HeaderNav from 'components/HeaderNav.vue'
+  import HeaderIcons from 'components/HeaderIcons.vue'
+  import componentManager from 'utils/component-manager'
 
   export default {
     props: {
@@ -15,10 +27,19 @@
       }
     },
     computed: {
-      ...mapGetters(['currentNav'])
+      ...mapGetters(['currentNav']),
+      hasNav() {
+        return this.currentNav && this.currentNav.length > 0
+      },
+      showNav() {
+        const hasNavStart = componentManager.count('nav:start') > 0
+        const hasNavEnd = componentManager.count('nav:end') > 0
+        return this.hasNav || hasNavStart || hasNavEnd
+      }
     },
     components: {
-      HeaderNav
+      HeaderNav,
+      HeaderIcons
     }
   }
 </script>
@@ -39,6 +60,15 @@
       right: 0;
       background-color: white;
       z-index: 9999;
+    }
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1000px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 30px;
     }
   }
 
