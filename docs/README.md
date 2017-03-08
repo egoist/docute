@@ -1,5 +1,6 @@
 ---
 search: english
+sidebar: false
 ---
 
 # docute

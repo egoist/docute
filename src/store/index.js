@@ -38,7 +38,8 @@ const store = new Vuex.Store({
     activeId: '',
     searching: false,
     searchResult: null,
-    searchKeyword: ''
+    searchKeyword: '',
+    showSidebar: typeof userConfig.sidebar === 'boolean' ? userConfig.sidebar : true
   },
   mutations: {
     TOGGLE_DROPDOWN(state, index) {
@@ -56,7 +57,6 @@ const store = new Vuex.Store({
       state.page = {
         attributes: {
           title: null,
-          sidebar: defined(state.page.attributes.sidebar, state.config.sidebar),
           search: null,
           icons: null,
           ...page.attributes
@@ -72,13 +72,17 @@ const store = new Vuex.Store({
       else state.showMobileSidebar = payload
     },
     TOGGLE_SIDEBAR(state, payload) {
+      let nextState
+
       if (payload === undefined) {
-        state.page.attributes.sidebar = state.page.attributes.sidebar === undefined ?
-          false :
-          !state.page.attributes.sidebar
+        const prevState = defined(state.page.attributes.sidebar, state.showSidebar)
+        nextState = !prevState
       } else {
-        state.page.attributes.sidebar = payload
+        nextState = payload
       }
+
+      state.showSidebar = nextState
+      state.page.attributes.sidebar = nextState
     },
     UPDATE_JUMPING(state, payload) {
       state.jumping = payload
@@ -184,14 +188,11 @@ const store = new Vuex.Store({
       }
       return []
     },
-    showSidebar({config, page: {attributes}}) {
-      if (attributes.sidebar !== undefined) {
-        return attributes.sidebar
+    showSidebar(state) {
+      if (typeof state.page.attributes.sidebar === 'boolean') {
+        return state.page.attributes.sidebar
       }
-      if (config.sidebar !== undefined) {
-        return config.sidebar
-      }
-      return true
+      return state.showSidebar
     },
     showToc({config, page: {attributes}}) {
       if (attributes.toc !== undefined) {
