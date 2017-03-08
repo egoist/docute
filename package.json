@@ -58,7 +58,7 @@
     "hint.css": "^2.4.1",
     "jest-cli": "^19.0.2",
     "raw-loader": "^0.5.1",
-    "vbuild": "^6.20.1"
+    "vbuild": "^6.23.0"
   },
   "jest": {
     "testEnvironment": "node"
