@@ -188,9 +188,11 @@ Lexer.prototype.token = function(src, top, bq) {
     // fences (gfm)
     if (cap = this.rules.fences.exec(src)) {
       src = src.substring(cap[0].length);
+      const [, lang, line] = cap[2] ? /^([^{]*){?([^}]+)?}?/.exec(cap[2]) : [, cap[2]]
       this.tokens.push({
         type: 'code',
-        lang: cap[2],
+        lang,
+        line,
         text: cap[3] || ''
       });
       continue;
@@ -777,22 +779,27 @@ function Renderer(options) {
   this.options = options || {};
 }
 
-Renderer.prototype.code = function(code, lang, escaped) {
+Renderer.prototype.code = function(code, lang, escaped, line) {
   if (this.options.highlight) {
-    var out = this.options.highlight(code, lang);
+    var out = this.options.highlight(code, lang, line);
     if (out != null && out !== code) {
       escaped = true;
       code = out;
     }
   }
 
+  let preAttrs= ''
+  if (line) {
+    preAttrs += ` data-line="${line}"`
+  }
+
   if (!lang) {
-    return '<pre><code>'
+    return `<pre${preAttrs}><code>`
       + (escaped ? code : escape(code, true))
       + '\n</code></pre>';
   }
 
-  return '<pre data-lang="' + lang + '"><code class="'
+  return `<pre${preAttrs} data-lang="${lang}"><code class="`
     + this.options.langPrefix
     + escape(lang, true)
     + '">'
@@ -1035,7 +1042,8 @@ Parser.prototype.tok = function() {
     case 'code': {
       return this.renderer.code(this.token.text,
         this.token.lang,
-        this.token.escaped);
+        this.token.escaped,
+        this.token.line);
     }
     case 'table': {
       var header = ''
