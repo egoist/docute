@@ -1,16 +1,12 @@
 <template>
   <header class="header is-desktop is-fixed" v-if="currentNav.length > 0 || currentIcons.length > 0">
-    <div class="header-container">
-      <header-nav></header-nav>
-      <header-icons :current-icons="currentIcons"></header-icons>
-    </div>
+    <header-nav :current-icons="currentIcons"></header-nav>
   </header>
 </template>
 
 <script>
   import {mapGetters} from 'vuex'
   import HeaderNav from 'components/HeaderNav.vue'
-  import HeaderIcons from 'components/HeaderIcons.vue'
 
   export default {
     props: {
@@ -22,8 +18,7 @@
       ...mapGetters(['currentNav'])
     },
     components: {
-      HeaderNav,
-      HeaderIcons
+      HeaderNav
     }
   }
 </script>
@@ -44,14 +39,6 @@
       right: 0;
       background-color: white;
       z-index: 9999;
-    }
-    .header-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 30px;
     }
   }
 
