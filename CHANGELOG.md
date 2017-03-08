@@ -1,3 +1,12 @@
+## [Version 2.7.11](https://github.com/egoist/docute/releases/tag/v2.7.11) (2017-3-8)
+
+### Bug fixes
+
+- Tooltip tweaks: [`15b6c16`](https://github.com/egoist/docute/commit/15b6c16) ([#73](https://github.com/egoist/docute/issues/73))
+- preserve previous sidebar state, fixed [#74](https://github.com/egoist/docute/issues/74): [`769793c`](https://github.com/egoist/docute/commit/769793c)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.7.10...v2.7.11)
+
 ## [Version 2.7.10](https://github.com/egoist/docute/releases/tag/v2.7.10) (2017-3-7)
 
 ### Bug fixes
