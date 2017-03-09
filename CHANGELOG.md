@@ -1,3 +1,11 @@
+## [Version 2.9.0](https://github.com/egoist/docute/releases/tag/v2.9.0) (2017-3-9)
+
+### New features
+
+- allow to process content before and after marked: [`7e820b8`](https://github.com/egoist/docute/commit/7e820b8)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.8.0...v2.9.0)
+
 ## [Version 2.8.0](https://github.com/egoist/docute/releases/tag/v2.8.0) (2017-3-9)
 
 ### New features
