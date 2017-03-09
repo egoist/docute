@@ -1,3 +1,16 @@
+## [Version 2.8.0](https://github.com/egoist/docute/releases/tag/v2.8.0) (2017-3-9)
+
+### New features
+
+- expose events for search action: [`b8d00b7`](https://github.com/egoist/docute/commit/b8d00b7)
+- support highlighting specified lines in code block: [`7a8cd2a`](https://github.com/egoist/docute/commit/7a8cd2a)
+
+### Bug fixes
+
+- pass nav props to mobile sidebar: [`d24f2ab`](https://github.com/egoist/docute/commit/d24f2ab)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.7.12...v2.8.0)
+
 ## [Version 2.7.12](https://github.com/egoist/docute/releases/tag/v2.7.12) (2017-3-8)
 
 ### Bug fixes
