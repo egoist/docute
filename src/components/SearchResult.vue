@@ -29,7 +29,9 @@
     methods: {
       ...mapActions(['jumpToId']),
       handleClick({path, id}) {
-        if (path === this.$route.path) this.jumpToId(id)
+        if (path === this.$route.path) {
+          this.jumpToId(id)
+        }
         this.$router.push({path, query: {...this.$route.query, id}})
       },
       isActive(item) {

@@ -22,7 +22,9 @@
       }
       this.detectClick()
       this.$watch('activeId', () => {
-        if (!this.$store.state.config.syncTocPosition) return
+        if (!this.$store.state.config.syncTocPosition) {
+          return
+        }
         const el = $('.sidebar-heading-anchor.active')
         if (el) {
           if (el.scrollIntoViewIfNeeded) {
@@ -47,7 +49,9 @@
           const name = this.$route.meta && this.$route.meta.name
           const isDocPage = ['home', 'page'].indexOf(name) > -1
           const headings = $$('.markdown-toc-heading')
-          if (this.jumping || !isDocPage || headings.length === 0) return
+          if (this.jumping || !isDocPage || headings.length === 0) {
+            return
+          }
           const els = [...headings].map(heading => {
             return {
               top: heading.getBoundingClientRect().top,

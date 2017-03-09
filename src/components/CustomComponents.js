@@ -21,7 +21,9 @@ export default {
     }
   },
   render(h) {
-    if (!this.components || this.components.length === 0) return
+    if (!this.components || this.components.length === 0) {
+      return
+    }
 
     return (
       <div class="custom-components">

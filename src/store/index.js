@@ -72,8 +72,11 @@ const store = new Vuex.Store({
       state.activeId = ''
     },
     TOGGLE_MOBILE_SIDEBAR(state, payload) {
-      if (payload === undefined) state.showMobileSidebar = !state.showMobileSidebar
-      else state.showMobileSidebar = payload
+      if (payload === undefined) {
+        state.showMobileSidebar = !state.showMobileSidebar
+      } else {
+        state.showMobileSidebar = payload
+      }
     },
     TOGGLE_SIDEBAR(state, payload) {
       let nextState

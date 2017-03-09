@@ -30,13 +30,17 @@
     computed: {
       ...mapState(['activeId', 'config']),
       visibleBlockIndexes() {
-        if (!this.activeId) return []
+        if (!this.activeId) {
+          return []
+        }
         const indexes = []
 
         const active = this.headings.filter(heading => {
           return this.activeId === heading.slug
         })[0]
-        if (!active) return []
+        if (!active) {
+          return []
+        }
         indexes.push(active.index)
 
         const getParent = heading => {
@@ -44,11 +48,15 @@
           const parent = this.headings.filter(h => {
             return h.index === heading.parent
           })[0]
-          if (parent) getParent(parent)
+          if (parent) {
+            getParent(parent)
+          }
         }
 
         const parent = this.headings[active.index]
-        if (parent) getParent(parent)
+        if (parent) {
+          getParent(parent)
+        }
 
         return indexes.filter(i => i >= 0)
       }
@@ -64,7 +72,9 @@
         }).length > 0
       },
       isVisible(level, index) {
-        if (level <= (this.config.tocVisibleDepth || 4)) return true
+        if (level <= (this.config.tocVisibleDepth || 4)) {
+          return true
+        }
         return this.visibleBlockIndexes.indexOf(index) !== -1
       },
       navigate(slug) {

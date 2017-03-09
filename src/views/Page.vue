@@ -55,7 +55,9 @@
       if (lang === 'markdown') {
         const parsed = frontMatter(code)
         const markdown = highlight(parsed.body, 'markdown')
-        if (!parsed.frontmatter) return markdown
+        if (!parsed.frontmatter) {
+          return markdown
+        }
         const yaml = highlight(parsed.frontmatter, 'yaml')
         return `<span class="token comment">---</span>\n${yaml}\n<span class="token comment">---</span>\n${markdown}`
       }
