@@ -49,6 +49,7 @@
   import event from 'utils/event'
   import {isType} from 'utils'
   import componentManager from 'utils/component-manager'
+  import parsers from 'utils/parsers'
 
   marked.setOptions({
     highlight(code, lang) {
@@ -240,8 +241,9 @@
             routerMode: this.$router.mode
           }
         })
+
         this.updatePage({
-          html: marked(parsed.body),
+          html: parsers.parse(parsed.body, marked),
           attributes: parsed.attributes,
           headings: this.handleRelation(headings)
         })

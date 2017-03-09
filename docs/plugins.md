@@ -143,6 +143,7 @@ The argument `context` has following properties:
 - router: the vue-router instance
 - registerComponent: register a component to a specific position of the document
 - event: the event system
+- beforeParse/afterParse: you can add handlers to process raw markdown content and the html content processed by marked.
 
 #### event
 
@@ -192,3 +193,23 @@ registerComponent('content:end', {
   }
 })
 ```
+
+#### beforeParse(handler)
+
+##### handler
+
+Type: `function`<br>
+Return: `string`
+
+The first argument of handler is the raw markdown content. (excluded front-matter of course)
+
+#### afterParse(handler)
+
+##### handler
+
+Type: `function`<br>
+Return: `string`
+
+The first argument of handler is a string processed by marked.
+
+
