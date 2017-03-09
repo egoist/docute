@@ -1,5 +1,5 @@
 <template>
-  <header class="header is-desktop is-fixed" v-if="currentNav.length > 0 || currentIcons.length > 0">
+  <header class="header is-desktop is-fixed" v-if="hasNav || currentIcons.length > 0">
     <div class="header-container">
       <header-nav
         :current-nav="currentNav"
@@ -18,24 +18,21 @@
   import {mapGetters} from 'vuex'
   import HeaderNav from 'components/HeaderNav.vue'
   import HeaderIcons from 'components/HeaderIcons.vue'
-  import componentManager from 'utils/component-manager'
 
   export default {
     props: {
       currentIcons: {
         type: Array
+      },
+      hasNav: {
+        type: Boolean
+      },
+      showNav: {
+        type: Boolean
       }
     },
     computed: {
-      ...mapGetters(['currentNav']),
-      hasNav() {
-        return this.currentNav && this.currentNav.length > 0
-      },
-      showNav() {
-        const hasNavStart = componentManager.count('nav:start') > 0
-        const hasNavEnd = componentManager.count('nav:end') > 0
-        return this.hasNav || hasNavStart || hasNavEnd
-      }
+      ...mapGetters(['currentNav'])
     },
     components: {
       HeaderNav,

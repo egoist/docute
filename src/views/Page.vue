@@ -5,13 +5,22 @@
       <search-box v-if="pluginSearch"></search-box>
       <search-result v-if="pluginSearch && searchResult && searchKeyword"></search-result>
       <custom-components place="sidebar:start" v-if="loaded"></custom-components>
-      <header-nav class="is-mobile inner-x"></header-nav>
+      <header-nav
+        :has-nav="hasNav"
+        :show-nav="showNav"
+        :current-nav="currentNav"
+        class="is-mobile inner-x">
+      </header-nav>
       <toc v-if="showToc" :headings="page.headings"></toc>
       <custom-components place="sidebar:end" v-if="loaded"></custom-components>
     </figure>
     <mobile-header :current-icons="currentIcons" v-if="loaded"></mobile-header>
     <section class="main">
-      <home-header :current-icons="currentIcons" v-if="loaded"></home-header>
+      <home-header
+        :current-icons="currentIcons"
+        :has-nav="hasNav"
+        :show-nav="showNav"
+        v-if="loaded"></home-header>
       <custom-components place="content:start" v-if="loaded"></custom-components>
       <div class="markdown-body content" v-html="page.html"></div>
       <custom-components place="content:end" v-if="loaded"></custom-components>
@@ -39,6 +48,7 @@
   import slugify from 'utils/slugify'
   import event from 'utils/event'
   import {isType} from 'utils'
+  import componentManager from 'utils/component-manager'
 
   marked.setOptions({
     highlight(code, lang) {
@@ -167,6 +177,14 @@
         }
 
         return defaultIcons.concat(currentIcons)
+      },
+      hasNav() {
+        return this.currentNav && this.currentNav.length > 0
+      },
+      showNav() {
+        const hasNavStart = componentManager.count('nav:start') > 0
+        const hasNavEnd = componentManager.count('nav:end') > 0
+        return this.hasNav || hasNavStart || hasNavEnd
       }
     },
     methods: {
