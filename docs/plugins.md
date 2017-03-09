@@ -95,6 +95,7 @@ We may add `inline comment` support in the future, just like the way medium.com 
 ## Community Plugins
 
 - [evanyou](https://github.com/egoist/docute-evanyou): Add colorful ribbon effect to your landing page, just like [evanyou.me](http://evanyou.me)!
+- [docute-iframe](https://github.com/egoist/docute-iframe): Run code in docs with an iframe.
 
 ## Write A Plugin
 

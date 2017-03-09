@@ -727,17 +727,6 @@ It's not wrong, but we don't always need it that way, sometimes a simple Single 
 
 ### How to evaluate script tag inside markdown?
 
-Since dynamically added script tags won't be executed by browser, you can manually implement this by a plugin:
-
-```js
-function evalPlugin(ctx) {
-  ctx.event.on('content:updated', function () {
-    document.querySelectorAll('.content script').forEach(function (el) {
-      var execute = new Function(el.innerHTML)
-      execute()
-    })
-  })
-}
-```
+Since dynamically added script tags won't be executed by browser, you can use [docute-iframe](https://github.com/egoist/docute-iframe) plugin to run specified code blocks in an iframe.
 
 For docs about plugins please head to <span router-link="/plugins">plugins</span>.
