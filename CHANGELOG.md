@@ -1,3 +1,11 @@
+## [Version 2.9.2](https://github.com/egoist/docute/releases/tag/v2.9.2) (2017-3-10)
+
+### Bug fixes
+
+- reset scrollTop of sidebar: [`e2bfab8`](https://github.com/egoist/docute/commit/e2bfab8)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.9.1...v2.9.2)
+
 ## [Version 2.9.1](https://github.com/egoist/docute/releases/tag/v2.9.1) (2017-3-10)
 
 ### Bug fixes
