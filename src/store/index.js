@@ -63,6 +63,7 @@ const store = new Vuex.Store({
           title: null,
           search: null,
           icons: null,
+          sidebar: state.config.sidebar,
           ...page.attributes
         },
         html: page.html,
