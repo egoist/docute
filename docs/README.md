@@ -725,7 +725,7 @@ docute is also built by what I've learned from using gitbook/hexo/jekyll in the 
 
 It's not wrong, but we don't always need it that way, sometimes a simple Single Page Application is good enough for our docs while we can get rid of some verbose steps to publish docs. In fact, we're also looking forward to [supporting this feature and server-side rendering](https://github.com/egoist/docute/issues/12) at some point, I know many SEO guys and girls would like this even if Google already supports retrieving data from SPA website.
 
-### How to evaluate script tag inside markdown?
+### How to run code inside markdown?
 
 Since dynamically added script tags won't be executed by browser, you can use [docute-iframe](https://github.com/egoist/docute-iframe) plugin to run specified code blocks in an iframe.
 

@@ -7,6 +7,7 @@
 - You don't need to run build process 👻
 - Simple yet powerful, benefit from Vue.js and our useful [plugin API](https://docute.js.org/#/plugins) 💯
 - Easy for both beginners and pros 🙌
+- [You can run code blocks in markdown files](https://github.com/egoist/docute-iframe) 💻
 - Very cute name 🤔
 
 ## Quick Start
