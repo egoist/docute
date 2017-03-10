@@ -1,3 +1,12 @@
+## [Version 2.9.1](https://github.com/egoist/docute/releases/tag/v2.9.1) (2017-3-10)
+
+### Bug fixes
+
+- tweaks: [`7d45252`](https://github.com/egoist/docute/commit/7d45252)
+- set default sidebar state, fixed [#77](https://github.com/egoist/docute/issues/77): [`f25d239`](https://github.com/egoist/docute/commit/f25d239)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.9.0...v2.9.1)
+
 ## [Version 2.9.0](https://github.com/egoist/docute/releases/tag/v2.9.0) (2017-3-9)
 
 ### New features
