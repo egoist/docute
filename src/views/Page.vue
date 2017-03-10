@@ -1,7 +1,7 @@
 <template>
   <div class="page" :class="{'no-sidebar': !showSidebar}">
     <sidebar-toggle v-if="!isMobile && !config.disableSidebarToggle"></sidebar-toggle>
-    <figure class="sidebar" v-if="loaded && (showSidebar || isMobile)">
+    <figure ref="sidebar" class="sidebar" v-if="loaded && (showSidebar || isMobile)">
       <search-box v-if="pluginSearch"></search-box>
       <search-result v-if="pluginSearch && searchResult && searchKeyword"></search-result>
       <custom-components place="sidebar:start" v-if="loaded"></custom-components>
@@ -258,6 +258,10 @@
             this.jumpToId(this.id)
           } else {
             window.scroll(0, 0)
+          }
+          // reset scrollTop of sidebar
+          if (this.$refs.sidebar) {
+            this.$refs.sidebar.scrollTop = 0
           }
         })
       },
