@@ -96,6 +96,7 @@ We may add `inline comment` support in the future, just like the way medium.com 
 
 - [evanyou](https://github.com/egoist/docute-evanyou): Add colorful ribbon effect to your landing page, just like [evanyou.me](http://evanyou.me)!
 - [docute-iframe](https://github.com/egoist/docute-iframe): Run code in docs with an iframe.
+- [docute-emojify](https://github.com/hkwu/docute-emojify): Transform emoji aliases in Markdown like GitHub's editor.
 
 ## Write A Plugin
 
