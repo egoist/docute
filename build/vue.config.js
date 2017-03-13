@@ -13,14 +13,12 @@ module.exports = {
     template: 'template.html',
     inject: false
   },
+  templateCompiler: true,
   port: 5000,
   define: {
     '__DOCUTE_VERSION__': JSON.stringify(pkg.version)
   },
   webpack(config) {
-    config.resolve.alias = {
-      'vue$': 'vue/dist/vue.common.js'
-    }
     config.resolve.modules.push(path.resolve('src'))
     return config
   },

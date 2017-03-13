@@ -59,12 +59,9 @@
     "hint.css": "^2.4.1",
     "jest-cli": "^19.0.2",
     "raw-loader": "^0.5.1",
-    "vbuild": "^6.23.0"
+    "vbuild": "^6.24.1"
   },
   "jest": {
     "testEnvironment": "node"
-  },
-  "eslintConfig": {
-    "extends": "rem/esnext"
   }
 }

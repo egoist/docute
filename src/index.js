@@ -1,5 +1,5 @@
 import 'element-closest'
-import {app} from './app'
+import { app } from './app'
 import 'utils/globals'
 
 // ensure dom is ready

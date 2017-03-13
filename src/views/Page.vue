@@ -39,15 +39,15 @@
   import CustomComponents from 'components/CustomComponents'
   import highlight from 'utils/highlight'
   import frontMatter from 'utils/front-matter'
-  import {mapState, mapGetters, mapActions} from 'vuex'
+  import { mapState, mapGetters, mapActions } from 'vuex'
   import nprogress from 'nprogress'
-  import {isMobile} from 'utils/dom'
+  import { isMobile } from 'utils/dom'
   import marked from 'utils/marked'
   import renderer from 'utils/marked-renderer'
   import LinkIcon from '!raw-loader!svg/link.svg'
   import slugify from 'utils/slugify'
   import event from 'utils/event'
-  import {isType} from 'utils'
+  import { isType } from 'utils'
   import componentManager from 'utils/component-manager'
   import parsers from 'utils/parsers'
 
@@ -131,7 +131,7 @@
         return customSource
       },
       currentIcons() {
-        const {state} = this.$store
+        const { state } = this.$store
         const defaultIcons = []
 
         const {
@@ -142,7 +142,7 @@
           twitter
         } = state.config
 
-        const {attributes} = state.page
+        const { attributes } = state.page
 
         if (!disableDefaultIcons) {
           if (editLink) {
@@ -210,7 +210,7 @@
           }
 
           if (level !== 1) {
-            headings.push({level, text, slug, directSlug, index})
+            headings.push({ level, text, slug, directSlug, index })
           }
 
           const className = level === 1 ? 'markdown-heading' : 'markdown-heading markdown-toc-heading'

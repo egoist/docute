@@ -4,7 +4,7 @@
 
 <script>
   import marked from 'utils/marked'
-  import {mapState} from 'vuex'
+  import { mapState } from 'vuex'
   import nprogress from 'nprogress'
 
   export default {

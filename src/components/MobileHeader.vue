@@ -13,10 +13,10 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex'
+  import { mapState, mapActions } from 'vuex'
   import HeaderIcons from 'components/HeaderIcons.vue'
   import SvgIcon from 'components/SvgIcon'
-  import {$, isMobile} from 'utils/dom'
+  import { $, isMobile } from 'utils/dom'
 
   export default {
     props: {
@@ -30,7 +30,7 @@
     },
     mounted() {
       this.$watch('showMobileSidebar', () => {
-        const {icon} = this.$refs
+        const { icon } = this.$refs
         const el = $('.sidebar')
         if (el.classList.contains('visible')) {
           el.classList.remove('visible')
@@ -42,7 +42,7 @@
       })
 
       document.addEventListener('click', e => {
-        const {header} = this.$refs
+        const { header } = this.$refs
         const sidebar = $('.sidebar')
         if (
           isMobile &&

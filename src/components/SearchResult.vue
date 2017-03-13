@@ -15,7 +15,7 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex'
+  import { mapState, mapActions } from 'vuex'
 
   export default {
     computed: {
@@ -28,11 +28,11 @@
     },
     methods: {
       ...mapActions(['jumpToId']),
-      handleClick({path, id}) {
+      handleClick({ path, id }) {
         if (path === this.$route.path) {
           this.jumpToId(id)
         }
-        this.$router.push({path, query: {...this.$route.query, id}})
+        this.$router.push({ path, query: { ...this.$route.query, id } })
       },
       isActive(item) {
         return item.path === this.$route.path && item.id === this.$route.query.id

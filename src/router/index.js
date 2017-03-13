@@ -7,7 +7,7 @@ import Landing from 'views/Landing.vue'
 
 Vue.use(Router)
 
-const {landing} = store.state.config
+const { landing } = store.state.config
 
 const routes = [
   {

@@ -18,7 +18,7 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex'
+  import { mapState, mapActions } from 'vuex'
 
   export default {
     props: {
@@ -64,7 +64,7 @@
     methods: {
       ...mapActions(['jumpToId']),
       getQuery(heading) {
-        return {...this.$route.query, id: heading.slug}
+        return { ...this.$route.query, id: heading.slug }
       },
       hasChildren(index) {
         return this.headings.filter(heading => {

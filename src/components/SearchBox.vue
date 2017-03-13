@@ -16,7 +16,7 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex'
+  import { mapState, mapActions } from 'vuex'
   import SvgIcon from 'components/SvgIcon'
 
   export default {
@@ -43,7 +43,7 @@
           this.search(keyword)
         } else {
           // otherwise update url query
-          this.$router.push({query: {...this.$route.query, keyword}})
+          this.$router.push({ query: { ...this.$route.query, keyword } })
           this.search(keyword)
         }
       },

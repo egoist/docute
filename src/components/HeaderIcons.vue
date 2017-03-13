@@ -18,7 +18,7 @@
 
 <script>
   import SvgIcon from 'components/SvgIcon'
-  import {isMobile} from 'utils/dom'
+  import { isMobile } from 'utils/dom'
 
   export default {
     props: {

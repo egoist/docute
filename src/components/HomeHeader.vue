@@ -15,7 +15,7 @@
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
+  import { mapGetters } from 'vuex'
   import HeaderNav from 'components/HeaderNav.vue'
   import HeaderIcons from 'components/HeaderIcons.vue'
 

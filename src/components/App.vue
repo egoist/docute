@@ -5,10 +5,10 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex'
+  import { mapState, mapActions } from 'vuex'
   import throttle from 'lodash.throttle'
-  import {findMax, findMin} from 'utils'
-  import {$, $$} from 'utils/dom'
+  import { findMax, findMin } from 'utils'
+  import { $, $$ } from 'utils/dom'
   import scrollIntoView from 'dom-scroll-into-view'
 
   export default {
@@ -86,7 +86,7 @@
         const id = jumpEl && jumpEl.getAttribute('jump-to-id')
         if (id) {
           e.preventDefault()
-          this.$router.push({query: {...this.$route.query, id}})
+          this.$router.push({ query: { ...this.$route.query, id } })
           return this.jumpToId(id)
         }
 

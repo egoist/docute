@@ -34,4 +34,4 @@ const afterParse = parser => parsers.afterParse(parser)
 
 export default parsers
 
-export {beforeParse, afterParse}
+export { beforeParse, afterParse }

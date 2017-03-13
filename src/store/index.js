@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import defined from 'defined'
-import {isType} from 'utils'
+import { isType } from 'utils'
 import jump from 'utils/jump'
 import nprogress from 'nprogress'
 import event from 'utils/event'
@@ -26,7 +26,7 @@ const userConfig = typeof window === 'undefined' ? {} : (window.$config || {})
 
 const store = new Vuex.Store({
   state: {
-    config: {title: document.title, ...userConfig},
+    config: { title: document.title, ...userConfig },
     page: {
       html: '',
       attributes: {},
@@ -110,28 +110,28 @@ const store = new Vuex.Store({
     }
   },
   actions: {
-    toggleDropdown({commit}, index) {
+    toggleDropdown({ commit }, index) {
       commit('TOGGLE_DROPDOWN', index)
     },
-    updatePage({commit}, payload) {
+    updatePage({ commit }, payload) {
       commit('UPDATE_PAGE', payload)
     },
-    toggleMobileSidebar({commit}, payload) {
+    toggleMobileSidebar({ commit }, payload) {
       commit('TOGGLE_MOBILE_SIDEBAR', payload)
     },
-    toggleSidebar({commit}, payload) {
+    toggleSidebar({ commit }, payload) {
       commit('TOGGLE_SIDEBAR', payload)
     },
-    startJumping({commit}) {
+    startJumping({ commit }) {
       commit('UPDATE_JUMPING', true)
     },
-    stopJumping({commit}) {
+    stopJumping({ commit }) {
       commit('UPDATE_JUMPING', false)
     },
-    updateActiveId({commit}, payload) {
+    updateActiveId({ commit }, payload) {
       commit('UPDATE_ACTIVE_ID', payload)
     },
-    jumpToId({dispatch}, id) {
+    jumpToId({ dispatch }, id) {
       dispatch('updateActiveId', id)
       dispatch('startJumping')
       event.emit('jump:started', id)
@@ -140,20 +140,20 @@ const store = new Vuex.Store({
         event.emit('jump:stopped', id)
       }, 400))
     },
-    startSearching({commit}) {
+    startSearching({ commit }) {
       nprogress.start()
       commit('START_SEARCHING')
       event.emit('search:started')
     },
-    stopSearching({commit}, payload) {
+    stopSearching({ commit }, payload) {
       nprogress.done()
       commit('STOP_SEARCHING', payload)
       event.emit('search:stopped', payload)
     },
-    updateSearchKeyword({commit}, payload) {
+    updateSearchKeyword({ commit }, payload) {
       commit('UPDATE_SEARCH_KEYWORD', payload)
     },
-    searchReset({commit}) {
+    searchReset({ commit }) {
       commit('UPDATE_SEARCH_KEYWORD', '')
       commit('STOP_SEARCHING', null)
     }
@@ -179,8 +179,8 @@ const store = new Vuex.Store({
       }
       return []
     },
-    documentTitle(state, {currentTitle}) {
-      const {config: {title}, page: {attributes}} = state
+    documentTitle(state, { currentTitle }) {
+      const { config: { title }, page: { attributes } } = state
       if (attributes && attributes.title) {
         return title ? `${attributes.title} - ${title}` : attributes.title
       } else if (currentTitle) {
@@ -189,7 +189,7 @@ const store = new Vuex.Store({
       return state.config.title
     },
     currentTags(state) {
-      const {attributes} = state.page
+      const { attributes } = state.page
       if (typeof attributes.search === 'string') {
         return [attributes.search]
       }
@@ -204,7 +204,7 @@ const store = new Vuex.Store({
       }
       return state.showSidebar
     },
-    showToc({config, page: {attributes}}) {
+    showToc({ config, page: { attributes } }) {
       if (attributes.toc !== undefined) {
         return attributes.toc
       }

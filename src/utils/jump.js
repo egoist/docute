@@ -1,5 +1,5 @@
 import jump from 'jump.js'
-import {isMobile} from 'utils/dom'
+import { isMobile } from 'utils/dom'
 
 export default function (id, callback) {
   jump(`#${id}`, {

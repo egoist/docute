@@ -6,7 +6,7 @@
 
 <script>
   import SvgIcon from 'components/SvgIcon'
-  import {mapActions} from 'vuex'
+  import { mapActions } from 'vuex'
 
   export default {
     methods: {
