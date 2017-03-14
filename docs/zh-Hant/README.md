@@ -481,34 +481,11 @@ Visit https://unpkg.com/prismjs/components/ for all available programming langua
   隱約雷鳴 陰霾天空 即使天無雨 我亦留此地<br>
 </p>
 
-#### HTML 屬性
+#### Navigation links
 
-你可以用內置的 HTML DOM 屬性實現一些 JS 效果:
+Links like `[Go](#heading-slug)` will navagate you to `?id=heading-slug` in current page.
 
-##### jump-to-id
-
-跳到一個標題，例如 `/#/?id=install`:
-
-```html
-<a href="#" jump-to-id="install">查看安裝提示!</a>
-```
-
-<p class="tip">
-  注意這種方法只能在當前頁面使用，它並不能跳到其他的頁面的標題。跨頁面跳轉請使用 <a href="#" jump-to-id="router-link">router-link</a> 屬性。
-</p>
-
-##### router-link
-
-頁面間跳轉，支持 URL 和查詢參數 (query):
-
-```html
-<a href="#" router-link="/">首頁</a>
-<a href="#" router-link="/chinese?id=install">查看中文安裝指南</a>
-```
-
-<p class="warning">
-  請勿用 <code>router-link</code> 來跳到當前頁面的一個標題處，這樣使用會導致沒有滑動效果，應該用 <a href="#" jump-to-id="jump-to-id">jump-to-id</a> 屬性來實現。
-</p>
+Links like `[Go](/page#heaing-slug)` will navigate you to `/page?id=heading-slug` 
 
 #### 全局變量
 

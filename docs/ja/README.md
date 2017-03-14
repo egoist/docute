@@ -476,34 +476,11 @@ Visit https://unpkg.com/prismjs/components/ for all available programming langua
   隐约雷鸣 阴霾天空 即使天无雨 我亦留此地<br>
 </p>
 
-#### HTMLの属性
+#### Navigation links
 
-docute は、いろいろな内蔵 HTML の属性を提供しています。
+Links like `[Go](#heading-slug)` will navagate you to `?id=heading-slug` in current page.
 
-##### jump-to-id
-
-特定のタイトルへ飛びます。例えば`/#/?id=install`
-
-```html
-<a href="#" jump-to-id="install">インストールのヒントへ</a>
-```
-
-<p class="tip">
-  この方法は現在のページしか <strong>使えません</strong>。別のページへ移動したいなら、<a href="#" jump-to-id="router-link">router-link</a>属性を利用してください。
-</p>
-
-##### router-link
-
-別のページへ移動します。URL と query が使えます：
-
-```html
-<a href="#" router-link="/">ホームページ</a>
-<a href="#" router-link="/chinese?id=install">中国語のガード</a>
-```
-
-<p class="warning">
-  smooth スクロールエフェクトがないため、タイトルへのジャンプは、<code>router-link</code> を使わないでください。<a href="#" jump-to-id="jump-to-id">jump-to-id</a> 属性を利用してください。
-</p>
+Links like `[Go](/page#heaing-slug)` will navigate you to `/page?id=heading-slug` 
 
 #### グローバル変数
 

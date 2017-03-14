@@ -564,51 +564,11 @@ Visit https://unpkg.com/prismjs/components/ for all available programming langua
 
 如果你不想 tip 有红绿黄这些背景颜色，可以添加一个 `no-bg` 类。
 
-#### HTML 属性
+#### Navigation links
 
-你可以用内置的 HTML DOM 属性实现一些 JS 效果:
+Links like `[Go](#heading-slug)` will navagate you to `?id=heading-slug` in current page.
 
-##### jump-to-id
-
-跳到一个标题，比如 `/#/?id=install`:
-
-```html
-<a href="#" jump-to-id="install">查看安装提示!</a>
-```
-
-This is also available in markdown, and maybe even more handy:
-
-```markdown
-<!-- if the link value is `jump-to-id`, it automatically generates from text -->
-[I am a title](jump-to-id)
-<!-- yields: -->
-<a href="#/?id=i-am-a-title" jump-to-id="i-am-a-tite">I am a title</a>
-
-<!-- the value could also be an id prefixed with `#` -->
-<!-- this way we will also convert the value to `jump-to-id` attribute -->
-[Goto](#i-am-a-title)
-<!-- yields: -->
-<a href="#/?id=i-am-a-title" jump-to-id="i-am-a-tite">Goto</a>
-```
-
-You should always prefer using markdown to automatically generate `jump-to-id` attribute, since this would also generate `href` for your, which allows user to open the link in a new tab.
-
-<p class="tip">
-  注意这种方法只能在当前页面使用，他并不能跳到其它的页面的标题。跨页面跳转请使用 [router-link](#router-link) 属性。
-</p>
-
-##### router-link
-
-页面间跳转，支持 URL 和查询参数 (query):
-
-```html
-<a href="#" router-link="/">首页</a>
-<a href="#" router-link="/chinese?id=install">查看中文安装指南</a>
-```
-
-<p class="warning">
-  请勿用 <code>router-link</code> 来跳到当前页面的一个标题处，这样使用会导致没有滑动效果，应该用 <a href="#" jump-to-id="jump-to-id">jump-to-id</a> 属性来实现。
-</p>
+Links like `[Go](/page#heaing-slug)` will navigate you to `/page?id=heading-slug` 
 
 #### 全局变量
 

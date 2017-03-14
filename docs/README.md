@@ -585,51 +585,11 @@ And you get:
   How is it going?
 </p>
 
-#### HTML Attributes
+#### Navigation links
 
-docute gives you some built-in html attributes for shot-hand use:
+Links like `[Go](#heading-slug)` will navagate you to `?id=heading-slug` in current page.
 
-##### jump-to-id
-
-Jump to a heading anchor, for `/#/?id=install` you can do:
-
-```html
-<a href="#" jump-to-id="install">Check out install intructions!</a>
-```
-
-This is also available in markdown, and maybe even more handy:
-
-```markdown
-<!-- if the link value is `jump-to-id`, it automatically generates from text -->
-[I am a title](jump-to-id)
-<!-- yields: -->
-<a href="#/?id=i-am-a-title" jump-to-id="i-am-a-title">I am a title</a>
-
-<!-- the value could also be an id prefixed with `#` -->
-<!-- this way we will also convert the value to `jump-to-id` attribute -->
-[Goto](#i-am-a-title)
-<!-- yields: -->
-<a href="#/?id=i-am-a-title" jump-to-id="i-am-a-title">Goto</a>
-```
-
-You should always prefer using markdown to automatically generate `jump-to-id` attribute, since this would also generate `href` for your, which allows user to open the link in a new tab.
-
-<p class="tip">
-  Note that you can only navigate id in the same page, it <strong>cannot</strong> jump to another page! For cross-page navigation, use [router-link](#router-link) attribute.
-</p>
-
-##### router-link
-
-Navigate to a new page, support both URL path and query:
-
-```html
-<a href="#" router-link="/">Go Home</a>
-<a href="#" router-link="/chinese?id=install">Checkout Chinese Installation guide!</a>
-```
-
-<p class="warning">
-  Do not use <code>router-link</code> to jump to an id in the same page, it will not give you the smooth-scroll effect if it's in the same page, use <a href="#" jump-to-id="jump-to-id">jump-to-id</a> instead.
-</p>
+Links like `[Go](/page#heaing-slug)` will navigate you to `/page?id=heading-slug` 
 
 #### Global Variables
 
@@ -729,4 +689,4 @@ It's not wrong, but we don't always need it that way, sometimes a simple Single 
 
 Since dynamically added script tags won't be executed by browser, you can use [docute-iframe](https://github.com/egoist/docute-iframe) plugin to run specified code blocks in an iframe.
 
-For docs about plugins please head to <span router-link="/plugins">plugins</span>.
+For docs about plugins please head to [plugins](/plugins).

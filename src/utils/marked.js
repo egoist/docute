@@ -916,24 +916,35 @@ Renderer.prototype.link = function(href, title, text) {
   // to be generated to <a href="#/?get-started" jump-to-id="get-started">Get Started</a>
   var isJump = href === 'jump-to-id'
   var isId = href && (href.charAt(0) === '#')
+  var isRouterLink = href && (href.charAt(0) === '/')
   var slug
-
-  if (isJump || isId) {
-    slug = isJump ? slugify(text) : href.substring(1)
-    var path = this.options.context.routerMode === 'hash' ?
+  var path = this.options.context.routerMode === 'hash' ?
     `#${this.options.context.path}` :
     this.options.context.path
+  var attr
+
+  if (isJump) {
+    slug = slugify(text)
     href = `${path}?id=${slug}`
+    attr = 'jump-to-id'
+  } else if (isId) {
+    slug = href.slice(1)
+    href = `${path}?id=${slug}`
+    attr = 'jump-to-id'
+  } else if (isRouterLink) {
+    href = href.replace('#', '?id=')
+    slug = href
+    attr = 'router-link'
   }
 
   var out = '<a href="' + href + '"';
   if (title) {
     out += ' title="' + title + '"';
   }
-  if (isJump || isId) {
-    out += ` jump-to-id="${slug}"`
+  if (attr) {
+    out += ` ${attr}="${slug}"`
   }
-  if (this.options.targetBlank && !isId) {
+  if (this.options.targetBlank && !attr) {
     out += ' target="_blank"'
   }
   out += '>' + text + '</a>';
