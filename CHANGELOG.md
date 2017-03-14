@@ -1,3 +1,11 @@
+## [Version 2.9.3](https://github.com/egoist/docute/releases/tag/v2.9.3) (2017-3-14)
+
+### Bug fixes
+
+- support router-link in markdown: [`2c6fef1`](https://github.com/egoist/docute/commit/2c6fef1)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.9.2...v2.9.3)
+
 ## [Version 2.9.2](https://github.com/egoist/docute/releases/tag/v2.9.2) (2017-3-10)
 
 ### Bug fixes
