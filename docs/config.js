@@ -5,7 +5,7 @@ var langs = [
   {title: '日本語', path: '/ja/', matchPath: /^\/ja/}
 ]
 
-self.$config = {
+docute.init({
   landing: true,
   debug: true,
   // home: 'https://raw.githubusercontent.com/egoist/docute/master/README.md',
@@ -90,4 +90,4 @@ self.$config = {
     }),
     evanyou()
   ]
-}
+})

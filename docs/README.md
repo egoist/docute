@@ -46,7 +46,6 @@ Now the `./docs` folder is ready, so far we got:
 
 - README.md: Used as content of homepage
 - index.html: The html that contains the scripts and styles you need
-- config.js: Configuration file
 - .nojekyll: Indicates that this is not a jekyll website, ignore this if you're not deploying to github pages
 
 Then you can preview the docs locally:
@@ -76,15 +75,12 @@ What we really need is an `index.html`:
 </head>
 <body>
   <div id="app"></div>
-  <!-- you can put the script which contains config in another file -->
-  <!-- like config.js -->
-  <script>
-    self.$config = {
-      // configs...
-    }
-  </script>
   <!-- load the docute client library -->
   <script src="https://unpkg.com/docute/dist/docute.js"></script>
+  <!-- bootstrap your docute app! -->
+  <script>
+    docute.init()
+  </script>
 </body>
 </html>
 ```
@@ -93,23 +89,23 @@ And that's it!
 
 ## Configuration
 
-There will be a `config.js` in your doc directory after running `docute init`:
+`docute.init` accepts an argument for setting configurations:
 
 ```js
-self.$config = {
-  // blah...
-}
+docute.init({
+  // ...config goes here
+})
 ```
 
 ### Home Page
 
-`README.md` in your docs folder will be treated as homepage for your website, but sometimes you may need to serve another file as your homepage. For example you're deploying `./docs` for `github pages` but already have `README.md` in your repo, why do you have to populate another file at `./docs/README.md`, right? Then just tell it which file we should use:
+`README.md` in your docs folder will be treated as homepage for your website, but sometimes you may need to serve another file as your homepage. For example you're deploying `./docs` as `github pages` but already have `README.md` in your repo, why do you have to populate another file at `./docs/README.md`, right? Then just tell it which file we should use:
 
 ```js
-self.$config = {
-  // use the readme in repo
+docute.init({
+  // use a markdown file from url directly
   home: 'https://raw.githubusercontent.com/egoist/docute/master/README.md'
-}
+})
 ```
 
 ### Landing Page
@@ -117,14 +113,14 @@ self.$config = {
 You can set the `landing` option to `true` or a custom path:
 
 ```js
-self.$config = {
+docute.init({
   // true means using `landing.html`
   landing: true,
   // or custom path
   landing: '_my-landing.html',
   // or even markdown file
   landing: 'landing.md'
-}
+})
 ```
 
 If you enable landing page, the route `/` will match landing page, and `/home` will be the homepage of docs.
@@ -146,9 +142,9 @@ Note: file like `about/README.md` will be mapping to `/#/about/`, while the `/#/
 To disable the sidebar globally, set it to `false` in `config.js`:
 
 ```js
-self.$config = {
+docute.init({
   sidebar: false
-}
+})
 ```
 
 Or disable it for specific page:
@@ -163,9 +159,9 @@ disable sidebar for this page.
 There will be a toggle button for switching sidebar on and off, to hide this button:
 
 ```js
-self.$config = {
+docute.init({
   disableSidebarToggle: true
-}
+})
 ```
 
 #### TOC
@@ -175,10 +171,10 @@ The TOC is coming from your markdown files, we parse markdown content and get he
 In sidebar we will show h2 to h4 headings by default, h5+ only will be visible when the main content scrolls there, you can update this by:
 
 ```js
-self.$config = {
+docute.init({
   // to show h2 to h3 only
   tocVisibleDepth: 3
-}
+})
 ```
 
 To disable TOC entirely, set `toc` to `false`.
@@ -188,14 +184,14 @@ To disable TOC entirely, set `toc` to `false`.
 You may need a navbar as the entrance for the pages:
 
 ```js
-self.$config = {
+docute.init({
   nav: [
     // homepage
     {title: 'Home', path: '/'},
     // chinese doc
     {title: 'Chinese', path: '/language/chinese'}
   ]
-}
+})
 ```
 
 <p class="tip">
@@ -208,13 +204,13 @@ self.$config = {
 A path like `/language/chinese` will make docute fetch `/language/chinese.md`, you can use `source` option to fetch another file:
 
 ```js
-{
+docute.init({
   title: 'Chinese',
   path: '/language/chinese',
   source: '/language/chinese-foo.md'
   // or even external file
   source: 'https://raw.githubusercontent.com/user/repo/master/file.md'
-}
+})
 ```
 
 <p class="tip">
@@ -226,14 +222,14 @@ A path like `/language/chinese` will make docute fetch `/language/chinese.md`, y
 ##### Icon short-hand
 
 ```js
-self.$config = {
+docute.init({
   // slug for your github repo
   repo: 'tj/co',
   // twitter username
   twitter: 'realDonaldTrump',
   // the link to source file of current page
   'edit-link': 'https://github.com/egoist/docute/blob/master/docs'
-}
+})
 ```
 
 To fully customize the `label`, `link` or use custom svg icons, see below.
@@ -243,13 +239,13 @@ To fully customize the `label`, `link` or use custom svg icons, see below.
 The built-in svg icons: `github` `twitter` `edit` `menu` `link` `search` `close`, which you can use in the `icon` attribute in `icons` option:
 
 ```js
-self.$config = {
+docute.init({
   icons: [{
     icon: 'github',
     label: 'Contribute on GitHub',
     link: 'https://github.com/owner/repo'
   }]
-}
+})
 ```
 
 This example will have the same effect as using `repo: 'owner/repo'` but with custom label text here.
@@ -274,7 +270,7 @@ First, add it to your HTML file, which is `index.html` here:
 Then use it in `config.js`:
 
 ```js
-self.$config = {
+docute.init({
   icons: [
     {
       label: 'Hovered!', // the text for tooltip
@@ -282,13 +278,13 @@ self.$config = {
       link: 'http://blah.blah'
     }
   ]
-}
+})
 ```
 
 You can also add `svgClass` property to use CSS to control the style of your icon
 
 ```js
-self.$config = {
+docute.init({
   icons: [
     {
       label: 'Hovered!',
@@ -297,7 +293,7 @@ self.$config = {
       link: 'http://blah.blah'
     }
   ]
-}
+})
 ```
 
 ```css
@@ -322,12 +318,12 @@ There're many resources for good free SVG icons, for example: [bytesize-icons](h
 You can have multiple sets of icons and use different set for different pages, just set the `icons` to a plain object:
 
 ```js
-self.$config = {
+docute.init({
   icons: {
     default: [{label: 'hello'}],
     chinese: [{label: '你好'}]
   }
-}
+})
 ```
 
 Now, every page would use `default` icons, to use `chinese` icons just add front-matter in your page:
@@ -344,14 +340,14 @@ hello world!
 The item in navbar could also be a dropdown menu:
 
 ```js
-self.$config = {
+docute.init({
   nav: [
     {title: 'Languages', type: 'dropdown', items: [
       {title: 'Chinese', path: '/language/chinese'},
       {title: 'Japanese', path: '/language/japanese'}
     ]}
   ]
-}
+})
 ```
 
 ##### matchPath
@@ -361,7 +357,7 @@ Type: `RegExp`
 To make dropdown menu display the actual title of active page, for example, show `Chinese` instead of `Languages` as the dropdown title when user enters relevant page, use `matchPath`. The target of `matchPath` is `this.$route.path`,eg: in `https://example.com/en/get-started` the target is `/en/get-started`
 
 ```js
-self.$config = {
+docute.init({
   nav: [{
     title: 'Languages', type: 'dropdown', items: [{
       path: '/en',
@@ -371,7 +367,7 @@ self.$config = {
       matchPath: /^\/en[\/$]/
     }]
   }]
-}
+})
 ```
 
 If no macthed item was found, it uses the title of `dropdown` menu instead.
@@ -385,7 +381,7 @@ To have such dropdown menu:
 You will need the `label` and `sep` helper:
 
 ```js
-self.$config = {
+docute.init({
   nav: [
     {
       title: 'Ecosystem', type: 'dropdown', items: [
@@ -396,7 +392,7 @@ self.$config = {
       ]
     }
   ]
-}
+})
 ```
 
 #### Named navbar
@@ -406,12 +402,12 @@ You can have multipage navbar and use different navbar for different pages.
 If the `nav` option in config file is an array, it will be the only navbar across pages, but you can also set it to a plain object to have multiple named navbar:
 
 ```js
-self.$config = {
+docute.init({
   nav: {
     default: [{title: 'Home', path: '/'}],
     chinese: [{title: '首页', path: '/chinese'}]
   }
-}
+})
 ```
 
 For now all pages will still use the `default` navbar, but you can switch this by setting front-matter in your markdown file:
@@ -429,12 +425,12 @@ nav: chinese
 docute uses [marked](https://github.com/chjj/marked) to parse markdown code，you can adjust marked's settings by:
 
 ```js
-self.$config = {
+docute.init({
   marked: {
     smartypants: true
     // ...
   }
-}
+})
 ```
 
 Please refer to the [official docs](https://github.com/chjj/marked#options-1) for details about its options.
@@ -444,9 +440,9 @@ Please refer to the [official docs](https://github.com/chjj/marked#options-1) fo
 Set `debug` to `true` to enable vue-devtools:
 
 ```js
-self.$config = {
+docute.init({
   debug: true
-}
+})
 ```
 
 ## Recipes
@@ -600,6 +596,7 @@ docute
 docute.version // the version of docute
 docute.store // Vuex store instance
 docute.router // Vue router instance
+docute.init // bootstrap app, you can only call it once
 
 Vue // Vue constructor
 ```

@@ -8,7 +8,7 @@ search: ja
 docute を使い、ビルドプロセス（build process）なしにドキュメントを作りましょう。
 
 <p class="danger">
-  This transilation is kind of out-dated, you may check out the <a href="#" router-link="/home">English docs</a> instead.
+  This transilation is out-dated, please check out the <a href="#" router-link="/home">English docs</a> instead.
 </p>
 
 ## はじめに

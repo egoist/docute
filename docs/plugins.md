@@ -7,7 +7,7 @@ search: english
 Plugins give you extra features without bloating docute itself.
 
 <p class="warning">
-  All plugins should be load before `config.js`!
+  You should load plugin via `script` tag before running `docute.init`!
 </p>
 
 ## List of Plugins
@@ -21,16 +21,19 @@ To use this plugin, [apply for the program](https://community.algolia.com/docsea
 Then simply load `docsearch.js` before all other scripts:
 
 ```html
-<script src="https://unpkg.com/docute/plugins/docsearch.js"></script>
-<!-- put every other script behind -->
-<script src="config.js"></script>
 <script src="https://unpkg.com/docute/dist/docute.js"></script>
+<script src="https://unpkg.com/docute/plugins/docsearch.js"></script>
+<script>
+  docute.init({
+    // ...config
+  })
+</script>
 ```
 
-Finally configure it in your config.js:
+Finally activate the plugin by:
 
 ```js
-self.$config = {
+docute.init({
   // the docsearch variable is provided by docsearch plugin
   plugins: [
     docsearch({
@@ -43,7 +46,7 @@ self.$config = {
   // this plugin does require a url too
   // it should be the url of your website, without / at the end
   url: 'https://docute.js.org'
-}
+})
 ```
 
 You can check out the [algolia docsearch config](https://github.com/algolia/docsearch-configs/blob/master/configs/docute.json) for docute.js.org, we have `english` `zh-Hans` `zh-Hant` tags for now. By default the search bar in your doc will search all tags, but you may only allow it to search relevant tag for specified page. For example, search `english` tag on English page only.
@@ -78,19 +81,17 @@ First include the plugin via `script` tag:
 <script src="https://unpkg.com/docute/plugins/disqus.js"></script>
 ```
 
-Add configure it in `config.js`:
+Add activate it by:
 
 ```js
-self.$config = {
+docute.init({
   plugins: [
     disqus({
       shortname: 'SHORT_NAME' // replace this with your own shortname
     })
   ]
-}
+})
 ```
-
-We may add `inline comment` support in the future, just like the way medium.com did.
 
 ## Community Plugins
 
@@ -103,8 +104,7 @@ We may add `inline comment` support in the future, just like the way medium.com 
 A plugin is simply a function that takes `context` as arguments.
 
 ```js
-// config.js
-self.$config = {
+docute.init({
   plugins: [
     function myPlugin(context) {
       // context.store
@@ -112,17 +112,17 @@ self.$config = {
       // context....
     }
   ]
-}
+})
 ```
 
 If your plugin needs options, use a higher-order function instead:
 
 ```js
-self.$config = {
+docute.init({
   plugins: [
     myPlugin(options)
   ]
-}
+})
 
 function myPlugin(options) {
   return function (context) {

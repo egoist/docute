@@ -9,7 +9,7 @@ import { mapState, mapGetters, mapActions, mapMutations } from 'vuex'
 import { sync } from 'vuex-router-sync'
 
 // Ours
-// import { registerComponent } from 'utils/component-manager'
+import { registerComponent } from 'utils/component-manager'
 import { beforeParse, afterParse } from 'utils/parsers'
 import event from 'utils/event'
 import App from 'components/App.vue'

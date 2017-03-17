@@ -7,8 +7,8 @@ search: zh-Hant
 
 docute 讓你無需編譯文件享受到無縫的文檔撰寫、發布體驗。
 
-<p class="warning">
-  This transilation is kind of out-dated, you may check out the <a href="#" router-link="/home">English docs</a> instead.
+<p class="danger">
+  This transilation is out-dated, please check out the <a href="#" router-link="/home">English docs</a> instead.
 </p>
 
 ## 簡介

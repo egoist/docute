@@ -7,8 +7,8 @@ search: zh-Hans
 
 docute 让你无需编译文件享受到无缝的文档撰写、发布体验。
 
-<p class="warning">
-  文档翻译可能不完整，请以 <a router-link="/home">英文文档</a> 为准。
+<p class="danger">
+  文档翻译已经严重滞后，请以 <a router-link="/home">英文文档</a> 为准。
 </p>
 
 ## 简介
