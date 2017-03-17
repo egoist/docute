@@ -131,7 +131,7 @@ If you enable landing page, the route `/` will match landing page, and `/home` w
 
 ### History Mode
 
-You can set `routerMode` to `'history'` enable history mode.
+You can set `routerMode` to `'history'` to enable history mode.
 
 ```js
 docute.init({
