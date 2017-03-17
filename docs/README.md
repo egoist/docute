@@ -205,16 +205,18 @@ A path like `/language/chinese` will make docute fetch `/language/chinese.md`, y
 
 ```js
 docute.init({
-  title: 'Chinese',
-  path: '/language/chinese',
-  source: '/language/chinese-foo.md'
-  // or even external file
-  source: 'https://raw.githubusercontent.com/user/repo/master/file.md'
+  nav: [{
+    title: 'Chinese',
+    path: '/language/chinese',
+    source: '/language/chinese-foo.md'
+    // or even external file
+    source: 'https://raw.githubusercontent.com/user/repo/master/file.md'
+  }]
 })
 ```
 
 <p class="tip">
-  You may wonder why there's `$config.home` option when we already have `source` option, that's because `source` option is only available for nav item, while `$config.home` is always available no matter if you add `/` to nav.
+  You may wonder why there's `home` option when we already have `source` option, that's because `source` option is only available for nav item, while `home` is always available no matter if you add `/` to nav.
 </p>
 
 #### Icons
