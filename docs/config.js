@@ -28,7 +28,7 @@ docute.init({
         title: 'Changelog', path: '/changelog', source: 'https://raw.githubusercontent.com/egoist/docute/master/CHANGELOG.md'
       },
       {
-        title: 'Languages', type: 'dropdown', items: langs, exact: true
+        title: 'Languages', type: 'dropdown', items: langs
       }
     ],
     'zh-Hans': [
