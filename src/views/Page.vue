@@ -110,12 +110,6 @@
         const isExternal = /^https?:\/\//.test(customSource)
 
         if (!isExternal) {
-          // ./ will remain
-          // / will be ./
-          // abc will be ./abc
-          if (customSource.charAt(0) === '/' || customSource.charAt(0) !== '.') {
-            customSource = customSource.replace(/^\/?/, './')
-          }
           const notMarkdown = !/\.md$/.test(customSource)
           // since route.path is not ended with .md
           // we need to append this
