@@ -10,14 +10,17 @@ export default {
           'sidebar:start',
           'sidebar:end',
           'nav:start',
-          'nav:end'
+          'nav:end',
+          'icons:start',
+          'icons:end'
         ].indexOf(value) > -1
       }
     }
   },
   data() {
     return {
-      components: componentManager.components[this.place]
+      components: componentManager.components[this.place],
+      className: `custom-components-${this.place.replace(':', '-')}`
     }
   },
   render(h) {
@@ -26,7 +29,7 @@ export default {
     }
 
     return (
-      <div class="custom-components">
+      <div class={`custom-components ${this.className}`}>
         {this.components.map(Component => <Component />)}
       </div>
     )

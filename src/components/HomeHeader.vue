@@ -1,15 +1,21 @@
 <template>
-  <header class="header is-desktop is-fixed" v-if="hasNav || currentIcons.length > 0">
+  <header class="header is-desktop is-fixed" v-if="hasNav || currentIcons.length > 0 || hasComponentsAroundIcons">
     <div class="header-container">
       <header-nav
         :current-nav="currentNav"
         :has-nav="hasNav"
         :show-nav="showNav">
       </header-nav>
-      <header-icons
-        :current-icons="currentIcons"
-        :show-nav="showNav">
-      </header-icons>
+      <div
+        class="header-right"
+        v-if="currentIcons.length > 0 || hasComponentsAroundIcons">
+        <custom-components place="icons:start" />
+        <header-icons
+          :current-icons="currentIcons"
+          :show-nav="showNav">
+        </header-icons>
+        <custom-components place="icons:end" />
+      </div>
     </div>
   </header>
 </template>
@@ -18,6 +24,8 @@
   import { mapGetters } from 'vuex'
   import HeaderNav from 'components/HeaderNav.vue'
   import HeaderIcons from 'components/HeaderIcons.vue'
+  import CustomComponents from 'components/CustomComponents'
+  import componentManager from 'utils/component-manager'
 
   export default {
     props: {
@@ -29,14 +37,19 @@
       },
       showNav: {
         type: Boolean
-      }
+      },
     },
     computed: {
-      ...mapGetters(['currentNav'])
+      ...mapGetters(['currentNav']),
+      hasComponentsAroundIcons() {
+        return componentManager.count('icons:start') > 0 ||
+          componentManager.count('icons:end') > 0
+      }
     },
     components: {
       HeaderNav,
-      HeaderIcons
+      HeaderIcons,
+      CustomComponents
     }
   }
 </script>
@@ -75,6 +88,11 @@
     max-width: 1000px;
     border-left: 1px solid rgba(0,0,0,.07);
     border-right: 1px solid rgba(0,0,0,.07);
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
   }
 </style>
 

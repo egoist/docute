@@ -180,6 +180,8 @@ The value is one of followings:
 - `sidebar:end`: at the end of sidebar
 - `nav:start`: at the start of `nav` items
 - `nav:end`: at the end of `nav` items
+- `icons:start`: at the start of header icons
+- `icons:end`: at the end of header icons
 
 ##### component
 
