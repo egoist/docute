@@ -37,7 +37,7 @@
       },
       showNav: {
         type: Boolean
-      },
+      }
     },
     computed: {
       ...mapGetters(['currentNav']),
