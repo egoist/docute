@@ -95,9 +95,20 @@
         const currentPath = route.path
 
         // get custom source
-        const match = currentNav.filter(nav => {
-          return nav.path === currentPath
-        })[0]
+        let match
+        for (const navItem of currentNav) {
+          if (navItem.type === 'dropdown' && navItem.items) {
+            for (const subItem of navItem.items) {
+              if (subItem.path === route.path) {
+                match = subItem
+                break
+              }
+            }
+          } else if (navItem.path === route.path) {
+            match = navItem
+            break
+          }
+        }
 
         const matchedSource = match && match.source
         const isHome = route.meta && (route.meta.name === 'home')
