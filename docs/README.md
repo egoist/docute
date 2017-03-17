@@ -129,6 +129,18 @@ If you enable landing page, the route `/` will match landing page, and `/home` w
   You cannot use <code>script</code> tag in pages, since dynamically added scripts will not be evaluated by your browser.
 </p>
 
+### History Mode
+
+You can set `routerMode` to `'history'` enable history mode.
+
+```js
+docute.init({
+  routerMode: 'history'
+})
+```
+
+<p class="tip">When deployed on GitHub pages, you can add `404.html` to catch all requests.</p>
+
 ### Pages
 
 You can also add more markdown files to display more pages. For example, adding `chinese.md` to your doc folder so that you got a new page at `/#/chinese`!
