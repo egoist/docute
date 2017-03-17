@@ -3,16 +3,14 @@ const express = require('express')
 const pkg = require('../package')
 
 module.exports = {
-  entry: {
-    docute: ['src/index.js'],
-    'theme-github': ['src/css/theme-github.css']
-  },
-  hmrEntry: ['docute', 'theme-github'],
+  entry: 'src/index.js',
   html: {
     title: 'docute-client',
     template: 'template.html',
     inject: false
   },
+  format: 'umd',
+  moduleName: 'docute',
   templateCompiler: true,
   port: 5000,
   define: {
@@ -33,7 +31,7 @@ module.exports = {
     vendor: false
   },
   filename: {
-    js: '[name].js',
-    css: '[name].css'
+    js: 'docute.js',
+    css: 'docute.css'
   }
 }

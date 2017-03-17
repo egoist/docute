@@ -22,11 +22,9 @@ function flatten(nav) {
   }, [])
 }
 
-const userConfig = typeof window === 'undefined' ? {} : (window.$config || {})
-
 const store = new Vuex.Store({
   state: {
-    config: { title: document.title, ...userConfig },
+    config: {},
     page: {
       html: '',
       attributes: {},
@@ -43,9 +41,18 @@ const store = new Vuex.Store({
     searching: false,
     searchResult: null,
     searchKeyword: '',
-    showSidebar: typeof userConfig.sidebar === 'boolean' ? userConfig.sidebar : true
+    showSidebar: true
   },
   mutations: {
+    SET_CONFIG(state, config) {
+      state.config = {
+        title: document.title,
+        ...config
+      }
+      if (typeof state.config.showSidebar === 'boolean') {
+        state.showSidebar = state.config.showSidebar
+      }
+    },
     TOGGLE_DROPDOWN(state, index) {
       state.config.nav = state.config.nav.map((item, i) => {
         if (i === index) {

@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "npm run build",
-    "build": "vbuild -c build/vue.config.js --eslint",
+    "build": "vbuild -c build/vue.config.js --eslint && node build/themes",
     "dev": "vbuild -d --config build/vue.config.js",
     "dev:docsearch": "vbuild -d --config build/vue.config.docsearch.js",
     "build:docsearch": "vbuild --config build/vue.config.docsearch.js",
@@ -56,8 +56,10 @@
   },
   "devDependencies": {
     "cssbag": "^0.1.0",
+    "cssnano": "^3.10.0",
     "hint.css": "^2.4.1",
     "jest-cli": "^19.0.2",
+    "postcss": "^5.2.16",
     "raw-loader": "^0.5.1",
     "vbuild": "^6.24.1"
   },
