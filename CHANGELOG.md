@@ -1,3 +1,11 @@
+## [Version 2.10.0](https://github.com/egoist/docute/releases/tag/v2.10.0) (2017-3-17)
+
+### New features
+
+- expose API to bootstrap docute, closed [#81](https://github.com/egoist/docute/issues/81): [`b5c1f93`](https://github.com/egoist/docute/commit/b5c1f93)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.9.3...v2.10.0)
+
 ## [Version 2.9.3](https://github.com/egoist/docute/releases/tag/v2.9.3) (2017-3-14)
 
 ### Bug fixes
