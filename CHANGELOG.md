@@ -1,3 +1,18 @@
+## [Version 2.11.0](https://github.com/egoist/docute/releases/tag/v2.11.0) (2017-3-18)
+
+### New features
+
+- add new positions to register component: [`1d53185`](https://github.com/egoist/docute/commit/1d53185)
+- support inline markdown and control content with Vue component: [`8c6dd8f`](https://github.com/egoist/docute/commit/8c6dd8f)
+- support custom extension in page `source` option: [`7c8405a`](https://github.com/egoist/docute/commit/7c8405a)
+
+### Bug fixes
+
+- should set custom source for dropdown menu: [`f5d7201`](https://github.com/egoist/docute/commit/f5d7201)
+- unfetch ftw: [`8973425`](https://github.com/egoist/docute/commit/8973425)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.10.0...v2.11.0)
+
 ## [Version 2.10.0](https://github.com/egoist/docute/releases/tag/v2.10.0) (2017-3-17)
 
 ### New features
