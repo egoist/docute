@@ -92,55 +92,24 @@
       currentNavSource() {
         const route = this.$route
         const config = this.config
-        const currentNav = this.currentNav
-        const currentPath = route.path
 
-        // get custom source
-        let match
-        for (const navItem of currentNav) {
-          if (navItem.type === 'dropdown' && navItem.items) {
-            for (const subItem of navItem.items) {
-              if (subItem.path === route.path) {
-                match = subItem
-                break
-              }
-            }
-          } else if (navItem.path === route.path) {
-            match = navItem
-            break
-          }
-        }
+        const matchedSource = this.currentNavItem && this.currentNavItem.source
+        const homeSource = route.meta && (route.meta.name === 'home') && (config.home || './README.md')
 
-        const matchedSource = match && match.source
-        const isHome = route.meta && (route.meta.name === 'home')
-        const home = config.home || './README.md'
-
-        // if there's custom source, use it
-        // otherwise if it's home use config.home or README.md
-        // otherwise use route.path
-        let customSource = matchedSource || (isHome ? home : currentPath)
-        const isExternal = /^https?:\/\//.test(customSource)
+        const defaultSource = /\/$/.test(route.path) ? (route.path + 'README.md') : (route.path + '.md')
+        let source = matchedSource || homeSource || defaultSource
+        const isExternal = /^https?:\/\//.test(source)
 
         if (!isExternal) {
           // ./ will remain
           // / will be ./
           // abc will be ./abc
-          if (customSource.charAt(0) === '/' || customSource.charAt(0) !== '.') {
-            customSource = customSource.replace(/^\/?/, './')
-          }
-          const notMarkdown = !/\.md$/.test(customSource)
-          // since route.path is not ended with .md
-          // we need to append this
-          if (notMarkdown) {
-            if (/\/$/.test(customSource)) {
-              customSource += 'README.md'
-            } else {
-              customSource += '.md'
-            }
+          if (source.charAt(0) === '/' || source.charAt(0) !== '.') {
+            source = source.replace(/^\/?/, './')
           }
         }
 
-        return customSource
+        return source
       },
       currentIcons() {
         const { state } = this.$store
