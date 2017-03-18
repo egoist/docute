@@ -1859,12 +1859,6 @@ encodeurl@~1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/encodeurl/-/encodeurl-1.0.1.tgz#79e3d58655346909fe6f0f45a5de68103b294d20"
 
-encoding@^0.1.11:
-  version "0.1.12"
-  resolved "https://registry.npmjs.org/encoding/-/encoding-0.1.12.tgz#538b66f3ee62cd1ab51ec323829d1f9480c74beb"
-  dependencies:
-    iconv-lite "~0.4.13"
-
 enhanced-resolve@^3.0.0:
   version "3.1.0"
   resolved "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-3.1.0.tgz#9f4b626f577245edcf4b2ad83d86e17f4f421dec"
@@ -2756,10 +2750,6 @@ iconv-lite@0.4.13:
   version "0.4.13"
   resolved "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.13.tgz#1f88aba4ab0b1508e8312acc39345f36e992e2f2"
 
-iconv-lite@~0.4.13:
-  version "0.4.15"
-  resolved "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.15.tgz#fe265a218ac6a57cfe854927e9d04c19825eddeb"
-
 icss-replace-symbols@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/icss-replace-symbols/-/icss-replace-symbols-1.0.2.tgz#cb0b6054eb3af6edc9ab1d62d01933e2d4c8bfa5"
@@ -3008,7 +2998,7 @@ is-retry-allowed@^1.0.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/is-retry-allowed/-/is-retry-allowed-1.1.0.tgz#11a060568b67339444033d0125a61a20d564fb34"
 
-is-stream@^1.0.0, is-stream@^1.0.1, is-stream@^1.1.0:
+is-stream@^1.0.0, is-stream@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/is-stream/-/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
 
@@ -3051,13 +3041,6 @@ isobject@^2.0.0:
   resolved "https://registry.npmjs.org/isobject/-/isobject-2.1.0.tgz#f065561096a3f1da2ef46272f815c840d87e0c89"
   dependencies:
     isarray "1.0.0"
-
-isomorphic-fetch@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.npmjs.org/isomorphic-fetch/-/isomorphic-fetch-2.2.1.tgz#611ae1acf14f5e81f729507472819fe9733558a9"
-  dependencies:
-    node-fetch "^1.0.1"
-    whatwg-fetch ">=0.10.0"
 
 isstream@~0.1.2:
   version "0.1.2"
@@ -3757,13 +3740,6 @@ node-dir@^0.1.10:
   resolved "https://registry.npmjs.org/node-dir/-/node-dir-0.1.16.tgz#d2ef583aa50b90d93db8cdd26fcea58353957fe4"
   dependencies:
     minimatch "^3.0.2"
-
-node-fetch@^1.0.1:
-  version "1.6.3"
-  resolved "https://registry.npmjs.org/node-fetch/-/node-fetch-1.6.3.tgz#dc234edd6489982d58e8f0db4f695029abcd8c04"
-  dependencies:
-    encoding "^0.1.11"
-    is-stream "^1.0.1"
 
 node-int64@^0.4.0:
   version "0.4.0"
@@ -5477,6 +5453,10 @@ uid-number@~0.0.6:
   version "0.0.6"
   resolved "https://registry.npmjs.org/uid-number/-/uid-number-0.0.6.tgz#0ea10e8035e8eb5b8e4449f06da1c730663baa81"
 
+unfetch@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.npmjs.org/unfetch/-/unfetch-2.1.2.tgz#684fee4d8acdb135bdb26c0364c642fc326ca95b"
+
 uniq@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/uniq/-/uniq-1.0.1.tgz#b31c5ae8254844a3a8281541ce2b04b865a734ff"
@@ -5801,10 +5781,6 @@ whatwg-encoding@^1.0.1:
   resolved "https://registry.npmjs.org/whatwg-encoding/-/whatwg-encoding-1.0.1.tgz#3c6c451a198ee7aec55b1ec61d0920c67801a5f4"
   dependencies:
     iconv-lite "0.4.13"
-
-whatwg-fetch@>=0.10.0:
-  version "2.0.3"
-  resolved "https://registry.npmjs.org/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
 
 whatwg-url@^4.3.0:
   version "4.5.0"

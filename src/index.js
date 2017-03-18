@@ -1,6 +1,6 @@
 // Polyfills
 import './promise'
-import 'isomorphic-fetch'
+import 'unfetch/polyfill'
 import 'element-closest'
 
 // Dependencies
