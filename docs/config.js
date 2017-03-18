@@ -6,7 +6,7 @@ var langs = [
 ]
 
 docute.init({
-  landing: true,
+  landing: 'landing.html',
   debug: true,
   // home: 'https://raw.githubusercontent.com/egoist/docute/master/README.md',
   repo: 'egoist/docute',

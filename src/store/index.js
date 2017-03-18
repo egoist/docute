@@ -166,12 +166,14 @@ const store = new Vuex.Store({
     }
   },
   getters: {
-    currentTitle(state, getters) {
+    currentTitle(state, { currentNavItem }) {
+      return currentNavItem && currentNavItem.title
+    },
+    currentNavItem(state, { currentNav }) {
       const path = state.route.path
-      const current = flatten(getters.currentNav).filter(item => {
+      return flatten(currentNav).filter(item => {
         return item.path === path
       })[0]
-      return current && current.title
     },
     currentNav(state) {
       const nav = state.config.nav

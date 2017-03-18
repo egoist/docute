@@ -22,7 +22,8 @@
         :show-nav="showNav"
         v-if="loaded"></home-header>
       <custom-components place="content:start" v-if="loaded"></custom-components>
-      <div class="markdown-body content" v-html="page.html"></div>
+      <component v-if="docComponent" :is="docComponent" />
+      <div v-else class="markdown-body content" v-html="page.html"></div>
       <custom-components place="content:end" v-if="loaded"></custom-components>
     </section>
   </div>
@@ -87,7 +88,7 @@
         id: state => state.route.query.id
       }),
       ...mapState(['config', 'page', 'loaded', 'jumping', 'activeId', 'pluginSearch', 'searchResult', 'searchKeyword']),
-      ...mapGetters(['documentTitle', 'showSidebar', 'currentNav', 'showToc']),
+      ...mapGetters(['documentTitle', 'showSidebar', 'currentNav', 'showToc', 'currentNavItem']),
       currentNavSource() {
         const route = this.$route
         const config = this.config
@@ -199,6 +200,18 @@
         const hasNavStart = componentManager.count('nav:start') > 0
         const hasNavEnd = componentManager.count('nav:end') > 0
         return this.hasNav || hasNavStart || hasNavEnd
+      },
+      docComponent() {
+        if (!this.currentNavItemComponent) return
+
+        return {
+          name: 'custom-page',
+          ...this.currentNavItemComponent,
+          template: `<div class="doc-component markdown-body content">${this.page.html}</div>`
+        }
+      },
+      currentNavItemComponent() {
+        return this.currentNavItem && this.currentNavItem.component
       }
     },
     methods: {
@@ -232,15 +245,21 @@
             </h${level}>`
         }
 
-        const res = await fetch(this.currentNavSource)
-        nprogress.inc()
+        let text
 
-        if (res.status === 404) {
-          this.$router.replace('/404')
-          return
+        if (this.currentNavItem && this.currentNavItem.markdown) {
+          text = this.currentNavItem.markdown
+        } else {
+          const res = await fetch(this.currentNavSource)
+          nprogress.inc()
+
+          if (res.status === 404) {
+            this.$router.replace('/404')
+            return
+          }
+
+          text = await res.text()
         }
-
-        const text = await res.text()
 
         const parsed = frontMatter(text)
 
