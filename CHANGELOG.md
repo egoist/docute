@@ -1,3 +1,11 @@
+## [Version 3.0.0](https://github.com/egoist/docute/releases/tag/v3.0.0) (2017-3-19)
+
+### Breaking changes
+
+- remove self.$config support: [`5611377`](https://github.com/egoist/docute/commit/5611377)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.12.0...v3.0.0)
+
 ## [Version 2.12.0](https://github.com/egoist/docute/releases/tag/v2.12.0) (2017-3-19)
 
 ### New features
