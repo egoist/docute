@@ -27,6 +27,7 @@ For detailed usage please head to https://docute.js.org 😎
 - [sao](https://sao.js.org/): ⚔️ Futuristic scaffolding tool.
 - [service-mocker](https://service-mocker.js.org/): 🚀 The next generation front-end API mocking framework.
 - [vuejs-component-style-guide](https://pablohpsilva.github.io/vuejs-component-style-guide/#/): Vue component style guide
+- [vue-scrollto](https://rigor789.github.io/vue-scrollto/#/): Vue scroll-to directive
 - Feel free to add yours here :)
 
 ## Contributing
