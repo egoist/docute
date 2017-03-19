@@ -280,7 +280,7 @@ babel-code-frame@^6.11.0, babel-code-frame@^6.16.0, babel-code-frame@^6.22.0:
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-babel-core@^6.0.0, babel-core@^6.23.0, babel-core@^6.23.1:
+babel-core@^6.0.0, babel-core@^6.23.0:
   version "6.23.1"
   resolved "https://registry.npmjs.org/babel-core/-/babel-core-6.23.1.tgz#c143cb621bb2f621710c220c5d579d15b8a442df"
   dependencies:
@@ -289,6 +289,30 @@ babel-core@^6.0.0, babel-core@^6.23.0, babel-core@^6.23.1:
     babel-helpers "^6.23.0"
     babel-messages "^6.23.0"
     babel-register "^6.23.0"
+    babel-runtime "^6.22.0"
+    babel-template "^6.23.0"
+    babel-traverse "^6.23.1"
+    babel-types "^6.23.0"
+    babylon "^6.11.0"
+    convert-source-map "^1.1.0"
+    debug "^2.1.1"
+    json5 "^0.5.0"
+    lodash "^4.2.0"
+    minimatch "^3.0.2"
+    path-is-absolute "^1.0.0"
+    private "^0.1.6"
+    slash "^1.0.0"
+    source-map "^0.5.0"
+
+babel-core@^6.24.0:
+  version "6.24.0"
+  resolved "https://registry.npmjs.org/babel-core/-/babel-core-6.24.0.tgz#8f36a0a77f5c155aed6f920b844d23ba56742a02"
+  dependencies:
+    babel-code-frame "^6.22.0"
+    babel-generator "^6.24.0"
+    babel-helpers "^6.23.0"
+    babel-messages "^6.23.0"
+    babel-register "^6.24.0"
     babel-runtime "^6.22.0"
     babel-template "^6.23.0"
     babel-traverse "^6.23.1"
@@ -317,6 +341,19 @@ babel-eslint@^7.1.1:
 babel-generator@^6.18.0, babel-generator@^6.23.0:
   version "6.23.0"
   resolved "https://registry.npmjs.org/babel-generator/-/babel-generator-6.23.0.tgz#6b8edab956ef3116f79d8c84c5a3c05f32a74bc5"
+  dependencies:
+    babel-messages "^6.23.0"
+    babel-runtime "^6.22.0"
+    babel-types "^6.23.0"
+    detect-indent "^4.0.0"
+    jsesc "^1.3.0"
+    lodash "^4.2.0"
+    source-map "^0.5.0"
+    trim-right "^1.0.1"
+
+babel-generator@^6.24.0:
+  version "6.24.0"
+  resolved "https://registry.npmjs.org/babel-generator/-/babel-generator-6.24.0.tgz#eba270a8cc4ce6e09a61be43465d7c62c1f87c56"
   dependencies:
     babel-messages "^6.23.0"
     babel-runtime "^6.22.0"
@@ -856,6 +893,18 @@ babel-register@^6.23.0:
   resolved "https://registry.npmjs.org/babel-register/-/babel-register-6.23.0.tgz#c9aa3d4cca94b51da34826c4a0f9e08145d74ff3"
   dependencies:
     babel-core "^6.23.0"
+    babel-runtime "^6.22.0"
+    core-js "^2.4.0"
+    home-or-tmp "^2.0.0"
+    lodash "^4.2.0"
+    mkdirp "^0.5.1"
+    source-map-support "^0.4.2"
+
+babel-register@^6.24.0:
+  version "6.24.0"
+  resolved "https://registry.npmjs.org/babel-register/-/babel-register-6.24.0.tgz#5e89f8463ba9970356d02eb07dabe3308b080cfd"
+  dependencies:
+    babel-core "^6.24.0"
     babel-runtime "^6.22.0"
     core-js "^2.4.0"
     home-or-tmp "^2.0.0"
@@ -1491,9 +1540,9 @@ css-color-names@0.0.4:
   version "0.0.4"
   resolved "https://registry.npmjs.org/css-color-names/-/css-color-names-0.0.4.tgz#808adc2e79cf84738069b646cb20ec27beb629e0"
 
-css-loader@^0.27.1:
-  version "0.27.2"
-  resolved "https://registry.npmjs.org/css-loader/-/css-loader-0.27.2.tgz#1522fafc8dd2323414355e304b6f92a96cef7f40"
+css-loader@^0.27.3:
+  version "0.27.3"
+  resolved "https://registry.npmjs.org/css-loader/-/css-loader-0.27.3.tgz#69ab6f47b69bfb1b5acee61bac2aab14302ff0dc"
   dependencies:
     babel-code-frame "^6.11.0"
     css-selector-tokenizer "^0.7.0"
@@ -1633,13 +1682,13 @@ de-indent@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/de-indent/-/de-indent-1.0.2.tgz#b2038e846dc33baa5796128d0804b455b8c1e21d"
 
-debug@2.3.3, debug@^2.1.1:
+debug@2.3.3, debug@^2.1.1, debug@^2.2.0:
   version "2.3.3"
   resolved "https://registry.npmjs.org/debug/-/debug-2.3.3.tgz#40c453e67e6e13c901ddec317af8986cda9eff8c"
   dependencies:
     ms "0.7.2"
 
-debug@2.6.1, debug@^2.2.0:
+debug@2.6.1:
   version "2.6.1"
   resolved "https://registry.npmjs.org/debug/-/debug-2.6.1.tgz#79855090ba2c4e3115cc7d8769491d58f0491351"
   dependencies:
@@ -1996,9 +2045,9 @@ eslint-config-rem@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/eslint-config-rem/-/eslint-config-rem-3.0.0.tgz#ab963a991f7f7fd266e5dc0906d7551ce33be559"
 
-eslint-config-vue-app@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/eslint-config-vue-app/-/eslint-config-vue-app-1.2.0.tgz#06278914a88b787dfa3e1d38ea49801603bcf3f8"
+eslint-config-vue-app@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.npmjs.org/eslint-config-vue-app/-/eslint-config-vue-app-1.2.1.tgz#a3c7700a28323334a5611690ffd4655d3939bc92"
   dependencies:
     babel-eslint "^7.1.1"
     eslint-config-rem "^3.0.0"
@@ -5569,12 +5618,12 @@ vary@~1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/vary/-/vary-1.1.0.tgz#e1e5affbbd16ae768dd2674394b9ad3022653140"
 
-vbuild@^6.24.1:
-  version "6.24.1"
-  resolved "https://registry.npmjs.org/vbuild/-/vbuild-6.24.1.tgz#b4c0d185a1139cb26f2c8d39b0f028222ccc87ae"
+vbuild@^6.24.7:
+  version "6.24.7"
+  resolved "https://registry.npmjs.org/vbuild/-/vbuild-6.24.7.tgz#a325a61a999599a8df4714c267243ec6c88ebe2b"
   dependencies:
     autoprefixer "^6.7.7"
-    babel-core "^6.23.1"
+    babel-core "^6.24.0"
     babel-load-config "^0.1.0"
     babel-loader "^6.4.0"
     babel-preset-vue-app "^0.5.0"
@@ -5584,9 +5633,9 @@ vbuild@^6.24.1:
     connect-history-api-fallback "^1.3.0"
     copy-webpack-plugin "^4.0.1"
     cosmiconfig "^2.1.1"
-    css-loader "^0.27.1"
+    css-loader "^0.27.3"
     eslint "^3.17.1"
-    eslint-config-vue-app "^1.2.0"
+    eslint-config-vue-app "^1.2.1"
     eslint-loader "^1.6.3"
     eventsource-polyfill "^0.9.6"
     express "^4.15.2"

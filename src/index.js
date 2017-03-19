@@ -68,16 +68,6 @@ function init(config = {}) {
   })
 }
 
-// for backward compat
-// will be remove in docute v3.0
-if (window.$config) {
-  console.warn(
-    'global $config has been deprecated, use `docute.init(config)` instead.\n' +
-    'See more at https://github.com/egoist/docute/releases/tag/v2.10.0'
-  )
-  init(window.$config)
-}
-
 const version = __DOCUTE_VERSION__ // eslint-disable-line no-undef
 const isDev = location.hostname === 'localhost'
 

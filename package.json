@@ -62,7 +62,7 @@
     "jest-cli": "^19.0.2",
     "postcss": "^5.2.16",
     "raw-loader": "^0.5.1",
-    "vbuild": "^6.24.1"
+    "vbuild": "^6.24.7"
   },
   "jest": {
     "testEnvironment": "node"
