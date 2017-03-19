@@ -1,3 +1,15 @@
+## [Version 2.12.0](https://github.com/egoist/docute/releases/tag/v2.12.0) (2017-3-19)
+
+### New features
+
+- support history mode, closed [#49](https://github.com/egoist/docute/issues/49): [`952168b`](https://github.com/egoist/docute/commit/952168b)
+
+### Bug fixes
+
+- only prefix route path: [`d81f880`](https://github.com/egoist/docute/commit/d81f880)
+
+[...full changes](https://github.com/egoist/docute/compare/v2.11.0...v2.12.0)
+
 ## [Version 2.11.0](https://github.com/egoist/docute/releases/tag/v2.11.0) (2017-3-18)
 
 ### New features
