@@ -8,6 +8,7 @@ module.exports = {
   html: false,
   format: 'umd',
   moduleName: 'docsearch',
+  hot: false,
   entry: './src/plugins/docsearch',
   filename: {
     js: 'docsearch.js'

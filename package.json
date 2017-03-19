@@ -49,6 +49,7 @@
     "prismjs": "^1.6.0",
     "promise-polyfill": "^6.0.2",
     "unfetch": "^2.1.2",
+    "url-resolve": "^1.0.0",
     "vue-inline": "^1.0.1",
     "vue-router": "^2.3.0",
     "vuex": "^2.2.1",

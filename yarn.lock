@@ -5515,6 +5515,10 @@ url-parse-lax@^1.0.0:
   dependencies:
     prepend-http "^1.0.1"
 
+url-resolve@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/url-resolve/-/url-resolve-1.0.0.tgz#d396b775019c1b19521c1585e0306bfe324796f5"
+
 url@^0.11.0:
   version "0.11.0"
   resolved "https://registry.npmjs.org/url/-/url-0.11.0.tgz#3838e97cfc60521eb73c525a8e55bfdd9e2e28f1"

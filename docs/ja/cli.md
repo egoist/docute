@@ -24,6 +24,6 @@ docute init ./my-docs
 
 デフォルトコマンドは`docute preview`で、イコール`docute`コマンドです：
 
-<img src="./assets/command-preview.png" alt="preview" width="500">
+<img src="/assets/command-preview.png" alt="preview" width="500">
 
 `--watch`オプションを利用して live reload 機能をオンにします。詳しくは、`docute --help`でご覧ください。

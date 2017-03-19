@@ -24,6 +24,6 @@ docute init ./my-docs
 
 `docute preview` 是預設的命令，也就是相當於直接執行 `docute`。執行 `docute` 的效果:
 
-<img src="./assets/command-preview.png" alt="preview" width="500">
+<img src="/assets/command-preview.png" alt="preview" width="500">
 
 你可以使用 `--watch` 來開啟 live reload 功能，更多這個命令的參數可以執行 `docute --help` 來查看。

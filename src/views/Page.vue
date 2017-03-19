@@ -30,6 +30,7 @@
 </template>
 
 <script>
+  import urlResolve from 'url-resolve'
   import HomeHeader from 'components/HomeHeader.vue'
   import MobileHeader from 'components/MobileHeader.vue'
   import HeaderNav from 'components/HeaderNav.vue'
@@ -97,7 +98,13 @@
         const homeSource = route.meta && (route.meta.name === 'home') && (config.home || './README.md')
 
         const defaultSource = /\/$/.test(route.path) ? ('.' + route.path + 'README.md') : ('.' + route.path + '.md')
-        return matchedSource || homeSource || defaultSource
+        const source = matchedSource || homeSource || defaultSource
+
+        if (/^https?:\/\//.test(source)) {
+          return source
+        }
+        // You will need to set `url` if using history mode
+        return urlResolve(config.url || '.', source)
       },
       currentIcons() {
         const { state } = this.$store

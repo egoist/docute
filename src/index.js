@@ -79,11 +79,13 @@ if (window.$config) {
 }
 
 const version = __DOCUTE_VERSION__ // eslint-disable-line no-undef
+const isDev = location.hostname === 'localhost'
 
 export {
   version,
   router,
   store,
-  init
+  init,
+  isDev
 }
 

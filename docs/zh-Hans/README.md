@@ -373,7 +373,7 @@ If no macthed item was found, it uses the title of `dropdown` menu instead.
 
 To have such dropdown menu:
 
-<img src="assets/dropdown-label-sep.png" alt="label" width="300">
+<img src="/assets/dropdown-label-sep.png" alt="label" width="300">
 
 You will need the `label` and `sep` helper:
 

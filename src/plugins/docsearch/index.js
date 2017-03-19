@@ -4,9 +4,24 @@ const Logo = require('./Logo.vue')
 module.exports = function ({
   apiKey,
   indexName,
-  tags = []
+  tags = [],
+  url
 } = {}) {
   return ({store, registerComponent}) => {
+    // the root url might be localhost or production url
+    // but the docsearch url must be production url
+    let siteUrl = url || store.state.config.url
+    if (!siteUrl) {
+      return console.error('docsearch requires a `url` option')
+    }
+    if (/^http:\/\/localhost/.test(siteUrl)) {
+      return console.error('`url` option cannot be localhost')
+    }
+    if (siteUrl.slice(-1) === '/') {
+      siteUrl = siteUrl.replace(/\/$/, '')
+    }
+    const re = new RegExp(`^${siteUrl}(/#)?`)
+
     registerComponent('sidebar:start', Logo)
     store.registerModule('pluginSearch', {
       actions: {
@@ -19,7 +34,6 @@ module.exports = function ({
 
           dispatch('startSearching')
           const {currentTags} = getters
-          const {url} = rootState.config
           const client = algoliasearch('BH4D9OD16A', apiKey);
 
           client.search([{
@@ -31,7 +45,6 @@ module.exports = function ({
           }]).then(data => {
             const content = data.results[0]
             dispatch('stopSearching', content.hits.map(hit => {
-              const re = new RegExp(`^${url}/#?`)
               const path = hit.url.replace(re, '')
 
               let title = Object.keys(hit.hierarchy).sort()

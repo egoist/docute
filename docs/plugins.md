@@ -40,12 +40,12 @@ docute.init({
       apiKey: 'You API Key',
       indexName: 'Your Index Name',
       // algolia docsearch allows you to search with tag filter
-      tags: ['english', 'zh-Hans', 'zh-Hant']
+      tags: ['english', 'zh-Hans', 'zh-Hant'],
+      // this plugin does require a url too
+      // where docsearch fetches contents
+      url: 'https://docute.js.org'
     })
-  ],
-  // this plugin does require a url too
-  // it should be the url of your website, without / at the end
-  url: 'https://docute.js.org'
+  ]
 })
 ```
 
