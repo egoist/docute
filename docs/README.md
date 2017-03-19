@@ -122,8 +122,6 @@ You can set the `landing` option to `true` or a custom path:
 
 ```js
 docute.init({
-  // true means using `landing.html`
-  landing: true,
   // or custom path
   landing: '_my-landing.html',
   // or even markdown file
@@ -136,6 +134,46 @@ If you enable landing page, the route `/` will match landing page, and `/home` w
 <p class="warning">
   You cannot use <code>script</code> tag in pages, since dynamically added scripts will not be evaluated by your browser.
 </p>
+
+#### Adavanced usage
+
+The `landing` option could also be an object:
+
+```js
+docute.init({
+  landing: {
+    source: 'landing.html'
+  }
+})
+```
+
+Same as using string as the value of `landing`.
+
+```js
+docute.init({
+  landing: {
+    markdown: '## inline markdown',
+    // html: '<h2>inline html</h2>'
+  }
+})
+```
+
+You can use inline content, `html` is similar to `markdown` here, except that it won't be parsed by `marked`.
+
+You can even use it with a Vue component:
+
+```js
+docute.init({
+  landing: {
+    markdown: '## counter\n {{ count }} ',
+    component: {
+      data() {
+        return { count: 0 }
+      }
+    }
+  }
+})
+```
 
 ### Pages
 
@@ -230,6 +268,37 @@ docute.init({
 <p class="warning">
   If you use absolute path in `source` option, it will fetch files from the root of your domain, which means if your website is `http://example.com/docs`, it will fetch `http://example.com/foo.md` with `source: '/foo.md'`
 </p>
+
+#### Inline content
+
+If you don't want it to fetch external files, use `markdown` option:
+
+```js
+docute.init({
+  nav: [{
+    path: '/',
+    markdown: '# Home'
+  }]
+})
+```
+
+#### Use with Vue component
+
+Use the fetched content or inline content as the template of a Vue component:
+
+```js
+docute.init({
+  nav: [{
+    path: '/',
+    markdown: '## counter\n {{ count }}', // this will be parsed to html first
+    component: {
+      data() {
+        return { count: 0 }
+      }
+    }
+  }]
+})
+```
 
 #### Icons
 
