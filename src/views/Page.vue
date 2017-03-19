@@ -96,20 +96,8 @@
         const matchedSource = this.currentNavItem && this.currentNavItem.source
         const homeSource = route.meta && (route.meta.name === 'home') && (config.home || './README.md')
 
-        const defaultSource = /\/$/.test(route.path) ? (route.path + 'README.md') : (route.path + '.md')
-        let source = matchedSource || homeSource || defaultSource
-        const isExternal = /^https?:\/\//.test(source)
-
-        if (!isExternal) {
-          // ./ will remain
-          // / will be ./
-          // abc will be ./abc
-          if (source.charAt(0) === '/' || source.charAt(0) !== '.') {
-            source = source.replace(/^\/?/, './')
-          }
-        }
-
-        return source
+        const defaultSource = /\/$/.test(route.path) ? ('.' + route.path + 'README.md') : ('.' + route.path + '.md')
+        return matchedSource || homeSource || defaultSource
       },
       currentIcons() {
         const { state } = this.$store
