@@ -97,6 +97,14 @@ docute.init({
 })
 ```
 
+### url
+
+The URL to your website, eg: `http://example.com/docs` or `/docs`, the markdown files will be fetched from this url, when using the default value `.`:
+
+- `/` will fetch `./README.md`
+- `/en/guide` will fetch `./en/guide.md`
+- `/es/about/` will fetch `./es/about/README.md`
+
 ### Home Page
 
 `README.md` in your docs folder will be treated as homepage for your website, but sometimes you may need to serve another file as your homepage. For example you're deploying `./docs` as `github pages` but already have `README.md` in your repo, why do you have to populate another file at `./docs/README.md`, right? Then just tell it which file we should use:
@@ -217,6 +225,10 @@ docute.init({
 
 <p class="tip">
   You may wonder why there's `home` option when we already have `source` option, that's because `source` option is only available for nav item, while `home` is always available no matter if you add `/` to nav.
+</p>
+
+<p class="warning">
+  If you use absolute path in `source` option, it will fetch files from the root of your domain, which means if your website is `http://example.com/docs`, it will fetch `http://example.com/foo.md` with `source: '/foo.md'`
 </p>
 
 #### Icons
@@ -447,6 +459,28 @@ docute.init({
 })
 ```
 
+### routerMode
+
+You can use `hash` or `history` mode for router:
+
+- `hash` (default): uses the hash portion of the URL (i.e. window.location.hash) to keep your UI in sync with the URL
+- `history`: uses the HTML5 history API (pushState, replaceState and the popstate event) to keep your UI in sync with the URL
+
+`hash` mode suits all kinds of apps and browsers, especially useful when you can only deploy your app to a static web server like github pages.
+
+To enable `history` mode, you will need to set a `url` for your website:
+
+```js
+docute.init({
+  url: docute.isDev ? location.origin : 'http://my-project.com/docs',
+  routerMode: 'history'
+})
+```
+
+Since all resources would be fetched from a path relative the url, the [default url](#url) is `.` which is good for `hash` mode but will break in `history` mode.
+
+In history mode it should be either a full url (starts with `http`) or an absolute path like `/path/to/docs`
+
 ## Recipes
 
 ### Themes
@@ -599,6 +633,7 @@ docute.version // the version of docute
 docute.store // Vuex store instance
 docute.router // Vue router instance
 docute.init // bootstrap app, you can only call it once
+docute.isDev // if you're running docute as `localhost`
 
 Vue // Vue constructor
 ```
