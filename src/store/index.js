@@ -49,8 +49,8 @@ const store = new Vuex.Store({
         title: document.title,
         ...config
       }
-      if (typeof state.config.showSidebar === 'boolean') {
-        state.showSidebar = state.config.showSidebar
+      if (typeof state.config.sidebar === 'boolean') {
+        state.showSidebar = state.config.sidebar
       }
     },
     TOGGLE_DROPDOWN(state, index) {
@@ -70,7 +70,7 @@ const store = new Vuex.Store({
           title: null,
           search: null,
           icons: null,
-          sidebar: state.config.sidebar,
+          sidebar: state.showSidebar,
           ...page.attributes
         },
         html: page.html,
