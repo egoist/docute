@@ -1,3 +1,11 @@
+## [Version 3.0.1](https://github.com/egoist/docute/releases/tag/v3.0.1) (2017-3-21)
+
+### Bug fixes
+
+- correct sidebar config: [`46794fb`](https://github.com/egoist/docute/commit/46794fb)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.0.0...v3.0.1)
+
 ## [Version 3.0.0](https://github.com/egoist/docute/releases/tag/v3.0.0) (2017-3-19)
 
 ### Breaking changes
