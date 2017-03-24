@@ -557,7 +557,7 @@ In history mode it should be either a full url (starts with `http`) or an absolu
 You can use some CSS to customize the look. Beside the gorgeous default theme now you're looking at, we provide the `theme-github.css` to make it look more similar to the color scheme that github uses. You can load the CSS after `docute.css` to apply it:
 
 ```html
-<link ref="stylesheet" href="https://unpkg.com/docute/dist/theme-github.css" />
+<link rel="stylesheet" href="https://unpkg.com/docute/dist/theme-github.css" />
 ```
 
 To build another theme, you can check out https://github.com/egoist/docute/blob/master/src/css/theme-github.css for reference.
