@@ -125,7 +125,7 @@
             const isExternal = /^https?:\/\//.test(this.currentNavSource)
             const source = isExternal ?
               this.currentNavSource :
-              `${editLink}${this.currentNavSource.replace(/^./, '')}`
+              urlResolve(editLink, this.currentNavSource)
             defaultIcons.push({
               link: source,
               label: isExternal ? 'View page source' : 'Edit this page',
