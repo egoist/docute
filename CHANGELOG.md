@@ -1,3 +1,11 @@
+## [Version 3.0.2](https://github.com/egoist/docute/releases/tag/v3.0.2) (2017-3-24)
+
+### Bug fixes
+
+- resolve source using url-resolve, fixed [#87](https://github.com/egoist/docute/issues/87): [`f21fb57`](https://github.com/egoist/docute/commit/f21fb57)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.0.1...v3.0.2)
+
 ## [Version 3.0.1](https://github.com/egoist/docute/releases/tag/v3.0.1) (2017-3-21)
 
 ### Bug fixes
