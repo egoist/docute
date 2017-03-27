@@ -20,7 +20,8 @@
     "build:docsearch": "vbuild --config build/vue.config.docsearch.js",
     "dev:disqus": "vbuild -d --config build/vue.config.disqus.js",
     "build:disqus": "vbuild --config build/vue.config.disqus.js",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "postinstall": "./node_modules/.bin/opencollective-postinstall || exit 0"
   },
   "files": [
     "dist/docute.js",
@@ -60,11 +61,17 @@
     "cssnano": "^3.10.0",
     "hint.css": "^2.4.1",
     "jest-cli": "^19.0.2",
+    "opencollective-postinstall": "^1.0.13",
     "postcss": "^5.2.16",
     "raw-loader": "^0.5.1",
     "vbuild": "^6.24.7"
   },
   "jest": {
     "testEnvironment": "node"
+  },
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/docute",
+    "logo": "https://opencollective.com/opencollective/logo.txt"
   }
 }
