@@ -12,6 +12,42 @@
 - [You can run code blocks in markdown files](https://github.com/egoist/docute-iframe) 💻
 - Very cute name 🤔
 
+## Sponsors
+
+Become a sponsor and get your logo on our README on Github with a link to your site. [[Become a sponsor](https://opencollective.com/docute#sponsor)]
+
+<a href="https://opencollective.com/docute/sponsor/0/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/1/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/2/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/3/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/4/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/5/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/6/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/7/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/8/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/9/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/9/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/10/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/10/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/11/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/11/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/12/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/12/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/13/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/13/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/14/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/14/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/15/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/15/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/16/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/16/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/17/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/17/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/18/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/18/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/19/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/19/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/20/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/20/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/21/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/21/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/22/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/22/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/23/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/23/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/24/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/24/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/25/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/25/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/26/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/26/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/27/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/27/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/28/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/28/avatar.svg"></a>
+<a href="https://opencollective.com/docute/sponsor/29/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/29/avatar.svg"></a>
+
+
 ## Quick Start
 
 ```bash
@@ -50,22 +86,6 @@ npm run dev
 # then edit files in ./src dir and save to reload
 ```
 
-## Prior art
-
-`docute` wouldn't exist if it wasn't for excellent prior art, docute is inspired by these projects:
-
-- [flatdoc](https://github.com/rstacruz/flatdoc)
-- [docsify](https://github.com/QingWei-Li/docsify)
-- [vue.js](https://vuejs.org/)
-
-## Author
-
-**docute** © [EGOIST](https://github.com/egoist), Released under the [MIT](https://egoist.mit-license.org/) License.<br>
-Authored and maintained by EGOIST with help from contributors ([list](https://github.com/egoist/docute/contributors)).
-
-> [egoistian.com](https://egoistian.com) · GitHub [@egoist](https://github.com/egoist) · Twitter [@rem_rin_rin](https://twitter.com/rem_rin_rin)
-
-
 ## Backers
 
 Support us with a monthly donation and help us continue our activities. [[Become a backer](https://opencollective.com/docute#backer)]
@@ -101,39 +121,18 @@ Support us with a monthly donation and help us continue our activities. [[Become
 <a href="https://opencollective.com/docute/backer/28/website" target="_blank"><img src="https://opencollective.com/docute/backer/28/avatar.svg"></a>
 <a href="https://opencollective.com/docute/backer/29/website" target="_blank"><img src="https://opencollective.com/docute/backer/29/avatar.svg"></a>
 
+## Prior art
 
-## Sponsors
+`docute` wouldn't exist if it wasn't for excellent prior art, docute is inspired by these projects:
 
-Become a sponsor and get your logo on our README on Github with a link to your site. [[Become a sponsor](https://opencollective.com/docute#sponsor)]
+- [flatdoc](https://github.com/rstacruz/flatdoc)
+- [docsify](https://github.com/QingWei-Li/docsify)
+- [vue.js](https://vuejs.org/)
 
-<a href="https://opencollective.com/docute/sponsor/0/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/1/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/2/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/3/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/4/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/5/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/6/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/7/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/8/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/9/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/9/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/10/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/10/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/11/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/11/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/12/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/12/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/13/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/13/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/14/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/14/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/15/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/15/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/16/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/16/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/17/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/17/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/18/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/18/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/19/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/19/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/20/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/20/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/21/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/21/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/22/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/22/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/23/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/23/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/24/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/24/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/25/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/25/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/26/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/26/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/27/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/27/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/28/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/28/avatar.svg"></a>
-<a href="https://opencollective.com/docute/sponsor/29/website" target="_blank"><img src="https://opencollective.com/docute/sponsor/29/avatar.svg"></a>
+## Author
+
+**docute** © [EGOIST](https://github.com/egoist), Released under the [MIT](https://egoist.mit-license.org/) License.<br>
+Authored and maintained by EGOIST with help from contributors ([list](https://github.com/egoist/docute/contributors)).
+
+> [egoistian.com](https://egoistian.com) · GitHub [@egoist](https://github.com/egoist) · Twitter [@rem_rin_rin](https://twitter.com/rem_rin_rin)
 
