@@ -135,7 +135,7 @@ If you enable landing page, the route `/` will match landing page, and `/home` w
   You cannot use <code>script</code> tag in pages, since dynamically added scripts will not be evaluated by your browser.
 </p>
 
-#### Adavanced usage
+#### Advanced usage
 
 The `landing` option could also be an object:
 
