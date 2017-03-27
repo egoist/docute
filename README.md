@@ -68,24 +68,6 @@ For detailed usage please head to https://docute.js.org 😎
 - [vue-scrollto](https://rigor789.github.io/vue-scrollto/#/): Vue scroll-to directive
 - Feel free to add yours here :)
 
-## Contributing
-
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
-
-## Development
-
-The development setup is basically webpack + vue:
-
-```bash
-cd docute
-npm run dev
-# then edit files in ./src dir and save to reload
-```
-
 ## Backers
 
 Support us with a monthly donation and help us continue our activities. [[Become a backer](https://opencollective.com/docute#backer)]
@@ -120,6 +102,24 @@ Support us with a monthly donation and help us continue our activities. [[Become
 <a href="https://opencollective.com/docute/backer/27/website" target="_blank"><img src="https://opencollective.com/docute/backer/27/avatar.svg"></a>
 <a href="https://opencollective.com/docute/backer/28/website" target="_blank"><img src="https://opencollective.com/docute/backer/28/avatar.svg"></a>
 <a href="https://opencollective.com/docute/backer/29/website" target="_blank"><img src="https://opencollective.com/docute/backer/29/avatar.svg"></a>
+
+## Contributing
+
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :D
+
+## Development
+
+The development setup is basically webpack + vue:
+
+```bash
+cd docute
+npm run dev
+# then edit files in ./src dir and save to reload
+```
 
 ## Prior art
 
