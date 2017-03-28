@@ -688,7 +688,7 @@ And you get:
 
 #### Navigation links
 
-Links like `[Go](#heading-slug)` will navagate you to `?id=heading-slug` in current page.
+Links like `[Go](#heading-slug)` will navigate you to `?id=heading-slug` in current page.
 
 Links like `[Go](/page#heaing-slug)` will navigate you to `/page?id=heading-slug` 
 
