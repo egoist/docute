@@ -12,6 +12,7 @@ docute.init({
   repo: 'egoist/docute',
   twitter: 'rem_rin_rin',
   'edit-link': 'https://github.com/egoist/docute/blob/master/docs',
+  tocVisibleDepth: 3,
   nav: {
     default: [
       {
