@@ -1,8 +1,17 @@
-# docute
+<h1 align="center">docute</h1>
 
-[![Backers on Open Collective](https://opencollective.com/docute/backers/badge.svg)](#backers)
-[![Sponsors on Open Collective](https://opencollective.com/docute/sponsors/badge.svg)](#sponsors)
-[![NPM version](https://img.shields.io/npm/v/docute.svg?style=flat)](https://npmjs.com/package/docute) [![NPM download](https://img.shields.io/npm/dm/docute.svg?style=flat)](https://npmjs.com/package/docute) [![Build Status](https://img.shields.io/circleci/project/egoist/docute/master.svg?style=flat)](https://circleci.com/gh/egoist/docute) [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/egoist/donate)
+
+<p align="center"><a href="#backers"><img src="https://opencollective.com/docute/backers/badge.svg" alt="Backers on Open Collective"></a>
+<a href="#sponsors"><img src="https://opencollective.com/docute/sponsors/badge.svg" alt="Sponsors on Open Collective"></a>
+<a href="https://npmjs.com/package/docute"><img src="https://img.shields.io/npm/v/docute.svg?style=flat" alt="NPM version"></a> <a href="https://npmjs.com/package/docute"><img src="https://img.shields.io/npm/dm/docute.svg?style=flat" alt="NPM download"></a> <a href="https://circleci.com/gh/egoist/docute"><img src="https://img.shields.io/circleci/project/egoist/docute/master.svg?style=flat" alt="Build Status"></a> <a href="https://github.com/egoist/donate"><img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat" alt="donate"></a></p>
+
+<p align="center">
+  <b>Special thanks to the generous sponsorship by:</b>
+  <br><br>
+  <a href="https://www.yousails.com">
+    <img src="https://yousails.com/banners/brand.png" width=350>
+  </a>
+</p>
 
 ## Features
 
