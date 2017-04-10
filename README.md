@@ -75,6 +75,7 @@ For detailed usage please head to https://docute.js.org 😎
 - [service-mocker](https://service-mocker.js.org/): 🚀 The next generation front-end API mocking framework.
 - [vuejs-component-style-guide](https://pablohpsilva.github.io/vuejs-component-style-guide/#/): Vue component style guide
 - [vue-scrollto](https://rigor789.github.io/vue-scrollto/#/): Vue scroll-to directive
+- [SAM Pattern (Korean)](https://changjoo-park.github.io/SAM.js-korean/#/): SAM Pattern docs in Korean 
 - Feel free to add yours here :)
 
 ## Backers
