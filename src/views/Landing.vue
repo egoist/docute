@@ -47,7 +47,9 @@
 
         if (source) {
           nprogress.start()
-          const res = await fetch(source)
+          const res = await fetch(source, {
+            credentials: 'include'
+          })
           nprogress.done()
 
           if (res.status === 404) {
