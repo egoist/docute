@@ -1,3 +1,11 @@
+## [Version 3.0.3](https://github.com/egoist/docute/releases/tag/v3.0.3) (2017-4-13)
+
+### Bug fixes
+
+- Support sending credentials with a fetch request: [`2ba661d`](https://github.com/egoist/docute/commit/2ba661d) ([#97](https://github.com/egoist/docute/issues/97))
+
+[...full changes](https://github.com/egoist/docute/compare/v3.0.2...v3.0.3)
+
 ## [Version 3.0.2](https://github.com/egoist/docute/releases/tag/v3.0.2) (2017-3-24)
 
 ### Bug fixes
