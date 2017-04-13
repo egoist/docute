@@ -214,7 +214,9 @@
         if (this.currentNavItem && this.currentNavItem.markdown) {
           text = this.currentNavItem.markdown
         } else {
-          const res = await fetch(this.currentNavSource)
+          const res = await fetch(this.currentNavSource, {
+            credentials: 'include'
+          })
           nprogress.inc()
 
           if (res.status === 404) {
