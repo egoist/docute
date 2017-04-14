@@ -15,3 +15,9 @@ export function findMax(array, key) {
 export function isType(obj, type) {
   return `[object ${type}]` === Object.prototype.toString.call(obj)
 }
+
+export function fetchCredentials(url) {
+  const crossDomain = /^https?:\/\//.test(url) &&
+    !(new RegExp(`^${location.origin}`).test(url))
+  return crossDomain ? false : 'include'
+}

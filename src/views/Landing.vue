@@ -7,6 +7,7 @@
   import marked from 'utils/marked'
   import { mapState } from 'vuex'
   import nprogress from 'nprogress'
+  import { fetchCredentials } from 'utils'
 
   export default {
     name: 'landing',
@@ -48,7 +49,7 @@
         if (source) {
           nprogress.start()
           const res = await fetch(source, {
-            credentials: 'include'
+            credentials: fetchCredentials(source)
           })
           nprogress.done()
 

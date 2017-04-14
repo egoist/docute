@@ -49,7 +49,7 @@
   import LinkIcon from '!raw-loader!svg/link.svg'
   import slugify from 'utils/slugify'
   import event from 'utils/event'
-  import { isType } from 'utils'
+  import { isType, fetchCredentials } from 'utils'
   import componentManager from 'utils/component-manager'
   import parsers from 'utils/parsers'
 
@@ -215,7 +215,7 @@
           text = this.currentNavItem.markdown
         } else {
           const res = await fetch(this.currentNavSource, {
-            credentials: 'include'
+            credentials: fetchCredentials(this.currentNavSource)
           })
           nprogress.inc()
 
