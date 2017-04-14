@@ -3,7 +3,6 @@ import Vuex from 'vuex'
 import defined from 'defined'
 import { isType } from 'utils'
 import jump from 'utils/jump'
-import nprogress from 'nprogress'
 import event from 'utils/event'
 
 Vue.use(Vuex)
@@ -148,12 +147,10 @@ const store = new Vuex.Store({
       }, 400))
     },
     startSearching({ commit }) {
-      nprogress.start()
       commit('START_SEARCHING')
       event.emit('search:started')
     },
     stopSearching({ commit }, payload) {
-      nprogress.done()
       commit('STOP_SEARCHING', payload)
       event.emit('search:stopped', payload)
     },
