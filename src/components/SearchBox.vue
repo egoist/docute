@@ -9,7 +9,7 @@
       v-model="keyword"
       @focus="toggleFocus"
       @blur="toggleFocus"
-      @keydown.enter="handleSearch(keyword)">
+      @input="handleSearch(keyword)">
     <svg-icon name="close" class="svg-icon close" v-if="keyword" @click="handleClear"></svg-icon>
     <svg-icon name="search" class="svg-icon do-search" v-else @click="handleSearch(keyword)"></svg-icon>
   </div>
@@ -23,7 +23,8 @@
     data() {
       return {
         keyword: this.$route.query.keyword || '',
-        focus: false
+        focus: false,
+        debouncedURLChange: setTimeout(() => {}, 0),
       }
     },
     mounted() {
@@ -38,14 +39,16 @@
     methods: {
       ...mapActions(['search', 'updateSearchKeyword', 'searchReset']),
       handleSearch(keyword) {
-        if (keyword === this.$route.query.keyword) {
-          // when keyword is already the same as in url query
-          this.search(keyword)
-        } else {
-          // otherwise update url query
-          this.$router.push({ query: { ...this.$route.query, keyword } })
-          this.search(keyword)
+        clearTimeout(this.debouncedURLChange);
+
+        if (keyword !== this.$route.query.keyword) {
+          // update the url if there wasn't a new search in the last 700ms
+          this.debouncedURLChange = setTimeout(() => {
+            this.$router.push({ query: { ...this.$route.query, keyword } });
+          }, 700);
         }
+
+        this.search(keyword);
       },
       toggleFocus() {
         this.focus = !this.focus
