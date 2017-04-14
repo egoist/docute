@@ -81,7 +81,7 @@
       height: 40px;
       width: 40px;
       position: absolute;
-      right: 10px;
+      right: 0;
       color: rgba(0,0,0,.22);
       svg {
         width: 14px;
@@ -101,5 +101,6 @@
     width: 100%;
     outline: none;
     font-size: 14px;
+    padding-right: 45px;
   }
 </style>

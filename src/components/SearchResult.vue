@@ -1,6 +1,6 @@
 <template>
   <div class="search-result">
-    <div class="empty-search-result inner-x" v-if="!searching && searchResult.length === 0">
+    <div class="empty-search-result inner-x" v-if="searchResult.length === 0">
       {{ searchState.emptyState }}
     </div>
     <div
@@ -19,7 +19,7 @@
 
   export default {
     computed: {
-      ...mapState(['searching', 'pluginSearch', 'searchState']),
+      ...mapState(['pluginSearch', 'searchState']),
       ...mapState({
         searchResult: state => state.searchResult.filter(item => {
           return Boolean(item.title) || Boolean(item.content)
