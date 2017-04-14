@@ -24,7 +24,7 @@
       return {
         keyword: this.$route.query.keyword || '',
         focus: false,
-        debouncedURLChange: setTimeout(() => {}, 0),
+        debouncedURLChange: setTimeout(() => {}, 0)
       }
     },
     mounted() {
@@ -39,16 +39,16 @@
     methods: {
       ...mapActions(['search', 'updateSearchKeyword', 'searchReset']),
       handleSearch(keyword) {
-        clearTimeout(this.debouncedURLChange);
+        clearTimeout(this.debouncedURLChange)
 
         if (keyword !== this.$route.query.keyword) {
           // update the url if there wasn't a new search in the last 700ms
           this.debouncedURLChange = setTimeout(() => {
-            this.$router.push({ query: { ...this.$route.query, keyword } });
-          }, 700);
+            this.$router.push({ query: { ...this.$route.query, keyword } })
+          }, 700)
         }
 
-        this.search(keyword);
+        this.search(keyword)
       },
       toggleFocus() {
         this.focus = !this.focus
