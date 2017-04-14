@@ -1,3 +1,12 @@
+## [Version 3.0.5](https://github.com/egoist/docute/releases/tag/v3.0.5) (2017-4-15)
+
+### Bug fixes
+
+- feat(DocSearch): search as you type: [`88dcc3a`](https://github.com/egoist/docute/commit/88dcc3a) ([#99](https://github.com/egoist/docute/issues/99))
+- tweak search styles: [`8cf78c6`](https://github.com/egoist/docute/commit/8cf78c6)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.0.4...v3.0.5)
+
 ## [Version 3.0.4](https://github.com/egoist/docute/releases/tag/v3.0.4) (2017-4-14)
 
 ### Bug fixes
