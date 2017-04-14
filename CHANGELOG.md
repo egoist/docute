@@ -1,3 +1,11 @@
+## [Version 3.0.4](https://github.com/egoist/docute/releases/tag/v3.0.4) (2017-4-14)
+
+### Bug fixes
+
+- do not use credentials in cross-domain: [`df5d528`](https://github.com/egoist/docute/commit/df5d528)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.0.3...v3.0.4)
+
 ## [Version 3.0.3](https://github.com/egoist/docute/releases/tag/v3.0.3) (2017-4-13)
 
 ### Bug fixes
