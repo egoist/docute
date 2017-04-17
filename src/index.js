@@ -1,5 +1,5 @@
 // Polyfills
-import './promise'
+import 'web-polyfill'
 import 'unfetch/polyfill'
 import 'element-closest'
 

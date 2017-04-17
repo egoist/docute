@@ -5,7 +5,6 @@ module.exports = {
   port: 5002,
   dist: 'plugins',
   html: false,
-  cleanDist: false,
   postcss: config.postcss,
   format: 'umd',
   moduleName: 'disqus',

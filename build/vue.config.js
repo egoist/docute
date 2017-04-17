@@ -14,7 +14,7 @@ module.exports = {
   templateCompiler: true,
   port: 5000,
   define: {
-    '__DOCUTE_VERSION__': JSON.stringify(pkg.version)
+    '__DOCUTE_VERSION__': pkg.version
   },
   webpack(config) {
     config.resolve.modules.push(path.resolve('src'))
@@ -23,7 +23,7 @@ module.exports = {
   postcss: [
     require('cssbag')()
   ],
-  setup(app) {
+  setupDevServer(app) {
     app.use('/', express.static('docs'))
   },
   production: {

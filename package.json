@@ -14,11 +14,11 @@
   },
   "scripts": {
     "test": "npm run build",
-    "build": "vbuild -c build/vue.config.js --eslint && node build/themes",
-    "dev": "vbuild -d --config build/vue.config.js",
-    "dev:docsearch": "vbuild -d --config build/vue.config.docsearch.js",
+    "build": "vbuild --config build/vue.config.js && node build/themes",
+    "dev": "vbuild dev --config build/vue.config.js",
+    "dev:docsearch": "vbuild dev --config build/vue.config.docsearch.js",
     "build:docsearch": "vbuild --config build/vue.config.docsearch.js",
-    "dev:disqus": "vbuild -d --config build/vue.config.disqus.js",
+    "dev:disqus": "vbuild dev --config build/vue.config.disqus.js",
     "build:disqus": "vbuild --config build/vue.config.disqus.js",
     "prepublish": "npm run build"
   },
@@ -37,7 +37,7 @@
     "doc"
   ],
   "dependencies": {
-    "algoliasearch": "^3.21.1",
+    "algoliasearch": "^3.22.1",
     "babel-runtime": "^6.20.0",
     "defined": "^1.0.0",
     "dom-scroll-into-view": "^1.2.1",
@@ -47,22 +47,22 @@
     "lodash.throttle": "^4.1.1",
     "nprogress": "^0.2.0",
     "prismjs": "^1.6.0",
-    "promise-polyfill": "^6.0.2",
     "unfetch": "^2.1.2",
     "url-resolve": "^1.0.0",
     "vue-inline": "^1.0.1",
-    "vue-router": "^2.3.0",
-    "vuex": "^2.2.1",
-    "vuex-router-sync": "^4.1.2"
+    "vue-router": "^2.4.0",
+    "vuex": "^2.3.0",
+    "vuex-router-sync": "^4.1.2",
+    "web-polyfill": "^0.1.0"
   },
   "devDependencies": {
     "cssbag": "^0.1.0",
     "cssnano": "^3.10.0",
     "hint.css": "^2.4.1",
     "jest-cli": "^19.0.2",
-    "postcss": "^5.2.16",
+    "postcss": "^5.2.17",
     "raw-loader": "^0.5.1",
-    "vbuild": "^6.24.7"
+    "vbuild": "^7.0.6"
   },
   "jest": {
     "testEnvironment": "node"
