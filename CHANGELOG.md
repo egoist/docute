@@ -1,3 +1,11 @@
+## [Version 3.0.7](https://github.com/egoist/docute/releases/tag/v3.0.7) (2017-4-17)
+
+### Bug fixes
+
+- upgrade vbuild: [`b360c82`](https://github.com/egoist/docute/commit/b360c82)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.0.6...v3.0.7)
+
 ## [Version 3.0.6](https://github.com/egoist/docute/releases/tag/v3.0.6) (2017-4-15)
 
 ### Bug fixes
