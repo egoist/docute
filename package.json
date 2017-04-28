@@ -50,19 +50,19 @@
     "unfetch": "^2.1.2",
     "url-resolve": "^1.0.0",
     "vue-inline": "^1.0.1",
-    "vue-router": "^2.4.0",
-    "vuex": "^2.3.0",
+    "vue-router": "^2.5.2",
+    "vuex": "^2.3.1",
     "vuex-router-sync": "^4.1.2",
     "web-polyfill": "^0.1.0"
   },
   "devDependencies": {
     "cssbag": "^0.1.0",
     "cssnano": "^3.10.0",
-    "hint.css": "^2.4.1",
+    "hint.css": "^2.5.0",
     "jest-cli": "^19.0.2",
     "postcss": "^5.2.17",
     "raw-loader": "^0.5.1",
-    "vbuild": "^7.0.6"
+    "vbuild": "^7.2.4"
   },
   "jest": {
     "testEnvironment": "node"
