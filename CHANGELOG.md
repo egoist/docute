@@ -1,3 +1,11 @@
+## [Version 3.0.10](https://github.com/egoist/docute/releases/tag/v3.0.10) (2017-4-28)
+
+### Bug fixes
+
+- fix build: [`90ce08c`](https://github.com/egoist/docute/commit/90ce08c)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.0.8...v3.0.10)
+
 ## [Version 3.0.8](https://github.com/egoist/docute/releases/tag/v3.0.8) (2017-4-28)
 
 ### Bug fixes
