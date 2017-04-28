@@ -1,3 +1,11 @@
+## [Version 3.0.8](https://github.com/egoist/docute/releases/tag/v3.0.8) (2017-4-28)
+
+### Bug fixes
+
+- upgrade deps: [`53031ab`](https://github.com/egoist/docute/commit/53031ab)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.0.7...v3.0.8)
+
 ## [Version 3.0.7](https://github.com/egoist/docute/releases/tag/v3.0.7) (2017-4-17)
 
 ### Bug fixes
