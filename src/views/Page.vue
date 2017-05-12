@@ -11,7 +11,10 @@
         :current-nav="currentNav"
         class="is-mobile inner-x">
       </header-nav>
-      <toc v-if="showToc" :headings="page.headings"></toc>
+
+      <custom-toc v-if="showCustomToc" :toc="showToc" />
+      <toc v-else-if="showToc" :headings="page.headings" />
+
       <custom-components place="sidebar:end" v-if="loaded"></custom-components>
     </figure>
     <mobile-header :current-icons="currentIcons" v-if="loaded"></mobile-header>
@@ -39,6 +42,7 @@
   import SearchResult from 'components/SearchResult.vue'
   import SidebarToggle from 'components/SidebarToggle.vue'
   import CustomComponents from 'components/CustomComponents'
+  import CustomToc from 'components/CustomToc'
   import highlight from 'utils/highlight'
   import frontMatter from 'utils/front-matter'
   import { mapState, mapGetters, mapActions } from 'vuex'
@@ -89,7 +93,7 @@
         id: state => state.route.query.id
       }),
       ...mapState(['config', 'page', 'loaded', 'jumping', 'activeId', 'pluginSearch', 'searchResult', 'searchKeyword']),
-      ...mapGetters(['documentTitle', 'showSidebar', 'currentNav', 'showToc', 'currentNavItem']),
+      ...mapGetters(['documentTitle', 'showSidebar', 'currentNav', 'showToc', 'showCustomToc', 'currentNavItem']),
       currentNavSource() {
         const route = this.$route
         const config = this.config
@@ -285,7 +289,8 @@
       SearchBox,
       SearchResult,
       SidebarToggle,
-      CustomComponents
+      CustomComponents,
+      CustomToc
     }
   }
 

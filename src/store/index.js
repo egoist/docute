@@ -218,6 +218,9 @@ const store = new Vuex.Store({
         return config.toc
       }
       return true
+    },
+    showCustomToc(state, { showToc }) {
+      return typeof showToc === 'string'
     }
   }
 })

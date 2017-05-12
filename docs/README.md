@@ -225,6 +225,37 @@ docute.init({
 
 To disable TOC entirely, set `toc` to `false`.
 
+##### Custom TOC
+
+Sometimes if you don't want to use auto-generated toc, you can specific a custom toc to display on the sidebar:
+
+```js
+docute.init({
+  toc: `
+- Install
+- Guide
+  - How to do A
+  - How to do B
+`
+})
+```
+
+To make it eaiser to write, you can set get toc content from an HTML element:
+
+```html
+<script id="my-toc" type="text/x-markdown">
+- Install
+- Guide
+  - How to do A
+  - How to do B
+</script>
+<script>
+  docute.init({
+    toc: document.getElementById('my-toc').textContent
+  })
+</script>
+```
+
 ### Navbar
 
 You may need a navbar as the entrance for the pages:
