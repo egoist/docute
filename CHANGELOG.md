@@ -1,3 +1,11 @@
+## [Version 3.2.0](https://github.com/egoist/docute/releases/tag/v3.2.0) (2017-5-12)
+
+### New features
+
+- update github-markdown-css: [`74ba2e9`](https://github.com/egoist/docute/commit/74ba2e9)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.1.0...v3.2.0)
+
 ## [Version 3.1.0](https://github.com/egoist/docute/releases/tag/v3.1.0) (2017-5-12)
 
 ### New features
