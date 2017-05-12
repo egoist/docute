@@ -228,7 +228,7 @@ const store = new Vuex.Store({
       return toc
     },
     showCustomToc(state, { showToc }) {
-      return typeof showToc === 'string'
+      return typeof showToc === 'string' || typeof showToc === 'object'
     }
   }
 })

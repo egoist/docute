@@ -118,14 +118,16 @@ docute.init({
 
 ### Landing Page
 
-You can set the `landing` option to `true` or a custom path:
+You can set the `landing` option to `true` or a custom path or a markdown string:
 
 ```js
 docute.init({
   // or custom path
   landing: '_my-landing.html',
   // or even markdown file
-  landing: 'landing.md'
+  landing: 'landing.md',
+  // or inline markdown
+  landing: '# this is landing page'
 })
 ```
 
@@ -153,6 +155,7 @@ Same as using string as the value of `landing`.
 docute.init({
   landing: {
     markdown: '## inline markdown',
+    // or:
     // html: '<h2>inline html</h2>'
   }
 })
@@ -238,6 +241,11 @@ docute.init({
   - How to do B
 `
 })
+
+// or a remote file:
+docute.init({
+  toc: './toc.md'
+})
 ```
 
 To make it eaiser to write, you can get toc content from an HTML element:
@@ -256,7 +264,9 @@ To make it eaiser to write, you can get toc content from an HTML element:
 </script>
 ```
 
-`toc` could also be a function which accepts [$route](https://router.vuejs.org/en/api/route-object.html#route-object-properties) as the only argument.
+All the value types that are supported in [landing](#landing-page) option are supported here as well.
+
+Besides, `toc` could also be a function which accepts [$route](https://router.vuejs.org/en/api/route-object.html#route-object-properties) as the only argument.
 
 <p class="warning">
   Currently custom toc is not supported in front-matter, however you can enable custom toc globally by setting `toc` in `docute.init()`, and set `toc` to `true` in front-matter when you need auto-generated toc for specfic page.

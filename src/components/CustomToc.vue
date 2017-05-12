@@ -1,23 +1,42 @@
 <template>
-  <div :class="$style['custom-toc']" v-html="content"></div>
+  <component
+    :class="$style['custom-toc']"
+    v-if="content.component"
+    :is="content.component" />
+  <div
+    v-else-if="content.html"
+    :class="$style['custom-toc']"
+    v-html="content.html"></div>
 </template>
 
 <script>
-  import marked from 'utils/marked'
+  import parseResource from 'utils/parse-resource'
 
   export default {
     props: {
       toc: {
-        type: String,
+        type: [String, Object],
         required: true,
       }
     },
     data() {
       return {
-        content: marked(this.toc, {
-          context: {
-            path: this.$route.path,
-            routerMode: this.$router.mode
+        content: {}
+      }
+    },
+    created() {
+      this.fetchResource()
+    },
+    methods: {
+      async fetchResource() {
+        this.content = await parseResource(this.toc, {
+          progress: false,
+          componentName: 'custom-toc-content',
+          marked: {
+            context: {
+              path: this.$route.path,
+              routerMode: this.$router.mode
+            }
           }
         })
       }
