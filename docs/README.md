@@ -2,7 +2,7 @@
 search: english
 ---
 
-# docute
+# Docute
 
 Writing docs without build process.
 

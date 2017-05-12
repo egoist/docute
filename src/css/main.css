@@ -1,3 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body, #app, .page {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font: 14px/1.4 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  text-rendering: geometricPrecision;
+}
+
+/* Maybe? */
+/*@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 2dppx) {
+  body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+}*/
+
+a {
+  color: #34495e;
+  text-decoration: none;
+}
+
 .inner-x {
   padding-left: 20px;
   padding-right: 20px;
