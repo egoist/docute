@@ -1,3 +1,11 @@
+## [Version 3.2.1](https://github.com/egoist/docute/releases/tag/v3.2.1) (2017-5-12)
+
+### Bug fixes
+
+- css tweaks: [`10fd01a`](https://github.com/egoist/docute/commit/10fd01a)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.2.0...v3.2.1)
+
 ## [Version 3.2.0](https://github.com/egoist/docute/releases/tag/v3.2.0) (2017-5-12)
 
 ### New features
