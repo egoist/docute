@@ -25,7 +25,7 @@ export default async function (resource, {
   *   {any + component}: use as component's template
   */
 
-  if (resource === true) landing = fallback
+  if (resource === true) resource = fallback
 
   if (typeof resource === 'string') {
     source = resource
@@ -62,7 +62,7 @@ export default async function (resource, {
       component = {
         name: componentName,
         ...resource.component,
-        template: `<div class="landing">${html}</div>`
+        template: `<div>${html}</div>`
       }
     }
   }
