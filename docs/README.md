@@ -223,11 +223,11 @@ docute.init({
 })
 ```
 
-To disable TOC entirely, set `toc` to `false`.
+It's `true` by default, to disable TOC entirely, set `toc` to `false`.
 
 ##### Custom TOC
 
-Sometimes if you don't want to use auto-generated toc, you can specific a custom toc to display on the sidebar:
+If you don't want to use auto-generated toc, you can specific a custom toc to display on the sidebar:
 
 ```js
 docute.init({
@@ -240,7 +240,7 @@ docute.init({
 })
 ```
 
-To make it eaiser to write, you can set get toc content from an HTML element:
+To make it eaiser to write, you can get toc content from an HTML element:
 
 ```html
 <script id="my-toc" type="text/x-markdown">
@@ -255,6 +255,12 @@ To make it eaiser to write, you can set get toc content from an HTML element:
   })
 </script>
 ```
+
+`toc` could also be a function which accepts [$route](https://router.vuejs.org/en/api/route-object.html#route-object-properties) as the only argument.
+
+<p class="warning">
+  Currently custom toc is not supported in front-matter, however you can enable custom toc globally by setting `toc` in `docute.init()`, and set `toc` to `true` in front-matter when you need auto-generated toc for specfic page.
+</p>
 
 ### Navbar
 

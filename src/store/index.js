@@ -210,14 +210,22 @@ const store = new Vuex.Store({
       }
       return state.showSidebar
     },
-    showToc({ config, page: { attributes } }) {
+    showToc({ config, page: { attributes }, route }) {
+      let toc = true
+
       if (attributes.toc !== undefined) {
-        return attributes.toc
+        toc = attributes.toc
       }
+
       if (config.toc !== undefined) {
-        return config.toc
+        toc = config.toc
       }
-      return true
+
+      if (typeof toc === 'function') {
+        toc = toc(route)
+      }
+
+      return toc
     },
     showCustomToc(state, { showToc }) {
       return typeof showToc === 'string'
