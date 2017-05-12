@@ -296,10 +296,6 @@
 
 </script>
 
-<style src="css/nprogress.css"></style>
-<style src="css/highlight.css"></style>
-<style src="css/markdown.css"></style>
-<style src="hint.css/hint.css"></style>
 <style>
   .page {
     position: absolute;

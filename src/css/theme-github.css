@@ -2,11 +2,6 @@ $github-blue: #0366d6;
 $code-string-blue: #183691;
 $light-blue: #f6f8fa;
 
-/* background color of code block */
-.markdown-body pre {
-  background-color: $light-blue;
-}
-
 /* anchors in markdown */
 .markdown-body a,
 .markdown-body .markdown-heading:focus {
