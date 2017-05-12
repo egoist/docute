@@ -235,10 +235,10 @@ If you don't want to use auto-generated toc, you can specific a custom toc to di
 ```js
 docute.init({
   toc: `
-- Install
-- Guide
-  - How to do A
-  - How to do B
+- [Install](/install)
+- [Guide](/guide)
+  - [How to do A](/guide/how-to-do-a)
+  - [How to do B](/guide/how-to-do-b)
 `
 })
 
