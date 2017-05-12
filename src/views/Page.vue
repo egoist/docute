@@ -296,21 +296,6 @@
 <style src="css/markdown.css"></style>
 <style src="hint.css/hint.css"></style>
 <style>
-  * {
-    box-sizing: border-box;
-  }
-  html, body, #app, .page {
-    height: 100%;
-  }
-  body {
-    margin: 0;
-    font: 14px/1.4 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
-    text-rendering: geometricPrecision;
-  }
-  a {
-    color: #34495e;
-    text-decoration: none;
-  }
   .page {
     position: absolute;
     top: 0;

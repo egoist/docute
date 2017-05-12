@@ -14,12 +14,12 @@
   },
   "scripts": {
     "test": "npm run build",
-    "build": "vbuild --config build/vue.config.js && node build/themes",
-    "dev": "vbuild dev --config build/vue.config.js",
-    "dev:docsearch": "vbuild dev --config build/vue.config.docsearch.js",
-    "build:docsearch": "vbuild --config build/vue.config.docsearch.js",
-    "dev:disqus": "vbuild dev --config build/vue.config.disqus.js",
-    "build:disqus": "vbuild --config build/vue.config.disqus.js",
+    "build": "poi build --config build/vue.config.js && node build/themes",
+    "dev": "poi --config build/vue.config.js",
+    "dev:docsearch": "poi --config build/vue.config.docsearch.js",
+    "build:docsearch": "poi build --config build/vue.config.docsearch.js",
+    "dev:disqus": "poi --config build/vue.config.disqus.js",
+    "build:disqus": "poi build --config build/vue.config.disqus.js",
     "prepublish": "npm run build"
   },
   "files": [
@@ -60,9 +60,9 @@
     "cssnano": "^3.10.0",
     "hint.css": "^2.5.0",
     "jest-cli": "^19.0.2",
+    "poi": "^8.0.0-rc.9",
     "postcss": "^5.2.17",
-    "raw-loader": "^0.5.1",
-    "vbuild": "^7.2.4"
+    "raw-loader": "^0.5.1"
   },
   "jest": {
     "testEnvironment": "node"
