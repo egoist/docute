@@ -1,3 +1,12 @@
+## [Version 3.1.0](https://github.com/egoist/docute/releases/tag/v3.1.0) (2017-5-12)
+
+### New features
+
+- Support custom toc: [`a9e58c5`](https://github.com/egoist/docute/commit/a9e58c5)
+- refactor landing and toc option: [`b5e9030`](https://github.com/egoist/docute/commit/b5e9030)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.0.10...v3.1.0)
+
 ## [Version 3.0.10](https://github.com/egoist/docute/releases/tag/v3.0.10) (2017-4-28)
 
 ### Bug fixes
