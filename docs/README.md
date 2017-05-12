@@ -252,10 +252,10 @@ To make it eaiser to write, you can get toc content from an HTML element:
 
 ```html
 <script id="my-toc" type="text/x-markdown">
-- Install
-- Guide
-  - How to do A
-  - How to do B
+- [Install](/install)
+- [Guide](/guide)
+  - [How to do A](/guide/how-to-do-a)
+  - [How to do B](/guide/how-to-do-b)
 </script>
 <script>
   docute.init({
