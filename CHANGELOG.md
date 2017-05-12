@@ -1,3 +1,11 @@
+## [Version 3.2.2](https://github.com/egoist/docute/releases/tag/v3.2.2) (2017-5-12)
+
+### Bug fixes
+
+- fix parseResource: [`32789dc`](https://github.com/egoist/docute/commit/32789dc)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.2.1...v3.2.2)
+
 ## [Version 3.2.1](https://github.com/egoist/docute/releases/tag/v3.2.1) (2017-5-12)
 
 ### Bug fixes
