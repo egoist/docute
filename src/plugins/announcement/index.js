@@ -1,5 +1,4 @@
 import './style.css'
-import SvgIcon from 'components/SvgIcon'
 import defined from 'defined'
 
 export default () => {
@@ -9,6 +8,7 @@ export default () => {
       name: 'announcement',
       render() {
         const { config, page: { attributes } } = this.$store.state
+
         let announcement = defined(attributes.announcement, config.announcement)
         if (!announcement) return
 
