@@ -68,13 +68,12 @@
   .mobile-header {
     box-shadow: 0 0 2px rgba(0,0,0,0.25);
     padding: 0 10px;
-    height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     top: 0;
-    height: 50px;
+    height: 40px;
     left: 0;
     right: 0;
     z-index: 9900;
