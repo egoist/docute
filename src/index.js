@@ -9,6 +9,7 @@ import { mapState, mapGetters, mapActions, mapMutations } from 'vuex'
 import { sync } from 'vuex-router-sync'
 
 // Ours
+import builtInPlugins from 'plugins/built-in'
 import { registerComponent } from 'utils/component-manager'
 import { beforeParse, afterParse } from 'utils/parsers'
 import event from 'utils/event'
@@ -34,24 +35,22 @@ function init(config = {}) {
     Vue.config.devtools = true
   }
 
-  const plugins = store.state.config.plugins
-  if (Array.isArray(plugins)) {
-    for (const plugin of plugins) {
-      if (typeof plugin === 'function') {
-        plugin({
-          Vue,
-          store,
-          router,
-          registerComponent,
-          event,
-          mapState,
-          mapGetters,
-          mapActions,
-          mapMutations,
-          beforeParse,
-          afterParse
-        })
-      }
+  const plugins = store.state.config.plugins || []
+  for (const plugin of [...builtInPlugins, ...plugins]) {
+    if (typeof plugin === 'function') {
+      plugin({
+        Vue,
+        store,
+        router,
+        registerComponent,
+        event,
+        mapState,
+        mapGetters,
+        mapActions,
+        mapMutations,
+        beforeParse,
+        afterParse
+      })
     }
   }
 

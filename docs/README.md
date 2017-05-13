@@ -366,7 +366,7 @@ To fully customize the `label`, `link` or use custom svg icons, see below.
 
 ##### Custom Icons
 
-The built-in svg icons: `github` `twitter` `edit` `menu` `link` `search` `close`, which you can use in the `icon` attribute in `icons` option:
+The built-in svg icons: `github` `twitter` `edit` `menu` `link` `search` `close` `info`, which you can use in the `icon` attribute in `icons` option:
 
 ```js
 docute.init({
@@ -550,6 +550,36 @@ nav: chinese
 你好世界！
 ```
 
+### Display Site Announcement
+
+To display an announcement at the top of doc content:
+
+```js
+docute.init({
+  announcement: 'Welcome to the documentation of XXX!'
+})
+
+// Or with type:
+docute.init({
+  announcement: {
+    type: 'warning', // warning | danger | success | primary
+    html: 'This doc is out-dated!'
+  }
+})
+
+// Even function
+docute.init({
+  announcement: function (route) {
+    if (/\/chinese/.test(route.path)) {
+      return 'Welcome, Chinese users!'
+    }
+    return 'Welcome, English users!'
+  }
+})
+```
+
+You can also set `announcement` in front-matter.
+
 ### Markdown Settings
 
 docute uses [marked](https://github.com/chjj/marked) to parse markdown code，you can adjust marked's settings by:
@@ -732,6 +762,57 @@ And you get:
 <p class="warning no-bg">
   How is it going?
 </p>
+
+##### Buttons
+
+```html
+<button class="docute-button">Button</button>
+```
+
+<p>
+  <button class="docute-button">Button</button>
+</p>
+
+```html
+<button class="docute-button docute-button-mini">Mini Button</button>
+```
+
+<p>
+  <button class="docute-button docute-button-mini">Mini Button</button>
+</p>
+
+```html
+<button class="docute-button docute-button-primary">Primary Button</button>
+```
+
+<p>
+  <button class="docute-button docute-button-primary">Primary Button</button>
+</p>
+
+```html
+<button class="docute-button docute-button-success">Success Button</button>
+```
+
+<p>
+  <button class="docute-button docute-button-success">Success Button</button>
+</p>
+
+```html
+<button class="docute-button docute-button-danger">Dangerous Button</button>
+```
+
+<p>
+  <button class="docute-button docute-button-danger">Dangerous Button</button>
+</p>
+
+```html
+<button class="docute-button docute-button-warning">Warning Button</button>
+```
+
+<p>
+  <button class="docute-button docute-button-warning">Warning Button</button>
+</p>
+
 
 #### Navigation links
 

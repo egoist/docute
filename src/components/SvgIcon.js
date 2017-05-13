@@ -7,5 +7,6 @@ export default makeComponent({
   menu: require('!raw-loader!svg/menu.svg'),
   link: require('!raw-loader!svg/link.svg'),
   search: require('!raw-loader!svg/search.svg'),
-  close: require('!raw-loader!svg/close.svg')
+  close: require('!raw-loader!svg/close.svg'),
+  info: require('!raw-loader!svg/info.svg')
 })

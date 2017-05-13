@@ -1,0 +1,18 @@
+@define-mixin button $color {
+  border-color: $color;
+  color: $color;
+  &:hover {
+    color: white;
+    background-color: $color;
+  }
+}
+
+@define-mixin announcement $color {
+  color: $color;
+  a {
+    color: $color;
+  }
+  &:before {
+    background-color: $color;
+  }
+}

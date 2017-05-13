@@ -1,3 +1,6 @@
+@import './vars.css';
+@import './mixins.css';
+
 * {
   box-sizing: border-box;
 }
@@ -65,6 +68,46 @@ a {
 
 .link {
   &:hover {
-    color: #42b983
+    color: $success;
+  }
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.docute-button {
+  border: 2px solid #333;
+  background-color: white;
+  cursor: pointer;
+  outline: none;
+  border-radius: 33px;
+  padding: 5px 16px;
+  font-size: 13px;
+  font-weight: bold;
+  transition: background-color .3s ease;
+  &:hover {
+    color: white;
+    background-color: #333;
+  }
+  &.docute-button-mini {
+    padding: 3px 14px;
+    font-size: 12px;
+  }
+  &.docute-button-primary {
+    @mixin button $primary;
+  }
+  &.docute-button-success {
+    @mixin button $success;
+  }
+  &.docute-button-danger {
+    @mixin button $danger;
+  }
+  &.docute-button-warning {
+    @mixin button $warning;
   }
 }

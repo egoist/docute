@@ -324,13 +324,14 @@
   .main {
     margin: 0 auto;
     padding-bottom: 20px;
-    padding-top: 50px;
+    padding-top: 40px;
     background-color: white;
     max-width: 1000px;
     min-height: 100vmin;
   }
   .content {
     padding-top: 20px;
+    margin-top: 20px;
   }
 </style>
 

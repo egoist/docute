@@ -1,0 +1,33 @@
+@import '../../css/vars.css';
+@import '../../css/mixins.css';
+
+.announcement {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e2e2e2;
+  position: relative;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  &:before {
+    position: absolute;
+    content: '';
+    width: 4px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #333;
+  }
+  &.announcement-primary {
+    @mixin announcement $primary;
+  }
+  &.announcement-danger {
+    @mixin announcement $danger;
+  }
+  &.announcement-success {
+    @mixin announcement $success;
+  }
+  &.announcement-warning {
+    @mixin announcement $warning;
+  }
+}

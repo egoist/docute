@@ -7,6 +7,15 @@ var langs = [
 
 docute.init({
   landing: 'landing.html',
+  announcement: function (route) {
+    var info = { type: 'success' }
+    if (/\/zh-.+$/.test(route.path)) {
+      info.html = '<a style="margin-right:10px;" class="docute-button docute-button-mini docute-button-success" href="https://github.com/egoist/donate" target="_blank">捐赠!</a> 通过 Patron 或者一次性捐赠支持 Docute 的开发。'
+    } else {
+      info.html = '<a style="margin-right:10px;" class="docute-button docute-button-mini docute-button-success" href="https://github.com/egoist/donate" target="_blank">Donate!</a> Support Docute development by becoming a patron or one-time donation.'
+    }
+    return info
+  },
   debug: true,
   // home: 'https://raw.githubusercontent.com/egoist/docute/master/README.md',
   repo: 'egoist/docute',
