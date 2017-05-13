@@ -1,3 +1,11 @@
+## [Version 3.3.0](https://github.com/egoist/docute/releases/tag/v3.3.0) (2017-5-13)
+
+### New features
+
+- add `announcement` option: [`d715b08`](https://github.com/egoist/docute/commit/d715b08)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.2.2...v3.3.0)
+
 ## [Version 3.2.2](https://github.com/egoist/docute/releases/tag/v3.2.2) (2017-5-12)
 
 ### Bug fixes
