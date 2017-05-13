@@ -1,3 +1,11 @@
+## [Version 3.3.1](https://github.com/egoist/docute/releases/tag/v3.3.1) (2017-5-13)
+
+### Bug fixes
+
+- fix mobile header: [`d23ca82`](https://github.com/egoist/docute/commit/d23ca82)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.3.0...v3.3.1)
+
 ## [Version 3.3.0](https://github.com/egoist/docute/releases/tag/v3.3.0) (2017-5-13)
 
 ### New features
