@@ -1,3 +1,11 @@
+## [Version 3.3.2](https://github.com/egoist/docute/releases/tag/v3.3.2) (2017-5-13)
+
+### Bug fixes
+
+- tweak css: [`bff7fb7`](https://github.com/egoist/docute/commit/bff7fb7)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.3.1...v3.3.2)
+
 ## [Version 3.3.1](https://github.com/egoist/docute/releases/tag/v3.3.1) (2017-5-13)
 
 ### Bug fixes
