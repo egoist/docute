@@ -6,7 +6,7 @@
 
 <script>
   import { mapState, mapActions } from 'vuex'
-  import throttle from 'lodash.throttle'
+  import throttle from 'throttleit'
   import { findMax, findMin } from 'utils'
   import { $, $$ } from 'utils/dom'
   import scrollIntoView from 'dom-scroll-into-view'
