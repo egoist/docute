@@ -735,9 +735,27 @@ And you get:
 
 #### Navigation links
 
-Links like `[Go](#heading-slug)` will navigate you to `?id=heading-slug` in current page.
+Markdown links like `[Go](#heading-slug)` will navigate you to `?id=heading-slug` in current page.
 
-Links like `[Go](/page#heaing-slug)` will navigate you to `/page?id=heading-slug` 
+Markdown links like `[Go](/page#heaing-slug)` will navigate you to `/page?id=heading-slug`
+
+In hash router mode, the path will automatically be prefixed with `/#/` so that you don't need to add it yourself.
+
+Alternatively, you can use HTML attributes directly:
+
+```html
+<!-- Navigate to another page -->
+<a router-link="/zh-cn/get-started?id=optional-id">
+  Get Started!
+</a>
+
+<!-- Navigate to `?id=hello-world` in current page -->
+<a jump-to-id="hello-world">
+  Hello World
+</a>
+```
+
+The element tag doesn't have to be `a`, anything meets your need like `button` is available here.
 
 #### Global Variables
 
