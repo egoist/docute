@@ -136,7 +136,7 @@
       padding-top: 10px;
     }
     .sidebar-heading-anchor {
-      padding: 7px 10px;
+      padding: 7px 10px !important;
     }
   }
 </style>

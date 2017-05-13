@@ -73,7 +73,7 @@
     align-items: center;
     position: fixed;
     top: 0;
-    height: 40px;
+    height: 50px;
     left: 0;
     right: 0;
     z-index: 9900;

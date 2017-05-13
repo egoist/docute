@@ -351,6 +351,9 @@
     }
   }
   @media screen and (max-width: 768px) {
+    .main {
+      padding-top: 50px;
+    }
     .is-desktop {
       display: none !important;
     }
