@@ -1,3 +1,11 @@
+## [Version 3.4.0-beta.2](https://github.com/egoist/docute/releases/tag/v3.4.0-beta.2) (2017-5-14)
+
+### Bug fixes
+
+- header should be at the root scope: [`11189c9`](https://github.com/egoist/docute/commit/11189c9)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.4.0-beta.1...v3.4.0-beta.2)
+
 ## [Version 3.4.0-beta.1](https://github.com/egoist/docute/releases/tag/v3.4.0-beta.1) (2017-5-14)
 
 ### New features
