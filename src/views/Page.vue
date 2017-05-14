@@ -18,12 +18,12 @@
       <custom-components place="sidebar:end" v-if="loaded"></custom-components>
     </figure>
     <mobile-header :current-icons="currentIcons" v-if="loaded"></mobile-header>
+    <home-header
+      :current-icons="currentIcons"
+      :has-nav="hasNav"
+      :show-nav="showNav"
+      v-if="loaded"></home-header>
     <section class="main" ref="main">
-      <home-header
-        :current-icons="currentIcons"
-        :has-nav="hasNav"
-        :show-nav="showNav"
-        v-if="loaded"></home-header>
       <custom-components place="content:start" v-if="loaded"></custom-components>
       <component v-if="docComponent" :is="docComponent" />
       <div v-else class="markdown-body content" v-html="page.html"></div>
