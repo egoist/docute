@@ -99,11 +99,19 @@ docute.init({
 
 ### url
 
+```js
+docute.init({
+  url: '.' // default
+  // Use files from another source
+  url: 'https://cdn-to-markdown-files.com/'
+})
+```
+
 The URL to your website, eg: `http://example.com/docs` or `/docs`, the markdown files will be fetched from this url, when using the default value `.`:
 
-- `/` will fetch `./README.md`
-- `/en/guide` will fetch `./en/guide.md`
-- `/es/about/` will fetch `./es/about/README.md`
+- When you visit `/` it will fetch `./README.md`
+- When you visit `/en/guide` it will fetch `./en/guide.md`
+- When you visit `/es/about/` it will fetch `./es/about/README.md`
 
 ### Home Page
 
