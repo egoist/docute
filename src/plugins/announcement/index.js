@@ -11,9 +11,9 @@ export default () => {
         let announcement = defined(attributes.announcement, config.announcement)
         if (!announcement) return
 
-        announcement = typeof announcement === 'function'
-          ? announcement(this.$route)
-          : announcement
+        announcement = typeof announcement === 'function' ?
+          announcement(this.$route) :
+          announcement
         let type
         let html
         if (typeof announcement === 'string') {

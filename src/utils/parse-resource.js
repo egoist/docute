@@ -6,7 +6,7 @@ function isFile(file) {
   return /\.(html|md)$/.test(file)
 }
 
-export default async function(
+export default async function (
   resource,
   {
     fallback,

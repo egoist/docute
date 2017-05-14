@@ -1,4 +1,4 @@
-export default function(input) {
+export default function (input) {
   input = input
     // Remove html tags
     .replace(/<(?:.|\n)*?>/gm, '')

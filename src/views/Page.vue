@@ -48,7 +48,7 @@
   import { mapState, mapGetters, mapActions } from 'vuex'
   import nprogress from 'nprogress'
   import throttle from 'throttleit'
-  import { isMobile, $, $$ } from 'utils/dom'
+  import { isMobile, $$ } from 'utils/dom'
   import marked from 'utils/marked'
   import renderer from 'utils/marked-renderer'
   import LinkIcon from '!raw-loader!svg/link.svg'
@@ -215,7 +215,6 @@
             this.updateActiveId(el.id)
           }
         }
-
 
         this.$refs.main.addEventListener('scroll', throttle(handleScroll, 300))
       },

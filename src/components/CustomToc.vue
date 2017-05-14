@@ -16,7 +16,7 @@
     props: {
       toc: {
         type: [String, Object],
-        required: true,
+        required: true
       }
     },
     data() {

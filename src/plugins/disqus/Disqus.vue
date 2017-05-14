@@ -11,16 +11,16 @@
       }
     },
     mounted() {
-      if (!window.DISQUS) {
-        this.init()
-      } else {
+      if (window.DISQUS) {
         this.reset()
+      } else {
+        this.init()
       }
     },
     methods: {
       init() {
         const vm = this
-        window.disqus_config = function () {
+        window.disqus_config = function () { // eslint-disable-line camelcase
           this.page.url = location.origin + vm.$route.path
           this.page.identifier = vm.$route.path
         }
@@ -28,7 +28,7 @@
         const script = document.createElement('script')
         script.async = true
         script.type = 'text/javascript'
-        script.setAttribute('data-timestamp', +new Date())
+        script.setAttribute('data-timestamp', Number(new Date()))
         script.src = `//${this.shortname}.disqus.com/embed.js`
         document.body.appendChild(script)
       },

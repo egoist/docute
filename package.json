@@ -39,11 +39,11 @@
   ],
   "xo": {
     "extends": [
-      "vue-app/prettier"
+      "vue-app"
     ],
     "extensions": [
-      ".js",
-      ".vue"
+      "js",
+      "vue"
     ],
     "envs": [
       "jest",
