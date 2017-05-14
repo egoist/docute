@@ -1,3 +1,12 @@
+## [Version 3.4.0-beta.1](https://github.com/egoist/docute/releases/tag/v3.4.0-beta.1) (2017-5-14)
+
+### New features
+
+- scroll sidebar should not affect document: [`90b31da`](https://github.com/egoist/docute/commit/90b31da)
+- optimize widescreen styling: [`00eed7b`](https://github.com/egoist/docute/commit/00eed7b)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.3.2...v3.4.0-beta.1)
+
 ## [Version 3.3.2](https://github.com/egoist/docute/releases/tag/v3.3.2) (2017-5-13)
 
 ### Bug fixes
