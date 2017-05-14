@@ -1,3 +1,13 @@
+## [Version 3.4.0](https://github.com/egoist/docute/releases/tag/v3.4.0) (2017-5-14)
+
+### Bug fixes
+
+- update doc for url: [`18bafe0`](https://github.com/egoist/docute/commit/18bafe0)
+- fix lint: [`96043eb`](https://github.com/egoist/docute/commit/96043eb)
+- remove prettier: [`5df72f5`](https://github.com/egoist/docute/commit/5df72f5)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.4.0-beta.2...v3.4.0)
+
 ## [Version 3.4.0-beta.2](https://github.com/egoist/docute/releases/tag/v3.4.0-beta.2) (2017-5-14)
 
 ### Bug fixes
