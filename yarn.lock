@@ -4552,9 +4552,9 @@ pluralize@^1.2.1:
   version "1.2.1"
   resolved "https://registry.npmjs.org/pluralize/-/pluralize-1.2.1.tgz#d1a21483fd22bb41e58a12fa3421823140897c45"
 
-poi@^8.0.0-rc.9:
-  version "8.0.0-rc.9"
-  resolved "https://registry.npmjs.org/poi/-/poi-8.0.0-rc.9.tgz#d4f17b87734437b306bf5278865b65cc5885b631"
+poi@^8.0.0-rc.10:
+  version "8.0.0-rc.10"
+  resolved "https://registry.npmjs.org/poi/-/poi-8.0.0-rc.10.tgz#ba1e77eaed509357a8fd2456aac9bdd8d061fa01"
   dependencies:
     autoprefixer "^7.0.1"
     babel-core "^6.24.1"
