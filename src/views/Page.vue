@@ -298,14 +298,10 @@
 
 <style>
   .page {
-    position: absolute;
-    top: 0;
-    left: 280px;
-    right: 0;
-    bottom: 0;
-
     &.no-sidebar {
-      left: 0;
+      .main {
+        left: 0;
+      }
     }
   }
   .sidebar {
@@ -322,12 +318,17 @@
     z-index: 1000;
   }
   .main {
-    margin: 0 auto;
     padding-bottom: 20px;
     padding-top: 40px;
     background-color: white;
-    max-width: 1000px;
     min-height: 100vmin;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 280px;
+    z-index: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
   .content {
     padding-top: 20px;
