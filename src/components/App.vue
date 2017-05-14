@@ -38,7 +38,7 @@
       })
     },
     methods: {
-      ...mapActions(['updateActiveId', 'jumpToId']),
+      ...mapActions(['jumpToId']),
       detectClick() {
         document.addEventListener('click', e => {
           this.handleNavigateAttribute(e)
