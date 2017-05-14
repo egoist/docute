@@ -20,7 +20,8 @@
     "build:docsearch": "poi build --config build/vue.config.docsearch.js",
     "dev:disqus": "poi --config build/vue.config.disqus.js",
     "build:disqus": "poi build --config build/vue.config.disqus.js",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "lint": "xo "
   },
   "files": [
     "dist/docute.js",
@@ -36,6 +37,30 @@
   "keywords": [
     "doc"
   ],
+  "xo": {
+    "extends": [
+      "vue-app/prettier"
+    ],
+    "extensions": [
+      ".js",
+      ".vue"
+    ],
+    "envs": [
+      "jest",
+      "browser"
+    ],
+    "rules": {
+      "import/no-webpack-loader-syntax": 0,
+      "import/no-unresolved": 0,
+      "import/no-unassigned-import": 0,
+      "import/no-extraneous-dependencies": 0,
+      "unicorn/filename-case": 0,
+      "unicorn/no-abusive-eslint-disable": 0
+    },
+    "ignores": [
+      "docs/config.js"
+    ]
+  },
   "dependencies": {
     "algoliasearch": "^3.22.1",
     "babel-runtime": "^6.20.0",
@@ -50,7 +75,7 @@
     "unfetch": "^2.1.2",
     "url-resolve": "^1.0.0",
     "vue-inline": "^1.0.1",
-    "vue-router": "^2.5.2",
+    "vue-router": "^2.5.3",
     "vuex": "^2.3.1",
     "vuex-router-sync": "^4.1.2",
     "web-polyfill": "^0.1.0"
@@ -58,11 +83,13 @@
   "devDependencies": {
     "cssbag": "^0.1.0",
     "cssnano": "^3.10.0",
+    "eslint-config-vue-app": "^1.3.3",
     "hint.css": "^2.5.0",
-    "jest-cli": "^19.0.2",
+    "jest-cli": "^20.0.1",
     "poi": "^8.0.0-rc.9",
-    "postcss": "^5.2.17",
-    "raw-loader": "^0.5.1"
+    "postcss": "^6.0.1",
+    "raw-loader": "^0.5.1",
+    "xo": "^0.18.2"
   },
   "jest": {
     "testEnvironment": "node"

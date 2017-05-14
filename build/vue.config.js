@@ -14,15 +14,13 @@ module.exports = {
   templateCompiler: true,
   port: 5000,
   define: {
-    '__DOCUTE_VERSION__': pkg.version
+    __DOCUTE_VERSION__: pkg.version
   },
   webpack(config) {
     config.resolve.modules.push(path.resolve('src'))
     return config
   },
-  postcss: [
-    require('cssbag')()
-  ],
+  postcss: [require('cssbag')()],
   setupDevServer(app) {
     app.use('/', express.static('docs'))
   },

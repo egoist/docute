@@ -47,13 +47,14 @@
   import frontMatter from 'utils/front-matter'
   import { mapState, mapGetters, mapActions } from 'vuex'
   import nprogress from 'nprogress'
-  import { isMobile } from 'utils/dom'
+  import throttle from 'throttleit'
+  import { isMobile, $, $$ } from 'utils/dom'
   import marked from 'utils/marked'
   import renderer from 'utils/marked-renderer'
   import LinkIcon from '!raw-loader!svg/link.svg'
   import slugify from 'utils/slugify'
   import event from 'utils/event'
-  import { isType, fetchCredentials } from 'utils'
+  import { isType, fetchCredentials, findMax, findMin } from 'utils'
   import componentManager from 'utils/component-manager'
   import parsers from 'utils/parsers'
 
@@ -87,6 +88,7 @@
     mounted() {
       this.$watch('$route.path', () => this.fetchData())
       event.on('reload', () => this.fetchData())
+      this.scrollSpy()
     },
     computed: {
       ...mapState({
@@ -183,7 +185,40 @@
       }
     },
     methods: {
-      ...mapActions(['updatePage', 'toggleMobileSidebar', 'jumpToId']),
+      ...mapActions(['updatePage', 'toggleMobileSidebar', 'jumpToId', 'updateActiveId']),
+      scrollSpy() {
+        const handleScroll = () => {
+          const name = this.$route.meta && this.$route.meta.name
+          const isDocPage = ['home', 'page'].indexOf(name) > -1
+          const headings = $$('.markdown-toc-heading')
+          if (this.jumping || !isDocPage || headings.length === 0) {
+            return
+          }
+          const els = [...headings].map(heading => {
+            return {
+              top: heading.getBoundingClientRect().top,
+              id: heading.id
+            }
+          })
+          const lastNegative = findMax(els.filter(el => el.top < 0), 'top')[0]
+          const firstPositive = findMin(els.filter(el => el.top > 0), 'top')[0]
+
+          let el = {}
+          if (lastNegative && firstPositive && firstPositive.top > 100) {
+            el = lastNegative
+          } else if (firstPositive) {
+            el = firstPositive
+          } else {
+            el = els[els.length - 1]
+          }
+          if (el.id) {
+            this.updateActiveId(el.id)
+          }
+        }
+
+
+        this.$refs.main.addEventListener('scroll', throttle(handleScroll, 300))
+      },
       async fetchData() {
         nprogress.start()
 

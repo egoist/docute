@@ -1,23 +1,26 @@
 import nprogress from 'nprogress'
-import { fetchCredentials } from './'
 import marked from './marked'
+import { fetchCredentials } from './'
 
 function isFile(file) {
   return /\.(html|md)$/.test(file)
 }
 
-export default async function (resource, {
-  fallback,
-  progress = true,
-  marked: markedOpts,
-  componentName = 'custom-resource'
-} = {}) {
+export default async function(
+  resource,
+  {
+    fallback,
+    progress = true,
+    marked: markedOpts,
+    componentName = 'custom-resource'
+  } = {}
+) {
   let text
   let html
   let source
   let component
   /**
-  * string: using as file path or markdown string
+  * String: using as file path or markdown string
   * object:
   *   {source}: use as file path
   *   {markdown}: use as markdown and parse to html
@@ -25,7 +28,9 @@ export default async function (resource, {
   *   {any + component}: use as component's template
   */
 
-  if (resource === true) resource = fallback
+  if (resource === true) {
+    resource = fallback
+  }
 
   if (typeof resource === 'string') {
     source = resource

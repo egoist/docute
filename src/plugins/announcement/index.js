@@ -3,7 +3,6 @@ import defined from 'defined'
 
 export default () => {
   return ({ registerComponent }) => {
-
     registerComponent('content:start', {
       name: 'announcement',
       render() {
@@ -12,7 +11,9 @@ export default () => {
         let announcement = defined(attributes.announcement, config.announcement)
         if (!announcement) return
 
-        announcement = typeof announcement === 'function' ? announcement(this.$route) : announcement
+        announcement = typeof announcement === 'function'
+          ? announcement(this.$route)
+          : announcement
         let type
         let html
         if (typeof announcement === 'string') {
@@ -27,14 +28,8 @@ export default () => {
           classNames.push(`announcement-${type}`)
         }
 
-        return (
-          <div
-            class={classNames}
-            domPropsInnerHTML={html}>
-          </div>
-        )
+        return <div class={classNames} domPropsInnerHTML={html} />
       }
     })
-
   }
 }

@@ -17,9 +17,6 @@
       ...mapState(['jumping', 'config', 'activeId'])
     },
     mounted() {
-      if (this.config.toc !== false) {
-        this.scrollSpy()
-      }
       this.detectClick()
       this.$watch('activeId', () => {
         if (!this.$store.state.config.syncTocPosition) {
@@ -44,38 +41,6 @@
     },
     methods: {
       ...mapActions(['updateActiveId', 'jumpToId']),
-      scrollSpy() {
-        const handleScroll = () => {
-          const name = this.$route.meta && this.$route.meta.name
-          const isDocPage = ['home', 'page'].indexOf(name) > -1
-          const headings = $$('.markdown-toc-heading')
-          if (this.jumping || !isDocPage || headings.length === 0) {
-            return
-          }
-          const els = [...headings].map(heading => {
-            return {
-              top: heading.getBoundingClientRect().top,
-              id: heading.id
-            }
-          })
-          const lastNegative = findMax(els.filter(el => el.top < 0), 'top')[0]
-          const firstPositive = findMin(els.filter(el => el.top > 0), 'top')[0]
-
-          let el = {}
-          if (lastNegative && firstPositive && firstPositive.top > 100) {
-            el = lastNegative
-          } else if (firstPositive) {
-            el = firstPositive
-          } else {
-            el = els[els.length - 1]
-          }
-          if (el.id) {
-            this.updateActiveId(el.id)
-          }
-        }
-
-        document.addEventListener('scroll', throttle(handleScroll, 300))
-      },
       detectClick() {
         document.addEventListener('click', e => {
           this.handleNavigateAttribute(e)

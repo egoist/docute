@@ -1,14 +1,14 @@
-var langs = [
-  {title: 'English', path: '/home', matchPath: /^\/(home|plugin|cli|changelog)/},
-  {title: '简体中文', path: '/zh-Hans/', matchPath: /^\/zh-Hans/},
-  {title: '繁體中文', path: '/zh-Hant/', matchPath: /^\/zh-Hant/},
-  {title: '日本語', path: '/ja/', matchPath: /^\/ja/}
+const langs = [
+  { title: 'English', path: '/home', matchPath: /^\/(home|plugin|cli|changelog)/ },
+  { title: '简体中文', path: '/zh-Hans/', matchPath: /^\/zh-Hans/ },
+  { title: '繁體中文', path: '/zh-Hant/', matchPath: /^\/zh-Hant/ },
+  { title: '日本語', path: '/ja/', matchPath: /^\/ja/ }
 ]
 
 docute.init({
   landing: 'landing.html',
-  announcement: function (route) {
-    var info = { type: 'success' }
+  announcement(route) {
+    const info = { type: 'success' }
     if (/\/zh-.+$/.test(route.path)) {
       info.html = '<a style="margin-right:10px;" class="docute-button docute-button-mini docute-button-success" href="https://github.com/egoist/donate" target="_blank">捐赠!</a> 通过 Patron 或者一次性捐赠支持 Docute 的开发。'
     } else {
@@ -68,7 +68,7 @@ docute.init({
         title: '選擇語言', type: 'dropdown', items: langs
       }
     ],
-    'ja': [
+    ja: [
       {
         title: 'はじめに', path: '/ja/'
       },

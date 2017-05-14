@@ -8,17 +8,16 @@ import event from 'utils/event'
 Vue.use(Vuex)
 
 function flatten(nav) {
-  return nav.map(item => {
-    if (item.type === 'dropdown') {
-      return item.items
-    }
-    return [item]
-  }).reduce((current, next) => {
-    return [
-      ...current,
-      ...next
-    ]
-  }, [])
+  return nav
+    .map(item => {
+      if (item.type === 'dropdown') {
+        return item.items
+      }
+      return [item]
+    })
+    .reduce((current, next) => {
+      return [...current, ...next]
+    }, [])
 }
 
 const store = new Vuex.Store({
@@ -89,7 +88,10 @@ const store = new Vuex.Store({
       let nextState
 
       if (payload === undefined) {
-        const prevState = defined(state.page.attributes.sidebar, state.showSidebar)
+        const prevState = defined(
+          state.page.attributes.sidebar,
+          state.showSidebar
+        )
         nextState = !prevState
       } else {
         nextState = payload
@@ -141,10 +143,12 @@ const store = new Vuex.Store({
       dispatch('updateActiveId', id)
       dispatch('startJumping')
       event.emit('jump:started', id)
-      jump(id, () => setTimeout(() => {
-        dispatch('stopJumping')
-        event.emit('jump:stopped', id)
-      }, 400))
+      jump(id, () =>
+        setTimeout(() => {
+          dispatch('stopJumping')
+          event.emit('jump:stopped', id)
+        }, 400)
+      )
     },
     startSearching({ commit }) {
       commit('START_SEARCHING')
@@ -179,9 +183,7 @@ const store = new Vuex.Store({
         return nav
       }
       if (isType(nav, 'Object')) {
-        return (attributes && attributes.nav) ?
-          nav[attributes.nav] :
-          nav.default
+        return attributes && attributes.nav ? nav[attributes.nav] : nav.default
       }
       return []
     },

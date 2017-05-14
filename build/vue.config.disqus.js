@@ -1,4 +1,3 @@
-const merge = require('webpack-merge')
 const config = require('./vue.config')
 
 module.exports = {

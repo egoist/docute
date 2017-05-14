@@ -19,14 +19,12 @@ import store from 'store'
 
 window.Vue = Vue
 
-let router
-let hasBootstrapped
+let router // eslint-disable-line import/no-mutable-exports
 
 function init(config = {}) {
-  if (hasBootstrapped) {
+  if (router) {
     throw new Error('You can only initialize Docute for once!')
   }
-  hasBootstrapped = true
 
   store.commit('SET_CONFIG', config)
   router = createRouter(config)
@@ -70,11 +68,4 @@ function init(config = {}) {
 const version = __DOCUTE_VERSION__ // eslint-disable-line no-undef
 const isDev = location.hostname === 'localhost'
 
-export {
-  version,
-  router,
-  store,
-  init,
-  isDev
-}
-
+export { version, router, store, init, isDev }

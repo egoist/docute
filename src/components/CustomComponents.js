@@ -4,16 +4,18 @@ export default {
   props: {
     place: {
       validator(value) {
-        return [
-          'content:start',
-          'content:end',
-          'sidebar:start',
-          'sidebar:end',
-          'nav:start',
-          'nav:end',
-          'icons:start',
-          'icons:end'
-        ].indexOf(value) > -1
+        return (
+          [
+            'content:start',
+            'content:end',
+            'sidebar:start',
+            'sidebar:end',
+            'nav:start',
+            'nav:end',
+            'icons:start',
+            'icons:end'
+          ].indexOf(value) > -1
+        )
       }
     }
   },
@@ -23,7 +25,7 @@ export default {
       className: `custom-components-${this.place.replace(':', '-')}`
     }
   },
-  render(h) {
+  render() {
     if (!this.components || this.components.length === 0) {
       return
     }

@@ -6,7 +6,7 @@ import Landing from 'views/Landing.vue'
 
 Vue.use(Router)
 
-export default function ({ landing, routerMode }) {
+export default function({ landing, routerMode }) {
   const routes = [
     {
       path: landing ? '/home' : '/',
