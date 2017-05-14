@@ -1,7 +1,7 @@
 const algoliasearch = require('algoliasearch/lite')
 const Logo = require('./Logo.vue')
 
-module.exports = function ({ apiKey, indexName, tags = [], url } = {}) {
+module.exports = function ({ apiKey, indexName, url } = {}) {
   return ({ store, registerComponent }) => {
     // the root url might be localhost or production url
     // but the docsearch url must be production url
@@ -39,7 +39,11 @@ module.exports = function ({ apiKey, indexName, tags = [], url } = {}) {
                 params: {
                   filters: currentTags.length > 0 ?
                     `(${currentTags
-                        .map(name => `tags:${name}`)
+                        .map(tag => {
+                          tag = /^.+:.+$/.test(tag) ? tag : `tags:${tag}`
+                          tag = tag.replace(/\\:/g, ':')
+                          return tag
+                        })
                         .join(' OR ')})` :
                     ''
                 }

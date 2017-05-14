@@ -39,10 +39,8 @@ docute.init({
     docsearch({
       apiKey: 'You API Key',
       indexName: 'Your Index Name',
-      // algolia docsearch allows you to search with tag filter
-      tags: ['english', 'zh-Hans', 'zh-Hant'],
-      // this plugin does require a url too
-      // where docsearch fetches contents
+      // this plugin requires a url too
+      // it indicates where docsearch fetches contents
       url: 'https://docute.js.org'
     })
   ]
@@ -69,6 +67,15 @@ search:
   - zh-Hant
 ---
 Easy?
+```
+
+If you doc is indexed by `variable` like `version` insteads of `tags`, you should use full keyword including the variable name:
+
+```markdown
+---
+search:
+  - version\:2.0.0
+---
 ```
 
 ### Disqus
