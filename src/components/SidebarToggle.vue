@@ -22,7 +22,6 @@
   .sidebar-toggle {
     position: fixed;
     bottom: 0;
-    left: 0;
     width: 260px;
     height: 50px;
     z-index: 7000;

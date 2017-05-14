@@ -43,7 +43,7 @@
     "dom-scroll-into-view": "^1.2.1",
     "element-closest": "^2.0.2",
     "eventstop": "^2.1.0",
-    "jump.js": "^1.0.2",
+    "head-to": "^0.1.0",
     "nprogress": "^0.2.0",
     "prismjs": "^1.6.0",
     "throttleit": "^1.0.0",

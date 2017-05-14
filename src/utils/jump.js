@@ -1,11 +1,11 @@
-import jump from 'jump.js'
-import { isMobile } from 'utils/dom'
+import headTo from 'head-to'
 
 export default function (id, callback) {
-  jump(`#${id}`, {
+  headTo(`#${id}`, {
     duration: 300,
     a11y: true,
-    offset: isMobile ? -60 : -50,
-    callback
+    offset: -20,
+    callback,
+    container: '.main'
   })
 }

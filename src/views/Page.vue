@@ -18,7 +18,7 @@
       <custom-components place="sidebar:end" v-if="loaded"></custom-components>
     </figure>
     <mobile-header :current-icons="currentIcons" v-if="loaded"></mobile-header>
-    <section class="main">
+    <section class="main" ref="main">
       <home-header
         :current-icons="currentIcons"
         :has-nav="hasNav"
@@ -257,7 +257,7 @@
           if (this.id) {
             this.jumpToId(this.id)
           } else {
-            window.scroll(0, 0)
+            this.$refs.main.scrollTop = 0
           }
           // reset scrollTop of sidebar
           if (this.$refs.sidebar) {
@@ -298,6 +298,9 @@
 
 <style>
   .page {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
     &.no-sidebar {
       .main {
         left: 0;
@@ -309,7 +312,7 @@
     width: 280px;
     border-right: 1px solid rgba(0,0,0,.07);
     overflow-y: auto;
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
@@ -319,13 +322,15 @@
   }
   .main {
     padding-bottom: 20px;
-    padding-top: 40px;
     background-color: white;
-    min-height: 100vmin;
     position: absolute;
-    top: 0;
+    top: 40px;
     bottom: 0;
+    right: 0;
     left: 280px;
+    height: calc(100% - 40px);
+    margin: 0 auto;
+    max-width: 1000px;
     z-index: 1;
     overflow-x: hidden;
     overflow-y: auto;
@@ -342,18 +347,20 @@
   }
   @media screen and (min-width: 768px) {
     .no-sidebar {
+      background-color: #f5f5f5;
       .main {
         padding-bottom: 50px;
         border: 1px solid rgba(0,0,0,.07);
         border-top: none;
-        border-radius: 0 0 4px 4px;
-        margin-bottom: 40px;
+        border-bottom: none;
       }
     }
   }
   @media screen and (max-width: 768px) {
     .main {
-      padding-top: 50px;
+      top: 50px;
+      left: 0;
+      height: calc(100% - 50px);
     }
     .is-desktop {
       display: none !important;
