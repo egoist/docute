@@ -392,12 +392,9 @@
   }
   @media screen and (max-width: 768px) {
     .main {
-      top: 50px;
-      left: 0;
-      height: calc(100% - 50px);
-      /* Enable scroll with momentum on iOS devices */
-      overflow-y: scroll;
-      -webkit-overflow-scrolling: touch;
+      height: initial;
+      position: initial;
+      padding-top: 50px;
     }
     .is-desktop {
       display: none !important;
