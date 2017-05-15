@@ -1,3 +1,11 @@
+## [Version 3.4.4](https://github.com/egoist/docute/releases/tag/v3.4.4) (2017-5-15)
+
+### Bug fixes
+
+- change jump container to window on mobile: [`ba3736b`](https://github.com/egoist/docute/commit/ba3736b)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.4.3...v3.4.4)
+
 ## [Version 3.4.3](https://github.com/egoist/docute/releases/tag/v3.4.3) (2017-5-15)
 
 ### Bug fixes
