@@ -1,3 +1,11 @@
+## [Version 3.4.7](https://github.com/egoist/docute/releases/tag/v3.4.7) (2017-5-15)
+
+### Bug fixes
+
+- add event for landing page: [`1163b53`](https://github.com/egoist/docute/commit/1163b53)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.4.6...v3.4.7)
+
 ## [Version 3.4.6](https://github.com/egoist/docute/releases/tag/v3.4.6) (2017-5-15)
 
 ### Bug fixes
