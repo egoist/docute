@@ -1,3 +1,11 @@
+## [Version 3.4.6](https://github.com/egoist/docute/releases/tag/v3.4.6) (2017-5-15)
+
+### Bug fixes
+
+- use flexbox layout: [`1d42967`](https://github.com/egoist/docute/commit/1d42967)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.4.5...v3.4.6)
+
 ## [Version 3.4.5](https://github.com/egoist/docute/releases/tag/v3.4.5) (2017-5-15)
 
 ### Bug fixes
