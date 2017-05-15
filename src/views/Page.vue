@@ -413,9 +413,9 @@
     }
     .sidebar {
       width: calc(100% - 50px);
-      padding-top: 50px;
       padding-bottom: 10px;
-      top: 0;
+      top: 50px;
+      position: fixed;
       border-right: none;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
       transform: translateX(-120%);
