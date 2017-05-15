@@ -17,17 +17,21 @@
 
       <custom-components place="sidebar:end" v-if="loaded"></custom-components>
     </figure>
+
     <mobile-header :current-icons="currentIcons" v-if="loaded"></mobile-header>
-    <home-header
-      :current-icons="currentIcons"
-      :has-nav="hasNav"
-      :show-nav="showNav"
-      v-if="loaded"></home-header>
-    <section class="main" ref="main">
-      <custom-components place="content:start" v-if="loaded"></custom-components>
-      <component v-if="docComponent" :is="docComponent" />
-      <div v-else class="markdown-body content" v-html="page.html"></div>
-      <custom-components place="content:end" v-if="loaded"></custom-components>
+
+    <section class="main">
+      <home-header
+        :current-icons="currentIcons"
+        :has-nav="hasNav"
+        :show-nav="showNav"
+        v-if="loaded"></home-header>
+     <div class="content-wrap" ref="contentWrap">
+        <custom-components place="content:start" v-if="loaded"></custom-components>
+        <component v-if="docComponent" :is="docComponent" />
+        <div v-else class="markdown-body content" v-html="page.html"></div>
+        <custom-components place="content:end" v-if="loaded"></custom-components>
+     </div>
     </section>
   </div>
 </template>
@@ -216,7 +220,7 @@
           }
         }
 
-        this.$refs.main.addEventListener('scroll', throttle(handleScroll, 300))
+        this.$refs.contentWrap.addEventListener('scroll', throttle(handleScroll, 300))
       },
       async fetchData() {
         nprogress.start()
@@ -291,7 +295,7 @@
           if (this.id) {
             this.jumpToId(this.id)
           } else {
-            this.$refs.main.scrollTop = 0
+            this.$refs.contentWrap.scrollTop = 0
           }
           // reset scrollTop of sidebar
           if (this.$refs.sidebar) {
@@ -334,43 +338,31 @@
   .page {
     max-width: 1280px;
     margin: 0 auto;
-    position: relative;
-    &.no-sidebar {
-      .main {
-        left: 0;
-      }
-    }
+    display: flex;
   }
   .sidebar {
     margin: 0;
     width: 280px;
     border-right: 1px solid rgba(0,0,0,.07);
     overflow-y: auto;
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
     padding: 0 0 70px 0;
     background-color: white;
-    z-index: 1000;
   }
   .main {
-    padding-bottom: 20px;
     background-color: white;
-    position: absolute;
-    top: 40px;
-    bottom: 0;
-    right: 0;
-    left: 280px;
-    height: calc(100% - 40px);
-    margin: 0 auto;
+    height: 100%;
     max-width: 1000px;
-    z-index: 1;
-    overflow-x: hidden;
-    overflow-y: auto;
+    width: calc(100% - 280px);
+    margin: 0 auto;
+  }
+  .content-wrap {
+    height: calc(100% - 40px);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
   }
   .content {
     padding-top: 20px;
+    padding-bottom: 20px;
     margin-top: 20px;
   }
 </style>
@@ -381,20 +373,27 @@
   }
   @media screen and (min-width: 768px) {
     .no-sidebar {
-      background-color: #f5f5f5;
       .main {
-        padding-bottom: 50px;
         border: 1px solid rgba(0,0,0,.07);
         border-top: none;
         border-bottom: none;
       }
     }
   }
+  @media screen and (min-width: 1280px) {
+    .page:not(.no-sidebar) {
+      border: 1px solid rgba(0,0,0,.07);
+      border-top: none;
+      border-bottom: none;
+    }
+  }
   @media screen and (max-width: 768px) {
     .main {
-      height: initial;
-      position: initial;
+      width: 100%;
       padding-top: 50px;
+      .content-wrap {
+        height: 100%;
+      }
     }
     .is-desktop {
       display: none !important;
@@ -412,13 +411,15 @@
       width: calc(100% - 50px);
       padding-bottom: 10px;
       top: 50px;
+      bottom: 0;
+      left: 0;
       position: fixed;
       border-right: none;
+      z-index: 1000;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
       transform: translateX(-120%);
       transition: transform .3s cubic-bezier(0.4, 0, 0, 1);
       /* Enable scroll with momentum on iOS devices */
-      overflow-y: scroll;
       -webkit-overflow-scrolling: touch;
 
       &.visible {

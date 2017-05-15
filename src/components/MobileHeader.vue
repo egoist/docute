@@ -85,6 +85,9 @@
       font-size: 20px;
       display: flex;
       align-items: center;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
     }
 
     .header-left {

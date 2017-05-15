@@ -73,6 +73,7 @@
     align-items: center;
     &.is-mobile {
       .nav-list {
+        margin-top: 10px;
         height: auto;
         line-height: auto;
         .nav-item {

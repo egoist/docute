@@ -6,9 +6,7 @@ export default function (id, callback) {
     duration: 300,
     a11y: true,
     offset: -20,
-    offset: isMobile ? -70 : -20,
     callback,
-    container: '.main',
-    container: isMobile ? window : '.main'
+    container: '.content-wrap'
   })
 }

@@ -1,5 +1,5 @@
 <template>
-  <header class="header is-desktop is-fixed" v-if="hasNav || currentIcons.length > 0 || hasComponentsAroundIcons">
+  <header class="header is-desktop" v-if="hasNav || currentIcons.length > 0 || hasComponentsAroundIcons">
     <div class="header-container">
       <header-nav
         :current-nav="currentNav"
@@ -58,16 +58,9 @@
   .header {
     height: 40px;
     border-bottom: 1px solid rgba(0,0,0,.07);
+    background-color: white;
     &:empty {
       display: none;
-    }
-    &.is-fixed {
-      position: fixed;
-      top: 0;
-      left: 280px;
-      right: 0;
-      background-color: white;
-      z-index: 9999;
     }
     .header-container {
       display: flex;
@@ -81,11 +74,8 @@
   }
 
   .no-sidebar .header {
-    left: 0;
     margin: 0 auto;
     max-width: 1000px;
-    border-left: 1px solid rgba(0,0,0,.07);
-    border-right: 1px solid rgba(0,0,0,.07);
   }
 
   .header-right {
