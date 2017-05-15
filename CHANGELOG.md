@@ -1,3 +1,11 @@
+## [Version 3.4.2](https://github.com/egoist/docute/releases/tag/v3.4.2) (2017-5-15)
+
+### Bug fixes
+
+- fixed sidebar on mobile device: [`0065311`](https://github.com/egoist/docute/commit/0065311)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.4.1...v3.4.2)
+
 ## [Version 3.4.1](https://github.com/egoist/docute/releases/tag/v3.4.1) (2017-5-15)
 
 ### Bug fixes
