@@ -1,3 +1,12 @@
+## [Version 3.4.1](https://github.com/egoist/docute/releases/tag/v3.4.1) (2017-5-15)
+
+### Bug fixes
+
+- allow custom keyword in docsearch: [`b5feca5`](https://github.com/egoist/docute/commit/b5feca5)
+- fix scroll on ios: [`3572914`](https://github.com/egoist/docute/commit/3572914)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.4.0...v3.4.1)
+
 ## [Version 3.4.0](https://github.com/egoist/docute/releases/tag/v3.4.0) (2017-5-14)
 
 ### Bug fixes
