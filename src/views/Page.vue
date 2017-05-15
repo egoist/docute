@@ -395,6 +395,9 @@
       top: 50px;
       left: 0;
       height: calc(100% - 50px);
+      /* Enable scroll with momentum on iOS devices */
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
     }
     .is-desktop {
       display: none !important;
