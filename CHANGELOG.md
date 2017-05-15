@@ -1,3 +1,11 @@
+## [Version 3.4.3](https://github.com/egoist/docute/releases/tag/v3.4.3) (2017-5-15)
+
+### Bug fixes
+
+- set .main to initial position on mobile device: [`d1524b5`](https://github.com/egoist/docute/commit/d1524b5)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.4.2...v3.4.3)
+
 ## [Version 3.4.2](https://github.com/egoist/docute/releases/tag/v3.4.2) (2017-5-15)
 
 ### Bug fixes
