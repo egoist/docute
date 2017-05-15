@@ -1,3 +1,11 @@
+## [Version 3.4.5](https://github.com/egoist/docute/releases/tag/v3.4.5) (2017-5-15)
+
+### Bug fixes
+
+- remove font for markdown-body: [`3de8085`](https://github.com/egoist/docute/commit/3de8085)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.4.4...v3.4.5)
+
 ## [Version 3.4.4](https://github.com/egoist/docute/releases/tag/v3.4.4) (2017-5-15)
 
 ### Bug fixes
