@@ -168,6 +168,7 @@ List of events you can subscribe:
   - the first argument is the `id` it jumps to
 - `search:started`: emitted after user performs a search action (hit enter in search box)
 - `search:stopped`: emitted after app received search results, the first argument of callback function is the result.
+- `landing:updated`: emiited after the landing page is fetched and the dom is updated.
 
 List of events you can emit:
 

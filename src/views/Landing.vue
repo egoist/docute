@@ -12,6 +12,7 @@
 <script>
   import { mapState } from 'vuex'
   import parseResource from 'utils/parse-resource'
+  import event from 'utils/event'
 
   export default {
     name: 'landing',
@@ -41,6 +42,7 @@
             }
           }
         })
+        this.$nextTick(() => event.emit('landing:updated'))
       }
     }
   }
