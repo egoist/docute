@@ -18,7 +18,7 @@ DocSearch is a free service from [algolia.com](http://algolia.com), it might be 
 
 To use this plugin, [apply for the program](https://community.algolia.com/docsearch/) to get an API key and indexName first. 
 
-Then simply load `docsearch.js` before all other scripts:
+Then load `docsearch.js` before initializing docute:
 
 ```html
 <script src="https://unpkg.com/docute/dist/docute.js"></script>
@@ -34,8 +34,8 @@ Finally activate the plugin by:
 
 ```js
 docute.init({
-  // the docsearch variable is provided by docsearch plugin
   plugins: [
+    // the docsearch variable is provided by docsearch plugin
     docsearch({
       apiKey: 'You API Key',
       indexName: 'Your Index Name',
@@ -74,7 +74,7 @@ If you doc is indexed by `variable` like `version` insteads of `tags`, you shoul
 ```markdown
 ---
 search:
-  - version\:2.0.0
+  - "version\:2.0.0"
 ---
 ```
 
