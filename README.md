@@ -40,6 +40,7 @@ For detailed usage please head to https://docute.js.org 😎
 - [vue-scrollto](https://rigor789.github.io/vue-scrollto/#/): Vue scroll-to directive
 - [SAM Pattern (Korean)](https://changjoo-park.github.io/SAM.js-korean/#/): SAM Pattern docs in Korean 
 - [EverMonkey](http://monkey.yoryor.me/#/): VS Code Extension for Evernote.
+- [finger-mover](https://fmover.hcysun.me/#/): A motion effect library that integrates Fingerd and Moved
 - Feel free to add yours here :)
 
 ## Contributing
