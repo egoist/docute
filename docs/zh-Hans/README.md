@@ -123,7 +123,7 @@ self.$config = {
 如果你开启了这个功能，Landing 页面的路由将是 `/`，而文档的首页将改为用 `/home` 访问。
 
 <p class="warning">
-  你不能再动态添加的页面里使用 <code>script</code> 标签，因为动态添加的内容 JS 不会被浏览器执行。
+  你不能在动态添加的页面里使用 <code>script</code> 标签，因为动态添加的内容 JS 不会被浏览器执行。
 </p>
 
 ### 多页面
