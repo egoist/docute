@@ -238,7 +238,7 @@ It's `true` by default, to disable TOC entirely, set `toc` to `false`.
 
 ##### Custom TOC
 
-If you don't want to use auto-generated toc, you can specific a custom toc to display on the sidebar:
+If you don't want to use auto-generated toc, you can specify a custom toc to display on the sidebar:
 
 ```js
 docute.init({
@@ -277,7 +277,7 @@ All the value types that are supported in [landing](#landing-page) option are su
 Besides, `toc` could also be a function which accepts [$route](https://router.vuejs.org/en/api/route-object.html#route-object-properties) as the only argument.
 
 <p class="warning">
-  Currently custom toc is not supported in front-matter, however you can enable custom toc globally by setting `toc` in `docute.init()`, and set `toc` to `true` in front-matter when you need auto-generated toc for specfic page.
+  Currently custom toc is not supported in front-matter, however you can enable custom toc globally by setting `toc` in `docute.init()`, and set `toc` to `true` in front-matter when you need auto-generated toc for specific page.
 </p>
 
 ### Navbar
