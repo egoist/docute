@@ -1,3 +1,11 @@
+## [Version 3.4.8](https://github.com/egoist/docute/releases/tag/v3.4.8) (2017-6-23)
+
+### Bug fixes
+
+- fix fetch credentials, closed [#108](https://github.com/egoist/docute/issues/108): [`92f3d4b`](https://github.com/egoist/docute/commit/92f3d4b)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.4.7...v3.4.8)
+
 ## [Version 3.4.7](https://github.com/egoist/docute/releases/tag/v3.4.7) (2017-5-15)
 
 ### Bug fixes
