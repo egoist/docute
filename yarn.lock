@@ -6014,7 +6014,7 @@ uid-number@^0.0.6:
 
 unfetch@^2.1.2:
   version "2.1.2"
-  resolved "https://registry.yarnpkg.com/unfetch/-/unfetch-2.1.2.tgz#684fee4d8acdb135bdb26c0364c642fc326ca95b"
+  resolved "https://registry.npmjs.org/unfetch/-/unfetch-2.1.2.tgz#684fee4d8acdb135bdb26c0364c642fc326ca95b"
 
 uniq@^1.0.1:
   version "1.0.1"

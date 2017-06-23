@@ -19,5 +19,5 @@ export function isType(obj, type) {
 export function fetchCredentials(url) {
   const crossDomain =
     /^https?:\/\//.test(url) && !new RegExp(`^${location.origin}`).test(url)
-  return crossDomain ? false : 'include'
+  return crossDomain ? 'omit' : 'include'
 }
