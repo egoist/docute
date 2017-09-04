@@ -41,6 +41,7 @@ For detailed usage please head to https://docute.js.org 😎
 - [SAM Pattern (Korean)](https://changjoo-park.github.io/SAM.js-korean/#/): SAM Pattern docs in Korean 
 - [EverMonkey](http://monkey.yoryor.me/#/): VS Code Extension for Evernote.
 - [finger-mover](https://fmover.hcysun.me/#/): A motion effect library that integrates Fingerd and Moved
+- [lass](https://lass.js.org/): Lass scaffolds a modern package boilerplate for node
 - Feel free to add yours here :)
 
 ## Contributing
