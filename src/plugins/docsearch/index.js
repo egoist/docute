@@ -54,7 +54,7 @@ module.exports = function ({ apiKey, indexName, url } = {}) {
               dispatch(
                 'stopSearching',
                 content.hits.map(hit => {
-                  const path = hit.url.replace(re, '')
+                  const path = hit.url.replace(re, '').replace(/#([\s\S]+)$/, '')
 
                   let title = Object.keys(hit.hierarchy).sort()
 
@@ -64,6 +64,7 @@ module.exports = function ({ apiKey, indexName, url } = {}) {
                     .filter(key => Boolean(hit.hierarchy[key]))
                     .map(key => hit.hierarchy[key])
                     .join(' > ')
+
                   return {
                     title,
                     path,
