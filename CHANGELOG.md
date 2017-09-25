@@ -1,3 +1,11 @@
+## [Version 3.4.9](https://github.com/egoist/docute/releases/tag/v3.4.9) (2017-9-25)
+
+### Bug fixes
+
+- remove hash: [`9ee5db3`](https://github.com/egoist/docute/commit/9ee5db3)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.4.8...v3.4.9)
+
 ## [Version 3.4.8](https://github.com/egoist/docute/releases/tag/v3.4.8) (2017-6-23)
 
 ### Bug fixes
