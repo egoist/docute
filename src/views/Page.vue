@@ -143,8 +143,9 @@
             })
           }
           if (repo) {
+            const isUrl = /^((http|https):\/\/)/.test(repo)
             defaultIcons.push({
-              link: `https://github.com/${repo}`,
+              link: isUrl ? repo : `https://github.com/${repo}`,
               label: 'Star me on GitHub',
               icon: 'github'
             })
