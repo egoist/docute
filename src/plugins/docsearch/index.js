@@ -1,7 +1,7 @@
 const algoliasearch = require('algoliasearch/lite')
 const Logo = require('./Logo.vue')
 
-module.exports = function ({ apiKey, indexName, url } = {}) {
+module.exports = function ({ appId, apiKey, indexName, url } = {}) {
   return ({ store, registerComponent }) => {
     // the root url might be localhost or production url
     // but the docsearch url must be production url
@@ -29,7 +29,7 @@ module.exports = function ({ apiKey, indexName, url } = {}) {
 
           dispatch('startSearching')
           const { currentTags } = getters
-          const client = algoliasearch('BH4D9OD16A', apiKey)
+          const client = algoliasearch(appId, apiKey)
 
           client
             .search([
