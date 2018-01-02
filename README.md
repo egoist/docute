@@ -39,7 +39,7 @@ For detailed usage please head to https://docute.js.org 😎
 - [vuejs-component-style-guide](https://pablohpsilva.github.io/vuejs-component-style-guide/#/): Vue component style guide
 - [vue-scrollto](https://rigor789.github.io/vue-scrollto/#/): Vue scroll-to directive
 - [SAM Pattern (Korean)](https://changjoo-park.github.io/SAM.js-korean/#/): SAM Pattern docs in Korean 
-- [EverMonkey](http://monkey.yoryor.me/#/): VS Code Extension for Evernote.
+- [EverMonkey](http://monkey.yoryor.top/#/): VS Code Extension for Evernote.
 - [finger-mover](https://fmover.hcysun.me/#/): A motion effect library that integrates Fingerd and Moved
 - [lass](https://lass.js.org/): Lass scaffolds a modern package boilerplate for node
 - [telegraf](http://telegraf.js.org/): 📡 Modern Telegram bot framework for Node.js
