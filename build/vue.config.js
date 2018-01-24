@@ -21,8 +21,10 @@ module.exports = {
     return config
   },
   postcss: [require('cssbag')()],
-  setupDevServer(app) {
-    app.use('/', express.static('docs'))
+  devServer: {
+    before(app) {
+      app.use('/', express.static('docs'))
+    }
   },
   production: {
     html: false,
