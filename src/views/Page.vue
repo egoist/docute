@@ -2,14 +2,18 @@
   <div class="page" :class="{'no-sidebar': !showSidebar}">
     <sidebar-toggle v-if="!isMobile && !config.disableSidebarToggle"></sidebar-toggle>
     <figure ref="sidebar" class="sidebar" v-if="loaded && (showSidebar || isMobile)">
+      <html-content
+          :html-file="brandBar.htmlFileLeft"
+          :height-px="brandBar.heightPx"
+          v-if="brandBar && brandBar.htmlFileLeft"></html-content>
       <search-box v-if="pluginSearch"></search-box>
       <search-result v-if="pluginSearch && searchResult && searchKeyword"></search-result>
       <custom-components place="sidebar:start" v-if="loaded"></custom-components>
       <header-nav
-        :has-nav="hasNav"
-        :show-nav="showNav"
-        :current-nav="currentNav"
-        class="is-mobile inner-x">
+          :has-nav="hasNav"
+          :show-nav="showNav"
+          :current-nav="currentNav"
+          class="is-mobile inner-x">
       </header-nav>
 
       <custom-toc v-if="showCustomToc" :toc="showToc" />
@@ -21,23 +25,28 @@
     <mobile-header :current-icons="currentIcons" v-if="loaded"></mobile-header>
 
     <section class="main">
+      <html-content
+          :html-file="brandBar.htmlFileRight"
+          :height-px="brandBar.heightPx"
+          v-if="brandBar && brandBar.htmlFileRight"></html-content>
       <home-header
-        :current-icons="currentIcons"
-        :has-nav="hasNav"
-        :show-nav="showNav"
-        v-if="loaded"></home-header>
-     <div class="content-wrap" ref="contentWrap">
+          :current-icons="currentIcons"
+          :has-nav="hasNav"
+          :show-nav="showNav"
+          v-if="loaded"></home-header>
+      <div class="content-wrap" ref="contentWrap" v-bind:style="scrollingContentHeight">
         <custom-components place="content:start" v-if="loaded"></custom-components>
         <component v-if="docComponent" :is="docComponent" />
         <div v-else class="markdown-body content" v-html="page.html"></div>
         <custom-components place="content:end" v-if="loaded"></custom-components>
-     </div>
+      </div>
     </section>
   </div>
 </template>
 
 <script>
   import urlResolve from 'url-resolve'
+  import HtmlContent from 'components/HtmlContent.vue'
   import HomeHeader from 'components/HomeHeader.vue'
   import MobileHeader from 'components/MobileHeader.vue'
   import HeaderNav from 'components/HeaderNav.vue'
@@ -99,7 +108,7 @@
         id: state => state.route.query.id
       }),
       ...mapState(['config', 'page', 'loaded', 'jumping', 'activeId', 'pluginSearch', 'searchResult', 'searchKeyword']),
-      ...mapGetters(['documentTitle', 'showSidebar', 'currentNav', 'showToc', 'showCustomToc', 'currentNavItem']),
+      ...mapGetters(['documentTitle', 'showSidebar', 'currentNav', 'showToc', 'showCustomToc', 'currentNavItem', 'brand']),
       currentNavSource() {
         const route = this.$route
         const config = this.config
@@ -167,6 +176,18 @@
         }
 
         return defaultIcons.concat(currentIcons)
+      },
+      brandBar() {
+        return this.config.brand;
+      },
+      scrollingContentHeight() {
+        if (this.config.brand) {
+          var height = parseInt(this.config.brand.heightPx);
+          if (!isNaN(height)) {
+            return "height: calc(100% - " + (parseInt(this.config.brand.heightPx) + 40) + 'px';
+          }
+        }
+        return "height: calc(100% - 40px)"
       },
       hasNav() {
         return this.currentNav && this.currentNav.length > 0
@@ -329,7 +350,8 @@
       SearchResult,
       SidebarToggle,
       CustomComponents,
-      CustomToc
+      CustomToc,
+      HtmlContent
     }
   }
 
