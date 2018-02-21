@@ -4,14 +4,6 @@
 <p align="center">
 <a href="https://npmjs.com/package/docute"><img src="https://img.shields.io/npm/v/docute.svg?style=flat" alt="NPM version"></a> <a href="https://npmjs.com/package/docute"><img src="https://img.shields.io/npm/dm/docute.svg?style=flat" alt="NPM download"></a> <a href="https://circleci.com/gh/egoist/docute"><img src="https://img.shields.io/circleci/project/egoist/docute/master.svg?style=flat" alt="Build Status"></a> <a href="https://github.com/egoist/donate"><img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat" alt="donate"></a></p>
 
-<p align="center">
-  <b>Special thanks to the generous sponsorship by:</b>
-  <br><br>
-  <a href="https://www.yousails.com">
-    <img src="https://yousails.com/banners/brand.png" width=350>
-  </a>
-</p>
-
 ## Features
 
 - You don't need to run build process 👻
