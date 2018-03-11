@@ -35,6 +35,7 @@ For detailed usage please head to https://docute.js.org 😎
 - [finger-mover](https://fmover.hcysun.me/#/): A motion effect library that integrates Fingerd and Moved
 - [lass](https://lass.js.org/): Lass scaffolds a modern package boilerplate for node
 - [telegraf](http://telegraf.js.org/): 📡 Modern Telegram bot framework for Node.js
+- [alphaX](http://www.v2js.com/alphax/#/) - :fire: Fueling your scaffolding.
 - Feel free to add yours here :)
 
 ## Contributing
