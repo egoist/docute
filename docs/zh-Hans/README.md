@@ -43,7 +43,6 @@ docute init ./docs
 
 - README.md: 作为文档首页的内容显示
 - index.html: 访问网站时渲染的 html
-- config.js: 配置文件
 - .nojekyll: 表明这不是一个 jekyll 网站，如果你不是要发布到 github pages 那么可以忽略它
 
 然后你可以在本地预览文档:
@@ -71,15 +70,15 @@ docute ./docs
 </head>
 <body>
   <div id="app"></div>
-  <!-- 你也可以把包含 $config 配置的脚本放到单独的文件里 -->
-  <!-- 比如 config.js -->
-  <script>
-    self.$config = {
-      // 配置...
-    }
-  </script>
   <!-- 加载 docute 的 js 库 -->
   <script src="https://unpkg.com/docute/dist/docute.js"></script>
+    <!-- 你也可以把包含 $config 配置的脚本放到单独的文件里 -->
+  <!-- 比如 config.js -->
+  <script>
+    docute.init({
+      // 配置...
+    })
+  </script>
 </body>
 </html>
 ```
@@ -89,9 +88,9 @@ docute ./docs
 执行 `docute init` 后你的文档目录会有一个 `config.js` 配置文件:
 
 ```js
-self.$config = {
+docute.init({
   // 配置...
-}
+})
 ```
 
 ### 首页
@@ -99,10 +98,10 @@ self.$config = {
 文档目录里的 `README.md` 文件会渲染为文档首页，但有时你可能会想使用其它文件。比如你将 `./docs` 目录里的文件作为 github pages 使用的时候你可能想直接使用项目根目录里的 `README.md`，你可以通过配置指向该文件:
 
 ```js
-self.$config = {
+docute.init({
   // 项目根目录里的 README.md
   home: 'https://raw.githubusercontent.com/egoist/docute/master/README.md'
-}
+})
 ```
 
 ### Landing 页面
@@ -110,14 +109,14 @@ self.$config = {
 你可以开启 `landing` 选项来启用 Landing 页面:
 
 ```js
-self.$config = {
+docute.init({
   // true 将会默认使用 `landing.html`
   landing: true,
   // 也可以用自定义页面
   landing: '_my-landing.html',
   // 当然 markdown 文件也可以
   landing: 'landing.md'
-}
+})
 ```
 
 如果你开启了这个功能，Landing 页面的路由将是 `/`，而文档的首页将改为用 `/home` 访问。
@@ -139,9 +138,9 @@ self.$config = {
 想默认隐藏侧边栏，可以在 `config.js` 中将其设置为 `false`:
 
 ```js
-self.$config = {
+docute.init({
   sidebar: false
-}
+})
 ```
 
 或者只隐藏某个页面的侧边栏:
@@ -156,9 +155,9 @@ sidebar: false
 左下角也会有个按钮用于切换侧边栏，你也可以隐藏它:
 
 ```js
-self.$config = {
+docute.init({
   disableSidebarToggle: true
-}
+})
 ```
 
 #### 目录表
@@ -168,10 +167,10 @@ self.$config = {
 默认只会显示 h2 到 h4 的标题，其它标题只有在你页面滚动到相应区域才会显示，不过你可以更改最深显示的标题层级:
 
 ```js
-self.$config = {
+docute.init({
   // 显示 h2 到 h4 的标题
   tocVisibleDepth: 3
-}
+})
 ```
 
 要彻底隐藏目录表把 `toc` 设置为 `false` 即可。
@@ -181,14 +180,14 @@ self.$config = {
 当你有多个页面的时候你很可能需要一个导航栏方便用户浏览，你可以通过配置文件添加导航栏:
 
 ```js
-self.$config = {
+docute.init({
   nav: [
     // 首页
     {title: 'Home', path: '/'},
     // 中文文档
     {title: '中文文档', path: '/language/chinese'}
   ]
-}
+})
 ```
 
 <p class="tip">
@@ -219,14 +218,14 @@ A path like `/language/chinese` will make docute fetch `/language/chinese.md`, y
 ##### Icon short-hand
 
 ```js
-self.$config = {
+docute.init({
   // slug for your github repo
   repo: 'tj/co',
   // twitter username
   twitter: 'realDonaldTrump',
   // the link to source file of current page
   'edit-link': 'https://github.com/egoist/docute/blob/master/docs'
-}
+})
 ```
 
 To fully customize the `label`, `link` or use custom svg icons, see below.
@@ -236,13 +235,13 @@ To fully customize the `label`, `link` or use custom svg icons, see below.
 The built-in svg icons: `github` `twitter` `edit` `menu` `link` `search` `close`, which you can use in the `icon` attribute in `icons` option:
 
 ```js
-self.$config = {
+docute.init({
   icons: [{
     icon: 'github',
     label: 'Contribute on GitHub',
     link: 'https://github.com/owner/repo'
   }]
-}
+})
 ```
 
 This example will have the same effect as using `repo: 'owner/repo'` but with custom label text here.
@@ -267,7 +266,7 @@ First, add it to your HTML file, which is `index.html` here:
 Then use it in `config.js`:
 
 ```js
-self.$config = {
+docute.init({
   icons: [
     {
       label: 'Hovered!', // the text for tooltip
@@ -275,13 +274,13 @@ self.$config = {
       link: 'http://blah.blah'
     }
   ]
-}
+})
 ```
 
 You can also add `svgClass` property to use CSS to control the style of your icon
 
 ```js
-self.$config = {
+docute.init({
   icons: [
     {
       label: 'Hovered!',
@@ -290,7 +289,7 @@ self.$config = {
       link: 'http://blah.blah'
     }
   ]
-}
+})
 ```
 
 ```css
@@ -315,12 +314,12 @@ There're many resources for good free SVG icons, for example: [bytesize-icons](h
 你可以设置多套图标，然后给不同页面指定不同图标:
 
 ```js
-self.$config = {
+docute.init({
   icons: {
     default: [{label: 'hello'}],
     chinese: [{label: '你好'}]
   }
-}
+})
 ```
 
 现在所有页面都会使用 `default` 这套图标，你可以通过 front-matter 指定页面使用其它图标，比如使用 `chinese`:
@@ -337,14 +336,14 @@ icons: chinese
 显示一个下拉菜单以容纳多个页面:
 
 ```js
-self.$config = {
+docute.init({
   nav: [
     {title: '其他语言', type: 'dropdown', items: [
       {title: '中文', path: '/language/chinese'},
       {title: '日语', path: '/language/japanese'}
     ]}
   ]
-}
+})
 ```
 
 ##### matchPath
@@ -354,7 +353,7 @@ Type: `RegExp`
 To make dropdown menu display the actual title of active page, for example, show `Chinese` instead of `Languages` as the dropdown title when user enters relevant page, use `matchPath`. The target of `matchPath` is `this.$route.path`,eg: in `https://example.com/en/get-started` the target is `/en/get-started`
 
 ```js
-self.$config = {
+docute.init({
   nav: [{
     title: 'Languages', type: 'dropdown', items: [{
       path: '/en',
@@ -364,7 +363,7 @@ self.$config = {
       matchPath: /^\/en[\/$]/
     }]
   }]
-}
+})
 ```
 
 If no macthed item was found, it uses the title of `dropdown` menu instead.
@@ -378,7 +377,7 @@ To have such dropdown menu:
 You will need the `label` and `sep` helper:
 
 ```js
-self.$config = {
+docute.init({
   nav: [
     {
       title: 'Ecosystem', type: 'dropdown', items: [
@@ -389,7 +388,7 @@ self.$config = {
       ]
     }
   ]
-}
+})
 ```
 
 #### 具名导航
@@ -399,12 +398,12 @@ self.$config = {
 当配置文件中的 `nav` 选项是一个数组的时候，它会被作为所有页面的默认导航栏，但是你也可以把它设置为一个纯对象 `{}` 来拥有多个导航栏。
 
 ```js
-self.$config = {
+docute.init({
   nav: {
     default: [{title: 'Home', path: '/'}],
     chinese: [{title: '首页', path: '/chinese'}]
   }
-}
+})
 ```
 
 现在你拥有两个有各自名字的导航栏，目前为止所有页面还是只会使用 `default` 这个默认导航栏，你可以通过 markdown 文件里的 front-matter 来切换:
@@ -422,12 +421,12 @@ nav: chinese
 docute 使用 [marked](https://github.com/chjj/marked) 来解析 markdown 代码，你可以调整 marked 的默认参数:
 
 ```js
-self.$config = {
+docute.init({
   marked: {
     smartypants: true
     // ...
   }
-}
+})
 ```
 
 完整的参数说明请参考[官方文档](https://github.com/chjj/marked#options-1)。
@@ -437,9 +436,9 @@ self.$config = {
 将 `debug` 设置为 `true` 来启用浏览器的 vue-devtools 插件:
 
 ```js
-self.$config = {
+docute.init({
   debug: true
-}
+})
 ```
 
 ## 指南
