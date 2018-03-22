@@ -51,6 +51,7 @@ The development setup is basically webpack + vue:
 
 ```bash
 cd docute
+npm install
 npm run dev
 # then edit files in ./src dir and save to reload
 ```
