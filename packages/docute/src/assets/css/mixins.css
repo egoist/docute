@@ -1,0 +1,12 @@
+@define-mixin pretty-scrollbar {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #e0d6eb;
+  }
+  &::-webkit-scrollbar-track {
+    background: #f5f3f7;
+  }
+}

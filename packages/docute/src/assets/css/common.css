@@ -1,0 +1,5 @@
+@import "mixins.css";
+
+.pretty-scrollbar {
+  @mixin pretty-scrollbar;
+}

@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "scripts": {
+    "example": "poi --config example/poi.config.js",
+    "build:example": "poi build --config example/poi.config.js"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0-beta.42",
+    "lerna": "^2.9.0",
+    "poi": "^10.0.0-beta.8",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^11.1.0",
+    "postcss-mixins": "^6.2.0"
+  }
+}
