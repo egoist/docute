@@ -19,7 +19,7 @@ const doc = new Docute({
       title: 'Home',
       path: '/'
     },
-    { title: 'Docs', path: '/docs/' },
+    { title: 'Docs', path: '/docs/getting-started/introduction' },
     {
       title: 'Help',
       path: '/help'

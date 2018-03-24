@@ -33,10 +33,6 @@ export default {
 .main {
   padding-top: var(--header-height);
   max-width: 980px;
-  margin: 0 auto;
-}
-
-.markdown-body {
-  padding: 0 40px;
+  margin: 30px auto;
 }
 </style>

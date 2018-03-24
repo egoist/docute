@@ -1,5 +1,5 @@
 <template>
-  <div class="doc-meta">
+  <div class="doc-meta" :class="{'has-padding': padding}">
     <h1 class="doc-title" v-if="meta.title">{{ meta.title }}</h1>
     <div class="doc-subtitle" v-if="meta.subtitle">
       {{ meta.subtitle }}
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  props: ['meta']
+  props: ['meta', 'padding']
 }
 </script>
 
@@ -17,7 +17,10 @@ export default {
 @import "vars.css";
 
 .doc-meta {
-  padding: 30px var(--content-lr-padding) 30px var(--content-lr-padding);
+  padding-bottom: 30px;
+  &.has-padding {
+    padding: 30px var(--content-lr-padding) 30px var(--content-lr-padding);
+  }
 }
 
 .doc-title {
