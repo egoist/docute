@@ -1,6 +1,6 @@
 <template>
   <div class="leftbar pretty-scrollbar">
-    <div class="leftbar-section" v-for="item in summary" :key="item.title">
+    <div class="leftbar-section" v-for="item in docs" :key="item.title">
       <div class="section-title">{{ item.title }}</div>
       <router-link
         :to="child.path"
@@ -16,7 +16,7 @@
 <script>
 export default {
   props: {
-    summary: {
+    docs: {
       type: Array,
       required: true
     }

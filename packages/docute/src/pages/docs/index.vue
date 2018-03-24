@@ -1,7 +1,7 @@
 <template>
   <div class="docs">
     <site-header />
-    <doc-leftbar :summary="summary" v-if="summary" />
+    <doc-leftbar :docs="docs" v-if="docs" />
     <div class="main">
       <doc-meta :meta="meta" v-if="hasMeta" />
       <div class="markdown-body" v-html="html"></div>
@@ -21,7 +21,7 @@ import DocLeftbar from '@/components/DocLeftbar'
 const storeMixin = createStoreMixin({
   state: {
     defaultFileName: state => state.config.defaultFileName,
-    summary: state => state.config.summary
+    docs: state => state.config.docs
   }
 })
 

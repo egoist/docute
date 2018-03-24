@@ -7,13 +7,13 @@ import 'typeface-source-sans-pro/index.css'
 
 class Docute {
   constructor({
-    summary,
+    docs,
     nav,
     defaultFileName = 'README',
     routerMode = 'hash'
   } = {}) {
     const config = {
-      summary,
+      docs,
       nav,
       defaultFileName,
       routerMode

@@ -1,7 +1,7 @@
 import Docute from 'docute'
 
 const doc = new Docute({
-  summary: [
+  docs: [
     {
       title: 'Gettings started',
       children: [
