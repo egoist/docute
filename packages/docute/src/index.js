@@ -5,6 +5,16 @@ import createStore from './store'
 
 import 'typeface-source-sans-pro/index.css'
 
+const flatten = routes => {
+  return routes.reduce((res, item) => {
+    return [
+      ...res,
+      item,
+      ...(item.children ? flatten(item.children) : [])
+    ]
+  }, []).filter(item => item.path)
+}
+
 class Docute {
   constructor({
     docs,
@@ -18,8 +28,9 @@ class Docute {
       defaultFileName,
       routerMode
     }
+    const routes = flatten([...(nav || []), ...(docs || [])])
     this.vm = new Vue({
-      router: createRouter({ routerMode }),
+      router: createRouter({ routes, routerMode }),
       store: createStore(config),
       render(h) {
         return <Root />

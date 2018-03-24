@@ -19,8 +19,14 @@ const doc = new Docute({
       title: 'Home',
       path: '/'
     },
-    { title: 'Docs', path: '/docs/' }
+    { title: 'Docs', path: '/docs/' },
+    {
+      title: 'Help',
+      path: '/help'
+    }
   ]
 })
 
 doc.start('#app')
+
+window.doc = doc
