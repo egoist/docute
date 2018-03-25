@@ -7,6 +7,7 @@
 
 
 <script>
+import Vue from 'vue'
 import loadMarkdownParser from '@/utils/loadMarkdownParser'
 import frontMatter from '@/utils/frontMatter'
 import layouts from '@/layouts'
@@ -16,6 +17,11 @@ const storeMixin = createStoreMixin({
   state: {
     defaultFileName: state => state.config.defaultFileName
   }
+})
+
+const renderAsComponent = content => ({
+  name: 'page-content-component',
+  ...Vue.compile(`<div class="markdown-body">${content}</div>`)
 })
 
 export default {
@@ -59,17 +65,19 @@ export default {
         loadMarkdownParser()
       ])
       const { attributes, body } = frontMatter(text)
+      const html = md.render(body)
       return {
         ...attributes,
-        content: md.render(body)
+        content: renderAsComponent(html)
       }
     },
 
     async render() {
       const md = await loadMarkdownParser()
+      const html = md.render(this.source.content)
       return {
         ...this.source,
-        content: md.render(this.source.content)
+        content: renderAsComponent(html)
       }
     }
   },

@@ -4,7 +4,7 @@
     <doc-leftbar :docs="docs" v-if="docs" />
     <div class="content">
       <doc-meta :padding="true" :meta="source" v-if="source.title" />
-      <div class="markdown-body" v-html="source.content"></div>
+      <component :is="source.content" />
     </div>
     <div class="doc-right"></div>
   </div>

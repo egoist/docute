@@ -3,7 +3,7 @@
     <site-header />
     <div class="main">
       <doc-meta :meta="source" />
-      <div class="markdown-body" v-html="source.content"></div>
+      <component :is="source.content" />
     </div>
   </div>
 </template>

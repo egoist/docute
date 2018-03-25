@@ -15,6 +15,7 @@ module.exports = {
     config.resolve.alias
       .set('docute$', path.join(__dirname, '../packages/docute/src/index.js'))
       .set('@', path.join(__dirname, '../packages/docute/src'))
+      .set('vue$', 'vue/dist/vue')
 
     config.node.set('fs', 'empty').set('net', 'empty')
   }
