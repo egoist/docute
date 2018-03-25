@@ -3,7 +3,7 @@
     <site-header />
     <div class="main">
       <doc-meta :meta="source" />
-      <component :is="source.content" />
+      <page-content :content="source.content" />
     </div>
   </div>
 </template>
@@ -11,6 +11,7 @@
 <script>
 import SiteHeader from '@/components/Header'
 import DocMeta from '@/components/DocMeta'
+import PageContent from '@/components/PageContent'
 
 export default {
   props: {
@@ -22,7 +23,8 @@ export default {
 
   components: {
     SiteHeader,
-    DocMeta
+    DocMeta,
+    PageContent
   }
 }
 </script>

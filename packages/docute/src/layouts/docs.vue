@@ -4,7 +4,7 @@
     <doc-leftbar :docs="docs" v-if="docs" />
     <div class="content">
       <doc-meta :padding="true" :meta="source" v-if="source.title" />
-      <component :is="source.content" />
+      <page-content :content="source.content" />
     </div>
     <div class="doc-right"></div>
   </div>
@@ -15,6 +15,7 @@ import createStoreMixin from '@/utils/createStoreMixin'
 import SiteHeader from '@/components/Header'
 import DocMeta from '@/components/DocMeta'
 import DocLeftbar from '@/components/DocLeftbar'
+import PageContent from '@/components/PageContent'
 
 const storeMixin = createStoreMixin({
   state: {
@@ -30,7 +31,8 @@ export default {
   components: {
     SiteHeader,
     DocMeta,
-    DocLeftbar
+    DocLeftbar,
+    PageContent
   },
 
   props: {

@@ -7,8 +7,19 @@
           <div class="title">{{ source.title }}</div>
         <div class="subtitle">{{ source.subtitle }}</div>
         <div class="buttons">
-          <router-link class="button has-animation" :to="source.getStarted || '/get-started'">Get Started</router-link>
+          <router-link class="button has-animation" :to="source.getStarted || '/get-started'">Get Started <arrow-right-icon class="icon" /></router-link>
         </div>
+        </div>
+      </div>
+      <div class="features" v-if="source.features">
+        <div class="container">
+          <div
+            class="feature"
+            v-for="(feature, index) in source.features"
+            :key="index">
+            <div class="title">{{ feature.title }}</div>
+            <div class="description" v-html="feature.description"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -16,6 +27,7 @@
 </template>
 
 <script>
+import { ArrowRightIcon } from 'vue-feather-icons'
 import SiteHeader from '@/components/Header'
 
 export default {
@@ -27,7 +39,8 @@ export default {
   },
 
   components: {
-    SiteHeader
+    SiteHeader,
+    ArrowRightIcon
   }
 }
 </script>
@@ -46,6 +59,7 @@ export default {
 
 .project {
   padding: 30px 0;
+  text-align: center;
 
   & .title {
     font-size: 3rem;
@@ -58,6 +72,32 @@ export default {
 
   & .buttons {
     margin-top: 50px;
+  }
+}
+
+.features {
+  margin-top: 40px;
+
+  & .container {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & .feature {
+    width: 33%;
+    padding: 0 10px;
+
+    & .title {
+      font-size: 1.4rem;
+      color: var(--primary-color);
+    }
+
+    & .description {
+      margin-top: 10px;
+      color: #7f8c8d
+    }
   }
 }
 </style>

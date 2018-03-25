@@ -16,6 +16,7 @@
     "markdown-it": "^8.4.1",
     "typeface-source-sans-pro": "^0.0.54",
     "vue": "^2.5.16",
+    "vue-feather-icons": "^4.5.0",
     "vue-inter": "^3.0.0",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",

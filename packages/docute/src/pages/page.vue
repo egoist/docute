@@ -19,10 +19,14 @@ const storeMixin = createStoreMixin({
   }
 })
 
-const renderAsComponent = content => ({
-  name: 'page-content-component',
-  ...Vue.compile(`<div class="markdown-body">${content}</div>`)
-})
+const renderAsComponent = (content, { vue }) => {
+  if (vue === false) return content
+
+  return {
+    name: 'page-content-component',
+    ...Vue.compile(`<div class="markdown-body">${content}</div>`)
+  }
+}
 
 export default {
   name: 'page',
@@ -59,7 +63,9 @@ export default {
 
     async fetchAndRender() {
       const endsWithSlash = this.$route.path.slice(-1) === '/'
-      const file = endsWithSlash ? `${this.$route.path}${this.defaultFileName}.md` : `${this.$route.path}.md`
+      const file = endsWithSlash
+        ? `${this.$route.path}${this.defaultFileName}.md`
+        : `${this.$route.path}.md`
       const [text, md] = await Promise.all([
         fetch(file).then(res => res.text()),
         loadMarkdownParser()
@@ -68,7 +74,7 @@ export default {
       const html = md.render(body)
       return {
         ...attributes,
-        content: renderAsComponent(html)
+        content: renderAsComponent(html, attributes)
       }
     },
 
@@ -77,7 +83,7 @@ export default {
       const html = md.render(this.source.content)
       return {
         ...this.source,
-        content: renderAsComponent(html)
+        content: renderAsComponent(html, this.source)
       }
     }
   },
