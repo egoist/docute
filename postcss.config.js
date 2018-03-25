@@ -6,6 +6,12 @@ module.exports = {
       path: [path.resolve('packages/docute/src/assets/css')]
     }),
     require('postcss-mixins')(),
-    require('postcss-cssnext')()
+    require('postcss-cssnext')({
+      features: {
+        customProperties: {
+          preserve: true
+        }
+      }
+    })
   ]
 }
