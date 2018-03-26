@@ -15,7 +15,7 @@ export default state => {
       attrs.push(['id', slug])
       tokens[idx].attrs = attrs
 
-      if (depth >=2 && depth <= maxDepth) {
+      if (depth >= 2 && depth <= maxDepth) {
         state.headings.push({
           depth,
           slug,
@@ -27,7 +27,7 @@ export default state => {
       const anchor = [
         {
           ...new Token('link_open', 'docute-link', 1),
-          attrs: [['class', 'docute-heading-anchor']]
+          attrs: [['class', 'docute-heading-anchor'], ['id', slug]]
         },
         {
           ...new Token('span_open', 'span', 1),
