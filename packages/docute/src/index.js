@@ -20,13 +20,15 @@ class Docute {
     docs,
     nav,
     defaultFileName = 'README',
-    routerMode = 'hash'
+    routerMode = 'hash',
+    toc
   } = {}) {
     const config = {
       docs,
       nav,
       defaultFileName,
-      routerMode
+      routerMode,
+      toc
     }
     const routes = flatten([...(nav || []), ...(docs || [])])
     this.vm = new Vue({

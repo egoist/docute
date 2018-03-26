@@ -66,12 +66,12 @@ export default {
       const file = endsWithSlash
         ? `${this.$route.path}${this.defaultFileName}.md`
         : `${this.$route.path}.md`
-      const [text, md] = await Promise.all([
+      const [text, MarkdownIt] = await Promise.all([
         fetch(file).then(res => res.text()),
         loadMarkdownParser()
       ])
       const { attributes, body } = frontMatter(text)
-      const html = md.render(body)
+      const html = this.renderToHtml(MarkdownIt, body)
       return {
         ...attributes,
         content: renderAsComponent(html, attributes)
@@ -79,12 +79,19 @@ export default {
     },
 
     async render() {
-      const md = await loadMarkdownParser()
-      const html = md.render(this.source.content)
+      const MarkdownIt = await loadMarkdownParser()
+      const html = this.renderToHtml(MarkdownIt, this.source.content)
       return {
         ...this.source,
         content: renderAsComponent(html, this.source)
       }
+    },
+
+    renderToHtml(MarkdownIt, text) {
+      const md = new MarkdownIt({
+        html: true
+      })
+      return md.render(text)
     }
   },
 
