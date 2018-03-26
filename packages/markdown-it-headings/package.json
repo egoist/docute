@@ -1,0 +1,18 @@
+{
+  "name": "markdown-it-headings",
+  "version": "0.0.0",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/markdown-it-headings.cjs.js",
+  "scripts": {
+    "build": "bili"
+  },
+  "peerDependencies": {
+    "markdown-it": "^8.4.1"
+  },
+  "devDependencies": {
+    "bili": "^3.0.13",
+    "markdown-it": "^8.4.1"
+  }
+}

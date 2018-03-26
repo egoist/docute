@@ -13,6 +13,7 @@
   "author": "egoist <0x142857@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "github-slugger": "^1.2.0",
     "markdown-it": "^8.4.1",
     "typeface-source-sans-pro": "^0.0.54",
     "vue": "^2.5.16",
