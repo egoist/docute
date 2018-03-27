@@ -12,6 +12,8 @@ import loadMarkdownParser from '@/utils/loadMarkdownParser'
 import frontMatter from '@/utils/frontMatter'
 import layouts from '@/layouts'
 import createStoreMixin from '@/utils/createStoreMixin'
+import headingsPlugin from 'markdown-it-headings'
+import jump from 'jump.js'
 
 const storeMixin = createStoreMixin({
   state: {
@@ -46,9 +48,10 @@ export default {
     }
   },
 
-  created() {
+  mounted() {
     this.tryRender()
     this.$watch('$route.path', this.tryRender)
+    this.$watch('$route.hash', this.scrollHeadingIntoView)
   },
 
   methods: {
@@ -59,6 +62,7 @@ export default {
         this.pageSource = await this.fetchAndRender()
       }
       this.rendered = true
+      setTimeout(this.scrollHeadingIntoView, 300)
     },
 
     async fetchAndRender() {
@@ -91,7 +95,21 @@ export default {
       const md = new MarkdownIt({
         html: true
       })
+      const state = {
+        headings: []
+      }
+      md.use(headingsPlugin(state))
       return md.render(text)
+    },
+
+    scrollHeadingIntoView() {
+      const el = this.$route.hash && document.querySelector(this.$route.hash)
+      if (el) {
+        jump(el, {
+          offset: -(document.querySelector('.header').clientHeight + 20),
+          duration: 300
+        })
+      }
     }
   },
 

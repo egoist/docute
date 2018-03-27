@@ -24,23 +24,15 @@ export default state => {
         })
       }
 
-      const anchor = [
+      const children = tokens[idx + 1].children
+      tokens[idx + 1].children = [
         {
-          ...new Token('link_open', 'docute-link', 1),
-          attrs: [['class', 'docute-heading-anchor'], ['id', slug]]
+          ...new Token('link_open', 'router-link', 1),
+          attrs: [['class', 'docute-heading-anchor'], [':to', `{hash:'${slug}'}`]]
         },
-        {
-          ...new Token('span_open', 'span', 1),
-          attrs: [['class', 'docute-heading-anchor-symbol']]
-        },
-        {
-          ...new Token('text', '', 0),
-          content: '#'
-        },
-        new Token('span_close', 'span', -1),
-        new Token('link_close', 'docute-link', -1)
+        ...children,
+        new Token('link_close', 'router-link', -1)
       ]
-      tokens[idx + 1].children.push(...anchor)
 
       return self.renderToken(...args)
     }

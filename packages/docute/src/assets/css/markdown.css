@@ -30,6 +30,11 @@ pre > code {
     &:first-child {
       margin-top: 0;
     }
+
+    & a {
+      color: #333;
+      text-decoration: none;
+    }
   }
 
   & h1 {

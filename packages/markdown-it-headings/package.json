@@ -6,7 +6,8 @@
   ],
   "main": "dist/markdown-it-headings.cjs.js",
   "scripts": {
-    "build": "bili"
+    "build": "bili",
+    "prepublishOnly": "yarn build"
   },
   "peerDependencies": {
     "markdown-it": "^8.4.1"
