@@ -5,6 +5,7 @@
       <router-link
         :to="child.path"
         class="item"
+        :class="{active: child.path === $route.path}"
         v-for="child in item.children"
         :key="child.title">
         {{ child.title }}
@@ -48,7 +49,7 @@ export default {
     border-left-color: var(--border-color);
   }
 
-  &.router-link-exact-active {
+  &.active {
     color: var(--black);
     font-weight: 700;
     border-left-color: var(--primary-color);

@@ -3,6 +3,7 @@
     <router-link
       :to="item.path"
       class="nav-item"
+      :class="{active: item.path === $route.path}"
       v-for="item in nav"
       :key="item.title">
       {{ item.title }}
@@ -34,7 +35,7 @@ export default {
   text-decoration: none;
   padding: 0 20px;
 
-  &.router-link-exact-active {
+  &.active {
     box-shadow: inset 0 -2px 0 0 var(--primary-color);
   }
 
