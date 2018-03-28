@@ -37,6 +37,7 @@ export default {
   z-index: 10;
 
   & >>> .toc-item {
+    font-size: inherit;
     padding: 3px 20px;
     border-left: 3px solid transparent;
     padding-left: 17px;

@@ -73,11 +73,6 @@ export default {
   padding: var(--header-height) 0;
 }
 
-.container {
-  max-width: 1260px;
-  margin: 0 auto;
-}
-
 .project {
   padding: 80px 0;
   text-align: center;
@@ -113,9 +108,9 @@ export default {
     padding-right: 40px;
 
     & .title {
-      font-size: 1.8rem;
+      font-size: 1.3rem;
       color: #6d6d6d;
-      font-weight: 200;
+      font-weight: 300;
     }
 
     & .description {

@@ -20,11 +20,16 @@ export default {
 <style scoped>
 @import "vars.css";
 
+.toc {
+  padding-right: 10px;
+}
+
 .toc-item {
   display: flex;
   color: var(--black);
   text-decoration: none;
   padding-bottom: 5px;
+  font-size: 13px;
 
   &:hover {
     color: rgb(109, 109, 109);

@@ -86,48 +86,29 @@ export default {
 .docs {
   display: flex;
 
+
   &.has-leftbar {
-    & .main {
-      max-width: 100%;
-      width: 100%;
-    }
-
     & .content {
-      margin-left: var(--leftbar-width);
-      width: calc(100% - var(--leftbar-width));
+      padding-left: var(--leftbar-width);
     }
   }
 
-  &.has-rightbar {
+  &.has-rightbar:not(.has-leftbar) {
     & .main {
-      max-width: 1260px;
-    }
-
-    & .content {
-      width: calc(100% - var(--rightbar-width));
-    }
-  }
-
-  &.has-leftbar.has-rightbar {
-    & .main {
-      max-width: 100%;
-      width: 100%;
-    }
-
-    & .content {
-      width: calc(100% - var(--leftbar-width) - var(--rightbar-width));
+      max-width: 90%;
+      margin: 0 auto;
     }
   }
 }
 
 .main {
-  max-width: 1260px;
-  margin: 0 auto;
   display: flex;
+  width: 100%;
 }
 
 .content {
   padding-top: var(--header-height);
+  width: calc(100% - var(--rightbar-width));
 }
 
 .markdown-body {
@@ -138,9 +119,10 @@ export default {
   width: var(--rightbar-width);
   top: var(--header-height);
   padding: 30px 0;
-  position: sticky;
-  /* hmm */
-  height: 100%;
-  height: fit-content;
+  position: fixed;
+  overflow: auto;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
 }
 </style>
