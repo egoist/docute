@@ -1,6 +1,7 @@
 import Docute from 'docute'
 
 const doc = new Docute({
+  routerMode: 'history',
   site: {
     title: 'Docute',
     description: 'Effortlessly documentation done right'
