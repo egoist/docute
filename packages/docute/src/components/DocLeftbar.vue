@@ -34,6 +34,7 @@ export default {
   padding: 30px 0;
   background-color: var(--leftbar-bg);
   overflow: auto;
+  z-index: 10;
 
   & >>> .toc-item {
     padding: 3px 20px;
