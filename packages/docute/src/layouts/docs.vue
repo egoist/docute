@@ -89,6 +89,7 @@ export default {
   &.has-leftbar {
     & .main {
       max-width: 100%;
+      width: 100%;
     }
 
     & .content {
@@ -110,6 +111,7 @@ export default {
   &.has-leftbar.has-rightbar {
     & .main {
       max-width: 100%;
+      width: 100%;
     }
 
     & .content {
