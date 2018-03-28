@@ -12,7 +12,7 @@ yarn
 yarn example
 ```
 
-The example lives in [example](./example) folder, and the example docs lives in [example/website/docs](./example/website/docs).
+The example lives in [example](./example) folder.
 
 For an online version please see https://example.docute.org
 

@@ -5,12 +5,8 @@ const website = path.join(__dirname, 'website')
 
 module.exports = {
   entry: path.join(__dirname, 'index.js'),
-  outDir: path.join(__dirname, 'website'),
-  devServer: {
-    before(app) {
-      app.use('/', express.static(website))
-    }
-  },
+  outDir: path.join(__dirname, 'dist'),
+  staticFolder: __dirname,
   extendWebpack(config) {
     config.resolve.alias
       .set('docute$', path.join(__dirname, '../packages/docute/src/index.js'))
