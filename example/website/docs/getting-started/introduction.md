@@ -27,6 +27,13 @@ Integer laoreet leo id dui condimentum consequat. Integer sagittis a lectus id c
 
 Vestibulum quis cursus nisi. Morbi iaculis cursus enim volutpat commodo. Vestibulum tristique viverra iaculis. Fusce sit amet nisi imperdiet, luctus risus ut, luctus velit. Aenean ullamcorper tortor lectus, id iaculis orci pretium id. Duis congue egestas pretium. Suspendisse potenti. Cras nibh augue, fermentum in tincidunt vitae, viverra sit amet velit. Proin dignissim mattis massa, sit amet commodo elit dictum non. Duis sodales mi eget neque facilisis congue. Morbi mi magna, hendrerit vitae scelerisque id, vehicula quis erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur vitae neque et sem efficitur malesuada. Fusce a maximus dolor. Curabitur eu sollicitudin eros, a consectetur libero.
 
+```js
+ReactDOM.render(
+  <h1>Hello, world!</h1>,
+  document.getElementById('root')
+);
+```
+
 Integer laoreet leo id dui condimentum consequat. Integer sagittis a lectus id cursus. Cras non molestie erat. Suspendisse quis tincidunt justo. Proin luctus blandit nunc tempor sodales. Suspendisse potenti. Pellentesque dolor ligula, tempor quis enim et, mattis malesuada felis.
 
 Vestibulum quis cursus nisi. Morbi iaculis cursus enim volutpat commodo. Vestibulum tristique viverra iaculis. Fusce sit amet nisi imperdiet, luctus risus ut, luctus velit. Aenean ullamcorper tortor lectus, id iaculis orci pretium id. Duis congue egestas pretium. Suspendisse potenti. Cras nibh augue, fermentum in tincidunt vitae, viverra sit amet velit. Proin dignissim mattis massa, sit amet commodo elit dictum non. Duis sodales mi eget neque facilisis congue. Morbi mi magna, hendrerit vitae scelerisque id, vehicula quis erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur vitae neque et sem efficitur malesuada. Fusce a maximus dolor. Curabitur eu sollicitudin eros, a consectetur libero.

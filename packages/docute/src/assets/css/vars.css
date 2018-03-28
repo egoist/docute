@@ -10,4 +10,6 @@
   --header-bg: #20232a;
   --black: #20232a;
   --leftbar-bg: rgb(247, 247, 247);
+  --link-bg: rgba(187,239,253,0.3);
+  --link-hover-bg: #bbeffd;
 }

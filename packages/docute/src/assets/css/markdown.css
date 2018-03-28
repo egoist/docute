@@ -26,16 +26,34 @@ pre > code {
 .markdown-body {
   font-size: 17px;
 
-  & h1, & h2, & h3, & h4, & h5 {
+  & a {
+    background-color: var(--link-bg);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    color: #1a1a1a;
+    text-decoration: none;
+
+    &:hover {
+      background-color: var(--link-hover-bg);
+      border-bottom-color: #1a1a1a;
+    }
+  }
+
+  & h1, & h2, & h3, & h4, & h5, & h6 {
     font-weight: bold;
+    color: var(--black);
 
     &:first-child {
       margin-top: 0;
     }
 
     & a {
-      color: #333;
+      color: var(--black);
       text-decoration: none;
+      border-bottom: none;
+      background-color: transparent;
+      &:hover {
+        background-color: transparent;
+      }
     }
   }
 

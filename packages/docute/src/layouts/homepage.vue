@@ -4,8 +4,8 @@
     <div class="main">
       <div class="project">
         <div class="container">
-          <div class="title">{{ source.title }}</div>
-        <div class="subtitle">{{ source.subtitle }}</div>
+          <div class="title">{{ source.title || site.title }}</div>
+        <div class="subtitle">{{ source.subtitle || site.description }}</div>
         <div class="buttons">
           <router-link class="button has-animation" :to="source.getStarted || '/get-started'">Get Started <arrow-right-icon class="icon" /></router-link>
         </div>
@@ -30,6 +30,13 @@
 import Vue from 'vue'
 import { ArrowRightIcon } from 'vue-feather-icons'
 import SiteHeader from '@/components/Header'
+import createStoreMixin from '@/utils/createStoreMixin'
+
+const storeMixin = createStoreMixin({
+  state: {
+    site: state => ({...state.config.site}),
+  }
+})
 
 export default {
   props: {
@@ -38,6 +45,8 @@ export default {
       required: true
     }
   },
+
+  mixins: [storeMixin],
 
   methods: {
     handleDescription(desc) {
@@ -65,7 +74,7 @@ export default {
 }
 
 .container {
-  max-width: 1080px;
+  max-width: 1260px;
   margin: 0 auto;
 }
 
@@ -101,7 +110,7 @@ export default {
 
   & .feature {
     flex: 0 1 33%;
-    padding-right: 20px;
+    padding-right: 40px;
 
     & .title {
       font-size: 1.8rem;

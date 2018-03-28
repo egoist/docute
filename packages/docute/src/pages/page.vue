@@ -2,6 +2,7 @@
   <component
     v-if="pageSource && rendered"
     :source="pageSource"
+    :toc="toc"
     :is="layout" />
 </template>
 
@@ -44,7 +45,8 @@ export default {
   data() {
     return {
       pageSource: null,
-      rendered: false
+      rendered: false,
+      toc: null
     }
   },
 
@@ -99,7 +101,9 @@ export default {
         headings: []
       }
       md.use(headingsPlugin(state))
-      return md.render(text)
+      const html = md.render(text)
+      this.toc = state.headings
+      return html
     },
 
     scrollHeadingIntoView() {

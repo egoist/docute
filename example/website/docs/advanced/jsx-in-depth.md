@@ -1,6 +1,7 @@
 ---
 title: JSX in depth
 subtitle: Like JSX?
+toc: true
 ---
 
 haha _nope_

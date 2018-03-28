@@ -1,6 +1,10 @@
 import Docute from 'docute'
 
 const doc = new Docute({
+  site: {
+    title: 'Docute',
+    description: 'Effortlessly documentation done right'
+  },
   docs: [
     {
       title: 'Gettings started',

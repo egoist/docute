@@ -1,26 +1,23 @@
 <template>
   <div class="leftbar pretty-scrollbar">
-    <div class="leftbar-section" v-for="item in docs" :key="item.title">
-      <div class="section-title">{{ item.title }}</div>
-      <router-link
-        :to="child.path"
-        class="section-item"
-        v-for="child in item.children"
-        :key="child.title">
-        {{ child.title }}
-      </router-link>
-    </div>
+    <DocsToc v-if="showToc === 'left'" :toc="toc" />
+    <DocsMenu v-if="showDocs" :docs="docs" />
   </div>
 </template>
 
 <script>
+import CustomComponent from '@/components/CustomComponents'
+import DocsMenu from '@/components/DocsMenu'
+import DocsToc from '@/components/DocsToc'
+
 export default {
-  props: {
-    docs: {
-      type: Array,
-      required: true
-    }
-  }
+  components: {
+    CustomComponent,
+    DocsMenu,
+    DocsToc
+  },
+
+  props: ['docs', 'showDocs', 'showToc', 'toc']
 }
 </script>
 
@@ -34,35 +31,22 @@ export default {
   top: var(--header-height);
   bottom: 0;
   left: 0;
+  padding: 30px 0;
   background-color: var(--leftbar-bg);
   overflow: auto;
-}
 
-.section-title {
-  font-size: 1.1rem;
-  padding: 0 20px;
-  margin: 20px 0 10px 0;
-}
+  & >>> .toc-item {
+    padding: 3px 20px;
+    border-left: 3px solid transparent;
+    padding-left: 17px;
 
-.section-item {
-  color: rgba(0,0,0,.65);
-  text-decoration: none;
-  padding: 3px 20px;
-  padding-left: 17px;
-  display: flex;
-  border-left: 3px solid transparent;
-  font-size: 1rem;
+    &[data-depth="3"] {
+      padding-left: 37px;
+    }
 
-  &:hover {
-    color: var(--black);
-    background: #f9f9f9;
-    border-left-color: var(--border-color);
-  }
-
-  &.router-link-exact-active {
-    color: var(--black);
-    font-weight: 700;
-    border-left-color: var(--primary-color);
+    &.router-link-exact-active {
+      border-left-color: var(--primary-color);
+    }
   }
 }
 </style>

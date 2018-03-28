@@ -16,11 +16,13 @@ export default state => {
       tokens[idx].attrs = attrs
 
       if (depth >= 2 && depth <= maxDepth) {
+        const html = self.render(tokens[idx + 1].children, options, env)
         state.headings.push({
           depth,
           slug,
           content,
-          html: self.render(tokens[idx + 1].children, options, env)
+          html,
+          text: html.replace(/<(?:.|\n)*?>/gm, '')
         })
       }
 

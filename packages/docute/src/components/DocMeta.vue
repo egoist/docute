@@ -27,6 +27,7 @@ export default {
   margin: 0;
   font-weight: 500;
   font-size: 4rem;
+  line-height: 1;
 }
 
 .doc-subtitle {
