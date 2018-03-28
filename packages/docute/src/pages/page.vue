@@ -18,7 +18,8 @@ import jump from 'jump.js'
 
 const storeMixin = createStoreMixin({
   state: {
-    defaultFileName: state => state.config.defaultFileName
+    defaultFileName: state => state.config.defaultFileName,
+    site: state => state.config.site
   }
 })
 
@@ -36,9 +37,10 @@ export default {
 
   mixins: [storeMixin],
 
-  props: {
-    source: {
-      type: Object
+  head() {
+    const title = this.$route.path === '/' ? this.site?.title : this.pageSource?.title
+    return {
+      title: title || 'Docute'
     }
   },
 
@@ -120,6 +122,14 @@ export default {
   computed: {
     layout() {
       return this.pageSource && layouts[this.pageSource.layout || 'docs']
+    },
+
+    source() {
+      const source = this.$store.state.config.source || {}
+      const path = Object.keys(source).filter(path => {
+        return path === this.$route.path
+      })[0]
+      return path && source[path]
     }
   }
 }

@@ -3,16 +3,15 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-export default ({ routes, routerMode }) => {
+export default ({ routerMode }) => {
   const router = new Router({
     mode: routerMode,
-    routes: routes.map((route, index) => ({
-      path: route.path,
-      component: () => import(/* webpackChunkName: "page" */ '@/pages/page.vue'),
-      props: {
-        source: route.source
+    routes: [
+      {
+        path: '*',
+        component: () => import(/* webpackChunkName: "page" */ '@/pages/page.vue')
       }
-    })),
+    ],
     scrollBehavior(to, from, savedPosition) {
       if (savedPosition) {
         return savedPosition

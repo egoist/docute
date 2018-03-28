@@ -24,5 +24,8 @@
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
     "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "vue-meta": "^1.5.0"
   }
 }

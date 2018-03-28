@@ -1,19 +1,15 @@
 import Vue from 'vue'
+import Meta from 'vue-meta'
 import Root from './components/Root.vue'
 import createRouter from './router'
 import createStore from './store'
 
-import 'typeface-source-sans-pro/index.css'
-
-const flatten = routes => {
-  return routes.reduce((res, item) => {
-    return [
-      ...res,
-      item,
-      ...(item.children ? flatten(item.children) : [])
-    ]
-  }, []).filter(item => item.path)
-}
+Vue.use(Meta, {
+  keyName: 'head',
+  attribute: 'data-docute-meta',
+  ssrAttribute: 'data-dh-server-rendered',
+  tagIDKeyName: 'vmid'
+})
 
 class Docute {
   constructor({
@@ -22,7 +18,8 @@ class Docute {
     defaultFileName = 'README',
     routerMode = 'hash',
     toc,
-    site
+    site,
+    source
   } = {}) {
     const config = {
       docs,
@@ -30,11 +27,11 @@ class Docute {
       defaultFileName,
       routerMode,
       toc,
-      site
+      site,
+      source
     }
-    const routes = flatten([...(nav || []), ...(docs || [])])
     this.vm = new Vue({
-      router: createRouter({ routes, routerMode }),
+      router: createRouter({ routerMode }),
       store: createStore(config),
       render(h) {
         return <Root />
