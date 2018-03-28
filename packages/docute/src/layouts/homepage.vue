@@ -18,7 +18,7 @@
             v-for="(feature, index) in source.features"
             :key="index">
             <div class="title">{{ feature.title }}</div>
-            <div class="description" v-html="feature.description"></div>
+            <component :is="handleDescription(feature.description)" />
           </div>
         </div>
       </div>
@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import { ArrowRightIcon } from 'vue-feather-icons'
 import SiteHeader from '@/components/Header'
 
@@ -35,6 +36,17 @@ export default {
     source: {
       type: Object,
       required: true
+    }
+  },
+
+  methods: {
+    handleDescription(desc) {
+      const content = Array.isArray(desc) ? desc.map(v => `<p>${v}</p>`).join('') : `<p>${desc}</p>`
+      const template = `<div class="description">${content}</div>`
+      return {
+        name: 'FeatureDescription',
+        ...Vue.compile(template)
+      }
     }
   },
 
@@ -53,21 +65,26 @@ export default {
 }
 
 .container {
-  max-width: 980px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 
 .project {
-  padding: 30px 0;
+  padding: 80px 0;
   text-align: center;
+  background-color: #282c34;
 
   & .title {
-    font-size: 3rem;
+    font-size: 3.3rem;
+    font-weight: 700;
     color: var(--primary-color);
   }
 
   & .subtitle {
     font-size: 2rem;
+    color: white;
+    font-weight: 200;
+    margin-top: 10px;
   }
 
   & .buttons {
@@ -76,27 +93,33 @@ export default {
 }
 
 .features {
-  margin-top: 40px;
+  margin-top: 70px;
 
   & .container {
     display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
   }
 
   & .feature {
-    width: 33%;
-    padding: 0 10px;
+    flex: 0 1 33%;
+    padding-right: 20px;
 
     & .title {
-      font-size: 1.4rem;
-      color: var(--primary-color);
+      font-size: 1.8rem;
+      color: #6d6d6d;
+      font-weight: 200;
     }
 
     & .description {
-      margin-top: 10px;
-      color: #7f8c8d
+      color: var(--black);
+      font-size: 1.1rem;
+
+      & >>> p {
+        line-height: 1.7;
+        margin: 30px 0 0 0;
+        &:first-child {
+          margin-top: 20px;
+        }
+      }
     }
   }
 }

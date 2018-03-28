@@ -25,20 +25,22 @@ export default {
   justify-content: center;
 }
 
-.nav-item:not(:first-child) {
-  margin-left: 20px
-}
-
 .nav-item {
   display: flex;
-  height: 50%;
+  height: 100%;
   align-items: center;
   justify-content: center;
-  color: #333;
+  color: white;
   text-decoration: none;
+  padding: 0 20px;
 
   &.router-link-exact-active {
-    box-shadow: inset 0 -2px 0 0 #653399;
+    box-shadow: inset 0 -2px 0 0 var(--primary-color);
+  }
+
+  &:focus {
+    background-color: rgb(55, 57, 64);
+    color: rgb(255, 255, 255);
   }
 }
 </style>

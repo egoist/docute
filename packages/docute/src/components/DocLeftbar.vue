@@ -29,12 +29,12 @@ export default {
 
 .leftbar {
   width: var(--leftbar-width);
-  border-right: 1px solid var(--border-color);
+  border-right: 1px solid rgb(236, 236, 236);
   position: fixed;
-  top: calc(var(--header-height) + 1px);
+  top: var(--header-height);
   bottom: 0;
   left: 0;
-  background-color: #fbfafc;
+  background-color: var(--leftbar-bg);
   overflow: auto;
 }
 
@@ -51,18 +51,18 @@ export default {
   padding-left: 17px;
   display: flex;
   border-left: 3px solid transparent;
-  font-size: .875rem;
+  font-size: 1rem;
 
   &:hover {
-    color: var(--primary-color);
+    color: var(--black);
     background: #f9f9f9;
     border-left-color: var(--border-color);
   }
 
   &.router-link-exact-active {
-    color: var(--primary-color);
+    color: var(--black);
     font-weight: 700;
-    border-left-color: var(--border-color);
+    border-left-color: var(--primary-color);
   }
 }
 </style>

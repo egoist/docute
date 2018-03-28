@@ -5,7 +5,9 @@
   --content-lr-padding: 40px;
 
   /** colors */
-  --primary-color: #663399;
+  --primary-color: rgb(97, 218, 251);
   --border-color: #f5f3f7;
-  --header-bg: rgba(255, 255, 255, 0.95);
+  --header-bg: #20232a;
+  --black: #20232a;
+  --leftbar-bg: rgb(247, 247, 247);
 }

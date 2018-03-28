@@ -26,12 +26,13 @@ export default {
 .doc-title {
   margin: 0;
   font-weight: 500;
-  font-size: 2rem;
+  font-size: 4rem;
 }
 
 .doc-subtitle {
   margin-top: 10px;
-  font-size: 1.3rem;
-  font-size: 300;
+  font-size: 1.7rem;
+  font-weight: 300;
+  color: #6d6d6d;
 }
 </style>

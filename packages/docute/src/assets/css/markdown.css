@@ -24,8 +24,10 @@ pre > code {
 }
 
 .markdown-body {
+  font-size: 17px;
+
   & h1, & h2, & h3, & h4, & h5 {
-    font-weight: 500;
+    font-weight: bold;
 
     &:first-child {
       margin-top: 0;
@@ -42,16 +44,15 @@ pre > code {
   }
 
   & h2 {
-    font-size: 1.6rem;
+    font-size: 2.1rem;
     margin-top: 70px;
     margin-bottom: 30px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--border-color);
-    font-weight: 500;
   }
 
   & h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-top: 50px;
     margin-bottom: 20px;
     position: relative;
@@ -66,7 +67,7 @@ pre > code {
   }
 
   & h4 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   & h5 {
@@ -85,6 +86,6 @@ pre > code {
   }
 
   & p {
-    margin: 0 0 20px 0;
+    margin: 0 0 30px 0;
   }
 }

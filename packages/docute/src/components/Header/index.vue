@@ -37,7 +37,6 @@ export default {
   left: 0;
   right: 0;
   display: flex;
-  border-bottom: 1px solid #f5f3f7;
   padding: 0 20px;
   align-items: center;
   background-color: var(--header-bg);
@@ -51,7 +50,7 @@ export default {
 
   & a {
     text-decoration: none;
-    color: #333;
+    color: white;
   }
 }
 </style>
