@@ -4,7 +4,8 @@
     "example": "poi --config example/poi.config.js",
     "build:example": "poi build --config example/poi.config.js",
     "postinstall": "node scripts/build.js",
-    "website": "poi --config website/poi.config.js"
+    "website": "poi --config website/poi.config.js",
+    "build:website": "poi build --config website/poi.config.js"
   },
   "workspaces": [
     "packages/*"

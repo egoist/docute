@@ -4,6 +4,7 @@ const express = require('express')
 module.exports = {
   entry: path.join(__dirname, 'index.js'),
   outDir: path.join(__dirname, 'dist'),
+  staticFolder: __dirname,
   devServer: {
     before(app) {
       app.use('/', express.static(__dirname))
