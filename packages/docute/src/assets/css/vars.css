@@ -5,11 +5,11 @@
   --content-lr-padding: 40px;
 
   /** colors */
-  --primary-color: rgb(97, 218, 251);
+  --primary-color: rgb(251, 97, 118);
   --border-color: #f5f3f7;
   --header-bg: #20232a;
   --black: #20232a;
   --leftbar-bg: rgb(247, 247, 247);
-  --link-bg: rgba(187,239,253,0.3);
-  --link-hover-bg: #bbeffd;
+  --link-bg: rgba(255, 122, 144, 0.479);
+  --link-hover-bg: rgba(255, 122, 144, 0.788);
 }
