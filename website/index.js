@@ -8,15 +8,27 @@ const doc = new Docute({
   },
   docs: [
     {
-      title: 'Getting Started',
+      title: 'Essentials',
       children: [
         {
           title: 'Installation',
-          path: '/docs/getting-started/installation'
+          path: '/docs/essentials/installation'
         },
         {
-          title: 'How it works',
-          path: '/docs/getting-started/how-it-works'
+          title: 'The Docute Instance',
+          path: '/docs/essentials/the-docute-instance'
+        },
+        {
+          title: 'Content Format',
+          path: '/docs/essentials/content-format'
+        },
+        {
+          title: 'Layouts',
+          path: '/docs/essentials/layouts'
+        },
+        {
+          title: 'Front-Matter',
+          path: '/docs/essentials/front-matter'
         }
       ]
     }
@@ -25,6 +37,10 @@ const doc = new Docute({
     {
       title: 'Home',
       path: '/'
+    },
+    {
+      title: 'Docs',
+      path: '/docs/essentials/installation'
     }
   ],
   source: {

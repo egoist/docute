@@ -117,6 +117,12 @@ pre > code {
     margin: 30px 0;
   }
 
+  & ul, & ol {
+    & li {
+      margin-bottom: 5px;
+    }
+  }
+
   & p {
     margin: 0 0 30px 0;
     line-height: 1.7;

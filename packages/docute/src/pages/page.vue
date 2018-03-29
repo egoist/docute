@@ -17,6 +17,10 @@ import headingsPlugin from 'markdown-it-headings'
 import jump from 'jump.js'
 import Prism from 'prismjs'
 import highlightLinesPlugin from '@/utils/markdown-it/highlightLines'
+import 'prismjs/components/prism-markdown'
+import 'prismjs/components/prism-yaml'
+import 'prismjs/components/prism-json'
+import 'prismjs/components/prism-typescript'
 
 const storeMixin = createStoreMixin({
   state: {
@@ -40,7 +44,7 @@ export default {
   mixins: [storeMixin],
 
   head() {
-    const title = this.$route.path === '/' ? this.site?.title : this.pageSource?.title
+    const title = this.$route.path === '/' ? this.site?.title : `${this.pageSource?.title} - ${this.site?.title}`
     return {
       title: title || 'Docute'
     }
