@@ -1,7 +1,7 @@
 ---
 title: Installation
 ---
-To fastest way to use Docute is to create an HTML and load Docute from a CDN:
+The fastest way to use Docute is to create an HTML and load Docute from a CDN:
 
 ```html{5,8,9,11-17}
 <!DOCTYPE html>
