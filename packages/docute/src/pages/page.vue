@@ -44,7 +44,12 @@ export default {
   mixins: [storeMixin],
 
   head() {
-    const title = this.$route.path === '/' ? this.site?.title : `${this.pageSource?.title} - ${this.site?.title}`
+    let title
+    if (this.$route.path === '/' || !this.pageSource?.title) {
+      title = this.site?.title
+    } else {
+      title = `${this.pageSource?.title} - ${this.site?.title}`
+    }
     return {
       title: title || 'Docute'
     }
