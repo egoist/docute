@@ -1,7 +1,7 @@
 ---
 title: Content Format
 ---
-As you already knew, we fetch `/:path.md` file to render `/:path`, so the content format is essentially `Markdown` with the help from [front-matter](https://jekyllrb.com/docs/frontmatter/) for extra information about this page.
+As you already knew, we fetch `/:path.md` file to render `/:path`, and the homepage is rendered from `/README.md` by default, so the content format is essentially `Markdown` with the help from [front-matter](https://jekyllrb.com/docs/frontmatter/) for extra information about this page.
 
 A typical doc file looks like:
 
