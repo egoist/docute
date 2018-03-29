@@ -6,6 +6,12 @@ toc: true
 
 haha _nope_
 
+```js
+function foo() {
+  // bar
+}
+```
+
 ---
 __Advertisement :)__
 

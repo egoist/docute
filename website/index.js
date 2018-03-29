@@ -13,6 +13,10 @@ const doc = new Docute({
         {
           title: 'Installation',
           path: '/docs/getting-started/installation'
+        },
+        {
+          title: 'How it works',
+          path: '/docs/getting-started/how-it-works'
         }
       ]
     }

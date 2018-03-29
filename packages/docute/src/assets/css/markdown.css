@@ -1,26 +1,40 @@
 @import "vars.css";
 
-pre, code {
-  background-color: #fdfaf6;
-  border-radius: 2px;
-  box-shadow: inset 0 0 0 1px #faede5;
+pre {
+  border-radius: 6px;
 }
 
-pre {
+pre, pre[class*="language-"] {
   padding: 1.575rem;
   white-space: pre-wrap;
+  margin: 30px 0;
+  color: white;
+  background-color: var(--black);
+
+  & .docute-highlight-line {
+    background-color: #14161a;
+    display: block;
+    margin: 0 -1.575rem;
+    padding: 0 1.575rem;
+  }
 }
 
 code {
-  font-size: 13px;
+  font-size: 16px;
   padding: 3px 5px;
+  background: rgba(255,229,100,0.2);
+  color: #1a1a1a;
+  box-shadow: inset 0 0 0 1px #faede5;
+  border-radius: 2px;
 }
 
 pre > code {
   border-radius: 0;
   box-shadow: none;
   padding: 0;
-  font-size: 14px;
+  font-size: 16px;
+  background: transparent;
+  color: white;
 }
 
 .markdown-body {
@@ -105,5 +119,23 @@ pre > code {
 
   & p {
     margin: 0 0 30px 0;
+    line-height: 1.7;
+  }
+
+  & blockquote {
+    background-color: rgba(255,229,100,0.3);
+    border-left-color: #ffe564;
+    border-left-width: 9px;
+    border-left-style: solid;
+    padding: 20px;
+    margin: 30px 0;
+
+    & p:first-of-type {
+      font-weight: 700;
+    }
+
+    & >*:last-child {
+      margin-bottom: 0;
+    }
   }
 }

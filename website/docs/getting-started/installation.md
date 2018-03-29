@@ -3,7 +3,7 @@ title: Installation
 ---
 To fastest way to use Docute is to create an HTML and load Docute from a CDN:
 
-```html
+```html{5,8,9,11-17}
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,4 +24,19 @@ To fastest way to use Docute is to create an HTML and load Docute from a CDN:
     </script>
   </body>
 </html>
+```
+
+Alternatively, you can use Docute with a bundler like webpack too:
+
+```js
+import Docute from 'docute'
+import 'docute/dist/docute.css'
+
+const doc = new Docute({
+  site: {
+    title: 'My Project',
+    description: 'Documentation for My Project'
+  }
+})
+doc.start('#docute')
 ```

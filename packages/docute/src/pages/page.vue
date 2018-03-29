@@ -15,6 +15,8 @@ import layouts from '@/layouts'
 import createStoreMixin from '@/utils/createStoreMixin'
 import headingsPlugin from 'markdown-it-headings'
 import jump from 'jump.js'
+import Prism from 'prismjs'
+import highlightLinesPlugin from '@/utils/markdown-it/highlightLines'
 
 const storeMixin = createStoreMixin({
   state: {
@@ -97,12 +99,16 @@ export default {
 
     renderToHtml(MarkdownIt, text) {
       const md = new MarkdownIt({
-        html: true
+        html: true,
+        highlight(code, lang) {
+          return Prism.highlight(code, Prism.languages[lang] || Prism.languages.markup, lang)
+        }
       })
       const state = {
         headings: []
       }
       md.use(headingsPlugin(state))
+      md.use(highlightLinesPlugin())
       const html = md.render(text)
       this.toc = state.headings
       return html
