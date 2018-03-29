@@ -81,10 +81,10 @@ export default {
     },
 
     async fetchAndRender() {
-      const endsWithSlash = this.$route.path.slice(-1) === '/'
-      const file = endsWithSlash
-        ? `${this.$route.path}${this.defaultFileName}.md`
-        : `${this.$route.path}.md`
+      const file = this.$route.path === '/' // Homepage
+        ? `/${this.defaultFileName}.md`
+        // Fetches `/foo.md` for both `/foo` and `/foo/`
+        : `${this.$route.path.replace(/\/?$/, '')}.md`
       const [text, MarkdownIt] = await Promise.all([
         fetch(file).then(res => res.text()),
         loadMarkdownParser()
