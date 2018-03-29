@@ -46,8 +46,8 @@ export default () => md => {
     const tmpToken = {
       attrs: [['class', langName ? `language-${langName}` : '']]
     }
-    return `<pre><code${self.renderAttrs(
+    return `<pre${self.renderAttrs(
       tmpToken
-    )}>${highlightedCode.trim()}</code></pre>`
+    )}><code>${highlightedCode.trim()}</code></pre>`
   }
 }
