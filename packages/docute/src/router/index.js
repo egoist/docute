@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import event from '@/utils/event'
 
 Vue.use(Router)
 
@@ -13,11 +14,14 @@ export default ({ routerMode }) => {
       }
     ],
     scrollBehavior(to, from, savedPosition) {
-      if (savedPosition) {
-        return savedPosition
-      } else {
-        return { x: 0, y: 0 }
-      }
+      return new Promise(resolve => {
+        event.once('content-updated', () => {
+          if (savedPosition) {
+            return resolve(savedPosition)
+          }
+          resolve({ x: 0, y: 0 })
+        })
+      })
     }
   })
 

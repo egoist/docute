@@ -21,6 +21,7 @@ import 'prismjs/components/prism-markdown'
 import 'prismjs/components/prism-yaml'
 import 'prismjs/components/prism-json'
 import 'prismjs/components/prism-typescript'
+import event from '@/utils/event'
 
 const storeMixin = createStoreMixin({
   state: {
@@ -76,6 +77,7 @@ export default {
       } else {
         this.pageSource = await this.fetchAndRender()
       }
+      event.emit('content-updated')
       this.rendered = true
       setTimeout(this.scrollHeadingIntoView, 300)
     },
