@@ -48,6 +48,10 @@ pre > code {
       background-color: var(--link-hover-bg);
       border-bottom-color: #1a1a1a;
     }
+
+    & code {
+      background-color: transparent;
+    }
   }
 
   & h1, & h2, & h3, & h4, & h5, & h6 {

@@ -31,6 +31,15 @@ const doc = new Docute({
           path: '/docs/essentials/front-matter'
         }
       ]
+    },
+    {
+      title: 'Advanced',
+      children: [
+        {
+          title: 'Using Vue Component',
+          path: '/docs/advanced/using-vue-component'
+        }
+      ]
     }
   ],
   nav: [

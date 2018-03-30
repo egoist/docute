@@ -8,7 +8,6 @@
 
 
 <script>
-import Vue from 'vue'
 import loadMarkdownParser from '@/utils/loadMarkdownParser'
 import frontMatter from '@/utils/frontMatter'
 import layouts from '@/layouts'
@@ -38,7 +37,8 @@ const renderAsComponent = (content, { vue }) => {
 
   return {
     name: 'page-content-component',
-    ...Vue.compile(`<div class="markdown-body">${content}</div>`)
+    delimiters: ['PLEASE_ALLOW_{{', '}}'],
+    template: `<div class="markdown-body">${content}</div>`
   }
 }
 

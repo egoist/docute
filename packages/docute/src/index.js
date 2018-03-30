@@ -45,4 +45,8 @@ class Docute {
   }
 }
 
+if (typeof window !== 'undefined') {
+  window.Vue = Vue
+}
+
 export default Docute
