@@ -1,3 +1,5 @@
+> __ANOUNCEMENT__: [Docute v4](https://github.com/egoist/docute/tree/dev) is currently under active development, you may check out our WIP new website. 😄
+
 <h1 align="center">docute</h1>
 
 
