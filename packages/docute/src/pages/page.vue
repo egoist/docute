@@ -22,6 +22,9 @@ import 'prismjs/components/prism-yaml'
 import 'prismjs/components/prism-json'
 import 'prismjs/components/prism-typescript'
 import event from '@/utils/event'
+import progress from 'nprogress'
+
+progress.configure({ showSpinner: false })
 
 const storeMixin = createStoreMixin({
   state: {
@@ -83,6 +86,7 @@ export default {
     },
 
     async fetchAndRender() {
+      progress.start()
       const file = this.$route.path === '/' // Homepage
         ? `/${this.defaultFileName}.md`
         // Fetches `/foo.md` for both `/foo` and `/foo/`
@@ -91,6 +95,7 @@ export default {
         fetch(file).then(res => res.text()),
         loadMarkdownParser()
       ])
+      progress.done()
       const { attributes, body } = frontMatter(text)
       const html = this.renderToHtml(MarkdownIt, body)
       return {
