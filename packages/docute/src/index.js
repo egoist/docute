@@ -3,6 +3,7 @@ import Meta from 'vue-meta'
 import Root from './components/Root.vue'
 import createRouter from './router'
 import createStore from './store'
+import defaultLayouts from './layouts'
 
 Vue.use(Meta, {
   keyName: 'head',
@@ -19,9 +20,10 @@ class Docute {
     routerMode = 'hash',
     toc,
     site,
-    source
+    source,
+    layouts
   } = {}) {
-    const config = {
+    this.config = {
       docs,
       nav,
       defaultFileName,
@@ -30,16 +32,30 @@ class Docute {
       site,
       source
     }
+    this.layouts = {
+      ...defaultLayouts,
+      ...layouts
+    }
+  }
+
+  createVm() {
     this.vm = new Vue({
-      router: createRouter({ routerMode }),
-      store: createStore(config),
+      router: createRouter({
+        routerMode: this.config.routerMode,
+        routeProps: {
+          layouts: this.layouts
+        }
+      }),
+      store: createStore(this.config),
       render(h) {
-        return <Root />
+        return h(Root)
       }
     })
+    return this
   }
 
   start(el = '#docute') {
+    this.createVm()
     this.vm.$mount(el)
     return this
   }

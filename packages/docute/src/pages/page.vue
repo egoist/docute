@@ -6,11 +6,9 @@
     :is="layout" />
 </template>
 
-
 <script>
 import loadMarkdownParser from '@/utils/loadMarkdownParser'
 import frontMatter from '@/utils/frontMatter'
-import layouts from '@/layouts'
 import createStoreMixin from '@/utils/createStoreMixin'
 import headingsPlugin from 'markdown-it-headings'
 import jump from 'jump.js'
@@ -46,6 +44,13 @@ export default {
   name: 'page',
 
   mixins: [storeMixin],
+
+  props: {
+    layouts: {
+      type: Object,
+      required: true
+    }
+  },
 
   head() {
     let title
@@ -143,7 +148,7 @@ export default {
 
   computed: {
     layout() {
-      return this.pageSource && layouts[this.pageSource.layout || 'docs']
+      return this.pageSource && this.layouts[this.pageSource.layout || 'docs']
     },
 
     source() {

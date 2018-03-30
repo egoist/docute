@@ -4,12 +4,13 @@ import event from '@/utils/event'
 
 Vue.use(Router)
 
-export default ({ routerMode }) => {
+export default ({ routerMode, routeProps }) => {
   const router = new Router({
     mode: routerMode,
     routes: [
       {
         path: '*',
+        props: routeProps,
         component: () => import(/* webpackChunkName: "page" */ '@/pages/page.vue')
       }
     ],
