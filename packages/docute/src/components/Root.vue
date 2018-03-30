@@ -10,7 +10,7 @@ export default {
 }
 </script>
 
-<style src="prismjs/themes/prism-tomorrow.css"></style>
+<style src="../assets/css/prism-tomorrow.css"></style>
 <style src="../assets/css/nprogress.css"></style>
 <style src="../assets/css/common.css"></style>
 <style src="../assets/css/markdown.css"></style>

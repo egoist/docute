@@ -1,10 +1,7 @@
 @import "vars.css";
 
-pre {
-  border-radius: 6px;
-}
-
 pre, pre[class*="language-"] {
+  border-radius: 6px;
   padding: 1.575rem;
   white-space: pre-wrap;
   word-break: break-word;
@@ -47,10 +44,6 @@ pre > code {
     &:hover {
       background-color: var(--link-hover-bg);
       border-bottom-color: #1a1a1a;
-    }
-
-    & code {
-      background-color: transparent;
     }
   }
 
