@@ -1,4 +1,4 @@
-> __ANOUNCEMENT__: [Docute v4](https://github.com/egoist/docute/tree/dev) is currently under active development, you may check out our WIP new website. 😄
+> __ANOUNCEMENT: [Docute v4](https://github.com/egoist/docute/tree/dev) is currently under active development, you may check out our WIP [new website](https://docute.org).__ 😄
 
 <h1 align="center">docute</h1>
 
