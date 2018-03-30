@@ -20,7 +20,7 @@ You can use any Vue template markup here since it's valid HTML 🤯
 
 <img src="https://i.loli.net/2018/03/30/5abdda8dc5632.png" width="300">
 
-## Custom components
+## Custom Components
 
 You can register your components and use them in doc contents.
 
@@ -43,7 +43,7 @@ If you're using Docute with a bundler, just do it in the bundler way:
 import Vue from 'vue'
 
 Vue.component('your-component', {
-  template: '<h1>Hello {{ world }}</h1>',
+  template: '<h1 v-text="hi">Hello {{ world }}</h1>',
   data()  {
     return {
       world: 'world'
