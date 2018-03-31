@@ -6,7 +6,7 @@ toc: true
 
 haha _nope_
 
-```js
+```js{1-3}
 function foo() {
   // bar
 }
@@ -255,5 +255,13 @@ It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
 ### [Custom containers](https://github.com/markdown-it/markdown-it-container)
 
 ::: warning
-*here be dragons*
+*here be warning*
+:::
+
+::: tip
+*here be tip*
+:::
+
+::: danger
+*here be danger*
 :::

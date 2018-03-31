@@ -4,7 +4,7 @@ const RE = /^(tip|warning|danger)$/
 
 export default md => ([
   containerPlugiin,
-  'css-helper',
+  'css-helpers',
   {
     validate (params) {
       return params.trim().match(RE)
@@ -12,10 +12,12 @@ export default md => ([
 
     render(tokens, idx) {
       const [, helperType] = tokens[idx].info.trim().match(RE) || []
+      // TODO Temporarily using div instead of p is because a bug of markdown-it-container
+      // Refer to https://github.com/markdown-it/markdown-it-container/issues/22
       if (tokens[idx].nesting === 1) {
-        return `<p class="${helperType}">\n` // opening tag
+        return `<div class="${helperType}">\n` // opening tag
       }
-      return '</p>\n' // closing tag
+      return '</div>\n' // closing tag
     }
   }
 ])

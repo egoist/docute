@@ -12,4 +12,11 @@
   --leftbar-bg: rgb(247, 247, 247);
   --link-bg: rgba(255, 122, 144, 0.479);
   --link-hover-bg: rgba(255, 122, 144, 0.788);
+
+  --css-helper-tip-border: #3c763d;
+  --css-helper-tip-bg: rgba(241, 249, 241, 0.83);
+  --css-helper-danger-border: #f66;
+  --css-helper-danger-bg: rgba(255, 102, 102, 0.06);
+  --css-helper-warning-border: #f7d24c;
+  --css-helper-warning-bg: #fefbed;
 }
