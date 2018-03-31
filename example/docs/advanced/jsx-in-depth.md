@@ -257,3 +257,20 @@ It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
 ::: warning
 *here be dragons*
 :::
+
+
+## Special blockquotes
+
+> __Info__: This is a info!
+
+<!-- -->
+
+> __Warning__: This is a warning!
+
+<!-- -->
+
+> __Success__: This is ok!
+
+<!-- -->
+
+> __Note__: This is just a note!

@@ -14,6 +14,7 @@ import headingsPlugin from 'markdown-it-headings'
 import jump from 'jump.js'
 import Prism from 'prismjs'
 import highlightLinesPlugin from '@/utils/markdown-it/highlightLines'
+import specialBlockquotesPlugin from '@/utils/markdown-it/specialBlockquotes'
 import 'prismjs/components/prism-markdown'
 import 'prismjs/components/prism-yaml'
 import 'prismjs/components/prism-json'
@@ -130,6 +131,7 @@ export default {
       }
       md.use(headingsPlugin(state))
       md.use(highlightLinesPlugin())
+      md.use(specialBlockquotesPlugin())
       const html = md.render(text)
       this.toc = state.headings
       return html
