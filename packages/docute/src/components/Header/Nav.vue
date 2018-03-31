@@ -18,6 +18,8 @@ export default {
 </script>
 
 <style scoped>
+@import "vars.css";
+
 .site-nav {
   margin-left: 40px;
   display: flex;
@@ -31,17 +33,16 @@ export default {
   height: 100%;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--header-color);
   text-decoration: none;
   padding: 0 20px;
 
   &.active {
-    box-shadow: inset 0 -2px 0 0 var(--primary-color);
+    box-shadow: inset 0 -2px 0 0 var(--nav-border-color);
   }
 
   &:focus {
-    background-color: rgb(55, 57, 64);
-    color: rgb(255, 255, 255);
+    background-color: rgba(55, 57, 64, 0.29);
   }
 }
 </style>
