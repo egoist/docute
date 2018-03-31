@@ -41,6 +41,7 @@ export default {
   align-items: center;
   background-color: var(--header-bg);
   z-index: 9000;
+  box-shadow: inset 0 -1px 0 0 var(--header-border-color);
 }
 
 .site-title {
@@ -50,7 +51,7 @@ export default {
 
   & a {
     text-decoration: none;
-    color: white;
+    color: var(--header-color);
   }
 }
 </style>

@@ -5,14 +5,16 @@
   --content-lr-padding: 40px;
 
   /** colors */
-  --primary-color: rgb(251, 97, 118);
+  --primary-color: #fb6176;
   --border-color: #f5f3f7;
   --header-bg: #20232a;
+  --header-color: white;
+  --header-border-color: #20232a;
+  --nav-border-color: var(--primary-color);
+  --banner-bg: #282c34;
+  --banner-color: white;
   --black: #20232a;
   --leftbar-bg: rgb(247, 247, 247);
-  --link-bg: rgba(255, 122, 144, 0.479);
-  --link-hover-bg: rgba(255, 122, 144, 0.788);
-
   --css-helper-tip-border: #3c763d;
   --css-helper-tip-bg: rgba(241, 249, 241, 0.83);
   --css-helper-danger-border: #f66;

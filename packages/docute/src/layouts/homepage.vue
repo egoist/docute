@@ -76,7 +76,7 @@ export default {
 .project {
   padding: 80px 0;
   text-align: center;
-  background-color: #282c34;
+  background-color: var(--banner-bg);
 
   & .title {
     font-size: 3.3rem;
@@ -86,7 +86,7 @@ export default {
 
   & .subtitle {
     font-size: 2rem;
-    color: white;
+    color: var(--banner-color);
     font-weight: 200;
     margin-top: 10px;
   }
