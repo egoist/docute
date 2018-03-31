@@ -17,6 +17,7 @@
     "github-slugger": "^1.2.0",
     "jump.js": "^1.0.2",
     "markdown-it": "^8.4.1",
+    "markdown-it-container": "^2.0.0",
     "markdown-it-headings": "^0.0.0",
     "nprogress": "^0.2.0",
     "typeface-source-sans-pro": "^0.0.54",
