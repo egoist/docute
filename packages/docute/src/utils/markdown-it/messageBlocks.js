@@ -7,7 +7,6 @@ export default () => md => {
     if (token.type === 'inline') {
       const [, type, content] = token.content.match(RE) || []
       if (type && content) {
-        let findStrongClose = false
         // Remove first 4 items, which are `__MessageType__`
         token.children.splice(0, 4)
         // Remove leading `:\s*`
