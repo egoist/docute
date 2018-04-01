@@ -36,14 +36,11 @@ pre > code {
   font-size: 17px;
 
   & a {
-    background-color: var(--link-bg);
-    border-bottom: 1px solid rgba(0,0,0,0.2);
-    color: #1a1a1a;
     text-decoration: none;
+    color: var(--primary-color);
 
     &:hover {
-      background-color: var(--link-hover-bg);
-      border-bottom-color: #1a1a1a;
+      text-decoration: underline;
     }
   }
 
@@ -57,12 +54,6 @@ pre > code {
 
     & a {
       color: var(--black);
-      text-decoration: none;
-      border-bottom: none;
-      background-color: transparent;
-      &:hover {
-        background-color: transparent;
-      }
     }
   }
 
