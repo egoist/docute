@@ -10,9 +10,6 @@
   "files": [
     "dist"
   ],
-  "scripts": {
-    "test": "jest"
-  },
   "author": "egoist <0x142857@gmail.com>",
   "license": "MIT",
   "dependencies": {
@@ -21,7 +18,6 @@
     "jump.js": "^1.0.2",
     "markdown-it": "^8.4.1",
     "markdown-it-container": "^2.0.0",
-    "markdown-it-headings": "^0.0.0",
     "nprogress": "^0.2.0",
     "typeface-source-sans-pro": "^0.0.54",
     "vue": "^2.5.16",

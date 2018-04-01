@@ -1,5 +1,5 @@
 import MarkdownIt from 'markdown-it'
-import headingsPlugin from '../src'
+import headingsPlugin from '../headings'
 
 test('main', () => {
   const md = new MarkdownIt()
