@@ -132,8 +132,8 @@ export default {
       }
       md.use(headingsPlugin(state))
       md.use(highlightLinesPlugin())
-      md.use(...messageContainersPlugin(md))
       md.use(messageBlocksPlugin())
+      md.use(...messageContainersPlugin(md))
       const html = md.render(text)
       this.toc = state.headings
       return html
