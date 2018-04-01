@@ -132,6 +132,7 @@ export default {
       md.use(headingsPlugin(state))
       md.use(highlightLinesPlugin())
       md.use(...cssHelpersPlugin(md))
+      md.use(messageBlocksPlugin())
       const html = md.render(text)
       this.toc = state.headings
       return html

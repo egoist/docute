@@ -38,6 +38,10 @@ const doc = new Docute({
         {
           title: 'Using Vue Component',
           path: '/docs/advanced/using-vue-component'
+        },
+        {
+          title: 'Markdown Features',
+          path: '/docs/advanced/markdown-features'
         }
       ]
     }
