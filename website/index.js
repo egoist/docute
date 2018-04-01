@@ -29,6 +29,10 @@ const doc = new Docute({
         {
           title: 'Front-Matter',
           path: '/docs/essentials/front-matter'
+        },
+        {
+          title: 'Message Blocks',
+          path: '/docs/essentials/special-blockquotes'
         }
       ]
     },
