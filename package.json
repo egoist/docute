@@ -2,7 +2,6 @@
   "private": true,
   "scripts": {
     "test": "jest",
-    "postinstall": "node scripts/build.js",
     "website": "poi --config website/poi.config.js",
     "build:website": "poi build --config website/poi.config.js"
   },
