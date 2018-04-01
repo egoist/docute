@@ -1,17 +1,20 @@
-const RE = /^__(Info|Warning|Success|Note)__\:\s+(.*)/
+const RE = /^__(Info|Warning|Success|Note|Alert)__\:\s+(.*)/i
 
 export default () => md => {
   md.renderer.rules.blockquote_open = (...args) => {
     const [tokens, idx, options, env, self] = args
     const token = tokens[idx + 2]
-    console.log(token)
+    console.log(token.content)
     if (token.type === 'inline') {
-      const [, type] = token.content.match(RE) || []
-      if (type) {
+      const [, type, content] = token.content.match(RE) || []
+      if (type && content) {
+        const textToken = token.children.pop()
+        textToken.content = textToken.content.slice(1)
+        token.children = [textToken]
         const blockquoteOpenToken = tokens[idx]
         const blockquoteCloseToken = tokens[idx + 4]
         blockquoteOpenToken.tag = 'div'
-        blockquoteOpenToken.attrs = [['class', type]]
+        blockquoteOpenToken.attrs = [['class', `message ${type.toLowerCase()}`]]
         blockquoteCloseToken.tag = 'div'
       }
     }

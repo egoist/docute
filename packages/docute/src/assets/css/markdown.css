@@ -139,4 +139,43 @@ pre > code {
       margin-bottom: 0;
     }
   }
+
+  & blockquote p,
+  & .message p {
+    margin: 0;
+  }
+
+  &  blockquote p:not(:first-child),
+  & .message p:not(:first-child) {
+    margin-top: 20px;
+  }
+
+  & .message {
+    background: whitesmoke;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    color: #4a4a4a;
+    padding: 1em 1.25em;
+    margin: 25px 0;
+    &.alert {
+      background: #fff5f7;
+      border-color: #ff3860;
+      color: #cd0930;
+    }
+    &.info {
+      background: #f6fbfe;
+      border-color: #209cee;
+      color: #12537e;
+    }
+    &.warning {
+      background: #fffdf5;
+      border-color: #ffdd57;
+      color: #3b3108;
+    }
+    &.success {
+      background: #f6fef9;
+      border-color: #23d160;
+      color: #0e301a;
+    }
+  }
 }

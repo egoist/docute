@@ -261,16 +261,12 @@ It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
 
 ## Special blockquotes
 
-> __Info__: This is a info!
+> __Alert__: This is a very dangerous action!
 
-<!-- -->
+> __Info__: This is a info!
 
 > __Warning__: This is a warning!
 
-<!-- -->
-
 > __Success__: This is ok!
-
-<!-- -->
 
 > __Note__: This is just a note!
