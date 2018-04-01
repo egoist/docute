@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`main 1`] = `
+"<div class=\\"message info\\">
+<p>This is a <code>info</code>!</p>
+</div>
+<div class=\\"message warning\\">
+<p>This is a &lt;code&gt;warning&lt;/code&gt;!</p>
+</div>
+<div class=\\"message success\\">
+<p>This is <strong>ok</strong>!</p>
+</div>
+<div class=\\"message note\\">
+<p>This is just a <em>note</em>!</p>
+</div>
+"
+`;
+
+exports[`no matching 1`] = `
+"<blockquote>
+<p><strong>Info</strong> : hehe</p>
+</blockquote>
+<blockquote>
+<p>nah</p>
+</blockquote>
+"
+`;

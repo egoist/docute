@@ -130,4 +130,39 @@ pre > code {
       margin-bottom: 0;
     }
   }
+
+  & blockquote p,
+  & .message p {
+    margin: 0;
+  }
+
+  &  blockquote p:not(:first-child),
+  & .message p:not(:first-child) {
+    margin-top: 20px;
+  }
+
+  & .message {
+    background: #f9f9f9;
+    border: 1px solid #efefef;
+    border-radius: 5px;
+    color: #373e42;
+    padding: 1em 1.25em;
+    margin: 25px 0;
+    &.alert {
+      background: rgba(224,76,76,.08);
+      border-color: rgba(224,76,76,.1)
+    }
+    &.info {
+      background: #fafdff;
+      border-color: #d9eaf3;
+    }
+    &.warning {
+      background: rgba(253,200,69,.1);
+      border-color: rgba(253,200,69,.3);
+    }
+    &.success {
+      background: #f6fff5;
+      border-color: rgba(58,193,51,.12);
+    }
+  }
 }
