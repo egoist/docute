@@ -22,21 +22,21 @@ And with Docute it renders:
 We also support other message types which are:
 
 ```md
-> __Info__: This is a info!
+> __Info__: This is a `info`!
 
-> __Warning__: This is a warning!
+> __Warning__: This is a <code>warning</code>!
 
-> __Success__: This is ok!
+> __Success__: This is __ok__!
 
-> __Note__: This is just a note!
+> __Note__: This is just a _note_!
 ```
 
 And they look like:
 
-> __Info__: This is a info!
+> __Info__: This is a `info`!
 
-> __Warning__: This is a warning!
+> __Warning__: This is a <code>warning</code>!
 
-> __Success__: This is ok!
+> __Success__: This is __ok__!
 
-> __Note__: This is just a note!
+> __Note__: This is just a _note_!

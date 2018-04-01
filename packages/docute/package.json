@@ -10,6 +10,9 @@
   "files": [
     "dist"
   ],
+  "scripts": {
+    "test": "jest"
+  },
   "author": "egoist <0x142857@gmail.com>",
   "license": "MIT",
   "dependencies": {

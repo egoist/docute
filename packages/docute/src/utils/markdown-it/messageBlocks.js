@@ -10,13 +10,13 @@ export default () => md => {
         let findStrongClose = false
         // Remove __MessageType__ and ':' token
         const newTokens = token.children.map((childToken) => {
-          if (childToken.type === 'strong_close') {
+          if (!findStrongClose && childToken.type === 'strong_close') {
             findStrongClose = true
             return
           }
           if (findStrongClose) {
             if (childToken.content.startsWith(':')) {
-              childToken.content = childToken.content.slice(1).trim()
+              childToken.content = childToken.content.replace(/^:\s+/, '')
             }
             return childToken
           }
