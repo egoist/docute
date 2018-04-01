@@ -15,7 +15,7 @@ On GitHub it will be rendered as follows:
 
 And with Docute it renders:
 
-> __Alert__: This is a very dangerous action!
+> __Alert__: This is a very `dangerous`  action!
 
 We also support other message types which are:
 

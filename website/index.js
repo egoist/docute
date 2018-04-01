@@ -32,7 +32,7 @@ const doc = new Docute({
         },
         {
           title: 'Message Blocks',
-          path: '/docs/essentials/special-blockquotes'
+          path: '/docs/essentials/message-blocks'
         }
       ]
     },

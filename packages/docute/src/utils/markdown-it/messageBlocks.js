@@ -4,13 +4,26 @@ export default () => md => {
   md.renderer.rules.blockquote_open = (...args) => {
     const [tokens, idx, options, env, self] = args
     const token = tokens[idx + 2]
-    console.log(token.content)
     if (token.type === 'inline') {
       const [, type, content] = token.content.match(RE) || []
       if (type && content) {
-        const textToken = token.children.pop()
-        textToken.content = textToken.content.slice(1)
-        token.children = [textToken]
+        let findStrongClose = false
+        // Remove __MessageType__ and ':' token
+        const newTokens = token.children.map((childToken) => {
+          if (childToken.type === 'strong_close') {
+            findStrongClose = true
+            return
+          }
+          if (findStrongClose) {
+            if (childToken.content.startsWith(':')) {
+              childToken.content = childToken.content.slice(1).trim()
+            }
+            return childToken
+          }
+          return null
+        }).filter(v => v)
+        token.children = newTokens
+        // Change 'blockquote' to 'div'
         const blockquoteOpenToken = tokens[idx]
         const blockquoteCloseToken = tokens[idx + 4]
         blockquoteOpenToken.tag = 'div'
