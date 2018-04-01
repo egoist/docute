@@ -7,9 +7,7 @@
     "type": "git"
   },
   "main": "dist/docute.js",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "author": "egoist <0x142857@gmail.com>",
   "license": "MIT",
   "dependencies": {
@@ -24,9 +22,7 @@
     "vue-inter": "^3.0.0",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
-    "yamljs": "^0.3.0"
-  },
-  "devDependencies": {
+    "yamljs": "^0.3.0",
     "prismjs": "^1.13.0",
     "vue-meta": "^1.5.0"
   }
