@@ -43,7 +43,7 @@ And they look like:
 
 ## Message Containers
 
-To make your docss more readable, use the following format to write a `message container`:
+Similar to [Messages](#messages) but it looks more likes a container, use the following format to create a `message container`:
 
 ### tip
 
