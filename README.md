@@ -8,13 +8,11 @@ git clone git@github.com:$YOUR_NAME/docute.git
 git checkout dev
 yarn
 
-# Run example
-yarn example
+# Run website locally
+yarn website
 ```
 
-The example lives in [example](./example) folder.
-
-For an online version please see https://example.docute.org
+For an online version please see https://docute.org
 
 ## License
 
