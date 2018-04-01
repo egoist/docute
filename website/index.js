@@ -29,10 +29,6 @@ const doc = new Docute({
         {
           title: 'Front-Matter',
           path: '/docs/essentials/front-matter'
-        },
-        {
-          title: 'Message Blocks',
-          path: '/docs/essentials/message-blocks'
         }
       ]
     },
@@ -42,6 +38,10 @@ const doc = new Docute({
         {
           title: 'Using Vue Component',
           path: '/docs/advanced/using-vue-component'
+        },
+        {
+          title: 'Markdown Features',
+          path: '/docs/advanced/markdown-features'
         }
       ]
     }

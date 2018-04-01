@@ -1,7 +1,9 @@
 ---
-title: Message Blocks
+title: Markdown Features
 toc: true
 ---
+
+## Message Blocks
 
 To highlight some messages in your documentation, use the following format to write a `blockquote`:
 
