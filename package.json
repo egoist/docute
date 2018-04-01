@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "test": "echo fine",
     "example": "poi --config example/poi.config.js",
     "build:example": "poi build --config example/poi.config.js",
     "postinstall": "node scripts/build.js",
