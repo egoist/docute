@@ -142,31 +142,27 @@ pre > code {
   }
 
   & .message {
-    background: whitesmoke;
-    border: 1px solid #dbdbdb;
-    border-radius: 3px;
-    color: #4a4a4a;
+    background: #f9f9f9;
+    border: 1px solid #efefef;
+    border-radius: 5px;
+    color: #373e42;
     padding: 1em 1.25em;
     margin: 25px 0;
     &.alert {
-      background: #fff5f7;
-      border-color: #ff3860;
-      color: #cd0930;
+      background: rgba(224,76,76,.08);
+      border-color: rgba(224,76,76,.1)
     }
     &.info {
-      background: #f6fbfe;
-      border-color: #209cee;
-      color: #12537e;
+      background: #fafdff;
+      border-color: #d9eaf3;
     }
     &.warning {
-      background: #fffdf5;
-      border-color: #ffdd57;
-      color: #3b3108;
+      background: rgba(253,200,69,.1);
+      border-color: rgba(253,200,69,.3);
     }
     &.success {
-      background: #f6fef9;
-      border-color: #23d160;
-      color: #0e301a;
+      background: #f6fff5;
+      border-color: rgba(58,193,51,.12);
     }
   }
 }
