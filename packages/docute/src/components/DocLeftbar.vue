@@ -1,5 +1,5 @@
 <template>
-  <div class="leftbar pretty-scrollbar">
+  <div class="leftbar pretty-scrollbar hide-on-mobile">
     <DocsToc v-if="showToc === 'left'" :toc="toc" />
     <DocsMenu v-if="showDocs" :docs="docs" />
   </div>

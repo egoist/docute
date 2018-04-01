@@ -1,5 +1,5 @@
 <template>
-  <div class="site-nav">
+  <div class="site-nav hide-on-mobile">
     <router-link
       :to="item.path"
       class="nav-item"

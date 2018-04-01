@@ -12,7 +12,7 @@
         <doc-meta :padding="true" :meta="source" v-if="source.title" />
         <page-content :content="source.content" />
       </div>
-      <div class="doc-right" v-if="showRightBar">
+      <div class="doc-right hide-on-mobile" v-if="showRightBar">
         <DocsToc v-if="toc" :toc="toc" />
       </div>
     </div>
@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import Media from 'vue-media'
 import SiteHeader from '@/components/Header'
 import DocMeta from '@/components/DocMeta'
 import DocLeftbar from '@/components/DocLeftbar'
@@ -124,5 +125,12 @@ export default {
   bottom: 0;
   right: 0;
   z-index: 10;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    padding-left: 0 !important;
+    width: 100% !important;
+  }
 }
 </style>

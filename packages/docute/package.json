@@ -23,6 +23,7 @@
     "vue": "^2.5.16",
     "vue-feather-icons": "^4.5.0",
     "vue-inter": "^3.0.0",
+    "vue-media": "^1.1.1",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
     "yamljs": "^0.3.0"
