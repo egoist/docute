@@ -1,10 +1,6 @@
 const path = require('path')
-const express = require('express')
 
 module.exports = {
-  entry: path.join(__dirname, 'index.js'),
-  outDir: path.join(__dirname, 'dist'),
-  staticFolder: __dirname,
   extendWebpack(config) {
     config.resolve.alias
       .set('docute$', path.join(__dirname, '../src/index.js'))

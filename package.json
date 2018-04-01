@@ -7,11 +7,13 @@
     "type": "git"
   },
   "scripts": {
-    "website": "poi --config website/poi.config.js",
-    "build:website": "poi build --config website/poi.config.js"
+    "website": "poi --config config/poi.website.config.js",
+    "build:website": "poi build --config config/poi.website.config.js"
   },
   "main": "dist/docute.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "author": "egoist <0x142857@gmail.com>",
   "license": "MIT",
   "dependencies": {
@@ -20,23 +22,24 @@
     "jump.js": "^1.0.2",
     "markdown-it": "^8.4.1",
     "nprogress": "^0.2.0",
+    "prismjs": "^1.13.0",
     "typeface-source-sans-pro": "^0.0.54",
     "vue": "^2.5.16",
     "vue-feather-icons": "^4.5.0",
     "vue-inter": "^3.0.0",
+    "vue-meta": "^1.5.0",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
-    "yamljs": "^0.3.0",
-    "prismjs": "^1.13.0",
-    "vue-meta": "^1.5.0"
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.42",
     "@babel/plugin-proposal-optional-chaining": "^7.0.0-beta.42",
+    "@poi/plugin-bundle-report": "^10.0.0-beta.9",
     "babel-core": "^7.0.0-0",
     "babel-jest": "^22.4.3",
     "jest": "^22.4.3",
-    "poi": "^10.0.0-beta.9",
+    "poi": "^10.0.0-beta.11",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^11.1.0",
     "postcss-mixins": "^6.2.0"
