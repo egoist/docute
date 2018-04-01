@@ -33,14 +33,8 @@ And they look like:
 
 > __Info__: This is a info!
 
-<!-- -->
-
 > __Warning__: This is a warning!
 
-<!-- -->
-
 > __Success__: This is ok!
-
-<!-- -->
 
 > __Note__: This is just a note!
