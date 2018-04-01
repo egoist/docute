@@ -3,6 +3,60 @@ title: Markdown Features
 toc: true
 ---
 
+## Message Containers
+
+To make your docss more readable, use the following format to write a `message container`:
+
+### tip
+
+Show some tips in your doc:
+
+```md
+::: tip
+  This is for beginners and pros, just enjoy!
+:::
+```
+
+And you get:
+
+::: tip
+  This is for beginners and pros, just enjoy!
+:::
+
+
+### warning
+
+Similar to [tip](#tip) but it looks more serious:
+
+```md
+::: warning
+  Do not do like this, do it that way please. If you still can't help doing such way, we will call your mom and order some pizza to let you know, you're in trouble!
+:::
+```
+
+And you get:
+
+::: warning
+  Do not do like this, do it that way please. If you still can't help doing such way, we will call your mom and order some pizza to let you know, you're in trouble!
+:::
+
+
+### danger
+
+```md
+::: danger
+  This is really dangerous, watch out!
+:::
+```
+
+And you get:
+
+::: danger
+  This is really dangerous, watch out!
+:::
+
+
+
 ## Message Blocks
 
 To highlight some messages in your documentation, use the following format to write a `blockquote`:

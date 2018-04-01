@@ -4,7 +4,7 @@ const RE = /^(tip|warning|danger)$/
 
 export default md => ([
   containerPlugiin,
-  'css-helpers',
+  'message-container',
   {
     validate (params) {
       return params.trim().match(RE)
@@ -12,7 +12,7 @@ export default md => ([
     render(tokens, idx) {
       const [, helperType] = tokens[idx].info.trim().match(RE) || []
       if (tokens[idx].nesting === 1) {
-        return `<div class="${helperType}">\n` // opening tag
+        return `<div class="message-container ${helperType}">\n` // opening tag
       }
       return '</div>\n' // closing tag
     }

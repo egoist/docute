@@ -131,17 +131,68 @@ pre > code {
     }
   }
 
-  & blockquote p,
-  & .message p {
+  & blockquote p {
     margin: 0;
   }
 
   &  blockquote p:not(:first-child),
-  & .message p:not(:first-child) {
+  & .message-block p:not(:first-child) {
     margin-top: 20px;
   }
 
-  & .message {
+  & .message-container {
+    &.warning, &.tip, &.danger {
+      padding: 12px 24px 12px 20px;
+      margin: 2em 0;
+      border-left: 4px solid;
+      position: relative;
+      border-bottom-right-radius: 2px;
+      border-top-right-radius: 2px;
+      &:before {
+        content: "!";
+        position: absolute;
+        top: 14px;
+        left: -12px;
+        color: #fff;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        text-align: center;
+        line-height: 20px;
+        font-weight: bold;
+        font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+      }
+      &.no-bg {
+        background-color: #f8f8f8;
+      }
+      & > p {
+        margin: 0;
+      }
+    }
+    &.tip {
+      border-left-color: var(--css-helper-tip-border);
+      background-color:  var(--css-helper-tip-bg);
+      &:before {
+        background-color: var(--css-helper-tip-border);
+      }
+    }
+    &.warning {
+      border-left-color: var(--css-helper-warning-border);
+      background-color: var(--css-helper-warning-bg);
+      &:before {
+        background-color: var(--css-helper-warning-border);
+      }
+    }
+    &.danger {
+      border-left-color: var(--css-helper-danger-border);
+      background-color: var(--css-helper-danger-bg);
+      &:before {
+        background-color: var(--css-helper-danger-border);
+      }
+    }
+  }
+
+  & .message-block {
     background: whitesmoke;
     border: 1px solid #dbdbdb;
     border-radius: 3px;
@@ -168,58 +219,10 @@ pre > code {
       border-color: #23d160;
       color: #0e301a;
     }
+    & > p {
+      margin: 0;
+    }
   }
 }
 
-div.warning, div.tip, div.danger {
-  padding: 12px 24px 12px 20px;
-  margin: 2em 0;
-  border-left: 4px solid;
-  position: relative;
-  border-bottom-right-radius: 2px;
-  border-top-right-radius: 2px;
-  &:before {
-    content: "!";
-    position: absolute;
-    top: 14px;
-    left: -12px;
-    color: #fff;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    text-align: center;
-    line-height: 20px;
-    font-weight: bold;
-    font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
-  }
-  &.no-bg {
-    background-color: #f8f8f8;
-  }
-  & > p {
-    margin: 0;
-  }
-}
 
-div.warning {
-  border-left-color: var(--css-helper-warning-border);
-  background-color: var(--css-helper-warning-bg);
-  &:before {
-    background-color: var(--css-helper-warning-border);
-  }
-}
-
-div.danger {
-  border-left-color: var(--css-helper-danger-border);
-  background-color: var(--css-helper-danger-bg);
-  &:before {
-    background-color: var(--css-helper-danger-border);
-  }
-}
-
-div.tip {
-  border-left-color: var(--css-helper-tip-border);
-  background-color:  var(--css-helper-tip-bg);
-  &:before {
-    background-color: var(--css-helper-tip-border);
-  }
-}

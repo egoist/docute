@@ -27,7 +27,7 @@ export default () => md => {
         const blockquoteOpenToken = tokens[idx]
         const blockquoteCloseToken = tokens[idx + 4]
         blockquoteOpenToken.tag = 'div'
-        blockquoteOpenToken.attrs = [['class', `message ${type.toLowerCase()}`]]
+        blockquoteOpenToken.attrs = [['class', `message-block ${type.toLowerCase()}`]]
         blockquoteCloseToken.tag = 'div'
       }
     }

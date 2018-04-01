@@ -14,7 +14,8 @@ import headingsPlugin from 'markdown-it-headings'
 import jump from 'jump.js'
 import Prism from 'prismjs'
 import highlightLinesPlugin from '@/utils/markdown-it/highlightLines'
-import cssHelpersPlugin from '@/utils/markdown-it/cssHelpers'
+import messageBlocksPlugin from '@/utils/markdown-it/messageBlocks'
+import messageContainersPlugin from '@/utils/markdown-it/messageContainers'
 import 'prismjs/components/prism-markdown'
 import 'prismjs/components/prism-yaml'
 import 'prismjs/components/prism-json'
@@ -131,7 +132,7 @@ export default {
       }
       md.use(headingsPlugin(state))
       md.use(highlightLinesPlugin())
-      md.use(...cssHelpersPlugin(md))
+      md.use(...messageContainersPlugin(md))
       md.use(messageBlocksPlugin())
       const html = md.render(text)
       this.toc = state.headings
