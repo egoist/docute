@@ -15,7 +15,7 @@ You can use the following format to write a `blockquote`:
 
 With Docute it will be rendered as follows:
 
-> __Alert__: This is a very `dangerous`  action!
+> __Alert__: This is a very dangerous action!
 
 We also support other message types which are:
 
