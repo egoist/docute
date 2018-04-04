@@ -1,4 +1,4 @@
-const RE = /^__(Info|Warning|Success|Note|Alert)__\:\s+(.*)/i
+export const RE = /^__(Info|Warning|Success|Note|Alert)__\:\s+(.*)/i
 
 export default () => md => {
   md.renderer.rules.blockquote_open = (...args) => {

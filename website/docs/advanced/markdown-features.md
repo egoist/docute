@@ -43,52 +43,57 @@ And they look like:
 
 ## Message Containers
 
-Similar to [Messages](#messages) but it looks more likes a container, use the following format to create a `message container`:
+Similar to [Messages](#messages) but it works as a container. This means that `Message Containers` solves the problem that `Messages` cannot use multi-line syntax, eg, `table`.
 
-### tip
+You can use the following format to write a `message container`:
 
-Show some tips in your doc:
 
 ```md
-::: tip
+::: Alert
   This is for beginners and pros, just enjoy!
 :::
 ```
 
-And you get:
+With Docute it will be rendered as follows:
 
-::: tip
+::: Alert
   This is for beginners and pros, just enjoy!
 :::
 
-
-### warning
-
-Similar to [tip](#tip) but it looks more serious:
+We also support other message types which are similar to [Messages](#messages):
 
 ```md
-::: warning
-  Do not do like this, do it that way please. If you still can't help doing such way, we will call your mom and order some pizza to let you know, you're in trouble!
+::: Info
+  This is a info!
+:::
+
+::: Warning
+  This is a warning!
+:::
+
+::: Success
+  This is a ok!
+:::
+
+::: Note
+  This is just a note!
 :::
 ```
 
-And you get:
+And they look like:
 
-::: warning
-  Do not do like this, do it that way please. If you still can't help doing such way, we will call your mom and order some pizza to let you know, you're in trouble!
+::: Info
+  This is a info!
 :::
 
-
-### danger
-
-```md
-::: danger
-  This is really dangerous, watch out!
+::: Warning
+  This is a warning!
 :::
-```
 
-And you get:
+::: Success
+  This is a ok!
+:::
 
-::: danger
-  This is really dangerous, watch out!
+::: Note
+  This is just a note!
 :::

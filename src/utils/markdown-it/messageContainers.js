@@ -1,6 +1,6 @@
 import containerPlugiin from 'markdown-it-container'
 
-const RE = /^(tip|warning|danger)$/
+const RE = /^(Info|Warning|Success|Note|Alert)$/i
 
 export default md => ([
   containerPlugiin,
@@ -12,7 +12,7 @@ export default md => ([
     render(tokens, idx) {
       const [, helperType] = tokens[idx].info.trim().match(RE) || []
       if (tokens[idx].nesting === 1) {
-        return `<div class="message-container ${helperType}">\n` // opening tag
+        return `<div class="message ${helperType.toLowerCase()}">\n` // opening tag
       }
       return '</div>\n' // closing tag
     }
