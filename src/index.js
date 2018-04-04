@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Meta from 'vue-meta'
 import Root from './components/Root.vue'
-import createRouter from './router'
-import createStore from './store'
-import defaultLayouts from './layouts'
+import createRouter from './router/index'
+import createStore from './store/index'
+import defaultLayouts from './layouts/index'
 
 Vue.use(Meta, {
   keyName: 'head',

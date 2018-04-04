@@ -1,11 +1,26 @@
 {
   "presets": [
-    [
-      "poi",
-      {
-        "jsx": "vue"
-      }
-    ]
+    ["@babel/preset-env", {
+      "modules": false,
+      "exclude": ["transform-async-to-generator", "transform-regenerator"]
+    }]
   ],
-  "plugins": ["@babel/plugin-proposal-optional-chaining"]
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-optional-chaining",
+    ["@babel/plugin-proposal-object-rest-spread", {
+      "loose": true,
+      "useBuiltIns": true
+    }],
+    ["module:fast-async", {
+      "spec":true
+    }],
+    ["babel-plugin-module-resolver", {
+      "root": ".",
+      "alias": {
+        "@": "./src"
+      },
+      "extensions": [".js"]
+    }]
+  ]
 }

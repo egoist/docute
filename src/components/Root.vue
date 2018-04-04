@@ -10,11 +10,12 @@ export default {
 }
 </script>
 
-<style src="../assets/css/prism-tomorrow.css"></style>
-<style src="../assets/css/nprogress.css"></style>
-<style src="../assets/css/common.css"></style>
-<style src="../assets/css/markdown.css"></style>
 <style>
+@import "prism-tomorrow.css";
+@import "nprogress.css";
+@import "common.css";
+@import "markdown.css";
+
 body {
   font: 16px/1.4 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
   margin: 0;

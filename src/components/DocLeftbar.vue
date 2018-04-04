@@ -7,8 +7,8 @@
 
 <script>
 import CustomComponent from '@/components/CustomComponents'
-import DocsMenu from '@/components/DocsMenu'
-import DocsToc from '@/components/DocsToc'
+import DocsMenu from '@/components/DocsMenu.vue'
+import DocsToc from '@/components/DocsToc.vue'
 
 export default {
   components: {

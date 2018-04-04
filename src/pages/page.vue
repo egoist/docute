@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import loadMarkdownParser from '@/utils/loadMarkdownParser'
+import loadMarkdownParser from '@/utils/markdown-it/markdown-it'
 import frontMatter from '@/utils/frontMatter'
 import createStoreMixin from '@/utils/createStoreMixin'
 import jump from 'jump.js'

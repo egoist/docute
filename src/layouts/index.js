@@ -1,5 +1,5 @@
-import docs from './docs'
-import homepage from './homepage'
+import docs from './docs.vue'
+import homepage from './homepage.vue'
 
 export default {
   docs,

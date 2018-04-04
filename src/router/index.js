@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import event from '@/utils/event'
+import Page from '@/pages/page.vue'
 
 Vue.use(Router)
 
@@ -11,7 +12,7 @@ export default ({ routerMode, routeProps }) => {
       {
         path: '*',
         props: routeProps,
-        component: () => import(/* webpackChunkName: "page" */ '@/pages/page.vue')
+        component: Page
       }
     ],
     scrollBehavior(to, from, savedPosition) {

@@ -20,13 +20,13 @@
 </template>
 
 <script>
-import SiteHeader from '@/components/Header'
-import DocMeta from '@/components/DocMeta'
-import DocLeftbar from '@/components/DocLeftbar'
-import PageContent from '@/components/PageContent'
+import SiteHeader from '@/components/Header/index.vue'
+import DocMeta from '@/components/DocMeta.vue'
+import DocLeftbar from '@/components/DocLeftbar.vue'
+import PageContent from '@/components/PageContent.vue'
 import componentManager from '@/utils/componentManager'
-import DocsMenu from '@/components/DocsMenu'
-import DocsToc from '@/components/DocsToc'
+import DocsMenu from '@/components/DocsMenu.vue'
+import DocsToc from '@/components/DocsToc.vue'
 import createStoreMixin from '@/utils/createStoreMixin'
 
 const storeMixin = createStoreMixin({

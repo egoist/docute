@@ -29,7 +29,7 @@
 <script>
 import Vue from 'vue'
 import { ArrowRightIcon } from 'vue-feather-icons'
-import SiteHeader from '@/components/Header'
+import SiteHeader from '@/components/Header/index.vue'
 import createStoreMixin from '@/utils/createStoreMixin'
 
 const storeMixin = createStoreMixin({
