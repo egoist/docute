@@ -1,3 +1,11 @@
+## [Version 3.4.11](https://github.com/egoist/docute/releases/tag/v3.4.11) (2018-4-4)
+
+### Bug fixes
+
+- Fix compatibility with Poi 9: [`8f657d0`](https://github.com/egoist/docute/commit/8f657d0)
+
+[...full changes](https://github.com/egoist/docute/compare/v3.4.10...v3.4.11)
+
 ## [Version 3.4.10](https://github.com/egoist/docute/releases/tag/v3.4.10) (2018-4-4)
 
 ### Bug fixes
