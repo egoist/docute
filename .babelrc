@@ -22,5 +22,14 @@
       },
       "extensions": [".js"]
     }]
-  ]
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        ["@babel/preset-env", {
+          "exclude": ["transform-async-to-generator", "transform-regenerator"]
+        }]
+      ]
+    }
+  }
 }
