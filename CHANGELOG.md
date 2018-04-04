@@ -1,3 +1,12 @@
+## [Version 3.4.10](https://github.com/egoist/docute/releases/tag/v3.4.10) (2018-4-4)
+
+### Bug fixes
+
+- Support passing url to repo: [`8a2b34a`](https://github.com/egoist/docute/commit/8a2b34a) ([#122](https://github.com/egoist/docute/issues/122))
+- extract appId: [`34505b8`](https://github.com/egoist/docute/commit/34505b8) ([#124](https://github.com/egoist/docute/issues/124))
+
+[...full changes](https://github.com/egoist/docute/compare/v3.4.9...v3.4.10)
+
 ## [Version 3.4.9](https://github.com/egoist/docute/releases/tag/v3.4.9) (2017-9-25)
 
 ### Bug fixes
