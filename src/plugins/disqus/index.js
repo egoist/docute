@@ -1,4 +1,4 @@
-const Disqus = require('./Disqus.vue')
+const Disqus = require('./Disqus.vue').default
 
 module.exports = ({ shortname } = {}) => {
   return ({ registerComponent }) => {

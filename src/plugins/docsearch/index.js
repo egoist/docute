@@ -1,5 +1,5 @@
 const algoliasearch = require('algoliasearch/lite')
-const Logo = require('./Logo.vue')
+const Logo = require('./Logo.vue').default
 
 module.exports = function ({ appId, apiKey, indexName, url } = {}) {
   return ({ store, registerComponent }) => {

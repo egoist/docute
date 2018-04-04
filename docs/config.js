@@ -99,6 +99,9 @@ docute.init({
       tags: ['english', 'zh-Hans', 'zh-Hant', 'ja'],
       url: 'https://docute.js.org'
     }),
-    evanyou()
+    evanyou(),
+    disqus({
+            shortname: 'wxa'
+        })
   ]
 })

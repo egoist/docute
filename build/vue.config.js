@@ -20,9 +20,8 @@ module.exports = {
     config.resolve.modules.push(path.resolve('src'))
     return config
   },
-  postcss: [require('cssbag')()],
   devServer: {
-    before(app) {
+    after(app) {
       app.use('/', express.static('docs'))
     }
   },
