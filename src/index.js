@@ -18,6 +18,7 @@ class Docute {
     nav,
     defaultFileName = 'README',
     routerMode = 'hash',
+    base = '/',
     toc,
     site,
     source,
@@ -30,7 +31,8 @@ class Docute {
       routerMode,
       toc,
       site,
-      source
+      source,
+      base
     }
     this.layouts = {
       ...defaultLayouts,
@@ -44,7 +46,8 @@ class Docute {
         routerMode: this.config.routerMode,
         routeProps: {
           layouts: this.layouts
-        }
+        },
+        base: this.config.base
       }),
       store: createStore(this.config),
       render(h) {

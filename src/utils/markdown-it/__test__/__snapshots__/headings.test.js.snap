@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`main: html 1`] = `
+"<h1 id=\\"hello-__foo__\\"><router-link class=\\"docute-heading-anchor\\" :to=\\"{hash:'hello-__foo__'}\\">hello <strong>foo</strong></router-link></h1>
+<h2 id=\\"hello-2-codehicode\\"><router-link class=\\"docute-heading-anchor\\" :to=\\"{hash:'hello-2-codehicode'}\\">hello 2 &lt;code&gt;hi&lt;/code&gt;</router-link></h2>
+"
+`;
+
+exports[`main: state 1`] = `
+Object {
+  "headings": Array [
+    Object {
+      "content": "hello 2 <code>hi</code>",
+      "depth": 2,
+      "html": "hello 2 &lt;code&gt;hi&lt;/code&gt;",
+      "slug": "hello-2-codehicode",
+      "text": "hello 2 &lt;code&gt;hi&lt;/code&gt;",
+    },
+  ],
+}
+`;

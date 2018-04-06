@@ -21,13 +21,15 @@ import 'prismjs/components/prism-json'
 import 'prismjs/components/prism-typescript'
 import event from '@/utils/event'
 import progress from 'nprogress'
+import resolvePath from '@/utils/resolvePath'
 
 progress.configure({ showSpinner: false })
 
 const storeMixin = createStoreMixin({
   state: {
     defaultFileName: state => state.config.defaultFileName,
-    site: state => state.config.site
+    site: state => state.config.site,
+    base: state => state.config.base
   }
 })
 
@@ -94,9 +96,9 @@ export default {
     async fetchAndRender() {
       progress.start()
       const file = this.$route.path === '/' // Homepage
-        ? `/${this.defaultFileName}.md`
+        ? `${resolvePath(this.base, '/')}${this.defaultFileName}.md`
         // Fetches `/foo.md` for both `/foo` and `/foo/`
-        : `${this.$route.path.replace(/\/?$/, '')}.md`
+        : `${resolvePath(this.base), this.$route.path}.md`
       const [text, MarkdownIt] = await Promise.all([
         fetch(file).then(res => res.text()),
         loadMarkdownParser()

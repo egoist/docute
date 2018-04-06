@@ -5,9 +5,10 @@ import Page from '@/pages/page.vue'
 
 Vue.use(Router)
 
-export default ({ routerMode, routeProps }) => {
+export default ({ routerMode, routeProps, base }) => {
   const router = new Router({
     mode: routerMode,
+    base,
     routes: [
       {
         path: '*',
