@@ -98,7 +98,7 @@ export default {
       const file = this.$route.path === '/' // Homepage
         ? `${resolvePath(this.base, '/')}${this.defaultFileName}.md`
         // Fetches `/foo.md` for both `/foo` and `/foo/`
-        : `${resolvePath(this.base), this.$route.path}.md`
+        : `${resolvePath(this.base, this.$route.path)}.md`
       const [text, MarkdownIt] = await Promise.all([
         fetch(file).then(res => res.text()),
         loadMarkdownParser()
