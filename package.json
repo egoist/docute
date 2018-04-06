@@ -8,11 +8,12 @@
   },
   "scripts": {
     "website": "poi --config config/poi.website.config.js",
-    "build": "npm run build:es && npm run build:umd",
+    "build": "yarn build:es && yarn build:umd",
     "build:website": "poi build --config config/poi.website.config.js",
     "build:es": "rollup -c config/rollup.config.js",
     "build:umd": "poi build --config config/poi.umd.config.js",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "yarn build",
+    "test": "yarn jest"
   },
   "// Question": "does main field still make sense?",
   "main": "es/index.js",
