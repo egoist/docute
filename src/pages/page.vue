@@ -13,7 +13,7 @@ import createStoreMixin from '@/utils/createStoreMixin'
 import jump from 'jump.js'
 import Prism from 'prismjs'
 import highlightLinesPlugin from '@/utils/markdown-it/highlightLines'
-import messageBlocksPlugin from '@/utils/markdown-it/messageBlocks'
+import alertsPlugin from '@/utils/markdown-it/alerts'
 import headingsPlugin from '@/utils/markdown-it/headings'
 import 'prismjs/components/prism-markdown'
 import 'prismjs/components/prism-yaml'
@@ -133,7 +133,7 @@ export default {
       }
       md.use(headingsPlugin(state))
       md.use(highlightLinesPlugin())
-      md.use(messageBlocksPlugin())
+      md.use(alertsPlugin())
       const html = md.render(text)
       this.toc = state.headings
       return html

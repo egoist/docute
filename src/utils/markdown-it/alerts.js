@@ -1,4 +1,4 @@
-const RE = /^__(Info|Warning|Success|Note|Alert)__\:\s+(.*)/i
+const RE = /^__(Info|Warning|Success|Note|Danger)__\:\s+(.*)/i
 
 export default () => md => {
   md.renderer.rules.blockquote_open = (...args) => {
@@ -18,7 +18,7 @@ export default () => md => {
         const blockquoteOpenToken = tokens[idx]
         const blockquoteCloseToken = tokens[idx + 4]
         blockquoteOpenToken.tag = 'div'
-        blockquoteOpenToken.attrs = [['class', `message ${type.toLowerCase()}`]]
+        blockquoteOpenToken.attrs = [['class', `alert ${type.toLowerCase()}`]]
         blockquoteCloseToken.tag = 'div'
       }
     }

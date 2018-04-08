@@ -132,23 +132,23 @@ pre > code {
   }
 
   & blockquote p,
-  & .message p {
+  & .alert p {
     margin: 0;
   }
 
   &  blockquote p:not(:first-child),
-  & .message p:not(:first-child) {
+  & .alert p:not(:first-child) {
     margin-top: 20px;
   }
 
-  & .message {
+  & .alert {
     background: #f9f9f9;
     border: 1px solid #efefef;
     border-radius: 5px;
     color: #373e42;
     padding: 1em 1.25em;
     margin: 25px 0;
-    &.alert {
+    &.danger {
       background: rgba(224,76,76,.08);
       border-color: rgba(224,76,76,.1)
     }

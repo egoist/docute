@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`main 1`] = `
-"<div class=\\"message info\\">
+"<div class=\\"alert info\\">
 <p>This is a <code>info</code>!</p>
 </div>
-<div class=\\"message warning\\">
+<div class=\\"alert warning\\">
 <p>This is a &lt;code&gt;warning&lt;/code&gt;!</p>
 </div>
-<div class=\\"message success\\">
+<div class=\\"alert success\\">
 <p>This is <strong>ok</strong>!</p>
 </div>
-<div class=\\"message note\\">
+<div class=\\"alert note\\">
 <p>This is just a <em>note</em>!</p>
 </div>
 "

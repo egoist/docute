@@ -1,8 +1,8 @@
 import MarkdownIt from 'markdown-it'
-import messageBlocksPlugin from '../messageBlocks'
+import alertsPlugin from '../alerts'
 
 const md = new MarkdownIt()
-md.use(messageBlocksPlugin())
+md.use(alertsPlugin())
 
 test('main', () => {
   const html = md.render(`

@@ -3,21 +3,19 @@ title: Markdown Features
 toc: true
 ---
 
-## Messages
+## Alerts
 
-Colored message blocks, to emphasize part of your page. 
-
-You can use the following format to write a `blockquote`:
+You can provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages by using following format to write a `blockquote`:
 
 ```md
-> __Alert__: This is a very dangerous action!
+> __Danger__: This is a very dangerous action!
 ```
 
 With Docute it will be rendered as follows:
 
-> __Alert__: This is a very dangerous action!
+> __Danger__: This is a very dangerous action!
 
-We also support other message types which are:
+We also support other alert types which are:
 
 ```md
 > __Info__: This is a info!
