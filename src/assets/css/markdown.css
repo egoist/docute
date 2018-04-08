@@ -150,7 +150,7 @@ pre > code {
     margin: 25px 0;
     &.danger {
       background: rgba(224,76,76,.08);
-      border-color: rgba(224,76,76,.1)
+      border-color: rgba(224,76,76,.3);
     }
     &.info {
       background: #fafdff;
