@@ -57,13 +57,13 @@ export default {
 
   head() {
     let title
-    if (this.$route.path === '/' || !this.pageSource?.title) {
-      title = this.site?.title
+    if (this.$route.path === '/' || !this.pageSource || !this.pageSource.title) {
+      title = this.site.title
     } else {
-      title = `${this.pageSource?.title} - ${this.site?.title}`
+      title = `${this.pageSource.title} - ${this.site.title}`
     }
     return {
-      title: title || 'Docute'
+      title
     }
   },
 

@@ -13,7 +13,7 @@ import createStoreMixin from '@/utils/createStoreMixin'
 
 const storeMixin = createStoreMixin({
   state: {
-    title: state => state.config.siteMetadata?.title || 'Docute',
+    title: state => state.config.site.title,
     nav: state => state.config.nav
   }
 })

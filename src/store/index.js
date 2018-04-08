@@ -15,6 +15,13 @@ const flatten = routes => {
 
 export default config => new Vuex.Store({
   state: {
-    config
+    config: {
+      ...config,
+      site: {
+        title: 'Docute',
+        description: 'My Documentations',
+        ...config.site
+      }
+    }
   }
 })
