@@ -134,11 +134,13 @@ pre > code {
   & blockquote p,
   & .alert p {
     margin: 0;
+    padding-left: 30px;
+    position: relative;
   }
 
   &  blockquote p:not(:first-child),
   & .alert p:not(:first-child) {
-    margin-top: 20px;
+    margin-top: 15px;
   }
 
   & .alert {
@@ -146,23 +148,41 @@ pre > code {
     border: 1px solid #efefef;
     border-radius: 5px;
     color: #373e42;
-    padding: 1em 1.25em;
+    padding: 15px 20px;
     margin: 25px 0;
+    & .alert-icon {
+      margin-top: 2px;
+      position: absolute;
+      left: -5px;
+      color: #949494;
+    }
     &.danger {
       background: rgba(224,76,76,.08);
       border-color: rgba(224,76,76,.3);
+      & .alert-icon {
+        color: rgba(224,76,76,0.92);
+      }
     }
     &.info {
       background: #fafdff;
       border-color: #d9eaf3;
+      & .alert-icon {
+        color: rgb(116, 196, 239);
+      }
     }
     &.warning {
       background: rgba(253,200,69,.1);
       border-color: rgba(253,200,69,.3);
+      & .alert-icon {
+        color: rgb(245, 190, 88);
+      }
     }
     &.success {
       background: #f6fff5;
       border-color: rgba(58,193,51,.12);
+      & .alert-icon {
+        color: rgba(34, 191, 26, 0.78);
+      }
     }
   }
 }

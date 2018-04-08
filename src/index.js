@@ -4,6 +4,7 @@ import Root from './components/Root.vue'
 import createRouter from './router/index'
 import createStore from './store/index'
 import defaultLayouts from './layouts/index'
+import AlertIcon from './components/AlertIcon'
 
 Vue.use(Meta, {
   keyName: 'head',
@@ -11,6 +12,8 @@ Vue.use(Meta, {
   ssrAttribute: 'data-dh-server-rendered',
   tagIDKeyName: 'vmid'
 })
+
+Vue.component(AlertIcon.name, AlertIcon)
 
 class Docute {
   constructor({

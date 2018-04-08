@@ -26,3 +26,13 @@ test('no matching', () => {
 
   expect(html).toMatchSnapshot()
 })
+
+test('multiple paragraph', () => {
+  const html = md.render(`
+> __Info__: hehe
+>
+> nah
+  `)
+
+    expect(html).toMatchSnapshot()
+})

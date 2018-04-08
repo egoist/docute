@@ -2,16 +2,24 @@
 
 exports[`main 1`] = `
 "<div class=\\"alert info\\">
-<p>This is a <code>info</code>!</p>
+<p><alert-icon name=\\"alert\\" /></strong>This is a <code>info</code>!</p>
 </div>
 <div class=\\"alert warning\\">
-<p>This is a &lt;code&gt;warning&lt;/code&gt;!</p>
+<p><alert-icon name=\\"alert\\" /></strong>This is a &lt;code&gt;warning&lt;/code&gt;!</p>
 </div>
 <div class=\\"alert success\\">
-<p>This is <strong>ok</strong>!</p>
+<p><alert-icon name=\\"check\\" /></strong>This is <strong>ok</strong>!</p>
 </div>
 <div class=\\"alert note\\">
-<p>This is just a <em>note</em>!</p>
+<p><alert-icon name=\\"alert\\" /></strong>This is just a <em>note</em>!</p>
+</div>
+"
+`;
+
+exports[`multiple paragraph 1`] = `
+"<div class=\\"alert info\\">
+<p><alert-icon name=\\"alert\\" /></strong>hehe</p>
+<p>nah</p>
 </div>
 "
 `;
