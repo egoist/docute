@@ -62,4 +62,4 @@ new Docute({
 
 ### How the contents are fetched
 
-For a certain path like: `/docs/foo` we simply fetch `/docs/foo.md` and renders it to what you see. You can see more about <router-link to="/docs/essentials/content-format">content format</router-link> here.
+For a certain path like: `/docs/foo` we simply fetch `/docs/foo.md` and renders it to what you see. You can know more about <router-link to="/docs/essentials/add-docs">how it works</router-link> here.

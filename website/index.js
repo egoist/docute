@@ -19,12 +19,12 @@ const doc = new Docute({
           path: '/docs/essentials/the-docute-instance'
         },
         {
-          title: 'Content Format',
-          path: '/docs/essentials/content-format'
+          title: 'Add Docs',
+          path: '/docs/essentials/add-docs'
         },
         {
-          title: 'Layouts',
-          path: '/docs/essentials/layouts'
+          title: 'Add Homepage',
+          path: '/docs/essentials/add-homepage'
         },
         {
           title: 'Front-Matter',
@@ -35,6 +35,10 @@ const doc = new Docute({
     {
       title: 'Advanced',
       children: [
+        {
+          title: 'Layouts',
+          path: '/docs/advanced/layouts'
+        },
         {
           title: 'Using Vue Component',
           path: '/docs/advanced/using-vue-component'

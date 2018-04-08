@@ -5,7 +5,7 @@ The front-matter provide some extra information so that Docute knows how to rend
 
 ## Keys
 
-There're some key that are only supported in `homepage` layout, <router-link to="/docs/essentials/layouts#homepage-layout">check them out here</router-link>.
+There're some key that are only supported in `homepage` layout, <router-link to="/docs/advanced/layouts#homepage-layout">check them out here</router-link>.
 
 ### title
 
