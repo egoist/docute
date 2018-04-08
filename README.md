@@ -1,11 +1,18 @@
 # Docute
 
+Effortlessly documentation done right.
+
+## Documentations
+
+__The latest stable release: [v3 docs](https://v3.docute.org/).__
+
+WIP: [v4 docs](https://docute.org)
+
 ## Development
 
 ```bash
 # Fork this repo
 git clone git@github.com:$YOUR_NAME/docute.git
-git checkout dev
 yarn
 
 # Run website locally
