@@ -41,4 +41,4 @@ const doc = new Docute({
 doc.start('#docute')
 ```
 
-> __WARN__: Please note that you need to [alias `vue` to `vue/dist/vue.esm.js`](https://vuejs.org/v2/guide/installation.html#Explanation-of-Different-Builds) while using with the bundler, since Docute requires Vue runtime+compiler build.
+> __WARNING__: Please note that you need to [alias `vue` to `vue/dist/vue.esm.js`](https://vuejs.org/v2/guide/installation.html#Explanation-of-Different-Builds) while using with the bundler, since Docute requires Vue runtime+compiler build.

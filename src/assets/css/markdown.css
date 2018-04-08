@@ -131,16 +131,20 @@ pre > code {
     }
   }
 
-  & blockquote p,
+  & blockquote p {
+    margin: 0;
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
+  }
+
   & .alert p {
     margin: 0;
     padding-left: 30px;
     position: relative;
-  }
-
-  &  blockquote p:not(:first-child),
-  & .alert p:not(:first-child) {
-    margin-top: 15px;
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
   }
 
   & .alert {
