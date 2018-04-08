@@ -4,9 +4,9 @@ Effortlessly documentation done right.
 
 ## Documentations
 
-__The latest stable release: [v3 docs](https://v3.docute.org/).__
+__The latest stable release: [v3 docs](https://v3.docute.org/).__ ([branch](https://github.com/egoist/docute/tree/3))
 
-WIP: [v4 docs](https://docute.org)
+WIP: [v4 docs](https://docute.org) (master branch)
 
 ## Development
 
