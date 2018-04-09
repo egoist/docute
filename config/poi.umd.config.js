@@ -9,7 +9,7 @@ module.exports = Object.assign(common, {
   html: false,
   sourceMap: false,
   hash: false,
-  webpack(config) {
+  configureWebpack(config) {
     config.entry.docute = config.entry.main
     delete config.entry.main
 

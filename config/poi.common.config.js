@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  extendWebpack(config) {
+  chainWebpack(config) {
     config.resolve.alias
       .set('docute$', path.join(__dirname, '../src/index.js'))
       .set('@', path.join(__dirname, '../src'))
