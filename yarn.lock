@@ -613,17 +613,22 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@poi/core@^10.0.0-rc.4":
-  version "10.0.0-rc.4"
-  resolved "https://registry.yarnpkg.com/@poi/core/-/core-10.0.0-rc.4.tgz#c0e6b07c2915df8e3fa555cdcd99ea195c7b827b"
+"@poi/bs-loader@^0.0.1-rc.0":
+  version "0.0.1-rc.0"
+  resolved "https://registry.yarnpkg.com/@poi/bs-loader/-/bs-loader-0.0.1-rc.0.tgz#9c87f237637896f6f0ce941a5b5d34da34f92f4a"
+
+"@poi/core@^10.0.0-rc.5":
+  version "10.0.0-rc.5"
+  resolved "https://registry.yarnpkg.com/@poi/core/-/core-10.0.0-rc.5.tgz#ef14accc9fd4c42a39f00cd69ee14a254d07a363"
   dependencies:
     "@babel/core" "^7.0.0-beta.40"
+    "@poi/bs-loader" "^0.0.1-rc.0"
     babel-loader "^8.0.0-beta.2"
     chalk "^2.3.2"
     copy-webpack-plugin "^4.5.0"
     css-loader "^0.28.10"
     file-loader "^1.1.11"
-    friendly-webpack-reporter "^0.0.1-rc.0"
+    friendly-webpack-reporter "^0.0.1-rc.1"
     html-webpack-plugin "^3.1.0"
     lodash.merge "^4.6.1"
     mini-css-extract-plugin "^0.2.0"
@@ -3146,9 +3151,9 @@ fresh@0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
 
-friendly-webpack-reporter@^0.0.1-rc.0:
-  version "0.0.1-rc.0"
-  resolved "https://registry.yarnpkg.com/friendly-webpack-reporter/-/friendly-webpack-reporter-0.0.1-rc.0.tgz#9936abe9604d2a94d472fede4eb92ed07c8e24dd"
+friendly-webpack-reporter@^0.0.1-rc.1:
+  version "0.0.1-rc.1"
+  resolved "https://registry.yarnpkg.com/friendly-webpack-reporter/-/friendly-webpack-reporter-0.0.1-rc.1.tgz#c3f79f0b66611589e0bc0f02b4d045335aeae7bb"
   dependencies:
     bytes "^3.0.0"
     chalk "^2.3.2"
@@ -5838,11 +5843,11 @@ pn@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
 
-poi@^10.0.0-rc.7:
-  version "10.0.0-rc.7"
-  resolved "https://registry.yarnpkg.com/poi/-/poi-10.0.0-rc.7.tgz#8bf7696e98a847b38c87c70ff1e62f4103c3d02a"
+poi@^10.0.0-rc.8:
+  version "10.0.0-rc.8"
+  resolved "https://registry.yarnpkg.com/poi/-/poi-10.0.0-rc.8.tgz#3153d1ee679c6ecbb64f185ac02c9d2edbe72fe3"
   dependencies:
-    "@poi/core" "^10.0.0-rc.4"
+    "@poi/core" "^10.0.0-rc.5"
     "@poi/dev-utils" "^10.0.0-rc.0"
     "@poi/logger" "^10.0.0-rc.1"
     address "^1.0.1"
