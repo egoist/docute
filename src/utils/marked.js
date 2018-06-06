@@ -913,7 +913,7 @@ Renderer.prototype.link = function(href, title, text) {
     }
   }
   // To allow [Get Started](jump-to-id)
-  // to be generated to <a href="#/?get-started" jump-to-id="get-started">Get Started</a>
+  // to be generated to <a href="#/?id=get-started" jump-to-id="get-started">Get Started</a>
   var isJump = href === 'jump-to-id'
   var isId = href && (href.charAt(0) === '#')
   var isRouterLink = href && (href.charAt(0) === '/')
@@ -934,6 +934,7 @@ Renderer.prototype.link = function(href, title, text) {
   } else if (isRouterLink) {
     href = href.replace('#', '?id=')
     slug = href
+    href = this.options.context.routerMode === 'hash' ? `#${href}` : href
     attr = 'router-link'
   }
 
