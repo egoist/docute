@@ -55,6 +55,7 @@ import highlightLinesPlugin from '../markdown/highlight-lines'
 import escapeInterpolationPlugin from '../markdown/escape-interpolation'
 import linkPlugin from '../markdown/link'
 import hoistPlugin from '../markdown/hoist'
+import checkNetlify from '../utils/check-netlify'
 
 import anchorIcon from '!raw-loader!../svg/anchor.svg'
 
@@ -135,6 +136,7 @@ export default {
           if (!res.ok) {
             throw res
           }
+          checkNetlify(res)
           return res.text()
         })
       } catch (err) {
