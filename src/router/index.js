@@ -4,9 +4,9 @@ import Page from '../components/Page.vue'
 
 Vue.use(Router)
 
-export default ({ root }) => {
+export default ({ root, routerMode }) => {
   const router = new Router({
-    mode: 'hash',
+    mode: routerMode,
     base: root,
     scrollBehavior (to, from, savedPosition) {
       if (savedPosition) {
