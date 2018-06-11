@@ -1,0 +1,21 @@
+:root {
+  --ease: cubic-bezier(0.82, 0, 0.12, 1);
+  --container-width: 800px;
+  --header-height: 50px;
+  --border-color: #e2e2e2;
+  --sidebar-width: 20rem;
+  --padding: 20px;
+
+  --dark: #000;
+  --blue: #33a9ff;
+  --light-gray: #fafafa;
+
+  --text-color: #2c3e50;
+  --accent-color: #3eaf7c;
+  --bg: #fff;
+  --fg: #868e96;
+  --fg-dark: #212529;
+
+  --selection-bg: var(--blue);
+  --selection-fg: white;
+}

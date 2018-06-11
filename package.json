@@ -1,0 +1,57 @@
+{
+  "name": "docute",
+  "version": "0.0.0",
+  "description": "Effortlessly documentation done right.",
+  "repository": {
+    "url": "https://github.com/egoist/docute.git",
+    "type": "git"
+  },
+  "main": "dist/docute.js",
+  "module": "lib/index.js",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "test": "npm run lint && npm run build",
+    "lint": "xo",
+    "website": "poi --config website/poi.config.js",
+    "build:website": "poi build --config website/poi.config.js",
+    "build": "poi build --config build/poi.config.js",
+    "build:lib": "sfc normalize src -d lib --include \"**/*.*\" --include \"!**/__test__/**\" --no-babelrc",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "egoist <0x142857@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jump.js": "^1.0.2",
+    "loadjs": "^3.5.4",
+    "markdown-it": "^8.4.1",
+    "nprogress": "^0.2.0",
+    "prismjs": "^1.8.4",
+    "slugo": "^0.2.1",
+    "vue": "^2.5.16",
+    "vue-meta": "^1.5.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.49",
+    "babel-core": "^7.0.0-0",
+    "babel-jest": "^23.0.1",
+    "eslint-config-rem": "^3.0.0",
+    "jest": "^23.1.0",
+    "poi": "^10.2.7",
+    "postcss-nested": "^3.0.0",
+    "raw-loader": "^0.5.1",
+    "regenerator-runtime": "^0.11.1",
+    "sfc": "^0.2.8",
+    "xo": "^0.18.0"
+  },
+  "xo": {
+    "extends": "rem",
+    "envs": [
+      "browser"
+    ]
+  }
+}

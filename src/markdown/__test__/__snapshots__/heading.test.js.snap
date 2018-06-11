@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`main: env 1`] = `
+Object {
+  "headings": Array [
+    Object {
+      "depth": 2,
+      "id": "hehe",
+      "value": "hehe",
+    },
+    Object {
+      "depth": 3,
+      "id": "well-good",
+      "value": "well good",
+    },
+    Object {
+      "depth": 2,
+      "id": "wow",
+      "value": "wow",
+    },
+    Object {
+      "depth": 2,
+      "id": "wow1",
+      "value": "wow",
+    },
+    Object {
+      "depth": 2,
+      "id": "wow2",
+      "value": "wow",
+    },
+  ],
+  "ids": Array [
+    "foo",
+    "hehe",
+    "well-good",
+    "wow",
+    "wow",
+    "wow",
+  ],
+  "title": "foo",
+}
+`;
+
+exports[`main: html 1`] = `
+"
+<h2 id=\\"hehe\\" tabindex=\\"0\\">hehe</h2>
+<h3 id=\\"well-good\\" tabindex=\\"0\\">well good</h3>
+<h2 id=\\"wow\\" tabindex=\\"0\\">wow</h2>
+<h2 id=\\"wow1\\" tabindex=\\"0\\">wow</h2>
+<h2 id=\\"wow2\\" tabindex=\\"0\\">wow</h2>
+"
+`;

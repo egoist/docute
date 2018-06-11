@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`simple 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "depth": 3,
+        "value": "title 3",
+      },
+      Object {
+        "depth": 3,
+        "value": "title 4",
+      },
+    ],
+    "depth": 2,
+    "value": "title 1",
+  },
+  Object {
+    "depth": 2,
+    "value": "title 2",
+  },
+]
+`;
