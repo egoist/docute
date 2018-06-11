@@ -23,10 +23,7 @@
               <div class="docute-content docute-content-loader" v-else>
                 <ContentLoader
                   :height="475"
-                  :width="400"
-                  :speed="2"
-                  primaryColor="#f3f3f3"
-                  secondaryColor="#ecebeb">
+                  :width="400">
                   <rect x="0" y="12" rx="3" ry="3" width="125" height="12" />
                   <rect x="0" y="30.8" rx="3" ry="3" width="206" height="8" />
                   <rect x="0" y="88.8" rx="3" ry="3" width="173" height="10" />
