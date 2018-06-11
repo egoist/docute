@@ -37,7 +37,7 @@ export default {
 @media screen and (max-width: 768px) {
   .sidebar {
     transform: translateX(calc(var(--sidebar-width) * -1));
-    transition: transform .3s var(--ease);
+    transition: transform 0.3s var(--ease);
   }
 }
 </style>

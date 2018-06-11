@@ -25,7 +25,9 @@ export default {
 
     message() {
       if (this.error.status) {
-        return this.error.status === 404 ? `Cannot find ${this.error.url}` : this.error.statusText
+        return this.error.status === 404
+          ? `Cannot find ${this.error.url}`
+          : this.error.statusText
       }
     }
   }
@@ -51,4 +53,3 @@ export default {
   }
 }
 </style>
-

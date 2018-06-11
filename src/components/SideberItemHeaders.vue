@@ -38,15 +38,16 @@ export default {
   display: flex;
   padding: 3px var(--padding);
 
-  &:hover, &.router-link-exact-active {
+  &:hover,
+  &.router-link-exact-active {
     color: var(--accent-color);
   }
 
-  &[data-depth="2"] {
+  &[data-depth='2'] {
     padding-left: calc(var(--padding) + 16px);
   }
 
-  &[data-depth="3"] {
+  &[data-depth='3'] {
     padding-left: calc(var(--padding) + 30px);
   }
 }

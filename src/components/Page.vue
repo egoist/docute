@@ -21,16 +21,7 @@
                 <component :is="docComponent" />
               </div>
               <div class="docute-content docute-content-loader" v-else>
-                <ContentLoader
-                  :height="475"
-                  :width="400">
-                  <rect x="0" y="12" rx="3" ry="3" width="125" height="12" />
-                  <rect x="0" y="30.8" rx="3" ry="3" width="206" height="8" />
-                  <rect x="0" y="88.8" rx="3" ry="3" width="173" height="10" />
-                  <rect x="0" y="110.8" rx="3" ry="3" width="260" height="6" />
-                  <rect x="0" y="120.8" rx="3" ry="3" width="300" height="6" />
-                  <rect x="0" y="130.8" rx="3" ry="3" width="235" height="6" />
-                </ContentLoader>
+                <ContentShell />
               </div>
           </div>
     </template>
@@ -41,11 +32,11 @@
 import jump from 'jump.js'
 import { mapState, mapGetters, mapMutations } from 'vuex'
 import progress from 'nprogress'
-import { ContentLoader } from 'vue-content-loader'
 
+import ContentShell from './ContentShell.vue'
 import ErrorContainer from './ErrorContainer.vue'
-import Header from '../components/Header.vue'
-import Sidebar from '../components/Sidebar.vue'
+import Header from './Header.vue'
+import Sidebar from './Sidebar.vue'
 import highlight from '../utils/highlight'
 import headingsPlugin from '../markdown/headings'
 import highlightLinesPlugin from '../markdown/highlight-lines'
@@ -53,8 +44,6 @@ import escapeInterpolationPlugin from '../markdown/escape-interpolation'
 import linkPlugin from '../markdown/link'
 import hoistPlugin from '../markdown/hoist'
 import checkNetlify from '../utils/check-netlify'
-
-import anchorIcon from '!raw-loader!../svg/anchor.svg'
 
 progress.configure({ showSpinner: false })
 
@@ -171,11 +160,12 @@ export default {
           if (this.$refs.hoistedTags) {
             const scripts = this.$refs.hoistedTags.querySelectorAll('script')
             scripts.forEach(script => {
+              // No, it's not evil
+              // eslint-disable-next-line no-new-func
               const fn = new Function(script.textContent)
               fn()
             })
           }
-
         }
       }
 
@@ -193,12 +183,14 @@ export default {
       if (this.Markdown) return this.Markdown
 
       const [Markdown] = await Promise.all([
-        import(/* webpackChunkName: "markdown" */ 'markdown-it').then(res => res.default),
+        import(/* webpackChunkName: "markdown" */ 'markdown-it').then(
+          res => res.default
+        ),
         import(/* webpackChunkName: "markdown" */ 'prismjs/components/prism-css'),
         import(/* webpackChunkName: "markdown" */ 'prismjs/components/prism-javascript'),
         import(/* webpackChunkName: "markdown" */ 'prismjs/components/prism-markdown'),
         import(/* webpackChunkName: "markdown" */ 'prismjs/components/prism-bash'),
-        import(/* webpackChunkName: "markdown" */ 'prismjs/components/prism-typescript'),
+        import(/* webpackChunkName: "markdown" */ 'prismjs/components/prism-typescript')
       ])
       this.Markdown = Markdown
       return Markdown
@@ -222,16 +214,21 @@ export default {
     Sidebar,
     Header,
     ErrorContainer,
-    ContentLoader
+    ContentShell
   }
 }
 </script>
 
-<style src="../css/vars.css"></style>
-<style src="../css/prism.css"></style>
-<style src="../css/progress.css"></style>
-<style src="../css/global.css"></style>
-<style src="../css/markdown.css"></style>
+<style src="../css/vars.css">
+</style>
+<style src="../css/prism.css">
+</style>
+<style src="../css/progress.css">
+</style>
+<style src="../css/global.css">
+</style>
+<style src="../css/markdown.css">
+</style>
 
 <style scoped>
 .docute-page {
@@ -267,10 +264,12 @@ export default {
   }
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
 }
-.fade-enter, .fade-leave-to {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 

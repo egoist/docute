@@ -1,4 +1,9 @@
 {
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
   "extends": [
     "xo",
     "rem",

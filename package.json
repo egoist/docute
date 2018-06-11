@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "test": "npm run lint",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .js --ext .vue",
     "website": "poi --config website/poi.config.js",
     "build:website": "poi build --config website/poi.config.js",
     "build": "poi build --config build/poi.config.js",
@@ -39,6 +39,7 @@
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.49",
     "babel-core": "^7.0.0-0",
+    "babel-eslint": "^8.2.3",
     "babel-jest": "^23.0.1",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",

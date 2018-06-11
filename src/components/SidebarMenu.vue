@@ -118,7 +118,8 @@ export default {
   color: inherit;
   display: flex;
   border-left: 3px solid transparent;
-  &:hover, &.active {
+  &:hover,
+  &.active {
     color: var(--accent-color);
   }
   &.active {

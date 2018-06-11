@@ -49,9 +49,9 @@ export default {
   border-bottom: 2px solid transparent;
   padding-bottom: 3px;
 
-  &:not(.is-external):hover,&.active {
+  &:not(.is-external):hover,
+  &.active {
     border-color: var(--accent-color);
   }
 }
 </style>
-
