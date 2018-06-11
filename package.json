@@ -40,8 +40,10 @@
     "@babel/core": "^7.0.0-beta.49",
     "babel-core": "^7.0.0-0",
     "babel-jest": "^23.0.1",
-    "eslint-config-rem": "^3.0.0",
+    "eslint-config-rem": "^4.0.0",
+    "husky": "^1.0.0-rc.8",
     "jest": "^23.1.0",
+    "lint-staged": "^7.2.0",
     "poi": "^10.2.7",
     "postcss-nested": "^3.0.0",
     "raw-loader": "^0.5.1",
@@ -60,5 +62,16 @@
       "no-throw-literal": "warn",
       "import/prefer-default-export": "off"
     }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "xo --fix",
+      "git add"
+    ]
   }
 }
