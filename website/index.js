@@ -30,6 +30,7 @@ Vue.component('ReverseText', {
 const doc = new Docute({
   sourceRoot: '/docs/',
   title: 'Docute',
+  routerMode: 'history',
   description: 'Effortlessly documentation done right.',
   nav: [
     {

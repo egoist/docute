@@ -11,6 +11,10 @@ module.exports = {
     {
       from: 'website/docs',
       to: 'docs'
+    },
+    {
+      from: 'website/_redirects',
+      to: '.'
     }
   ],
   vue: {
