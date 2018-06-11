@@ -52,7 +52,13 @@
   "xo": {
     "extends": "rem",
     "envs": [
-      "browser"
-    ]
+      "browser",
+      "jest"
+    ],
+    "rules": {
+      "camelcase": "off",
+      "no-throw-literal": "warn",
+      "import/prefer-default-export": "off"
+    }
   }
 }

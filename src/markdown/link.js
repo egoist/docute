@@ -1,11 +1,9 @@
 export default md => {
-  md.renderer.rules.link_open = (...args) => {
-    const [tokens, idx, options, env, self] = args
+  md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
     const token = tokens[idx]
     const hrefIndex = token.attrIndex('href')
     const link = token.attrs[hrefIndex]
 
-    let suffix = ''
     if (link[1].startsWith('#')) {
       token.tag = 'router-link'
       link[0] = ':to'

@@ -59,7 +59,7 @@ export default md => {
       const blockquoteTokens = getBlockquoteTokens(tokens.slice(idx))
       if (blockquoteTokens) {
         env.subtitle = self.render(blockquoteTokens.filter((token, index) => {
-          return index !== 0 && index !== (blockquoteTokens.length -1)
+          return index !== 0 && index !== (blockquoteTokens.length - 1)
         }), options, env)
         hidenTokens(blockquoteTokens)
       }
@@ -69,7 +69,7 @@ export default md => {
         id,
         // Original value
         value,
-        depth: token.markup.length,
+        depth: token.markup.length
       })
     }
 

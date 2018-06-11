@@ -3,7 +3,6 @@ const RE = /\s*{([\d,-]+)}/
 const renderPreWrapper = (preWrapperAttrs, preAttrs, code, codeMask = '') => `<div${preWrapperAttrs}>${codeMask}<pre${preAttrs}><code${preAttrs}>${code.trim()}</code></pre></div>`
 
 export default md => {
-  const fence = md.renderer.rules.fence
   md.renderer.rules.fence = (...args) => {
     const [tokens, idx, options, , self] = args
     const token = tokens[idx]

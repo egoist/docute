@@ -1,3 +1,4 @@
+/* globals __DOCUTE_VERSION__ */
 import Vue from 'vue'
 import Meta from 'vue-meta'
 import App from './components/App.vue'
@@ -29,9 +30,7 @@ const importIcons = r => {
 }
 importIcons(require.context('./components/icons', false, /\.vue$/))
 
-
 Vue.mixin(cssMixin)
-
 
 Vue.use(Meta, {
   keyName: 'head',

@@ -12,8 +12,7 @@ export default md => {
         content
       })
       return ''
-    } else {
-      return content
     }
+    return content
   }
 }
