@@ -6,10 +6,7 @@ import createRouter from './router'
 import createStore from './store'
 import cssMixin from './mixins/css'
 
-const globalComponents = [
-  './Badge.vue',
-  './ImageZoom.vue'
-]
+const globalComponents = ['./Badge.vue', './ImageZoom.vue']
 // global components
 const importGlobalComponents = r => {
   r.keys().forEach(k => {

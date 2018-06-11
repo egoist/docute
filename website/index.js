@@ -14,7 +14,10 @@ Vue.component('ReverseText', {
   `,
   methods: {
     reverse() {
-      this.text = this.text.split('').reverse().join('')
+      this.text = this.text
+        .split('')
+        .reverse()
+        .join('')
     }
   },
   css: `

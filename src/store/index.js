@@ -18,7 +18,8 @@ export default ({ siteConfig }) => {
 
     mutations: {
       toggleSidebar(state, value) {
-        state.sidebarOpen = typeof value === 'boolean' ? value : !state.sidebarOpen
+        state.sidebarOpen =
+          typeof value === 'boolean' ? value : !state.sidebarOpen
       }
     }
   })

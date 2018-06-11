@@ -8,7 +8,8 @@ test('main', () => {
   const env = {
     headings: []
   }
-  const html = md.render(`# foo
+  const html = md.render(
+    `# foo
 
 ## hehe
 
@@ -19,7 +20,9 @@ test('main', () => {
 ## wow
 
 ## wow
-  `, env)
+  `,
+    env
+  )
 
   expect(html).toMatchSnapshot('html')
   expect(env).toMatchSnapshot('env')

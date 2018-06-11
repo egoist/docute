@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "xo",
+    "rem",
+    "plugin:vue/essential",
+    "plugin:prettier/recommended"
+  ],
+  "env": {
+    "jest": true,
+    "browser": true
+  },
+  "rules": {
+    "camelcase": "off",
+    "no-throw-literal": "warn",
+    "import/prefer-default-export": "off"
+  }
+}

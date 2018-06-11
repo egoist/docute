@@ -32,7 +32,8 @@ const slugify = str => {
   const REPLACEMENT = '-'
   const WHITESPACE = /\s/g
 
-  return str.trim()
+  return str
+    .trim()
     .replace(RE, '')
     .replace(WHITESPACE, REPLACEMENT)
     .toLowerCase()
@@ -58,9 +59,13 @@ export default md => {
       env.title = value
       const blockquoteTokens = getBlockquoteTokens(tokens.slice(idx))
       if (blockquoteTokens) {
-        env.subtitle = self.render(blockquoteTokens.filter((token, index) => {
-          return index !== 0 && index !== (blockquoteTokens.length - 1)
-        }), options, env)
+        env.subtitle = self.render(
+          blockquoteTokens.filter((token, index) => {
+            return index !== 0 && index !== blockquoteTokens.length - 1
+          }),
+          options,
+          env
+        )
         hidenTokens(blockquoteTokens)
       }
       hidenTokens(tokens, idx, 3)
