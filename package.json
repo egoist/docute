@@ -13,13 +13,13 @@
     "lib"
   ],
   "scripts": {
-    "test": "npm run lint && npm run build",
+    "test": "npm run lint",
     "lint": "eslint .",
     "website": "poi --config website/poi.config.js",
     "build:website": "poi build --config website/poi.config.js",
     "build": "poi build --config build/poi.config.js",
     "build:lib": "sfc normalize src -d lib --include \"**/*.*\" --include \"!**/__test__/**\" --no-babelrc",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build:lib && npm run build"
   },
   "author": "egoist <0x142857@gmail.com>",
   "license": "MIT",
