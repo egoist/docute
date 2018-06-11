@@ -31,6 +31,7 @@
     "nprogress": "^0.2.0",
     "prismjs": "^1.8.4",
     "vue": "^2.5.16",
+    "vue-content-loader": "^0.2.1",
     "vue-meta": "^1.5.0",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"

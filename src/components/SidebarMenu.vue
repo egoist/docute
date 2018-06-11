@@ -1,5 +1,8 @@
 <template>
-  <div class="sidebar-menu">
+  <div class="sidebar-menu-loader" v-if="headings === null">
+    <ListLoader v-if="headings === null" />
+  </div>
+  <div class="sidebar-menu" v-else>
     <div class="menu-item"
       :class="{
         'menu-item-group': Boolean(item.children),
@@ -44,6 +47,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import { ListLoader } from 'vue-content-loader'
 import SideberItemHeaders from './SideberItemHeaders.vue'
 import groupHeaders from '../utils/group-headers'
 
@@ -54,12 +58,13 @@ export default {
     ...mapGetters(['siteConfig']),
 
     headers() {
-      return groupHeaders(this.headings)
+      return this.headings && groupHeaders(this.headings)
     }
   },
 
   components: {
-    SideberItemHeaders
+    SideberItemHeaders,
+    ListLoader
   }
 }
 </script>
@@ -126,5 +131,9 @@ export default {
   .item-link {
     padding-left: calc(var(--padding) + 10px);
   }
+}
+
+.sidebar-menu-loader {
+  padding: var(--padding);
 }
 </style>

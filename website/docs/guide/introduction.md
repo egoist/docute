@@ -2,10 +2,6 @@
 
 > Here’s a quick overview of the features and usage in Docute.
 
-<script>
-console.log('??')
-</script>
-
 ## What is Docute?
 
 Docute is basically a JavaScript file that fetches Markdown files and renders them as a single-page application.

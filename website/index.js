@@ -35,7 +35,7 @@ const doc = new Docute({
   nav: [
     {
       title: 'Guide',
-      link: '/'
+      link: '/guide/introduction'
     },
     {
       title: 'API',
@@ -52,7 +52,7 @@ const doc = new Docute({
       children: [
         {
           title: 'Introduction',
-          link: '/'
+          link: '/guide/introduction'
         },
         {
           title: 'Getting Started',

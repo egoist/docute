@@ -1,33 +1,42 @@
 <template>
   <div class="page">
     <Header :title="siteConfig.title" />
-    <div class="sidebar-overlay" @click="toggleSidebar"></div>
-    <Sidebar :headings="headings" />
-    <div class="docute-page">
-      <transition mode="out-in" name="fade">
-        <div class="docute-content" v-if="docComponent" key="content">
-          <div class="page-meta">
-            <h1 class="page-title">{{ meta.title }}</h1>
-            <div class="page-subtitle" v-if="meta.subtitle" v-html="meta.subtitle"></div>
+    <ErrorContainer v-if="error" :error="error" />
+    <template v-else>
+      <div class="sidebar-overlay" @click="toggleSidebar"></div>
+          <Sidebar :headings="headings" />
+          <div class="docute-page">
+              <div class="docute-content" v-if="docComponent">
+                <div class="page-meta">
+                  <h1 class="page-title">{{ meta.title }}</h1>
+                  <div class="page-subtitle" v-if="meta.subtitle" v-html="meta.subtitle"></div>
+                </div>
+                <div ref="hoistedTags" v-if="hoistedTags.length > 0">
+                  <div
+                    v-for="(tag, index) of hoistedTags"
+                    v-html="tag.content"
+                    :key="index">
+                  </div>
+                </div>
+                <component :is="docComponent" />
+              </div>
+              <div class="docute-content docute-content-loader" v-else>
+                <ContentLoader
+                  :height="475"
+                  :width="400"
+                  :speed="2"
+                  primaryColor="#f3f3f3"
+                  secondaryColor="#ecebeb">
+                  <rect x="0" y="12" rx="3" ry="3" width="125" height="12" />
+                  <rect x="0" y="30.8" rx="3" ry="3" width="206" height="8" />
+                  <rect x="0" y="88.8" rx="3" ry="3" width="173" height="10" />
+                  <rect x="0" y="110.8" rx="3" ry="3" width="260" height="6" />
+                  <rect x="0" y="120.8" rx="3" ry="3" width="300" height="6" />
+                  <rect x="0" y="130.8" rx="3" ry="3" width="235" height="6" />
+                </ContentLoader>
+              </div>
           </div>
-          <div ref="hoistedTags" v-if="hoistedTags.length > 0">
-            <div
-              v-for="(tag, index) of hoistedTags"
-              v-html="tag.content"
-              :key="index">
-            </div>
-          </div>
-          <component :is="docComponent" />
-        </div>
-        <div class="docute-content" v-else key="loading">
-          <div class="markdown-body">
-            <div class="loading">
-              Loading...
-            </div>
-          </div>
-        </div>
-      </transition>
-    </div>
+    </template>
   </div>
 </template>
 
@@ -35,7 +44,9 @@
 import jump from 'jump.js'
 import { mapState, mapGetters, mapMutations } from 'vuex'
 import progress from 'nprogress'
+import { ContentLoader } from 'vue-content-loader'
 
+import ErrorContainer from './ErrorContainer.vue'
 import Header from '../components/Header.vue'
 import Sidebar from '../components/Sidebar.vue'
 import highlight from '../utils/highlight'
@@ -70,9 +81,10 @@ export default {
   data() {
     return {
       docComponent: null,
-      headings: [],
+      headings: null,
       hoistedTags: [],
-      meta: {}
+      meta: {},
+      error: null
     }
   },
 
@@ -119,8 +131,14 @@ export default {
       progress.start()
       let content
       try {
-        content = await fetch(filepath).then(res => res.text())
+        content = await fetch(filepath).then(res => {
+          if (!res.ok) {
+            throw res
+          }
+          return res.text()
+        })
       } catch (err) {
+        this.error = err
         progress.done()
         console.error(err)
         return
@@ -161,6 +179,8 @@ export default {
 
         }
       }
+
+      this.error = null
       this.meta = {
         title: env.title,
         subtitle: env.subtitle
@@ -201,7 +221,9 @@ export default {
 
   components: {
     Sidebar,
-    Header
+    Header,
+    ErrorContainer,
+    ContentLoader
   }
 }
 </script>
@@ -223,6 +245,11 @@ export default {
   margin: 0 auto;
   font-size: 17px;
   padding: 10px 0;
+}
+
+.docute-content-loader {
+  padding-left: var(--padding);
+  padding-right: var(--padding);
 }
 
 .loading {
