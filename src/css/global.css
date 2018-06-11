@@ -20,3 +20,37 @@ body {
   margin: 0 auto;
   max-width: var(--container-width);
 }
+
+.badge {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+  height: 18px;
+  line-height: 18px;
+  border-radius: 9px;
+  padding: 0 5px;
+  color: #fff;
+  margin-right: 5px;
+
+  &.tip {
+    background: #42b983;
+  }
+
+  &.warn, &.warning {
+    background: #e7c000;
+  }
+
+  &.danger {
+    background: #d82f2f;
+  }
+}
+
+
+/* CSS override for medium-zoom */
+.medium-zoom-overlay {
+  z-index: 4000;
+}
+
+.medium-zoom-image {
+  z-index: 4001;
+}

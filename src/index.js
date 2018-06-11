@@ -5,13 +5,30 @@ import createRouter from './router'
 import createStore from './store'
 import cssMixin from './mixins/css'
 
-// Icons
-import ExternalLinkIcon from './components/icons/ExternalLink.vue'
-import SearchIcon from './components/icons/Search.vue'
-import MenuIcon from './components/icons/Menu.vue'
-Vue.component(ExternalLinkIcon.name, ExternalLinkIcon)
-Vue.component(SearchIcon.name, SearchIcon)
-Vue.component(MenuIcon.name, MenuIcon)
+const globalComponents = [
+  './Badge.vue',
+  './ImageZoom.vue'
+]
+// global components
+const importGlobalComponents = r => {
+  r.keys().forEach(k => {
+    if (globalComponents.indexOf(k) > -1) {
+      const component = r(k).default
+      Vue.component(component.name, component)
+    }
+  })
+}
+importGlobalComponents(require.context('./components', false, /\.vue$/))
+
+// Register all icons as global components
+const importIcons = r => {
+  r.keys().forEach(k => {
+    const component = r(k).default
+    Vue.component(component.name, component)
+  })
+}
+importIcons(require.context('./components/icons', false, /\.vue$/))
+
 
 Vue.mixin(cssMixin)
 

@@ -68,6 +68,7 @@ pre, .code-mask {
 :not(pre) > code {
   background: rgba(255,229,100,0.2);
   font-size: 16px;
+  color: var(--text-color);
 }
 
 code {
@@ -122,6 +123,7 @@ code {
   h6 {
     margin-top: 0;
     margin-bottom: 0;
+    line-height: 1.4;
     &:focus {
       outline: none;
     }
@@ -135,6 +137,7 @@ code {
     font-size: 27px;
     font-weight: 600;
     margin: 40px 0 20px 0;
+    padding-bottom: .3rem;
     border-bottom: 1px solid var(--border-color);
   }
   h3 {
@@ -165,5 +168,9 @@ code {
   > ul,
   > ol {
     padding-left: 20px;
+  }
+
+  img {
+    max-width: 100%;
   }
 }

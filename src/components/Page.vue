@@ -32,7 +32,6 @@
 </template>
 
 <script>
-import slugo from 'slugo'
 import jump from 'jump.js'
 import { mapState, mapGetters, mapMutations } from 'vuex'
 import progress from 'nprogress'

@@ -1,5 +1,3 @@
-import slugo from 'slugo'
-
 const hidenTokens = (tokens, startIndex, total) => {
   if (startIndex === undefined) {
     startIndex = 0
@@ -29,6 +27,17 @@ const getBlockquoteTokens = tokens => {
   }
 }
 
+const slugify = str => {
+  const RE = /[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,./:;<=>?@[\]^`{|}~]/g
+  const REPLACEMENT = '-'
+  const WHITESPACE = /\s/g
+
+  return str.trim()
+    .replace(RE, '')
+    .replace(WHITESPACE, REPLACEMENT)
+    .toLowerCase()
+}
+
 export default md => {
   md.renderer.rules.heading_open = (...args) => {
     const [tokens, idx, options, env, self] = args
@@ -37,8 +46,8 @@ export default md => {
     env.ids = env.ids || []
     env.headings = env.headings || []
 
-    const value = tokens[idx + 1].content
-    let id = slugo(value)
+    const value = tokens[idx + 1].content.replace(/<.*>\s*$/g, '')
+    let id = slugify(value)
     env.ids.push(id)
     const existingIdCount = env.ids.filter(v => v === id).length
     if (existingIdCount > 1) {
@@ -58,6 +67,7 @@ export default md => {
     } else {
       env.headings.push({
         id,
+        // Original value
         value,
         depth: token.markup.length,
       })

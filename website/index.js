@@ -56,15 +56,19 @@ const doc = new Docute({
         },
         {
           title: 'Getting Started',
-          link: '/getting-started'
+          link: '/guide/getting-started'
         },
         {
           title: 'Writing',
-          link: '/writing'
+          link: '/guide/writing'
         },
         {
           title: 'Use Vue in Markdown',
-          link: '/use-vue-in-markdown'
+          link: '/guide/use-vue-in-markdown'
+        },
+        {
+          title: 'Deploying',
+          link: '/guide/deploying'
         }
       ]
     },

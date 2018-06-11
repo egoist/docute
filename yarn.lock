@@ -5345,6 +5345,10 @@ media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
 
+medium-zoom@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.npmjs.org/medium-zoom/-/medium-zoom-0.4.0.tgz#8e13c9b754903c0c903220611af0d3cd373a4222"
+
 mem@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/mem/-/mem-1.1.0.tgz#5edd52b485ca1d900fe64895505399a0dfa45f76"
@@ -7404,10 +7408,6 @@ slice-ansi@1.0.0:
   resolved "https://registry.npmjs.org/slice-ansi/-/slice-ansi-1.0.0.tgz#044f1a49d8842ff307aad6b505ed178bd950134d"
   dependencies:
     is-fullwidth-code-point "^2.0.0"
-
-slugo@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.npmjs.org/slugo/-/slugo-0.2.1.tgz#a44bb2c6a72a8921888b08fc18e3181e9dd7df8e"
 
 snapdragon-node@^2.0.1:
   version "2.1.1"
