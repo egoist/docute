@@ -5,6 +5,8 @@ import App from './components/App.vue'
 import createRouter from './router'
 import createStore from './store'
 import cssMixin from './mixins/css'
+import docuteMixin from './mixins/docute'
+import landingPlugin from './plugins/landing'
 
 const globalComponents = ['./Badge.vue', './ImageZoom.vue']
 // global components
@@ -28,6 +30,7 @@ const importIcons = r => {
 importIcons(require.context('./components/icons', false, /\.vue$/))
 
 Vue.mixin(cssMixin)
+Vue.mixin(docuteMixin)
 
 Vue.use(Meta, {
   keyName: 'head',
@@ -47,17 +50,36 @@ export default class Docute {
       root
     }
 
+    const store = createStore({
+      siteConfig: this.options
+    })
+
     this.vm = new Vue({
+      data: {
+        layouts: {}
+      },
       router: createRouter(this.options),
-      store: createStore({
-        siteConfig: this.options
-      }),
+      store,
       render: h => h(App)
     })
+    this.store = store
+
+    const plugins = [landingPlugin].concat(this.options.plugins || [])
+
+    for (const plugin of plugins) {
+      plugin.apply(this)
+    }
   }
 
   start(el = '#docute') {
     this.vm.$mount(el)
+  }
+
+  registerLayout(layout, component) {
+    this.vm.layouts = {
+      ...this.vm.layouts,
+      [layout]: component
+    }
   }
 }
 
