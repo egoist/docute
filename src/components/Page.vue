@@ -37,13 +37,13 @@ import ContentShell from './ContentShell.vue'
 import ErrorContainer from './ErrorContainer.vue'
 import Header from './Header.vue'
 import Sidebar from './Sidebar.vue'
-import highlight from '../utils/highlight'
 import headingsPlugin from '../markdown/headings'
 import highlightLinesPlugin from '../markdown/highlight-lines'
 import escapeInterpolationPlugin from '../markdown/escape-interpolation'
 import linkPlugin from '../markdown/link'
 import hoistPlugin from '../markdown/hoist'
 import checkNetlify from '../utils/check-netlify'
+import getMarkdownRenderer from '../utils/get-markdown-renderer'
 
 progress.configure({ showSpinner: false })
 
@@ -132,12 +132,7 @@ export default {
         return
       }
 
-      const Markdown = await this.getMarkdown()
-
-      const md = new Markdown({
-        html: true,
-        highlight
-      })
+      const md = await getMarkdownRenderer()
 
       md.use(headingsPlugin)
       md.use(highlightLinesPlugin)
@@ -177,23 +172,6 @@ export default {
       this.hoistedTags = env.hoistedTags
       this.headings = env.headings
       progress.done()
-    },
-
-    async getMarkdown() {
-      if (this.Markdown) return this.Markdown
-
-      const [Markdown] = await Promise.all([
-        import(/* webpackChunkName: "markdown" */ 'markdown-it').then(
-          res => res.default
-        ),
-        import(/* webpackChunkName: "markdown" */ 'prismjs/components/prism-css'),
-        import(/* webpackChunkName: "markdown" */ 'prismjs/components/prism-javascript'),
-        import(/* webpackChunkName: "markdown" */ 'prismjs/components/prism-markdown'),
-        import(/* webpackChunkName: "markdown" */ 'prismjs/components/prism-bash'),
-        import(/* webpackChunkName: "markdown" */ 'prismjs/components/prism-typescript')
-      ])
-      this.Markdown = Markdown
-      return Markdown
     }
   },
 
