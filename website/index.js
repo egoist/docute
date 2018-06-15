@@ -37,49 +37,96 @@ const doc = new Docute({
   description: 'Effortlessly documentation done right.',
   nav: [
     {
-      title: 'Guide',
+      text: 'Guide',
       link: '/'
     },
     {
-      title: 'API',
+      text: 'API',
       link: '/api'
-    },
-    {
-      title: 'GitHub',
-      link: 'https://github.com/egoist/docute'
     }
   ],
   sidebar: [
     {
-      title: 'Guide',
+      text: 'Guide',
       children: [
         {
-          title: 'Introduction',
+          text: 'Introduction',
           link: '/'
         },
         {
-          title: 'Getting Started',
+          text: 'Getting Started',
           link: '/guide/getting-started'
         },
         {
-          title: 'Writing',
+          text: 'Writing',
           link: '/guide/writing'
         },
         {
-          title: 'Use Vue in Markdown',
+          text: 'Use Vue in Markdown',
           link: '/guide/use-vue-in-markdown'
         },
         {
-          title: 'Deploying',
+          text: 'Deploying',
           link: '/guide/deploying'
         }
       ]
     },
     {
-      title: 'API',
+      text: 'API',
       link: '/api'
     }
-  ]
+  ],
+  locales: {
+    '/': {
+      language: 'English',
+      selectText: 'Languages'
+    },
+    '/zh/': {
+      language: '中文',
+      selectText: '选择语言',
+      nav: [
+        {
+          text: '指南',
+          link: '/zh/'
+        },
+        {
+          text: 'API',
+          link: '/zh/api'
+        }
+      ],
+      sidebar: [
+        {
+          text: '指南',
+          children: [
+            {
+              text: '概览',
+              link: '/zh/'
+            },
+            {
+              text: '快速上手',
+              link: '/zh/guide/getting-started'
+            },
+            {
+              text: '撰写',
+              link: '/zh/guide/writing'
+            },
+            {
+              text: '在 Markdown 中使用 Vue',
+              link: '/zh/guide/use-vue-in-markdown'
+            },
+            {
+              text: '部署',
+              link: '/zh/guide/deploying'
+            }
+          ]
+        },
+        {
+          text: 'API',
+          link: '/zh/api'
+        }
+      ]
+    }
+  }
 })
 
 doc.start('#app')

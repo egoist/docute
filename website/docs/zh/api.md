@@ -2,7 +2,7 @@
 
 ## new Docute(options)
 
-Create an instance of `Docute`:
+创建一个 `Docute` 的实例:
 
 ```js
 var doc = new Docute(options)
@@ -17,14 +17,14 @@ doc.start()
 - __Type__: `string`
 - __Default__: `document.title || 'A Docute Website'`
 
-The title of your website.
+网站标题。
 
 ### subtitle
 
 - __Type__: `string`
 - __Default__: `undefined`
 
-The subtitle of your website.
+网站副标题。
 
 ### root
 

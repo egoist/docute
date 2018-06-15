@@ -1,6 +1,7 @@
 /* globals __DOCUTE_VERSION__ */
 import Vue from 'vue'
 import Meta from 'vue-meta'
+import { sync } from 'vuex-router-sync'
 import App from './components/App.vue'
 import createRouter from './router'
 import createStore from './store'
@@ -54,11 +55,15 @@ export default class Docute {
       siteConfig: this.options
     })
 
+    const router = createRouter(this.options)
+
+    sync(store, router)
+
     this.vm = new Vue({
       data: {
         layouts: {}
       },
-      router: createRouter(this.options),
+      router,
       store,
       render: h => h(App)
     })

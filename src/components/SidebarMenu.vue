@@ -16,10 +16,10 @@
         class="item-link"
         :class="{active: $route.path === item.link}"
         v-else-if="item.link">
-        {{ item.title }}
+        {{ item.text }}
       </router-link>
       <div class="item-heading" v-else>
-        {{ item.title }}
+        {{ item.text }}
       </div>
       <SideberItemHeaders
         v-if="item.link && item.link === $route.path"
@@ -33,7 +33,7 @@
           <router-link
             class="item-link"
             :class="{active: $route.path === child.link}" :to="child.link">
-            {{ child.title }}
+            {{ child.text }}
           </router-link>
           <SideberItemHeaders
             v-if="child.link === $route.path"
