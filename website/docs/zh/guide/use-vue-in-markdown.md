@@ -99,3 +99,30 @@ __输出__:
 |url|string|`undefined`|✅|图片地址|
 |alt|string|`undefined`|❌|占位文字|
 |border|boolean|`true`|❌|是否显示边线|
+
+### `<badge>`
+
+自适应性的标签，用于显示一些提示信息。
+
+|Prop|Type|Default|Values|Required|Description|
+|---|---|---|---|---|---|
+|type|string|`'warn'`|`'warn'` `'success'` `'danger'`|❌|标签类型|
+
+
+__Input__:
+
+```markdown
+## Example heading <badge type="warn">Message</badge>
+### Example heading <badge type="tip">Message</badge>
+#### Example heading <badge type="danger">Message</badge>
+```
+
+__Output__:
+
+<div class="example">
+
+## Example heading <badge type="warn">Message</badge>
+### Example heading <badge type="tip">Message</badge>
+#### Example heading <badge type="danger">Message</badge>
+
+</div>

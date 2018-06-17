@@ -99,3 +99,30 @@ Display a image in medium's zoom style.
 |url|string|`undefined`|✅|The URL to image|
 |alt|string|`undefined`|❌|The alt text|
 |border|boolean|`true`|❌|Whether to show a border|
+
+### `<badge>`
+
+A small count and labeling component.
+
+|Prop|Type|Default|Values|Required|Description|
+|---|---|---|---|---|---|
+|type|string|`'warn'`|`'warn'` `'success'` `'danger'`|❌|Badge type|
+
+
+__Input__:
+
+```markdown
+## Example heading <badge type="warn">Message</badge>
+### Example heading <badge type="tip">Message</badge>
+#### Example heading <badge type="danger">Message</badge>
+```
+
+__Output__:
+
+<div class="example">
+
+## Example heading <badge type="warn">Message</badge>
+### Example heading <badge type="tip">Message</badge>
+#### Example heading <badge type="danger">Message</badge>
+
+</div>

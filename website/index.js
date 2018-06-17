@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Docute from '../src'
+import './css/style.css'
 
 Vue.component('ReverseText', {
   data() {

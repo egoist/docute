@@ -1,0 +1,19 @@
+.example {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 20px;
+  margin: 15px 0;
+}
+
+.example > * {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.example > *:first-child {
+  margin-top: 0 !important;
+}
+
+.example > *:last-child {
+  margin-bottom: 0 !important;
+}
