@@ -47,7 +47,15 @@ export default md => {
     env.ids = env.ids || []
     env.headings = env.headings || []
 
-    const text = tokens[idx + 1].children.map(v => v.content).join(' ')
+    const text = tokens[idx + 1].children
+      .map(v => {
+        if (v.type === 'code_inline') {
+          return v.content
+        }
+        // Remove HTML in non-code_inline
+        return v.content.replace(/<.*>\s*$/g, '')
+      })
+      .join(' ')
     let id = slugify(text)
     env.ids.push(id)
     const existingIdCount = env.ids.filter(v => v === id).length
