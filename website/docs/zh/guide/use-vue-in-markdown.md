@@ -84,3 +84,18 @@ __输出__:
 
 <ReverseText />
 
+## 内置组件
+
+### `<router-link>`
+
+这其实就是 [vue-router](https://router.vuejs.org/api/#router-link-props) 里的 `<router-link>` 组件。
+
+### `<image-zoom>`
+
+显示一个具有类似 medium 的 zoom 效果的图片。
+
+|Prop|Type|Default|Required|Description|
+|---|---|---|---|---|
+|url|string|`undefined`|✅|图片地址|
+|alt|string|`undefined`|❌|占位文字|
+|border|boolean|`true`|❌|是否显示边线|

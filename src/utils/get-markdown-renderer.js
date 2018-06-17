@@ -17,6 +17,7 @@ export default async () => {
   ])
   md = new Markdown({
     html: true,
+    linkify: true,
     highlight
   })
   return md

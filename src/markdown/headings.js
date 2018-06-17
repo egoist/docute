@@ -47,8 +47,8 @@ export default md => {
     env.ids = env.ids || []
     env.headings = env.headings || []
 
-    const value = tokens[idx + 1].content.replace(/<.*>\s*$/g, '')
-    let id = slugify(value)
+    const text = tokens[idx + 1].children.map(v => v.content).join(' ')
+    let id = slugify(text)
     env.ids.push(id)
     const existingIdCount = env.ids.filter(v => v === id).length
     if (existingIdCount > 1) {
@@ -56,7 +56,7 @@ export default md => {
     }
 
     if (token.tag === 'h1') {
-      env.title = value
+      env.title = text
       const blockquoteTokens = getBlockquoteTokens(tokens.slice(idx))
       if (blockquoteTokens) {
         env.subtitle = self.render(
@@ -72,8 +72,7 @@ export default md => {
     } else {
       env.headings.push({
         id,
-        // Original value
-        value,
+        text,
         depth: token.markup.length
       })
     }

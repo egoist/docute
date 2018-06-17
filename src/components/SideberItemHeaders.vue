@@ -8,7 +8,7 @@
         class="item-header-link"
         :data-depth="header.depth"
         :to="{hash: header.id}">
-        {{ header.value }}
+        {{ header.text }}
       </router-link>
       <SidebarItemHeaders v-if="header.children" :headers="header.children" />
     </div>

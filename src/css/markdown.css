@@ -173,4 +173,29 @@ code {
   img {
     max-width: 100%;
   }
+
+  table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+  }
+
+  table th {
+    font-weight: 600;
+  }
+
+  table th,
+  table td {
+    padding: 6px 13px;
+    border: 1px solid var(--border-color);
+  }
+
+  table tr {
+    background-color: #fff;
+    border-top: 1px solid var(--border-color);
+  }
+
+  table tr:nth-child(2n) {
+    background-color: #f6f8fa;
+  }
 }

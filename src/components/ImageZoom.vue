@@ -18,7 +18,8 @@ export default {
       type: String
     },
     border: {
-      type: Boolean
+      type: Boolean,
+      default: true
     }
   },
   mounted() {

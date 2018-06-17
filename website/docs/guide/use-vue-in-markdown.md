@@ -83,3 +83,19 @@ __Input__:
 __Output__:
 
 <ReverseText />
+
+## Built-in Components
+
+### `<router-link>`
+
+This is basically the `<router-link>` component from [vue-router](https://router.vuejs.org/api/#router-link-props).
+
+### `<image-zoom>`
+
+Display a image in medium's zoom style.
+
+|Prop|Type|Default|Required|Description|
+|---|---|---|---|---|
+|url|string|`undefined`|✅|The URL to image|
+|alt|string|`undefined`|❌|The alt text|
+|border|boolean|`true`|❌|Whether to show a border|
