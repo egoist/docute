@@ -54,6 +54,29 @@ The root path to fetch sources (Markdown files) from.
 
 For example, for path `/guide/hello` we will fetch `sourceRoot + 'guide/hello.md'` which is `/guide/hello.md` by default.
 
+### getSource
+
+- __Type__: `function(route: Route)`
+
+You can provide `getSource` for a custom path to source mapping for all or specific routes.
+
+If a falsy value is returned the fucntion will be ignored and default mapping will be applied.
+
+**Example:**
+
+```js
+const routes = {
+    '/docute-master': 'https://raw.githubusercontent.com/egoist/docute/master/README.md',
+}
+
+const doc = new Docute({
+    getSource: function (route) {
+        return routes[route.path]
+    },
+}
+```
+
+
 ### sidebar
 
 - __Type__: `SidebarItem[]`
