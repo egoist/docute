@@ -107,12 +107,20 @@ export default {
     },
 
     async renderPath(route) {
-      let filepath = `${this.siteConfig.sourceRoot}${route.params[0]}`
-      const endsWithSlash = /\/$/.test(filepath)
-      if (endsWithSlash) {
-        filepath += this.siteConfig.indexFile
-      } else {
-        filepath += '.md'
+      let filepath
+
+      if (typeof this.siteConfig.getSource === 'function') {
+        filepath = this.siteConfig.getSource(route)
+      }
+
+      if (!filepath) {
+        filepath = `${this.siteConfig.sourceRoot}${route.params[0]}`
+        const endsWithSlash = /\/$/.test(filepath)
+        if (endsWithSlash) {
+          filepath += this.siteConfig.indexFile
+        } else {
+          filepath += '.md'
+        }
       }
 
       progress.start()
