@@ -19,7 +19,7 @@ docute.init({
   debug: true,
   // home: 'https://raw.githubusercontent.com/egoist/docute/master/README.md',
   repo: 'egoist/docute',
-  twitter: 'rem_rin_rin',
+  twitter: '_egoistlily',
   'edit-link': 'https://github.com/egoist/docute/blob/master/docs/',
   tocVisibleDepth: 3,
   nav: {
@@ -83,14 +83,6 @@ docute.init({
       }
     ]
   },
-  icons: [
-    {
-      label: '关注我的微博',
-      svgId: 'i-weibo',
-      svgClass: 'weibo-icon',
-      link: 'http://weibo.com/zengxinyu'
-    }
-  ],
   plugins: [
     docsearch({
       appId: 'BH4D9OD16A',
