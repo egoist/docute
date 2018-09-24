@@ -1,0 +1,172 @@
+@import "vars.css";
+
+.markdown-body {
+  & >*:first-child {
+    margin-top: 0;
+  }
+
+  & a {
+    color: var(--accent-color);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  & h1,
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    font-weight: 300;
+    line-height: 1.2;
+  }
+
+  & h1 {
+    color: var(--accent-color);
+    font-size: 3rem;
+    margin-bottom: 1.4rem;
+  }
+
+  & h2 {
+    color: var(--accent-color);
+    font-size: 2rem;
+    border-bottom: 1px solid #ccc;
+    margin-top: 7rem;
+    padding-bottom: 5px;
+  }
+
+  & h3 {
+    font-size: 1.7rem;
+    margin: 40px 0;
+  }
+
+  & h4 {
+    font-size: 1.4rem;
+  }
+
+  & h5 {
+    font-size: 1.1rem;
+  }
+
+  & p {
+    margin: 15px 0;
+  }
+
+  & table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+
+  & table th {
+    font-weight: 600;
+  }
+
+  & table th,
+  & table td {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+  }
+
+  & table tr {
+    background-color: #fff;
+    border-top: 1px solid #c6cbd1;
+  }
+
+  & table tr:nth-child(2n) {
+    background-color: #f6f8fa;
+  }
+
+  & .pre-wrapper {
+    margin: 2rem 0;
+    position: relative;
+    border-radius: 4px;
+    background: #fdfaf6;
+    box-shadow: inset 0 0 0 1px #faede5;
+
+    &:before {
+      content: attr(data-lang);
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      font-size: 12px;
+      color: #cacaca;
+    }
+  }
+
+  & pre, & .code-mask {
+    overflow: auto;
+    position: relative;
+    font-size: 13px;
+    margin: 0;
+    z-index: 2;
+    font-family: Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+
+    & code {
+      margin: 0;
+      padding: 0;
+      white-space: pre;
+      border: none;
+      font-size: 100%;
+      background: transparent;
+    }
+  }
+
+  & pre {
+    padding: 20px;
+  }
+
+  & .code-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    white-space: pre;
+    padding-top: 20px;
+    border: none;
+    color: transparent;
+  }
+
+  & .code-line {
+    display: block;
+    padding: 0 20px;
+    &.highlighted {
+      background: #faede5;
+      position: relative;
+      &:before {
+        content: '';
+        display: block;
+        width: 3px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background: #f1beb6;
+        position: absolute;
+      }
+    }
+  }
+
+  & code {
+    font-family: Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+    background: #fdfaf6;
+    margin: 0 .2rem;
+    padding: .2rem .5rem;
+    white-space: nowrap;
+    font-size: 90%;
+  }
+
+  & > ul, & > ol {
+    padding-left: 20px;
+    margin: 1rem 0;
+  }
+
+  & img {
+    max-width: 100%;
+  }
+}
