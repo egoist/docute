@@ -20,7 +20,6 @@ module.exports = {
     css: 'docute.css'
   },
   sourceMap: false,
-  minimize: false,
   cleanOutDir: false
 }
 

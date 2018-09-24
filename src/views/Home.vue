@@ -63,7 +63,7 @@ export default {
         if (el) {
           jump(el, {
             duration: 0,
-            offset: -10
+            offset: document.body.clientWidth < 768 ? -60 : -10
           })
         }
       }
