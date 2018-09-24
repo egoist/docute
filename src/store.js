@@ -48,6 +48,8 @@ const store = new Vuex.Store({
 
   actions: {
     async fetchFile({ commit, dispatch }, path) {
+      commit('TOGGLE_SIDEBAR', false)
+      commit('SET_HTML', 'Loading...')
       const file = /\/$/.test(path) ? `${path}README.md` : `${path}.md`
       const [text] = await Promise.all([
         fetch(file).then(res => res.text()),
@@ -127,7 +129,6 @@ const store = new Vuex.Store({
         highlight
       }))
       commit('SET_PAGE_HEADINGS', headings)
-      commit('TOGGLE_SIDEBAR', false)
     },
 
     fetchPrismLanguages({ state }) {
