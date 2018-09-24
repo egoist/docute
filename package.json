@@ -6,7 +6,8 @@
     "test": "npm run lint && echo 'no tests!'",
     "lint": "xo",
     "website": "poi dev --config build/poi.website.config.js",
-    "build:website": "poi build --config build/poi.website.config.js"
+    "build:website": "poi build --config build/poi.website.config.js && npm run copy-docs",
+    "copy-docs": "cp -r website/docs/* website/dist"
   },
   "dependencies": {
     "jump.js": "^1.0.2",
