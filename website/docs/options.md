@@ -34,6 +34,8 @@ interface NavItem {
 interface NavLink {
   title: string
   link: string
+  /* Whether to show TOC, true by default */
+  toc: boolean
 }
 ```
 
