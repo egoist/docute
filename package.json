@@ -1,6 +1,6 @@
 {
   "name": "docute",
-  "version": "4.0.0-beta.0",
+  "version": "4.0.0",
   "scripts": {
     "build": "poi build --config build/poi.lib.config.js --target lib",
     "test": "npm run lint && echo 'no tests!'",
