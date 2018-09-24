@@ -26,6 +26,9 @@ export default {
   },
 
   beforeRouteUpdate(to, from, next) {
+    if (to.path === from.path) {
+      return next()
+    }
     this.fetchFile(to.path).then(() => {
       next()
     })
