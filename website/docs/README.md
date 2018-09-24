@@ -40,11 +40,11 @@ The `index.html` looks like:
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>My Docs</title>
-    <link rel="stylesheet" href="https://unpkg.com/docute@4/dist/docute.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docute@4/dist/docute.css">
   </head>
   <body>
     <div id="docute"></div>
-    <script src="https://unpkg.com/docute@4/dist/docute.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docute@4/dist/docute.js"></script>
     <script>
       new Docute({
         target: '#docute'
