@@ -1,6 +1,7 @@
 const path = require('path')
 // eslint-disable-next-line import/no-extraneous-dependencies
 const express = require('express')
+const pkg = require('../package')
 
 module.exports = {
   entry: 'website/index.js',
@@ -20,5 +21,8 @@ module.exports = {
   },
   html: {
     title: 'Docute'
+  },
+  constants: {
+    __DOCUTE_VERSION__: JSON.stringify(pkg.version)
   }
 }

@@ -1,3 +1,5 @@
+const pkg = require('../package')
+
 const lib = {
   name: 'lib',
   extend(api) {
@@ -20,6 +22,9 @@ module.exports = {
     css: 'docute.css'
   },
   sourceMap: false,
-  cleanOutDir: false
+  cleanOutDir: false,
+  constants: {
+    __DOCUTE_VERSION__: JSON.stringify(pkg.version)
+  }
 }
 

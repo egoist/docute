@@ -13,7 +13,7 @@ Vue.use(markdownMixins)
 Vue.component(ImageZoom.name, ImageZoom)
 Vue.component(Badge.name, Badge)
 
-export default class Docute {
+class Docute {
   constructor({
     target,
     title = document.title,
@@ -41,6 +41,10 @@ export default class Docute {
     this.vm.$mount(target)
   }
 }
+
+Docute.version = __DOCUTE_VERSION__
+
+export default Docute
 
 if (typeof window !== 'undefined') {
   window.Vue = Vue
