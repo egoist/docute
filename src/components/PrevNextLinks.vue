@@ -37,6 +37,9 @@ export default {
     },
 
     currentLinkIndex() {
+      // Related: 
+      // - https://github.com/vuejs/vue/issues/8728
+      // - https://github.com/leptosia/docute/pull/171
       const navLinks = this.navLinks
       for (let i = 0; i < navLinks.length; i++) {
         const item = navLinks[i]
