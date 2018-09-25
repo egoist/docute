@@ -138,6 +138,7 @@ export default {
   line-height: 1.4;
   margin-bottom: 3px;
   position: relative;
+  font-weight: 300;
 
   &:first-child {
     margin-top: 5px;
