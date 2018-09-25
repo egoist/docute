@@ -1,6 +1,7 @@
 <template>
   <div class="Page">
     <Sidebar />
+    <SidebarMask />
     <MobileHeader />
     <div class="Main">
       <component :is="MarkdownBody" />
@@ -11,6 +12,7 @@
 <script>
 import jump from 'jump.js'
 import Sidebar from '../components/Sidebar.vue'
+import SidebarMask from '../components/SidebarMask.vue'
 import MobileHeader from '../components/MobileHeader.vue'
 
 export default {
@@ -18,6 +20,7 @@ export default {
 
   components: {
     Sidebar,
+    SidebarMask,
     MobileHeader
   },
 
