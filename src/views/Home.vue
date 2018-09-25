@@ -5,6 +5,7 @@
     <MobileHeader />
     <div class="Main">
       <component :is="MarkdownBody" />
+      <PrevNextLinks />
     </div>
   </div>
 </template>
@@ -14,6 +15,7 @@ import jump from 'jump.js'
 import Sidebar from '../components/Sidebar.vue'
 import SidebarMask from '../components/SidebarMask.vue'
 import MobileHeader from '../components/MobileHeader.vue'
+import PrevNextLinks from '../components/PrevNextLinks.vue'
 
 export default {
   name: 'PageHome',
@@ -21,7 +23,8 @@ export default {
   components: {
     Sidebar,
     SidebarMask,
-    MobileHeader
+    MobileHeader,
+    PrevNextLinks
   },
 
   created() {
