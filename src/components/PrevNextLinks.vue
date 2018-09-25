@@ -38,8 +38,12 @@ export default {
     },
 
     currentLinkIndex() {
-      for (let i = 0; i < this.navLinks.length; i++) {
-        const item = this.navLinks[i]
+      // Related: 
+      // - https://github.com/vuejs/vue/issues/8728
+      // - https://github.com/leptosia/docute/pull/171
+      const navLinks = this.navLinks
+      for (let i = 0; i < navLinks.length; i++) {
+        const item = navLinks[i]
         if (item.link === this.currentLink) {
           return i
         }
