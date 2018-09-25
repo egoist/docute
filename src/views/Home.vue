@@ -5,6 +5,7 @@
     <MobileHeader />
     <div class="Main">
       <component :is="MarkdownBody" />
+      <EditLink />
       <PrevNextLinks />
     </div>
   </div>
@@ -16,6 +17,7 @@ import Sidebar from '../components/Sidebar.vue'
 import SidebarMask from '../components/SidebarMask.vue'
 import MobileHeader from '../components/MobileHeader.vue'
 import PrevNextLinks from '../components/PrevNextLinks.vue'
+import EditLink from '../components/EditLink.vue'
 
 export default {
   name: 'PageHome',
@@ -24,7 +26,8 @@ export default {
     Sidebar,
     SidebarMask,
     MobileHeader,
-    PrevNextLinks
+    PrevNextLinks,
+    EditLink
   },
 
   created() {

@@ -4,7 +4,7 @@ import loadjs from 'loadjs'
 import fetch from 'unfetch'
 import marked from './utils/marked'
 import highlight from './utils/highlight'
-import { slugify } from './utils'
+import { slugify, getFilenameByPath } from './utils'
 
 Vue.use(Vuex)
 
@@ -50,7 +50,7 @@ const store = new Vuex.Store({
     async fetchFile({ commit, dispatch }, path) {
       commit('TOGGLE_SIDEBAR', false)
       commit('SET_HTML', 'Loading...')
-      const file = /\/$/.test(path) ? `${path}README.md` : `${path}.md`
+      const file = getFilenameByPath(path)
       const [text] = await Promise.all([
         fetch(file).then(res => res.text()),
         dispatch('fetchPrismLanguages')

@@ -1,17 +1,20 @@
 <template>
   <div class="prev-next-links">
-    <router-link
-      class="prev-link"
-      v-if="prevLinkItem"
-      :to="prevLinkItem.link">
-      ← {{ prevLinkItem.title }}
-    </router-link>
-    <router-link
-      class="next-link"
-      v-if="nextLinkItem"
-      :to="nextLinkItem.link">
-      {{ nextLinkItem.title }} →
-    </router-link>
+    <div class="prev-link">
+      ← <router-link
+        v-if="prevLinkItem"
+        :to="prevLinkItem.link">
+        {{ prevLinkItem.title }}
+      </router-link>
+    </div>
+
+    <div class="next-link">
+      <router-link
+        v-if="nextLinkItem"
+        :to="nextLinkItem.link">
+        {{ nextLinkItem.title }}
+      </router-link> →
+    </div>
   </div>
 </template>
 
@@ -65,6 +68,7 @@ export default {
   margin-top: 40px;
   padding-top: 30px;
   border-top: 1px solid var(--border-color);
+  color: var(--accent-color);
 
   & a {
     color: var(--accent-color);

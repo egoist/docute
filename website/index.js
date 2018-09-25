@@ -4,6 +4,8 @@ new Docute({
   target: '#app',
   title: 'Docute',
   highlight: ['typescript'],
+  editLinkBase: 'https://github.com/leptosia/docute/tree/master/website/docs',
+  editLinkText: 'Edit this page on GitHub',
   nav: [
     {
       links: [

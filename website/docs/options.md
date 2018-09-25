@@ -46,3 +46,22 @@ interface NavLink {
 An array of language names to highlight. Check out [Prism.js](https://unpkg.com/prismjs/components/) for all supported language names (without the `prism-` prefix).
 
 For example: `highlight: ['typescript', 'go', 'graphql']`.
+
+## editLinkBase
+
+- Type: `string`
+
+The base path for the URL of *edit link*.
+
+e.g. If you store the markdown files in `docs` folder on master branch in a GitHub repo, then it should be:
+
+```
+https://github.com/USER/REPO/blob/master/docs
+```
+
+## editLinkText
+
+- Type: `string`
+- Default: `'Edit this page'`
+
+The text for *edit link*.
