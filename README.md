@@ -7,6 +7,8 @@ Effortlessly documentation done right.
 
 https://docute.org
 
+Are you looking for the v3 docs? See [here](https://v3.docute.org).
+
 ## Contributing
 
 1. Fork it!
