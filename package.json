@@ -17,6 +17,7 @@
     "prismjs": "^1.15.0",
     "unfetch": "^4.0.1",
     "vue": "^2.5.17",
+    "vue-content-loader": "^0.2.1",
     "vue-router": "^3.0.1",
     "vue-template-compiler": "^2.5.17",
     "vuex": "^3.0.1",

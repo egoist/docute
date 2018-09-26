@@ -16,7 +16,8 @@ const store = new Vuex.Store({
       title: null,
       headings: null
     },
-    showSidebar: false
+    showSidebar: false,
+    fetchingFile: true
   },
 
   mutations: {
@@ -43,13 +44,17 @@ const store = new Vuex.Store({
 
     TOGGLE_SIDEBAR(state, show) {
       state.showSidebar = typeof show === 'boolean' ? show : !state.showSidebar
+    },
+
+    SET_FETCHING(state, fetching) {
+      state.fetchingFile = fetching
     }
   },
 
   actions: {
     async fetchFile({ commit, dispatch }, path) {
       commit('TOGGLE_SIDEBAR', false)
-      commit('SET_HTML', 'Loading...')
+      commit('SET_FETCHING', true)
       const file = getFilenameByPath(path)
       const [text] = await Promise.all([
         fetch(file).then(res => res.text()),
@@ -129,6 +134,7 @@ const store = new Vuex.Store({
         highlight
       }))
       commit('SET_PAGE_HEADINGS', headings)
+      commit('SET_FETCHING', false)
     },
 
     fetchPrismLanguages({ state }) {
