@@ -22,7 +22,7 @@ import { isExternalLink } from '../utils'
 export default {
   computed: {
     navLinks() {
-      const nav = this.$store.state.config.nav || []
+      const nav = this.$store.getters.config.nav || []
       return nav.reduce((res, next) => {
         return [
           ...res,
@@ -38,7 +38,7 @@ export default {
     },
 
     currentLinkIndex() {
-      // Related: 
+      // Related:
       // - https://github.com/vuejs/vue/issues/8728
       // - https://github.com/leptosia/docute/pull/171
       const navLinks = this.navLinks

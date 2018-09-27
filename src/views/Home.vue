@@ -61,6 +61,15 @@ export default {
   watch: {
     '$route.hash'() {
       this.jumpToHash()
+    },
+    '$store.state.page.title'(title) {
+      const { path } = this.$route
+      const { config, homePaths } = this.$store.getters
+      if (homePaths.indexOf(path) > -1) {
+        document.title = config.title
+      } else {
+        document.title = `${title} - ${config.title}`
+      }
     }
   },
 

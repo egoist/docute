@@ -108,6 +108,7 @@
     font-family: Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
 
     & code {
+      box-shadow: none;
       margin: 0;
       padding: 0;
       white-space: pre;
@@ -159,6 +160,8 @@
     padding: .2rem .5rem;
     white-space: nowrap;
     font-size: 90%;
+    box-shadow: inset 0 0 0 1px #faede5;
+    border-radius: 4px;
   }
 
   & > ul, & > ol {

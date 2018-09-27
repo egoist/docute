@@ -13,7 +13,7 @@ import { getFilenameByPath } from '../utils'
 export default {
   computed: {
     editLinkBase() {
-      return this.$store.state.config.editLinkBase
+      return this.$store.getters.config.editLinkBase
     },
 
     editLink() {
@@ -21,7 +21,7 @@ export default {
     },
 
     editLinkText() {
-      return this.$store.state.config.editLinkText || 'Edit this page'
+      return this.$store.getters.config.editLinkText || 'Edit this page'
     }
   }
 }

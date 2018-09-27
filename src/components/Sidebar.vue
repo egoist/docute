@@ -2,13 +2,15 @@
   <div class="Sidebar" :class="{isShown: $store.state.showSidebar}">
 
         <div class="SiteTitle">
-          {{ $store.state.config.title }}
+          {{ $store.getters.config.title }}
         </div>
+
+        <InjectedComponents position="sidebar:start" />
 
         <div class="SidebarNav">
           <div
             :class="['NavItem', navItem.title && 'hasTitle']"
-            v-for="(navItem, index) in $store.state.config.nav"
+            v-for="(navItem, index) in $store.getters.config.nav"
             :key="index">
             <div class="NavItemTitle" v-if="navItem.title">
               {{ navItem.title }}
@@ -124,7 +126,6 @@ export default {
   padding: 2px 20px;
   display: flex;
   font-size: 1.1rem;
-  font-weight: 300;
   position: relative;
 
   &.active,
@@ -138,7 +139,6 @@ export default {
   line-height: 1.4;
   margin-bottom: 3px;
   position: relative;
-  font-weight: 300;
 
   &:first-child {
     margin-top: 5px;

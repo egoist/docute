@@ -1,0 +1,80 @@
+@import "vars.css";
+
+body {
+  margin: 0;
+  background: #fafafa;
+  font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.external-link-icon {
+  color: #aaa;
+  display: inline-block;
+}
+
+.medium-zoom-overlay, .medium-zoom-image--opened {
+  z-index: 99;
+}
+
+/** Badge */
+.badge {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 13px;
+  height: 18px;
+  line-height: 18px;
+  border-radius: 9px;
+  padding: 0 5px;
+  color: #fff;
+  margin-right: 5px;
+
+  &.tip {
+    background: #42b983;
+  }
+
+  &.warn, &.warning {
+    background: #e7c000;
+  }
+
+  &.danger {
+    background: #d82f2f;
+  }
+}
+
+.docute-select {
+  position: relative;
+  display: inline-block;
+  color: #555;
+
+  &:after {
+    position: absolute;
+    top: 50%;
+    right: 0.95rem;
+    display: inline-block;
+    content: "";
+    width: 0;
+    height: 0;
+    margin-top: -.15rem;
+    pointer-events: none;
+    border-top: .35rem solid;
+    border-right: .35rem solid transparent;
+    border-bottom: .35rem solid transparent;
+    border-left: .35rem solid transparent;
+  }
+
+  & select {
+    display: inline-block;
+    margin: 0;
+    padding: .3rem 1.95rem .3rem .7rem;
+    line-height: 1.5;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.76);
+    border: none;
+    border-radius: .25rem;
+    outline: 0;
+    appearance: none;
+  }
+}

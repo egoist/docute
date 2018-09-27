@@ -32,6 +32,10 @@ new Docute({
           link: '/guide/use-vue-in-markdown'
         },
         {
+          title: 'Internationalization',
+          link: '/guide/internationalization'
+        },
+        {
           title: 'Deployment',
           link: '/guide/deployment'
         }
@@ -50,7 +54,61 @@ new Docute({
         }
       ]
     }
-  ]
+  ],
+  locales: {
+    '/': {
+      language: 'English'
+    },
+    '/zh/': {
+      language: 'Chinese',
+      editLinkText: '在 GitHub 上编辑此页',
+      nav: [
+        {
+          links: [
+            {
+              title: '首页',
+              link: '/zh/',
+              toc: false
+            },
+            {
+              title: 'GitHub',
+              link: 'https://github.com/leptosia/docute'
+            }
+          ]
+        },
+        {
+          title: '指南',
+          links: [
+            {
+              title: '撰写',
+              link: '/zh/guide/writing'
+            },
+            {
+              title: '在 Vue 中使用 Markdown',
+              link: '/zh/guide/use-vue-in-markdown'
+            },
+            {
+              title: '部署',
+              link: '/zh/guide/deployment'
+            }
+          ]
+        },
+        {
+          title: '参考',
+          links: [
+            {
+              title: '配置项',
+              link: '/zh/options'
+            },
+            {
+              title: '内置组件',
+              link: '/zh/builtin-components'
+            }
+          ]
+        }
+      ]
+    }
+  }
 })
 
 Vue.component('ReverseText', {

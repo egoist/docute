@@ -11,7 +11,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     html: '',
-    config: {},
+    originalConfig: {},
     page: {
       title: null,
       headings: null
@@ -25,17 +25,12 @@ const store = new Vuex.Store({
       state.html = html
     },
 
-    SET_CONFIG(state, config) {
-      state.config = config
+    SET_ORIGINAL_CONFIG(state, config) {
+      state.originalConfig = config
     },
 
-    SET_PAGE_TITLE(state, { path, title }) {
+    SET_PAGE_TITLE(state, title) {
       state.page.title = title
-      if (path === '/') {
-        document.title = state.config.title
-      } else {
-        document.title = `${title} - ${state.config.title}`
-      }
     },
 
     SET_PAGE_HEADINGS(state, headings) {
@@ -64,7 +59,7 @@ const store = new Vuex.Store({
 
       const headings = []
       const slugs = []
-      renderer.heading = function (text, level, raw) {
+      renderer.heading = function(text, level, raw) {
         let slug = slugify(raw)
         slugs.push(slug)
         const sameSlugCount = slugs.filter(v => v === slug).length
@@ -73,7 +68,7 @@ const store = new Vuex.Store({
         }
 
         if (level === 1) {
-          store.commit('SET_PAGE_TITLE', { path, title: text })
+          store.commit('SET_PAGE_TITLE', text)
         } else if (level === 2 || level === 3) {
           headings.push({
             level,
@@ -91,7 +86,7 @@ const store = new Vuex.Store({
       // Disable template interpolation in code
       renderer.codespan = text => `<code v-pre>${text}</code>`
       const origCode = renderer.code
-      renderer.code = function (code, lang, excaped) {
+      renderer.code = function(code, lang, excaped) {
         const codeOptsRE = /({.+})/
         let codeOpts = {}
         if (lang && codeOptsRE.test(lang)) {
@@ -101,58 +96,114 @@ const store = new Vuex.Store({
             const fn = new Function(`return ${codeOpts}`)
             codeOpts = fn()
           } catch (err) {
-            throw new Error(`You're using invalid options for code fences, it must be JSON or JS object!\n${err.message}`)
+            throw new Error(
+              `You're using invalid options for code fences, it must be JSON or JS object!\n${
+                err.message
+              }`
+            )
           }
           lang = lang.replace(codeOptsRE, '').trim()
         }
 
-        let res = origCode.call(this, code, lang, excaped).replace(/^<pre>/, '<pre v-pre>')
+        let res = origCode
+          .call(this, code, lang, excaped)
+          .replace(/^<pre>/, '<pre v-pre>')
 
         if (codeOpts.highlight) {
-          const codeMask = code.split('\n').map((v, i) => {
-            i += 1
-            const shouldHighlight = codeOpts.highlight.some(number => {
-              if (typeof number === 'number') {
-                return number === i
-              }
-              if (typeof number === 'string') {
-                const [start, end] = number.split('-').map(Number)
-                return i >= start && (!end || i <= end)
-              }
-              return false
+          const codeMask = code
+            .split('\n')
+            .map((v, i) => {
+              i += 1
+              const shouldHighlight = codeOpts.highlight.some(number => {
+                if (typeof number === 'number') {
+                  return number === i
+                }
+                if (typeof number === 'string') {
+                  const [start, end] = number.split('-').map(Number)
+                  return i >= start && (!end || i <= end)
+                }
+                return false
+              })
+              return shouldHighlight
+                ? `<span class="code-line highlighted">&#8203;</span>`
+                : `<span class="code-line">&#8203;</span>`
             })
-            return shouldHighlight ? `<span class="code-line highlighted">&#8203;</span>` : `<span class="code-line">&#8203;</span>`
-          }).join('')
+            .join('')
           res += `<div class="code-mask">${codeMask}</div>`
         }
 
         return `<div data-lang="${lang || ''}" class="pre-wrapper">${res}</div>`
       }
 
-      commit('SET_HTML', marked(text, {
-        renderer,
-        highlight
-      }))
+      commit(
+        'SET_HTML',
+        marked(text, {
+          renderer,
+          highlight
+        })
+      )
       commit('SET_PAGE_HEADINGS', headings)
       commit('SET_FETCHING', false)
     },
 
-    fetchPrismLanguages({ state }) {
+    fetchPrismLanguages({ state, getters }) {
       const ID = 'prism-languages'
 
-      if (!state.config.highlight || loadjs.isDefined(ID)) return Promise.resolve()
+      if (!getters.config.highlight || loadjs.isDefined(ID))
+        return Promise.resolve()
 
       return new Promise(resolve => {
-        loadjs(state.config.highlight.map(lang => {
-          return `https://cdn.jsdelivr.net/npm/prismjs/components/prism-${lang}.min.js`
-        }), ID, {
-          success: resolve,
-          error(err) {
-            console.error('Failed to load', err)
-            resolve()
+        loadjs(
+          getters.config.highlight.map(lang => {
+            return `https://cdn.jsdelivr.net/npm/prismjs/components/prism-${lang}.min.js`
+          }),
+          ID,
+          {
+            success: resolve,
+            error(err) {
+              console.error('Failed to load', err)
+              resolve()
+            }
           }
-        })
+        )
       })
+    }
+  },
+
+  getters: {
+    currentLocalePath({ originalConfig, route }) {
+      const { locales } = originalConfig
+
+      if (locales) {
+        // Is it a locale?
+        for (const localePath of Object.keys(locales)) {
+          if (localePath !== '/') {
+            const RE = new RegExp(`^${localePath}`)
+            if (RE.test(route.path)) {
+              return localePath
+            }
+          }
+        }
+      }
+
+      return '/'
+    },
+
+    config({ originalConfig }, { currentLocalePath }) {
+      const { locales } = originalConfig
+      return locales
+        ? {
+            ...originalConfig,
+            ...locales[currentLocalePath]
+          }
+        : originalConfig
+    },
+
+    homePaths({ originalConfig }) {
+      const localePaths = originalConfig.locales
+        ? Object.keys(originalConfig.locales)
+        : []
+      return [...localePaths, '/']
     }
   }
 })
