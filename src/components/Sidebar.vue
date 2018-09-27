@@ -34,7 +34,8 @@
               </router-link>
               <div
                 class="NavToc"
-                v-if="navLink.toc !== false &&
+                v-if="!$store.state.fetchingFile &&
+                navLink.toc !== false &&
                 navLink.link === $route.path &&
                 $store.state.page.headings &&
                 $store.state.page.headings.length > 0"
