@@ -75,3 +75,10 @@ https://github.com/USER/REPO/blob/master/docs
 - Default: `'Edit this page'`
 
 The text for *edit link*.
+
+## centerContent
+
+- Type: `boolean`
+- Default: `true`
+
+Centering contents.
