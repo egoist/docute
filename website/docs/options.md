@@ -39,6 +39,16 @@ interface NavLink {
 }
 ```
 
+## sourcePath
+
+- Type: `string`
+- Default: `'/'`
+
+The source path to fetch markdown files from, by default we load them from the root path, a.k.a. `/`.
+
+It can also be a full URL like: `https://some-website/path/to/markdown/files` so that you can load files from a different domain.
+
+
 ## highlight
 
 - Type: `Array<string>`

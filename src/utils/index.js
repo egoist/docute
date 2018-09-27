@@ -14,6 +14,9 @@ export const slugify = str => {
     .toLowerCase()
 }
 
-export const getFilenameByPath = path => {
-  return /\/$/.test(path) ? `${path}README.md` : `${path}.md`
+export const getFilenameByPath = (sourcePath, path) => {
+  sourcePath = sourcePath || ''
+  sourcePath = sourcePath.replace(/\/$/, '')
+  const filepath = /\/$/.test(path) ? `${path}README.md` : `${path}.md`
+  return sourcePath + filepath
 }
