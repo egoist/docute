@@ -3,8 +3,24 @@
     <Sidebar />
     <SidebarMask />
     <MobileHeader />
-    <div class="Main">
+    <div class="Main" v-if="$store.state.fetchingFile">
+      <content-loader
+        :height="160"
+        :width="400"
+        :speed="2"
+        primaryColor="#f3f3f3"
+        secondaryColor="#ecebeb"
+      >
+        <rect x="0" y="5" rx="4" ry="4" width="117" height="6.4" />
+        <rect x="0" y="25" rx="3" ry="3" width="85" height="6.4" />
+        <rect x="0" y="60" rx="3" ry="3" width="350" height="6.4" />
+        <rect x="0" y="80" rx="3" ry="3" width="380" height="6.4" />
+        <rect x="0" y="100" rx="3" ry="3" width="201" height="6.4" />
+      </content-loader>
+    </div>
+    <div class="Main" v-else>
       <component :is="MarkdownBody" />
+      <EditLink />
       <PrevNextLinks />
     </div>
   </div>
@@ -12,19 +28,23 @@
 
 <script>
 import jump from 'jump.js'
+import { ContentLoader } from 'vue-content-loader'
 import Sidebar from '../components/Sidebar.vue'
 import SidebarMask from '../components/SidebarMask.vue'
 import MobileHeader from '../components/MobileHeader.vue'
 import PrevNextLinks from '../components/PrevNextLinks.vue'
+import EditLink from '../components/EditLink.vue'
 
 export default {
   name: 'PageHome',
 
   components: {
+    ContentLoader,
     Sidebar,
     SidebarMask,
     MobileHeader,
-    PrevNextLinks
+    PrevNextLinks,
+    EditLink
   },
 
   created() {
@@ -32,12 +52,10 @@ export default {
   },
 
   beforeRouteUpdate(to, from, next) {
-    if (to.path === from.path) {
-      return next()
+    next()
+    if (to.path !== from.path) {
+      this.fetchFile(to.path)
     }
-    this.fetchFile(to.path).then(() => {
-      next()
-    })
   },
 
   watch: {

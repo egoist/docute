@@ -4,7 +4,7 @@ import loadjs from 'loadjs'
 import fetch from 'unfetch'
 import marked from './utils/marked'
 import highlight from './utils/highlight'
-import { slugify } from './utils'
+import { slugify, getFilenameByPath } from './utils'
 
 Vue.use(Vuex)
 
@@ -16,7 +16,8 @@ const store = new Vuex.Store({
       title: null,
       headings: null
     },
-    showSidebar: false
+    showSidebar: false,
+    fetchingFile: true
   },
 
   mutations: {
@@ -43,14 +44,18 @@ const store = new Vuex.Store({
 
     TOGGLE_SIDEBAR(state, show) {
       state.showSidebar = typeof show === 'boolean' ? show : !state.showSidebar
+    },
+
+    SET_FETCHING(state, fetching) {
+      state.fetchingFile = fetching
     }
   },
 
   actions: {
     async fetchFile({ commit, dispatch }, path) {
       commit('TOGGLE_SIDEBAR', false)
-      commit('SET_HTML', 'Loading...')
-      const file = /\/$/.test(path) ? `${path}README.md` : `${path}.md`
+      commit('SET_FETCHING', true)
+      const file = getFilenameByPath(path)
       const [text] = await Promise.all([
         fetch(file).then(res => res.text()),
         dispatch('fetchPrismLanguages')
@@ -129,6 +134,7 @@ const store = new Vuex.Store({
         highlight
       }))
       commit('SET_PAGE_HEADINGS', headings)
+      commit('SET_FETCHING', false)
     },
 
     fetchPrismLanguages({ state }) {

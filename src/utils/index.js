@@ -13,3 +13,7 @@ export const slugify = str => {
     .replace(WHITESPACE, REPLACEMENT)
     .toLowerCase()
 }
+
+export const getFilenameByPath = path => {
+  return /\/$/.test(path) ? `${path}README.md` : `${path}.md`
+}

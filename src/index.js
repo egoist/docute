@@ -16,14 +16,11 @@ Vue.component(Badge.name, Badge)
 class Docute {
   constructor({
     target,
-    title = document.title,
-    nav,
-    highlight
+    ...config
   } = {}) {
     store.commit('SET_CONFIG', {
-      title,
-      nav,
-      highlight
+      title: document.title,
+      ...config
     })
 
     this.vm = new Vue({
