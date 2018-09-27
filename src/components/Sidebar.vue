@@ -53,6 +53,8 @@
           </div>
         </div>
 
+        <InjectedComponents position="sidebar:end" />
+
       </div>
 </template>
 

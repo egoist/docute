@@ -22,6 +22,7 @@
       <component :is="MarkdownBody" />
       <EditLink />
       <PrevNextLinks />
+      <InjectedComponents position="content:end" />
     </div>
   </div>
 </template>
