@@ -1,5 +1,5 @@
 <template>
-  <div class="prev-next-links">
+  <div class="prev-next-links" v-if="prevLinkItem || nextLinkItem">
     <div class="prev-link" v-if="prevLinkItem">
       ← <router-link
           :to="prevLinkItem.link">
