@@ -103,6 +103,7 @@ export default {
         path = this.$route.path
       }
       await this.$store.dispatch('fetchFile', path)
+      hooks.invoke('onContentWillUpdate', this)
       await this.$nextTick()
       hooks.invoke('onContentUpdated', this)
       this.jumpToHash()

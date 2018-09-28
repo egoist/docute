@@ -18,6 +18,7 @@ const store = new Vuex.Store({
       title: null,
       headings: null
     },
+    env: null,
     showSidebar: false,
     fetchingFile: true
   },
@@ -45,6 +46,10 @@ const store = new Vuex.Store({
 
     SET_FETCHING(state, fetching) {
       state.fetchingFile = fetching
+    },
+
+    SET_ENV(state, env) {
+      state.env = env
     }
   },
 
@@ -60,7 +65,9 @@ const store = new Vuex.Store({
 
       text = hooks.process('processMarkdown', text)
 
-      const env = {}
+      const env = {
+        headings: []
+      }
       let html = marked(text, {
         renderer: markedRenderer(env, hooks),
         highlight
@@ -69,6 +76,7 @@ const store = new Vuex.Store({
       commit('SET_PAGE_TITLE', env.title)
       commit('SET_PAGE_HEADINGS', env.headings)
       commit('SET_FETCHING', false)
+      commit('SET_ENV', env)
       commit('SET_HTML', html)
     },
 
