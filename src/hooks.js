@@ -1,4 +1,4 @@
-export default class Hooks {
+class Hooks {
   constructor() {
     this.hooks = {}
   }
@@ -17,3 +17,5 @@ export default class Hooks {
     return this
   }
 }
+
+export default new Hooks()

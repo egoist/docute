@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import loadjs from 'loadjs'
 import fetch from 'unfetch'
 import marked from './utils/marked'
 import highlight from './utils/highlight'
 import {getFilenameByPath} from './utils'
 import markedRenderer from './utils/markedRenderer'
 import hooks from './hooks'
+import load from './utils/load'
 
 Vue.use(Vuex)
 
@@ -72,27 +72,16 @@ const store = new Vuex.Store({
     },
 
     fetchPrismLanguages({getters}) {
-      const ID = 'prism-languages'
-
-      if (!getters.config.highlight || loadjs.isDefined(ID)) {
+      if (!getters.config.highlight) {
         return Promise.resolve()
       }
 
-      return new Promise(resolve => {
-        loadjs(
-          getters.config.highlight.map(lang => {
-            return `https://cdn.jsdelivr.net/npm/prismjs/components/prism-${lang}.min.js`
-          }),
-          ID,
-          {
-            success: resolve,
-            error(err) {
-              console.error('Failed to load', err)
-              resolve()
-            }
-          }
-        )
-      })
+      return load(
+        getters.config.highlight.map(lang => {
+          return `https://cdn.jsdelivr.net/npm/prismjs/components/prism-${lang}.min.js`
+        }),
+        'prism-languages'
+      )
     }
   },
 
