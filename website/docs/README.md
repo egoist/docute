@@ -60,3 +60,7 @@ Then you can serve this folder as a static website on your machine using:
 - Python: `python -m SimpleHTTPServer`
 - Golang: `caddy`
 - ..or whatever static web server
+
+## Browser Compatibility
+
+Docute supports all ever-green browsers, i.e. No IE support!

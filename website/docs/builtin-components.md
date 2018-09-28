@@ -46,3 +46,14 @@ Example:
 - Feature 1 <Badge>Stable</Badge>
 - Feature 2 <Badge type="warning">Beta</Badge>
 - Feature 3 <Badge type="danger">Deprecated</Badge>
+
+## `<EvaluateTag>`
+
+A hack for evaluating `<style>` and `<script>` tags in markdown.
+
+|Prop|Type|Default|Description|
+|---|---|---|---|
+|tag|<code>'style' &#x7C; 'script'</code>|N/A|Tag name|
+|children|`string`|N/A|Tag content|
+
+In general you don't need this component since we automatically convert `<style>` and `<script>` tags in your markdown to this component.
