@@ -16,6 +16,14 @@ class Hooks {
     }
     return this
   }
+
+  process(name, arg) {
+    const hooks = this.hooks[name] || []
+    for (const fn of hooks) {
+      arg = fn(arg) || arg
+    }
+    return arg
+  }
 }
 
 export default new Hooks()

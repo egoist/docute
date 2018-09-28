@@ -53,16 +53,19 @@ const store = new Vuex.Store({
       commit('TOGGLE_SIDEBAR', false)
       commit('SET_FETCHING', true)
       const file = getFilenameByPath(getters.config.sourcePath, path)
-      const [text] = await Promise.all([
+      let [text] = await Promise.all([
         fetch(file).then(res => res.text()),
         dispatch('fetchPrismLanguages')
       ])
 
+      text = hooks.process('processMarkdown', text)
+
       const env = {}
-      const html = marked(text, {
+      let html = marked(text, {
         renderer: markedRenderer(env, hooks),
         highlight
       })
+      html = hooks.process('processHTML', html)
       commit('SET_PAGE_TITLE', env.title)
       commit('SET_PAGE_HEADINGS', env.headings)
       commit('SET_FETCHING', false)

@@ -82,3 +82,13 @@ The text for *edit link*.
 - Default: `true`
 
 Centering contents.
+
+## locales
+
+- Type: `{[path: string]: LocaleOptions}`
+
+```ts
+interface LocaleOptions extends Options {
+  language: string
+}
+```

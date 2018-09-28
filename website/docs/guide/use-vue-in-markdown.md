@@ -79,3 +79,9 @@ __Input__:
 __Output__:
 
 <ReverseText text="hello world" />
+
+## Trade-offs
+
+- `@` shorthand won't work
+
+Since standard HTML attribute isn't allowed to start with `@`, the `@` shorthand for `v-on` directive won't be recognized as valid HTML by the markdown parser we use. Pull request is very welcome for fixing this.

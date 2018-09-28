@@ -80,7 +80,5 @@ export default (env, hooks) => {
     return `<div data-lang="${lang || ''}" class="pre-wrapper">${res}</div>`
   }
 
-  hooks.invoke('extendMarkedRenderer', renderer)
-
-  return renderer
+  return hooks.process('extendMarkedRenderer', renderer)
 }

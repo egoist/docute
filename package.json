@@ -56,8 +56,8 @@
     ],
     "prettier": true,
     "ignores": [
-      "website/**",
-      "dist/**"
+      "**/website/**",
+      "**/dist/**"
     ],
     "envs": [
       "browser"

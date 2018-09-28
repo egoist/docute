@@ -3,13 +3,12 @@ import InjectedComponents from './components/InjectedComponents'
 import hooks from './hooks'
 
 export default class PluginAPI {
-  constructor({plugins, store, router, event}) {
+  constructor({plugins, store, router}) {
     this.plugins = plugins
     this.store = store
     this.router = router
     this.components = {}
     this.hooks = hooks
-    this.event = event
 
     Vue.component(InjectedComponents.name, InjectedComponents)
   }
@@ -26,5 +25,25 @@ export default class PluginAPI {
 
   getComponents(position) {
     return this.components[position] || []
+  }
+
+  processMarkdown(fn) {
+    this.hooks.add('processMarkdown', fn)
+    return this
+  }
+
+  processHTML(fn) {
+    this.hooks.add('processHTML', fn)
+    return this
+  }
+
+  extendMarkedRenderer(fn) {
+    this.hooks.add('extendMarkedRenderer', fn)
+    return this
+  }
+
+  onContentUpdated(fn) {
+    this.hooks.add('onContentUpdated', fn)
+    return this
   }
 }

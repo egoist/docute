@@ -172,4 +172,28 @@
   & img {
     max-width: 100%;
   }
+
+  & blockquote {
+    background: #f1f1f1;
+    border-left: 8px solid #ccc;
+    margin: 20px 0;
+    padding: 14px 16px;
+    color: #6a737d;
+
+    & p {
+      margin: 15px 0 0 0;
+    }
+
+    &>*:first-child {
+      margin-top: 0;
+    }
+  }
+
+  & hr {
+    height: 1px;
+    padding: 0;
+    margin: 3rem 0;
+    background-color: #e1e4e8;
+    border: 0;
+  }
 }

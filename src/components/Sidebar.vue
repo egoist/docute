@@ -2,7 +2,7 @@
   <div class="Sidebar" :class="{isShown: $store.state.showSidebar}">
 
         <div class="SiteTitle">
-          {{ $store.getters.config.title }}
+          <router-link to="/">{{ $store.getters.config.title }}</router-link>
         </div>
 
         <InjectedComponents position="sidebar:start" />

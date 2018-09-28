@@ -36,6 +36,10 @@ new Docute({
           link: '/guide/internationalization'
         },
         {
+          title: 'Plugin',
+          link: '/guide/plugin'
+        },
+        {
           title: 'Deployment',
           link: '/guide/deployment'
         }
@@ -51,6 +55,10 @@ new Docute({
         {
           title: 'Built-in Components',
           link: '/builtin-components'
+        },
+        {
+          title: 'Plugin API',
+          link: '/plugin-api'
         }
       ]
     }
@@ -125,7 +133,10 @@ Vue.component('ReverseText', {
   `,
   computed: {
     reversedText() {
-      return this.text.split('').reverse().join('')
+      return this.text
+        .split('')
+        .reverse()
+        .join('')
     }
   },
   css: `
