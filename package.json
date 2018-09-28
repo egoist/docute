@@ -24,8 +24,12 @@
     "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
+    "buble": "^0.19.3",
+    "buble-loader": "^0.5.1",
     "eslint-config-rem": "^3.0.0",
     "eslint-plugin-vue": "^5.0.0-beta.3",
+    "fast-async": "^6.3.8",
     "husky": "^1.0.1",
     "lint-staged": "^7.3.0",
     "poi": "^11.0.0-alpha.20",
@@ -75,6 +79,9 @@
     }
   },
   "lint-staged": {
-    "*.{js,css,md,vue}": ["yarn lint --fix", "git add"]
+    "*.{js,css,md,vue}": [
+      "yarn lint --fix",
+      "git add"
+    ]
   }
 }

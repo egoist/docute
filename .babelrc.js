@@ -1,5 +1,8 @@
 module.exports = {
-  presets: [
-    'module:poi/babel'
+  plugins: [
+    '@babel/plugin-syntax-object-rest-spread',
+    ['module:fast-async', {
+      spec: true
+    }]
   ]
 }
