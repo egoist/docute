@@ -2,6 +2,8 @@
 
 一种轻松创建文档的方式。
 
+> 中文文档正在翻译中...
+
 ## What is Docute
 
 Docute is basically a JavaScript file that fetches Markdown files and renders them as a single-page application.

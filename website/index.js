@@ -15,6 +15,10 @@ new Docute({
           toc: false
         },
         {
+          title: 'Credits and Trade-offs',
+          link: '/credits-and-tradeoffs'
+        },
+        {
           title: 'GitHub',
           link: 'https://github.com/leptosia/docute'
         }
