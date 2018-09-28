@@ -1,7 +1,7 @@
 import marked from './marked'
 import {slugify} from '.'
 
-export default env => {
+export default (env, hooks) => {
   const renderer = new marked.Renderer()
 
   env.headings = []
@@ -81,6 +81,8 @@ export default env => {
 
     return `<div data-lang="${lang || ''}" class="pre-wrapper">${res}</div>`
   }
+
+  hooks.invoke('extendMarkedRenderer', renderer)
 
   return renderer
 }

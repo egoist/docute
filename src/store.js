@@ -6,6 +6,7 @@ import marked from './utils/marked'
 import highlight from './utils/highlight'
 import {getFilenameByPath} from './utils'
 import markedRenderer from './utils/markedRenderer'
+import hooks from './hooks'
 
 Vue.use(Vuex)
 
@@ -61,7 +62,7 @@ const store = new Vuex.Store({
       commit(
         'SET_HTML',
         marked(text, {
-          renderer: markedRenderer(env),
+          renderer: markedRenderer(env, hooks),
           highlight
         })
       )
