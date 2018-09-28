@@ -4,7 +4,7 @@ import loadjs from 'loadjs'
 import fetch from 'unfetch'
 import marked from './utils/marked'
 import highlight from './utils/highlight'
-import { getFilenameByPath } from './utils'
+import {getFilenameByPath} from './utils'
 import markedRenderer from './utils/markedRenderer'
 
 Vue.use(Vuex)
@@ -48,7 +48,7 @@ const store = new Vuex.Store({
   },
 
   actions: {
-    async fetchFile({ commit, getters, dispatch }, path) {
+    async fetchFile({commit, getters, dispatch}, path) {
       commit('TOGGLE_SIDEBAR', false)
       commit('SET_FETCHING', true)
       const file = getFilenameByPath(getters.config.sourcePath, path)
@@ -70,11 +70,12 @@ const store = new Vuex.Store({
       commit('SET_FETCHING', false)
     },
 
-    fetchPrismLanguages({ state, getters }) {
+    fetchPrismLanguages({getters}) {
       const ID = 'prism-languages'
 
-      if (!getters.config.highlight || loadjs.isDefined(ID))
+      if (!getters.config.highlight || loadjs.isDefined(ID)) {
         return Promise.resolve()
+      }
 
       return new Promise(resolve => {
         loadjs(
@@ -95,8 +96,8 @@ const store = new Vuex.Store({
   },
 
   getters: {
-    currentLocalePath({ originalConfig, route }) {
-      const { locales } = originalConfig
+    currentLocalePath({originalConfig, route}) {
+      const {locales} = originalConfig
 
       if (locales) {
         // Is it a locale?
@@ -113,8 +114,8 @@ const store = new Vuex.Store({
       return '/'
     },
 
-    config({ originalConfig }, { currentLocalePath }) {
-      const { locales } = originalConfig
+    config({originalConfig}, {currentLocalePath}) {
+      const {locales} = originalConfig
       return locales
         ? {
             ...originalConfig,
@@ -123,7 +124,7 @@ const store = new Vuex.Store({
         : originalConfig
     },
 
-    homePaths({ originalConfig }) {
+    homePaths({originalConfig}) {
       const localePaths = originalConfig.locales
         ? Object.keys(originalConfig.locales)
         : []

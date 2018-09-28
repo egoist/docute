@@ -1,5 +1,5 @@
 import marked from './marked'
-import { slugify } from './'
+import {slugify} from '.'
 
 export default env => {
   const renderer = new marked.Renderer()
@@ -42,10 +42,10 @@ export default env => {
         // eslint-disable-next-line no-new-func
         const fn = new Function(`return ${codeOpts}`)
         codeOpts = fn()
-      } catch (err) {
+      } catch (error) {
         throw new Error(
           `You're using invalid options for code fences, it must be JSON or JS object!\n${
-            err.message
+            error.message
           }`
         )
       }

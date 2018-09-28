@@ -25,11 +25,12 @@
   },
   "devDependencies": {
     "eslint-config-rem": "^3.0.0",
+    "eslint-plugin-vue": "^5.0.0-beta.3",
     "poi": "^11.0.0-alpha.20",
     "postcss-import": "^12.0.0",
     "postcss-preset-env": "^6.0.3",
     "webpack-node-externals": "^1.7.2",
-    "xo": "^0.18.0"
+    "xo": "^0.23.0"
   },
   "repository": {
     "url": "leptosia/docute",
@@ -43,7 +44,11 @@
   "author": "egoist <0x142857@gmail.com>",
   "license": "MIT",
   "xo": {
-    "extends": "rem",
+    "extends": [
+      "rem",
+      "plugin:vue/essential"
+    ],
+    "prettier": true,
     "ignores": [
       "website/**",
       "dist/**"
@@ -51,6 +56,10 @@
     "envs": [
       "browser"
     ],
+    "globals": [
+      "__DOCUTE_VERSION__"
+    ],
+    "extensions": ["vue"],
     "rules": {
       "unicorn/filename-case": "off",
       "unicorn/no-abusive-eslint-disable": "off"

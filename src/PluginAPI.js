@@ -2,7 +2,7 @@ import Vue from 'vue'
 import InjectedComponents from './components/InjectedComponents'
 
 export default class PluginAPI {
-  constructor({ plugins, store, router }) {
+  constructor({plugins, store, router}) {
     this.plugins = plugins
     this.store = store
     this.router = router

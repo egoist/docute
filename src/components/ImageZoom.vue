@@ -22,7 +22,7 @@ export default {
       default: true
     },
     width: {
-      type: null
+      type: [String, Number]
     }
   },
   mounted() {

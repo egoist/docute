@@ -10,16 +10,20 @@ export default {
     }
   },
 
-  render(h, { props, parent }) {
+  render(h, {props, parent}) {
     const components = parent.$pluginApi.getComponents(props.position)
 
     if (components.length === 0) return
 
-    return h('div', {
-      class: 'InjectedComponents',
-      attrs: {
-        'data-position': props.position
-      }
-    }, components.map(c => h(c)))
+    return h(
+      'div',
+      {
+        class: 'InjectedComponents',
+        attrs: {
+          'data-position': props.position
+        }
+      },
+      components.map(c => h(c))
+    )
   }
 }

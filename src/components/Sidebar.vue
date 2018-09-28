@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import { isExternalLink } from '../utils'
+import {isExternalLink} from '../utils'
 
 export default {
   methods: {
@@ -100,19 +100,19 @@ export default {
 
 .NavItem {
   &:not(:last-child) {
-    border-bottom: 1px solid rgba(255,255,255,.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     padding-bottom: 2rem;
     margin-bottom: 2rem;
   }
 
   &.hasTitle {
     & .NavLink {
-      font-size: .9rem;
+      font-size: 0.9rem;
     }
   }
 
   &.hasTitle >>> .NavTocHeading {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -151,11 +151,11 @@ export default {
     margin-bottom: 5px;
   }
 
-  &[data-level="2"] {
+  &[data-level='2'] {
     margin-left: 35px;
   }
 
-  &[data-level="3"] {
+  &[data-level='3'] {
     margin-left: 50px;
   }
 
@@ -187,14 +187,14 @@ export default {
 </style>
 
 <style scoped>
-@import "vars.css";
+@import 'vars.css';
 
 @media screen and (max-width: 768px) {
   .Sidebar {
     transform: translateX(-100%);
     width: 80%;
     top: var(--mobile-header-height);
-    transition: transform .5s cubic-bezier(.50,.32,.01,1);
+    transition: transform 0.5s cubic-bezier(0.5, 0.32, 0.01, 1);
 
     &.isShown {
       transform: translateX(0);

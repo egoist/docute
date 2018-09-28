@@ -18,7 +18,7 @@ export default {
 
 
 <style scoped>
-@import "vars.css";
+@import 'vars.css';
 
 .MobileHeader {
   display: none;
@@ -59,4 +59,3 @@ export default {
   }
 }
 </style>
-

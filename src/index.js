@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { sync } from 'vuex-router-sync'
+import {sync} from 'vuex-router-sync'
 import PluginAPI from './PluginAPI'
 import Root from './components/Root.vue'
 import store from './store'
@@ -27,20 +27,14 @@ Vue.mixin({
 })
 
 class Docute {
-  constructor({
-    target,
-    ...config
-  } = {}) {
+  constructor({target, ...config} = {}) {
     store.commit('SET_ORIGINAL_CONFIG', {
       title: document.title,
       ...config
     })
 
-    const plugins = [
-      i18nPlugin,
-      ...(store.state.originalConfig.plugins || [])
-    ]
-    this.pluginApi = new PluginAPI({ plugins, store, router })
+    const plugins = [i18nPlugin, ...(store.state.originalConfig.plugins || [])]
+    this.pluginApi = new PluginAPI({plugins, store, router})
     this.applyPlugins()
 
     this.app = new Vue({

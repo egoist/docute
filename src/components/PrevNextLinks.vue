@@ -17,20 +17,19 @@
 </template>
 
 <script>
-import { isExternalLink } from '../utils'
+import {isExternalLink} from '../utils'
 
 export default {
   computed: {
     navLinks() {
       const nav = this.$store.getters.config.nav || []
-      return nav.reduce((res, next) => {
-        return [
-          ...res,
-          ...next.links
-        ]
-      }, []).filter(item => {
-        return !isExternalLink(item.link)
-      })
+      return nav
+        .reduce((res, next) => {
+          return [...res, ...next.links]
+        }, [])
+        .filter(item => {
+          return !isExternalLink(item.link)
+        })
     },
 
     currentLink() {
@@ -41,7 +40,7 @@ export default {
       // Related:
       // - https://github.com/vuejs/vue/issues/8728
       // - https://github.com/leptosia/docute/pull/171
-      const navLinks = this.navLinks
+      const {navLinks} = this
       for (let i = 0; i < navLinks.length; i++) {
         const item = navLinks[i]
         if (item.link === this.currentLink) {
@@ -63,7 +62,7 @@ export default {
 </script>
 
 <style scoped>
-@import "vars.css";
+@import 'vars.css';
 
 .prev-next-links {
   overflow: auto;

@@ -40,7 +40,7 @@
 
 <script>
 import jump from 'jump.js'
-import { ContentLoader } from 'vue-content-loader'
+import {ContentLoader} from 'vue-content-loader'
 import Sidebar from '../components/Sidebar.vue'
 import SidebarMask from '../components/SidebarMask.vue'
 import MobileHeader from '../components/MobileHeader.vue'
@@ -77,8 +77,8 @@ export default {
       this.jumpToHash()
     },
     '$store.state.page.title'(title) {
-      const { path } = this.$route
-      const { config, homePaths } = this.$store.getters
+      const {path} = this.$route
+      const {config, homePaths} = this.$store.getters
       if (homePaths.indexOf(path) > -1) {
         document.title = config.title
       } else {
@@ -107,7 +107,7 @@ export default {
     },
 
     jumpToHash() {
-      const { hash } = this.$route
+      const {hash} = this.$route
       if (hash) {
         const el = document.querySelector(hash)
         if (el) {
@@ -122,8 +122,10 @@ export default {
 }
 </script>
 
-<style src="../css/prism.css"></style>
-<style src="../css/markdown.css"></style>
+<style src="../css/prism.css">
+</style>
+<style src="../css/markdown.css">
+</style>
 
 <style scoped>
 .Docute {

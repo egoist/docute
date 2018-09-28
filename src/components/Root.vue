@@ -8,4 +8,5 @@ export default {
 }
 </script>
 
-<style src="../css/global.css"></style>
+<style src="../css/global.css">
+</style>

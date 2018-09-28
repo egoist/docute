@@ -19,7 +19,7 @@
 export default {
   computed: {
     languages() {
-      const { locales } = this.$store.state.originalConfig
+      const {locales} = this.$store.state.originalConfig
       return Object.keys(locales).map(path => ({
         path,
         language: locales[path].language
@@ -50,5 +50,3 @@ export default {
   margin-top: 10px;
 }
 </style>
-
-

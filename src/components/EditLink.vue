@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { getFilenameByPath } from '../utils'
+import {getFilenameByPath} from '../utils'
 
 export default {
   computed: {
@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style scoped>
-@import "vars.css";
+@import 'vars.css';
 
 .EditLink {
   margin-top: 50px;
@@ -50,4 +50,3 @@ export default {
   margin-right: 10px;
 }
 </style>
-
