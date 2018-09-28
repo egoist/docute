@@ -3,12 +3,13 @@ import InjectedComponents from './components/InjectedComponents'
 import hooks from './hooks'
 
 export default class PluginAPI {
-  constructor({plugins, store, router}) {
+  constructor({plugins, store, router, event}) {
     this.plugins = plugins
     this.store = store
     this.router = router
     this.components = {}
     this.hooks = hooks
+    this.event = event
 
     Vue.component(InjectedComponents.name, InjectedComponents)
   }

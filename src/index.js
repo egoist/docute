@@ -4,6 +4,7 @@ import PluginAPI from './PluginAPI'
 import Root from './components/Root.vue'
 import store from './store'
 import router from './router'
+import event from './event'
 import markdownMixins from './utils/markdownMixins'
 import ImageZoom from './components/ImageZoom.vue'
 import Badge from './components/Badge.vue'
@@ -34,7 +35,7 @@ class Docute {
     })
 
     const plugins = [i18nPlugin, ...(store.state.originalConfig.plugins || [])]
-    this.pluginApi = new PluginAPI({plugins, store, router})
+    this.pluginApi = new PluginAPI({plugins, store, router, event})
     this.applyPlugins()
 
     this.app = new Vue({

@@ -47,6 +47,7 @@ import MobileHeader from '../components/MobileHeader.vue'
 import PrevNextLinks from '../components/PrevNextLinks.vue'
 import EditLink from '../components/EditLink.vue'
 import Rightbar from '../components/Rightbar.vue'
+import event from '../event'
 
 export default {
   name: 'PageHome',
@@ -103,6 +104,7 @@ export default {
       }
       await this.$store.dispatch('fetchFile', path)
       await this.$nextTick()
+      event.$emit('content:updated', this)
       this.jumpToHash()
     },
 

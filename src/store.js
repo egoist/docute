@@ -59,16 +59,14 @@ const store = new Vuex.Store({
       ])
 
       const env = {}
-      commit(
-        'SET_HTML',
-        marked(text, {
-          renderer: markedRenderer(env, hooks),
-          highlight
-        })
-      )
+      const html = marked(text, {
+        renderer: markedRenderer(env, hooks),
+        highlight
+      })
       commit('SET_PAGE_TITLE', env.title)
       commit('SET_PAGE_HEADINGS', env.headings)
       commit('SET_FETCHING', false)
+      commit('SET_HTML', html)
     },
 
     fetchPrismLanguages({getters}) {
