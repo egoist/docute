@@ -8,8 +8,6 @@
 </template>
 
 <script>
-import {getFilenameByPath} from '../utils'
-
 export default {
   computed: {
     editLinkBase() {
@@ -17,7 +15,7 @@ export default {
     },
 
     editLink() {
-      return this.editLinkBase + getFilenameByPath(this.$route.path)
+      return this.editLinkBase + this.$store.state.env.file
     },
 
     editLinkText() {

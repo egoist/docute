@@ -18,7 +18,7 @@ const store = new Vuex.Store({
       title: null,
       headings: null
     },
-    env: null,
+    env: {},
     showSidebar: false,
     fetchingFile: true
   },
@@ -66,7 +66,8 @@ const store = new Vuex.Store({
       text = hooks.process('processMarkdown', text)
 
       const env = {
-        headings: []
+        headings: [],
+        file
       }
       let html = marked(text, {
         renderer: markedRenderer(env, hooks),
