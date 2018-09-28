@@ -33,15 +33,12 @@ export default (env, hooks) => {
   // Disable template interpolation in code
   renderer.codespan = text => `<code v-pre>${text}</code>`
   const origCode = renderer.code
-  renderer.code = function(code, lang, excaped) {
-    const codeOptsRE = /({.+})/
-    let codeOpts = {}
-    if (lang && codeOptsRE.test(lang)) {
-      codeOpts = codeOptsRE.exec(lang)[1].trim()
+  renderer.code = function(code, lang, excaped, opts) {
+    if (opts) {
       try {
         // eslint-disable-next-line no-new-func
-        const fn = new Function(`return ${codeOpts}`)
-        codeOpts = fn()
+        const fn = new Function(`return ${opts}`)
+        opts = fn()
       } catch (error) {
         throw new Error(
           `You're using invalid options for code fences, it must be JSON or JS object!\n${
@@ -49,19 +46,20 @@ export default (env, hooks) => {
           }`
         )
       }
-      lang = lang.replace(codeOptsRE, '').trim()
+    } else {
+      opts = {}
     }
 
     let res = origCode
       .call(this, code, lang, excaped)
       .replace(/^<pre>/, '<pre v-pre>')
 
-    if (codeOpts.highlight) {
+    if (opts.highlight) {
       const codeMask = code
         .split('\n')
         .map((v, i) => {
           i += 1
-          const shouldHighlight = codeOpts.highlight.some(number => {
+          const shouldHighlight = opts.highlight.some(number => {
             if (typeof number === 'number') {
               return number === i
             }
