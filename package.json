@@ -26,6 +26,8 @@
   "devDependencies": {
     "eslint-config-rem": "^3.0.0",
     "eslint-plugin-vue": "^5.0.0-beta.3",
+    "husky": "^1.0.1",
+    "lint-staged": "^7.3.0",
     "poi": "^11.0.0-alpha.20",
     "postcss-import": "^12.0.0",
     "postcss-preset-env": "^6.0.3",
@@ -59,10 +61,20 @@
     "globals": [
       "__DOCUTE_VERSION__"
     ],
-    "extensions": ["vue"],
+    "extensions": [
+      "vue"
+    ],
     "rules": {
       "unicorn/filename-case": "off",
       "unicorn/no-abusive-eslint-disable": "off"
     }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,md,vue}": ["yarn lint --fix", "git add"]
   }
 }
