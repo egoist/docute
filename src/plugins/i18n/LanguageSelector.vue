@@ -19,10 +19,10 @@
 export default {
   computed: {
     languages() {
-      const {locales} = this.$store.state.originalConfig
-      return Object.keys(locales).map(path => ({
+      const {languageOverrides} = this.$store.getters
+      return Object.keys(languageOverrides).map(path => ({
         path,
-        language: locales[path].language
+        language: languageOverrides[path].language
       }))
     }
   },

@@ -83,7 +83,7 @@ The text for *edit link*.
 
 Centering contents.
 
-## locales
+## overrides
 
 - Type: `{[path: string]: LocaleOptions}`
 

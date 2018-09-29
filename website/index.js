@@ -67,7 +67,7 @@ new Docute({
       ]
     }
   ],
-  locales: {
+  overrides: {
     '/': {
       language: 'English'
     },

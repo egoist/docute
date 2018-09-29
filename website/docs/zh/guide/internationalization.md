@@ -17,7 +17,7 @@ docs
 
 With above folder structure, users can visit the *Chinese* version of your docs via URL `/zh/`.
 
-Then you can use the `locales` option to localize the text used in UI:
+Then you can use the `overrides` option to localize the text used in UI:
 
 ```js
 new Docute({
@@ -28,7 +28,7 @@ new Docute({
       ]
     }
   ],
-  locales: {
+  overrides: {
     '/': {
       language: 'English' // Used by the language dropdown menu in the sidebar
     },

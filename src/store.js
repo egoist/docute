@@ -96,12 +96,24 @@ const store = new Vuex.Store({
   },
 
   getters: {
-    currentLocalePath({originalConfig, route}) {
-      const {locales} = originalConfig
+    languageOverrides({originalConfig}) {
+      // `locales` is for legacy support
+      const overrides = originalConfig.overrides || originalConfig.locales
+      return (
+        overrides &&
+        Object.keys(overrides).reduce((res, path) => {
+          if (overrides[path].language) {
+            res[path] = overrides[path]
+          }
+          return res
+        }, {})
+      )
+    },
 
-      if (locales) {
+    currentLocalePath({route}, {languageOverrides}) {
+      if (languageOverrides) {
         // Is it a locale?
-        for (const localePath of Object.keys(locales)) {
+        for (const localePath of Object.keys(languageOverrides)) {
           if (localePath !== '/') {
             const RE = new RegExp(`^${localePath}`)
             if (RE.test(route.path)) {
@@ -114,19 +126,18 @@ const store = new Vuex.Store({
       return '/'
     },
 
-    config({originalConfig}, {currentLocalePath}) {
-      const {locales} = originalConfig
-      return locales
+    config({originalConfig}, {currentLocalePath, languageOverrides}) {
+      return languageOverrides
         ? {
             ...originalConfig,
-            ...locales[currentLocalePath]
+            ...languageOverrides[currentLocalePath]
           }
         : originalConfig
     },
 
-    homePaths({originalConfig}) {
-      const localePaths = originalConfig.locales
-        ? Object.keys(originalConfig.locales)
+    homePaths(_, {languageOverrides}) {
+      const localePaths = languageOverrides
+        ? Object.keys(languageOverrides)
         : []
       return [...localePaths, '/']
     }
