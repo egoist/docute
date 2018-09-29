@@ -1,9 +1,13 @@
+import googleAnalytics from '@leptosia/docute-google-analytics'
 import Docute from '../src'
 
 new Docute({
   target: '#app',
   title: 'Docute',
   highlight: ['typescript'],
+  plugins: [
+    process.env.NODE_ENV === 'production' && googleAnalytics('UA-54857209-11')
+  ].filter(Boolean),
   editLinkBase: 'https://github.com/leptosia/docute/tree/master/website/docs',
   editLinkText: 'Edit this page on GitHub',
   versions: {

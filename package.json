@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
+    "@leptosia/docute-google-analytics": "^1.0.0",
     "buble": "^0.19.3",
     "buble-loader": "^0.5.1",
     "eslint-config-rem": "^3.0.0",

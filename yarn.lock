@@ -783,6 +783,13 @@
     cssnano-preset-default "^4.0.0"
     postcss "^7.0.0"
 
+"@leptosia/docute-google-analytics@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@leptosia/docute-google-analytics/-/docute-google-analytics-1.0.0.tgz#6e1d96fc990ab2fadec0bdea5e8758ee98461078"
+  integrity sha512-3Ilc2wWrbG09iVecmvPgyhXSu5jqvr5yaQ2sq2EwUzyxvpr5t2t/0k4CQ3MWk1v/uTspZrjBfeq14FrYmutg6g==
+  dependencies:
+    vue-ga "^1.0.0"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.npmjs.org/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -8499,6 +8506,11 @@ vue-eslint-parser@^3.2.1:
     espree "^4.0.0"
     esquery "^1.0.1"
     lodash "^4.17.10"
+
+vue-ga@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/vue-ga/-/vue-ga-1.0.0.tgz#c890fc529970af10abef2c42c81ea38cfb00cef1"
+  integrity sha1-yJD8UplwrxCr7yxCyB6jjPsAzvE=
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.1"
