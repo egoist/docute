@@ -12,6 +12,7 @@ import EvaluateTag from './components/EvaluateTag.vue'
 // Built-in plugins
 import i18nPlugin from './plugins/i18n'
 import evaluateTagsPlugin from './plugins/evaluateTags'
+import versionsPlugin from './plugins/versions'
 
 sync(store, router)
 
@@ -39,6 +40,7 @@ class Docute {
     const plugins = [
       i18nPlugin,
       evaluateTagsPlugin,
+      versionsPlugin,
       ...(store.state.originalConfig.plugins || [])
     ]
     this.pluginApi = new PluginAPI({plugins, store, router})

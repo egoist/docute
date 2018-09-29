@@ -77,4 +77,11 @@ body {
     outline: 0;
     appearance: none;
   }
+
+  &.is-block {
+    width: 100%;
+    & select {
+      width: 100%;
+    }
+  }
 }

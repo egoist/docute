@@ -1,6 +1,6 @@
 <template>
   <div class="LanguageSelector">
-    <div class="docute-select">
+    <div class="docute-select is-block">
       <select @change="handleChange">
         <option disabled>Choose Language</option>
         <option

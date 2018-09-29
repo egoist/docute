@@ -6,6 +6,14 @@ new Docute({
   highlight: ['typescript'],
   editLinkBase: 'https://github.com/leptosia/docute/tree/master/website/docs',
   editLinkText: 'Edit this page on GitHub',
+  versions: {
+    v4: {
+      link: '/'
+    },
+    v3: {
+      link: 'https://v3.docute.org'
+    }
+  },
   nav: [
     {
       links: [
@@ -70,6 +78,8 @@ new Docute({
   overrides: {
     '/': {
       language: 'English'
+    },
+    '/v2/': {
     },
     '/zh/': {
       language: 'Chinese',
