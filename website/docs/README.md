@@ -61,6 +61,10 @@ Then you can serve this folder as a static website on your machine using:
 - Golang: `caddy`
 - ..or whatever static web server
 
+Here's a CodeSandbox starter which you can preview right now or download to run locally:
+
+<iframe src="https://codesandbox.io/embed/174359y77?module=%2Fmain.js" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
 ## Browser Compatibility
 
 Docute supports all ever-green browsers, i.e. No IE support!
