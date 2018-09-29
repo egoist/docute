@@ -48,6 +48,10 @@ new Docute({
           link: '/guide/internationalization'
         },
         {
+          title: 'Customization',
+          link: '/guide/customization'
+        },
+        {
           title: 'Plugin',
           link: '/guide/plugin'
         },
