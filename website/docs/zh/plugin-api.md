@@ -1,38 +1,38 @@
-# Plugin API
+# 插件 API
 
-Plugin properties:
+插件属性：
 
-- `name`: `string` Plugin name.
-- `extend(api: PluginAPI)`: Extending core features.
+- `name`：`string` 插件名称.
+- `extend(api: PluginAPI)`：扩展核心功能
 
 ## api.processMarkdown(fn)
 
-- `fn`: `(text: string) => string`
+- `fn`：`(text: string) => string`
 
-Process markdown.
+处理 markdown。
 
 ## api.processHTML(fn)
 
-- `fn`: `(html: string) => string`
+- `fn`：`(html: string) => string`
 
-Process HTML.
+处理 HTML.
 
 ## api.extendMarkedRenderer(fn)
 
-- `fn`: `(renderer: marked.Renderer) => void`
+- `fn`：`(renderer: marked.Renderer) => void`
 
-You can use `fn` to modify the [marked renderer](https://marked.js.org/#/USING_PRO.md#renderer) we use.
+你可以使用 `fn` 来修改我们使用的 [marked 渲染器](https://marked.js.org/#/USING_PRO.md#renderer)。
 
 ## api.onContentUpdated(fn)
 
-- `fn`: `(vm: Vue) => void`
+- `fn`：`(vm: Vue) => void`
 
-`fn` will be called when the page content is updated.
+更新页面内容时将调用 `fn`。
 
 ## api.router
 
-Basically the [Vue Router](https://router.vuejs.org/api/#router-instance-properties) instace.
+基本上是 [Vue Router](https://router.vuejs.org/api/#router-instance-properties) 实例。
 
 ## api.store
 
-Basically the [Vuex](https://vuex.vuejs.org/api/#vuex-store-instance-properties) instance.
+基本上是 [Vuex](https://vuex.vuejs.org/api/#vuex-store-instance-properties) 实例。
