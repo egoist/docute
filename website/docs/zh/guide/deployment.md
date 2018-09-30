@@ -1,17 +1,17 @@
-# Deployment
+# 部署
 
-Keep in mind, it's just a static HTML file that can be served anywhere.
+请记住，它只是一个在任何地方都可以提供的静态 HTML 文件。
 
-## Netlify <Badge>Recommended</Badge>
+## Netlify <Badge>推荐</Badge>
 
-1. Login to your [Netlify](https://www.netlify.com/) account.
-2. In the [dashboard](https://app.netlify.com/) page, click __New site from Git__.
-3. Choose a repository where you store your docs, leave the __Build Command__ area blank, fill in the __Publish directory__ area with the directory of your `index.html`, for example it should be `docs` if you populated it at `docs/index.html`.
+1. 登录你的 [Netlify](https://www.netlify.com/) 账号。
+2. 在 [dashboard](https://app.netlify.com/) 页，点击 __New site from Git__.
+3. 选择一个存储文档的仓库，将 __Build Command__ 区域留空， blank，用 `index.html` 的目录填写 __Publish directory__ 区域，例如，`docs/index.html`，应填为 `docs`。
 
 ## GitHub Pages
 
-The easiest way to use GitHub Pages is to populate all your files inside `./docs` folder on the master branch, and then use this folder for GitHub Pages:
+使用 Github Pages 最简单的方式是在 master 分支上的 `./docs` 文件夹中加入所有文件，然后将此文件夹用于 Github Pages：
 
 <ImageZoom url="https://i.loli.net/2018/06/11/5b1e0da0c173a.png" alt="github pages" :border="true" />
 
-However you can still use `gh-pages` branch or even `master` branch to serve your docs, it all depends on your needs.
+但是你仍然可以使用 `gh-pages` 分支或者 `master` 分支来为你的文档提供服务，这一切都取决于你的需求。
