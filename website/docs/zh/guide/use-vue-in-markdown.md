@@ -1,18 +1,18 @@
-# Use Vue in Markdown
+# 在 Markdown 中使用 Vue
 
-Leverage the power of Vue and JavaScript in writing Markdown document!
+在编写 Markdown 文档时可以充分利用 Vue 和 JavaScript 的强大功能！
 
-## Interpolation
+## 插值（Interpolation）
 
-Each markdown file is first compiled into HTML and then rendered as a Vue component. This means you can use Vue-style interpolation in text:
+每个 Markdown 文件首先会编译为 HTML，然后渲染为 Vue 组件这意味着你可以在文本中使用 Vue 式的插值：
 
-__Input__:
+__输入__:
 
 ```markdown
 {{ 1 + 1 }}
 ```
 
-__Output__:
+__输出__:
 
 ```
 2
@@ -20,29 +20,29 @@ __Output__:
 
 ## Escaping
 
-If you want to disable Vue-style interpolation in text, you can wrap it inside code fence or inline code as follows:
+如果要在文本中禁用 Vue 式插值，可以将其包装在代码块或内联代码中，如下所示：
 
-__Input__:
+__输入__:
 
 ````markdown
 ```js
-const foo = `{{ safe, this won't be interpolated! }}`
+const foo = `{{ 安全，这不会被插值！}}`
 ```
 
-And `{{ bar }}` is safe too!
+`{{ bar }}` 也是安全的！
 ````
 
-__Output__:
+__输出__:
 
 ```js
-const foo = `{{ safe, this won't be interpolated! }}`
+const foo = `{{ 安全，这不会被插值！}}`
 ```
 
-And `{{ bar }}` is safe too!
+`{{ bar }}` 也是安全的！
 
-## Using Components
+## 使用组件
 
-Docute exposed the `Vue` constructor on `window` object, so you can use it to register global components in order to use in your Markdown document:
+Docute 在 `window` 对象上暴露了 `Vue` 的构造函数，因此你可以使用它来注册全局组件，以便于在 Markdown 文档中使用：
 
 ```js {highlight:['13-20'],evaluate:true}
 Vue.component('ReverseText', {
@@ -68,20 +68,20 @@ Vue.component('ReverseText', {
 })
 ```
 
-You may notice the highlighted part, the `css` option only works with Docute, it is used to inject `<style>` tag to `document.head` when the component is created, and remove the `<style>` tag when the component is destroyed. This is designed for directly using Docute in browser via `<script>` tag.
+你可能会注意到高亮的部分，`css` 选项仅适用于 Docute，它用于在创建组件时，将 `style` 标签注入 `docsment.head`，当删除 `<style>` 标签时，该组件销毁。这样设计的目的为了在浏览器中通过 `<script>` 标签直接使用 Docute。
 
-__Input__:
+__输入__:
 
 ```markdown
 <ReverseText text="hello world" />
 ```
 
-__Output__:
+__输出__:
 
 <ReverseText text="hello world" />
 
 ## Trade-offs
 
-- `@` shorthand won't work
+- `@` 简写语法不能工作
 
-Since standard HTML attribute isn't allowed to start with `@`, the `@` shorthand for `v-on` directive won't be recognized as valid HTML by the markdown parser we use. Pull request is very welcome for fixing this.
+由于标准的 HTML 属性不允许以 `@` 开头，因此我们使用的 markdown 解析器不会将 `v-on` 的简写 `@` 识别为有效的 HTML。非常欢迎大家发起 Pull Request 解决该问题。
