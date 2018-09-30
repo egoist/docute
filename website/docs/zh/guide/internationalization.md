@@ -1,6 +1,6 @@
-# Internationalization
+# 国际化
 
-As Docute uses a URL-based API, adding multi-language support can be pretty easy:
+由于 Docute 使用基于 URL 的 API实现，因此添加多语言支持非常简单：
 
 ```
 docs
@@ -15,9 +15,9 @@ docs
       └─ README.md
 ```
 
-With above folder structure, users can visit the *Chinese* version of your docs via URL `/zh/`.
+使用上述文件夹结构，用户可以通过 URL `/zh/` 访问文档的*中文*版本。
 
-Then you can use the `overrides` option to localize the text used in UI:
+然后，可以使用 `overrides` 选项来本地化 UI 中使用的文本：
 
 ```js
 new Docute({

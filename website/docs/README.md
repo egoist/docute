@@ -65,6 +65,20 @@ Here's a CodeSandbox starter which you can preview right now or download to run 
 
 <iframe src="https://codesandbox.io/embed/174359y77?module=%2Fmain.js" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
+## Comparisons
+
+### VuePress / GitBook / Hexo
+
+They all generate static HTML at build time, which is good for SEO. 
+
+If you care about SEO, you may like using [tokio](https://github.com/egoist/tokio) to prerender your website.
+
+### Docsify
+
+[Docsify](https://docsify.js.org/#/) and Docute are pretty much the same, but with different UI and different usages.
+
+Docute (60kB) is 3 times bigger than Docisfy (20kB), because we use Vue, Vue Router and Vuex while Docsify uses vanilla JavaScript under the hood.
+
 ## Browser Compatibility
 
 Docute supports all ever-green browsers, i.e. No IE support!

@@ -31,7 +31,7 @@ You can use `fn` to modify the [marked renderer](https://marked.js.org/#/USING_P
 
 ## api.router
 
-Basically the [Vue Router](https://router.vuejs.org/api/#router-instance-properties) instace.
+Basically the [Vue Router](https://router.vuejs.org/api/#router-instance-properties) instance.
 
 ## api.store
 

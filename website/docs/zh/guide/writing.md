@@ -1,56 +1,56 @@
-# Writing
+# 撰写
 
-A document should be easy-to-read and easy-to-write.
+文档应易于阅读且易于撰写。
 
-## Document Format
+## 文档规范
 
-A document is represented in Markdown format:
-
-```markdown
-# Title
-
-The content goes here...
-```
-
-Check out the introduction for [Markdown](https://daringfireball.net/projects/markdown/) if you're not sure what it is.
-
-## Links
-
-### Internal Links
-
-Internal links are converted to `<router-link>` for SPA-style navigation.
-
-__Input__:
+文档应以 Markdown 格式展现:
 
 ```markdown
-- [Home](/) <!-- Send the user to Homepage -->
-- [Use Vue in Markdown](/guide/use-vue-in-markdown) <!-- Send the user to another page -->
+# 标题
+
+内容填在这里...
 ```
 
-__Output__:
+如果你不知道它是什么，请查阅 [Markdown](https://daringfireball.net/projects/markdown/)。
 
-- [Home](/) <!-- Send the user to Homepage -->
-- [Use Vue in Markdown](/guide/use-vue-in-markdown) <!-- Send the user to another page -->
+## 链接
 
-### External Links
+### 内部链接
 
-External links automatically gets HTML attributes `target="_blank" rel="noopener noreferrer"`, for example:
+内部链接会转换为 `<router-link>` 进行 SPA 式导航。
 
-__Input__:
+__输入__：
+
+```markdown
+- [首页](/) <!-- 展示首页 -->
+- [在 Markdown 中使用 Vue](/guide/use-vue-in-markdown) <!-- 展示其他页面 -->
+```
+
+__输出__：
+
+- [首页](/) <!-- 展示首页 -->
+- [在 Markdown 中使用 Vue](/guide/use-vue-in-markdown) <!-- 展示其他页面 -->
+
+### 外部链接
+
+外部链接会自动添加 HTML 属性 `target="_blank" rel="noopener noreferrer"`，例如：
+
+__输入__：
 
 ```markdown
 - [Docute website](https://docute.org)
 - [Docute repo](https://github.com/egoist/docute)
 ```
 
-__Output__:
+__输出__：
 
 - [Docute website](https://docute.org)
 - [Docute repo](https://github.com/egoist/docute)
 
-## Code Highlighting
+## 代码高亮 Highlighting
 
-Code fences will be highlighted using [Prism.js](https://prismjs.com/), example code:
+代码框使用 [Prism.js](https://prismjs.com/) 高亮显示，示例代码：
 
 ```js
 // Returns a function, that, as long as it continues to be invoked, will not
@@ -73,18 +73,18 @@ function debounce(func, wait, immediate) {
 };
 ```
 
-The languages we support by default:
+默认支持的语言：
 
 - JavaScript
 - CSS
 - Markdown
 - HTML
 
-You can use [highlight](/options#highlight) option to add more languages.
+你可以查看[高亮](/options#高亮)选项添加更多语言。
 
-## Line Highlighting in Code Fences
+## 代码框中某行高亮显示
 
-__Input:__
+__输入：__
 
 ````markdown
 ```js {highlight:[3,'5-7',12]}
@@ -108,7 +108,7 @@ class SkinnedMesh extends THREE.Mesh {
 ```
 ````
 
-__Output:__
+__输出：__
 
 ```js {highlight:[3,'5-7',12]}
 class SkinnedMesh extends THREE.Mesh {
@@ -129,3 +129,29 @@ class SkinnedMesh extends THREE.Mesh {
   }
 }
 ```
+
+## 使用 Mermaid
+
+[Mermaid](https://mermaidjs.github.io/) 是一种纯文本撰写图表的方法，你可以使用简单的 Docute 插件来添加对 Mermaid 的支持：
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/docute@4.0.3/dist/docute.js"></script>
+<!-- Load mermaid -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
+<!-- Load the mermaid plugin -->
+<script src="https://cdn.jsdelivr.net/npm/@leptosia/docute-mermaid@1/dist/index.min.js"></script>
+
+<!-- Use the plugin -->
+<script>
+new Docute({
+  // ...
+  plugins: [
+    docuteMermaid()
+  ]
+})
+</script>
+```
+
+这是一个有效的示例：
+
+<iframe src="https://codesandbox.io/embed/z2r960n3v4" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
