@@ -1,6 +1,6 @@
-# 选项
+# 配置项
 
-用于 `Docute` 构造函数的选项。
+用于 `Docute` 构造函数的配置项。
 
 ```js
 new Docute(options)

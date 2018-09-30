@@ -1,6 +1,6 @@
-# 书写规范
+# 撰写
 
-文档应易于阅读且易于编写。
+文档应易于阅读且易于撰写。
 
 ## 文档规范
 
@@ -132,7 +132,7 @@ class SkinnedMesh extends THREE.Mesh {
 
 ## 使用 Mermaid
 
-[Mermaid](https://mermaidjs.github.io/) 是一种纯文本编写图表的方法，你可以使用简单的 Docute 插件来添加对 Mermaid 的支持：
+[Mermaid](https://mermaidjs.github.io/) 是一种纯文本撰写图表的方法，你可以使用简单的 Docute 插件来添加对 Mermaid 的支持：
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/docute@4.0.3/dist/docute.js"></script>

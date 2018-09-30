@@ -101,6 +101,10 @@ new Docute({
               toc: false
             },
             {
+              title: 'Credits and Trade-offs',
+              link: '/zh/credits-and-tradeoffs'
+            },
+            {
               title: 'GitHub',
               link: 'https://github.com/leptosia/docute'
             }
@@ -118,6 +122,18 @@ new Docute({
               link: '/zh/guide/use-vue-in-markdown'
             },
             {
+              title: '国际化',
+              link: '/zh/guide/internationalization'
+            },
+            {
+              title: '自定义',
+              link: '/zh/guide/customization'
+            },
+            {
+              title: '插件',
+              link: '/zh/guide/plugin'
+            },
+            {
               title: '部署',
               link: '/zh/guide/deployment'
             }
@@ -133,6 +149,10 @@ new Docute({
             {
               title: '内置组件',
               link: '/zh/builtin-components'
+            },
+            {
+              title: '插件 API',
+              link: '/zh/plugin-api'
             }
           ]
         }
