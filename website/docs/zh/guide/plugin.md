@@ -1,12 +1,12 @@
-# Plugin
+# 插件
 
-A plugin is essentially a pure object:
+插件本质上是一个纯对象（pure object）：
 
 ```js
 const showAuthor = {
-  // Plugin name
+  // 插件名称
   name: 'showAuthor',
-  // Extend core features
+  // 扩展核心功能
   extend(api) {
     api.processMarkdown(text => {
       return text.replace(/{author}/g, '> Written by EGOIST')
@@ -22,10 +22,10 @@ new Docute({
 })
 ```
 
-Example:
+示例:
 
 ```markdown
-# Page Title
+# Page 标题
 
 {author}
 ```
@@ -34,14 +34,14 @@ Example:
 
 ---
 
-To accept options in your plugin, you can use a factory function:
+要接收插件中的选项，可以使用工厂函数：
 
 ```js
 const myPlugin = opts => {
   return {
     name: 'my-plugin',
     extend(api) {
-      // do something with `opts` and `api`
+      // 使用 `opts` 和 `api` 做点什么
     }
   }
 }
@@ -55,4 +55,4 @@ new Docute({
 
 ---
 
-For more information on how to develop a plugin, please check out [Plugin API](/plugin-api).
+欲了解更多如何开发插件的信息，请查阅[插件 API](/zh/plugin-api)。
