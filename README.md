@@ -9,6 +9,10 @@ https://docute.org
 
 Are you looking for the v3 docs? See [here](https://v3.docute.org).
 
+## Resources
+
+- [Plugins List](https://github.com/leptosia/docute-plugins)
+
 ## Contributing
 
 1. Fork it!
