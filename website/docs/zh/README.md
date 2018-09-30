@@ -65,6 +65,21 @@ Docute 本质上就是一个 JavaScript 文件，它可以获取 Markdown 文件
 
 <iframe src="https://codesandbox.io/embed/174359y77?module=%2Fmain.js" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
+## 比较
+
+### VuePress / GitBook / Hexo
+
+这些项目在构建时会生成静态的 HTML，这对 SEO 非常有帮助。
+
+如果你在意 SEO，那你可能会喜欢使用 [tokio](https://github.com/egoist/tokio) 来预渲染你的网站。
+
+### Docsify
+
+[Docsify](https://docsify.js.org/#/) 和 Docute 几乎相同，但具有不同的 UI 和不同的使用方式。
+
+Docute（60kB）比 Docisfy（20kB）大 3 倍，因为我们使用了 Vue，Vue Router 和 Vuex，而 Docsify 使用的是 vanilla JavaScript。
+
+
 ## 浏览器兼容性
 
 Docute 支持所有常青浏览器（ever-green browsers），即没有对 IE 进行支持！
