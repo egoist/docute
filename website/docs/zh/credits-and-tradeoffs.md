@@ -2,25 +2,25 @@
 
 ## Credits
 
-### Vue Ecosystem
+### Vue 生态系统
 
-This project won't exist without the help from Vue and its ecosystem.
+没有 Vue 及其生态系统的帮助，该项目就不会出现。
 
 ### Reach Tech
 
-The UI is inspired by [Reach Tech](https://reach.tech).
+UI 的灵感来源于 [Reach Tech](https://reach.tech)。
 
 ## Trade-offs
 
 ### VuePress / GitBook / Hexo
 
-They all generate static HTML at build time, which is good for SEO. 
+这些项目在构建时会生成静态的 HTML，这对 SEO 非常有帮助。
 
-If you care about SEO, you may like using [tokio](https://github.com/egoist/tokio) to prerender your website.
+如果你在意 SEO，那你可能会喜欢使用 [tokio](https://github.com/egoist/tokio) 来预渲染你的网站。
 
 ### Docsify
 
-[Docsify](https://docsify.js.org/#/) and Docute are pretty much the same, but with different UI and different usages.
+[Docsify](https://docsify.js.org/#/) 和 Docute 几乎相同，但具有不同的 UI 和不同的使用方式。
 
-Docute (60kB) is 3 times bigger than Docisfy (20kB), because we use Vue, Vue Router and Vuex while Docsify uses vanilla JavaScript under the hood.
+Docute（60kB）比 Docisfy（20kB）大 3 倍，因为我们使用了 Vue，Vue Router 和 Vuex，而 Docsify 使用的是 vanilla JavaScript。
 
