@@ -34,22 +34,6 @@ export default (env, hooks) => {
   renderer.codespan = text => `<code v-pre>${text}</code>`
   const origCode = renderer.code
   renderer.code = function(code, lang, excaped, opts) {
-    if (opts) {
-      try {
-        // eslint-disable-next-line no-new-func
-        const fn = new Function(`return ${opts}`)
-        opts = fn()
-      } catch (error) {
-        throw new Error(
-          `You're using invalid options for code fences, it must be JSON or JS object!\n${
-            error.message
-          }`
-        )
-      }
-    } else {
-      opts = {}
-    }
-
     let res = origCode
       .call(this, code, lang, excaped)
       .replace(/^<pre>/, '<pre v-pre>')

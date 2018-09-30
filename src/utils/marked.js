@@ -6,6 +6,9 @@
  * Modified for Docute, since commit marked#f93d858cb85c
  */
 
+ // @modified
+ import parseCodeOptions from './parseCodeOptions'
+
 /**
  * Block-Level Grammar
  */
@@ -244,6 +247,7 @@ Lexer.prototype.token = function(src, top) {
       continue
     }
 
+    // @modified
     // fences (gfm)
     if ((cap = this.rules.fences.exec(src))) {
       src = src.substring(cap[0].length)
@@ -251,7 +255,7 @@ Lexer.prototype.token = function(src, top) {
         type: 'code',
         lang: cap[2],
         text: cap[4] || '',
-        opts: cap[3]
+        opts: parseCodeOptions(cap[3])
       })
       continue
     }
