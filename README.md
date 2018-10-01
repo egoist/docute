@@ -34,3 +34,13 @@ Are you looking for the v3 docs? See [here](https://v3.docute.org).
 Authored and maintained by EGOIST with help from contributors ([list](https://github.com/leptosia/docute/contributors)).
 
 > [github.com/leptosia](https://github.com/leptosia) · GitHub [@leptosia](https://github.com/leptosia) · Twitter [@leptosia](https://twitter.com/leptosia)
+
+## Projects that are using Docute
+https://xmake.io <br>
+https://lad.js.org <br>
+https://lass.js.org <br>
+https://lipo.io <br>
+https://forwardemail.net <br>
+https://cabinjs.com <br>
+https://niftylettuce.com/frisbee <br>
+https://niftylettuce.com/email-templates 
