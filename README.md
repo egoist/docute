@@ -1,12 +1,12 @@
 
 # Docute
 
-Effortlessly documentation done right.
+Effortless documentation, done right.
 
 ## Features
 
 - No build process, website is generated on the fly.
-- A simple yet elegant UI that is dedicated to documentations.
+- A simple yet elegant UI that is dedicated to documentation.
 - Leveraging the power of Markdown and Vue.
 - Extensible plugin system, plenty of official and community plugins.
 
