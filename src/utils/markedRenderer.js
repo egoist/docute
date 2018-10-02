@@ -33,12 +33,12 @@ export default (env, hooks) => {
   // Disable template interpolation in code
   renderer.codespan = text => `<code v-pre>${text}</code>`
   const origCode = renderer.code
-  renderer.code = function(code, lang, excaped, opts) {
+  renderer.code = function(code, lang, escaped, opts) {
     let res = origCode
-      .call(this, code, lang, excaped)
+      .call(this, code, lang, escaped)
       .replace(/^<pre>/, '<pre v-pre>')
 
-    if (opts.highlight) {
+    if (opts && opts.highlight) {
       const codeMask = code
         .split('\n')
         .map((v, i) => {
