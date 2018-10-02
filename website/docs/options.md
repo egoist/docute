@@ -9,8 +9,9 @@ new Docute(options)
 ## target
 
 - Type: `string`
+- Default: `docute`
 
-Create app at target selector, e.g. `#docute`.
+The ID of the target element to locate, e.g. `app` or `#app`.
 
 ## title
 

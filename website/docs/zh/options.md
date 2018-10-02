@@ -6,11 +6,13 @@
 new Docute(options)
 ```
 
+
 ## target
 
-- 类型：`string`
+- Type: `string`
+- Default: `docute`
 
-在目标选择器上创建 app，例如：`#docute`。
+目标元素的 ID，会被用于创建 app，比如 `app` 或者 `#app`。
 
 ## title
 

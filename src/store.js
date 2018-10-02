@@ -96,6 +96,12 @@ const store = new Vuex.Store({
   },
 
   getters: {
+    target({originalConfig: {target}}) {
+      if (!target) return 'docute'
+      if (target[0] === '#') return target.slice(1)
+      return target
+    },
+
     languageOverrides({originalConfig}) {
       // `locales` is for legacy support
       const overrides = originalConfig.overrides || originalConfig.locales

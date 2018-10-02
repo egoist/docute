@@ -31,7 +31,7 @@ Vue.mixin({
 })
 
 class Docute {
-  constructor({target, ...config} = {}) {
+  constructor(config = {}) {
     store.commit('SET_ORIGINAL_CONFIG', {
       title: document.title,
       ...config
@@ -53,18 +53,34 @@ class Docute {
       render: h => h(Root)
     })
 
-    if (target) {
-      this.start(target)
+    if (config.mount !== false) {
+      this.mount()
     }
   }
 
-  start(target) {
-    this.app.$mount(target)
+  mount() {
+    const {target} = store.getters
+    this.app.$mount(`#${target}`)
+    this.collectInstance()
+    return this
   }
 
+  /**
+   * @private
+   */
   applyPlugins() {
     for (const plugin of this.pluginApi.plugins) {
       plugin.extend(this.pluginApi)
+    }
+  }
+
+  /**
+   * Used in pre-render
+   * @private
+   */
+  collectInstance() {
+    if (typeof window !== 'undefined' && window.__DOCUTE_INSTANCE__) {
+      window.__DOCUTE_INSTANCE__ = this
     }
   }
 }

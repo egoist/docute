@@ -2,7 +2,7 @@ import googleAnalytics from '@leptosia/docute-google-analytics'
 import Docute from '../src'
 
 new Docute({
-  target: '#app',
+  target: 'app',
   title: 'Docute',
   highlight: ['typescript'],
   plugins: [
