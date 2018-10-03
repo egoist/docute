@@ -162,7 +162,7 @@ const store = new Vuex.Store({
       if (config.nav) {
         console.warn('"nav" option has been renamed to "sidebar".')
       }
-      return config.sidebar || config.nav
+      return config.sidebar || config.nav || []
     }
   }
 })
