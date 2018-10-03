@@ -3,14 +3,14 @@
     <div class="prev-link" v-if="prevLinkItem">
       ← <router-link
           :to="prevLinkItem.link">
-        {{ prevLinkItem.title }}
+        {{ prevLinkItem.text }}
       </router-link>
     </div>
 
     <div class="next-link" v-if="nextLinkItem">
       <router-link
         :to="nextLinkItem.link">
-        {{ nextLinkItem.title }}
+        {{ nextLinkItem.text }}
       </router-link> →
     </div>
   </div>

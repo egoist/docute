@@ -1,7 +1,8 @@
 <template>
-  <div class="Page">
+  <div class="Page" :class="{'has-header': showHeader}">
     <Sidebar />
     <SidebarMask />
+    <DesktopHeader v-if="showHeader" />
     <MobileHeader />
     <div
       class="Main"
@@ -43,6 +44,7 @@ import jump from 'jump.js'
 import {ContentLoader} from 'vue-content-loader'
 import Sidebar from '../components/Sidebar.vue'
 import SidebarMask from '../components/SidebarMask.vue'
+import DesktopHeader from '../components/DesktopHeader.vue'
 import MobileHeader from '../components/MobileHeader.vue'
 import PrevNextLinks from '../components/PrevNextLinks.vue'
 import EditLink from '../components/EditLink.vue'
@@ -56,6 +58,7 @@ export default {
     ContentLoader,
     Sidebar,
     SidebarMask,
+    DesktopHeader,
     MobileHeader,
     PrevNextLinks,
     EditLink,
@@ -94,6 +97,14 @@ export default {
         name: 'MarkdownBody',
         template: `<div class="markdown-body">${this.$store.state.html}</div>`
       }
+    },
+
+    showHeader() {
+      return (
+        this.$pluginApi.hasComponents('header:start') ||
+        this.$pluginApi.hasComponents('header:end') ||
+        this.$store.getters.config.nav
+      )
     }
   },
 
@@ -131,18 +142,26 @@ export default {
 </style>
 
 <style scoped>
+@import 'vars.css';
+
 .Docute {
   display: flex;
 }
 
 .Main {
-  margin-left: 250px;
+  margin-left: var(--sidebar-width);
   max-width: 800px;
   padding: 20px 80px 80px;
 
   &.is-center {
     margin: 0 auto;
     margin-left: auto;
+  }
+}
+
+.has-header {
+  & .Main {
+    margin-top: var(--header-height);
   }
 }
 </style>
@@ -152,7 +171,7 @@ export default {
 
 @media screen and (max-width: 1300px) {
   .Main.is-center {
-    margin-left: 250px;
+    margin-left: var(--sidebar-width);
   }
 }
 
@@ -162,7 +181,7 @@ export default {
     padding: 40px 20px;
     margin-left: 0;
     max-width: 100%;
-    margin-top: var(--mobile-header-height);
+    margin-top: var(--header-height);
   }
 }
 </style>

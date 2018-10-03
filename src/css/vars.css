@@ -1,5 +1,7 @@
 :root {
+  --text-color: #2c3e50;
   --accent-color: #1159a6;
   --border-color: rgb(234, 234, 234);
-  --mobile-header-height: 50px;
+  --header-height: 3.6rem;
+  --sidebar-width: 250px;
 }

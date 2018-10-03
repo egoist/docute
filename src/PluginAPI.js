@@ -27,6 +27,10 @@ export default class PluginAPI {
     return this.components[position] || []
   }
 
+  hasComponents(position) {
+    return this.getComponents(position).length > 0
+  }
+
   processMarkdown(fn) {
     this.hooks.add('processMarkdown', fn)
     return this

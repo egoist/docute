@@ -28,12 +28,12 @@ An array of navigation items to display in sidebar.
 
 ```ts
 interface SidebarItem {
-  title?: string
+  text?: string
   links: Array<ItemLink>
 }
 
 interface ItemLink {
-  title: string
+  text: string
   link: string
   /* Whether to show TOC, true by default */
   toc?: boolean

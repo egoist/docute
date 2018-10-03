@@ -5,12 +5,14 @@
 </template>
 
 <style scoped>
+@import 'vars.css';
+
 .Rightbar {
   position: fixed;
   top: 20px;
   right: 20px;
   z-index: 9;
-  width: 250px;
+  width: var(--sidebar-width);
 }
 </style>
 

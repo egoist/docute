@@ -8,7 +8,7 @@
 :root {
   --accent-color: #1159a6;
   --border-color: #eaeaea;
-  --mobile-header-height: 50px;
+  --header-height: 50px;
 }
 ```
 

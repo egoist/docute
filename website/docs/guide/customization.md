@@ -8,7 +8,7 @@ Default [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_C
 :root {
   --accent-color: #1159a6;
   --border-color: #eaeaea;
-  --mobile-header-height: 50px;
+  --header-height: 50px;
 }
 ```
 

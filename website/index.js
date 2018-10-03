@@ -3,77 +3,77 @@ import Docute from '../src'
 
 new Docute({
   target: 'app',
-  title: 'Docute',
+  text: 'Docute',
   highlight: ['typescript'],
   plugins: [
     process.env.NODE_ENV === 'production' && googleAnalytics('UA-54857209-11')
   ].filter(Boolean),
   editLinkBase: 'https://github.com/leptosia/docute/tree/master/website/docs',
   editLinkText: 'Edit this page on GitHub',
-  versions: {
-    v4: {
+  // versions: {
+  //   v4: {
+  //     link: '/'
+  //   },
+  //   v3: {
+  //     link: 'https://v3.docute.org'
+  //   }
+  // },
+  nav: [
+    {
+      text: 'Home',
       link: '/'
     },
-    v3: {
-      link: 'https://v3.docute.org'
-    }
-  },
-  sidebar: [
     {
-      links: [
-        {
-          title: 'Home',
-          link: '/',
-          toc: false
-        },
-        {
-          title: 'GitHub',
-          link: 'https://github.com/leptosia/docute'
-        }
-      ]
+      text: 'GitHub',
+      link: 'https://github.com/leptosia/docute'
     },
     {
-      title: 'Guide',
+      type: 'languages'
+    }
+  ],
+  sidebar: [
+    {
+      text: 'Guide',
       links: [
         {
-          title: 'Writing',
+          text: 'Writing',
           link: '/guide/writing'
         },
         {
-          title: 'Use Vue in Markdown',
+          text: 'Use Vue in Markdown',
           link: '/guide/use-vue-in-markdown'
         },
         {
-          title: 'Internationalization',
+          text: 'Internationalization',
           link: '/guide/internationalization'
         },
         {
-          title: 'Customization',
+          text: 'Customization',
           link: '/guide/customization'
         },
         {
-          title: 'Plugin',
+          text: 'Plugin',
           link: '/guide/plugin'
         },
         {
-          title: 'Deployment',
+          text: 'Deployment',
           link: '/guide/deployment'
         }
       ]
     },
     {
-      title: 'References',
+      text: 'References',
       links: [
         {
-          title: 'Options',
+          text: 'Options',
           link: '/options'
         },
         {
-          title: 'Built-in Components',
+          text: 'Built-in Components',
           link: '/builtin-components'
         },
         {
-          title: 'Plugin API',
+          text: 'Plugin API',
           link: '/plugin-api'
         }
       ]
@@ -81,74 +81,74 @@ new Docute({
   ],
   overrides: {
     '/': {
-      language: 'English'
-    },
-    '/v2/': {
+      language: 'English',
+      chooseLanguageText: 'Languages'
     },
     '/zh/': {
       language: 'Chinese',
+      chooseLanguageText: '切换语言',
       editLinkText: '在 GitHub 上编辑此页',
       sidebar: [
         {
+          text: '指南',
           links: [
             {
-              title: '首页',
-              link: '/zh/',
-              toc: false
-            },
-            {
-              title: 'GitHub',
-              link: 'https://github.com/leptosia/docute'
-            }
-          ]
-        },
-        {
-          title: '指南',
-          links: [
-            {
-              title: '撰写',
+              text: '撰写',
               link: '/zh/guide/writing'
             },
             {
-              title: '在 Vue 中使用 Markdown',
+              text: '在 Vue 中使用 Markdown',
               link: '/zh/guide/use-vue-in-markdown'
             },
             {
-              title: '国际化',
+              text: '国际化',
               link: '/zh/guide/internationalization'
             },
             {
-              title: '自定义',
+              text: '自定义',
               link: '/zh/guide/customization'
             },
             {
-              title: '插件',
+              text: '插件',
               link: '/zh/guide/plugin'
             },
             {
-              title: '部署',
+              text: '部署',
               link: '/zh/guide/deployment'
             }
           ]
         },
         {
-          title: '参考',
+          text: '参考',
           links: [
             {
-              title: '配置项',
+              text: '配置项',
               link: '/zh/options'
             },
             {
-              title: '内置组件',
+              text: '内置组件',
               link: '/zh/builtin-components'
             },
             {
-              title: '插件 API',
+              text: '插件 API',
               link: '/zh/plugin-api'
             }
           ]
         }
-      ]
+      ],
+      nav: [
+        {
+          text: '首页',
+          link: '/zh/'
+        },
+        {
+          text: 'GitHub',
+          link: 'https://github.com/leptosia/docute'
+        },
+        {
+          type: 'languages'
+        }
+      ],
     }
   }
 })

@@ -23,15 +23,14 @@ export default {
 .MobileHeader {
   display: none;
   padding: 0 20px;
-  height: var(--mobile-header-height);
-  line-height: var(--mobile-header-height);
-  background: var(--accent-color);
-  color: white;
+  height: calc(var(--header-height) - 1px);
+  border-bottom: 1px solid var(--border-color);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 3;
+  background: white;
 }
 
 .SiteTitle {

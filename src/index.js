@@ -8,9 +8,10 @@ import markdownMixins from './utils/markdownMixins'
 import ImageZoom from './components/ImageZoom.vue'
 import Badge from './components/Badge.vue'
 import EvaluateTag from './components/EvaluateTag.vue'
+import HeaderSelect from './components/HeaderSelect.vue'
+import ExternalLinkIcon from './components/icons/ExternalLinkIcon.vue'
 
 // Built-in plugins
-import i18nPlugin from './plugins/i18n'
 import evaluateTagsPlugin from './plugins/evaluateTags'
 import versionsPlugin from './plugins/versions'
 
@@ -20,6 +21,9 @@ Vue.use(markdownMixins)
 Vue.component(ImageZoom.name, ImageZoom)
 Vue.component(Badge.name, Badge)
 Vue.component(EvaluateTag.name, EvaluateTag)
+Vue.component(HeaderSelect.name, HeaderSelect)
+
+Vue.component(ExternalLinkIcon.name, ExternalLinkIcon)
 
 Vue.mixin({
   created() {
@@ -38,7 +42,6 @@ class Docute {
     })
 
     const plugins = [
-      i18nPlugin,
       evaluateTagsPlugin,
       versionsPlugin,
       ...(store.state.originalConfig.plugins || [])

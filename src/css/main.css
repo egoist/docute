@@ -2,17 +2,12 @@
 
 body {
   margin: 0;
-  background: #fafafa;
+  color: var(--text-color);
   font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 * {
   box-sizing: border-box;
-}
-
-.external-link-icon {
-  color: #aaa;
-  display: inline-block;
 }
 
 .medium-zoom-overlay, .medium-zoom-image--opened {

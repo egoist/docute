@@ -2,7 +2,7 @@
   <div class="Sidebar" :class="{isShown: $store.state.showSidebar}">
 
         <div class="SiteTitle">
-          <router-link to="/">{{ $store.getters.config.title }}</router-link>
+          <router-link to="/">{{ $store.getters.config.text }}</router-link>
         </div>
 
         <InjectedComponents position="sidebar:start" />
@@ -10,10 +10,10 @@
         <div class="SidebarItems">
           <div
             v-for="(item, index) in $store.getters.sidebar"
-            :class="['SidebarItem', item.title && 'hasTitle']"
+            :class="['SidebarItem', item.text && 'hasTitle']"
             :key="index">
-            <div class="ItemTitle" v-if="item.title">
-              {{ item.title }}
+            <div class="ItemTitle" v-if="item.text">
+              {{ item.text }}
             </div>
             <template v-for="(link, index) of item.links">
               <a
@@ -22,7 +22,7 @@
                 :href="link.link"
                 class="ItemLink"
                 target="_blank">
-                {{ link.title }} ↗
+                {{ link.text }} ↗
               </a>
               <router-link
                 v-else
@@ -30,7 +30,7 @@
                 :to="link.link"
                 class="ItemLink"
                 :class="{active: $route.path === link.link}">
-                {{ link.title }}
+                {{ link.text }}
               </router-link>
               <div
                 class="LinkToc"
@@ -73,37 +73,35 @@ export default {
 @import 'vars.css';
 
 .Sidebar {
-  width: 250px;
-  background: var(--accent-color);
+  width: var(--sidebar-width);
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   z-index: 9;
-  color: white;
+  color: var(--text-color);
   overflow-y: auto;
-  padding: 20px 0;
+  padding: 0 0 20px 0;
+  border-right: 1px solid var(--border-color);
+  background: white;
 
   & a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
   }
 }
 
 .SiteTitle {
-  font-size: 1.8rem;
-  font-weight: 300;
-  padding: 20px;
-  padding-top: 0;
-  line-height: 1.2;
+  font-size: 1.5rem;
+  font-weight: 500;
+  height: var(--header-height);
+  line-height: var(--header-height);
+  padding: 0 20px;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .SidebarItem {
-  &:not(:last-child) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
-  }
+  margin-top: 1.6rem;
 
   &.hasTitle {
     & .ItemLink {
@@ -131,9 +129,15 @@ export default {
   font-size: 1.1rem;
   position: relative;
 
-  &.active,
   &:hover {
-    background: rgba(255, 255, 255, 0.15);
+    color: var(--accent-color);
+  }
+
+  &.active {
+    box-shadow: inset 2px 0 0 0 #ccc;
+    background: #f0f0f0;
+    font-weight: 500;
+    color: var(--accent-color);
   }
 }
 
@@ -164,7 +168,7 @@ export default {
     content: '';
     height: 4px;
     width: 4px;
-    background: transparent;
+    background: transprent;
     display: block;
     top: 50%;
     margin-top: -2px;
@@ -172,16 +176,10 @@ export default {
     border-radius: 50%;
   }
 
-  &:hover {
-    &:before {
-      background: rgba(228, 228, 228, 0.28);
-    }
-  }
-
+  &:hover,
   &.router-link-exact-active {
-    &:before {
-      background: white;
-    }
+    font-weight: 500;
+    color: var(--accent-color);
   }
 }
 </style>
@@ -193,7 +191,7 @@ export default {
   .Sidebar {
     transform: translateX(-100%);
     width: 80%;
-    top: var(--mobile-header-height);
+    top: var(--header-height);
     transition: transform 0.5s cubic-bezier(0.5, 0.32, 0.01, 1);
 
     &.isShown {

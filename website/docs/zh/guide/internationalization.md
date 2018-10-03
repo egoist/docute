@@ -24,7 +24,7 @@ new Docute({
   sidebar: [
     {
       links: [
-        { title: 'Guide', link: '/guide' }
+        { text: 'Guide', link: '/guide' }
       ]
     }
   ],
@@ -38,7 +38,7 @@ new Docute({
       sidebar: [
         {
           links: [
-            { title: '指南', link: '/zh/guide' }
+            { text: '指南', link: '/zh/guide' }
           ]
         }
       ]

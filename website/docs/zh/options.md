@@ -29,12 +29,12 @@ new Docute(options)
 
 ```ts
 interface SidebarItem {
-  title?: string
+  text?: string
   links: Array<ItemLink>
 }
 
 interface ItemLink {
-  title: string
+  text: string
   link: string
   /* 是否显示 TOC，默认为 true */
   toc: boolean

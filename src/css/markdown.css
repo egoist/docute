@@ -33,7 +33,7 @@
   & h2 {
     color: var(--accent-color);
     font-size: 2rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--border-color);
     margin-top: 7rem;
     padding-bottom: 5px;
   }
