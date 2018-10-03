@@ -21,19 +21,19 @@ new Docute(options)
 
 网站标题。
 
-## nav
+## sidebar
 
-- 类型：`Array<NavItem>`
+- 类型：`Array<SidebarItem>`
 
 要在侧边栏中显示的导航数组。
 
 ```ts
-interface NavItem {
+interface SidebarItem {
   title?: string
-  links: Array<NavLink>
+  links: Array<ItemLink>
 }
 
-interface NavLink {
+interface ItemLink {
   title: string
   link: string
   /* 是否显示 TOC，默认为 true */

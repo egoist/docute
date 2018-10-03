@@ -20,23 +20,23 @@ The ID of the target element to locate, e.g. `app` or `#app`.
 
 Website title.
 
-## nav
+## sidebar
 
-- Type: `Array<NavItem>`
+- Type: `Array<SidebarItem>`
 
 An array of navigation items to display in sidebar.
 
 ```ts
-interface NavItem {
+interface SidebarItem {
   title?: string
-  links: Array<NavLink>
+  links: Array<ItemLink>
 }
 
-interface NavLink {
+interface ItemLink {
   title: string
   link: string
   /* Whether to show TOC, true by default */
-  toc: boolean
+  toc?: boolean
 }
 ```
 

@@ -7,41 +7,41 @@
 
         <InjectedComponents position="sidebar:start" />
 
-        <div class="SidebarNav">
+        <div class="SidebarItems">
           <div
-            :class="['NavItem', navItem.title && 'hasTitle']"
-            v-for="(navItem, index) in $store.getters.config.nav"
+            v-for="(item, index) in $store.getters.sidebar"
+            :class="['SidebarItem', item.title && 'hasTitle']"
             :key="index">
-            <div class="NavItemTitle" v-if="navItem.title">
-              {{ navItem.title }}
+            <div class="ItemTitle" v-if="item.title">
+              {{ item.title }}
             </div>
-            <template v-for="(navLink, index) of navItem.links">
+            <template v-for="(link, index) of item.links">
               <a
-                v-if="isExternalLink(navLink.link)"
+                v-if="isExternalLink(link.link)"
                 :key="index"
-                :href="navLink.link"
-                class="NavLink"
+                :href="link.link"
+                class="ItemLink"
                 target="_blank">
-                {{ navLink.title }} ↗
+                {{ link.title }} ↗
               </a>
               <router-link
                 v-else
                 :key="index"
-                :to="navLink.link"
-                class="NavLink"
-                :class="{active: $route.path === navLink.link}">
-                {{ navLink.title }}
+                :to="link.link"
+                class="ItemLink"
+                :class="{active: $route.path === link.link}">
+                {{ link.title }}
               </router-link>
               <div
-                class="NavToc"
+                class="LinkToc"
                 v-if="!$store.state.fetchingFile &&
-                navLink.toc !== false &&
-                navLink.link === $route.path &&
+                link.toc !== false &&
+                link.link === $route.path &&
                 $store.state.page.headings &&
                 $store.state.page.headings.length > 0"
                 :key="`toc-${index}`">
                 <router-link
-                  class="NavTocHeading"
+                  class="TocHeading"
                   :to="{hash: heading.slug}"
                   :data-level="heading.level"
                   v-for="heading in $store.state.page.headings"
@@ -98,7 +98,7 @@ export default {
   line-height: 1.2;
 }
 
-.NavItem {
+.SidebarItem {
   &:not(:last-child) {
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     padding-bottom: 2rem;
@@ -106,17 +106,17 @@ export default {
   }
 
   &.hasTitle {
-    & .NavLink {
+    & .ItemLink {
       font-size: 0.9rem;
     }
   }
 
-  &.hasTitle >>> .NavTocHeading {
+  &.hasTitle >>> .TocHeading {
     font-size: 0.9rem;
   }
 }
 
-.NavItemTitle {
+.ItemTitle {
   font-size: 1.2rem;
   font-style: italic;
   padding: 0 20px;
@@ -125,7 +125,7 @@ export default {
   position: relative;
 }
 
-.NavLink {
+.ItemLink {
   padding: 2px 20px;
   display: flex;
   font-size: 1.1rem;
@@ -137,7 +137,7 @@ export default {
   }
 }
 
-.NavTocHeading {
+.TocHeading {
   display: flex;
   line-height: 1.4;
   margin-bottom: 3px;

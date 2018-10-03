@@ -18,7 +18,7 @@ new Docute({
       link: 'https://v3.docute.org'
     }
   },
-  nav: [
+  sidebar: [
     {
       links: [
         {
@@ -88,7 +88,7 @@ new Docute({
     '/zh/': {
       language: 'Chinese',
       editLinkText: '在 GitHub 上编辑此页',
-      nav: [
+      sidebar: [
         {
           links: [
             {

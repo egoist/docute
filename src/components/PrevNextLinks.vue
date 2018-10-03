@@ -17,20 +17,11 @@
 </template>
 
 <script>
-import {isExternalLink} from '../utils'
+import {mapGetters} from 'vuex'
 
 export default {
   computed: {
-    navLinks() {
-      const nav = this.$store.getters.config.nav || []
-      return nav
-        .reduce((res, next) => {
-          return [...res, ...next.links]
-        }, [])
-        .filter(item => {
-          return !isExternalLink(item.link)
-        })
-    },
+    ...mapGetters(['sidebarLinks']),
 
     currentLink() {
       return this.$route.path
@@ -40,9 +31,9 @@ export default {
       // Related:
       // - https://github.com/vuejs/vue/issues/8728
       // - https://github.com/leptosia/docute/pull/171
-      const {navLinks} = this
-      for (let i = 0; i < navLinks.length; i++) {
-        const item = navLinks[i]
+      const {sidebarLinks} = this
+      for (let i = 0; i < sidebarLinks.length; i++) {
+        const item = sidebarLinks[i]
         if (item.link === this.currentLink) {
           return i
         }
@@ -51,11 +42,11 @@ export default {
     },
 
     prevLinkItem() {
-      return this.navLinks[this.currentLinkIndex - 1]
+      return this.sidebarLinks[this.currentLinkIndex - 1]
     },
 
     nextLinkItem() {
-      return this.navLinks[this.currentLinkIndex + 1]
+      return this.sidebarLinks[this.currentLinkIndex + 1]
     }
   }
 }

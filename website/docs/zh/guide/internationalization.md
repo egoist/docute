@@ -21,7 +21,7 @@ docs
 
 ```js
 new Docute({
-  nav: [
+  sidebar: [
     {
       links: [
         { title: 'Guide', link: '/guide' }
@@ -34,8 +34,8 @@ new Docute({
     },
     '/zh/': {
       language: 'Chinese',
-      // Override the default nav
-      nav: [
+      // Override the default sidebar
+      sidebar: [
         {
           links: [
             { title: '指南', link: '/zh/guide' }

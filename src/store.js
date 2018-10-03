@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import fetch from 'unfetch'
 import marked from './utils/marked'
 import highlight from './utils/highlight'
-import {getFilenameByPath} from './utils'
+import {getFilenameByPath, isExternalLink} from './utils'
 import markedRenderer from './utils/markedRenderer'
 import hooks from './hooks'
 import load from './utils/load'
@@ -146,6 +146,23 @@ const store = new Vuex.Store({
         ? Object.keys(languageOverrides)
         : []
       return [...localePaths, '/']
+    },
+
+    sidebarLinks(_, {sidebar}) {
+      return sidebar
+        .reduce((res, next) => {
+          return [...res, ...next.links]
+        }, [])
+        .filter(item => {
+          return !isExternalLink(item.link)
+        })
+    },
+
+    sidebar(_, {config}) {
+      if (config.nav) {
+        console.warn('"nav" option has been renamed to "sidebar".')
+      }
+      return config.sidebar || config.nav
     }
   }
 })
