@@ -88,7 +88,7 @@ const store = new Vuex.Store({
 
       return load(
         getters.config.highlight.map(lang => {
-          return `https://cdn.jsdelivr.net/npm/prismjs/components/prism-${lang}.min.js`
+          return `https://unpkg.com/prismjs/components/prism-${lang}.min.js`
         }),
         'prism-languages'
       )

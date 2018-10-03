@@ -135,11 +135,11 @@ class SkinnedMesh extends THREE.Mesh {
 [Mermaid](https://mermaidjs.github.io/) 是一种纯文本撰写图表的方法，你可以使用简单的 Docute 插件来添加对 Mermaid 的支持：
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/docute@4.0.3/dist/docute.js"></script>
+<script src="https://unpkg.com/docute@4.0.3/dist/docute.js"></script>
 <!-- Load mermaid -->
-<script src="https://cdn.jsdelivr.net/npm/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
+<script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
 <!-- Load the mermaid plugin -->
-<script src="https://cdn.jsdelivr.net/npm/@leptosia/docute-mermaid@1/dist/index.min.js"></script>
+<script src="https://unpkg.com/@leptosia/docute-mermaid@1/dist/index.min.js"></script>
 
 <!-- Use the plugin -->
 <script>
