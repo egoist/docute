@@ -129,3 +129,29 @@ class SkinnedMesh extends THREE.Mesh {
   }
 }
 ```
+
+## Using Mermaid
+
+[Mermaid](https://mermaidjs.github.io/) is a way to write charts in plain text, you can use a simple Docute plugin to add Mermaid support:
+
+```html
+<script src="https://unpkg.com/docute@4.0.3/dist/docute.js"></script>
+<!-- Load mermaid -->
+<script src="https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
+<!-- Load the mermaid plugin -->
+<script src="https://unpkg.com/@leptosia/docute-mermaid@1/dist/index.min.js"></script>
+
+<!-- Use the plugin -->
+<script>
+new Docute({
+  // ...
+  plugins: [
+    docuteMermaid()
+  ]
+})
+</script>
+```
+
+Here's a working example:
+
+<iframe src="https://codesandbox.io/embed/z2r960n3v4" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>

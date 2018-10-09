@@ -1,21 +1,24 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import loadjs from 'loadjs'
 import fetch from 'unfetch'
 import marked from './utils/marked'
 import highlight from './utils/highlight'
-import { slugify, getFilenameByPath } from './utils'
+import {getFilenameByPath, isExternalLink} from './utils'
+import markedRenderer from './utils/markedRenderer'
+import hooks from './hooks'
+import load from './utils/load'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
     html: '',
-    config: {},
+    originalConfig: {},
     page: {
       title: null,
       headings: null
     },
+    env: {},
     showSidebar: false,
     fetchingFile: true
   },
@@ -25,17 +28,12 @@ const store = new Vuex.Store({
       state.html = html
     },
 
-    SET_CONFIG(state, config) {
-      state.config = config
+    SET_ORIGINAL_CONFIG(state, config) {
+      state.originalConfig = config
     },
 
-    SET_PAGE_TITLE(state, { path, title }) {
+    SET_PAGE_TITLE(state, title) {
       state.page.title = title
-      if (path === '/') {
-        document.title = state.config.title
-      } else {
-        document.title = `${title} - ${state.config.title}`
-      }
     },
 
     SET_PAGE_HEADINGS(state, headings) {
@@ -48,111 +46,123 @@ const store = new Vuex.Store({
 
     SET_FETCHING(state, fetching) {
       state.fetchingFile = fetching
+    },
+
+    SET_ENV(state, env) {
+      state.env = env
     }
   },
 
   actions: {
-    async fetchFile({ commit, dispatch }, path) {
+    async fetchFile({commit, getters, dispatch}, path) {
       commit('TOGGLE_SIDEBAR', false)
       commit('SET_FETCHING', true)
-      const file = getFilenameByPath(path)
-      const [text] = await Promise.all([
+      const file = getFilenameByPath(getters.config.sourcePath, path)
+      let [text] = await Promise.all([
         fetch(file).then(res => res.text()),
         dispatch('fetchPrismLanguages')
       ])
-      const renderer = new marked.Renderer()
 
-      const headings = []
-      const slugs = []
-      renderer.heading = function (text, level, raw) {
-        let slug = slugify(raw)
-        slugs.push(slug)
-        const sameSlugCount = slugs.filter(v => v === slug).length
-        if (sameSlugCount > 1) {
-          slug += `-${sameSlugCount}`
-        }
+      text = hooks.process('processMarkdown', text)
 
-        if (level === 1) {
-          store.commit('SET_PAGE_TITLE', { path, title: text })
-        } else if (level === 2 || level === 3) {
-          headings.push({
-            level,
-            raw,
-            // Remove trailing HTML
-            text: raw.replace(/<.*>\s*$/g, ''),
-            slug
-          })
-        }
-
-        const tag = `h${level}`
-        return `<${tag} id="${slug}">${text}</${tag}>`
+      const env = {
+        headings: [],
+        file
       }
-
-      // Disable template interpolation in code
-      renderer.codespan = text => `<code v-pre>${text}</code>`
-      const origCode = renderer.code
-      renderer.code = function (code, lang, excaped) {
-        const codeOptsRE = /({.+})/
-        let codeOpts = {}
-        if (lang && codeOptsRE.test(lang)) {
-          codeOpts = codeOptsRE.exec(lang)[1].trim()
-          try {
-            // eslint-disable-next-line no-new-func
-            const fn = new Function(`return ${codeOpts}`)
-            codeOpts = fn()
-          } catch (err) {
-            throw new Error(`You're using invalid options for code fences, it must be JSON or JS object!\n${err.message}`)
-          }
-          lang = lang.replace(codeOptsRE, '').trim()
-        }
-
-        let res = origCode.call(this, code, lang, excaped).replace(/^<pre>/, '<pre v-pre>')
-
-        if (codeOpts.highlight) {
-          const codeMask = code.split('\n').map((v, i) => {
-            i += 1
-            const shouldHighlight = codeOpts.highlight.some(number => {
-              if (typeof number === 'number') {
-                return number === i
-              }
-              if (typeof number === 'string') {
-                const [start, end] = number.split('-').map(Number)
-                return i >= start && (!end || i <= end)
-              }
-              return false
-            })
-            return shouldHighlight ? `<span class="code-line highlighted">&#8203;</span>` : `<span class="code-line">&#8203;</span>`
-          }).join('')
-          res += `<div class="code-mask">${codeMask}</div>`
-        }
-
-        return `<div data-lang="${lang || ''}" class="pre-wrapper">${res}</div>`
-      }
-
-      commit('SET_HTML', marked(text, {
-        renderer,
+      let html = marked(text, {
+        renderer: markedRenderer(env, hooks),
         highlight
-      }))
-      commit('SET_PAGE_HEADINGS', headings)
+      })
+      html = hooks.process('processHTML', html)
+      commit('SET_PAGE_TITLE', env.title)
+      commit('SET_PAGE_HEADINGS', env.headings)
       commit('SET_FETCHING', false)
+      commit('SET_ENV', env)
+      commit('SET_HTML', html)
     },
 
-    fetchPrismLanguages({ state }) {
-      const ID = 'prism-languages'
+    fetchPrismLanguages({getters}) {
+      if (!getters.config.highlight) {
+        return Promise.resolve()
+      }
 
-      if (!state.config.highlight || loadjs.isDefined(ID)) return Promise.resolve()
+      return load(
+        getters.config.highlight.map(lang => {
+          return `https://unpkg.com/prismjs/components/prism-${lang}.min.js`
+        }),
+        'prism-languages'
+      )
+    }
+  },
 
-      return new Promise(resolve => {
-        loadjs(state.config.highlight.map(lang => {
-          return `https://cdn.jsdelivr.net/npm/prismjs/components/prism-${lang}.min.js`
-        }), ID, {
-          success: resolve,
-          error(err) {
-            console.error('Failed to load', err)
-            resolve()
+  getters: {
+    target({originalConfig: {target}}) {
+      if (!target) return 'docute'
+      if (target[0] === '#') return target.slice(1)
+      return target
+    },
+
+    languageOverrides({originalConfig}) {
+      // `locales` is for legacy support
+      const overrides = originalConfig.overrides || originalConfig.locales
+      return (
+        overrides &&
+        Object.keys(overrides).reduce((res, path) => {
+          if (overrides[path].language) {
+            res[path] = overrides[path]
           }
+          return res
+        }, {})
+      )
+    },
+
+    currentLocalePath({route}, {languageOverrides}) {
+      if (languageOverrides) {
+        // Is it a locale?
+        for (const localePath of Object.keys(languageOverrides)) {
+          if (localePath !== '/') {
+            const RE = new RegExp(`^${localePath}`)
+            if (RE.test(route.path)) {
+              return localePath
+            }
+          }
+        }
+      }
+
+      return '/'
+    },
+
+    config({originalConfig}, {currentLocalePath, languageOverrides}) {
+      return languageOverrides
+        ? {
+            ...originalConfig,
+            ...languageOverrides[currentLocalePath]
+          }
+        : originalConfig
+    },
+
+    homePaths(_, {languageOverrides}) {
+      const localePaths = languageOverrides
+        ? Object.keys(languageOverrides)
+        : []
+      return [...localePaths, '/']
+    },
+
+    sidebarLinks(_, {sidebar}) {
+      return sidebar
+        .reduce((res, next) => {
+          return [...res, ...next.links]
+        }, [])
+        .filter(item => {
+          return !isExternalLink(item.link)
         })
-      })
+    },
+
+    sidebar(_, {config}) {
+      if (config.nav) {
+        console.warn('"nav" option has been renamed to "sidebar".')
+      }
+      return config.sidebar || config.nav || []
     }
   }
 })

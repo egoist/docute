@@ -9,8 +9,9 @@ new Docute(options)
 ## target
 
 - Type: `string`
+- Default: `docute`
 
-Create app at target selector, e.g. `#docute`.
+The ID of the target element to locate, e.g. `app` or `#app`.
 
 ## title
 
@@ -19,25 +20,35 @@ Create app at target selector, e.g. `#docute`.
 
 Website title.
 
-## nav
+## sidebar
 
-- Type: `Array<NavItem>`
+- Type: `Array<SidebarItem>`
 
 An array of navigation items to display in sidebar.
 
 ```ts
-interface NavItem {
+interface SidebarItem {
   title?: string
-  links: Array<NavLink>
+  links: Array<ItemLink>
 }
 
-interface NavLink {
+interface ItemLink {
   title: string
   link: string
   /* Whether to show TOC, true by default */
-  toc: boolean
+  toc?: boolean
 }
 ```
+
+## sourcePath
+
+- Type: `string`
+- Default: `'/'`
+
+The source path to fetch markdown files from, by default we load them from the root path, a.k.a. `/`.
+
+It can also be a full URL like: `https://some-website/path/to/markdown/files` so that you can load files from a different domain.
+
 
 ## highlight
 
@@ -65,3 +76,20 @@ https://github.com/USER/REPO/blob/master/docs
 - Default: `'Edit this page'`
 
 The text for *edit link*.
+
+## centerContent
+
+- Type: `boolean`
+- Default: `true`
+
+Centering contents.
+
+## overrides
+
+- Type: `{[path: string]: LocaleOptions}`
+
+```ts
+interface LocaleOptions extends Options {
+  language: string
+}
+```

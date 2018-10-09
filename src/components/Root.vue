@@ -1,11 +1,19 @@
-<template>
-  <router-view></router-view>
-</template>
-
 <script>
 export default {
-  name: 'DocuteRoot'
+  name: 'DocuteRoot',
+  render(h) {
+    return h(
+      'div',
+      {
+        attrs: {
+          id: this.$store.getters.target
+        }
+      },
+      [h('router-view')]
+    )
+  }
 }
 </script>
 
-<style src="../css/global.css"></style>
+<style src="../css/global.css">
+</style>

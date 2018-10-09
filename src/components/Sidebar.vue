@@ -2,43 +2,46 @@
   <div class="Sidebar" :class="{isShown: $store.state.showSidebar}">
 
         <div class="SiteTitle">
-          {{ $store.state.config.title }}
+          <router-link to="/">{{ $store.getters.config.title }}</router-link>
         </div>
 
-        <div class="SidebarNav">
+        <InjectedComponents position="sidebar:start" />
+
+        <div class="SidebarItems">
           <div
-            :class="['NavItem', navItem.title && 'hasTitle']"
-            v-for="(navItem, index) in $store.state.config.nav"
+            v-for="(item, index) in $store.getters.sidebar"
+            :class="['SidebarItem', item.title && 'hasTitle']"
             :key="index">
-            <div class="NavItemTitle" v-if="navItem.title">
-              {{ navItem.title }}
+            <div class="ItemTitle" v-if="item.title">
+              {{ item.title }}
             </div>
-            <template v-for="(navLink, index) of navItem.links">
+            <template v-for="(link, index) of item.links">
               <a
-                v-if="isExternalLink(navLink.link)"
+                v-if="isExternalLink(link.link)"
                 :key="index"
-                :href="navLink.link"
-                class="NavLink"
+                :href="link.link"
+                class="ItemLink"
                 target="_blank">
-                {{ navLink.title }} ↗
+                {{ link.title }} ↗
               </a>
               <router-link
                 v-else
                 :key="index"
-                :to="navLink.link"
-                class="NavLink"
-                :class="{active: $route.path === navLink.link}">
-                {{ navLink.title }}
+                :to="link.link"
+                class="ItemLink"
+                :class="{active: $route.path === link.link}">
+                {{ link.title }}
               </router-link>
               <div
-                class="NavToc"
-                v-if="navLink.toc !== false &&
-                navLink.link === $route.path &&
+                class="LinkToc"
+                v-if="!$store.state.fetchingFile &&
+                link.toc !== false &&
+                link.link === $route.path &&
                 $store.state.page.headings &&
                 $store.state.page.headings.length > 0"
                 :key="`toc-${index}`">
                 <router-link
-                  class="NavTocHeading"
+                  class="TocHeading"
                   :to="{hash: heading.slug}"
                   :data-level="heading.level"
                   v-for="heading in $store.state.page.headings"
@@ -50,11 +53,13 @@
           </div>
         </div>
 
+        <InjectedComponents position="sidebar:end" />
+
       </div>
 </template>
 
 <script>
-import { isExternalLink } from '../utils'
+import {isExternalLink} from '../utils'
 
 export default {
   methods: {
@@ -93,25 +98,25 @@ export default {
   line-height: 1.2;
 }
 
-.NavItem {
+.SidebarItem {
   &:not(:last-child) {
-    border-bottom: 1px solid rgba(255,255,255,.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     padding-bottom: 2rem;
     margin-bottom: 2rem;
   }
 
   &.hasTitle {
-    & .NavLink {
-      font-size: .9rem;
+    & .ItemLink {
+      font-size: 0.9rem;
     }
   }
 
-  &.hasTitle >>> .NavTocHeading {
-    font-size: .9rem;
+  &.hasTitle >>> .TocHeading {
+    font-size: 0.9rem;
   }
 }
 
-.NavItemTitle {
+.ItemTitle {
   font-size: 1.2rem;
   font-style: italic;
   padding: 0 20px;
@@ -120,11 +125,10 @@ export default {
   position: relative;
 }
 
-.NavLink {
+.ItemLink {
   padding: 2px 20px;
   display: flex;
   font-size: 1.1rem;
-  font-weight: 300;
   position: relative;
 
   &.active,
@@ -133,12 +137,11 @@ export default {
   }
 }
 
-.NavTocHeading {
+.TocHeading {
   display: flex;
   line-height: 1.4;
   margin-bottom: 3px;
   position: relative;
-  font-weight: 300;
 
   &:first-child {
     margin-top: 5px;
@@ -148,11 +151,11 @@ export default {
     margin-bottom: 5px;
   }
 
-  &[data-level="2"] {
+  &[data-level='2'] {
     margin-left: 35px;
   }
 
-  &[data-level="3"] {
+  &[data-level='3'] {
     margin-left: 50px;
   }
 
@@ -184,14 +187,14 @@ export default {
 </style>
 
 <style scoped>
-@import "vars.css";
+@import 'vars.css';
 
 @media screen and (max-width: 768px) {
   .Sidebar {
     transform: translateX(-100%);
     width: 80%;
     top: var(--mobile-header-height);
-    transition: transform .5s cubic-bezier(.50,.32,.01,1);
+    transition: transform 0.5s cubic-bezier(0.5, 0.32, 0.01, 1);
 
     &.isShown {
       transform: translateX(0);

@@ -1,6 +1,6 @@
 const cssMixin = {
   mounted() {
-    const { css } = this.$options
+    const {css} = this.$options
     if (!css) {
       return
     }

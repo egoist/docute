@@ -40,11 +40,11 @@ The `index.html` looks like:
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>My Docs</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docute@4/dist/docute.css">
+    <link rel="stylesheet" href="https://unpkg.com/docute@4/dist/docute.css">
   </head>
   <body>
     <div id="docute"></div>
-    <script src="https://cdn.jsdelivr.net/npm/docute@4/dist/docute.js"></script>
+    <script src="https://unpkg.com/docute@4/dist/docute.js"></script>
     <script>
       new Docute({
         target: '#docute'
@@ -60,3 +60,25 @@ Then you can serve this folder as a static website on your machine using:
 - Python: `python -m SimpleHTTPServer`
 - Golang: `caddy`
 - ..or whatever static web server
+
+Here's a CodeSandbox starter which you can preview right now or download to run locally:
+
+<iframe src="https://codesandbox.io/embed/174359y77?module=%2Fmain.js" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
+## Comparisons
+
+### VuePress / GitBook / Hexo
+
+They all generate static HTML at build time, which is good for SEO. 
+
+If you care about SEO, you may like using [tokio](https://github.com/egoist/tokio) to prerender your website.
+
+### Docsify
+
+[Docsify](https://docsify.js.org/#/) and Docute are pretty much the same, but with different UI and different usages.
+
+Docute (60kB) is 3 times bigger than Docisfy (20kB), because we use Vue, Vue Router and Vuex while Docsify uses vanilla JavaScript under the hood.
+
+## Browser Compatibility
+
+Docute supports all ever-green browsers, i.e. No IE support!

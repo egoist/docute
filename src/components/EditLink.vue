@@ -8,27 +8,25 @@
 </template>
 
 <script>
-import { getFilenameByPath } from '../utils'
-
 export default {
   computed: {
     editLinkBase() {
-      return this.$store.state.config.editLinkBase
+      return this.$store.getters.config.editLinkBase
     },
 
     editLink() {
-      return this.editLinkBase + getFilenameByPath(this.$route.path)
+      return this.editLinkBase + this.$store.state.env.file
     },
 
     editLinkText() {
-      return this.$store.state.config.editLinkText || 'Edit this page'
+      return this.$store.getters.config.editLinkText || 'Edit this page'
     }
   }
 }
 </script>
 
 <style scoped>
-@import "vars.css";
+@import 'vars.css';
 
 .EditLink {
   margin-top: 50px;
@@ -50,4 +48,3 @@ export default {
   margin-right: 10px;
 }
 </style>
-

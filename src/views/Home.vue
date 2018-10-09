@@ -3,7 +3,12 @@
     <Sidebar />
     <SidebarMask />
     <MobileHeader />
-    <div class="Main" v-if="$store.state.fetchingFile">
+    <div
+      class="Main"
+      :class="{
+        'is-center': $store.getters.config.centerContent !== false
+      }"
+      v-if="$store.state.fetchingFile">
       <content-loader
         :height="160"
         :width="400"
@@ -18,22 +23,31 @@
         <rect x="0" y="100" rx="3" ry="3" width="201" height="6.4" />
       </content-loader>
     </div>
-    <div class="Main" v-else>
+    <div
+      class="Main"
+      :class="{
+        'is-center': $store.getters.config.centerContent !== false
+      }"
+      v-else>
       <component :is="MarkdownBody" />
       <EditLink />
       <PrevNextLinks />
+      <InjectedComponents position="content:end" />
     </div>
+    <Rightbar />
   </div>
 </template>
 
 <script>
 import jump from 'jump.js'
-import { ContentLoader } from 'vue-content-loader'
+import {ContentLoader} from 'vue-content-loader'
 import Sidebar from '../components/Sidebar.vue'
 import SidebarMask from '../components/SidebarMask.vue'
 import MobileHeader from '../components/MobileHeader.vue'
 import PrevNextLinks from '../components/PrevNextLinks.vue'
 import EditLink from '../components/EditLink.vue'
+import Rightbar from '../components/Rightbar.vue'
+import hooks from '../hooks'
 
 export default {
   name: 'PageHome',
@@ -44,7 +58,8 @@ export default {
     SidebarMask,
     MobileHeader,
     PrevNextLinks,
-    EditLink
+    EditLink,
+    Rightbar
   },
 
   created() {
@@ -61,6 +76,15 @@ export default {
   watch: {
     '$route.hash'() {
       this.jumpToHash()
+    },
+    '$store.state.page.title'(title) {
+      const {path} = this.$route
+      const {config, homePaths} = this.$store.getters
+      if (homePaths.indexOf(path) > -1) {
+        document.title = config.title
+      } else {
+        document.title = `${title} - ${config.title}`
+      }
     }
   },
 
@@ -79,12 +103,14 @@ export default {
         path = this.$route.path
       }
       await this.$store.dispatch('fetchFile', path)
+      hooks.invoke('onContentWillUpdate', this)
       await this.$nextTick()
+      hooks.invoke('onContentUpdated', this)
       this.jumpToHash()
     },
 
     jumpToHash() {
-      const { hash } = this.$route
+      const {hash} = this.$route
       if (hash) {
         const el = document.querySelector(hash)
         if (el) {
@@ -99,8 +125,10 @@ export default {
 }
 </script>
 
-<style src="../css/prism.css"></style>
-<style src="../css/markdown.css"></style>
+<style src="../css/prism.css">
+</style>
+<style src="../css/markdown.css">
+</style>
 
 <style scoped>
 .Docute {
@@ -111,14 +139,26 @@ export default {
   margin-left: 250px;
   max-width: 800px;
   padding: 20px 80px 80px;
+
+  &.is-center {
+    margin: 0 auto;
+    margin-left: auto;
+  }
 }
 </style>
 
 <style scoped>
-@import "vars.css";
+@import 'vars.css';
+
+@media screen and (max-width: 1300px) {
+  .Main.is-center {
+    margin-left: 250px;
+  }
+}
 
 @media screen and (max-width: 768px) {
-  .Main {
+  .Main,
+  .Main.is-center {
     padding: 40px 20px;
     margin-left: 0;
     max-width: 100%;

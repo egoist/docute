@@ -6,6 +6,9 @@
  * Modified for Docute, since commit marked#f93d858cb85c
  */
 
+ // @modified
+ import parseCodeOptions from './parseCodeOptions'
+
 /**
  * Block-Level Grammar
  */
@@ -101,8 +104,8 @@ block.gfm = merge({}, block.normal, {
   // @modified
   // Old fences regexp
   // fences: /^ *(`{3,}|~{3,})[ \.]*(\S+)? *\n([\s\S]*?)\n? *\1 *(?:\n+|$)/,
-  // The new one allows language name to contain anything other than `\n` so that we can extract options from the language name
-  fences: /^ *(`{3,}|~{3,})[ \.]*([^\n]+)?\n([\s\S]*?)\n? *\1 *(?:\n+|$)/,
+  // The new one allows ```lang {key: value} format code fences
+  fences: /^ *(`{3,}|~{3,})[ \.]*(\S+)? *({.+})?\n([\s\S]*?)\n? *\1 *(?:\n+|$)/,
   paragraph: /^/,
   heading: /^ *(#{1,6}) +([^\n]+?) *#* *(?:\n+|$)/
 })
@@ -244,13 +247,15 @@ Lexer.prototype.token = function(src, top) {
       continue
     }
 
+    // @modified
     // fences (gfm)
     if ((cap = this.rules.fences.exec(src))) {
       src = src.substring(cap[0].length)
       this.tokens.push({
         type: 'code',
         lang: cap[2],
-        text: cap[3] || ''
+        text: cap[4] || '',
+        opts: parseCodeOptions(cap[3])
       })
       continue
     }
@@ -1254,7 +1259,8 @@ Parser.prototype.tok = function() {
       return this.renderer.code(
         this.token.text,
         this.token.lang,
-        this.token.escaped
+        this.token.escaped,
+        this.token.opts
       )
     }
     case 'table': {

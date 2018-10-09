@@ -14,9 +14,7 @@ const lib = {
 
 module.exports = {
   entry: 'src/index.js',
-  plugins: [
-    lib
-  ],
+  plugins: [lib, require('./plugins/buble')],
   filenames: {
     js: 'docute.js',
     css: 'docute.css'
@@ -27,4 +25,3 @@ module.exports = {
     __DOCUTE_VERSION__: JSON.stringify(pkg.version)
   }
 }
-
