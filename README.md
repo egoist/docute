@@ -19,6 +19,7 @@ Are you looking for the v3 docs? See [here](https://v3.docute.org).
 ## Resources
 
 - [Plugins List](https://github.com/leptosia/docute-plugins)
+- [vuese](https://github.com/HcySunYang/vuese) - Parse your `.vue` file and generate a `docute` document
 
 ## Contributing
 
