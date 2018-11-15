@@ -71,7 +71,7 @@ Here's a CodeSandbox starter which you can preview right now or download to run 
 
 They all generate static HTML at build time, which is good for SEO. 
 
-If you care about SEO, you may like using [tokio](https://github.com/egoist/tokio) to prerender your website.
+If you care about SEO, you may like using [presite](https://github.com/egoist/presite) to prerender your website.
 
 ### Docsify
 

@@ -71,7 +71,7 @@ Docute 本质上就是一个 JavaScript 文件，它可以获取 Markdown 文件
 
 这些项目在构建时会生成静态的 HTML，这对 SEO 非常有帮助。
 
-如果你在意 SEO，那你可能会喜欢使用 [tokio](https://github.com/egoist/tokio) 来预渲染你的网站。
+如果你在意 SEO，那你可能会喜欢使用 [presite](https://github.com/egoist/presite) 来预渲染你的网站。
 
 ### Docsify
 

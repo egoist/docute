@@ -80,7 +80,7 @@ function debounce(func, wait, immediate) {
 - Markdown
 - HTML
 
-你可以查看[高亮](/options#高亮)选项添加更多语言。
+你可以查看[高亮](/zh/options#highlight)选项添加更多语言。
 
 ## 代码框中某行高亮显示
 
