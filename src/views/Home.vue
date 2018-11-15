@@ -6,7 +6,7 @@
     <div
       class="Main"
       :class="{
-        'is-center': $store.getters.config.centerContent !== false
+        'is-center': $store.getters.config.centerContent
       }"
       v-if="$store.state.fetchingFile">
       <content-loader
@@ -26,7 +26,7 @@
     <div
       class="Main"
       :class="{
-        'is-center': $store.getters.config.centerContent !== false
+        'is-center': $store.getters.config.centerContent
       }"
       v-else>
       <component :is="MarkdownBody" />

@@ -80,7 +80,7 @@ The text for *edit link*.
 ## centerContent
 
 - Type: `boolean`
-- Default: `true`
+- Default: `false`
 
 Centering contents.
 
