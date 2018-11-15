@@ -25,5 +25,9 @@ module.exports = {
   constants: {
     __DOCUTE_VERSION__: JSON.stringify(pkg.version)
   },
-  plugins: [require('./plugins/buble')]
+  plugins: [
+    {
+      resolve: require('./plugins/buble')
+    }
+  ]
 }

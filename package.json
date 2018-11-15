@@ -35,7 +35,7 @@
     "fast-async": "^6.3.8",
     "husky": "^1.0.1",
     "lint-staged": "^7.3.0",
-    "poi": "^11.0.0-alpha.20",
+    "poi": "^11.0.0-beta.6",
     "postcss-import": "^12.0.0",
     "postcss-preset-env": "^6.0.3",
     "semantic-release": "^15.12.0",

@@ -1,6 +1,6 @@
 exports.name = 'buble'
 
-exports.extend = api => {
+exports.apply = api => {
   api.chainWebpack(config => {
     config.module
       .rule('buble')

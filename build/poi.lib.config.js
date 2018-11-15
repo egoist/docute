@@ -2,7 +2,7 @@ const pkg = require('../package')
 
 const lib = {
   name: 'lib',
-  extend(api) {
+  apply(api) {
     api.chainWebpack(config => {
       config.resolve.alias.set('vue$', 'vue/dist/vue.esm.js')
       config.output.libraryTarget('umd')
@@ -14,7 +14,14 @@ const lib = {
 
 module.exports = {
   entry: 'src/index.js',
-  plugins: [lib, require('./plugins/buble')],
+  plugins: [
+    {
+      resolve: lib
+    },
+    {
+      resolve: require('./plugins/buble')
+    }
+  ],
   filenames: {
     js: 'docute.js',
     css: 'docute.css'
