@@ -1,6 +1,8 @@
 
 # Docute
 
+[![npm version](https://badgen.net/npm/v/docute)](https://npm.im/docute) [![jsdelivr downloads](https://data.jsdelivr.com/v1/package/npm/docute/badge?style=rounded)](https://www.jsdelivr.com/package/npm/docute) [![circleci](https://badgen.net/circleci/github/leptosia/docute/master)](https://circleci.com/gh/leptosia/docute/tree/master)  [![donate](https://badgen.net/badge/support%20me/donate/ff69b4)](https://patreon.com/egoist)
+
 Effortless documentation, done right.
 
 ## 🐙 Features
@@ -12,7 +14,7 @@ Effortless documentation, done right.
 
 ## 📜 Documentation
 
-https://docute.org
+Check out: https://docute.org
 
 Are you looking for the v3 docs? See [here](https://v3.docute.org).
 
