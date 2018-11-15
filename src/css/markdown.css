@@ -105,7 +105,7 @@
     font-size: 13px;
     margin: 0;
     z-index: 2;
-    font-family: Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+    font-family: var(--code-font);
 
     & code {
       box-shadow: none;
@@ -154,7 +154,7 @@
   }
 
   & code {
-    font-family: Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+    font-family: var(--code-font);
     background: #fdfaf6;
     margin: 0 .2rem;
     padding: .2rem .5rem;

@@ -150,12 +150,14 @@ const store = new Vuex.Store({
 
     sidebarLinks(_, {sidebar}) {
       return sidebar
-        .reduce((res, next) => {
-          return [...res, ...next.links]
-        }, [])
-        .filter(item => {
-          return !isExternalLink(item.link)
-        })
+        ? sidebar
+            .reduce((res, next) => {
+              return [...res, ...next.links]
+            }, [])
+            .filter(item => {
+              return !isExternalLink(item.link)
+            })
+        : []
     },
 
     sidebar(_, {config}) {
