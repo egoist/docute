@@ -74,7 +74,7 @@ export default {
 
 .Sidebar {
   width: 250px;
-  background: var(--accent-color);
+  background: var(--sidebar-bg);
   position: fixed;
   top: 0;
   bottom: 0;

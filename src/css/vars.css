@@ -1,5 +1,6 @@
 :root {
-  --accent-color: #1159a6;
+  --accent-color: #43853d;
+  --sidebar-bg: #333;
   --border-color: rgb(234, 234, 234);
   --mobile-header-height: 50px;
 }
