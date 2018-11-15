@@ -47,13 +47,8 @@ Example:
 - Feature 2 <Badge type="warning">Beta</Badge>
 - Feature 3 <Badge type="danger">Deprecated</Badge>
 
-## `<EvaluateTag>`
+## `<v-style>` `<v-script>`
 
-A hack for evaluating `<style>` and `<script>` tags in markdown.
+A hack for using `<style>` and `<script>` tags Vue template.
 
-|Prop|Type|Default|Description|
-|---|---|---|---|
-|tag|<code>'style' &#x7C; 'script'</code>|N/A|Tag name|
-|children|`string`|N/A|Tag content|
-
-In general you don't need this component since we automatically convert `<style>` and `<script>` tags in your markdown to this component.
+In general you don't need to use them directly, since we automatically convert `<style>` and `<script>` tags in Markdown to these components.

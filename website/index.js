@@ -163,6 +163,14 @@ Vue.component('ReverseText', {
   template: `
     <div class="reverse-text">
       {{ reversedText }}
+      <v-style>
+      .reverse-text {
+        border: 1px solid var(--border-color);
+        padding: 20px;
+        font-weight: bold;
+        border-radius: 4px;
+      }
+      </v-style>
     </div>
   `,
   computed: {
@@ -172,13 +180,5 @@ Vue.component('ReverseText', {
         .reverse()
         .join('')
     }
-  },
-  css: `
-    .reverse-text {
-      border: 1px solid var(--border-color);
-      padding: 20px;
-      font-weight: bold;
-      border-radius: 4px;
-    }
-  `
+  }
 })

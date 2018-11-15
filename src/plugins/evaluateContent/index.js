@@ -7,8 +7,8 @@ export default {
         html = html.trim()
         if (hoistedTagsRe.test(html)) {
           return html
-            .replace(/^<(script|style)/, '<evaluate-tag tag="$1"')
-            .replace(/<\/(script|style)>$/, '</evaluate-tag tag="$1">')
+            .replace(/^<(script|style)/, '<v-$1')
+            .replace(/<\/(script|style)>$/, '</v-$1>')
         }
         return html
       }

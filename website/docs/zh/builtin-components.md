@@ -47,13 +47,8 @@ Docute 附带一些内置的 Vue 组件。
 - Feature 2 <Badge type="warning">Beta</Badge>
 - Feature 3 <Badge type="danger">弃用</Badge>
 
-## `<EvaluateTag>`
+## `<v-style>` `<v-script>`
 
-用于识别 markdown 中的 `<style>` 和 `<script>` 标签并进行处理。
+在 Vue template 中替代 `<style>` 和 `<script>` 标签。
 
-|属性|类型|默认值|描述|
-|---|---|---|---|
-|tag|<code>'style' &#x7C; 'script'</code>|N/A|Tag 名|
-|children|`string`|N/A|Tag 内容|
-
-通常，你并不需要此组件。因为我们会自动将 markdown 中的 `<style>` 和 `<script>` 标签转换为该组件。
+通常，在 Markdown 里你并不需要直接使用此组件。因为我们会自动将 markdown 中的 `<style>` 和 `<script>` 标签转换为该组件。

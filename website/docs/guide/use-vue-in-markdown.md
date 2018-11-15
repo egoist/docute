@@ -44,31 +44,31 @@ And `{{ bar }}` is safe too!
 
 Docute exposed the `Vue` constructor on `window` object, so you can use it to register global components in order to use in your Markdown document:
 
-```js {highlight:['13-20'],evaluate:true}
+```js {highlight:['6-13']}
 Vue.component('ReverseText', {
   props: ['text'],
   template: `
     <div class="reverse-text">
-      {{ reversedText }} 
+      {{ reversedText }}
+      <v-style>
+      .reverse-text {
+        border: 1px solid var(--border-color);
+        padding: 20px;
+        font-weight: bold;
+        border-radius: 4px;
+      }
+      </v-style>
     </div>
   `,
   computed: {
     reversedText() {
       return this.text.split('').reverse().join('')
     }
-  },
-  css: `
-    .reverse-text {
-      border: 1px solid var(--border-color);
-      padding: 20px;
-      font-weight: bold;
-      border-radius: 4px;
-    }
-  `
+  }
 })
 ```
 
-You may notice the highlighted part, the `css` option only works with Docute, it is used to inject `<style>` tag to `document.head` when the component is created, and remove the `<style>` tag when the component is destroyed. This is designed for directly using Docute in browser via `<script>` tag.
+You may notice the highlighted part, since you can't directly use `style` tags in Vue template, here we provided the `v-style` component to work around that. Similarly there's also `v-script` component.
 
 __Input__:
 

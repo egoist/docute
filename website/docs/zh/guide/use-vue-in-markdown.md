@@ -44,31 +44,31 @@ const foo = `{{ 安全，这不会被插值！}}`
 
 Docute 在 `window` 对象上暴露了 `Vue` 的构造函数，因此你可以使用它来注册全局组件，以便于在 Markdown 文档中使用：
 
-```js {highlight:['13-20'],evaluate:true}
+```js {highlight:['6-13']}
 Vue.component('ReverseText', {
   props: ['text'],
   template: `
     <div class="reverse-text">
-      {{ reversedText }} 
+      {{ reversedText }}
+      <v-style>
+      .reverse-text {
+        border: 1px solid var(--border-color);
+        padding: 20px;
+        font-weight: bold;
+        border-radius: 4px;
+      }
+      </v-style>
     </div>
   `,
   computed: {
     reversedText() {
       return this.text.split('').reverse().join('')
     }
-  },
-  css: `
-    .reverse-text {
-      border: 1px solid var(--border-color);
-      padding: 20px;
-      font-weight: bold;
-      border-radius: 4px;
-    }
-  `
+  }
 })
 ```
 
-你可能会注意到高亮的部分，`css` 选项仅适用于 Docute，它用于在创建组件时，将 `style` 标签注入 `docsment.head`，当删除 `<style>` 标签时，该组件销毁。这样设计的目的为了在浏览器中通过 `<script>` 标签直接使用 Docute。
+你可能会注意到高亮的部分，由于你不能直接在 Vue template 里使用 `style` 元素，于是我们提供了 `v-style` 组件来作为替代。类似地，我们也提供了 `v-script` 组件。
 
 __输入__:
 

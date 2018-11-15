@@ -4,22 +4,20 @@ import PluginAPI from './PluginAPI'
 import Root from './components/Root.vue'
 import store from './store'
 import router from './router'
-import markdownMixins from './utils/markdownMixins'
+import alternativeComponents from './utils/alternativeComponents'
 import ImageZoom from './components/ImageZoom.vue'
 import Badge from './components/Badge.vue'
-import EvaluateTag from './components/EvaluateTag.vue'
 
 // Built-in plugins
 import i18nPlugin from './plugins/i18n'
-import evaluateTagsPlugin from './plugins/evaluateTags'
+import evaluateContentPlugin from './plugins/evaluateContent'
 import versionsPlugin from './plugins/versions'
 
 sync(store, router)
 
-Vue.use(markdownMixins)
 Vue.component(ImageZoom.name, ImageZoom)
 Vue.component(Badge.name, Badge)
-Vue.component(EvaluateTag.name, EvaluateTag)
+Vue.use(alternativeComponents)
 
 Vue.mixin({
   created() {
@@ -39,7 +37,7 @@ class Docute {
 
     const plugins = [
       i18nPlugin,
-      evaluateTagsPlugin,
+      evaluateContentPlugin,
       versionsPlugin,
       ...(store.state.originalConfig.plugins || [])
     ]
