@@ -47,7 +47,6 @@ body {
 .docute-select {
   position: relative;
   display: inline-block;
-  color: #555;
 
   &:after {
     position: absolute;
@@ -59,7 +58,7 @@ body {
     height: 0;
     margin-top: -.15rem;
     pointer-events: none;
-    border-top: .35rem solid;
+    border-top: .35rem solid var(--sidebar-border-color);
     border-right: .35rem solid transparent;
     border-bottom: .35rem solid transparent;
     border-left: .35rem solid transparent;
@@ -70,9 +69,9 @@ body {
     margin: 0;
     padding: .3rem 1.95rem .3rem .7rem;
     line-height: 1.5;
-    color: #333;
-    background-color: rgba(255, 255, 255, 0.76);
-    border: none;
+    color: inherit;
+    background-color: transparent;
+    border: 1px solid var(--sidebar-border-color);
     border-radius: .25rem;
     outline: 0;
     appearance: none;

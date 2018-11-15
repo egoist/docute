@@ -100,7 +100,7 @@ export default {
 
 .SidebarItem {
   &:not(:last-child) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid var(--sidebar-border-color);
     padding-bottom: 2rem;
     margin-bottom: 2rem;
   }
@@ -133,7 +133,7 @@ export default {
 
   &.active,
   &:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--sidebar-border-color);
   }
 }
 

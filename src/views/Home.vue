@@ -29,10 +29,11 @@
         'is-center': $store.getters.config.centerContent
       }"
       v-else>
+      <InjectedComponents position="main:start" />
       <component :is="MarkdownBody" />
       <EditLink />
       <PrevNextLinks />
-      <InjectedComponents position="content:end" />
+      <InjectedComponents position="main:end" />
     </div>
     <Rightbar />
   </div>

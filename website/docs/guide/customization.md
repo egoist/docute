@@ -6,9 +6,12 @@ Default [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_C
 
 ```css
 :root {
-  --accent-color: #1159a6;
-  --border-color: #eaeaea;
+  --accent-color: #43853d;
+  --sidebar-bg: #333;
+  --border-color: rgb(234, 234, 234);
+  --sidebar-border-color: rgba(255, 255, 255, 0.15);
   --mobile-header-height: 50px;
+  --code-font: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
 }
 ```
 
