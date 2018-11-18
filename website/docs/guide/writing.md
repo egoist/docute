@@ -75,10 +75,11 @@ function debounce(func, wait, immediate) {
 
 The languages we support by default:
 
-- JavaScript
-- CSS
-- Markdown
-- HTML
+<ul>
+  <li v-for="lang in builtinLanguages" :key="lang">
+    {{ lang }}
+  </li>
+</ul>
 
 You can use [highlight](/options#highlight) option to add more languages.
 

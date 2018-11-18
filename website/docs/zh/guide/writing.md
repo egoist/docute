@@ -75,10 +75,11 @@ function debounce(func, wait, immediate) {
 
 默认支持的语言：
 
-- JavaScript
-- CSS
-- Markdown
-- HTML
+<ul>
+  <li v-for="lang in builtinLanguages" :key="lang">
+    {{ lang }}
+  </li>
+</ul>
 
 你可以查看[高亮](/zh/options#highlight)选项添加更多语言。
 

@@ -1,5 +1,6 @@
 import googleAnalytics from '@leptosia/docute-google-analytics'
 import Docute from '../src'
+import prismLanguages from '../src/utils/prismLanguages'
 
 new Docute({
   target: 'app',
@@ -10,6 +11,15 @@ new Docute({
   ].filter(Boolean),
   editLinkBase: 'https://github.com/leptosia/docute/tree/master/website/docs',
   editLinkText: 'Edit this page on GitHub',
+  componentMixins: [
+    {
+      data() {
+        return {
+          builtinLanguages: prismLanguages.builtin
+        }
+      }
+    }
+  ],
   versions: {
     v4: {
       link: '/'

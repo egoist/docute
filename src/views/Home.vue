@@ -91,10 +91,16 @@ export default {
 
   computed: {
     MarkdownBody() {
-      return {
+      const {componentMixins} = this.$store.getters.config
+      const component = {
+        mixins: componentMixins || [],
         name: 'MarkdownBody',
         template: `<div class="markdown-body">${this.$store.state.html}</div>`
       }
+
+      hooks.process('extendMarkdownComponent', component)
+
+      return component
     }
   },
 

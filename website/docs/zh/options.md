@@ -51,6 +51,12 @@ interface ItemLink {
 它也可以是完整的 URL，例如： `https://some-website/path/to/markdown/files`，以便于你可以从其他域名加载文件。
 
 
+## componentMixins
+
+- 类型: `Array<Object>`
+
+一个包含 [Vue mixins](https://vuejs.org/v2/api/#mixins) 的数组，会被应用到所有的 Markdown 组件中。
+
 ## highlight
 
 - 类型：`Array<string>`
