@@ -23,7 +23,8 @@ module.exports = {
     title: 'Docute'
   },
   constants: {
-    __DOCUTE_VERSION__: JSON.stringify(pkg.version)
+    __DOCUTE_VERSION__: JSON.stringify(pkg.version),
+    __PRISM_VERSION__: JSON.stringify(require('prismjs/package').version)
   },
   plugins: [
     {

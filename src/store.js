@@ -1,3 +1,4 @@
+/* globals __PRISM_VERSION__ */
 import Vue from 'vue'
 import Vuex from 'vuex'
 import fetch from 'unfetch'
@@ -7,6 +8,7 @@ import {getFilenameByPath, isExternalLink} from './utils'
 import markedRenderer from './utils/markedRenderer'
 import hooks from './hooks'
 import load from './utils/load'
+import prismLanguages from './utils/prismLanguages'
 
 Vue.use(Vuex)
 
@@ -82,14 +84,31 @@ const store = new Vuex.Store({
     },
 
     fetchPrismLanguages({getters}) {
-      if (!getters.config.highlight) {
+      const langs = getters.config.highlight
+
+      if (!langs || langs.length === 0) {
         return Promise.resolve()
       }
 
       return load(
-        getters.config.highlight.map(lang => {
-          return `https://unpkg.com/prismjs/components/prism-${lang}.min.js`
-        }),
+        langs
+          .reduce((res, lang) => {
+            if (prismLanguages[lang]) {
+              res = res.concat(prismLanguages[lang])
+            }
+            res.push(lang)
+            return res
+          }, [])
+          .filter((lang, i, arr) => {
+            // Dedupe
+            return (
+              arr.indexOf(lang) === i &&
+              prismLanguages.builtin.indexOf(lang) === -1
+            )
+          })
+          .map(lang => {
+            return `https://unpkg.com/prismjs@${__PRISM_VERSION__}/components/prism-${lang}.js`
+          }),
         'prism-languages'
       )
     }
