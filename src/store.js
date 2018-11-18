@@ -72,8 +72,9 @@ const store = new Vuex.Store({
         file
       }
       let html = marked(text, {
-        renderer: markedRenderer(env, hooks),
-        highlight
+        renderer: markedRenderer(hooks),
+        highlight,
+        env
       })
       html = hooks.process('processHTML', html)
       commit('SET_PAGE_TITLE', env.title)

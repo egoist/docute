@@ -1,12 +1,13 @@
 import marked from './marked'
 import {slugify} from '.'
 
-export default (env, hooks) => {
+export default hooks => {
   const renderer = new marked.Renderer()
 
-  env.headings = []
   const slugs = []
   renderer.heading = function(text, level, raw) {
+    const {env} = this.options
+
     let slug = slugify(raw)
     slugs.push(slug)
     const sameSlugCount = slugs.filter(v => v === slug).length
