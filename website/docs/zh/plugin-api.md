@@ -11,6 +11,12 @@
 
 处理 markdown。
 
+## api.extendMarkdownComponent(fn)
+
+- `fn`: `(Component: VueComponentOptions) => void`
+
+修改编译后的 Markdown 组件。
+
 ## api.processHTML(fn)
 
 - `fn`：`(html: string) => string`

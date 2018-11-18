@@ -23,6 +23,12 @@ Process HTML.
 
 You can use `fn` to modify the [marked renderer](https://marked.js.org/#/USING_PRO.md#renderer) we use.
 
+## api.extendMarkdownComponent(fn)
+
+- `fn`: `(Component: VueComponentOptions) => void`
+
+You can use this hook the modify the compiled markdown component.
+
 ## api.onContentUpdated(fn)
 
 - `fn`: `(vm: Vue) => void`
