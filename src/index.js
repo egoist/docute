@@ -28,7 +28,7 @@ Vue.mixin({
 
 class Docute {
   constructor(config = {}) {
-    const router = createRouter({routerMode: config.routerMode})
+    const router = createRouter(config.router)
     sync(store, router)
 
     store.commit('SET_ORIGINAL_CONFIG', {
