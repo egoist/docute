@@ -2,12 +2,15 @@
 
 body {
   margin: 0;
-  background: #fafafa;
   font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 * {
   box-sizing: border-box;
+}
+
+a {
+  color: var(--link-color);
 }
 
 .external-link-icon {
@@ -17,6 +20,13 @@ body {
 
 .medium-zoom-overlay, .medium-zoom-image--opened {
   z-index: 99;
+}
+
+.Wrap {
+  &.is-center {
+    max-width: 1020px;
+    margin: 0 auto;
+  }
 }
 
 /** Badge */
@@ -41,46 +51,5 @@ body {
 
   &.danger {
     background: #d82f2f;
-  }
-}
-
-.docute-select {
-  position: relative;
-  display: inline-block;
-
-  &:after {
-    position: absolute;
-    top: 50%;
-    right: 0.95rem;
-    display: inline-block;
-    content: "";
-    width: 0;
-    height: 0;
-    margin-top: -.15rem;
-    pointer-events: none;
-    border-top: .35rem solid var(--sidebar-border-color);
-    border-right: .35rem solid transparent;
-    border-bottom: .35rem solid transparent;
-    border-left: .35rem solid transparent;
-  }
-
-  & select {
-    display: inline-block;
-    margin: 0;
-    padding: .3rem 1.95rem .3rem .7rem;
-    line-height: 1.5;
-    color: inherit;
-    background-color: transparent;
-    border: 1px solid var(--sidebar-border-color);
-    border-radius: .25rem;
-    outline: 0;
-    appearance: none;
-  }
-
-  &.is-block {
-    width: 100%;
-    & select {
-      width: 100%;
-    }
   }
 }

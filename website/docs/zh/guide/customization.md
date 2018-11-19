@@ -5,16 +5,10 @@
 默认 [CSS 变量](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables)：
 
 ```css
-:root {
-  --accent-color: #43853d;
-  --sidebar-bg: #333;
-  --border-color: rgb(234, 234, 234);
-  --sidebar-border-color: rgba(255, 255, 255, 0.15);
+  --link-color: rgb(6, 125, 247);
+  --sidebar-bg: white;
+  --sidebar-section-title-color: rgb(136, 136, 136);
+  --border-color: #eaeaea;
   --mobile-header-height: 50px;
   --code-font: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
-}
 ```
-
-这是一个在线改变主色调的实例：
-
-<iframe src="https://codesandbox.io/embed/ykyk73y74x?module=%2Foverride.css" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>

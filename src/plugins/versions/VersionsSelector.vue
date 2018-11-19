@@ -1,17 +1,15 @@
 <template>
   <div class="VersionsSelector">
-    <div class="docute-select is-block">
-      <select @change="handleChange">
-        <option disabled>Choose Version</option>
-        <option
-          v-for="(value, key) in $store.getters.config.versions"
-          :key="key"
-          :value="value.link"
-          :selected="currentVersionLink === value.link">
-          {{ key }}
-        </option>
-      </select>
-    </div>
+    <DocuteSelect @change="handleChange">
+      <option disabled>Choose Version</option>
+      <option
+        v-for="(value, key) in $store.getters.config.versions"
+        :key="key"
+        :value="value.link"
+        :selected="currentVersionLink === value.link">
+        {{ key }}
+      </option>
+    </DocuteSelect>
   </div>
 </template>
 

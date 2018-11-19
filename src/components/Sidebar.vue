@@ -78,16 +78,27 @@ export default {
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 0;
   z-index: 9;
-  color: white;
   overflow-y: auto;
   padding: 20px 0;
   word-break: break-word;
+  border-right: 1px solid var(--border-color);
 
   & a {
-    color: white;
     text-decoration: none;
+    color: #000;
+  }
+
+  @media (max-width: 768px) {
+    left: 0;
+    transform: translateX(-100%);
+    width: 80%;
+    top: var(--mobile-header-height);
+    transition: transform 0.5s cubic-bezier(0.5, 0.32, 0.01, 1);
+
+    &.isShown {
+      transform: translateX(0);
+    }
   }
 }
 
@@ -97,13 +108,16 @@ export default {
   padding: 20px;
   padding-top: 0;
   line-height: 1.2;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .SidebarItem {
   &:not(:last-child) {
-    border-bottom: 1px solid var(--sidebar-border-color);
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
   }
 
   &.hasTitle {
@@ -118,12 +132,12 @@ export default {
 }
 
 .ItemTitle {
-  font-size: 1.2rem;
-  font-style: italic;
+  font-size: 1rem;
   padding: 0 20px;
   margin-bottom: 10px;
-  font-weight: 500;
   position: relative;
+  color: var(--sidebar-section-title-color);
+  text-transform: uppercase;
 }
 
 .ItemLink {
@@ -134,7 +148,7 @@ export default {
 
   &.active,
   &:hover {
-    background: var(--sidebar-border-color);
+    font-weight: bold;
   }
 }
 
@@ -160,50 +174,18 @@ export default {
     margin-left: 50px;
   }
 
-  &:before {
-    position: absolute;
-    content: '';
-    height: 4px;
-    width: 4px;
-    background: transparent;
-    display: block;
-    top: 50%;
-    margin-top: -2px;
-    left: -10px;
-    border-radius: 50%;
-  }
-
-  &:hover {
-    &:before {
-      background: rgba(228, 228, 228, 0.28);
-    }
-  }
-
   &.router-link-exact-active {
+    font-weight: bold;
+
     &:before {
-      background: white;
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      right: 0;
+      background: #333;
     }
-  }
-}
-</style>
-
-<style scoped>
-@import 'vars.css';
-
-@media screen and (max-width: 768px) {
-  .Sidebar {
-    transform: translateX(-100%);
-    width: 80%;
-    top: var(--mobile-header-height);
-    transition: transform 0.5s cubic-bezier(0.5, 0.32, 0.01, 1);
-
-    &.isShown {
-      transform: translateX(0);
-    }
-  }
-
-  .SiteTitle {
-    display: none;
   }
 }
 </style>

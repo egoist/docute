@@ -1,41 +1,40 @@
 <template>
   <div class="Page">
-    <Sidebar />
-    <SidebarMask />
     <MobileHeader />
     <div
-      class="Main"
+      class="Wrap"
       :class="{
         'is-center': $store.getters.config.centerContent
-      }"
-      v-if="$store.state.fetchingFile">
-      <content-loader
-        :height="160"
-        :width="400"
-        :speed="2"
-        primaryColor="#f3f3f3"
-        secondaryColor="#ecebeb"
-      >
-        <rect x="0" y="5" rx="4" ry="4" width="117" height="6.4" />
-        <rect x="0" y="25" rx="3" ry="3" width="85" height="6.4" />
-        <rect x="0" y="60" rx="3" ry="3" width="350" height="6.4" />
-        <rect x="0" y="80" rx="3" ry="3" width="380" height="6.4" />
-        <rect x="0" y="100" rx="3" ry="3" width="201" height="6.4" />
-      </content-loader>
+      }">
+      <Sidebar />
+      <SidebarMask />
+      <div
+        class="Main"
+        v-if="$store.state.fetchingFile">
+        <content-loader
+          :height="160"
+          :width="400"
+          :speed="2"
+          primaryColor="#f3f3f3"
+          secondaryColor="#ecebeb"
+        >
+          <rect x="0" y="5" rx="4" ry="4" width="117" height="6.4" />
+          <rect x="0" y="25" rx="3" ry="3" width="85" height="6.4" />
+          <rect x="0" y="60" rx="3" ry="3" width="350" height="6.4" />
+          <rect x="0" y="80" rx="3" ry="3" width="380" height="6.4" />
+          <rect x="0" y="100" rx="3" ry="3" width="201" height="6.4" />
+        </content-loader>
+      </div>
+      <div
+        class="Main"
+        v-else>
+        <InjectedComponents position="main:start" />
+        <component :is="MarkdownBody" />
+        <EditLink />
+        <PrevNextLinks />
+        <InjectedComponents position="main:end" />
+      </div>
     </div>
-    <div
-      class="Main"
-      :class="{
-        'is-center': $store.getters.config.centerContent
-      }"
-      v-else>
-      <InjectedComponents position="main:start" />
-      <component :is="MarkdownBody" />
-      <EditLink />
-      <PrevNextLinks />
-      <InjectedComponents position="main:end" />
-    </div>
-    <Rightbar />
   </div>
 </template>
 
@@ -47,7 +46,6 @@ import SidebarMask from '../components/SidebarMask.vue'
 import MobileHeader from '../components/MobileHeader.vue'
 import PrevNextLinks from '../components/PrevNextLinks.vue'
 import EditLink from '../components/EditLink.vue'
-import Rightbar from '../components/Rightbar.vue'
 import hooks from '../hooks'
 
 export default {
@@ -59,8 +57,7 @@ export default {
     SidebarMask,
     MobileHeader,
     PrevNextLinks,
-    EditLink,
-    Rightbar
+    EditLink
   },
 
   mounted() {
@@ -124,7 +121,7 @@ export default {
         if (el) {
           jump(el, {
             duration: 0,
-            offset: document.body.clientWidth < 768 ? -60 : -10
+            offset: document.body.clientWidth < 768 ? -60 : -20
           })
         }
       }
@@ -139,6 +136,8 @@ export default {
 </style>
 
 <style scoped>
+@import 'vars.css';
+
 .Docute {
   display: flex;
 }
@@ -148,25 +147,7 @@ export default {
   max-width: 800px;
   padding: 20px 80px 80px;
 
-  &.is-center {
-    margin: 0 auto;
-    margin-left: auto;
-  }
-}
-</style>
-
-<style scoped>
-@import 'vars.css';
-
-@media screen and (max-width: 1300px) {
-  .Main.is-center {
-    margin-left: 250px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .Main,
-  .Main.is-center {
+  @media (max-width: 768px) {
     padding: 40px 20px;
     margin-left: 0;
     max-width: 100%;

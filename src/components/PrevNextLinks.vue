@@ -60,10 +60,8 @@ export default {
   margin-top: 40px;
   padding-top: 30px;
   border-top: 1px solid var(--border-color);
-  color: var(--accent-color);
 
   & a {
-    color: var(--accent-color);
     text-decoration: none;
 
     &:hover {

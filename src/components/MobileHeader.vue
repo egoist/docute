@@ -25,13 +25,17 @@ export default {
   padding: 0 20px;
   height: var(--mobile-header-height);
   line-height: var(--mobile-header-height);
-  background: var(--accent-color);
-  color: white;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 3;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--sidebar-bg);
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
 }
 
 .SiteTitle {
@@ -49,13 +53,5 @@ export default {
   width: 20px;
   height: 20px;
   margin-right: 10px;
-}
-</style>
-
-<style scoped>
-@media screen and (max-width: 768px) {
-  .MobileHeader {
-    display: flex;
-  }
 }
 </style>

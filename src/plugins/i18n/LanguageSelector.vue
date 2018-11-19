@@ -1,17 +1,15 @@
 <template>
   <div class="LanguageSelector">
-    <div class="docute-select is-block">
-      <select @change="handleChange">
-        <option disabled>Choose Language</option>
-        <option
-          v-for="language in languages"
-          :value="language.path"
-          :selected="isCurrentLocale(language.path)"
-          :key="language.path">
-          {{ language.language }}
-        </option>
-      </select>
-    </div>
+    <DocuteSelect @change="handleChange">
+      <option disabled>Choose Language</option>
+      <option
+        v-for="language in languages"
+        :value="language.path"
+        :selected="isCurrentLocale(language.path)"
+        :key="language.path">
+        {{ language.language }}
+      </option>
+    </DocuteSelect>
   </div>
 </template>
 

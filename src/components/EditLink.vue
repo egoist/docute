@@ -32,7 +32,6 @@ export default {
   margin-top: 50px;
 
   & a {
-    color: var(--accent-color);
     text-decoration: none;
     display: flex;
     align-items: center;
