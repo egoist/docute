@@ -3,7 +3,7 @@ import {sync} from 'vuex-router-sync'
 import PluginAPI from './PluginAPI'
 import Root from './components/Root.vue'
 import store from './store'
-import router from './router'
+import createRouter from './router'
 import alternativeComponents from './utils/alternativeComponents'
 import ImageZoom from './components/ImageZoom.vue'
 import Badge from './components/Badge.vue'
@@ -12,8 +12,6 @@ import Badge from './components/Badge.vue'
 import i18nPlugin from './plugins/i18n'
 import evaluateContentPlugin from './plugins/evaluateContent'
 import versionsPlugin from './plugins/versions'
-
-sync(store, router)
 
 Vue.component(ImageZoom.name, ImageZoom)
 Vue.component(Badge.name, Badge)
@@ -30,6 +28,9 @@ Vue.mixin({
 
 class Docute {
   constructor(config = {}) {
+    const router = createRouter({routerMode: config.routerMode})
+    sync(store, router)
+
     store.commit('SET_ORIGINAL_CONFIG', {
       title: document.title,
       ...config
