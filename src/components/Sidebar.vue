@@ -83,6 +83,7 @@ export default {
   color: white;
   overflow-y: auto;
   padding: 20px 0;
+  word-break: break-word;
 
   & a {
     color: white;
