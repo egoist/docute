@@ -63,14 +63,18 @@ export default {
     Rightbar
   },
 
-  created() {
-    this.fetchFile()
+  mounted() {
+    const initialTextNode = document.getElementById('docute-initial-text')
+    this.fetchFile({
+      path: this.$route.path,
+      text: initialTextNode && initialTextNode.textContent
+    })
   },
 
   beforeRouteUpdate(to, from, next) {
     next()
     if (to.path !== from.path) {
-      this.fetchFile(to.path)
+      this.fetchFile({path: to.path})
     }
   },
 
@@ -105,11 +109,8 @@ export default {
   },
 
   methods: {
-    async fetchFile(path) {
-      if (typeof path === 'undefined') {
-        path = this.$route.path
-      }
-      await this.$store.dispatch('fetchFile', path)
+    async fetchFile(opts) {
+      await this.$store.dispatch('fetchFile', opts)
       hooks.invoke('onContentWillUpdate', this)
       await this.$nextTick()
       hooks.invoke('onContentUpdated', this)

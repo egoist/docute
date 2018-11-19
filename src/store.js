@@ -56,12 +56,18 @@ const store = new Vuex.Store({
   },
 
   actions: {
-    async fetchFile({commit, getters, dispatch}, path) {
+    async fetchFile({commit, getters, dispatch}, {path, text}) {
       commit('TOGGLE_SIDEBAR', false)
       commit('SET_FETCHING', true)
       const file = getFilenameByPath(getters.config.sourcePath, path)
-      let [text] = await Promise.all([
-        fetch(file).then(res => res.text()),
+
+      await Promise.all([
+        !text &&
+          fetch(file)
+            .then(res => res.text())
+            .then(res => {
+              text = res
+            }),
         dispatch('fetchPrismLanguages')
       ])
 
