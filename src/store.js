@@ -1,7 +1,7 @@
 /* globals __PRISM_VERSION__ */
 import Vue from 'vue'
 import Vuex from 'vuex'
-import fetch from 'unfetch'
+import fetch from 'isomorphic-unfetch'
 import marked from './utils/marked'
 import highlight from './utils/highlight'
 import {getFilenameByPath, isExternalLink} from './utils'

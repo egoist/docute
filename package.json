@@ -11,12 +11,12 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
+    "isomorphic-unfetch": "^3.0.0",
     "jump.js": "^1.0.2",
     "loadjs": "^3.5.4",
     "marked": "^0.5.0",
     "medium-zoom": "^1.0.2",
     "prismjs": "^1.15.0",
-    "unfetch": "^4.0.1",
     "vue": "^2.5.17",
     "vue-content-loader": "^0.2.1",
     "vue-router": "^3.0.1",
