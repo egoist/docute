@@ -1,10 +1,10 @@
 <template>
   <div class="Page">
-    <MobileHeader />
+    <SiteHeader />
     <div
       class="Wrap"
       :class="{
-        'is-center': $store.getters.config.centerContent
+        'is-center': $store.getters.centerContent
       }">
       <Sidebar />
       <SidebarMask />
@@ -43,7 +43,7 @@ import jump from 'jump.js'
 import {ContentLoader} from 'vue-content-loader'
 import Sidebar from '../components/Sidebar.vue'
 import SidebarMask from '../components/SidebarMask.vue'
-import MobileHeader from '../components/MobileHeader.vue'
+import SiteHeader from '../components/Header.vue'
 import PrevNextLinks from '../components/PrevNextLinks.vue'
 import EditLink from '../components/EditLink.vue'
 import hooks from '../hooks'
@@ -55,7 +55,7 @@ export default {
     ContentLoader,
     Sidebar,
     SidebarMask,
-    MobileHeader,
+    SiteHeader,
     PrevNextLinks,
     EditLink
   },
@@ -119,9 +119,10 @@ export default {
       if (hash) {
         const el = document.querySelector(hash)
         if (el) {
+          const header = document.querySelector('.Header')
           jump(el, {
             duration: 0,
-            offset: document.body.clientWidth < 768 ? -60 : -20
+            offset: -(header.clientHeight + 30)
           })
         }
       }
@@ -144,14 +145,13 @@ export default {
 
 .Main {
   margin-left: 250px;
-  max-width: 800px;
-  padding: 20px 80px 80px;
+  padding: 30px 20px 80px 80px;
+  margin-top: var(--header-height);
 
   @media (max-width: 768px) {
     padding: 40px 20px;
     margin-left: 0;
     max-width: 100%;
-    margin-top: var(--mobile-header-height);
   }
 }
 </style>

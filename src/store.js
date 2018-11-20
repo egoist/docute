@@ -187,10 +187,11 @@ const store = new Vuex.Store({
     },
 
     sidebar(_, {config}) {
-      if (config.nav) {
-        console.warn('"nav" option has been renamed to "sidebar".')
-      }
-      return config.sidebar || config.nav || []
+      return config.sidebar || []
+    },
+
+    centerContent(_, {config}) {
+      return config.centerContent !== false
     }
   }
 })

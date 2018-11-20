@@ -21,11 +21,24 @@ new Docute(options)
 
 网站标题。
 
+## nav
+
+- 类型: `Array<NavItem>`
+
+在头部显示的导航栏。
+
+```ts
+interface NavItem {
+  title: string
+  link: string
+}
+```
+
 ## sidebar
 
 - 类型：`Array<SidebarItem>`
 
-要在侧边栏中显示的导航数组。
+在侧边栏中显示的导航栏。
 
 ```ts
 interface SidebarItem {

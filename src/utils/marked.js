@@ -8,6 +8,7 @@
 
  // @modified
  import parseCodeOptions from './parseCodeOptions'
+ import removeMarkdownExtension from './removeMarkdownExtension'
 
 /**
  * Block-Level Grammar
@@ -1108,13 +1109,13 @@ Renderer.prototype.link = function(href, title, text) {
   var isExternal = /^https?:\/\//.test(href)
   var tag = isExternal ? 'a' : 'router-link'
   var hrefAttr = tag === 'a' ? 'href' : 'to'
-  var out = `<${tag} ${hrefAttr}="` + escape(href) + '"'
+  var out = `<${tag} ${hrefAttr}="` + escape(isExternal ? href : removeMarkdownExtension(href)) + '"'
   if (title) {
     out += ' title="' + title + '"'
   }
   if (isExternal) {
     out += ` target="_blank" rel="noopener noreferrer"`
-    text += `<svg data-v-fd902e80="" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon external-link-icon"><path data-v-fd902e80="" fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon data-v-fd902e80="" fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg>`
+    text += `\n<external-link-icon />`
   }
   out += '>' + text + `</${tag}>`
   return out

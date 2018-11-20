@@ -5,7 +5,7 @@ import prismLanguages from '../src/utils/prismLanguages'
 new Docute({
   target: 'app',
   title: 'Docute',
-  highlight: ['typescript'],
+  highlight: ['typescript', 'bash'],
   plugins: [
     process.env.NODE_ENV === 'production' && googleAnalytics('UA-54857209-11')
   ].filter(Boolean),
@@ -15,7 +15,8 @@ new Docute({
     {
       data() {
         return {
-          builtinLanguages: prismLanguages.builtin
+          builtinLanguages: prismLanguages.builtin,
+          deps: __DEPS__
         }
       }
     }
@@ -28,20 +29,17 @@ new Docute({
       link: 'https://v3.docute.org'
     }
   },
-  sidebar: [
+  nav: [
     {
-      links: [
-        {
-          title: 'Home',
-          link: '/',
-          toc: false
-        },
-        {
-          title: 'GitHub',
-          link: 'https://github.com/leptosia/docute'
-        }
-      ]
+      title: 'Home',
+      link: '/'
     },
+    {
+      title: 'GitHub',
+      link: 'https://github.com/leptosia/docute'
+    }
+  ],
+  sidebar: [
     {
       title: 'Guide',
       links: [
@@ -87,31 +85,35 @@ new Docute({
           link: '/plugin-api'
         }
       ]
+    },
+    {
+      title: 'Misc',
+      links: [
+        {
+          title: 'Credits',
+          link: '/credits'
+        }
+      ]
     }
   ],
   overrides: {
     '/': {
       language: 'English'
     },
-    '/v2/': {
-    },
     '/zh/': {
       language: 'Chinese',
       editLinkText: '在 GitHub 上编辑此页',
-      sidebar: [
+      nav: [
         {
-          links: [
-            {
-              title: '首页',
-              link: '/zh/',
-              toc: false
-            },
-            {
-              title: 'GitHub',
-              link: 'https://github.com/leptosia/docute'
-            }
-          ]
+          title: '首页',
+          link: '/zh/'
         },
+        {
+          title: 'GitHub',
+          link: 'https://github.com/leptosia/docute'
+        }
+      ],
+      sidebar: [
         {
           title: '指南',
           links: [
@@ -155,6 +157,15 @@ new Docute({
             {
               title: '插件 API',
               link: '/zh/plugin-api'
+            }
+          ]
+        },
+        {
+          title: '其它',
+          links: [
+            {
+              title: '致谢',
+              link: '/zh/credits'
             }
           ]
         }

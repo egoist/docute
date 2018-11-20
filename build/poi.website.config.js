@@ -24,7 +24,8 @@ module.exports = {
   },
   constants: {
     __DOCUTE_VERSION__: JSON.stringify(pkg.version),
-    __PRISM_VERSION__: JSON.stringify(require('prismjs/package').version)
+    __PRISM_VERSION__: JSON.stringify(require('prismjs/package').version),
+    __DEPS__: JSON.stringify(Object.keys(pkg.dependencies))
   },
   plugins: [
     {

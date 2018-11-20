@@ -1,11 +1,8 @@
 <template>
   <div class="Sidebar" :class="{isShown: $store.state.showSidebar}">
-
-        <div class="SiteTitle">
-          <router-link to="/">{{ $store.getters.config.title }}</router-link>
-        </div>
-
         <InjectedComponents position="sidebar:start" />
+
+        <MobileHeaderNav v-if="$store.getters.config.nav" :nav="$store.getters.config.nav" />
 
         <div class="SidebarItems">
           <div
@@ -22,7 +19,8 @@
                 :href="link.link"
                 class="ItemLink"
                 target="_blank">
-                {{ link.title }} ↗
+                {{ link.title }}
+                <external-link-icon />
               </a>
               <router-link
                 v-else
@@ -60,8 +58,13 @@
 
 <script>
 import {isExternalLink} from '../utils'
+import MobileHeaderNav from './MobileHeaderNav.vue'
 
 export default {
+  components: {
+    MobileHeaderNav
+  },
+
   methods: {
     isExternalLink
   }
@@ -76,11 +79,11 @@ export default {
   width: 250px;
   background: var(--sidebar-bg);
   position: fixed;
-  top: 0;
+  top: var(--header-height);
   bottom: 0;
   z-index: 9;
   overflow-y: auto;
-  padding: 20px 0;
+  padding: 30px 0;
   word-break: break-word;
   border-right: 1px solid var(--border-color);
 
@@ -93,24 +96,11 @@ export default {
     left: 0;
     transform: translateX(-100%);
     width: 80%;
-    top: var(--mobile-header-height);
     transition: transform 0.5s cubic-bezier(0.5, 0.32, 0.01, 1);
 
     &.isShown {
       transform: translateX(0);
     }
-  }
-}
-
-.SiteTitle {
-  font-size: 1.8rem;
-  font-weight: 300;
-  padding: 20px;
-  padding-top: 0;
-  line-height: 1.2;
-
-  @media (max-width: 768px) {
-    display: none;
   }
 }
 

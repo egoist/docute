@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 * {
@@ -10,7 +10,7 @@ body {
 }
 
 a {
-  color: var(--link-color);
+  color: var(--accent-color);
 }
 
 .external-link-icon {
@@ -23,8 +23,9 @@ a {
 }
 
 .Wrap {
+  max-width: 1060px;
+
   &.is-center {
-    max-width: 1020px;
     margin: 0 auto;
   }
 }

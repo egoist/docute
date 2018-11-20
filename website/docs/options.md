@@ -20,11 +20,24 @@ The ID of the target element to locate, e.g. `app` or `#app`.
 
 Website title.
 
+## nav
+
+- Type: `Array<NavItem>`
+
+An array of navigation items to display at navbar.
+
+```ts
+interface NavItem {
+  title: string
+  link: string
+}
+```
+
 ## sidebar
 
 - Type: `Array<SidebarItem>`
 
-An array of navigation items to display in sidebar.
+An array of navigation items to display at sidebar.
 
 ```ts
 interface SidebarItem {
@@ -86,7 +99,7 @@ The text for *edit link*.
 ## centerContent
 
 - Type: `boolean`
-- Default: `false`
+- Default: `true`
 
 Centering contents.
 

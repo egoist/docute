@@ -1,4 +1,4 @@
-# Docute
+# Introduction to Docute
 
 The fastest way to create a documentation site for your project.
 
@@ -61,9 +61,12 @@ Then you can serve this folder as a static website on your machine using:
 - Golang: `caddy`
 - ..or whatever static web server
 
+Next, you may want to use [sidebar](./options.md#sidebar), [nav](./options.md#nav) or other [options](./options.md) to customize the website. 
+
 Here's a CodeSandbox starter which you can preview right now or download to run locally:
 
 <iframe src="https://codesandbox.io/embed/174359y77?module=%2Fmain.js" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
 
 ## Comparisons
 

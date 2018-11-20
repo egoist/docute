@@ -61,7 +61,10 @@ Docute 本质上就是一个 JavaScript 文件，它可以获取 Markdown 文件
 - Golang: `caddy`
 - ..或任何静态 web 服务器
 
-这是 CodeSandbox 启动器，你可以立即预览或下载到本地运行：
+下一步, 你可能会想用 [sidebar](./options.md#sidebar), [nav](./options.md#nav) 或其他 [选项](./options.md) 来定制你的文档。 
+
+
+这有一个 CodeSandbox 演示，你可以立即预览或下载到本地运行：
 
 <iframe src="https://codesandbox.io/embed/174359y77?module=%2Fmain.js" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
