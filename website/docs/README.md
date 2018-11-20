@@ -63,9 +63,9 @@ Then you can serve this folder as a static website on your machine using:
 
 Next, you may want to use [sidebar](./options.md#sidebar), [nav](./options.md#nav) or other [options](./options.md) to customize the website. 
 
-Here's a CodeSandbox starter which you can preview right now or download to run locally:
+Here's a starter which you can preview right now or [download](https://repl.it/@egoist/docute-starter.zip) to run locally:
 
-<iframe src="https://codesandbox.io/embed/174359y77?module=%2Fmain.js" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+<iframe height="400px" width="100%" src="https://repl.it/@egoist/docute-starter?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 
 ## Comparisons

@@ -63,10 +63,9 @@ Docute 本质上就是一个 JavaScript 文件，它可以获取 Markdown 文件
 
 下一步, 你可能会想用 [sidebar](./options.md#sidebar), [nav](./options.md#nav) 或其他 [选项](./options.md) 来定制你的文档。 
 
+这里有一个在线演示，你可以立刻预览或者 [下载](https://repl.it/@egoist/docute-starter.zip) 到本地运行:
 
-这有一个 CodeSandbox 演示，你可以立即预览或下载到本地运行：
-
-<iframe src="https://codesandbox.io/embed/174359y77?module=%2Fmain.js" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+<iframe height="400px" width="100%" src="https://repl.it/@egoist/docute-starter?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ## 比较
 
