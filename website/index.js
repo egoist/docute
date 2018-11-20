@@ -70,6 +70,15 @@ new Docute({
       ]
     },
     {
+      title: 'Advanced',
+      links: [
+        {
+          title: 'Use With Bundlers',
+          link: '/guide/use-with-bundlers'
+        }
+      ]
+    },
+    {
       title: 'References',
       links: [
         {
@@ -140,6 +149,15 @@ new Docute({
             {
               title: '部署',
               link: '/zh/guide/deployment'
+            }
+          ]
+        },
+        {
+          title: '进阶',
+          links: [
+            {
+              title: '使用打包工具',
+              link: '/zh/guide/use-with-bundlers'
             }
           ]
         },

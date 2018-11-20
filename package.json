@@ -2,7 +2,9 @@
   "name": "docute",
   "version": "0.0.0-managed-by-semantic-release",
   "scripts": {
-    "build": "poi build --config build/poi.lib.config.js --target lib",
+    "build:umd": "poi build --config build/poi.lib.config.js --target lib",
+    "build:es": "sfc normalize --config build/sfc.config.js",
+    "build": "npm run build:umd && npm run build:es",
     "test": "npm run lint && echo 'no tests!'",
     "lint": "xo",
     "website": "poi dev --config build/poi.website.config.js",
@@ -27,8 +29,7 @@
   "devDependencies": {
     "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
     "@leptosia/docute-google-analytics": "^1.0.0",
-    "buble": "^0.19.3",
-    "buble-loader": "^0.5.1",
+    "babel-preset-minimal": "^0.1.1",
     "cz-conventional-changelog": "^2.1.0",
     "eslint-config-rem": "^3.0.0",
     "eslint-plugin-vue": "^5.0.0-beta.3",
@@ -39,6 +40,7 @@
     "postcss-import": "^12.0.0",
     "postcss-preset-env": "^6.0.3",
     "semantic-release": "^15.12.0",
+    "sfc": "^0.2.12",
     "webpack-node-externals": "^1.7.2",
     "xo": "^0.23.0"
   },
@@ -47,8 +49,10 @@
     "type": "git"
   },
   "main": "dist/docute.js",
+  "module": "lib/index.js",
   "files": [
-    "dist"
+    "dist",
+    "lib"
   ],
   "description": "Effortlessly documentation done right.",
   "author": "egoist <0x142857@gmail.com>",

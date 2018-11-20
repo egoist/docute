@@ -17,9 +17,6 @@ module.exports = {
   plugins: [
     {
       resolve: lib
-    },
-    {
-      resolve: require('./plugins/buble')
     }
   ],
   filenames: {
