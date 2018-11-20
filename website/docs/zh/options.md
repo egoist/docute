@@ -91,6 +91,22 @@ https://github.com/USER/REPO/blob/master/docs
 
 内容居中。
 
+## versions
+
+- 类型: `Versions`
+
+设置此项之后, Docute 会在侧边栏显示一个版本选择器。
+
+```ts
+interface Versions {
+  // 版本号, 比如 `v1`
+  [version: string]: {
+    // 指向相关文档的链接
+    link: string
+  }
+}
+```
+
 ## overrides
 
 - 类型：`{[path: string]: LocaleOptions}`

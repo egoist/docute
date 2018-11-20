@@ -21,7 +21,7 @@ new Docute({
     }
   ],
   versions: {
-    v4: {
+    'v4 (Latest)': {
       link: '/'
     },
     v3: {

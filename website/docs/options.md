@@ -90,6 +90,22 @@ The text for *edit link*.
 
 Centering contents.
 
+## versions
+
+- Type: `Versions`
+
+When specified, Docute will show a version selector at the sidebar.
+
+```ts
+interface Versions {
+  // The version number, like `v1`
+  [version: string]: {
+    // The link to this version of docs
+    link: string
+  }
+}
+```
+
 ## overrides
 
 - Type: `{[path: string]: LocaleOptions}`
