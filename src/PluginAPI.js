@@ -46,4 +46,9 @@ export default class PluginAPI {
     this.hooks.add('onContentUpdated', fn)
     return this
   }
+
+  extendMarkdownComponent(fn) {
+    this.hooks.add('extendMarkdownComponent', fn)
+    return this
+  }
 }
