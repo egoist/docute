@@ -131,6 +131,89 @@ class SkinnedMesh extends THREE.Mesh {
 }
 ```
 
+## Run Code Fences
+
+You can use the [run-code](https://github.com/leptosia/docute-plugins/tree/master/packages/run-code) plugin to make specific code fences runnable using iframe.
+
+```html
+<!-- Load these after docute.js -->
+<script src="https://unpkg.com/@leptosia/docute-run-code@1/dist/index.min.js"></script>
+
+<script>
+new Docute({
+  // ...
+  plugins: [
+    // Use this plugin
+    docuteRunCode({
+      updateCode(code) {
+        return `<script src="https://unpkg.com/vue"></script>${code}`
+      }
+    })
+  ]
+})
+</script>
+```
+
+__Input:__
+
+````markdown
+```js
+// @run-code
+new Vue({
+  el: '#app',
+  template: `
+  <div>
+    <h1>Waifu List:</h1>
+    <ul>
+      <li v-for="waifu in waifus">
+        {{ waifu}}
+      </li>
+    </ul>
+  </div>
+  `,
+  data: {
+    waifus: [
+      'asuka',
+      'shino',
+      'rem',
+      'touka',
+      'ena'
+    ]
+  }
+})
+```
+````
+
+__Output:__
+
+```js
+// @run-code
+new Vue({
+  el: '#app',
+  template: `
+  <div>
+    <h1>Waifu List:</h1>
+    <ul>
+      <li v-for="waifu in waifus">
+        {{ waifu}}
+      </li>
+    </ul>
+  </div>
+  `,
+  data: {
+    waifus: [
+      'asuka',
+      'shino',
+      'rem',
+      'touka',
+      'ena'
+    ]
+  }
+})
+```
+
+Please check out the plugin's [README](https://github.com/leptosia/docute-plugins/tree/master/packages/run-code) for detailed usages.
+
 ## Using Mermaid
 
 [Mermaid](https://mermaidjs.github.io/) is a way to write charts in plain text, you can use a simple Docute plugin to add Mermaid support:

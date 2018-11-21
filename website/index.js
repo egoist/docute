@@ -1,4 +1,5 @@
 import googleAnalytics from '@leptosia/docute-google-analytics'
+import runCode from '@leptosia/docute-run-code'
 import Docute from '../src'
 import prismLanguages from '../src/utils/prismLanguages'
 
@@ -7,7 +8,13 @@ new Docute({
   title: 'Docute',
   highlight: ['typescript', 'bash'],
   plugins: [
-    process.env.NODE_ENV === 'production' && googleAnalytics('UA-54857209-11')
+    process.env.NODE_ENV === 'production' && googleAnalytics('UA-54857209-11'),
+    runCode({
+      noModule: true,
+      updateCode(code) {
+        return `<script src="https://unpkg.com/vue"></script>${code}`
+      }
+    })
   ].filter(Boolean),
   editLinkBase: 'https://github.com/leptosia/docute/tree/master/website/docs',
   editLinkText: 'Edit this page on GitHub',
