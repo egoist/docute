@@ -48,7 +48,7 @@ __输出__：
 - [Docute website](https://docute.org)
 - [Docute repo](https://github.com/egoist/docute)
 
-## 代码块高亮
+## 代码高亮 Highlighting
 
 代码框使用 [Prism.js](https://prismjs.com/) 高亮显示，示例代码：
 
@@ -83,7 +83,7 @@ function debounce(func, wait, immediate) {
 
 你可以查看[高亮](/zh/options#highlight)选项添加更多语言。
 
-## 代码块中某行高亮显示
+## 代码框中某行高亮显示
 
 __输入：__
 
@@ -130,89 +130,6 @@ class SkinnedMesh extends THREE.Mesh {
   }
 }
 ```
-
-## 运行代码块
-
-你可以使用 [run-code](https://github.com/leptosia/docute-plugins/tree/master/packages/run-code) 插件来以 iframe 的方式运行代码块:
-
-```html
-<!-- 在 docute.js 之后加载 -->
-<script src="https://unpkg.com/@leptosia/docute-run-code@1/dist/index.min.js"></script>
-
-<script>
-new Docute({
-  // ...
-  plugins: [
-    // 使用这个插件
-    docuteRunCode({
-      updateCode(code) {
-        return `<script src="https://unpkg.com/vue"></script>${code}`
-      }
-    })
-  ]
-})
-</script>
-```
-
-__输入:__
-
-````markdown
-```js
-// @run-code
-new Vue({
-  el: '#app',
-  template: `
-  <div>
-    <h1>Waifu List:</h1>
-    <ul>
-      <li v-for="waifu in waifus">
-        {{ waifu}}
-      </li>
-    </ul>
-  </div>
-  `,
-  data: {
-    waifus: [
-      'asuka',
-      'shino',
-      'rem',
-      'touka',
-      'ena'
-    ]
-  }
-})
-```
-````
-
-__输出:__
-
-```js
-// @run-code
-new Vue({
-  el: '#app',
-  template: `
-  <div>
-    <h1>Waifu List:</h1>
-    <ul>
-      <li v-for="waifu in waifus">
-        {{ waifu}}
-      </li>
-    </ul>
-  </div>
-  `,
-  data: {
-    waifus: [
-      'asuka',
-      'shino',
-      'rem',
-      'touka',
-      'ena'
-    ]
-  }
-})
-```
-
-请查看插件的 [README](https://github.com/leptosia/docute-plugins/tree/master/packages/run-code) 来获取更多用法。
 
 ## 使用 Mermaid
 

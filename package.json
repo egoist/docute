@@ -29,7 +29,6 @@
   "devDependencies": {
     "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
     "@leptosia/docute-google-analytics": "^1.0.0",
-    "@leptosia/docute-run-code": "^1.0.2",
     "babel-preset-minimal": "^0.1.1",
     "cz-conventional-changelog": "^2.1.0",
     "eslint-config-rem": "^3.0.0",
