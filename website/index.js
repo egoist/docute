@@ -190,7 +190,7 @@ new Docute({
       ]
     }
   },
-  pageData: () => fetch('http://jsonplaceholder.typicode.com/posts')
+  pageData: () => fetch('https://jsonplaceholder.typicode.com/posts')
     .then(res => res.json())
     .then(posts => {
       return posts.reduce((result, post) => {
