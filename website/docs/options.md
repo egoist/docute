@@ -35,7 +35,7 @@ interface NavItem {
 
 ## sidebar
 
-- Type: `Array<SidebarItem>`
+- Type: `Array<SidebarItem>` `(store: Vuex.Store) => Array<SidebarItem>`
 
 An array of navigation items to display at sidebar.
 

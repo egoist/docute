@@ -187,7 +187,8 @@ const store = new Vuex.Store({
     },
 
     sidebar(_, {config}) {
-      return config.sidebar || []
+      const sidebar = config.sidebar || []
+      return typeof sidebar === 'function' ? sidebar(store) : sidebar
     },
 
     centerContent(_, {config}) {

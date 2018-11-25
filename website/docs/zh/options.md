@@ -36,7 +36,7 @@ interface NavItem {
 
 ## sidebar
 
-- 类型：`Array<SidebarItem>`
+- 类型：`Array<SidebarItem>` `(store: Vuex.Store) => Array<SidebarItem>`
 
 在侧边栏中显示的导航栏。
 
