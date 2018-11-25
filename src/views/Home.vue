@@ -96,7 +96,9 @@ export default {
       const component = {
         mixins: componentMixins || [],
         name: 'MarkdownBody',
-        template: `<div class="markdown-body">${this.$store.state.html}</div>`
+        template: `<div class="markdown-body">${
+          this.$store.state.page.html
+        }</div>`
       }
 
       hooks.process('extendMarkdownComponent', component)

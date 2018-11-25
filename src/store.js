@@ -14,11 +14,11 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    html: '',
     originalConfig: {},
     page: {
       title: null,
-      headings: null
+      headings: null,
+      html: ''
     },
     env: {},
     showSidebar: false,
@@ -26,20 +26,12 @@ const store = new Vuex.Store({
   },
 
   mutations: {
-    SET_HTML(state, html) {
-      state.html = html
-    },
-
     SET_ORIGINAL_CONFIG(state, config) {
       state.originalConfig = config
     },
 
-    SET_PAGE_TITLE(state, title) {
-      state.page.title = title
-    },
-
-    SET_PAGE_HEADINGS(state, headings) {
-      state.page.headings = headings
+    SET_PAGE(state, page) {
+      state.page = page
     },
 
     TOGGLE_SIDEBAR(state, show) {
@@ -83,11 +75,13 @@ const store = new Vuex.Store({
         env
       })
       html = hooks.process('processHTML', html)
-      commit('SET_PAGE_TITLE', env.title)
-      commit('SET_PAGE_HEADINGS', env.headings)
-      commit('SET_FETCHING', false)
+      commit('SET_PAGE', {
+        title: env.title,
+        headings: env.headings,
+        html
+      })
       commit('SET_ENV', env)
-      commit('SET_HTML', html)
+      commit('SET_FETCHING', false)
     },
 
     fetchPrismLanguages({getters}) {
