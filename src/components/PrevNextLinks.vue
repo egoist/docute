@@ -42,11 +42,15 @@ export default {
     },
 
     prevLinkItem() {
-      return this.sidebarLinks[this.currentLinkIndex - 1]
+      return (
+        this.currentLinkIndex && this.sidebarLinks[this.currentLinkIndex - 1]
+      )
     },
 
     nextLinkItem() {
-      return this.sidebarLinks[this.currentLinkIndex + 1]
+      return (
+        this.currentLinkIndex && this.sidebarLinks[this.currentLinkIndex + 1]
+      )
     }
   }
 }

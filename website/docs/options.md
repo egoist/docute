@@ -62,6 +62,26 @@ The source path to fetch markdown files from, by default we load them from the r
 
 It can also be a full URL like: `https://some-website/path/to/markdown/files` so that you can load files from a different domain.
 
+## pageData
+
+- Type: `PageData | (store: Vuex.Store) => Promise<PageData>`
+
+Directly use page data from this option instead of fetching a file.
+
+```ts
+interface PageData {
+  [path: string]: PageDataItem | (store: Vuex.Store) => Promise<PageDataItem>
+}
+
+interface PageDataItem {
+  title?: string
+  content?: string
+  file?: string
+  markdown?: boolean
+  [k: string]?: any
+}
+```
+
 ## componentMixins
 
 - Type: `Array<Object>`

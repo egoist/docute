@@ -189,7 +189,18 @@ new Docute({
         }
       ]
     }
-  }
+  },
+  pageData: () => fetch('http://jsonplaceholder.typicode.com/posts')
+    .then(res => res.json())
+    .then(posts => {
+      return posts.reduce((result, post) => {
+        result['/post/' + post.id] = {
+          title: post.title,
+          content: post.body
+        }
+        return result
+      }, {})
+    })
 })
 
 Vue.component('ReverseText', {

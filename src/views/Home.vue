@@ -29,6 +29,7 @@
         class="Main"
         v-else>
         <InjectedComponents position="main:start" />
+        <h1 class="page-title">{{ $store.state.page.title }}</h1>
         <component :is="MarkdownBody" />
         <EditLink />
         <PrevNextLinks />
@@ -61,17 +62,13 @@ export default {
   },
 
   mounted() {
-    const initialTextNode = document.getElementById('docute-initial-text')
-    this.fetchFile({
-      path: this.$route.path,
-      text: initialTextNode && initialTextNode.textContent
-    })
+    this.fetchFile(this.$route.path)
   },
 
   beforeRouteUpdate(to, from, next) {
     next()
     if (to.path !== from.path) {
-      this.fetchFile({path: to.path})
+      this.fetchFile(to.path)
     }
   },
 
@@ -97,7 +94,7 @@ export default {
         mixins: componentMixins || [],
         name: 'MarkdownBody',
         template: `<div class="markdown-body">${
-          this.$store.state.page.html
+          this.$store.state.page.content
         }</div>`
       }
 
@@ -108,8 +105,8 @@ export default {
   },
 
   methods: {
-    async fetchFile(opts) {
-      await this.$store.dispatch('fetchFile', opts)
+    async fetchFile(path) {
+      await this.$store.dispatch('fetchFile', path)
       hooks.invoke('onContentWillUpdate', this)
       await this.$nextTick()
       hooks.invoke('onContentUpdated', this)
@@ -155,5 +152,13 @@ export default {
     margin-left: 0;
     max-width: 100%;
   }
+}
+
+.page-title {
+  font-size: 3rem;
+  margin: 0;
+  margin-bottom: 1.4rem;
+  font-weight: 300;
+  line-height: 1.1;
 }
 </style>

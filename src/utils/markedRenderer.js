@@ -17,7 +17,11 @@ export default hooks => {
 
     if (level === 1) {
       env.title = text
-    } else if (level === 2 || level === 3) {
+      // Remove h1 header
+      return ''
+    }
+
+    if (level === 2 || level === 3) {
       env.headings.push({
         level,
         raw,

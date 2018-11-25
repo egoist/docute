@@ -64,6 +64,26 @@ interface ItemLink {
 它也可以是完整的 URL，例如： `https://some-website/path/to/markdown/files`，以便于你可以从其他域名加载文件。
 
 
+## pageData
+
+- 类型: `PageData | (store: Vuex.Store) => Promise<PageData>`
+
+直接从这个选项获取页面数据，而不是请求一个文件。
+
+```ts
+interface PageData {
+  [path: string]: PageDataItem | (store: Vuex.Store) => Promise<PageDataItem>
+}
+
+interface PageDataItem {
+  title?: string
+  content?: string
+  file?: string
+  markdown?: boolean
+  [k: string]?: any
+}
+```
+
 ## componentMixins
 
 - 类型: `Array<Object>`

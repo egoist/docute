@@ -48,38 +48,54 @@ const store = new Vuex.Store({
   },
 
   actions: {
-    async fetchFile({commit, getters, dispatch}, {path, text}) {
+    async fetchFile({commit, getters, dispatch}, path) {
       commit('TOGGLE_SIDEBAR', false)
       commit('SET_FETCHING', true)
-      const file = getFilenameByPath(getters.config.sourcePath, path)
+
+      let pageData = await getters.pageData
+      if (typeof pageData === 'function') {
+        pageData = await pageData(store)
+      }
+
+      let page = {
+        markdown: true,
+        ...pageData
+      }
+
+      if (!page.content && !page.file) {
+        page.file = getFilenameByPath(getters.config.sourcePath, path)
+      }
 
       await Promise.all([
-        !text &&
-          fetch(file)
+        !page.content &&
+          fetch(page.file)
             .then(res => res.text())
             .then(res => {
-              text = res
+              page.content = res
             }),
         dispatch('fetchPrismLanguages')
       ])
 
-      text = hooks.process('processMarkdown', text)
+      // TODO: remove processMarkdown hook
+      page.content = hooks.process('processMarkdown', page.content)
+      page = hooks.process('processPage', page)
 
       const env = {
-        headings: [],
-        file
+        headings: []
       }
-      let html = marked(text, {
-        renderer: markedRenderer(hooks),
-        highlight,
-        env
-      })
-      html = hooks.process('processHTML', html)
-      commit('SET_PAGE', {
-        title: env.title,
-        headings: env.headings,
-        html
-      })
+      if (page.markdown) {
+        page.content = marked(page.content, {
+          renderer: markedRenderer(hooks),
+          highlight,
+          env
+        })
+      }
+      page.content = hooks.process('processHTML', page.content)
+      page.headings = env.headings
+      if (!page.title) {
+        page.title = env.title
+      }
+      commit('SET_PAGE', page)
       commit('SET_ENV', env)
       commit('SET_FETCHING', false)
     },
@@ -187,6 +203,23 @@ const store = new Vuex.Store({
 
     centerContent(_, {config}) {
       return config.centerContent !== false
+    },
+
+    pageData(
+      {
+        route: {path}
+      },
+      {config}
+    ) {
+      return Promise.resolve(
+        typeof config.pageData === 'function'
+          ? config.pageData(store)
+          : config.pageData
+      )
+        .then(pageData => {
+          return pageData && pageData[path]
+        })
+        .catch(console.error)
     }
   }
 })
