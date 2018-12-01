@@ -29,7 +29,7 @@
         class="Main"
         v-else>
         <InjectedComponents position="main:start" />
-        <h1 class="page-title">{{ $store.state.page.title }}</h1>
+        <component :is="MarkdownTitle" class="page-title" />
         <component :is="MarkdownBody" />
         <EditLink />
         <PrevNextLinks />
@@ -88,6 +88,13 @@ export default {
   },
 
   computed: {
+    MarkdownTitle() {
+      return {
+        name: 'MarkdownTitle',
+        template: `<h1>${this.$store.state.page.title}</h1>`
+      }
+    },
+
     MarkdownBody() {
       const {componentMixins} = this.$store.getters.config
       const component = {
