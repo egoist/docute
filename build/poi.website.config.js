@@ -5,22 +5,19 @@ const pkg = require('../package')
 
 module.exports = {
   entry: 'website/index.js',
-  outDir: 'website/dist',
+  output: {
+    dir: 'website/dist',
+    html: {
+      title: 'Docute'
+    }
+  },
   devServer: {
     after(server) {
       server.use('/', express.static(path.resolve('website/docs')))
     }
   },
-  // configureWebpack: {
-  //   output: {
-  //     libraryExport: 'default'
-  //   }
-  // },
   chainWebpack(config) {
     config.resolve.alias.set('vue$', 'vue/dist/vue.esm.js')
-  },
-  html: {
-    title: 'Docute'
   },
   constants: {
     __DOCUTE_VERSION__: JSON.stringify(pkg.version),

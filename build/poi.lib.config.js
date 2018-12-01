@@ -1,30 +1,28 @@
 const pkg = require('../package')
 
-const lib = {
-  name: 'lib',
-  apply(api) {
-    api.chainWebpack(config => {
-      config.resolve.alias.set('vue$', 'vue/dist/vue.esm.js')
-      config.output.libraryTarget('umd')
-      config.output.library('Docute')
-      config.output.libraryExport('default')
-    })
-  }
-}
-
 module.exports = {
   entry: 'src/index.js',
   plugins: [
     {
-      resolve: lib
+      resolve: {
+        apply(api) {
+          api.hook('onCreateWebpackConfig', config => {
+            config.resolve.alias.set('vue$', 'vue/dist/vue.esm.js')
+            config.output.libraryExport('default')
+          })
+        }
+      }
     }
   ],
-  filenames: {
-    js: 'docute.js',
-    css: 'docute.css'
+  output: {
+    format: 'umd',
+    moduleName: 'Docute',
+    fileNames: {
+      js: 'docute.js',
+      css: 'docute.css'
+    },
+    clean: false
   },
-  sourceMap: false,
-  cleanOutDir: false,
   constants: {
     __DOCUTE_VERSION__: JSON.stringify(pkg.version),
     __PRISM_VERSION__: JSON.stringify(require('prismjs/package').version)
