@@ -10733,10 +10733,10 @@ setprototypeof@1.1.0:
   resolved "https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.1.0.tgz#d0bd85536887b6fe7c0d818cb962d9d91c54e656"
   integrity sha512-BvE/TwpZX4FXExxOxZyRGQQv651MSwmWKZGqvmPcRIjDqWub67kTKuIMx43cZZrS/cBBzwBcNDWoFxt2XEFIpQ==
 
-sfc@^0.2.12:
-  version "0.2.12"
-  resolved "https://registry.npmjs.org/sfc/-/sfc-0.2.12.tgz#7347e982c96cf221343cf906c5ea292fd1579c88"
-  integrity sha512-IMTJW0f71uuWW4DfDXD6CSvjzF2fj4w9UO6pUPBeRTUhIkWRndooA9wsgI97glzkXX6x56WSw/2bPxx67Wxkyg==
+sfc@^0.2.13:
+  version "0.2.13"
+  resolved "https://registry.npmjs.org/sfc/-/sfc-0.2.13.tgz#3ad6df1ead970cd6ddb004cfffd5414435a74eee"
+  integrity sha512-30DYjndePtVXjj+5YS4C84ldUx2RM7V/tF8/3r4ddSwiqH9W22YzNZ6l4gKoKrLStOhxgshC/8Ra122aooNhow==
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/preset-typescript" "^7.0.0"

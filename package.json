@@ -42,7 +42,7 @@
     "postcss-preset-env": "^6.0.3",
     "rollup-plugin-vue": "^4.3.2",
     "semantic-release": "^15.12.0",
-    "sfc": "^0.2.12",
+    "sfc": "^0.2.13",
     "webpack-node-externals": "^1.7.2",
     "xo": "^0.23.0"
   },
