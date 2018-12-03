@@ -1,7 +1,7 @@
 @import "vars.css";
 
 .markdown-body {
-  & >*:first-child {
+  & >*:first-child:not(h2) {
     margin-top: 0;
   }
 
