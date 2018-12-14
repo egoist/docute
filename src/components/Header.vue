@@ -51,7 +51,6 @@ export default {
 }
 </script>
 
-
 <style scoped>
 @import 'vars.css';
 

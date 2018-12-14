@@ -1,59 +1,66 @@
 <template>
   <div class="Sidebar" :class="{isShown: $store.state.showSidebar}">
-        <InjectedComponents position="sidebar:start" />
+    <InjectedComponents position="sidebar:start" />
 
-        <MobileHeaderNav v-if="$store.getters.config.nav" :nav="$store.getters.config.nav" />
+    <MobileHeaderNav
+      v-if="$store.getters.config.nav"
+      :nav="$store.getters.config.nav"
+    />
 
-        <div class="SidebarItems">
+    <div class="SidebarItems">
+      <div
+        v-for="(item, index) in $store.getters.sidebar"
+        :class="['SidebarItem', item.title && 'hasTitle']"
+        :key="index"
+      >
+        <div class="ItemTitle" v-if="item.title">{{ item.title }}</div>
+        <template v-for="(link, index) of item.links">
+          <a
+            v-if="isExternalLink(link.link)"
+            :key="index"
+            :href="link.link"
+            class="ItemLink"
+            target="_blank"
+          >
+            {{ link.title }}
+            <external-link-icon />
+          </a>
+          <router-link
+            v-else
+            :key="index"
+            :to="link.link"
+            class="ItemLink"
+            :class="{active: $route.path === link.link}"
+          >
+            {{ link.title }}
+          </router-link>
           <div
-            v-for="(item, index) in $store.getters.sidebar"
-            :class="['SidebarItem', item.title && 'hasTitle']"
-            :key="index">
-            <div class="ItemTitle" v-if="item.title">
-              {{ item.title }}
-            </div>
-            <template v-for="(link, index) of item.links">
-              <a
-                v-if="isExternalLink(link.link)"
-                :key="index"
-                :href="link.link"
-                class="ItemLink"
-                target="_blank">
-                {{ link.title }}
-                <external-link-icon />
-              </a>
-              <router-link
-                v-else
-                :key="index"
-                :to="link.link"
-                class="ItemLink"
-                :class="{active: $route.path === link.link}">
-                {{ link.title }}
-              </router-link>
-              <div
-                class="LinkToc"
-                v-if="!$store.state.fetchingFile &&
+            class="LinkToc"
+            v-if="
+              !$store.state.fetchingFile &&
                 link.toc !== false &&
                 link.link === $route.path &&
                 $store.state.page.headings &&
-                $store.state.page.headings.length > 0"
-                :key="`toc-${index}`">
-                <router-link
-                  class="TocHeading"
-                  :to="{hash: heading.slug}"
-                  :data-level="heading.level"
-                  v-for="heading in $store.state.page.headings"
-                  :key="heading.slug"
-                  v-html="heading.text">
-                </router-link>
-              </div>
-            </template>
+                $store.state.page.headings.length > 0
+            "
+            :key="`toc-${index}`"
+          >
+            <router-link
+              class="TocHeading"
+              :to="{hash: heading.slug}"
+              :data-level="heading.level"
+              v-for="heading in $store.state.page.headings"
+              :key="heading.slug"
+              v-html="heading.text"
+            >
+            </router-link>
           </div>
-        </div>
-
-        <InjectedComponents position="sidebar:end" />
-
+        </template>
       </div>
+    </div>
+
+    <InjectedComponents position="sidebar:end" />
+  </div>
 </template>
 
 <script>
@@ -70,7 +77,6 @@ export default {
   }
 }
 </script>
-
 
 <style scoped>
 @import 'vars.css';

@@ -6,7 +6,8 @@
         v-for="(value, key) in $store.getters.config.versions"
         :key="key"
         :value="value.link"
-        :selected="currentVersionLink === value.link">
+        :selected="currentVersionLink === value.link"
+      >
         {{ key }}
       </option>
     </DocuteSelect>

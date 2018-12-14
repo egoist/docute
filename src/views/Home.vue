@@ -5,12 +5,11 @@
       class="Wrap"
       :class="{
         'is-center': $store.getters.centerContent
-      }">
+      }"
+    >
       <Sidebar />
       <SidebarMask />
-      <div
-        class="Main"
-        v-if="$store.state.fetchingFile">
+      <div class="Main" v-if="$store.state.fetchingFile">
         <content-loader
           :height="160"
           :width="400"
@@ -25,9 +24,7 @@
           <rect x="0" y="100" rx="3" ry="3" width="201" height="6.4" />
         </content-loader>
       </div>
-      <div
-        class="Main"
-        v-else>
+      <div class="Main" v-else>
         <InjectedComponents position="main:start" />
         <component :is="MarkdownTitle" class="page-title" />
         <component :is="MarkdownBody" />
@@ -137,10 +134,7 @@ export default {
 }
 </script>
 
-<style src="../css/prism.css">
-</style>
-<style src="../css/markdown.css">
-</style>
+<style src="../css/prism.css"></style> <style src="../css/markdown.css"></style>
 
 <style scoped>
 @import 'vars.css';

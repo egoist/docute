@@ -6,7 +6,8 @@
         v-for="language in languages"
         :value="language.path"
         :selected="isCurrentLocale(language.path)"
-        :key="language.path">
+        :key="language.path"
+      >
         {{ language.language }}
       </option>
     </DocuteSelect>

@@ -5,7 +5,11 @@
         {{ item.title }}
         <external-link-icon />
       </a>
-      <router-link v-else :to="item.link" :class="{active: $route.path === item.link}">
+      <router-link
+        v-else
+        :to="item.link"
+        :class="{active: $route.path === item.link}"
+      >
         {{ item.title }}
       </router-link>
     </div>

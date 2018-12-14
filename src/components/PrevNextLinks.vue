@@ -1,17 +1,17 @@
 <template>
   <div class="prev-next-links" v-if="prevLinkItem || nextLinkItem">
     <div class="prev-link" v-if="prevLinkItem">
-      ← <router-link
-          :to="prevLinkItem.link">
+      ←
+      <router-link :to="prevLinkItem.link">
         {{ prevLinkItem.title }}
       </router-link>
     </div>
 
     <div class="next-link" v-if="nextLinkItem">
-      <router-link
-        :to="nextLinkItem.link">
+      <router-link :to="nextLinkItem.link">
         {{ nextLinkItem.title }}
-      </router-link> →
+      </router-link>
+      →
     </div>
   </div>
 </template>

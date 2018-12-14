@@ -4,7 +4,17 @@
       <slot name="default"></slot>
     </select>
     <div class="arrow">
-      <svg width="13" height="6" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#979797" fill-rule="evenodd" stroke-linecap="square"><path d="M1.367.375l5.185 5.303M11.685.375L6.5 5.678"></path></svg>
+      <svg
+        width="13"
+        height="6"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        stroke="#979797"
+        fill-rule="evenodd"
+        stroke-linecap="square"
+      >
+        <path d="M1.367.375l5.185 5.303M11.685.375L6.5 5.678"></path>
+      </svg>
     </div>
   </div>
 </template>

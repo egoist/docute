@@ -1,7 +1,5 @@
 <template functional>
-  <span class="badge" :class="props.type">
-    <slot></slot>
-  </span>
+  <span class="badge" :class="props.type"> <slot></slot> </span>
 </template>
 
 <script>

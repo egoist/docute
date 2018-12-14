@@ -2,8 +2,8 @@
   <div
     class="SidebarMask"
     @click="$store.commit('TOGGLE_SIDEBAR', false)"
-    v-if="$store.state.showSidebar">
-  </div>
+    v-if="$store.state.showSidebar"
+  ></div>
 </template>
 
 <style scoped>
