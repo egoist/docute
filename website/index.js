@@ -131,7 +131,7 @@ new Docute({
               link: '/zh/guide/writing'
             },
             {
-              title: '在 Vue 中使用 Markdown',
+              title: '在 Markdown 中使用 Vue',
               link: '/zh/guide/use-vue-in-markdown'
             },
             {
