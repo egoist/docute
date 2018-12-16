@@ -1,3 +1,10 @@
+## [4.6.10](https://github.com/leptosia/docute/compare/v4.6.9...v4.6.10) (2018-12-16)
+
+
+### Bug Fixes
+
+* strip html tag in document.title ([a2c6c4d](https://github.com/leptosia/docute/commit/a2c6c4d))
+
 ## [4.6.9](https://github.com/leptosia/docute/compare/v4.6.8...v4.6.9) (2018-12-16)
 
 
