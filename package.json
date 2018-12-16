@@ -1,6 +1,6 @@
 {
   "name": "docute",
-  "version": "0.0.0-managed-by-semantic-release",
+  "version": "4.6.6",
   "scripts": {
     "build:umd": "poi --config build/poi.lib.config.js --prod",
     "build:es": "sfc normalize --config build/sfc.config.js",
