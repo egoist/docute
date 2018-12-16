@@ -44,6 +44,10 @@ new Docute({
       title: 'Guide',
       links: [
         {
+          title: 'Customization',
+          link: '/guide/customization'
+        },
+        {
           title: 'Writing',
           link: '/guide/writing'
         },
@@ -54,10 +58,6 @@ new Docute({
         {
           title: 'Internationalization',
           link: '/guide/internationalization'
-        },
-        {
-          title: 'Customization',
-          link: '/guide/customization'
         },
         {
           title: 'Plugin',
@@ -127,6 +127,10 @@ new Docute({
           title: '指南',
           links: [
             {
+              title: '自定义',
+              link: '/zh/guide/customization'
+            },
+            {
               title: '撰写',
               link: '/zh/guide/writing'
             },
@@ -137,10 +141,6 @@ new Docute({
             {
               title: '国际化',
               link: '/zh/guide/internationalization'
-            },
-            {
-              title: '自定义',
-              link: '/zh/guide/customization'
             },
             {
               title: '插件',

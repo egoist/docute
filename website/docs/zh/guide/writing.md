@@ -23,14 +23,16 @@
 __输入__：
 
 ```markdown
-- [首页](/) <!-- 展示首页 -->
-- [在 Markdown 中使用 Vue](/guide/use-vue-in-markdown) <!-- 展示其他页面 -->
+- [首页](/zh/) <!-- 展示首页 -->
+- [在 Markdown 中使用 Vue](/zh/guide/use-vue-in-markdown) <!-- 展示其他页面 -->
+- [查看 `title` 选项](../options.md#title) <!-- 甚至是链接到一个内部 Markdown 文件 -->
 ```
 
 __输出__：
 
-- [首页](/) <!-- 展示首页 -->
-- [在 Markdown 中使用 Vue](/guide/use-vue-in-markdown) <!-- 展示其他页面 -->
+- [首页](/zh/) <!-- 展示首页 -->
+- [在 Markdown 中使用 Vue](/zh/guide/use-vue-in-markdown) <!-- 展示其他页面 -->
+- [查看 `title` 选项](../options.md#title) <!-- 甚至是链接到一个内部 Markdown 文件 -->
 
 ### 外部链接
 

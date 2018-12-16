@@ -42,15 +42,15 @@ export default {
     },
 
     prevLinkItem() {
-      return (
-        this.currentLinkIndex && this.sidebarLinks[this.currentLinkIndex - 1]
-      )
+      return typeof this.currentLinkIndex === 'number'
+        ? this.sidebarLinks[this.currentLinkIndex - 1]
+        : null
     },
 
     nextLinkItem() {
-      return (
-        this.currentLinkIndex && this.sidebarLinks[this.currentLinkIndex + 1]
-      )
+      return typeof this.currentLinkIndex === 'number'
+        ? this.sidebarLinks[this.currentLinkIndex + 1]
+        : null
     }
   }
 }

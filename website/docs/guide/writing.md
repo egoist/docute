@@ -25,12 +25,15 @@ __Input__:
 ```markdown
 - [Home](/) <!-- Send the user to Homepage -->
 - [Use Vue in Markdown](/guide/use-vue-in-markdown) <!-- Send the user to another page -->
+- [Check out the `title` option](../options.md#title) <!-- Even relative link to markdown tile -->
 ```
 
 __Output__:
 
 - [Home](/) <!-- Send the user to Homepage -->
 - [Use Vue in Markdown](/guide/use-vue-in-markdown) <!-- Send the user to another page -->
+- [Check out the `title` option](../options.md#title) <!-- Even relative link to markdown tile -->
+
 
 ### External Links
 
