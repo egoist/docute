@@ -101,6 +101,10 @@ new Docute({
         {
           title: 'Credits',
           link: '/credits'
+        },
+        {
+          title: 'Changelog',
+          link: '/changelog'
         }
       ]
     }
@@ -190,17 +194,14 @@ new Docute({
       ]
     }
   },
-  pageData: () => fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(res => res.json())
-    .then(posts => {
-      return posts.reduce((result, post) => {
-        result['/post/' + post.id] = {
-          title: post.title,
-          content: post.body
-        }
-        return result
-      }, {})
-    })
+  pageData: () => {
+    return {
+      '/changelog': {
+        title: 'Changelog',
+        file: 'https://raw.githubusercontent.com/leptosia/docute/master/CHANGELOG.md'
+      }
+    }
+  }
 })
 
 Vue.component('ReverseText', {

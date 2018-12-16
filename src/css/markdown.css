@@ -1,8 +1,12 @@
 @import "vars.css";
 
 .markdown-body {
-  & >*:first-child:not(h2) {
+  & >*:first-child {
     margin-top: 0;
+  }
+
+  &.has-page-title >h2:first-child {
+    margin-top: 7rem;
   }
 
   & a {

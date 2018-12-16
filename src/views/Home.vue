@@ -26,8 +26,8 @@
       </div>
       <div class="Main" v-else>
         <InjectedComponents position="main:start" />
-        <component :is="MarkdownTitle" class="page-title" />
-        <component :is="MarkdownBody" />
+        <component v-if="pageTitle" :is="MarkdownTitle" class="page-title" />
+        <component :class="{'has-page-title': pageTitle}" :is="MarkdownBody" />
         <EditLink />
         <PrevNextLinks />
         <InjectedComponents position="main:end" />
@@ -85,10 +85,14 @@ export default {
   },
 
   computed: {
+    pageTitle() {
+      return this.$store.state.page.title
+    },
+
     MarkdownTitle() {
       return {
         name: 'MarkdownTitle',
-        template: `<h1>${this.$store.state.page.title}</h1>`
+        template: `<h1>${this.pageTitle}</h1>`
       }
     },
 
