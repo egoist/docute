@@ -1,3 +1,10 @@
+## [4.6.13](https://github.com/leptosia/docute/compare/v4.6.12...v4.6.13) (2018-12-16)
+
+
+### Bug Fixes
+
+* **ui:** code white-space ([ed0b9e5](https://github.com/leptosia/docute/commit/ed0b9e5))
+
 ## [4.6.12](https://github.com/leptosia/docute/compare/v4.6.11...v4.6.12) (2018-12-16)
 
 
