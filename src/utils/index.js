@@ -16,10 +16,16 @@ export const slugify = str => {
 
 export const getFilenameByPath = (sourcePath, path) => {
   sourcePath = sourcePath || './'
-  sourcePath = sourcePath.replace(/\/$/, '')
-  if (/\.md$/.test(path)) {
-    return sourcePath + path
+  sourcePath = sourcePath
+    // Remove leading relative path indicator, i.e. `.` and `./`
+    .replace(/^\.\/?/, '')
+    // Ensure the source path does not end with `/`
+    // Since out `path` has leading `/`
+    .replace(/(.+)\/?$/, '$1')
+
+  if (!/\.md$/.test(path)) {
+    path = /\/$/.test(path) ? `${path}README.md` : `${path}.md`
   }
-  const filepath = /\/$/.test(path) ? `${path}README.md` : `${path}.md`
-  return sourcePath + filepath
+
+  return sourcePath + path
 }
