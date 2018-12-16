@@ -163,7 +163,7 @@ export default {
   }
 
   &[data-level='3'] {
-    padding: 0 20px 0 50px;
+    padding: 0 20px 0 40px;
   }
 
   &.router-link-exact-active {
