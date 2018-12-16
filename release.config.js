@@ -1,7 +1,13 @@
 module.exports = {
   branch: 'master',
   plugins: [
-    '@semantic-release/commit-analyzer',
+    [
+      '@semantic-release/commit-analyzer',
+      {
+        preset: 'angular',
+        releaseRules: [{type: 'feat', scope: 'ui', release: 'patch'}]
+      }
+    ],
     '@semantic-release/release-notes-generator',
     [
       '@semantic-release/changelog',
