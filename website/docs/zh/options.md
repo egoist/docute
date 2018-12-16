@@ -57,9 +57,9 @@ interface ItemLink {
 ## sourcePath
 
 - 类型：`string`
-- 默认值：`'/'`
+- 默认值：`'./'`
 
-从 source path 获取 markdown 文件，默认情况下，我们从根目录加载它们，根目录也被称为 `/`。
+从 source path 获取 markdown 文件，默认情况下，我们从 `index.html` 所在的目录加载它们。
 
 它也可以是完整的 URL，例如： `https://some-website/path/to/markdown/files`，以便于你可以从其他域名加载文件。
 

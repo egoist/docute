@@ -15,7 +15,7 @@ export const slugify = str => {
 }
 
 export const getFilenameByPath = (sourcePath, path) => {
-  sourcePath = sourcePath || ''
+  sourcePath = sourcePath || './'
   sourcePath = sourcePath.replace(/\/$/, '')
   if (/\.md$/.test(path)) {
     return sourcePath + path

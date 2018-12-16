@@ -56,9 +56,9 @@ interface ItemLink {
 ## sourcePath
 
 - Type: `string`
-- Default: `'/'`
+- Default: `'./'`
 
-The source path to fetch markdown files from, by default we load them from the root path, a.k.a. `/`.
+The source path to fetch markdown files from, by default we load them from path where your `index.html` is populated.
 
 It can also be a full URL like: `https://some-website/path/to/markdown/files` so that you can load files from a different domain.
 
