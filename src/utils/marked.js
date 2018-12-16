@@ -1107,9 +1107,10 @@ Renderer.prototype.link = function(href, title, text) {
     return text
   }
   var isExternal = /^https?:\/\//.test(href)
-  var tag = isExternal ? 'a' : 'router-link'
+  var isMailto = /^mailto:/.test(href)
+  var tag = (isExternal || isMailto) ? 'a' : 'router-link'
   var hrefAttr = tag === 'a' ? 'href' : 'to'
-  var out = `<${tag} ${hrefAttr}="` + escape(isExternal ? href : removeMarkdownExtension(href)) + '"'
+  var out = `<${tag} ${hrefAttr}="` + escape(isExternal ? href : removeMarkdownExtension(unescape(href))) + '"'
   if (title) {
     out += ' title="' + title + '"'
   }
