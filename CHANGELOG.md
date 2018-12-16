@@ -1,3 +1,10 @@
+## [4.6.12](https://github.com/leptosia/docute/compare/v4.6.11...v4.6.12) (2018-12-16)
+
+
+### Bug Fixes
+
+* properly handle relative sourcePath ([cc67770](https://github.com/leptosia/docute/commit/cc67770))
+
 ## [4.6.11](https://github.com/leptosia/docute/compare/v4.6.10...v4.6.11) (2018-12-16)
 
 
