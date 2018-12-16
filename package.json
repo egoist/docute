@@ -10,7 +10,8 @@
     "website": "poi --serve --config build/poi.website.config.js",
     "build:website": "poi --prod --config build/poi.website.config.js && npm run copy-docs",
     "copy-docs": "cp -r website/docs/* website/dist",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "commit": "git-cz"
   },
   "dependencies": {
     "isomorphic-unfetch": "^3.0.0",
@@ -33,6 +34,7 @@
     "@semantic-release/git": "^7.0.5",
     "babel-preset-minimal": "^0.1.1",
     "bili": "^3.4.2",
+    "commitizen": "^3.0.5",
     "cz-conventional-changelog": "^2.1.0",
     "eslint-config-rem": "^3.0.0",
     "eslint-plugin-vue": "^5.0.0-beta.3",
