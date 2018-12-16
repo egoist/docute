@@ -29,6 +29,8 @@
   "devDependencies": {
     "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
     "@leptosia/docute-google-analytics": "^1.0.0",
+    "@semantic-release/changelog": "^3.0.1",
+    "@semantic-release/git": "^7.0.5",
     "babel-preset-minimal": "^0.1.1",
     "bili": "^3.4.2",
     "cz-conventional-changelog": "^2.1.0",
@@ -93,9 +95,6 @@
       "yarn lint --fix",
       "git add"
     ]
-  },
-  "release": {
-    "branch": "master"
   },
   "config": {
     "commitizen": {
