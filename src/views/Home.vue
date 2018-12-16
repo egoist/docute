@@ -73,12 +73,16 @@ export default {
     '$route.hash'() {
       this.jumpToHash()
     },
-    '$store.state.page.title'(title) {
+    pageTitle(newValue) {
       const {path} = this.$route
       const {config, homePaths} = this.$store.getters
+
       if (homePaths.indexOf(path) > -1) {
         document.title = config.title
       } else {
+        const div = document.createElement('div')
+        div.innerHTML = newValue
+        const title = div.textContent
         document.title = `${title} - ${config.title}`
       }
     }
