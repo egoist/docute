@@ -59,12 +59,26 @@ Let's say you have `master` branch for the latest docs and `v0.1` `v0.2` branche
 
 ```js
 new Docute({
+  // Configure following paths to load Markdown files from different path
   overrides: {
     '/v0.1/': {
       sourcePath: 'https://raw.githubusercontent.com/user/repo/v0.1'
     },
     '/v0.2/': {
       sourcePath: 'https://raw.githubusercontent.com/user/repo/v0.2'
+    }
+  },
+  // Use `versions` option to add a version selector
+  // In the sidebar
+  versions: {
+    'v1 (Latest)': {
+      link: '/'
+    },
+    'v0.2': {
+      link: '/v0.2/'
+    },
+    'v0.1': {
+      link: '/v0.1/'
     }
   }
 })

@@ -55,7 +55,7 @@ new Docute({
 假设你的 Git 项目有一个 `master` 分支用于存放最新文档，以及 `v0.1` `v0.2` 分支用于旧版本的文档，你可以用一个 Docute 文档网站来显示多个版本的文档，通过使用 [`overrides`](../options.md#overrides) 和 [`sourcePath`](../options.md#sourcepath) 选项就能办到。
 
 ```js
-new Docute({
+  // 让这些路径从不同的地方获取 Markdown 文件
   overrides: {
     '/v0.1/': {
       sourcePath: 'https://raw.githubusercontent.com/user/repo/v0.1'
@@ -63,8 +63,19 @@ new Docute({
     '/v0.2/': {
       sourcePath: 'https://raw.githubusercontent.com/user/repo/v0.2'
     }
+  },
+  // 用 `versions` 选项在侧边栏添加一个版本选择器
+  versions: {
+    'v1 (Latest)': {
+      link: '/'
+    },
+    'v0.2': {
+      link: '/v0.2/'
+    },
+    'v0.1': {
+      link: '/v0.1/'
+    }
   }
-})
 ```
 
 ## 覆盖 CSS
