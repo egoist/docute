@@ -1,3 +1,10 @@
+## [4.6.14](https://github.com/leptosia/docute/compare/v4.6.13...v4.6.14) (2018-12-16)
+
+
+### Bug Fixes
+
+* properly handle mailto links in markdown ([c815eec](https://github.com/leptosia/docute/commit/c815eec))
+
 ## [4.6.13](https://github.com/leptosia/docute/compare/v4.6.12...v4.6.13) (2018-12-16)
 
 
