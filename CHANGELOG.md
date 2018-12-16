@@ -1,3 +1,10 @@
+## [4.6.11](https://github.com/leptosia/docute/compare/v4.6.10...v4.6.11) (2018-12-16)
+
+
+### Bug Fixes
+
+* make sourcePath default to ./ ([fd178c2](https://github.com/leptosia/docute/commit/fd178c2))
+
 ## [4.6.10](https://github.com/leptosia/docute/compare/v4.6.9...v4.6.10) (2018-12-16)
 
 
