@@ -1,3 +1,10 @@
+## [4.6.9](https://github.com/leptosia/docute/compare/v4.6.8...v4.6.9) (2018-12-16)
+
+
+### Bug Fixes
+
+* make page title optional ([9f34e95](https://github.com/leptosia/docute/commit/9f34e95))
+
 ## [4.6.8](https://github.com/leptosia/docute/compare/v4.6.7...v4.6.8) (2018-12-16)
 
 
