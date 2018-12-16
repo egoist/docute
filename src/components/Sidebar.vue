@@ -82,7 +82,7 @@ export default {
 @import 'vars.css';
 
 .Sidebar {
-  width: 250px;
+  width: var(--sidebar-width);
   background: var(--sidebar-bg);
   position: fixed;
   top: var(--header-height);
@@ -142,8 +142,7 @@ export default {
   font-size: 1.1rem;
   position: relative;
 
-  &.active,
-  &:hover {
+  &.active {
     font-weight: bold;
   }
 }
@@ -151,37 +150,24 @@ export default {
 .TocHeading {
   display: flex;
   line-height: 1.4;
-  margin-bottom: 3px;
+  margin: 5px 0;
   position: relative;
 
-  &:first-child {
-    margin-top: 5px;
-  }
-
-  &:last-child {
-    margin-bottom: 5px;
-  }
-
   &[data-level='2'] {
-    margin-left: 35px;
+    padding: 0 20px;
+    &:before {
+      content: '-';
+      margin-right: 5px;
+      color: #979797;
+    }
   }
 
   &[data-level='3'] {
-    margin-left: 50px;
+    padding: 0 20px 0 50px;
   }
 
   &.router-link-exact-active {
     font-weight: bold;
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 3px;
-      right: 0;
-      background: #333;
-    }
   }
 }
 </style>

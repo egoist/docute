@@ -144,7 +144,7 @@ export default {
 }
 
 .Main {
-  margin-left: 250px;
+  margin-left: var(--sidebar-width);
   padding: 30px 20px 80px 80px;
   margin-top: var(--header-height);
 
