@@ -76,7 +76,7 @@ export default {
 
 .note-label {
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 500;
   display: inline-block;
 }
 </style>
