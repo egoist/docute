@@ -1,3 +1,10 @@
+## [4.6.16](https://github.com/leptosia/docute/compare/v4.6.15...v4.6.16) (2018-12-17)
+
+
+### Bug Fixes
+
+* edit link ([4d9efad](https://github.com/leptosia/docute/commit/4d9efad))
+
 ## [4.6.15](https://github.com/leptosia/docute/compare/v4.6.14...v4.6.15) (2018-12-17)
 
 
