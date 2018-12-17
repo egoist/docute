@@ -1,3 +1,10 @@
+## [4.6.15](https://github.com/leptosia/docute/compare/v4.6.14...v4.6.15) (2018-12-17)
+
+
+### Bug Fixes
+
+* rewrite getFilenameByPath ([c53bfe6](https://github.com/leptosia/docute/commit/c53bfe6))
+
 ## [4.6.14](https://github.com/leptosia/docute/compare/v4.6.13...v4.6.14) (2018-12-16)
 
 
