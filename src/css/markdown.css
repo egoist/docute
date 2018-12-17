@@ -15,10 +15,6 @@
     &:hover {
       text-decoration: underline;
     }
-
-    & code {
-      color: inherit;
-    }
   }
 
   & h1,
@@ -126,10 +122,6 @@
       border: none;
       font-size: 100%;
       background: transparent;
-      color: inherit;
-      &:before, &:after {
-        display: none;
-      }
     }
   }
 
@@ -171,11 +163,9 @@
   & code {
     font-family: var(--code-font);
     font-size: 90%;
-    color: var(--code-span-color);
-
-    &:before, &:after {
-      content: "`";
-    }
+    background: #fdfaf6;
+    border-radius: 4px;
+    padding: 3px 5px;
   }
 
   & > ul, & > ol {
