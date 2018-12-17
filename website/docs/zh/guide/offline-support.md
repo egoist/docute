@@ -1,6 +1,6 @@
 # Offline Support
 
-Improve your docs's performance by caching and serving your files, powered by a [service worker](https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API/Using_Service_Workers).
+Improve your website's performance by caching and serving your files, powered by a [service worker](https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API/Using_Service_Workers).
 
 First create a `sw.js` in your docs root directory:
 
