@@ -1,3 +1,12 @@
+## [4.6.17](https://github.com/leptosia/docute/compare/v4.6.16...v4.6.17) (2018-12-17)
+
+
+### Features
+
+* **ui:** add Note component ([73fb4a9](https://github.com/leptosia/docute/commit/73fb4a9))
+* **ui:** custom color support in Badge component ([9c3e8db](https://github.com/leptosia/docute/commit/9c3e8db))
+* **ui:** update table style ([4e720ad](https://github.com/leptosia/docute/commit/4e720ad))
+
 ## [4.6.16](https://github.com/leptosia/docute/compare/v4.6.15...v4.6.16) (2018-12-17)
 
 
