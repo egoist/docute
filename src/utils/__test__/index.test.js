@@ -1,15 +1,26 @@
 import assert from 'assert'
-import {getFilenameByPath} from '..'
+import {getFilenameByPath, getFileUrl} from '..'
 
-describe('index', () => {
+describe('utils/index', () => {
   it('getFilenameByPath', () => {
-    assert(getFilenameByPath(null, '/') === 'README.md')
-    assert(getFilenameByPath('/', '/') === '/README.md')
-    assert(getFilenameByPath('./', '/') === 'README.md')
-    assert(getFilenameByPath('./docs/', '/') === 'docs/README.md')
-    assert(getFilenameByPath('/docs/', '/') === '/docs/README.md')
-    assert(getFilenameByPath('/docs/', '/foo') === '/docs/foo.md')
-    assert(getFilenameByPath('/docs/', '/foo.md') === '/docs/foo.md')
-    assert(getFilenameByPath('/docs/', '/foo/') === '/docs/foo/README.md')
+    assert(getFilenameByPath('/') === '/README.md')
+    assert(getFilenameByPath('/foo') === '/foo.md')
+    assert(getFilenameByPath('foo') === '/foo.md')
+    assert(getFilenameByPath('/foo/bar/') === '/foo/bar/README.md')
+  })
+
+  it('getFileUrl', () => {
+    assert(getFileUrl(null, getFilenameByPath('/')) === 'README.md')
+    assert(getFileUrl('/', getFilenameByPath('/')) === '/README.md')
+    assert(getFileUrl('./', getFilenameByPath('/')) === 'README.md')
+    assert(getFileUrl('./docs/', getFilenameByPath('/')) === 'docs/README.md')
+    assert(getFileUrl('/docs/', getFilenameByPath('/')) === '/docs/README.md')
+    assert(getFileUrl('/docs/', getFilenameByPath('/foo')) === '/docs/foo.md')
+    assert(
+      getFileUrl('/docs/', getFilenameByPath('/foo.md')) === '/docs/foo.md'
+    )
+    assert(
+      getFileUrl('/docs/', getFilenameByPath('/foo/')) === '/docs/foo/README.md'
+    )
   })
 })

@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 import fetch from 'isomorphic-unfetch'
 import marked from './utils/marked'
 import highlight from './utils/highlight'
-import {getFilenameByPath, isExternalLink} from './utils'
+import {getFilenameByPath, getFileUrl, isExternalLink} from './utils'
 import markedRenderer from './utils/markedRenderer'
 import hooks from './hooks'
 import load from './utils/load'
@@ -63,7 +63,11 @@ const store = new Vuex.Store({
       }
 
       if (!page.content && !page.file) {
-        page.file = getFilenameByPath(getters.config.sourcePath, path)
+        const filename = getFilenameByPath(path)
+        page.file = getFileUrl(getters.config.sourcePath, filename)
+        page.editLink =
+          getters.config.editLinkBase &&
+          getFileUrl(getters.config.editLinkBase, filename)
       }
 
       await Promise.all([

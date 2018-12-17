@@ -25,23 +25,8 @@
 <script>
 export default {
   computed: {
-    editLinkBase() {
-      return this.$store.getters.config.editLinkBase
-    },
-
     editLink() {
-      const {editLink, file} = this.$store.state.page
-      if (editLink) {
-        return editLink
-      }
-      if (file) {
-        return /^https?:\/\//.test(file)
-          ? file
-          : this.editLinkBase
-          ? this.editLinkBase + file
-          : null
-      }
-      return null
+      return this.$store.state.page.editLink
     },
 
     editLinkText() {

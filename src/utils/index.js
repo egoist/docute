@@ -14,13 +14,19 @@ export const slugify = str => {
     .toLowerCase()
 }
 
-export const getFilenameByPath = (sourcePath, path) => {
+export const getFileUrl = (sourcePath, path) => {
   sourcePath = sourcePath || '.'
 
   // Remove trailing slash in `sourcePath`
   // Since `path` always starts with slash
   sourcePath = sourcePath.replace(/\/$/, '')
 
+  const result = sourcePath + path
+
+  return result.replace(/^\.\//, '')
+}
+
+export const getFilenameByPath = path => {
   // Ensure path always starts with slash
   path = path.replace(/^\/?/, '/')
 
@@ -29,7 +35,5 @@ export const getFilenameByPath = (sourcePath, path) => {
     path = /\/$/.test(path) ? `${path}README.md` : `${path}.md`
   }
 
-  const result = sourcePath + path
-
-  return result.replace(/^\.\//, '')
+  return path
 }
