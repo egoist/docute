@@ -33,6 +33,7 @@ A small count and labeling component.
 |Prop|Type|Default|Description|
 |---|---|---|---|
 |type|<code>'tip' &#x7C; 'warning' &#x7C; 'danger'</code>|`'tip'`|Badge type|
+|color|`string`|N/A|Custom background color|
 |children|`string`|N/A|Badge text|
 
 Example:
@@ -41,11 +42,13 @@ Example:
 - Feature 1 <Badge>Stable</Badge>
 - Feature 2 <Badge type="warning">Beta</Badge>
 - Feature 3 <Badge type="danger">Deprecated</Badge>
+- Feature 4 <Badge color="magenta">Custom Color</Badge>
 ```
 
 - Feature 1 <Badge>Stable</Badge>
 - Feature 2 <Badge type="warning">Beta</Badge>
 - Feature 3 <Badge type="danger">Deprecated</Badge>
+- Feature 4 <Badge color="magenta">Custom Color</Badge>
 
 ## `<v-style>` `<v-script>`
 

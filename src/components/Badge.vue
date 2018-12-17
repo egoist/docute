@@ -1,5 +1,10 @@
 <template functional>
-  <span class="badge" :class="props.type"> <slot></slot> </span>
+  <span
+    class="badge"
+    :class="props.type"
+    :style="{backgroundColor: props.color}"
+    ><slot></slot>
+  </span>
 </template>
 
 <script>
@@ -9,6 +14,9 @@ export default {
     type: {
       type: String,
       default: 'tip'
+    },
+    color: {
+      type: String
     }
   }
 }

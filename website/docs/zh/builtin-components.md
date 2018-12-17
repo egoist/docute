@@ -33,19 +33,22 @@ Docute 附带一些内置的 Vue 组件。
 |属性|类型|默认值|描述|
 |---|---|---|---|
 |type|<code>'tip' &#x7C; 'warning' &#x7C; 'danger'</code>|`'tip'`|Badge 类型|
+|color|`string`|N/A|自定义背景色|
 |children|`string`|N/A|Badge 内容|
 
 示例：
 
 ```markdown
-- Feature 1 <Badge>稳定</Badge>
+- Feature 1 <Badge>Stable</Badge>
 - Feature 2 <Badge type="warning">Beta</Badge>
-- Feature 3 <Badge type="danger">弃用</Badge>
+- Feature 3 <Badge type="danger">Deprecated</Badge>
+- Feature 4 <Badge color="magenta">Custom Color</Badge>
 ```
 
-- Feature 1 <Badge>稳定</Badge>
+- Feature 1 <Badge>Stable</Badge>
 - Feature 2 <Badge type="warning">Beta</Badge>
-- Feature 3 <Badge type="danger">弃用</Badge>
+- Feature 3 <Badge type="danger">Deprecated</Badge>
+- Feature 4 <Badge color="magenta">Custom Color</Badge>
 
 ## `<v-style>` `<v-script>`
 
