@@ -1,3 +1,10 @@
+## [4.6.19](https://github.com/leptosia/docute/compare/v4.6.18...v4.6.19) (2018-12-17)
+
+
+### Bug Fixes
+
+* **ui:** tweak note label size ([35a4df4](https://github.com/leptosia/docute/commit/35a4df4))
+
 ## [4.6.18](https://github.com/leptosia/docute/compare/v4.6.17...v4.6.18) (2018-12-17)
 
 
