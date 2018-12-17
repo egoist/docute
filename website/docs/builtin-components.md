@@ -6,14 +6,16 @@ Docute comes with a set of built-in Vue components.
 
 Use medium-style zoom effect to display certain image.
 
-|Prop|Type|Default|Description|
-|---|---|---|---|
-|url|`string`|N/A|URL to image|
-|alt|`string`|N/A|Placeholder text|
-|border|`boolean`|`false`|Show border around image|
-|width|`string`|N/A|Image width|
+| Prop   | Type      | Default | Description              |
+| ------ | --------- | ------- | ------------------------ |
+| url    | `string`  | N/A     | URL to image             |
+| alt    | `string`  | N/A     | Placeholder text         |
+| border | `boolean` | `false` | Show border around image |
+| width  | `string`  | N/A     | Image width              |
 
-Example: 
+<br>
+
+Example:
 
 ```markdown
 <ImageZoom 
@@ -25,30 +27,107 @@ Example:
 
 <ImageZoom url="https://i.loli.net/2018/09/24/5ba8e878850e9.png" :border="true" width="300"/>
 
-
 ## `<Badge>`
 
 A small count and labeling component.
 
-|Prop|Type|Default|Description|
-|---|---|---|---|
-|type|<code>'tip' &#x7C; 'warning' &#x7C; 'danger'</code>|`'tip'`|Badge type|
-|color|`string`|N/A|Custom background color|
-|children|`string`|N/A|Badge text|
+| Prop     | Type                                                | Default | Description             |
+| -------- | --------------------------------------------------- | ------- | ----------------------- |
+| type     | <code>'tip' &#x7C; 'success' &#x7C; 'warning' &#x7C; 'danger'</code> | N/A | Badge type              |
+| color    | `string`                                            | N/A     | Custom background color |
+| children | `string`                                            | N/A     | Badge text              |
+
+<br>
 
 Example:
 
 ```markdown
-- Feature 1 <Badge>Stable</Badge>
-- Feature 2 <Badge type="warning">Beta</Badge>
-- Feature 3 <Badge type="danger">Deprecated</Badge>
-- Feature 4 <Badge color="magenta">Custom Color</Badge>
+- Feature 1 <Badge>Badge</Badge>
+- Feature 2 <Badge type="tip">Tip</Badge>
+- Feature 3 <Badge type="success">Success</Badge>
+- Feature 4 <Badge type="warning">Warning</Badge>
+- Feature 5 <Badge type="danger">Danger</Badge>
+- Feature 6 <Badge color="magenta">Custom Color</Badge>
 ```
 
-- Feature 1 <Badge>Stable</Badge>
-- Feature 2 <Badge type="warning">Beta</Badge>
-- Feature 3 <Badge type="danger">Deprecated</Badge>
-- Feature 4 <Badge color="magenta">Custom Color</Badge>
+- Feature 1 <Badge>Badge</Badge>
+- Feature 2 <Badge type="tip">Tip</Badge>
+- Feature 3 <Badge type="success">Success</Badge>
+- Feature 4 <Badge type="warning">Warning</Badge>
+- Feature 5 <Badge type="danger">Danger</Badge>
+- Feature 6 <Badge color="magenta">Custom Color</Badge>
+
+## `<Note>`
+
+Colored note blocks, to emphasize part of your page.
+
+| Prop     | Type                                                                | Default             | Description                                       |
+| -------- | ------------------------------------------------------------------- | ------------------- | ------------------------------------------------- |
+| type     | <code>'tip' &#x7C; 'warning' &#x7C; 'alert' &#x7C; 'success'</code> | N/A                 | Note type                                         |
+| label    | `string` `boolean`                                                  | The value of `type` | Custom note label text, use `false` to hide label |
+| children | `string`                                                            | N/A                 | Note content                                      |
+
+<br>
+
+Examples:
+
+```markdown
+<Note>
+
+This is a note that details something important.<br>
+[A link to helpful information.](https://docute.org)
+
+</Note>
+
+<!-- Tip Note -->
+<Note type="tip">
+
+This is a tip for something that is possible.
+
+</Note>
+
+<!-- Warning Note -->
+<Note type="warning">
+
+This is a warning for something very important.
+
+</Note>
+
+<!-- Danger Note -->
+<Note type="danger">
+
+This is a danger for something to take action for.
+
+</Note>
+```
+
+<Note>
+
+This is a note that details something important.<br>
+[A link to helpful information.](https://docute.org)
+
+</Note>
+
+<!-- Tip Note -->
+<Note type="tip">
+
+This is a tip for something that is possible.
+
+</Note>
+
+<!-- Warning Note -->
+<Note type="warning">
+
+This is a warning for something very important.
+
+</Note>
+
+<!-- Danger Note -->
+<Note type="danger">
+
+This is a danger for something to take action for.
+
+</Note>
 
 ## `<v-style>` `<v-script>`
 

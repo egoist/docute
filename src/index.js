@@ -8,6 +8,7 @@ import alternativeComponents from './utils/alternativeComponents'
 import ImageZoom from './components/ImageZoom.vue'
 import Badge from './components/Badge.vue'
 import DocuteSelect from './components/DocuteSelect.vue'
+import Note from './components/Note.vue'
 import ExternalLinkIcon from './components/icons/ExternalLinkIcon.vue'
 
 // Built-in plugins
@@ -18,6 +19,7 @@ import versionsPlugin from './plugins/versions'
 Vue.component(ImageZoom.name, ImageZoom)
 Vue.component(Badge.name, Badge)
 Vue.component(DocuteSelect.name, DocuteSelect)
+Vue.component(Note.name, Note)
 Vue.component(ExternalLinkIcon.name, ExternalLinkIcon)
 Vue.use(alternativeComponents)
 

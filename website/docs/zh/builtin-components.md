@@ -28,27 +28,105 @@ Docute 附带一些内置的 Vue 组件。
 
 ## `<Badge>`
 
-用于计数和展示标签的组件。
+A small count and labeling component.
 
-|属性|类型|默认值|描述|
-|---|---|---|---|
-|type|<code>'tip' &#x7C; 'warning' &#x7C; 'danger'</code>|`'tip'`|Badge 类型|
-|color|`string`|N/A|自定义背景色|
-|children|`string`|N/A|Badge 内容|
+| Prop     | Type                                                | Default | Description             |
+| -------- | --------------------------------------------------- | ------- | ----------------------- |
+| type     | <code>'tip' &#x7C; 'success' &#x7C; 'warning' &#x7C; 'danger'</code> | N/A | Badge type              |
+| color    | `string`                                            | N/A     | Custom background color |
+| children | `string`                                            | N/A     | Badge text              |
 
-示例：
+<br>
+
+Example:
 
 ```markdown
-- Feature 1 <Badge>Stable</Badge>
-- Feature 2 <Badge type="warning">Beta</Badge>
-- Feature 3 <Badge type="danger">Deprecated</Badge>
-- Feature 4 <Badge color="magenta">Custom Color</Badge>
+- Feature 1 <Badge>Badge</Badge>
+- Feature 2 <Badge type="tip">Tip</Badge>
+- Feature 3 <Badge type="success">Success</Badge>
+- Feature 4 <Badge type="warning">Warning</Badge>
+- Feature 5 <Badge type="danger">Danger</Badge>
+- Feature 6 <Badge color="magenta">Custom Color</Badge>
 ```
 
-- Feature 1 <Badge>Stable</Badge>
-- Feature 2 <Badge type="warning">Beta</Badge>
-- Feature 3 <Badge type="danger">Deprecated</Badge>
-- Feature 4 <Badge color="magenta">Custom Color</Badge>
+- Feature 1 <Badge>Badge</Badge>
+- Feature 2 <Badge type="tip">Tip</Badge>
+- Feature 3 <Badge type="success">Success</Badge>
+- Feature 4 <Badge type="warning">Warning</Badge>
+- Feature 5 <Badge type="danger">Danger</Badge>
+- Feature 6 <Badge color="magenta">Custom Color</Badge>
+
+## `<Note>`
+
+Colored note blocks, to emphasize part of your page.
+
+| Prop     | Type                                                                | Default             | Description                                       |
+| -------- | ------------------------------------------------------------------- | ------------------- | ------------------------------------------------- |
+| type     | <code>'tip' &#x7C; 'warning' &#x7C; 'alert' &#x7C; 'success'</code> | N/A                 | Note type                                         |
+| label    | `string` `boolean`                                                  | The value of `type` | Custom note label text, use `false` to hide label |
+| children | `string`                                                            | N/A                 | Note content                                      |
+
+<br>
+
+Examples:
+
+```markdown
+<Note>
+
+This is a note that details something important.<br>
+[A link to helpful information.](https://docute.org)
+
+</Note>
+
+<!-- Tip Note -->
+<Note type="tip">
+
+This is a tip for something that is possible.
+
+</Note>
+
+<!-- Warning Note -->
+<Note type="warning">
+
+This is a warning for something very important.
+
+</Note>
+
+<!-- Danger Note -->
+<Note type="danger">
+
+This is a danger for something to take action for.
+
+</Note>
+```
+
+<Note>
+
+This is a note that details something important.<br>
+[A link to helpful information.](https://docute.org)
+
+</Note>
+
+<!-- Tip Note -->
+<Note type="tip">
+
+This is a tip for something that is possible.
+
+</Note>
+
+<!-- Warning Note -->
+<Note type="warning">
+
+This is a warning for something very important.
+
+</Note>
+
+<!-- Danger Note -->
+<Note type="danger">
+
+This is a danger for something to take action for.
+
+</Note>
 
 ## `<v-style>` `<v-script>`
 
