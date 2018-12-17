@@ -75,6 +75,10 @@ new Docute({
         {
           title: 'Use With Bundlers',
           link: '/guide/use-with-bundlers'
+        },
+        {
+          title: 'Offline Support',
+          link: '/guide/offline-support'
         }
       ]
     },
@@ -162,6 +166,10 @@ new Docute({
             {
               title: '使用打包工具',
               link: '/zh/guide/use-with-bundlers'
+            },
+            {
+              title: '离线支持',
+              link: '/zh/guide/offline-support'
             }
           ]
         },
@@ -233,3 +241,7 @@ Vue.component('ReverseText', {
     }
   }
 })
+
+if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+}

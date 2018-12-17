@@ -1,6 +1,4 @@
 const path = require('path')
-// eslint-disable-next-line import/no-extraneous-dependencies
-const express = require('express')
 const pkg = require('../package')
 
 module.exports = {
@@ -11,11 +9,7 @@ module.exports = {
       title: 'Docute'
     }
   },
-  devServer: {
-    after(server) {
-      server.use('/', express.static(path.resolve('website/docs')))
-    }
-  },
+  publicFolder: path.join(__dirname, '../website/docs'),
   chainWebpack(config) {
     config.resolve.alias.set('vue$', 'vue/dist/vue.esm.js')
   },

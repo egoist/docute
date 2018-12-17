@@ -8,8 +8,7 @@
     "test": "npm run lint && echo 'no tests!'",
     "lint": "xo",
     "website": "poi --serve --config build/poi.website.config.js",
-    "build:website": "poi --prod --config build/poi.website.config.js && npm run copy-docs",
-    "copy-docs": "cp -r website/docs/* website/dist",
+    "build:website": "poi --prod --config build/poi.website.config.js",
     "prepublishOnly": "npm run build",
     "commit": "git-cz"
   },
