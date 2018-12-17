@@ -1,3 +1,10 @@
+## [4.6.18](https://github.com/leptosia/docute/compare/v4.6.17...v4.6.18) (2018-12-17)
+
+
+### Features
+
+* **ui:** new style for inline code ([778a65b](https://github.com/leptosia/docute/commit/778a65b))
+
 ## [4.6.17](https://github.com/leptosia/docute/compare/v4.6.16...v4.6.17) (2018-12-17)
 
 
