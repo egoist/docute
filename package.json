@@ -5,12 +5,13 @@
     "build:umd": "poi --config build/poi.lib.config.js --prod",
     "build:es": "sfc normalize --config build/sfc.config.js",
     "build": "npm run build:umd && npm run build:es",
-    "test": "npm run lint && echo 'no tests!'",
+    "test": "npm run lint && npm run test:unit",
     "lint": "xo",
     "website": "poi --serve --config build/poi.website.config.js",
     "build:website": "poi --prod --config build/poi.website.config.js",
     "prepublishOnly": "npm run build",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "test:unit": "poi puppet src/**/*.test.js --test --plugin @poi/puppet --framework mocha"
   },
   "dependencies": {
     "isomorphic-unfetch": "^3.0.0",
@@ -29,9 +30,11 @@
   "devDependencies": {
     "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
     "@leptosia/docute-google-analytics": "^1.0.0",
+    "@poi/plugin-puppet": "^0.1.3",
     "@semantic-release/changelog": "^3.0.1",
     "@semantic-release/git": "^7.0.5",
     "babel-preset-minimal": "^0.1.1",
+    "babel-preset-power-assert": "^3.0.0",
     "bili": "^3.4.2",
     "commitizen": "^3.0.5",
     "cz-conventional-changelog": "^2.1.0",
@@ -43,6 +46,7 @@
     "poi": "^12.1.5",
     "postcss-import": "^12.0.0",
     "postcss-preset-env": "^6.0.3",
+    "power-assert": "^1.6.1",
     "rollup-plugin-vue": "^4.3.2",
     "semantic-release": "^15.12.0",
     "sfc": "^0.2.13",
@@ -57,7 +61,8 @@
   "module": "lib/index.js",
   "files": [
     "dist",
-    "lib"
+    "lib",
+    "!**/__test__/**"
   ],
   "description": "Effortlessly documentation done right.",
   "author": "egoist <0x142857@gmail.com>",
@@ -73,7 +78,8 @@
       "**/dist/**"
     ],
     "envs": [
-      "browser"
+      "browser",
+      "mocha"
     ],
     "globals": [
       "__DOCUTE_VERSION__"
