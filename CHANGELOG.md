@@ -1,3 +1,10 @@
+## [4.6.20](https://github.com/leptosia/docute/compare/v4.6.19...v4.6.20) (2018-12-17)
+
+
+### Bug Fixes
+
+* **ui:** revert inline code style ([b1f57fb](https://github.com/leptosia/docute/commit/b1f57fb))
+
 ## [4.6.19](https://github.com/leptosia/docute/compare/v4.6.18...v4.6.19) (2018-12-17)
 
 
