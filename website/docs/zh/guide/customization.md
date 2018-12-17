@@ -91,5 +91,11 @@ new Docute({
   --border-color: #eaeaea;
   --header-height: 60px;
   --code-font: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  --code-span-color: rgb(212, 0, 255);
+
+  --tip-color: rgb(6, 125, 247);
+  --success-color: #42b983;
+  --warning-color: #ff9800;
+  --danger-color: rgb(255, 0, 31);
 }
 ```
