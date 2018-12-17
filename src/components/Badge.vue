@@ -22,6 +22,8 @@ export default {
 </script>
 
 <style>
+@import 'vars.css';
+
 .badge {
   display: inline-block;
   vertical-align: top;
