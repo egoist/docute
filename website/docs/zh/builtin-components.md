@@ -62,7 +62,7 @@ Colored note blocks, to emphasize part of your page.
 
 | Prop     | Type                                                                | Default             | Description                                       |
 | -------- | ------------------------------------------------------------------- | ------------------- | ------------------------------------------------- |
-| type     | <code>'tip' &#x7C; 'warning' &#x7C; 'alert' &#x7C; 'success'</code> | N/A                 | Note type                                         |
+| type     | <code>'tip' &#x7C; 'warning' &#x7C; 'danger' &#x7C; 'success'</code> | N/A                 | Note type                                         |
 | label    | `string` `boolean`                                                  | The value of `type` | Custom note label text, use `false` to hide label |
 | children | `string`                                                            | N/A                 | Note content                                      |
 
