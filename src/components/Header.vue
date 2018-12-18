@@ -67,36 +67,39 @@ export default {
 }
 
 .site-title {
-  width: 100%;
   font-weight: normal;
   margin: 0 25px 0 0;
   font-size: 1.2rem;
   display: flex;
   align-items: center;
+  white-space: nowrap;
 
   & a {
     color: #000;
     text-decoration: none;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
 
 .header-inner {
   padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.header-right {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
 }
 
 .header-left {
-  width: 100%;
   display: flex;
+}
+
+.header-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: calc(var(--header-height) - 1px);
+  background: var(--sidebar-bg);
+  padding: 0 20px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 </style>
