@@ -67,6 +67,7 @@ export default {
 }
 
 .site-title {
+  width: 100%;
   font-weight: normal;
   margin: 0 25px 0 0;
   font-size: 1.2rem;
@@ -76,6 +77,9 @@ export default {
   & a {
     color: #000;
     text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -85,7 +89,14 @@ export default {
   justify-content: space-between;
 }
 
+.header-right {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .header-left {
+  width: 100%;
   display: flex;
 }
 </style>
