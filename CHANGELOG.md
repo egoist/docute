@@ -1,3 +1,10 @@
+## [4.6.21](https://github.com/leptosia/docute/compare/v4.6.20...v4.6.21) (2018-12-18)
+
+
+### Bug Fixes
+
+* **ui:** site-title style ([#196](https://github.com/leptosia/docute/issues/196)) ([9003048](https://github.com/leptosia/docute/commit/9003048))
+
 ## [4.6.20](https://github.com/leptosia/docute/compare/v4.6.19...v4.6.20) (2018-12-17)
 
 
