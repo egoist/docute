@@ -72,6 +72,7 @@ export default {
   font-size: 1.2rem;
   display: flex;
   align-items: center;
+  white-space: nowrap;
 
   & a {
     color: #000;
@@ -81,11 +82,24 @@ export default {
 
 .header-inner {
   padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
 }
 
 .header-left {
   display: flex;
+}
+
+.header-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: calc(var(--header-height) - 1px);
+  background: var(--sidebar-bg);
+  padding: 0 20px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 </style>
