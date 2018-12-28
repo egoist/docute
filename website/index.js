@@ -5,7 +5,7 @@ import prismLanguages from '../src/utils/prismLanguages'
 new Docute({
   target: 'app',
   title: 'Docute',
-  highlight: ['typescript', 'bash'],
+  highlight: ['typescript', 'bash', 'json'],
   plugins: [
     process.env.NODE_ENV === 'production' && googleAnalytics('UA-54857209-11')
   ].filter(Boolean),
