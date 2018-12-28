@@ -18,6 +18,28 @@ new Docute({
           builtinLanguages: prismLanguages.builtin,
           deps: __DEPS__
         }
+      },
+      methods: {
+        insertCustomFontsCSS() {
+          const ID = 'custom-fonts-css'
+          const existing = document.getElementById(ID)
+          if (existing) {
+            existing.parentNode.removeChild(existing)
+          } else {
+            const style = document.createElement('style')
+            style.id = ID
+            style.textContent = `
+            /* Import desired font from Google fonts */
+            @import url('https://fonts.googleapis.com/css?family=Lato');
+
+            /* Apply the font to body (to override the default one) */
+            body {
+              font-family: Lato, sans-serif;
+            }
+            `
+            document.head.appendChild(style)
+          }
+        }
       }
     }
   ],

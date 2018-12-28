@@ -78,6 +78,26 @@ new Docute({
   }
 ```
 
+## 自定义字体
+
+Apply custom fonts to your website is pretty easy, you can simply add a `<style>` tag in your HTML file to use [Google Fonts](https://fonts.google.com/):
+
+```html
+<style>
+/* Import desired font from Google fonts */
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+/* Apply the font to body (to override the default one) */
+body {
+  font-family: Lato, sans-serif;
+}
+</style>
+```
+
+<button v-on:click="insertCustomFontsCSS">Click me</button> to toggle the custom fonts on this website.
+
+By default a fresh Docute website will use system default fonts.
+
 ## 覆盖 CSS
 
 默认 [CSS 变量](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables)：
