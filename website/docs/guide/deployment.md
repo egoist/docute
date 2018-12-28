@@ -2,7 +2,7 @@
 
 Keep in mind, it's just a static HTML file that can be served anywhere.
 
-## Netlify <Badge>Recommended</Badge>
+## Netlify <Badge type="success">Recommended</Badge>
 
 1. Login to your [Netlify](https://www.netlify.com/) account.
 2. In the [dashboard](https://app.netlify.com/) page, click __New site from Git__.

@@ -2,7 +2,7 @@
 
 请记住，它只是一个在任何地方都可以提供的静态 HTML 文件。
 
-## Netlify <Badge>推荐</Badge>
+## Netlify <Badge type="success">推荐</Badge>
 
 1. 登录你的 [Netlify](https://www.netlify.com/) 账号。
 2. 在 [dashboard](https://app.netlify.com/) 页，点击 __New site from Git__.
