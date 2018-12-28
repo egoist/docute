@@ -12,6 +12,8 @@ A document is represented in Markdown format:
 The content goes here...
 ```
 
+Internally we use the blazing-fast [marked](https://marked.js.org) to parse Markdown, so almost all [GitHub Flavored Markdown](https://github.github.com/gfm/) features are supported. 
+
 Check out the introduction for [Markdown](https://daringfireball.net/projects/markdown/) if you're not sure what it is.
 
 ## Links
@@ -50,6 +52,22 @@ __Output__:
 
 - [Docute website](https://docute.org)
 - [Docute repo](https://github.com/egoist/docute)
+
+## Task List
+
+__Input__:
+
+```markdown
+- [ ] Rule the web
+- [x] Conquer the world
+- [ ] Learn Docute
+```
+
+__Output__:
+
+- [ ] Rule the web
+- [x] Conquer the world
+- [ ] Learn Docute
 
 ## Code Highlighting
 

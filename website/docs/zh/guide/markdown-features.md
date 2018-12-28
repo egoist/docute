@@ -50,6 +50,22 @@ __输出__：
 - [Docute website](https://docute.org)
 - [Docute repo](https://github.com/egoist/docute)
 
+## 任务列表
+
+__输入__:
+
+```markdown
+- [ ] Rule the web
+- [x] Conquer the world
+- [ ] Learn Docute
+```
+
+__输出__:
+
+- [ ] Rule the web
+- [x] Conquer the world
+- [ ] Learn Docute
+
 ## 代码高亮 Highlighting
 
 代码框使用 [Prism.js](https://prismjs.com/) 高亮显示，示例代码：

@@ -1017,14 +1017,15 @@ Renderer.prototype.hr = function() {
   return this.options.xhtml ? '<hr/>\n' : '<hr>\n'
 }
 
-Renderer.prototype.list = function(body, ordered, start) {
+Renderer.prototype.list = function(body, ordered, start, containsTaskList) {
   var type = ordered ? 'ol' : 'ul',
-    startatt = ordered && start !== 1 ? ' start="' + start + '"' : ''
-  return '<' + type + startatt + '>\n' + body + '</' + type + '>\n'
+    startatt = ordered && start !== 1 ? ' start="' + start + '"' : '',
+    className = containsTaskList ? ' class="contains-task-list"' : ''
+  return '<' + type + startatt + className + '>\n' + body + '</' + type + '>\n'
 }
 
-Renderer.prototype.listitem = function(text) {
-  return '<li>' + text + '</li>\n'
+Renderer.prototype.listitem = function(text, task) {
+  return `<li${task ? ' class="task-list-item"' : ''}>` + text + '</li>\n'
 }
 
 Renderer.prototype.checkbox = function(checked) {
@@ -1310,19 +1311,25 @@ Parser.prototype.tok = function() {
     case 'list_start': {
       body = ''
       var ordered = this.token.ordered,
-        start = this.token.start
+        start = this.token.start,
+        containsTaskList = false
 
       while (this.next().type !== 'list_end') {
+        if (this.token.task) {
+          containsTaskList = true
+        }
         body += this.tok()
       }
 
-      return this.renderer.list(body, ordered, start)
+      return this.renderer.list(body, ordered, start, containsTaskList)
     }
+    // @modified
     case 'list_item_start': {
       body = ''
       var loose = this.token.loose
+      const isTask = this.token.task
 
-      if (this.token.task) {
+      if (isTask) {
         body += this.renderer.checkbox(this.token.checked)
       }
 
@@ -1331,7 +1338,7 @@ Parser.prototype.tok = function() {
           !loose && this.token.type === 'text' ? this.parseText() : this.tok()
       }
 
-      return this.renderer.listitem(body)
+      return this.renderer.listitem(body, isTask)
     }
     case 'html': {
       // TODO parse inline content if parameter markdown=1
