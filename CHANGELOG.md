@@ -1,3 +1,11 @@
+# [4.7.0](https://github.com/leptosia/docute/compare/v4.6.21...v4.7.0) (2018-12-28)
+
+
+### Features
+
+* add <Gist> component ([2fe7c15](https://github.com/leptosia/docute/commit/2fe7c15))
+* improve gfm task list support ([915dbcb](https://github.com/leptosia/docute/commit/915dbcb))
+
 ## [4.6.21](https://github.com/leptosia/docute/compare/v4.6.20...v4.6.21) (2018-12-18)
 
 
