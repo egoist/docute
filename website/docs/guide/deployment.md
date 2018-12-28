@@ -2,7 +2,31 @@
 
 Keep in mind, it's just a static HTML file that can be served anywhere.
 
-## Netlify <Badge type="success">Recommended</Badge>
+## Zeit Now <Badge type="success">Recommended</Badge>
+
+[Zeit Now](https://zeit.co/now) is a platform for Global Serverless Deployments, it's also perfectly suitable for deploying a static website with or without build process.
+
+Assuming you have your docs in `./docs` folder, to deploy it you can simply populate a `now.json` in your project:
+
+```json
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "docs/**",
+      "use": "@now/static"
+    }
+  ]
+}
+```
+
+Then [install Now](https://zeit.co/docs/v2/getting-started/installation/) on your machine.
+
+After that, you can run the command `now` in your project and you're all set.
+
+Make sure to check out Now's [GitHub Integration](https://zeit.co/docs/v2/integrations/now-for-github/) if you want automatic deployments on every push and pull request.
+
+## Netlify
 
 1. Login to your [Netlify](https://www.netlify.com/) account.
 2. In the [dashboard](https://app.netlify.com/) page, click __New site from Git__.

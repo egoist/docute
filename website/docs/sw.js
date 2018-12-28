@@ -15,5 +15,5 @@ const matchCb = ({ url, event }) => {
 
 workbox.routing.registerRoute(
   matchCb,
-  workbox.strategies.staleWhileRevalidate()
+  workbox.strategies.networkFirst()
 )
