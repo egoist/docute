@@ -170,3 +170,27 @@ new Docute({
 })
 </script>
 ```
+
+## HTML in Markdown
+
+You can write HTML in Markdown, for example:
+
+```markdown
+__FAQ__:
+
+<details><summary>what is the meaning of life?</summary>
+
+some say it is __42__, some say it is still unknown.
+</details>
+```
+
+__FAQ__:
+
+<details><summary>what is the meaning of life?</summary>
+
+some say it is __42__, some say it is still unknown.
+</details>
+
+<br>
+
+<Note>In fact you can even use Vue directives and Vue components in Markdown too, learn more about it [here](./use-vue-in-markdown.md).</Note>
