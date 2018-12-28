@@ -1,4 +1,4 @@
-# Writing
+# Markdown Features
 
 A document should be easy-to-read and easy-to-write.
 

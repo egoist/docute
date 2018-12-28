@@ -817,10 +817,10 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@poi/dev-utils@^12.0.2":
-  version "12.0.2"
-  resolved "https://registry.npmjs.org/@poi/dev-utils/-/dev-utils-12.0.2.tgz#5777a82e52d3d5f3b37f1a6dccbe30dfd34380de"
-  integrity sha512-KhoDY2topxLpGQ5+sGUWmdDE5Zm/nGWQ8FCJKmnJnnTlnhowSFjwzrZSAhL84q0GF+7SPbO0Ofd5VruN+nsocQ==
+"@poi/dev-utils@^12.0.3":
+  version "12.0.3"
+  resolved "https://registry.npmjs.org/@poi/dev-utils/-/dev-utils-12.0.3.tgz#8e46bb3e97139f14d190d4150ce0354c6dedaace"
+  integrity sha512-s78mZeR/uMEBQul628BvGckbgXcqGP3DHMUWP2c6yy3x1enqxVjSv2o3a/hTKmmaKpwZ0xUrPeNsCPYOSSA/lA==
   dependencies:
     address "^1.0.3"
     chalk "^2.4.1"
@@ -1607,6 +1607,11 @@ babel-plugin-alter-object-assign@^1.0.1:
   resolved "https://registry.npmjs.org/babel-plugin-alter-object-assign/-/babel-plugin-alter-object-assign-1.0.2.tgz#eb73f6c18b391093a2be8849ee2f8351d7751f3f"
   integrity sha512-16m4iTnj1FQ439wM4bisjfnd10Kk9ArY6x7oLbZ3OyaNckyXzhmuQWQ/ntdDaZxhrkBGJZiJtUNH/k3kLRxD+Q==
 
+babel-plugin-assets-named-imports@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.npmjs.org/babel-plugin-assets-named-imports/-/babel-plugin-assets-named-imports-0.2.0.tgz#c71222cd0f3843155c42384c82126091a1024b21"
+  integrity sha512-aSWR/oN6AcO5tCqd+cm53EbkA25tEpdCr8dvoAOnG2ia7mhWW8l13IgfETucxk1/ksfX8fp0/aUmnoGJxgIakA==
+
 babel-plugin-empower-assert@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/babel-plugin-empower-assert/-/babel-plugin-empower-assert-2.0.0.tgz#41087d602b5debea7a6b28654d5a458394c879d7"
@@ -2076,10 +2081,10 @@ cac@^5.0.15:
     string-width "^2.1.1"
     text-table "^0.2.0"
 
-cac@^6.3.6:
-  version "6.3.10"
-  resolved "https://registry.npmjs.org/cac/-/cac-6.3.10.tgz#8e3e53206ca26ee5ad057968fb047627e12b7d87"
-  integrity sha512-67NFEmsAhMaiL2vEvt7M+0KwLmfVMGWe8JAyt66aU/EUICTugkGpr1uABLuqhNUrY7kaWH8QtPJOyJDUekYWpw==
+cac@^6.3.12:
+  version "6.3.12"
+  resolved "https://registry.npmjs.org/cac/-/cac-6.3.12.tgz#eb45205c7d09ac7c141104e8b8d1859bd9a09d39"
+  integrity sha512-0tJOuYFAfQc8s3G6BHSPCvSTCkcVm9etd3nSeLW55Prz3uv3I6cMli9bfkEGbVUZQ39t750rAY6nCFp3dLboxw==
 
 cacache@^10.0.4:
   version "10.0.4"
@@ -8615,10 +8620,10 @@ pluralize@^7.0.0:
   resolved "https://registry.npmjs.org/pluralize/-/pluralize-7.0.0.tgz#298b89df8b93b0221dbf421ad2b1b1ea23fc6777"
   integrity sha512-ARhBOdzS3e41FbkW/XWrTEtukqqLoK5+Z/4UeDaLuSW+39JPeFgs4gCGqsrJHVZX0fUrx//4OF0K1CUGwlIFow==
 
-poi@^12.1.5:
-  version "12.1.5"
-  resolved "https://registry.npmjs.org/poi/-/poi-12.1.5.tgz#09e35a110a8491377e7cd655dc5ec830b9980d1a"
-  integrity sha512-D96yAx4ItL91ZbIiCzFzK3hoA8fI++zq3PfyTZdTRiEAzQmusmS+KqvLRguu99SCFSKwKlXmZhayJOiK5hBmCg==
+poi@^12.2.8:
+  version "12.2.8"
+  resolved "https://registry.npmjs.org/poi/-/poi-12.2.8.tgz#1dfae4ad68b49d94a37fa4b585890f2a3fe86d3f"
+  integrity sha512-sLh6zOzy1aLiDLS8v5DID7i7ZCJFg03oG7dkuDYkh4+CE1EQtvHXw/IJ0GOaDyrKNjvsSF99qc2OO6tHLN84/w==
   dependencies:
     "@babel/core" "^7.1.6"
     "@babel/plugin-proposal-class-properties" "^7.1.0"
@@ -8632,13 +8637,14 @@ poi@^12.1.5:
     "@babel/preset-typescript" "^7.1.0"
     "@babel/runtime" "^7.1.5"
     "@intervolga/optimize-cssnano-plugin" "^1.0.6"
-    "@poi/dev-utils" "^12.0.2"
+    "@poi/dev-utils" "^12.0.3"
     "@poi/logger" "^12.0.0"
     babel-helper-vue-jsx-merge-props "^2.0.3"
     babel-loader "^8.0.4"
+    babel-plugin-assets-named-imports "^0.2.0"
     babel-plugin-macros "^2.4.2"
     babel-plugin-transform-vue-jsx "^4.0.0"
-    cac "^6.3.6"
+    cac "^6.3.12"
     cache-loader "^1.2.5"
     case-sensitive-paths-webpack-plugin "^2.1.2"
     chalk "^2.4.1"

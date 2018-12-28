@@ -63,10 +63,7 @@ Then you can serve this folder as a static website on your machine using:
 
 Next, you may want to use [sidebar](./options.md#sidebar), [nav](./options.md#nav) or other [options](./options.md) to customize the website. 
 
-Here's a starter which you can preview right now or [download](https://repl.it/@egoist/docute-starter.zip) to run locally:
-
-<iframe height="400px" width="100%" src="https://repl.it/@egoist/docute-starter?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-
+Here's a [REPL](https://repl.it/@egoist/docute-starter) where you can try Docute online or [download](https://repl.it/@egoist/docute-starter.zip) it to run locally.
 
 ## Comparisons
 

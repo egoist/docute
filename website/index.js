@@ -48,8 +48,8 @@ new Docute({
           link: '/guide/customization'
         },
         {
-          title: 'Writing',
-          link: '/guide/writing'
+          title: 'Markdown Features',
+          link: '/guide/markdown-features'
         },
         {
           title: 'Use Vue in Markdown',
@@ -139,8 +139,8 @@ new Docute({
               link: '/zh/guide/customization'
             },
             {
-              title: '撰写',
-              link: '/zh/guide/writing'
+              title: 'Markdown 功能',
+              link: '/zh/guide/markdown-features'
             },
             {
               title: '在 Markdown 中使用 Vue',

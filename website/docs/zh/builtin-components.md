@@ -128,6 +128,22 @@ This is a danger for something to take action for.
 
 </Note>
 
+## `<Gist>`
+
+Embed [GitHub Gist](https://gist.github.com/) into your Markdown documents.
+
+|Prop|Type|Default|Description|
+|---|---|---|---|
+|id|`string`|N/A|Gist ID|
+
+Example:
+
+```markdown
+<Gist id="71b8002ecd62a68fa7d7ee52011b2c7c" />
+```
+
+<Gist id="71b8002ecd62a68fa7d7ee52011b2c7c" />
+
 ## `<v-style>` `<v-script>`
 
 在 Vue template 中替代 `<style>` 和 `<script>` 标签。

@@ -9,6 +9,8 @@ import ImageZoom from './components/ImageZoom.vue'
 import Badge from './components/Badge.vue'
 import DocuteSelect from './components/DocuteSelect.vue'
 import Note from './components/Note.vue'
+import Gist from './components/Gist.vue'
+import Loading from './components/Loading.vue'
 import ExternalLinkIcon from './components/icons/ExternalLinkIcon.vue'
 
 // Built-in plugins
@@ -21,6 +23,8 @@ Vue.component(Badge.name, Badge)
 Vue.component(DocuteSelect.name, DocuteSelect)
 Vue.component(Note.name, Note)
 Vue.component(ExternalLinkIcon.name, ExternalLinkIcon)
+Vue.component(Gist.name, Gist)
+Vue.component(Loading.name, Loading)
 Vue.use(alternativeComponents)
 
 Vue.mixin({
