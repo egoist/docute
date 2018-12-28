@@ -2,9 +2,9 @@
 
 请记住，它只是一个在任何地方都可以提供的静态 HTML 文件。
 
-## Zeit Now <Badge type="success">Recommended</Badge>
+## ZEIT Now <Badge type="success">Recommended</Badge>
 
-[Zeit Now](https://zeit.co/now) is a platform for Global Serverless Deployments, it's also perfectly suitable for deploying a static website with or without build process.
+[ZEIT Now](https://zeit.co/now) is a platform for Global Serverless Deployments, it's also perfectly suitable for deploying a static website with or without build process.
 
 Assuming you have your docs in `./docs` folder, to deploy it you can simply populate a `now.json` in your project:
 
