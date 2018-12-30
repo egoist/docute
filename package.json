@@ -9,6 +9,7 @@
     "lint": "xo",
     "website": "poi --serve --config build/poi.website.config.js",
     "build:website": "poi --prod --config build/poi.website.config.js",
+    "now-build": "npm run build:website",
     "prepublishOnly": "npm run build",
     "commit": "git-cz",
     "test:unit": "poi puppet src/**/*.test.js --test --plugin @poi/puppet --framework mocha"
@@ -43,7 +44,7 @@
     "fast-async": "^6.3.8",
     "husky": "^1.0.1",
     "lint-staged": "^7.3.0",
-    "poi": "^12.2.8",
+    "poi": "^12.2.9",
     "postcss-import": "^12.0.0",
     "postcss-preset-env": "^6.0.3",
     "power-assert": "^1.6.1",

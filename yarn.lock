@@ -8620,10 +8620,10 @@ pluralize@^7.0.0:
   resolved "https://registry.npmjs.org/pluralize/-/pluralize-7.0.0.tgz#298b89df8b93b0221dbf421ad2b1b1ea23fc6777"
   integrity sha512-ARhBOdzS3e41FbkW/XWrTEtukqqLoK5+Z/4UeDaLuSW+39JPeFgs4gCGqsrJHVZX0fUrx//4OF0K1CUGwlIFow==
 
-poi@^12.2.8:
-  version "12.2.8"
-  resolved "https://registry.npmjs.org/poi/-/poi-12.2.8.tgz#1dfae4ad68b49d94a37fa4b585890f2a3fe86d3f"
-  integrity sha512-sLh6zOzy1aLiDLS8v5DID7i7ZCJFg03oG7dkuDYkh4+CE1EQtvHXw/IJ0GOaDyrKNjvsSF99qc2OO6tHLN84/w==
+poi@^12.2.9:
+  version "12.2.9"
+  resolved "https://registry.npmjs.org/poi/-/poi-12.2.9.tgz#7ba90805e6571a94296a5daad1019d347c83f15a"
+  integrity sha512-EcdZX844ewpFoOeLthYslJYoNECpJwDicM/tEx8JnREhenHPjwey6wd4gGTpbHEgI4OzXsgrObcQdeTaBrv9yA==
   dependencies:
     "@babel/core" "^7.1.6"
     "@babel/plugin-proposal-class-properties" "^7.1.0"

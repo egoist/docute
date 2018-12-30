@@ -11,6 +11,10 @@ new Docute({
   ].filter(Boolean),
   editLinkBase: 'https://github.com/leptosia/docute/tree/master/website/docs',
   editLinkText: 'Edit this page on GitHub',
+  router: {
+    mode: 'history'
+  },
+  sourcePath: '/',
   componentMixins: [
     {
       data() {

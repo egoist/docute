@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "alias": ["docute.now.sh", "docute.org"],
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": {
+        "distDir": "website/dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "^/sw.js",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/sw.js"
+    },
+    {
+      "src": "^/(.+)\\.(.+)",
+      "dest": "/$1.$2"
+    },
+    {
+      "src": "^/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
