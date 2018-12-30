@@ -148,3 +148,11 @@ interface LocaleOptions extends Options {
   language: string
 }
 ```
+
+## router
+
+- Type: `ConstructionOptions`
+
+All vue-router's [Construction options](https://router.vuejs.org/api/#router-construction-options) except for `routes` are accepted here.
+
+For example, you can set `router: { mode: 'history' }` to [get rid of the hash](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations) in URLs.
