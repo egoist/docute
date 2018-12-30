@@ -8,9 +8,9 @@ self.addEventListener('install', e => {
 
 const ALLOWED_HOSTS = [
   // The domain to load markdown files
-  location.host
-  // The domain to load docute
-  // 'unpkg.com'
+  location.host,
+  // The domain to load external scripts like Prism components
+  'unpkg.com'
 ]
 
 const matchCb = ({ url, event }) => {
