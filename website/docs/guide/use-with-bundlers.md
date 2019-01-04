@@ -37,8 +37,4 @@ new Docute({
   target: '#app',
   // Other options
 })
-
-// import the stylesheet directly or with a link tag in your html.
-// import "docute/dist/docute.css"
-// <link rel="stylesheet" href="docute/dist/docute.css" />
 ```
