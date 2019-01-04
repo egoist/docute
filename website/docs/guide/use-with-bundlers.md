@@ -62,7 +62,7 @@ If you want to use a local local files you have to [modify your build command](h
 
 ```json5
 {
-  "scripts: 
+  "scripts": 
     {
       "build": "cp -R <sourcePath> ./dist && parcel build index.html"
     }
