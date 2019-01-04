@@ -28,5 +28,17 @@ You may need to use [html-webpack-plugin](https://github.com/jantimon/html-webpa
 If you're using [Vue CLI](https://cli.vuejs.org) or [Poi](https://poi.js.org), congratulations, there's no more build configs needed.
 
 ## Parcel
+Import Docute in any imported or required js-file:
 
-[TODO] [PR WELCOME]
+```js
+import Docute from 'docute'
+
+new Docute({
+  target: '#app',
+  // Other options
+})
+
+// import the stylesheet directly or with a link tag in your html.
+// import "docute/dist/docute.css"
+// <link rel="stylesheet" href="docute/dist/docute.css" />
+```
