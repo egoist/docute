@@ -1,6 +1,38 @@
+import html from 'html-template-tag'
 import googleAnalytics from '@leptosia/docute-google-analytics'
 import Docute from '../src'
 import prismLanguages from '../src/utils/prismLanguages'
+
+const PatreonIcon = {
+  template: html`
+    <svg
+      width="569px"
+      height="546px"
+      viewBox="0 0 569 546"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <title>Patreon logo</title>
+      <g>
+        <circle
+          fill="rgb(249, 104, 84)"
+          id="Oval"
+          cx="362.589996"
+          cy="204.589996"
+          r="204.589996"
+        ></circle>
+        <rect
+          fill="rgb(5, 45, 73)"
+          id="Rectangle"
+          x="0"
+          y="0"
+          width="100"
+          height="545.799988"
+        ></rect>
+      </g>
+    </svg>
+  `
+}
 
 new Docute({
   target: 'app',
@@ -232,8 +264,27 @@ new Docute({
     return {
       '/changelog': {
         title: 'Changelog',
-        file: 'https://raw.githubusercontent.com/leptosia/docute/master/CHANGELOG.md'
+        file:
+          'https://raw.githubusercontent.com/leptosia/docute/master/CHANGELOG.md'
       }
+    }
+  },
+  footer: `
+  &copy; ${new Date().getFullYear()} Made at <a href="https://leptosia.org">Leptosia</a>.
+  `,
+  banner: {
+    template: html`
+      <div class="docute-banner">
+        <note :label="false"
+          ><PatreonIcon width="16" height="16" style="position:relative;top:2px;margin-right:8px;" />Support Docute development by
+          <a href="https://patreon.com/egoist" target="_blank"
+            >becoming a patron or one-time donation <ExternalLinkIcon /></a
+          >.</note
+        >
+      </div>
+    `,
+    components: {
+      PatreonIcon
     }
   }
 })
@@ -245,7 +296,7 @@ Vue.component('ReverseText', {
       required: true
     }
   },
-  template: `
+  template: html`
     <div class="reverse-text">
       {{ reversedText }}
       <v-style>

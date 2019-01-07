@@ -17,6 +17,7 @@ import ExternalLinkIcon from './components/icons/ExternalLinkIcon.vue'
 import i18nPlugin from './plugins/i18n'
 import evaluateContentPlugin from './plugins/evaluateContent'
 import versionsPlugin from './plugins/versions'
+import bannerFooter from './plugins/banner-footer'
 
 Vue.component(ImageZoom.name, ImageZoom)
 Vue.component(Badge.name, Badge)
@@ -50,6 +51,7 @@ class Docute {
       i18nPlugin,
       evaluateContentPlugin,
       versionsPlugin,
+      bannerFooter,
       ...(store.state.originalConfig.plugins || [])
     ]
     this.pluginApi = new PluginAPI({plugins, store, router})

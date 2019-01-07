@@ -6,4 +6,20 @@
       margin-top: 0;
     }
   }
+
+  &[data-position="main:start"] {
+    margin-bottom: 35px;
+
+    &>*:first-child {
+      margin-top: 0;
+    }
+
+    &>*:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &[data-position="main:end"] {
+    margin-top: 30px;
+  }
 }

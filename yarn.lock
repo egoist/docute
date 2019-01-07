@@ -5395,6 +5395,11 @@ html-entities@^1.2.0:
   resolved "https://registry.npmjs.org/html-entities/-/html-entities-1.2.1.tgz#0df29351f0721163515dfb9e5543e5f6eed5162f"
   integrity sha1-DfKTUfByEWNRXfueVUPl9u7VFi8=
 
+html-es6cape@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/html-es6cape/-/html-es6cape-1.0.5.tgz#f3a437883b0594a01b175a6a2833090920b37d85"
+  integrity sha1-86Q3iDsFlKAbF1pqKDMJCSCzfYU=
+
 html-minifier@^3.5.20:
   version "3.5.21"
   resolved "https://registry.npmjs.org/html-minifier/-/html-minifier-3.5.21.tgz#d0040e054730e354db008463593194015212d20c"
@@ -5407,6 +5412,13 @@ html-minifier@^3.5.20:
     param-case "2.1.x"
     relateurl "0.2.x"
     uglify-js "3.4.x"
+
+html-template-tag@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/html-template-tag/-/html-template-tag-2.0.0.tgz#797ed5d6586c9654275f646d7396fb5dd0c90cfd"
+  integrity sha512-29sYQ4KhBNWRXNx+bnwv3FLQAB7ZQDptT3z2vE7Bu0xhsQVDbQDk6tEz4MZ0Cn4HI5OoNXzc6/chdeXvjUhDWg==
+  dependencies:
+    html-es6cape "^1.0.5"
 
 html-webpack-plugin@^4.0.0-beta.4:
   version "4.0.0-beta.5"

@@ -156,3 +156,34 @@ interface LocaleOptions extends Options {
 All vue-router's [Construction options](https://router.vuejs.org/api/#router-construction-options) except for `routes` are accepted here.
 
 For example, you can set `router: { mode: 'history' }` to [get rid of the hash](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations) in URLs.
+
+
+## banner / footer
+
+- Type: `string` `VueComponent`
+
+Display banner and footer. A string will be wrapped inside `<div class="docute-banner">` or `<div class="docute-footer">` and used as Vue template.
+
+For example:
+
+```js
+new Docute({
+  banner: `Please <a href="https://donate.com/link">
+  donate</a> <ExternalLinkIcon /> to support this project!`
+})
+```
+
+You can also use a Vue component:
+
+```js
+new Docute({
+  banner: {
+    template: `
+    <div class="docute-banner">
+      Please <a href="https://donate.com/link">
+      donate</a> <ExternalLinkIcon /> to support this project!
+    </div>
+    `
+  }
+})
+```

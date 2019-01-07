@@ -11,6 +11,10 @@ body {
 
 a {
   color: var(--accent-color);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .external-link-icon {
@@ -28,4 +32,20 @@ a {
   &.is-center {
     margin: 0 auto;
   }
+}
+
+.docute-banner {
+  margin-bottom: 10px;
+
+  &>*:first-child {
+    margin-top: 0;
+  }
+
+  &>*:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.docute-footer {
+  padding-top: 60px;
 }
