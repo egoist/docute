@@ -18,6 +18,7 @@
     },
     {
       "src": "^/(.+)\\.(.+)",
+      "headers": { "cache-control": "s-maxage=0" },
       "dest": "/$1.$2"
     },
     {
