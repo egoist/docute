@@ -1,3 +1,10 @@
+# [4.8.0](https://github.com/leptosia/docute/compare/v4.7.0...v4.8.0) (2019-01-07)
+
+
+### Features
+
+* support banner, footer options ([7191e9a](https://github.com/leptosia/docute/commit/7191e9a)), closes [#198](https://github.com/leptosia/docute/issues/198)
+
 ## [4.7.0](https://github.com/leptosia/docute/compare/v4.6.21...v4.7.0) (2018-12-28)
 
 ### Features
