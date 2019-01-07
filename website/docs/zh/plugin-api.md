@@ -35,6 +35,18 @@
 
 更新页面内容时将调用 `fn`。
 
+## api.registerComponent(position, component)
+
+- `position`: `string`
+- `component`: `VueComponent`
+
+Register a component at specific position:
+
+- `sidebar:start`: The start of sidebar.
+- `sidebar:end`: The end of sidebar.
+- `main:start`: The start of main area of the page.
+- `main:end`: The end of main area of the page.
+
 ## api.router
 
 基本上是 [Vue Router](https://router.vuejs.org/api/#router-instance-properties) 实例。

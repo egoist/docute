@@ -35,6 +35,18 @@ You can use this hook the modify the compiled markdown component.
 
 `fn` will be called when the page content is updated.
 
+## api.registerComponent(position, component)
+
+- `position`: `string`
+- `component`: `VueComponent`
+
+Register a component at specific position:
+
+- `sidebar:start`: The start of sidebar.
+- `sidebar:end`: The end of sidebar.
+- `main:start`: The start of main area of the page.
+- `main:end`: The end of main area of the page.
+
 ## api.router
 
 Basically the [Vue Router](https://router.vuejs.org/api/#router-instance-properties) instance.
