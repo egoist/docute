@@ -163,10 +163,6 @@ new Docute({
         {
           title: 'Credits',
           link: '/credits'
-        },
-        {
-          title: 'Changelog',
-          link: '/changelog'
         }
       ]
     }
@@ -258,13 +254,6 @@ new Docute({
           ]
         }
       ]
-    }
-  },
-  routes: {
-    '/changelog': {
-      title: 'Changelog',
-      file:
-        'https://raw.githubusercontent.com/leptosia/docute/master/CHANGELOG.md'
     }
   },
   footer: `

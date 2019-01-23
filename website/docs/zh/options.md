@@ -191,3 +191,9 @@ new Docute({
   }
 })
 ```
+
+## fetchOptions
+
+- Type: `object`
+
+The option for [`window.fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
