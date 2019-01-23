@@ -1,3 +1,10 @@
+## [4.9.1](https://github.com/leptosia/docute/compare/v4.9.0...v4.9.1) (2019-01-23)
+
+
+### Bug Fixes
+
+* call fetch with credentials include ([93da5d3](https://github.com/leptosia/docute/commit/93da5d3))
+
 # [4.9.0](https://github.com/leptosia/docute/compare/v4.8.0...v4.9.0) (2019-01-23)
 
 
