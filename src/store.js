@@ -67,7 +67,7 @@ const store = new Vuex.Store({
 
       await Promise.all([
         !page.content &&
-          fetch(page.file)
+          fetch(page.file, {credentials: 'include'})
             .then(res => res.text())
             .then(res => {
               page.content = res
