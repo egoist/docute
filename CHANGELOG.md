@@ -1,3 +1,10 @@
+## [4.9.2](https://github.com/leptosia/docute/compare/v4.9.1...v4.9.2) (2019-01-23)
+
+
+### Bug Fixes
+
+* expose fetchOptions instead of hard-coded ([9273f75](https://github.com/leptosia/docute/commit/9273f75))
+
 ## [4.9.1](https://github.com/leptosia/docute/compare/v4.9.0...v4.9.1) (2019-01-23)
 
 
