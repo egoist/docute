@@ -1,3 +1,15 @@
+# [4.9.0](https://github.com/leptosia/docute/compare/v4.8.0...v4.9.0) (2019-01-23)
+
+
+### Bug Fixes
+
+* update vue-router-prefetch ([7bb0f4e](https://github.com/leptosia/docute/commit/7bb0f4e))
+
+
+### Features
+
+* prefetch markdown files ([720ca58](https://github.com/leptosia/docute/commit/720ca58))
+
 # [4.8.0](https://github.com/leptosia/docute/compare/v4.7.0...v4.8.0) (2019-01-07)
 
 
