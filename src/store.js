@@ -52,14 +52,9 @@ const store = new Vuex.Store({
       commit('TOGGLE_SIDEBAR', false)
       commit('SET_FETCHING', true)
 
-      let pageData = await getters.pageData
-      if (typeof pageData === 'function') {
-        pageData = await pageData(store)
-      }
-
       let page = {
         markdown: true,
-        ...pageData
+        ...(getters.config.routes && getters.config.routes[path])
       }
 
       if (!page.content && !page.file) {
@@ -207,23 +202,6 @@ const store = new Vuex.Store({
 
     centerContent(_, {config}) {
       return config.centerContent !== false
-    },
-
-    pageData(
-      {
-        route: {path}
-      },
-      {config}
-    ) {
-      return Promise.resolve(
-        typeof config.pageData === 'function'
-          ? config.pageData(store)
-          : config.pageData
-      )
-        .then(pageData => {
-          return pageData && pageData[path]
-        })
-        .catch(console.error)
     }
   }
 })

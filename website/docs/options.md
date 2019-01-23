@@ -62,21 +62,25 @@ The source path to fetch markdown files from, by default we load them from path 
 
 It can also be a full URL like: `https://some-website/path/to/markdown/files` so that you can load files from a different domain.
 
-## pageData
+## routes
 
-- Type: `PageData | (store: Vuex.Store) => Promise<PageData>`
+- Type: `Routes`
 
-Directly use page data from this option instead of fetching a file.
+Use this option to make Docute fetch specific file or use given content for a path.
 
 ```ts
-interface PageData {
-  [path: string]: PageDataItem | (store: Vuex.Store) => Promise<PageDataItem>
+interface Routes {
+  [path: string]: RouteData
 }
 
-interface PageDataItem {
+interface RouteData {
+  /* Default to the content h1 header */
   title?: string
+  /* One of `content` and `file` is required */
   content?: string
+  /* Response will be used as `content` */
   file?: string
+  /* Parse the content as markdown, true by default */
   markdown?: boolean
   [k: string]?: any
 }

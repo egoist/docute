@@ -24,6 +24,7 @@
     "vue": "^2.5.17",
     "vue-content-loader": "^0.2.1",
     "vue-router": "^3.0.1",
+    "vue-router-prefetch": "^1.1.0",
     "vue-template-compiler": "^2.5.17",
     "vuex": "^3.0.1",
     "vuex-router-sync": "^5.0.0"
@@ -45,7 +46,7 @@
     "html-template-tag": "^2.0.0",
     "husky": "^1.0.1",
     "lint-staged": "^7.3.0",
-    "poi": "^12.2.9",
+    "poi": "^12.4.8",
     "postcss-import": "^12.0.0",
     "postcss-preset-env": "^6.0.3",
     "power-assert": "^1.6.1",

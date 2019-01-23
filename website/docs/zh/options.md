@@ -64,21 +64,25 @@ interface ItemLink {
 它也可以是完整的 URL，例如： `https://some-website/path/to/markdown/files`，以便于你可以从其他域名加载文件。
 
 
-## pageData
+## routes
 
-- 类型: `PageData | (store: Vuex.Store) => Promise<PageData>`
+- Type: `Routes`
 
-直接从这个选项获取页面数据，而不是请求一个文件。
+Use this option to make Docute fetch specific file or use given content for a path.
 
 ```ts
-interface PageData {
-  [path: string]: PageDataItem | (store: Vuex.Store) => Promise<PageDataItem>
+interface Routes {
+  [path: string]: RouteData
 }
 
-interface PageDataItem {
+interface RouteData {
+  /* Default to the content h1 header */
   title?: string
+  /* One of `content` and `file` is required */
   content?: string
+  /* Response will be used as `content` */
   file?: string
+  /* Parse the content as markdown, true by default */
   markdown?: boolean
   [k: string]?: any
 }

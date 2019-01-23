@@ -817,18 +817,17 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@poi/dev-utils@^12.0.3":
-  version "12.0.3"
-  resolved "https://registry.npmjs.org/@poi/dev-utils/-/dev-utils-12.0.3.tgz#8e46bb3e97139f14d190d4150ce0354c6dedaace"
-  integrity sha512-s78mZeR/uMEBQul628BvGckbgXcqGP3DHMUWP2c6yy3x1enqxVjSv2o3a/hTKmmaKpwZ0xUrPeNsCPYOSSA/lA==
+"@poi/dev-utils@^12.1.1":
+  version "12.1.1"
+  resolved "https://registry.npmjs.org/@poi/dev-utils/-/dev-utils-12.1.1.tgz#3a0c2c92f886cf4b6395aa8e803ca2462c99d09c"
+  integrity sha512-gV1RUXKCR59P+84RHJaCkJXh/F9k6nDUPzoVB6DeNi/4rhG2SapRGIvjy9ZXzJGToaOa7qQw/mR63MdoOE/EXA==
   dependencies:
     address "^1.0.3"
-    chalk "^2.4.1"
     cross-spawn "^6.0.5"
     opn "^5.4.0"
     react-error-overlay "^4.0.1"
     sockjs-client "^1.1.5"
-    strip-ansi "^4.0.0"
+    strip-ansi "3.0.0"
 
 "@poi/logger@^12.0.0":
   version "12.0.0"
@@ -848,6 +847,11 @@
     fast-glob "^2.2.4"
     mocha "^5.2.0"
     puppeteer-core "^1.11.0"
+
+"@poi/pnp-webpack-plugin@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/@poi/pnp-webpack-plugin/-/pnp-webpack-plugin-0.0.2.tgz#4633d4445637a2ed3b3da7f831ea7ee38587e6d7"
+  integrity sha512-5yqBjV6yZzrJBYVG6ASAbhRhAQMjEu1nYDPJFbpPDcfNxEvsO+QwIxFq3ABQwH0iq59nI62v8VtxEc/z+jDFOg==
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
@@ -8453,6 +8457,11 @@ parse-json@^4.0.0:
     error-ex "^1.3.1"
     json-parse-better-errors "^1.0.1"
 
+parse-ms@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/parse-ms/-/parse-ms-2.0.0.tgz#7b3640295100caf3fa0100ccceb56635b62f9d62"
+  integrity sha512-AddiXFSLLCqj+tCRJ9MrUtHZB4DWojO3tk0NVZ+g5MaMQHF2+p2ktqxuoXyPFLljz/aUK0Nfhd/uGWnhXVXEyA==
+
 parse-package-name@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npmjs.org/parse-package-name/-/parse-package-name-0.1.0.tgz#3f44dd838feb4c2be4bf318bae4477d7706bade4"
@@ -8632,10 +8641,10 @@ pluralize@^7.0.0:
   resolved "https://registry.npmjs.org/pluralize/-/pluralize-7.0.0.tgz#298b89df8b93b0221dbf421ad2b1b1ea23fc6777"
   integrity sha512-ARhBOdzS3e41FbkW/XWrTEtukqqLoK5+Z/4UeDaLuSW+39JPeFgs4gCGqsrJHVZX0fUrx//4OF0K1CUGwlIFow==
 
-poi@^12.2.9:
-  version "12.2.9"
-  resolved "https://registry.npmjs.org/poi/-/poi-12.2.9.tgz#7ba90805e6571a94296a5daad1019d347c83f15a"
-  integrity sha512-EcdZX844ewpFoOeLthYslJYoNECpJwDicM/tEx8JnREhenHPjwey6wd4gGTpbHEgI4OzXsgrObcQdeTaBrv9yA==
+poi@^12.4.8:
+  version "12.4.8"
+  resolved "https://registry.npmjs.org/poi/-/poi-12.4.8.tgz#733a22c92c7a94ace827259bfdb9ddad78f1a73b"
+  integrity sha512-6O7YngY6iARYjEiHQcgt3nDLR/TL/XxPAQCfzsOOsEj/Tnka0iYdlXxblHMo0qGwEoLW0e4WjzN1E8xNCw2gpw==
   dependencies:
     "@babel/core" "^7.1.6"
     "@babel/plugin-proposal-class-properties" "^7.1.0"
@@ -8649,8 +8658,9 @@ poi@^12.2.9:
     "@babel/preset-typescript" "^7.1.0"
     "@babel/runtime" "^7.1.5"
     "@intervolga/optimize-cssnano-plugin" "^1.0.6"
-    "@poi/dev-utils" "^12.0.3"
+    "@poi/dev-utils" "^12.1.1"
     "@poi/logger" "^12.0.0"
+    "@poi/pnp-webpack-plugin" "^0.0.2"
     babel-helper-vue-jsx-merge-props "^2.0.3"
     babel-loader "^8.0.4"
     babel-plugin-assets-named-imports "^0.2.0"
@@ -8676,6 +8686,7 @@ poi@^12.2.9:
     mini-css-extract-plugin "^0.4.5"
     ora "^3.0.0"
     postcss-loader "^3.0.0"
+    pretty-ms "^4.0.0"
     resolve-from "^4.0.0"
     string-width "^2.1.1"
     superstruct "^0.6.0"
@@ -9767,6 +9778,13 @@ pretty-format@^23.6.0:
   dependencies:
     ansi-regex "^3.0.0"
     ansi-styles "^3.2.0"
+
+pretty-ms@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npmjs.org/pretty-ms/-/pretty-ms-4.0.0.tgz#31baf41b94fd02227098aaa03bd62608eb0d6e92"
+  integrity sha512-qG66ahoLCwpLXD09ZPHSCbUWYTqdosB7SMP4OffgTgL2PBKXMuUsrk5Bwg8q4qPkjTXsKBMr+YK3Ltd/6F9s/Q==
+  dependencies:
+    parse-ms "^2.0.0"
 
 prismjs@^1.15.0:
   version "1.15.0"
@@ -11497,6 +11515,13 @@ stringify-package@^1.0.0:
   resolved "https://registry.npmjs.org/stringify-package/-/stringify-package-1.0.0.tgz#e02828089333d7d45cd8c287c30aa9a13375081b"
   integrity sha512-JIQqiWmLiEozOC0b0BtxZ/AOUtdUZHCBPgqIZ2kSJJqGwgb9neo44XdTHUC4HZSGqi03hOeB7W/E8rAlKnGe9g==
 
+strip-ansi@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/strip-ansi/-/strip-ansi-3.0.0.tgz#7510b665567ca914ccb5d7e072763ac968be3724"
+  integrity sha1-dRC2ZVZ8qRTMtdfgcnY6yWi+NyQ=
+  dependencies:
+    ansi-regex "^2.0.0"
+
 strip-ansi@^3.0.0, strip-ansi@^3.0.1:
   version "3.0.1"
   resolved "http://registry.npmjs.org/strip-ansi/-/strip-ansi-3.0.1.tgz#6a385fb8853d952d5ff05d0e8aaf94278dc63dcf"
@@ -12338,6 +12363,11 @@ vue-loader@^15.4.2:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-router-prefetch@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/vue-router-prefetch/-/vue-router-prefetch-1.1.0.tgz#b5c4d3cc613c40eb4cec9702762785852704a0bb"
+  integrity sha512-7ex1xBKlCxFdEGMsMmQEHQU0dbqleiCazfNMma4MW2//YmeTSjgEbhGRPJjPOlAv+IQfeOdz1T+g3h97v1L2Hw==
 
 vue-router@^3.0.1:
   version "3.0.2"

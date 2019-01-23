@@ -29,6 +29,7 @@
             v-else
             :key="index"
             :to="link.link"
+            :prefetch-files="getPrefetchFiles(link.link)"
             class="ItemLink"
             :class="{active: $route.path === link.link}"
           >
@@ -64,7 +65,7 @@
 </template>
 
 <script>
-import {isExternalLink} from '../utils'
+import {isExternalLink, getFileUrl, getFilenameByPath} from '../utils'
 import MobileHeaderNav from './MobileHeaderNav.vue'
 
 export default {
@@ -73,7 +74,17 @@ export default {
   },
 
   methods: {
-    isExternalLink
+    isExternalLink,
+    getPrefetchFiles(path) {
+      const {sourcePath, routes} = this.$store.getters.config
+      if (routes[path]) {
+        const {file} = routes[path]
+        return file ? [file] : []
+      }
+      const filename = getFilenameByPath(path)
+      const fileUrl = getFileUrl(sourcePath, filename)
+      return fileUrl ? [fileUrl] : []
+    }
   }
 }
 </script>

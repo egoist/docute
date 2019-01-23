@@ -260,13 +260,11 @@ new Docute({
       ]
     }
   },
-  pageData: () => {
-    return {
-      '/changelog': {
-        title: 'Changelog',
-        file:
-          'https://raw.githubusercontent.com/leptosia/docute/master/CHANGELOG.md'
-      }
+  routes: {
+    '/changelog': {
+      title: 'Changelog',
+      file:
+        'https://raw.githubusercontent.com/leptosia/docute/master/CHANGELOG.md'
     }
   },
   footer: `
