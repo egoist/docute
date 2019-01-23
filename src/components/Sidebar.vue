@@ -77,7 +77,7 @@ export default {
     isExternalLink,
     getPrefetchFiles(path) {
       const {sourcePath, routes} = this.$store.getters.config
-      if (routes[path]) {
+      if (routes && routes[path]) {
         const {file} = routes[path]
         return file ? [file] : []
       }
