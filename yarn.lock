@@ -836,10 +836,10 @@
   dependencies:
     chalk "^2.4.1"
 
-"@poi/plugin-puppet@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.npmjs.org/@poi/plugin-puppet/-/plugin-puppet-0.1.3.tgz#1a8bb50465c058751f699475ce4ed22f5043b828"
-  integrity sha512-X1NFqFgHbEsbSbCi+EAA+5uzKSYXxHqzWjQoS5/QN5YsE0t9aEaIkPoMvic4pDD882YGSZiiSfu4x6VoUk4+kA==
+"@poi/plugin-puppet@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.npmjs.org/@poi/plugin-puppet/-/plugin-puppet-0.1.4.tgz#ed8ff70aa6d3ca3d6b3fa1b3be545832078baa2b"
+  integrity sha512-hm3qaBzICOzBQsxA1+xbb9gx9BAO+IwpzlN8UVZPHaLFb6G/cyQ5PEKVxfNhG/jY4nARGQ+fMoIa0BNQdk4IMA==
   dependencies:
     chalk "^2.4.1"
     chrome-location "^1.2.1"
