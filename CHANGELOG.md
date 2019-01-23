@@ -1,3 +1,10 @@
+## [4.9.3](https://github.com/leptosia/docute/compare/v4.9.2...v4.9.3) (2019-01-23)
+
+
+### Bug Fixes
+
+* ensure routes ([55cc0af](https://github.com/leptosia/docute/commit/55cc0af))
+
 ## [4.9.2](https://github.com/leptosia/docute/compare/v4.9.1...v4.9.2) (2019-01-23)
 
 
