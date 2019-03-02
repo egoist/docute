@@ -1,3 +1,10 @@
+# [4.10.0](https://github.com/leptosia/docute/compare/v4.9.3...v4.10.0) (2019-03-02)
+
+
+### Features
+
+* add header anchor ([f598f1d](https://github.com/leptosia/docute/commit/f598f1d))
+
 ## [4.9.3](https://github.com/leptosia/docute/compare/v4.9.2...v4.9.3) (2019-01-23)
 
 
