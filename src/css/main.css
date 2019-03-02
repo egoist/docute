@@ -49,3 +49,27 @@ a {
 .docute-footer {
   padding-top: 60px;
 }
+
+.header-anchor {
+  float: left;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 4px;
+  opacity: 0;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  & .anchor-icon {
+    vertical-align: middle;
+  }
+}
+
+.markdown-header:focus,
+.markdown-header:hover {
+  outline: none;
+  & .header-anchor {
+    opacity: 1;
+  }
+}

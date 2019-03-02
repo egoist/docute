@@ -71,7 +71,9 @@ export default {
 
   watch: {
     '$route.hash'() {
-      this.jumpToHash()
+      this.$nextTick(() => {
+        this.jumpToHash()
+      })
     },
     pageTitle(newValue) {
       const {path} = this.$route
@@ -132,6 +134,7 @@ export default {
         if (el) {
           const header = document.querySelector('.Header')
           jump(el, {
+            a11y: true,
             duration: 0,
             offset: -(header.clientHeight + 30)
           })
