@@ -10,7 +10,6 @@ module.exports = {
     ],
     '@semantic-release/release-notes-generator',
     '@semantic-release/npm',
-    '@semantic-release/git',
     '@semantic-release/github'
   ]
 }
