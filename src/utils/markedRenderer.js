@@ -44,6 +44,12 @@ export default hooks => {
   const origCode = renderer.code
   renderer.code = function(code, lang, escaped, opts) {
     opts = opts || {}
+    const {env} = this.options
+
+    if (opts.mixin) {
+      env.mixins.push(code)
+      return ''
+    }
 
     let res = origCode.call(this, code, lang, escaped)
 

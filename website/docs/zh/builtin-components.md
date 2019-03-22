@@ -144,6 +144,59 @@ Example:
 
 <Gist id="71b8002ecd62a68fa7d7ee52011b2c7c" />
 
+## `<docute-select>`
+
+A customized `<select>` component:
+
+<!-- prettier-ignore -->
+````vue
+<docute-select :value="favoriteFruit" v-on:change="handleChange">
+  <option value="apple" :selected="favoriteFruit === 'apple'">Apple</option>
+  <option value="banana" :selected="favoriteFruit === 'banana'">Banana</option>
+  <option value="watermelon" :selected="favoriteFruit === 'watermelon'">Watermelon</option>
+</docute-select>
+
+Your favorite fruit: {{ favoriteFruit }}
+
+```js {mixin: true}
+module.exports = { 
+  data() { 
+    return { 
+      favoriteFruit: 'banana' 
+    }
+  }, 
+  methods: {
+    handleChange(value) { 
+      this.favoriteFruit = value
+    } 
+  }
+}
+```
+````
+
+<docute-select v-on:change="handleChange" :value="favoriteFruit">
+  <option value="apple" :selected="favoriteFruit === 'apple'">Apple</option>
+  <option value="banana" :selected="favoriteFruit === 'banana'">Banana</option>
+  <option value="watermelon" :selected="favoriteFruit === 'watermelon'">Watermelon</option>
+</docute-select>
+
+Your favorite fruit: {{ favoriteFruit }}
+
+```js {mixin: true}
+{
+  data() {
+    return {
+      favoriteFruit: 'banana'
+    }
+  },
+  methods: {
+    handleChange(value) {
+      this.favoriteFruit = value
+    }
+  }
+}
+```
+
 ## `<v-style>` `<v-script>`
 
 在 Vue template 中替代 `<style>` 和 `<script>` 标签。

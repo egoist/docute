@@ -31,11 +31,11 @@ Example:
 
 A small count and labeling component.
 
-| Prop     | Type                                                | Default | Description             |
-| -------- | --------------------------------------------------- | ------- | ----------------------- |
-| type     | <code>'tip' &#x7C; 'success' &#x7C; 'warning' &#x7C; 'danger'</code> | N/A | Badge type              |
-| color    | `string`                                            | N/A     | Custom background color |
-| children | `string`                                            | N/A     | Badge text              |
+| Prop     | Type                                                                 | Default | Description             |
+| -------- | -------------------------------------------------------------------- | ------- | ----------------------- |
+| type     | <code>'tip' &#x7C; 'success' &#x7C; 'warning' &#x7C; 'danger'</code> | N/A     | Badge type              |
+| color    | `string`                                                             | N/A     | Custom background color |
+| children | `string`                                                             | N/A     | Badge text              |
 
 <br>
 
@@ -61,11 +61,11 @@ Example:
 
 Colored note blocks, to emphasize part of your page.
 
-| Prop     | Type                                                                | Default             | Description                                       |
-| -------- | ------------------------------------------------------------------- | ------------------- | ------------------------------------------------- |
+| Prop     | Type                                                                 | Default             | Description                                       |
+| -------- | -------------------------------------------------------------------- | ------------------- | ------------------------------------------------- |
 | type     | <code>'tip' &#x7C; 'warning' &#x7C; 'danger' &#x7C; 'success'</code> | N/A                 | Note type                                         |
-| label    | `string` `boolean`                                                  | The value of `type` | Custom note label text, use `false` to hide label |
-| children | `string`                                                            | N/A                 | Note content                                      |
+| label    | `string` `boolean`                                                   | The value of `type` | Custom note label text, use `false` to hide label |
+| children | `string`                                                             | N/A                 | Note content                                      |
 
 <br>
 
@@ -133,9 +133,9 @@ This is a danger for something to take action for.
 
 Embed [GitHub Gist](https://gist.github.com/) into your Markdown documents.
 
-|Prop|Type|Default|Description|
-|---|---|---|---|
-|id|`string`|N/A|Gist ID|
+| Prop | Type     | Default | Description |
+| ---- | -------- | ------- | ----------- |
+| id   | `string` | N/A     | Gist ID     |
 
 Example:
 
@@ -144,6 +144,59 @@ Example:
 ```
 
 <Gist id="71b8002ecd62a68fa7d7ee52011b2c7c" />
+
+## `<docute-select>`
+
+A customized `<select>` component:
+
+<!-- prettier-ignore -->
+````vue
+<docute-select :value="favoriteFruit" v-on:change="handleChange">
+  <option value="apple" :selected="favoriteFruit === 'apple'">Apple</option>
+  <option value="banana" :selected="favoriteFruit === 'banana'">Banana</option>
+  <option value="watermelon" :selected="favoriteFruit === 'watermelon'">Watermelon</option>
+</docute-select>
+
+Your favorite fruit: {{ favoriteFruit }}
+
+```js {mixin: true}
+module.exports = { 
+  data() { 
+    return { 
+      favoriteFruit: 'banana' 
+    }
+  }, 
+  methods: {
+    handleChange(value) { 
+      this.favoriteFruit = value
+    } 
+  }
+}
+```
+````
+
+<docute-select v-on:change="handleChange" :value="favoriteFruit">
+  <option value="apple" :selected="favoriteFruit === 'apple'">Apple</option>
+  <option value="banana" :selected="favoriteFruit === 'banana'">Banana</option>
+  <option value="watermelon" :selected="favoriteFruit === 'watermelon'">Watermelon</option>
+</docute-select>
+
+Your favorite fruit: {{ favoriteFruit }}
+
+```js {mixin: true}
+{
+  data() {
+    return {
+      favoriteFruit: 'banana'
+    }
+  },
+  methods: {
+    handleChange(value) {
+      this.favoriteFruit = value
+    }
+  }
+}
+```
 
 ## `<v-style>` `<v-script>`
 

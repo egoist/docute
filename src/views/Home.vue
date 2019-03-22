@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import jump from 'jump.js'
 import {ContentLoader} from 'vue-content-loader'
 import Sidebar from '../components/Sidebar.vue'
@@ -103,9 +104,17 @@ export default {
     },
 
     MarkdownBody() {
-      const {componentMixins} = this.$store.getters.config
+      const {env} = this.$store.state
+      const {componentMixins = []} = this.$store.getters.config
       const component = {
-        mixins: componentMixins || [],
+        mixins: [
+          ...componentMixins,
+          ...env.mixins.map(mixin => {
+            // eslint-disable-next-line no-new-func
+            const fn = new Function('Vue', `return ${mixin.trim()}`)
+            return fn(Vue)
+          })
+        ],
         name: 'MarkdownBody',
         template: `<div class="markdown-body">${
           this.$store.state.page.content

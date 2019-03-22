@@ -104,6 +104,23 @@ The languages we support by default:
 
 You can use [highlight](/options#highlight) option to add more languages.
 
+## Code Fence Options
+
+Next to the code fence language, you can use a JS object to specify options:
+
+````markdown
+```js {highlightLines: [2]}
+function foo() {
+  console.log('foo')
+}
+```
+````
+
+Available options:
+
+- `highlightLines`: [Line Highlighting in Code Fences](#line-highlighting-in-code-fences)
+- `mixin`: [Adding Vue Mixin](#adding-vue-mixin)
+
 ## Line Highlighting in Code Fences
 
 __Input:__
@@ -148,6 +165,36 @@ class SkinnedMesh extends THREE.Mesh {
   }
   static defaultMatrix() {
     return new THREE.Matrix4();
+  }
+}
+```
+
+## Adding Vue Mixin
+
+Adding a Vue mixin to the Markdown component:
+
+````markdown
+<button v-on:click="count++">{{ count }}</button> people love Docute.
+
+```js {mixin:true}
+{
+  data() {
+    return {
+      count: 1000
+    }
+  }
+}
+```
+````
+
+<button v-on:click="count++">{{ count }}</button> people love Docute.
+
+```js {mixin:true}
+{
+  data() {
+    return {
+      count: 1000
+    }
   }
 }
 ```

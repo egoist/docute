@@ -81,7 +81,8 @@ const store = new Vuex.Store({
       page = hooks.process('processPage', page)
 
       const env = {
-        headings: []
+        headings: [],
+        mixins: []
       }
       if (page.markdown) {
         page.content = marked(page.content, {

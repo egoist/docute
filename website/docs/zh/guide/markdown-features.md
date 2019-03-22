@@ -101,6 +101,23 @@ function debounce(func, wait, immediate) {
 
 你可以查看[高亮](/zh/options#highlight)选项添加更多语言。
 
+## Code Fence Options
+
+Next to the code fence language, you can use a JS object to specify options:
+
+````markdown
+```js {highlightLines: [2]}
+function foo() {
+  console.log('foo')
+}
+```
+````
+
+Available options:
+
+- `highlightLines`: [Line Highlighting in Code Fences](#line-highlighting-in-code-fences)
+- `mixin`: [Adding Vue Mixin](#adding-vue-mixin)
+
 ## 代码框中某行高亮显示
 
 __输入：__
@@ -145,6 +162,36 @@ class SkinnedMesh extends THREE.Mesh {
   }
   static defaultMatrix() {
     return new THREE.Matrix4();
+  }
+}
+```
+
+## Adding Vue Mixin
+
+Adding a Vue mixin to the Markdown component:
+
+````markdown
+<button v-on:click="count++">{{ count }}</button> people love Docute.
+
+```js {mixin:true}
+{
+  data() {
+    return {
+      count: 1000
+    }
+  }
+}
+```
+````
+
+<button v-on:click="count++">{{ count }}</button> people love Docute.
+
+```js {mixin:true}
+{
+  data() {
+    return {
+      count: 1000
+    }
   }
 }
 ```
