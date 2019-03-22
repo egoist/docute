@@ -9,6 +9,7 @@ import markedRenderer from './utils/markedRenderer'
 import hooks from './hooks'
 import load from './utils/load'
 import prismLanguages from './utils/prismLanguages'
+import {defaultCssVariables, darkCssVariables} from './utils/cssVariables'
 
 Vue.use(Vuex)
 
@@ -26,13 +27,14 @@ const store = new Vuex.Store({
   },
 
   mutations: {
-    SET_CONFIG(state, config) {
-      state.originalConfig = config
-      state.originalConfig.layout = state.originalConfig.layout || 'wide'
+    SET_CONFIG(state, config = {}) {
+      config.layout = config.layout || 'wide'
       // TODO: remove `centerContent` in next major version
-      if (state.originalConfig.centerContent) {
-        state.originalConfig.layout = 'narrow'
+      if (config.centerContent) {
+        config.layout = 'narrow'
       }
+      config.theme = config.theme || 'default'
+      state.originalConfig = config
     },
 
     SET_PAGE(state, page) {
@@ -49,6 +51,10 @@ const store = new Vuex.Store({
 
     SET_ENV(state, env) {
       state.env = env
+    },
+
+    SET_THEME(state, theme) {
+      state.originalConfig.theme = theme
     }
   },
 
@@ -204,6 +210,13 @@ const store = new Vuex.Store({
     sidebar(_, {config}) {
       const sidebar = config.sidebar || []
       return typeof sidebar === 'function' ? sidebar(store) : sidebar
+    },
+
+    cssVariables(_, {config}) {
+      return {
+        ...(config.theme === 'dark' ? darkCssVariables : defaultCssVariables),
+        ...config.cssVariables
+      }
     }
   }
 })

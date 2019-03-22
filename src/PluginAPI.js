@@ -17,9 +17,9 @@ export default class PluginAPI {
     return this.plugins.filter(plugin => plugin.name === name).length > 0
   }
 
-  registerComponent(position, component) {
+  registerComponent(position, component, props) {
     this.components[position] = this.components[position] || []
-    this.components[position].push(component)
+    this.components[position].push({component, props})
     return this
   }
 

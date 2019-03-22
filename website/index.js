@@ -2,7 +2,7 @@ import html from 'html-template-tag'
 import googleAnalytics from '@leptosia/docute-google-analytics'
 import Docute from '../src'
 import prismLanguages from '../src/utils/prismLanguages'
-import defaultCssVariables from '../src/utils/cssVariables'
+import { defaultCssVariables } from '../src/utils/cssVariables'
 import ColorBox from './components/ColorBox.vue'
 
 const PatreonIcon = {
@@ -49,6 +49,7 @@ new Docute({
   router: {
     mode: 'history'
   },
+  darkThemeToggler: true,
   sourcePath: '/',
   componentMixins: [
     {

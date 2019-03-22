@@ -41,12 +41,8 @@ export default {
   margin-top: 50px;
 
   & a {
-    text-decoration: none;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    &:hover {
-      text-decoration: underline;
-    }
   }
 }
 

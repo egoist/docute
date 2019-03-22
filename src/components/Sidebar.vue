@@ -2,6 +2,8 @@
   <div class="Sidebar" :class="{isShown: $store.state.showSidebar}">
     <InjectedComponents position="sidebar:start" />
 
+    <InjectedComponents position="mobile-sidebar:start" />
+
     <MobileHeaderNav
       v-if="$store.getters.config.nav"
       :nav="$store.getters.config.nav"
@@ -61,6 +63,7 @@
     </div>
 
     <InjectedComponents position="sidebar:end" />
+    <InjectedComponents position="mobile-sidebar:end" />
   </div>
 </template>
 
@@ -104,7 +107,7 @@ export default {
 
   & a {
     text-decoration: none;
-    color: #000;
+    color: var(--text-color);
   }
 
   @media (max-width: 768px) {

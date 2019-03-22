@@ -120,6 +120,22 @@ https://github.com/USER/REPO/blob/master/docs
 
 The text for *edit link*.
 
+## theme
+
+- Type: `string`
+- Default: `default`
+- Values: `default` `dark`
+
+Site theme.
+
+## darkThemeToggler
+
+- Type: `boolean`
+- Default: `undefined`
+
+
+Show a toggler for switching dark theme on and off.
+
 ## layout
 
 - Type: `string`

@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="Page"
-    :class="{[`layout-${$store.getters.config.layout}`]: true}"
-    :style="cssVariables"
-  >
+  <div class="Page" :class="{[`layout-${$store.getters.config.layout}`]: true}">
     <SiteHeader />
     <div class="Wrap">
       <Sidebar />
@@ -14,8 +10,8 @@
             :height="160"
             :width="400"
             :speed="2"
-            primaryColor="#f3f3f3"
-            secondaryColor="#ecebeb"
+            :primaryColor="$store.getters.cssVariables.loaderPrimaryColor"
+            :secondaryColor="$store.getters.cssVariables.loaderSecondaryColor"
           >
             <rect x="0" y="5" rx="4" ry="4" width="117" height="6.4" />
             <rect x="0" y="25" rx="3" ry="3" width="85" height="6.4" />
@@ -50,7 +46,6 @@ import SiteHeader from '../components/Header.vue'
 import PrevNextLinks from '../components/PrevNextLinks.vue'
 import EditLink from '../components/EditLink.vue'
 import hooks from '../hooks'
-import defaultCssVariables from '../utils/cssVariables'
 
 export default {
   name: 'PageHome',
@@ -129,18 +124,6 @@ export default {
       hooks.process('extendMarkdownComponent', component)
 
       return component
-    },
-
-    cssVariables() {
-      const vars = {
-        ...defaultCssVariables,
-        ...this.$store.getters.config.cssVariables
-      }
-      return Object.keys(vars).reduce((res, key) => {
-        res[`--${key.replace(/[A-Z]/g, m => `-${m.toLowerCase()}`)}`] =
-          vars[key]
-        return res
-      }, {})
     }
   },
 
@@ -174,10 +157,6 @@ export default {
 <style src="../css/prism.css"></style> <style src="../css/markdown.css"></style>
 
 <style scoped>
-.Docute {
-  display: flex;
-}
-
 .Main {
   padding-left: var(--sidebar-width);
   padding-top: calc(var(--header-height) + 30px);
@@ -197,7 +176,7 @@ export default {
 }
 
 .layout-wide .Content {
-  max-width: 750px;
+  max-width: 770px;
   margin: 0 auto;
   padding: 0 2.5rem;
 

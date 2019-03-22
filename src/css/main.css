@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  color: var(--text-color);
+  background: var(--page-background);
   font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
@@ -8,10 +10,15 @@ body {
 }
 
 a {
-  color: var(--accent-color);
+  color: var(--link-color);
   text-decoration: none;
+}
+
+.Content a {
+  display: inline-block;
+  border-bottom: var(--content-link-border);
   &:hover {
-    text-decoration: underline;
+    border-color: var(--content-link-hover-border-color);
   }
 }
 
@@ -50,28 +57,4 @@ a {
 
 .docute-footer {
   padding-top: 60px;
-}
-
-.header-anchor {
-  float: left;
-  line-height: 1;
-  margin-left: -20px;
-  padding-right: 4px;
-  opacity: 0;
-
-  &:hover {
-    opacity: 1;
-  }
-
-  & .anchor-icon {
-    vertical-align: middle;
-  }
-}
-
-.markdown-header:focus,
-.markdown-header:hover {
-  outline: none;
-  & .header-anchor {
-    opacity: 1;
-  }
 }

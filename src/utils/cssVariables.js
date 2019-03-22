@@ -1,4 +1,8 @@
-export default {
+const defaultCssVariables = {
+  pageBackground: 'white',
+  headerBackground: 'white',
+  textColor: '#000',
+  linkColor: '#000',
   accentColor: 'rgb(6, 125, 247)',
   sidebarWidth: '280px',
   sidebarBackground: 'white',
@@ -9,5 +13,43 @@ export default {
   tipColor: 'rgb(6, 125, 247)',
   successColor: '#42b983',
   warningColor: '#ff9800',
-  dangerColor: 'rgb(255, 0, 31)'
+  dangerColor: 'rgb(255, 0, 31)',
+  navLinkColor: '#999',
+  navLinkActiveColor: '#000',
+  codeBlockBackground: '#fdfaf6',
+  codeBlockShadowColor: '#faede5',
+  highlightedLineBackground: '#faede5',
+  highlightedLineBorderColor: '#f1beb6',
+  codeSpanColor: 'inherit',
+  codeSpanBackground: '#fdfaf6',
+  loaderPrimaryColor: '#f3f3f3',
+  loaderSecondaryColor: '#ecebeb',
+  contentLinkBorder: '2px solid var(--border-color)',
+  contentLinkHoverBorderColor: '#ccc',
+  tableHeaderBackground: '#fafafa'
 }
+
+const darkCssVariables = {
+  ...defaultCssVariables,
+  pageBackground: '#282c35',
+  headerBackground: '#282c35',
+  sidebarBackground: '#282c35',
+  textColor: 'hsla(0,0%,100%,0.88)',
+  linkColor: 'currentColor',
+  navLinkColor: '#eee',
+  navLinkActiveColor: '#fff',
+  codeBlockBackground: '#011627',
+  codeBlockShadowColor: '#333',
+  borderColor: 'hsla(0, 0%, 100%, 0.08)',
+  highlightedLineBackground: '#022a4b',
+  highlightedLineBorderColor: '#ffa7c4',
+  codeSpanColor: '#e6e6e6',
+  codeSpanBackground: '#373c49',
+  loaderPrimaryColor: 'hsla(0, 0%, 100%, 0.08)',
+  loaderSecondaryColor: 'hsla(0, 0%, 100%, 0.18)',
+  contentLinkBorder: '2px solid hsla(0, 0%, 100%, 0.28)',
+  contentLinkHoverBorderColor: 'currentColor',
+  tableHeaderBackground: 'var(--border-color)'
+}
+
+export {defaultCssVariables, darkCssVariables}

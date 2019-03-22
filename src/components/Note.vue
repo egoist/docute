@@ -28,7 +28,7 @@ export default {
   line-height: 1;
   padding: 20px 24px;
   border-radius: 4px;
-  border: 1px solid rgb(221, 221, 221);
+  border: 1px solid var(--border-color);
   margin: 20px 0;
 
   & > *:not(.note-label) {

@@ -23,7 +23,7 @@ export default {
           'data-position': props.position
         }
       },
-      components.map(c => h(c))
+      components.map(({component, props}) => h(component, {props}))
     )
   }
 }

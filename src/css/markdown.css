@@ -1,18 +1,10 @@
 .markdown-body {
-  & >*:first-child {
+  & > *:first-child {
     margin-top: 0;
   }
 
-  &.has-page-title >h2:first-child {
+  &.has-page-title > h2:first-child {
     margin-top: 7rem;
-  }
-
-  & a {
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 
   & h1,
@@ -69,7 +61,7 @@
 
   & thead th {
     color: #666;
-    background: #fafafa;
+    background: var(--table-header-background);
     border-bottom: 1px solid var(--border-color);
     border-top: 1px solid var(--border-color);
     font-weight: 400;
@@ -91,8 +83,8 @@
     margin: 2rem 0;
     position: relative;
     border-radius: 4px;
-    background: #fdfaf6;
-    box-shadow: inset 0 0 0 1px #faede5;
+    background: var(--code-block-background);
+    box-shadow: inset 0 0 0 1px var(--code-block-shadow-color);
 
     &:before {
       content: attr(data-lang);
@@ -104,7 +96,8 @@
     }
   }
 
-  & pre, & .code-mask {
+  & pre,
+  & .code-mask {
     overflow: auto;
     position: relative;
     font-size: 13px;
@@ -143,7 +136,7 @@
     display: block;
     padding: 0 20px;
     &.highlighted {
-      background: #faede5;
+      background: var(--highlighted-line-background);
       position: relative;
       &:before {
         content: '';
@@ -152,7 +145,7 @@
         top: 0;
         left: 0;
         bottom: 0;
-        background: #f1beb6;
+        background: var(--highlighted-line-border-color);
         position: absolute;
       }
     }
@@ -161,12 +154,14 @@
   & code {
     font-family: var(--code-font);
     font-size: 90%;
-    background: #fdfaf6;
+    background: var(--code-span-background);
     border-radius: 4px;
     padding: 3px 5px;
+    color: var(--code-span-color);
   }
 
-  & > ul, & > ol {
+  & > ul,
+  & > ol {
     padding-left: 20px;
     margin: 1rem 0;
   }
@@ -191,7 +186,7 @@
       margin: 15px 0 0 0;
     }
 
-    &>*:first-child {
+    & > *:first-child {
       margin-top: 0;
     }
   }
@@ -202,5 +197,32 @@
     margin: 3rem 0;
     background-color: #e1e4e8;
     border: 0;
+  }
+
+  & .header-anchor {
+    float: left;
+    line-height: 1;
+    margin-left: -20px;
+    padding-right: 4px;
+    opacity: 0;
+    border-bottom: none;
+
+    &:hover {
+      opacity: 1;
+      border-bottom: none;
+    }
+
+    & .anchor-icon {
+      vertical-align: middle;
+      fill: currentColor;
+    }
+  }
+
+  & .markdown-header:focus,
+  & .markdown-header:hover {
+    outline: none;
+    & .header-anchor {
+      opacity: 1;
+    }
   }
 }

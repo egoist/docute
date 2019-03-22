@@ -37,12 +37,10 @@ export default {
 <style scoped>
 .DocuteSelect {
   appearance: none;
-  color: #fff;
-  background: white;
   display: inline-flex;
   height: 40px;
   outline: none;
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--border-color);
   font-size: 12px;
   text-transform: uppercase;
   user-select: none;
@@ -80,11 +78,12 @@ export default {
   text-transform: none;
   width: 100%;
   outline: none;
+  color: var(--text-color);
 }
 
 .arrow {
-  border-left: 1px solid #eaeaea;
-  background: white;
+  color: var(--text-color);
+  border-left: 1px solid var(--border-color);
   width: 40px;
   height: 100%;
   position: absolute;

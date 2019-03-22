@@ -44,12 +44,12 @@ export default {
   }
 
   & a {
-    color: #999;
+    color: var(--nav-link-color);
     text-decoration: none;
 
     &:hover,
     &.active {
-      color: #000;
+      color: var(--nav-link-active-color);
     }
   }
 

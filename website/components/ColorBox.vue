@@ -11,9 +11,9 @@ export default {
 
 <style scoped>
 .color-box {
-  height: 14px;
-  width: 14px;
+  height: 12px;
+  width: 12px;
   display: inline-block;
-  border: 1px solid #eee;
+  border: 1px solid #333;
 }
 </style>

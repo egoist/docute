@@ -10,7 +10,9 @@
           <HeaderNav v-if="leftNav" :nav="leftNav" />
         </div>
         <div class="header-right">
+          <InjectedComponents position="header-right:start" />
           <HeaderNav v-if="rightNav" :nav="rightNav" />
+          <InjectedComponents position="header-right:end" />
         </div>
       </div>
     </div>
@@ -61,7 +63,7 @@ export default {
   right: 0;
   z-index: 33;
   border-bottom: 1px solid var(--border-color);
-  background: var(--sidebar-background);
+  background: var(--header-background);
 }
 
 .site-title {
@@ -73,7 +75,7 @@ export default {
   white-space: nowrap;
 
   & a {
-    color: #000;
+    color: var(--text-color);
     text-decoration: none;
   }
 }
@@ -89,11 +91,12 @@ export default {
 }
 
 .header-right {
+  display: flex;
   position: absolute;
   right: 0;
   top: 0;
   height: calc(var(--header-height) - 1px);
-  background: var(--sidebar-background);
+  background: var(--header-background);
   padding: 0 20px;
 
   @media (max-width: 768px) {

@@ -121,6 +121,22 @@ https://github.com/USER/REPO/blob/master/docs
 
 *编辑链接*的文字内容。
 
+# theme
+
+- 类型: `string`
+- 默认值: `default`
+- 内置项: `default` `dark`
+
+网站主题。
+
+## darkThemeToggler
+
+- Type: `boolean`
+- Default: `undefined`
+
+
+显示一个按钮用于切换夜间主题。
+
 ## layout
 
 - 类型: `string`
