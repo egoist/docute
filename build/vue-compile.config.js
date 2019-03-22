@@ -1,5 +1,4 @@
 module.exports = {
-  input: 'src',
   outDir: 'lib',
   include: '**',
   constants: {
