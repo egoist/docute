@@ -121,12 +121,13 @@ https://github.com/USER/REPO/blob/master/docs
 
 *编辑链接*的文字内容。
 
-## centerContent
+## layout
 
-- 类型：`boolean`
-- 默认值：`true`
+- 类型: `string`
+- 默认值: `wide`
+- 可选项: `wide` `narrow` `left`
 
-内容居中。
+网站布局。
 
 ## versions
 

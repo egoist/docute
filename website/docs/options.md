@@ -120,12 +120,13 @@ https://github.com/USER/REPO/blob/master/docs
 
 The text for *edit link*.
 
-## centerContent
+## layout
 
-- Type: `boolean`
-- Default: `true`
+- Type: `string`
+- Default: `wide`
+- Values: `wide` `narrow` `left`
 
-Centering contents.
+Site layout.
 
 ## versions
 

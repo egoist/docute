@@ -29,6 +29,10 @@ const store = new Vuex.Store({
     SET_CONFIG(state, config) {
       state.originalConfig = config
       state.originalConfig.layout = state.originalConfig.layout || 'wide'
+      // TODO: remove `centerContent` in next major version
+      if (state.originalConfig.centerContent) {
+        state.originalConfig.layout = 'narrow'
+      }
     },
 
     SET_PAGE(state, page) {
@@ -200,10 +204,6 @@ const store = new Vuex.Store({
     sidebar(_, {config}) {
       const sidebar = config.sidebar || []
       return typeof sidebar === 'function' ? sidebar(store) : sidebar
-    },
-
-    centerContent(_, {config}) {
-      return config.centerContent !== false
     }
   }
 })
