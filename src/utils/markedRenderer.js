@@ -43,11 +43,15 @@ export default hooks => {
   renderer.codespan = text => `<code v-pre>${text}</code>`
   const origCode = renderer.code
   renderer.code = function(code, lang, escaped, opts) {
-    let res = origCode
-      .call(this, code, lang, escaped)
-      .replace(/^<pre>/, '<pre v-pre>')
+    opts = opts || {}
 
-    if (opts && opts.highlight) {
+    let res = origCode.call(this, code, lang, escaped)
+
+    if (!opts.interpolate) {
+      res = res.replace(/^<pre>/, '<pre v-pre>')
+    }
+
+    if (opts.highlight) {
       const codeMask = code
         .split('\n')
         .map((v, i) => {

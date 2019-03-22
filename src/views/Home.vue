@@ -1,36 +1,36 @@
 <template>
-  <div class="Page">
+  <div class="Page" :class="{[`layout-${$store.getters.config.layout}`]: true}">
     <SiteHeader />
-    <div
-      class="Wrap"
-      :class="{
-        'is-center': $store.getters.centerContent
-      }"
-    >
+    <div class="Wrap">
       <Sidebar />
       <SidebarMask />
-      <div class="Main" v-if="$store.state.fetchingFile">
-        <content-loader
-          :height="160"
-          :width="400"
-          :speed="2"
-          primaryColor="#f3f3f3"
-          secondaryColor="#ecebeb"
-        >
-          <rect x="0" y="5" rx="4" ry="4" width="117" height="6.4" />
-          <rect x="0" y="25" rx="3" ry="3" width="85" height="6.4" />
-          <rect x="0" y="60" rx="3" ry="3" width="350" height="6.4" />
-          <rect x="0" y="80" rx="3" ry="3" width="380" height="6.4" />
-          <rect x="0" y="100" rx="3" ry="3" width="201" height="6.4" />
-        </content-loader>
-      </div>
-      <div class="Main" v-else>
-        <InjectedComponents position="main:start" />
-        <component v-if="pageTitle" :is="MarkdownTitle" class="page-title" />
-        <component :class="{'has-page-title': pageTitle}" :is="MarkdownBody" />
-        <EditLink />
-        <PrevNextLinks />
-        <InjectedComponents position="main:end" />
+      <div class="Main">
+        <div class="Content" v-if="$store.state.fetchingFile">
+          <content-loader
+            :height="160"
+            :width="400"
+            :speed="2"
+            primaryColor="#f3f3f3"
+            secondaryColor="#ecebeb"
+          >
+            <rect x="0" y="5" rx="4" ry="4" width="117" height="6.4" />
+            <rect x="0" y="25" rx="3" ry="3" width="85" height="6.4" />
+            <rect x="0" y="60" rx="3" ry="3" width="350" height="6.4" />
+            <rect x="0" y="80" rx="3" ry="3" width="380" height="6.4" />
+            <rect x="0" y="100" rx="3" ry="3" width="201" height="6.4" />
+          </content-loader>
+        </div>
+        <div class="Content" v-else>
+          <InjectedComponents position="main:start" />
+          <component v-if="pageTitle" :is="MarkdownTitle" class="page-title" />
+          <component
+            :class="{'has-page-title': pageTitle}"
+            :is="MarkdownBody"
+          />
+          <EditLink />
+          <PrevNextLinks />
+          <InjectedComponents position="main:end" />
+        </div>
       </div>
     </div>
   </div>
@@ -155,14 +155,31 @@ export default {
 }
 
 .Main {
-  margin-left: var(--sidebar-width);
-  padding: 30px 20px 80px 80px;
-  margin-top: var(--header-height);
+  padding-left: var(--sidebar-width);
+  padding-top: calc(var(--header-height) + 30px);
+  padding-bottom: 2rem;
 
-  @media (max-width: 768px) {
-    padding: 40px 20px;
-    margin-left: 0;
+  @media screen and (max-width: 768px) {
+    padding-left: 0;
+  }
+}
+
+.Content {
+  padding: 0 20px 0 80px;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 20px;
+  }
+}
+
+.layout-wide .Content {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+
+  @media screen and (max-width: 768px) {
     max-width: 100%;
+    padding: 0 20px;
   }
 }
 

@@ -50,6 +50,22 @@ new Docute({
 
 查看 [sidebar](../options.md#sidebar) 选项的文档来了解更多细节。
 
+## 布局
+
+Docute 默认使用宽屏布局, 但是也有其他选项:
+
+<docute-select v-model="$store.state.originalConfig.layout" v-slot="{ value }">
+  <option value="wide" :selected="value === 'wide'">Wide</option>
+  <option value="narrow" :selected="value === 'narrow'">Narrow</option>
+  <option value="left" :selected="value === 'left'">Left</option>
+</docute-select>
+
+```js {interpolate:true}
+new Docute({
+  layout: '{{ $store.state.originalConfig.layout }}'
+})
+```
+
 ## 多版本文档
 
 假设你的 Git 项目有一个 `master` 分支用于存放最新文档，以及 `v0.1` `v0.2` 分支用于旧版本的文档，你可以用一个 Docute 文档网站来显示多个版本的文档，通过使用 [`overrides`](../options.md#overrides) 和 [`sourcePath`](../options.md#sourcepath) 选项就能办到。

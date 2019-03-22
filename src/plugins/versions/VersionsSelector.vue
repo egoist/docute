@@ -1,12 +1,16 @@
 <template>
   <div class="VersionsSelector">
-    <DocuteSelect @change="handleChange">
+    <DocuteSelect
+      @change="handleChange"
+      :value="currentVersionLink"
+      v-slot="{value}"
+    >
       <option disabled>Choose Version</option>
       <option
-        v-for="(value, key) in $store.getters.config.versions"
+        v-for="(version, key) in $store.getters.config.versions"
         :key="key"
-        :value="value.link"
-        :selected="currentVersionLink === value.link"
+        :value="version.link"
+        :selected="value === version.link"
       >
         {{ key }}
       </option>
@@ -19,8 +23,7 @@ import {isExternalLink} from '../../utils'
 
 export default {
   methods: {
-    handleChange(e) {
-      const link = e.target.value
+    handleChange(link) {
       if (isExternalLink(link)) {
         location.href = link
       } else {

@@ -1,7 +1,7 @@
-<template functional>
+<template>
   <div class="DocuteSelect">
-    <select class="select" v-on="listeners">
-      <slot name="default"></slot>
+    <select class="select" @change="handleChange" :value="value">
+      <slot v-bind="{value: value}"></slot>
     </select>
     <div class="arrow">
       <svg
@@ -21,7 +21,16 @@
 
 <script>
 export default {
-  name: 'DocuteSelect'
+  name: 'DocuteSelect',
+  model: {
+    event: 'change'
+  },
+  props: ['value'],
+  methods: {
+    handleChange(e) {
+      this.$emit('change', e.target.value)
+    }
+  }
 }
 </script>
 

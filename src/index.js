@@ -42,7 +42,7 @@ class Docute {
     const router = createRouter(config.router)
     sync(store, router)
 
-    store.commit('SET_ORIGINAL_CONFIG', {
+    store.commit('SET_CONFIG', {
       title: document.title,
       ...config
     })

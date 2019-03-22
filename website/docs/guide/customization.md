@@ -44,7 +44,7 @@ new Docute({
         {
           title: 'Installation',
           link: '/guide/installation'
-        },
+        }
       ]
     }
   ]
@@ -52,6 +52,22 @@ new Docute({
 ```
 
 Check out the [sidebar](../options.md#sidebar) option reference for more details.
+
+## Layout
+
+Docute by default uses a wide-screen layout as you see, but there're more layouts available:
+
+<docute-select v-model="$store.state.originalConfig.layout" v-slot="{ value }">
+  <option value="wide" :selected="value === 'wide'">Wide</option>
+  <option value="narrow" :selected="value === 'narrow'">Narrow</option>
+  <option value="left" :selected="value === 'left'">Left</option>
+</docute-select>
+
+```js {interpolate:true}
+new Docute({
+  layout: '{{ $store.state.originalConfig.layout }}'
+})
+```
 
 ## Versioning
 
@@ -90,13 +106,13 @@ Apply custom fonts to your website is pretty easy, you can simply add a `<style>
 
 ```html
 <style>
-/* Import desired font from Google fonts */
-@import url('https://fonts.googleapis.com/css?family=Lato');
+  /* Import desired font from Google fonts */
+  @import url('https://fonts.googleapis.com/css?family=Lato');
 
-/* Apply the font to body (to override the default one) */
-body {
-  font-family: Lato, sans-serif;
-}
+  /* Apply the font to body (to override the default one) */
+  body {
+    font-family: Lato, sans-serif;
+  }
 </style>
 ```
 
@@ -116,7 +132,7 @@ Default [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_C
   --sidebar-section-title-color: rgb(136, 136, 136);
   --border-color: #eaeaea;
   --header-height: 60px;
-  --code-font: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  --code-font: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
 
   --tip-color: rgb(6, 125, 247);
   --success-color: #42b983;

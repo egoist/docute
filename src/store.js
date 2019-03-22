@@ -26,8 +26,9 @@ const store = new Vuex.Store({
   },
 
   mutations: {
-    SET_ORIGINAL_CONFIG(state, config) {
+    SET_CONFIG(state, config) {
       state.originalConfig = config
+      state.originalConfig.layout = state.originalConfig.layout || 'wide'
     },
 
     SET_PAGE(state, page) {

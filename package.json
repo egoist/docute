@@ -21,11 +21,11 @@
     "marked": "^0.5.0",
     "medium-zoom": "^1.0.2",
     "prismjs": "^1.15.0",
-    "vue": "^2.5.17",
+    "vue": "^2.6.10",
     "vue-content-loader": "^0.2.1",
     "vue-router": "^3.0.1",
     "vue-router-prefetch": "^1.1.1",
-    "vue-template-compiler": "^2.5.17",
+    "vue-template-compiler": "^2.6.10",
     "vuex": "^3.0.1",
     "vuex-router-sync": "^5.0.0"
   },

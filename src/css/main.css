@@ -28,10 +28,14 @@ a {
 
 .Wrap {
   max-width: 1060px;
+}
 
-  &.is-center {
-    margin: 0 auto;
-  }
+.layout-wide .Wrap {
+  max-width: 100%;
+}
+
+.layout-narrow .Wrap {
+  margin: 0 auto;
 }
 
 .docute-banner {

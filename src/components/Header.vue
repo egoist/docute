@@ -1,6 +1,6 @@
 <template>
   <header class="Header">
-    <div class="Wrap" :class="{'is-center': $store.getters.centerContent}">
+    <div class="Wrap">
       <div class="header-inner">
         <div class="header-left">
           <h1 class="site-title">
