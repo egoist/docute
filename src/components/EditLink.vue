@@ -37,8 +37,6 @@ export default {
 </script>
 
 <style scoped>
-@import 'vars.css';
-
 .EditLink {
   margin-top: 50px;
 

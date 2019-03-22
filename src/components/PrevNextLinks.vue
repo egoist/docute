@@ -57,8 +57,6 @@ export default {
 </script>
 
 <style scoped>
-@import 'vars.css';
-
 .prev-next-links {
   overflow: auto;
   margin-top: 40px;

@@ -1,5 +1,9 @@
 <template>
-  <div class="Page" :class="{[`layout-${$store.getters.config.layout}`]: true}">
+  <div
+    class="Page"
+    :class="{[`layout-${$store.getters.config.layout}`]: true}"
+    :style="cssVariables"
+  >
     <SiteHeader />
     <div class="Wrap">
       <Sidebar />
@@ -46,6 +50,7 @@ import SiteHeader from '../components/Header.vue'
 import PrevNextLinks from '../components/PrevNextLinks.vue'
 import EditLink from '../components/EditLink.vue'
 import hooks from '../hooks'
+import defaultCssVariables from '../utils/cssVariables'
 
 export default {
   name: 'PageHome',
@@ -124,6 +129,18 @@ export default {
       hooks.process('extendMarkdownComponent', component)
 
       return component
+    },
+
+    cssVariables() {
+      const vars = {
+        ...defaultCssVariables,
+        ...this.$store.getters.config.cssVariables
+      }
+      return Object.keys(vars).reduce((res, key) => {
+        res[`--${key.replace(/[A-Z]/g, m => `-${m.toLowerCase()}`)}`] =
+          vars[key]
+        return res
+      }, {})
     }
   },
 
@@ -157,8 +174,6 @@ export default {
 <style src="../css/prism.css"></style> <style src="../css/markdown.css"></style>
 
 <style scoped>
-@import 'vars.css';
-
 .Docute {
   display: flex;
 }

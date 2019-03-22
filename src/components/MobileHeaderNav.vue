@@ -34,8 +34,6 @@ export default {
 </script>
 
 <style scoped>
-@import 'vars.css';
-
 .mobile-header-nav {
   padding: 0 20px;
   margin-bottom: 30px;

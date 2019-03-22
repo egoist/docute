@@ -24,8 +24,6 @@ export default {
 </script>
 
 <style>
-@import 'vars.css';
-
 .note {
   line-height: 1;
   padding: 20px 24px;

@@ -52,8 +52,6 @@ export default {
 </script>
 
 <style scoped>
-@import 'vars.css';
-
 .Header {
   height: var(--header-height);
   line-height: var(--header-height);
@@ -63,7 +61,7 @@ export default {
   right: 0;
   z-index: 33;
   border-bottom: 1px solid var(--border-color);
-  background: var(--sidebar-bg);
+  background: var(--sidebar-background);
 }
 
 .site-title {
@@ -95,7 +93,7 @@ export default {
   right: 0;
   top: 0;
   height: calc(var(--header-height) - 1px);
-  background: var(--sidebar-bg);
+  background: var(--sidebar-background);
   padding: 0 20px;
 
   @media (max-width: 768px) {

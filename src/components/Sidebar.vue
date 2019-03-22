@@ -90,11 +90,9 @@ export default {
 </script>
 
 <style scoped>
-@import 'vars.css';
-
 .Sidebar {
   width: var(--sidebar-width);
-  background: var(--sidebar-bg);
+  background: var(--sidebar-background);
   position: fixed;
   top: var(--header-height);
   bottom: 0;

@@ -120,23 +120,31 @@ Apply custom fonts to your website is pretty easy, you can simply add a `<style>
 
 By default a fresh Docute website will use system default fonts.
 
-## CSS Overrides
+## Custom Style
 
-Default [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables):
+You can use `cssVariables` option to customize site style:
+
+```js
+new Docute({
+  cssVariables: {
+    sidebarWidth: '300px'
+  }
+})
+```
+
+Available properties with their default values:
+
+<ul>
+<li v-for="(value, key) in defaultCssVariables" :key="key">
+<strong>{{key}}</strong>: <color-box :color="value" v-if="/(Color|Background)/.test(key)" />
+<code>{{value}}</code>
+</li>
+</ul>
+
+Note that these properties are defined in camelCase but you should reference them in CSS using kebab-case:
 
 ```css
-:root {
-  --accent-color: rgb(6, 125, 247);
-  --sidebar-width: 280px;
-  --sidebar-bg: white;
-  --sidebar-section-title-color: rgb(136, 136, 136);
-  --border-color: #eaeaea;
-  --header-height: 60px;
-  --code-font: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
-
-  --tip-color: rgb(6, 125, 247);
-  --success-color: #42b983;
-  --warning-color: #ff9800;
-  --danger-color: rgb(255, 0, 31);
+.Sidebar {
+  width: var(--sidebar-width);
 }
 ```
