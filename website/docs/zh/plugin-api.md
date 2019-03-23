@@ -46,6 +46,8 @@ Register a component at specific position:
 - `sidebar:end`: The end of sidebar.
 - `main:start`: The start of main area of the page.
 - `main:end`: The end of main area of the page.
+- `header-right:start`: The start of right nav in site header.
+- `header-right:end`: The end of right nav in site header.
 
 ## api.router
 
