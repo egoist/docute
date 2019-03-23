@@ -22,7 +22,7 @@ const defaultCssVariables = {
   highlightedLineBackground: '#faede5',
   highlightedLineBorderColor: '#f1beb6',
   inlineCodeColor: 'inherit',
-  inlineColorBackground: '#fdfaf6',
+  inlineCodeBackground: '#fdfaf6',
   loaderPrimaryColor: '#f3f3f3',
   loaderSecondaryColor: '#ecebeb',
   contentLinkBorder: '2px solid var(--border-color)',
