@@ -24,6 +24,15 @@ class Hooks {
     }
     return arg
   }
+
+  async processPromise(name, arg) {
+    const hooks = this.hooks[name] || []
+    for (const fn of hooks) {
+      // eslint-disable-next-line no-await-in-loop
+      arg = (await fn(arg)) || arg
+    }
+    return arg
+  }
 }
 
 export default new Hooks()

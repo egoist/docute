@@ -91,7 +91,8 @@
     ],
     "rules": {
       "unicorn/filename-case": "off",
-      "unicorn/no-abusive-eslint-disable": "off"
+      "unicorn/no-abusive-eslint-disable": "off",
+      "require-atomic-updates": "off"
     }
   },
   "husky": {

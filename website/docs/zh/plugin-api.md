@@ -7,7 +7,7 @@
 
 ## api.processMarkdown(fn)
 
-- `fn`：`(text: string) => string`
+- `fn`：`(text: string) => string | Promise <string>`
 
 处理 markdown。
 
@@ -19,7 +19,7 @@
 
 ## api.processHTML(fn)
 
-- `fn`：`(html: string) => string`
+- `fn`：`(html: string) => string | Promise <string>`
 
 处理 HTML.
 

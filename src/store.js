@@ -86,9 +86,8 @@ const store = new Vuex.Store({
         dispatch('fetchPrismLanguages')
       ])
 
-      // TODO: remove processMarkdown hook
-      page.content = hooks.process('processMarkdown', page.content)
-      page = hooks.process('processPage', page)
+      page.content = await hooks.processPromise('processMarkdown', page.content)
+      page = await hooks.processPromise('processPage', page)
 
       const env = {
         headings: [],
@@ -101,7 +100,7 @@ const store = new Vuex.Store({
           env
         })
       }
-      page.content = hooks.process('processHTML', page.content)
+      page.content = await hooks.processPromise('processHTML', page.content)
       page.headings = env.headings
       if (!page.title) {
         page.title = env.title
