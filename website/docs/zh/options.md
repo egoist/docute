@@ -161,6 +161,12 @@ interface Versions {
 }
 ```
 
+## cssVariables
+
+- Type: `object` `(theme: string) => object`
+
+Override CSS variables.
+
 ## overrides
 
 - 类型：`{[path: string]: LocaleOptions}`

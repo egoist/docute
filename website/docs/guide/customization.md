@@ -122,7 +122,7 @@ By default a fresh Docute website will use system default fonts.
 
 ## Custom Style
 
-You can use `cssVariables` option to customize site style:
+You can use [`cssVariables`](../options.md#cssvariables) option to customize site style:
 
 ```js
 new Docute({
@@ -130,12 +130,19 @@ new Docute({
     sidebarWidth: '300px'
   }
 })
+
+// Or using a function to get current theme
+new Docute({
+  cssVariables(theme) {
+    return theme === 'dark' ? {} : {}
+  }
+})
 ```
 
-Available properties with their default values:
+The `cssVariables` used by the the <code>{{ $store.getters.config.theme }}</code> theme:
 
 <ul>
-<li v-for="(value, key) in defaultCssVariables" :key="key">
+<li v-for="(value, key) in $store.getters.cssVariables" :key="key">
 <strong>{{key}}</strong>: <color-box :color="value" v-if="/(Color|Background)/.test(key)" />
 <code>{{value}}</code>
 </li>

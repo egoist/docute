@@ -160,6 +160,12 @@ interface Versions {
 }
 ```
 
+## cssVariables
+
+- Type: `object` `(theme: string) => object`
+
+Override CSS variables.
+
 ## overrides
 
 - Type: `{[path: string]: LocaleOptions}`

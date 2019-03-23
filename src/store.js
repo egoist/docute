@@ -215,7 +215,9 @@ const store = new Vuex.Store({
     cssVariables(_, {config}) {
       return {
         ...(config.theme === 'dark' ? darkCssVariables : defaultCssVariables),
-        ...config.cssVariables
+        ...(typeof config.cssVariables === 'function'
+          ? config.cssVariables(config.theme)
+          : config.cssVariables)
       }
     }
   }
