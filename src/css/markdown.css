@@ -60,7 +60,7 @@
   }
 
   & thead th {
-    color: #666;
+    color: var(--table-header-color);
     background: var(--table-header-background);
     border-bottom: 1px solid var(--border-color);
     border-top: 1px solid var(--border-color);
@@ -84,7 +84,7 @@
     position: relative;
     border-radius: 4px;
     background: var(--code-block-background);
-    box-shadow: inset 0 0 0 1px var(--code-block-shadow-color);
+    box-shadow: inset 0 0 0 var(--code-block-shadow-width) var(--code-block-shadow-color);
 
     &:before {
       content: attr(data-lang);
@@ -154,10 +154,10 @@
   & code {
     font-family: var(--code-font);
     font-size: 90%;
-    background: var(--code-span-background);
+    background: var(--inline-code-background);
     border-radius: 4px;
     padding: 3px 5px;
-    color: var(--code-span-color);
+    color: var(--inline-code-color);
   }
 
   & > ul,

@@ -38,16 +38,14 @@ export default {
   padding: 0 20px;
   margin-bottom: 30px;
   padding-bottom: 30px;
-  font-weight: bold;
   font-size: 1.1rem;
   border-bottom: 1px solid var(--border-color);
 
   & a {
-    color: #000;
+    color: var(--link-color);
     text-decoration: none;
-
     &.active {
-      color: var(--accent-color);
+      font-weight: bold;
     }
   }
 

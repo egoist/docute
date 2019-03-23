@@ -18,38 +18,42 @@ const defaultCssVariables = {
   navLinkActiveColor: '#000',
   codeBlockBackground: '#fdfaf6',
   codeBlockShadowColor: '#faede5',
+  codeBlockShadowWidth: '1px',
   highlightedLineBackground: '#faede5',
   highlightedLineBorderColor: '#f1beb6',
-  codeSpanColor: 'inherit',
-  codeSpanBackground: '#fdfaf6',
+  inlineCodeColor: 'inherit',
+  inlineColorBackground: '#fdfaf6',
   loaderPrimaryColor: '#f3f3f3',
   loaderSecondaryColor: '#ecebeb',
   contentLinkBorder: '2px solid var(--border-color)',
   contentLinkHoverBorderColor: '#ccc',
-  tableHeaderBackground: '#fafafa'
+  tableHeaderBackground: '#fafafa',
+  tableHeaderColor: '#666'
 }
 
 const darkCssVariables = {
   ...defaultCssVariables,
-  pageBackground: '#282c35',
-  headerBackground: '#282c35',
-  sidebarBackground: '#282c35',
+  pageBackground: '#2f3136',
+  headerBackground: '#2f3136',
+  sidebarBackground: '#2f3136',
   textColor: 'hsla(0,0%,100%,0.88)',
   linkColor: 'currentColor',
   navLinkColor: '#eee',
   navLinkActiveColor: '#fff',
   codeBlockBackground: '#011627',
   codeBlockShadowColor: '#333',
-  borderColor: 'hsla(0, 0%, 100%, 0.08)',
+  codeBlockShadowWidth: '0px',
+  borderColor: '#3e4147',
   highlightedLineBackground: '#022a4b',
   highlightedLineBorderColor: '#ffa7c4',
-  codeSpanColor: '#e6e6e6',
-  codeSpanBackground: '#373c49',
+  inlineCodeColor: '#e6e6e6',
+  inlineCodeBackground: '#373c49',
   loaderPrimaryColor: 'hsla(0, 0%, 100%, 0.08)',
   loaderSecondaryColor: 'hsla(0, 0%, 100%, 0.18)',
   contentLinkBorder: '2px solid hsla(0, 0%, 100%, 0.28)',
   contentLinkHoverBorderColor: 'currentColor',
-  tableHeaderBackground: 'var(--border-color)'
+  tableHeaderBackground: 'var(--border-color)',
+  tableHeaderColor: '#868686'
 }
 
 export {defaultCssVariables, darkCssVariables}

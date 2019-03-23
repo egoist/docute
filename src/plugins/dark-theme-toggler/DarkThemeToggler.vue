@@ -38,6 +38,7 @@ export default {
     return {
       dark:
         localStorage.getItem('docute:theme') === 'dark' ||
+        'dark' in this.$route.query ||
         this.$store.getters.config.theme === 'dark'
     }
   },
