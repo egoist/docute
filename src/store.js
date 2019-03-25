@@ -10,8 +10,11 @@ import hooks from './hooks'
 import load from './utils/load'
 import prismLanguages from './utils/prismLanguages'
 import {defaultCssVariables, darkCssVariables} from './utils/cssVariables'
+import {INITIAL_STATE_NAME} from './utils/constants'
 
 Vue.use(Vuex)
+
+const initialState = window[INITIAL_STATE_NAME]
 
 const store = new Vuex.Store({
   state: {
@@ -23,7 +26,8 @@ const store = new Vuex.Store({
     },
     env: {},
     showSidebar: false,
-    fetchingFile: true
+    fetchingFile: true,
+    ...initialState
   },
 
   mutations: {

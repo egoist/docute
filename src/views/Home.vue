@@ -45,6 +45,7 @@ import SidebarMask from '../components/SidebarMask.vue'
 import SiteHeader from '../components/Header.vue'
 import PrevNextLinks from '../components/PrevNextLinks.vue'
 import EditLink from '../components/EditLink.vue'
+import {INITIAL_STATE_NAME} from '../utils/constants'
 import hooks from '../hooks'
 
 export default {
@@ -60,7 +61,9 @@ export default {
   },
 
   mounted() {
-    this.fetchFile(this.$route.path)
+    if (!window[INITIAL_STATE_NAME]) {
+      this.fetchFile(this.$route.path).then(this.setInitialState)
+    }
   },
 
   beforeRouteUpdate(to, from, next) {
@@ -148,6 +151,18 @@ export default {
             offset: -(header.clientHeight + 30)
           })
         }
+      }
+    },
+
+    setInitialState() {
+      if (/(Prerender|jsdom|PhantomJS)/i.test(navigator.userAgent)) {
+        const script = document.createElement('script')
+        script.textContent = `window.${INITIAL_STATE_NAME} = ${JSON.stringify({
+          page: this.$store.state.page,
+          env: this.$store.state.env,
+          fetchingFile: false
+        })}`
+        document.head.appendChild(script)
       }
     }
   }

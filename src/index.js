@@ -12,6 +12,7 @@ import Note from './components/Note.vue'
 import Gist from './components/Gist.vue'
 import Loading from './components/Loading.vue'
 import ExternalLinkIcon from './components/icons/ExternalLinkIcon.vue'
+import {INITIAL_STATE_NAME} from './utils/constants'
 
 // Built-in plugins
 import i18nPlugin from './plugins/i18n'
@@ -73,8 +74,9 @@ class Docute {
 
   mount() {
     const {target} = store.getters
-    this.app.$mount(`#${target}`)
-    this.collectInstance()
+    // Force hydration when there's initial state
+    const hydrate = Boolean(window[INITIAL_STATE_NAME])
+    this.app.$mount(`#${target}`, hydrate)
     return this
   }
 
@@ -84,16 +86,6 @@ class Docute {
   applyPlugins() {
     for (const plugin of this.pluginApi.plugins) {
       plugin.extend(this.pluginApi)
-    }
-  }
-
-  /**
-   * Used in pre-render
-   * @private
-   */
-  collectInstance() {
-    if (typeof window !== 'undefined' && window.__DOCUTE_INSTANCE__) {
-      window.__DOCUTE_INSTANCE__ = this
     }
   }
 }
