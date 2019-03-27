@@ -15,10 +15,9 @@ a {
 }
 
 .Content a {
-  display: inline-block;
-  border-bottom: var(--content-link-border);
+  color: var(--accent-color);
   &:hover {
-    border-color: var(--content-link-hover-border-color);
+    text-decoration: underline;
   }
 }
 
