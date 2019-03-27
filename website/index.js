@@ -39,7 +39,7 @@ new Docute({
   target: 'app',
   title: 'Docute',
   layout: 'wide',
-  highlight: ['typescript', 'bash', 'json'],
+  highlight: ['typescript', 'bash', 'json', 'markdown'],
   plugins: [
     process.env.NODE_ENV === 'production' && googleAnalytics('UA-54857209-11')
   ].filter(Boolean),
