@@ -44,8 +44,8 @@ Register a component at specific position:
 
 - `sidebar:start`: The start of sidebar.
 - `sidebar:end`: The end of sidebar.
-- `main:start`: The start of main area of the page.
-- `main:end`: The end of main area of the page.
+- `content:start`: The start of page content.
+- `content:end`: The end of page content.
 - `header-right:start`: The start of right nav in site header.
 - `header-right:end`: The end of right nav in site header.
 

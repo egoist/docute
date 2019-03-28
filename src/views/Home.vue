@@ -21,15 +21,12 @@
           </content-loader>
         </div>
         <div class="Content" v-else>
-          <InjectedComponents position="main:start" />
+          <InjectedComponents position="content:start" />
           <component v-if="pageTitle" :is="MarkdownTitle" class="page-title" />
-          <component
-            :class="{'has-page-title': pageTitle}"
-            :is="MarkdownBody"
-          />
+          <component :class="{'has-page-title': pageTitle}" :is="PageContent" />
           <EditLink />
           <PrevNextLinks />
-          <InjectedComponents position="main:end" />
+          <InjectedComponents position="content:end" />
         </div>
       </div>
     </div>
@@ -106,7 +103,7 @@ export default {
       }
     },
 
-    MarkdownBody() {
+    PageContent() {
       const {env} = this.$store.state
       const {componentMixins = []} = this.$store.getters.config
       const component = {
@@ -118,8 +115,8 @@ export default {
             return fn(Vue)
           })
         ],
-        name: 'MarkdownBody',
-        template: `<div class="markdown-body">${
+        name: 'PageContent',
+        template: `<div class="page-content">${
           this.$store.state.page.content
         }</div>`
       }
@@ -169,7 +166,8 @@ export default {
 }
 </script>
 
-<style src="../css/prism.css"></style> <style src="../css/markdown.css"></style>
+<style src="../css/prism.css"></style>
+<style src="../css/page-content.css"></style>
 
 <style scoped>
 .Main {

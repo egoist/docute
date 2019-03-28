@@ -8,7 +8,7 @@
     }
   }
 
-  &[data-position="main:start"] {
+  &[data-position="content:start"] {
     margin-bottom: 35px;
 
     &>*:first-child {
@@ -20,7 +20,7 @@
     }
   }
 
-  &[data-position="main:end"] {
+  &[data-position="content:end"] {
     margin-top: 30px;
   }
 
