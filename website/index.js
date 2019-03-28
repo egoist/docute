@@ -263,7 +263,7 @@ new Docute({
     }
   },
   footer: `
-  &copy; ${new Date().getFullYear()} Made by <a href="https://egoist.sh">EGOIST<a> While Watching Anime.
+  &copy; ${new Date().getFullYear()} Made by <a href="https://egoist.sh">EGOIST</a> While Watching Anime.
   `,
   banner: {
     template: html`
