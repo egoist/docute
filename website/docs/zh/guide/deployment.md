@@ -26,7 +26,7 @@ After that, you can run the command `now` in your project and you're all set.
 
 Make sure to check out Now's [GitHub Integration](https://zeit.co/docs/v2/integrations/now-for-github/) if you want automatic deployments on every push and pull request.
 
-## Netlify
+## Netlify <Badge type="success">Recommended</Badge>
 
 1. 登录你的 [Netlify](https://www.netlify.com/) 账号。
 2. 在 [dashboard](https://app.netlify.com/) 页，点击 __New site from Git__.
