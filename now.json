@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "alias": ["docute.now.sh", "docute.org"],
+  "alias": ["docute.org"],
   "builds": [
     {
       "src": "package.json",
