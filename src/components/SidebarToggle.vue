@@ -15,6 +15,16 @@ export default {
     toggleSidebar() {
       this.$store.commit('TOGGLE_SIDEBAR')
     }
+  },
+
+  watch: {
+    '$store.state.showSidebar'(show) {
+      if (show) {
+        document.body.style.overflow = 'hidden'
+      } else {
+        document.body.style.overflow = 'initial'
+      }
+    }
   }
 }
 </script>
