@@ -25,8 +25,6 @@ const defaultCssVariables = {
   inlineCodeBackground: '#fdfaf6',
   loaderPrimaryColor: '#f3f3f3',
   loaderSecondaryColor: '#ecebeb',
-  contentLinkBorder: '2px solid var(--border-color)',
-  contentLinkHoverBorderColor: '#ccc',
   tableHeaderBackground: '#fafafa',
   tableHeaderColor: '#666'
 }
