@@ -31,7 +31,6 @@
   },
   "devDependencies": {
     "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
-    "@leptosia/docute-google-analytics": "^1.0.0",
     "@poi/plugin-puppet": "^0.1.4",
     "@semantic-release/git": "^7.0.5",
     "babel-preset-minimal": "^0.1.1",
@@ -39,6 +38,7 @@
     "bili": "^3.4.2",
     "commitizen": "^3.0.5",
     "cz-conventional-changelog": "^2.1.0",
+    "docute-google-analytics": "^1.1.0",
     "eslint-config-rem": "^3.0.0",
     "eslint-plugin-vue": "^5.0.0-beta.3",
     "fast-async": "^6.3.8",
@@ -56,7 +56,7 @@
     "xo": "^0.23.0"
   },
   "repository": {
-    "url": "leptosia/docute",
+    "url": "egoist/docute",
     "type": "git"
   },
   "main": "dist/docute.js",

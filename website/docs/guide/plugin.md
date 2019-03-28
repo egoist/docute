@@ -57,4 +57,4 @@ new Docute({
 
 For more information on how to develop a plugin, please check out [Plugin API](/plugin-api).
 
-Check out [https://github.com/leptosia/docute-plugins](https://github.com/leptosia/docute-plugins) for a list of Docute plugins by the maintainers and users.
+Check out [https://github.com/egoist/docute-plugins](https://github.com/egoist/docute-plugins) for a list of Docute plugins by the maintainers and users.

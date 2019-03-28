@@ -1,5 +1,5 @@
 import html from 'html-template-tag'
-import googleAnalytics from '@leptosia/docute-google-analytics'
+import googleAnalytics from 'docute-google-analytics'
 import Docute from '../src'
 import prismLanguages from '../src/utils/prismLanguages'
 import ColorBox from './components/ColorBox.vue'
@@ -43,7 +43,7 @@ new Docute({
   plugins: [
     process.env.NODE_ENV === 'production' && googleAnalytics('UA-54857209-11')
   ].filter(Boolean),
-  editLinkBase: 'https://github.com/leptosia/docute/tree/master/website/docs',
+  editLinkBase: 'https://github.com/egoist/docute/tree/master/website/docs',
   editLinkText: 'Edit this page on GitHub',
   router: {
     mode: 'history'
@@ -100,7 +100,7 @@ new Docute({
     },
     {
       title: 'GitHub',
-      link: 'https://github.com/leptosia/docute'
+      link: 'https://github.com/egoist/docute'
     }
   ],
   sidebar: [
@@ -187,7 +187,7 @@ new Docute({
         },
         {
           title: 'GitHub',
-          link: 'https://github.com/leptosia/docute'
+          link: 'https://github.com/egoist/docute'
         }
       ],
       sidebar: [
@@ -263,7 +263,7 @@ new Docute({
     }
   },
   footer: `
-  &copy; ${new Date().getFullYear()} Made at <a href="https://leptosia.org">Leptosia</a>.
+  &copy; ${new Date().getFullYear()} Made by <a href="https://egoist.sh">EGOIST<a> While Watching Anime.
   `,
   banner: {
     template: html`

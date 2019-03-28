@@ -28,7 +28,7 @@ export default {
     currentLinkIndex() {
       // Related:
       // - https://github.com/vuejs/vue/issues/8728
-      // - https://github.com/leptosia/docute/pull/171
+      // - https://github.com/egoist/docute/pull/171
       const {sidebarLinks} = this
       for (let i = 0; i < sidebarLinks.length; i++) {
         const item = sidebarLinks[i]
