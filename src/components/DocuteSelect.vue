@@ -38,7 +38,7 @@ export default {
 .DocuteSelect {
   appearance: none;
   display: inline-flex;
-  height: 40px;
+  height: var(--docute-select-height);
   outline: none;
   border: 1px solid var(--border-color);
   font-size: 12px;
@@ -71,7 +71,7 @@ export default {
   box-shadow: none;
   background: transparent;
   background-image: none;
-  line-height: 40px;
+  line-height: var(--docute-select-height);
   font-size: 14px;
   margin-right: -20px;
   padding: 0 76px 0 16px;

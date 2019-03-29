@@ -8,7 +8,7 @@ const defaultCssVariables = {
   sidebarBackground: 'white',
   sidebarSectionTitleColor: 'rgb(136, 136, 136)',
   borderColor: '#eaeaea',
-  headerHeight: '60px',
+  headerHeight: '50px',
   codeFont: 'SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace',
   tipColor: 'rgb(6, 125, 247)',
   successColor: '#42b983',
@@ -26,7 +26,8 @@ const defaultCssVariables = {
   loaderPrimaryColor: '#f3f3f3',
   loaderSecondaryColor: '#ecebeb',
   tableHeaderBackground: '#fafafa',
-  tableHeaderColor: '#666'
+  tableHeaderColor: '#666',
+  docuteSelectHeight: '38px'
 }
 
 const darkCssVariables = {

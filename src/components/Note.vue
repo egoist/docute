@@ -26,7 +26,7 @@ export default {
 <style>
 .note {
   line-height: 1;
-  padding: 20px 24px;
+  padding: 15px 20px;
   border-radius: 4px;
   border: 1px solid var(--border-color);
   margin: 20px 0;
