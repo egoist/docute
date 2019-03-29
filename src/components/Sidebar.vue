@@ -4,7 +4,8 @@
 
     <InjectedComponents position="mobile-sidebar:start" />
 
-    <MobileHeaderNav
+    <HeaderNav
+      class="mobile-header-nav"
       v-if="$store.getters.config.nav"
       :nav="$store.getters.config.nav"
     />
@@ -63,17 +64,17 @@
     </div>
 
     <InjectedComponents position="sidebar:end" />
-    <InjectedComponents position="mobile-sidebar:end" />
+    <InjectedComponents position="sidebar:post-end" />
   </div>
 </template>
 
 <script>
 import {isExternalLink, getFileUrl, getFilenameByPath} from '../utils'
-import MobileHeaderNav from './MobileHeaderNav.vue'
+import HeaderNav from './HeaderNav.vue'
 
 export default {
   components: {
-    MobileHeaderNav
+    HeaderNav
   },
 
   methods: {

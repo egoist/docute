@@ -8,6 +8,15 @@
     }
   }
 
+  &[data-position="sidebar:end"],
+  &[data-position="sidebar:post-end"] {
+    margin-top: 25px;
+
+    &>*:first-child {
+      margin-top: 0;
+    }
+  }
+
   &[data-position="content:start"] {
     margin-bottom: 35px;
 

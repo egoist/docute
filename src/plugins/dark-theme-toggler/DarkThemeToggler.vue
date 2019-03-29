@@ -76,6 +76,10 @@ export default {
   @media screen and (max-width: 768px) {
     padding: 0 20px;
   }
+
+  @nest [data-position='sidebar:post-end'] & {
+    padding: 0 20px;
+  }
 }
 
 .toggle {

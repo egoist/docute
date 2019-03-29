@@ -29,6 +29,13 @@ An array of navigation items to display at navbar.
 ```ts
 interface NavItem {
   title: string
+  link?: string
+  // Use `links` instead of `link` to display dropdown
+  links?: Array<NavItemLink>
+}
+
+interface NavItemLink {
+  title: string
   link: string
 }
 ```
@@ -42,10 +49,10 @@ An array of navigation items to display at sidebar.
 ```ts
 interface SidebarItem {
   title?: string
-  links: Array<ItemLink>
+  links: Array<SidebarItemLink>
 }
 
-interface ItemLink {
+interface SidebarItemLink {
   title: string
   link: string
   /* Whether to show TOC, true by default */

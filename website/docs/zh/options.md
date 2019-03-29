@@ -30,6 +30,13 @@ new Docute(options)
 ```ts
 interface NavItem {
   title: string
+  link?: string
+  // Use `children` instead of `link` to display dropdown
+  children?: Array<NavItemLink>
+}
+
+interface NavItemLink {
+  title: string
   link: string
 }
 ```

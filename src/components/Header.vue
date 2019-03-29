@@ -56,7 +56,6 @@ export default {
 <style scoped>
 .Header {
   height: var(--header-height);
-  line-height: var(--header-height);
   position: fixed;
   top: 0;
   left: 0;
@@ -64,6 +63,10 @@ export default {
   z-index: 33;
   border-bottom: 1px solid var(--border-color);
   background: var(--header-background);
+}
+
+.Wrap {
+  height: 100%;
 }
 
 .site-title {
@@ -81,9 +84,11 @@ export default {
 }
 
 .header-inner {
+  height: 100%;
   padding: 0 20px;
   position: relative;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .header-left {
@@ -93,7 +98,7 @@ export default {
 .header-right {
   display: flex;
   position: absolute;
-  right: 0;
+  right: 20px;
   top: 0;
   height: calc(var(--header-height) - 1px);
   background: var(--header-background);

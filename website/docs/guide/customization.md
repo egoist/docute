@@ -17,6 +17,20 @@ new Docute({
     {
       title: 'GitHub',
       link: 'https://github.com/egoist/docute'
+    },
+    // A dropdown menu
+    {
+      title: 'Community',
+      children: [
+        {
+          title: 'Spectrum',
+          link: 'https://spectrum.chat/your-community'
+        },
+        {
+          title: 'Discord',
+          link: 'https://discord.app/your-discord-server'
+        }
+      ]
     }
   ]
 })
