@@ -4,6 +4,7 @@ import PluginAPI from './PluginAPI'
 import Root from './components/Root.vue'
 import store from './store'
 import createRouter from './router'
+import {inBrowser} from './utils'
 import alternativeComponents from './utils/alternativeComponents'
 import ImageZoom from './components/ImageZoom.vue'
 import Badge from './components/Badge.vue'
@@ -44,8 +45,11 @@ class Docute {
     const router = createRouter(config.router)
     sync(store, router)
 
+    this.router = router
+    this.store = store
+
     store.commit('SET_CONFIG', {
-      title: document.title,
+      title: inBrowser && document.title,
       ...config
     })
 
@@ -75,8 +79,11 @@ class Docute {
   mount() {
     const {target} = store.getters
     // Force hydration when there's initial state
-    const hydrate = Boolean(window[INITIAL_STATE_NAME])
-    this.app.$mount(`#${target}`, hydrate)
+    if (window[INITIAL_STATE_NAME]) {
+      this.app.$mount(`#${target}`, true)
+    } else {
+      this.app.$mount(`#${target}`)
+    }
     return this
   }
 

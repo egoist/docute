@@ -37,3 +37,5 @@ export const getFilenameByPath = path => {
 
   return path
 }
+
+export const inBrowser = typeof window !== 'undefined'

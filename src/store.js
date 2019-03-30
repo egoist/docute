@@ -1,10 +1,9 @@
 /* globals __PRISM_VERSION__ */
 import Vue from 'vue'
 import Vuex from 'vuex'
-import fetch from 'isomorphic-unfetch'
 import marked from './utils/marked'
 import highlight from './utils/highlight'
-import {getFilenameByPath, getFileUrl, isExternalLink} from './utils'
+import {getFilenameByPath, getFileUrl, isExternalLink, inBrowser} from './utils'
 import markedRenderer from './utils/markedRenderer'
 import hooks from './hooks'
 import load from './utils/load'
@@ -14,7 +13,7 @@ import {INITIAL_STATE_NAME} from './utils/constants'
 
 Vue.use(Vuex)
 
-const initialState = window[INITIAL_STATE_NAME]
+const initialState = inBrowser && window[INITIAL_STATE_NAME]
 
 const store = new Vuex.Store({
   state: {
@@ -226,7 +225,7 @@ const store = new Vuex.Store({
   }
 })
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development' && inBrowser) {
   window.store = store
 }
 

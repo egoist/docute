@@ -15,7 +15,6 @@
     "test:unit": "poi puppet src/**/*.test.js --test --plugin @poi/puppet --framework mocha"
   },
   "dependencies": {
-    "isomorphic-unfetch": "^3.0.0",
     "jump.js": "^1.0.2",
     "loadjs": "^3.5.4",
     "marked": "^0.5.0",

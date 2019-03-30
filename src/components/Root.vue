@@ -35,20 +35,20 @@ export default {
   },
   methods: {
     insertStyle() {
-      const ID = 'docute-inserted-style'
-      const style = document.createElement('style')
-      style.id = ID
-      if (style.styleSheet) {
-        style.styleSheet.cssText = this.css
-      } else {
-        style.appendChild(document.createTextNode(this.css))
+      if (this.$ssrContext) {
+        this.$ssrContext.insertedStyle = this.css
+        return
       }
 
-      const existingStyle = document.getElementById(ID)
-      if (existingStyle) {
-        document.head.insertBefore(style, existingStyle)
-        document.head.removeChild(existingStyle)
+      const ID = 'docute-inserted-style'
+      let style = document.getElementById(ID)
+
+      if (style) {
+        style.innerHTML = this.css
       } else {
+        style = document.createElement('style')
+        style.id = ID
+        style.innerHTML = this.css
         document.head.insertBefore(style, document.head.firstChild)
       }
     }

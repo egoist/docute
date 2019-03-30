@@ -5,10 +5,9 @@
 </template>
 
 <script>
-import mediumZoom from 'medium-zoom'
-
 export default {
   name: 'ImageZoom',
+
   props: {
     url: {
       type: String,
@@ -25,7 +24,9 @@ export default {
       type: [String, Number]
     }
   },
+
   mounted() {
+    const mediumZoom = require('medium-zoom').default
     mediumZoom(this.$refs.img, {
       // background: '#333'
     })

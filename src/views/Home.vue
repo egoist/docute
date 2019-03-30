@@ -57,6 +57,11 @@ export default {
     EditLink
   },
 
+  async serverPrefetch() {
+    await this.fetchFile(this.$route.path)
+    this.setTitle()
+  },
+
   mounted() {
     if (!window[INITIAL_STATE_NAME]) {
       this.fetchFile(this.$route.path).then(this.setInitialState)
@@ -76,18 +81,9 @@ export default {
         this.jumpToHash()
       })
     },
-    pageTitle(newValue) {
-      const {path} = this.$route
-      const {config, homePaths} = this.$store.getters
 
-      if (homePaths.indexOf(path) > -1) {
-        document.title = config.title
-      } else {
-        const div = document.createElement('div')
-        div.innerHTML = newValue
-        const title = div.textContent
-        document.title = `${title} - ${config.title}`
-      }
+    pageTitle() {
+      this.setTitle()
     }
   },
 
@@ -160,6 +156,24 @@ export default {
           fetchingFile: false
         })}`
         document.head.appendChild(script)
+      }
+    },
+
+    setTitle() {
+      const {path} = this.$route
+      const {config, homePaths} = this.$store.getters
+
+      let title =
+        homePaths.indexOf(path) > -1
+          ? config.title
+          : `${this.pageTitle} - ${config.title}`
+
+      // Strip HTML tags
+      title = title.replace(/<(?:.|\n)*?>/gm, '')
+      if (this.$ssrContext) {
+        this.$ssrContext.title = title
+      } else {
+        document.title = title
       }
     }
   }
