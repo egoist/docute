@@ -133,7 +133,7 @@ export default {
     },
 
     jumpToHash() {
-      const {hash} = this.$route
+      const hash = decodeURI(this.$route.hash)
       if (hash) {
         const el = document.querySelector(hash)
         if (el) {
