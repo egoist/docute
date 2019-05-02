@@ -114,6 +114,12 @@ export default {
 
   @media print {
     display: flex;
+    right: 0;
+    padding-right: 0;
+
+    & /deep/ .header-nav {
+      display: flex;
+    }
   }
 }
 </style>
