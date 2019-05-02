@@ -72,15 +72,17 @@ export default hooks => {
             }
             return false
           })
+          const escapedLine = marked.escape(v)
           return shouldHighlight
-            ? `<span class="code-line highlighted">&#8203;</span>`
-            : `<span class="code-line">&#8203;</span>`
+            ? `<span class="code-line highlighted">${escapedLine}</span>`
+            : `<span class="code-line">${escapedLine}</span>`
         })
         .join('')
       res += `<div class="code-mask">${codeMask}</div>`
     }
 
-    return `<div data-lang="${lang || ''}" class="pre-wrapper">${res}</div>`
+    return `<div v-pre data-lang="${lang ||
+      ''}" class="pre-wrapper">${res}</div>`
   }
 
   return hooks.process('extendMarkedRenderer', renderer)
