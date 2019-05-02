@@ -111,5 +111,9 @@ export default {
   @media (max-width: 768px) {
     display: none;
   }
+  
+  @media print {
+    display: flex;
+  }
 }
 </style>
