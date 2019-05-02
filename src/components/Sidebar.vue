@@ -121,6 +121,10 @@ export default {
       transform: translateX(0);
     }
   }
+
+  @media print {
+    display: none;
+  }
 }
 
 .SidebarItem {

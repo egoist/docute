@@ -89,6 +89,10 @@ export default {
   position: relative;
   display: flex;
   align-items: center;
+
+  @media print {
+    padding: 0;
+  }
 }
 
 .header-left {
