@@ -89,6 +89,10 @@ export default {
   position: relative;
   display: flex;
   align-items: center;
+
+  @media print {
+    padding: 0;
+  }
 }
 
 .header-left {
@@ -106,6 +110,16 @@ export default {
 
   @media (max-width: 768px) {
     display: none;
+  }
+
+  @media print {
+    display: flex;
+    right: 0;
+    padding-right: 0;
+
+    & /deep/ .header-nav {
+      display: flex;
+    }
   }
 }
 </style>

@@ -39,6 +39,10 @@ export default {
     display: none;
   }
 
+  @media print {
+    display: none;
+  }
+
   & svg {
     width: 20px;
     height: 20px;

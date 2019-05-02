@@ -104,15 +104,20 @@
     margin: 0;
     z-index: 2;
     font-family: var(--code-font);
+    white-space: pre;
 
     & code {
       box-shadow: none;
       margin: 0;
       padding: 0;
-      white-space: pre;
       border: none;
       font-size: 100%;
       background: transparent;
+    }
+
+    @media print {
+      white-space: pre-wrap;
+      word-break: break-word;
     }
   }
 
@@ -126,7 +131,6 @@
     left: 0;
     right: 0;
     z-index: 1;
-    white-space: pre;
     padding-top: 20px;
     border: none;
     color: transparent;

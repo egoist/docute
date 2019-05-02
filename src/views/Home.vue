@@ -192,6 +192,10 @@ export default {
   @media screen and (max-width: 768px) {
     padding-left: 0;
   }
+
+  @media print {
+    padding-left: 0;
+  }
 }
 
 .Content {
@@ -210,6 +214,10 @@ export default {
   @media screen and (max-width: 768px) {
     max-width: 100%;
     padding: 0 20px;
+  }
+
+  @media print {
+    padding: 0;
   }
 }
 
