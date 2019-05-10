@@ -30,7 +30,7 @@ An array of navigation items to display at navbar.
 interface NavItem {
   title: string
   link?: string
-  // Use `links` instead of `link` to display dropdown
+  // Or use `children` to display dropdown menu
   children?: Array<NavItemLink>
 }
 
