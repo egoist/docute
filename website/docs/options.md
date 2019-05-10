@@ -31,7 +31,7 @@ interface NavItem {
   title: string
   link?: string
   // Use `links` instead of `link` to display dropdown
-  links?: Array<NavItemLink>
+  children?: Array<NavItemLink>
 }
 
 interface NavItemLink {
