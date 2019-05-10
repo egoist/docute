@@ -106,7 +106,7 @@ new Docute({
   sidebar: [
     {
       title: 'Guide',
-      links: [
+      children: [
         {
           title: 'Customization',
           link: '/guide/customization'
@@ -135,7 +135,7 @@ new Docute({
     },
     {
       title: 'Advanced',
-      links: [
+      children: [
         {
           title: 'Use With Bundlers',
           link: '/guide/use-with-bundlers'
@@ -148,7 +148,7 @@ new Docute({
     },
     {
       title: 'References',
-      links: [
+      children: [
         {
           title: 'Options',
           link: '/options'
@@ -165,7 +165,7 @@ new Docute({
     },
     {
       title: 'Misc',
-      links: [
+      children: [
         {
           title: 'Credits',
           link: '/credits'
@@ -193,7 +193,7 @@ new Docute({
       sidebar: [
         {
           title: '指南',
-          links: [
+          children: [
             {
               title: '自定义',
               link: '/zh/guide/customization'
@@ -222,7 +222,7 @@ new Docute({
         },
         {
           title: '进阶',
-          links: [
+          children: [
             {
               title: '使用打包工具',
               link: '/zh/guide/use-with-bundlers'
@@ -235,7 +235,7 @@ new Docute({
         },
         {
           title: '参考',
-          links: [
+          children: [
             {
               title: '配置项',
               link: '/zh/options'
@@ -252,7 +252,7 @@ new Docute({
         },
         {
           title: '其它',
-          links: [
+          children: [
             {
               title: '致谢',
               link: '/zh/credits'
