@@ -50,7 +50,7 @@ interface NavItemLink {
 ```ts
 interface SidebarItem {
   title?: string
-  links: Array<ItemLink>
+  children: Array<ItemLink>
 }
 
 interface ItemLink {

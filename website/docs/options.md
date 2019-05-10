@@ -49,7 +49,7 @@ An array of navigation items to display at sidebar.
 ```ts
 interface SidebarItem {
   title?: string
-  links: Array<SidebarItemLink>
+  children: Array<SidebarItemLink>
 }
 
 interface SidebarItemLink {
