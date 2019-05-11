@@ -72,7 +72,7 @@ export default hooks => {
             }
             return false
           })
-          const escapedLine = marked.escape(v)
+          const escapedLine = v ? marked.escape(v) : '&#8203;'
           return shouldHighlight
             ? `<span class="code-line highlighted">${escapedLine}</span>`
             : `<span class="code-line">${escapedLine}</span>`
