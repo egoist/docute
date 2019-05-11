@@ -109,6 +109,10 @@ new Docute({
       collapsable: true,
       children: [
         {
+          title: 'Introduction',
+          link: '/'
+        },
+        {
           title: 'Customization',
           link: '/guide/customization'
         },
