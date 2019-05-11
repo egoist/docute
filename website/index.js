@@ -203,6 +203,10 @@ new Docute({
           title: '指南',
           children: [
             {
+              title: '介绍',
+              link: '/zh'
+            },
+            {
               title: '自定义',
               link: '/zh/guide/customization'
             },
