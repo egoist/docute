@@ -47,10 +47,10 @@ Sidebar is mainly used for navigations between pages. As you can see from this p
 ```js
 new Docute({
   sidebar: [
-    // A sidebar item, with multiple sub-links
+    // A sidebar item, with child links
     {
       title: 'Guide', // Optional
-      links: [
+      children: [
         {
           title: 'Getting Started',
           link: '/guide/getting-started'

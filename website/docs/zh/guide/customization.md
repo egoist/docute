@@ -47,7 +47,7 @@ new Docute({
   sidebar: [
     {
       title: 'Guide', // 可选的
-      links: [
+      children: [
         {
           title: 'Getting Started',
           link: '/guide/getting-started'

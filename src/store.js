@@ -202,7 +202,7 @@ const store = new Vuex.Store({
         ? sidebar
             .reduce((res, next) => {
               // backward compabillity
-              const children = next.children ? next.children : next.links || []
+              const children = next.children || next.links || []
               return [...res, ...children]
             }, [])
             .filter(item => {

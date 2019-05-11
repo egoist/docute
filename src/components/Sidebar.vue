@@ -91,7 +91,7 @@ export default {
     },
     getChildren(item) {
       // backward compabillity
-      return item.children ? item.children : item.links
+      return item.children || item.links
     }
   }
 }
