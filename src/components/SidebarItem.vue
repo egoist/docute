@@ -8,6 +8,11 @@
       @click="toggleDisplay"
     >
       {{ item.title }}
+      <span
+        v-if="item.collapsable"
+        class="arrow"
+        :class="open ? 'down' : 'right'"
+      ></span>
     </div>
     <template v-if="open">
       <template v-for="(link, index) of getChildren(item)">
@@ -167,5 +172,23 @@ export default {
 a {
   text-decoration: none;
   color: var(--text-color);
+}
+
+.arrow {
+  display: inline-block;
+  position: relative;
+  top: -0.1em;
+  left: 0.5em;
+  &.right {
+    border-left: 6px solid #ccc;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+  }
+
+  &.down {
+    border-top: 6px solid #ccc;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+  }
 }
 </style>
