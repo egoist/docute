@@ -77,6 +77,9 @@ export default {
   data: () => ({
     open: true
   }),
+  created() {
+    this.open = !this.item.collapsable
+  },
   methods: {
     isExternalLink,
     getPrefetchFiles(path) {
@@ -95,7 +98,6 @@ export default {
     },
     toggleDisplay() {
       if (this.item.collapsable) {
-        console.log('toggleDisplay')
         this.open = !this.open
       }
     }
