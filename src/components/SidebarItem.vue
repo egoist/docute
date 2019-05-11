@@ -1,50 +1,58 @@
 <template>
   <div :class="['SidebarItem', item.title && 'hasTitle']">
-    <div class="ItemTitle" v-if="item.title" :collapsable="true">
+    <div
+      class="ItemTitle"
+      v-if="item.title"
+      :collapsable="item.collapsable"
+      :class="{collapsable: item.collapsable}"
+      @click="toggleDisplay"
+    >
       {{ item.title }}
     </div>
-    <template v-for="(link, index) of getChildren(item)">
-      <a
-        v-if="isExternalLink(link.link)"
-        :key="index"
-        :href="link.link"
-        class="ItemLink"
-        target="_blank"
-      >
-        {{ link.title }}
-        <external-link-icon />
-      </a>
-      <router-link
-        v-else
-        :key="index"
-        :to="link.link"
-        :prefetch-files="getPrefetchFiles(link.link)"
-        class="ItemLink"
-        :class="{active: $route.path === link.link}"
-      >
-        {{ link.title }}
-      </router-link>
-      <div
-        class="LinkToc"
-        v-if="
-          !$store.state.fetchingFile &&
-            link.toc !== false &&
-            link.link === $route.path &&
-            $store.state.page.headings &&
-            $store.state.page.headings.length > 0
-        "
-        :key="`toc-${index}`"
-      >
-        <router-link
-          class="TocHeading"
-          :to="{hash: heading.slug}"
-          :data-level="heading.level"
-          v-for="heading in $store.state.page.headings"
-          :key="heading.slug"
-          v-html="heading.text"
+    <template v-if="open">
+      <template v-for="(link, index) of getChildren(item)">
+        <a
+          v-if="isExternalLink(link.link)"
+          :key="index"
+          :href="link.link"
+          class="ItemLink"
+          target="_blank"
         >
+          {{ link.title }}
+          <external-link-icon />
+        </a>
+        <router-link
+          v-else
+          :key="index"
+          :to="link.link"
+          :prefetch-files="getPrefetchFiles(link.link)"
+          class="ItemLink"
+          :class="{active: $route.path === link.link}"
+        >
+          {{ link.title }}
         </router-link>
-      </div>
+        <div
+          class="LinkToc"
+          v-if="
+            !$store.state.fetchingFile &&
+              link.toc !== false &&
+              link.link === $route.path &&
+              $store.state.page.headings &&
+              $store.state.page.headings.length > 0
+          "
+          :key="`toc-${index}`"
+        >
+          <router-link
+            class="TocHeading"
+            :to="{hash: heading.slug}"
+            :data-level="heading.level"
+            v-for="heading in $store.state.page.headings"
+            :key="heading.slug"
+            v-html="heading.text"
+          >
+          </router-link>
+        </div>
+      </template>
     </template>
   </div>
 </template>
@@ -53,13 +61,6 @@ import {isExternalLink, getFileUrl, getFilenameByPath} from '../utils'
 
 export default {
   props: {
-    collapsable: {
-      type: Boolean,
-      required: false,
-      default() {
-        return false
-      }
-    },
     item: {
       type: Object,
       required: true,
@@ -68,7 +69,9 @@ export default {
       }
     }
   },
-  data: () => ({}),
+  data: () => ({
+    open: true
+  }),
   methods: {
     isExternalLink,
     getPrefetchFiles(path) {
@@ -84,6 +87,12 @@ export default {
     getChildren(item) {
       // backward compabillity
       return item.children || item.links || []
+    },
+    toggleDisplay() {
+      if (this.item.collapsable) {
+        console.log('toggleDisplay')
+        this.open = !this.open
+      }
     }
   }
 }
@@ -91,7 +100,6 @@ export default {
 <style scoped>
 .SidebarItem {
   &:not(:last-child) {
-    padding-bottom: 1.2rem;
     margin-bottom: 1.2rem;
   }
 
@@ -113,6 +121,12 @@ export default {
   position: relative;
   color: var(--sidebar-section-title-color);
   text-transform: uppercase;
+
+  &.collapsable {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .ItemLink {
