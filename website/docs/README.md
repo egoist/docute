@@ -34,7 +34,7 @@ Let's say you have following files in `./my-docs` folder:
 The `index.html` looks like:
 
 ```html {highlight:[7,'10-16']}
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -61,7 +61,7 @@ Then you can serve this folder as a static website on your machine using:
 - Golang: `caddy`
 - ..or whatever static web server
 
-Next, you may want to use [sidebar](./options.md#sidebar), [nav](./options.md#nav) or other [options](./options.md) to customize the website. 
+Next, you may want to use [sidebar](./options.md#sidebar), [nav](./options.md#nav) or other [options](./options.md) to customize the website.
 
 Here's a [REPL](https://repl.it/@egoist/docute-starter) where you can try Docute online or [download](https://repl.it/@egoist/docute-starter.zip) it to run locally.
 
@@ -69,7 +69,7 @@ Here's a [REPL](https://repl.it/@egoist/docute-starter) where you can try Docute
 
 ### VuePress / GitBook / Hexo
 
-They all generate static HTML at build time, which is good for SEO. 
+They all generate static HTML at build time, which is good for SEO.
 
 If you care about SEO, you may like using [presite](https://github.com/egoist/presite) to prerender your website.
 
