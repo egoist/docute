@@ -106,6 +106,7 @@ new Docute({
   sidebar: [
     {
       title: 'Guide',
+      collapsable: true,
       children: [
         {
           title: 'Customization',
