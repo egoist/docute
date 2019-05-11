@@ -103,4 +103,6 @@ export default Docute
 
 if (typeof window !== 'undefined') {
   window.Vue = Vue
+  // eslint-disable-next-line
+  window['__DOCUTE_VERSION__'] = __DOCUTE_VERSION__
 }
