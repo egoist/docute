@@ -47,6 +47,7 @@ new Docute({
   sidebar: [
     {
       title: 'Guide', // 可选的
+      collapsable: true, // 可选的
       children: [
         {
           title: 'Getting Started',
