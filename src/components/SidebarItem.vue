@@ -5,7 +5,7 @@
       v-if="item.title"
       :collapsable="item.collapsable"
       :class="{collapsable: item.collapsable}"
-      @click="toggleDisplay"
+      @click="$emit('toggle')"
     >
       {{ item.title }}
       <span
@@ -14,7 +14,7 @@
         :class="open ? 'down' : 'right'"
       ></span>
     </div>
-    <template v-if="open">
+    <template v-if="!item.collapsable || open">
       <template v-for="(link, index) of children">
         <a
           v-if="isExternalLink(link.link)"
@@ -72,21 +72,19 @@ export default {
       default() {
         return {}
       }
+    },
+    open: {
+      type: Boolean,
+      required: false,
+      default() {
+        return true
+      }
     }
   },
-  data: () => ({
-    open: true
-  }),
+  data: () => ({}),
   computed: {
     children() {
       return this.item.children || this.item.links || []
-    }
-  },
-  created() {
-    this.open = !this.item.collapsable
-    const childLinks = this.children.map(child => child.link)
-    if (childLinks.includes(this.$route.path)) {
-      this.open = true
     }
   },
   methods: {
@@ -100,11 +98,6 @@ export default {
       const filename = getFilenameByPath(path)
       const fileUrl = getFileUrl(sourcePath, filename)
       return fileUrl ? [fileUrl] : []
-    },
-    toggleDisplay() {
-      if (this.item.collapsable) {
-        this.open = !this.open
-      }
     }
   }
 }
