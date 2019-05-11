@@ -50,6 +50,7 @@ new Docute({
     // A sidebar item, with child links
     {
       title: 'Guide', // Optional
+      collapsable: true, // Optional
       children: [
         {
           title: 'Getting Started',

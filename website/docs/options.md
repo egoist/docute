@@ -49,6 +49,7 @@ An array of navigation items to display at sidebar.
 ```ts
 interface SidebarItem {
   title?: string
+  collapsable?: boolean
   children: Array<SidebarItemLink>
 }
 

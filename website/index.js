@@ -135,6 +135,7 @@ new Docute({
     },
     {
       title: 'Advanced',
+      collapsable: true,
       children: [
         {
           title: 'Use With Bundlers',
@@ -148,6 +149,7 @@ new Docute({
     },
     {
       title: 'References',
+      collapsable: true,
       children: [
         {
           title: 'Options',
@@ -165,6 +167,7 @@ new Docute({
     },
     {
       title: 'Misc',
+      collapsable: true,
       children: [
         {
           title: 'Credits',
