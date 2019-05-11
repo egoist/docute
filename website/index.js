@@ -167,6 +167,7 @@ new Docute({
     },
     {
       title: 'Misc',
+      collapsable: true,
       children: [
         {
           title: 'Credits',
