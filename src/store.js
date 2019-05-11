@@ -79,9 +79,16 @@ const store = new Vuex.Store({
           getFileUrl(getters.config.editLinkBase, filename)
       }
 
+      const {fetchOptions = {}} = getters.config
       await Promise.all([
         !page.content &&
-          fetch(page.file, getters.config.fetchOptions)
+          fetch(page.file, {
+            ...fetchOptions,
+            headers: {
+              accept: 'text/markdown',
+              ...fetchOptions.headers
+            }
+          })
             .then(res => res.text())
             .then(res => {
               page.content = res
