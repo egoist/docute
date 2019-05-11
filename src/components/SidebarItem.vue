@@ -15,7 +15,7 @@
       ></span>
     </div>
     <template v-if="open">
-      <template v-for="(link, index) of getChildren(item)">
+      <template v-for="(link, index) of children">
         <a
           v-if="isExternalLink(link.link)"
           :key="index"
@@ -77,8 +77,17 @@ export default {
   data: () => ({
     open: true
   }),
+  computed: {
+    children() {
+      return this.item.children || this.item.links || []
+    }
+  },
   created() {
     this.open = !this.item.collapsable
+    const childLinks = this.children.map(child => child.link)
+    if (childLinks.includes(this.$route.path)) {
+      this.open = true
+    }
   },
   methods: {
     isExternalLink,
@@ -91,10 +100,6 @@ export default {
       const filename = getFilenameByPath(path)
       const fileUrl = getFileUrl(sourcePath, filename)
       return fileUrl ? [fileUrl] : []
-    },
-    getChildren(item) {
-      // backward compabillity
-      return item.children || item.links || []
     },
     toggleDisplay() {
       if (this.item.collapsable) {
