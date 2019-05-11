@@ -17,7 +17,7 @@
         :key="index"
       >
         <div class="ItemTitle" v-if="item.title">{{ item.title }}</div>
-        <template v-for="(link, index) of item.links">
+        <template v-for="(link, index) of getChildren(item)">
           <a
             v-if="isExternalLink(link.link)"
             :key="index"
@@ -88,6 +88,10 @@ export default {
       const filename = getFilenameByPath(path)
       const fileUrl = getFileUrl(sourcePath, filename)
       return fileUrl ? [fileUrl] : []
+    },
+    getChildren(item) {
+      // backward compabillity
+      return item.children || item.links
     }
   }
 }

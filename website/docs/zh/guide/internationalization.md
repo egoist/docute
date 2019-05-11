@@ -23,7 +23,7 @@ docs
 new Docute({
   sidebar: [
     {
-      links: [
+      children: [
         { title: 'Guide', link: '/guide' }
       ]
     }
@@ -37,7 +37,7 @@ new Docute({
       // Override the default sidebar
       sidebar: [
         {
-          links: [
+          children: [
             { title: '指南', link: '/zh/guide' }
           ]
         }

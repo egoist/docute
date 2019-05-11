@@ -201,7 +201,9 @@ const store = new Vuex.Store({
       return sidebar
         ? sidebar
             .reduce((res, next) => {
-              return [...res, ...next.links]
+              // backward compabillity
+              const children = next.children || next.links || []
+              return [...res, ...children]
             }, [])
             .filter(item => {
               return !isExternalLink(item.link)
