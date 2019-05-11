@@ -31,7 +31,7 @@ workbox.routing.registerRoute(
 Then register this service worker in `index.html`:
 
 ```html {highlight:['16-18']}
-<!DOCTYPE >
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />

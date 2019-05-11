@@ -34,7 +34,7 @@ Docute 本质上就是一个 JavaScript 文件，它可以获取 Markdown 文件
 `index.html` 看起来像这样：
 
 ```html {highlight:[7,'10-16']}
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
