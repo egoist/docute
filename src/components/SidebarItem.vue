@@ -61,6 +61,7 @@
     </template>
   </div>
 </template>
+
 <script>
 import {isExternalLink, getFileUrl, getFilenameByPath} from '../utils'
 
@@ -81,7 +82,6 @@ export default {
       }
     }
   },
-  data: () => ({}),
   computed: {
     children() {
       return this.item.children || this.item.links || []
@@ -102,6 +102,7 @@ export default {
   }
 }
 </script>
+
 <style scoped>
 .SidebarItem {
   &:not(:last-child) {
