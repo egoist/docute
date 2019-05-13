@@ -214,9 +214,8 @@ const store = new Vuex.Store({
     sidebar(state, {config}) {
       const sidebar = config.sidebar || []
       if (sidebar === 'auto') {
-        const autoSidebar = [
+        return [
           {
-            title: 'Table of Contents',
             children: [
               {
                 title: state.page && state.page.title,
@@ -225,7 +224,6 @@ const store = new Vuex.Store({
             ]
           }
         ]
-        return autoSidebar
       }
       return typeof sidebar === 'function' ? sidebar(store) : sidebar
     },
