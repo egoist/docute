@@ -213,6 +213,7 @@ const store = new Vuex.Store({
 
     sidebar(_, {config}) {
       const sidebar = config.sidebar || []
+      if (sidebar === 'auto') return config.nav || []
       return typeof sidebar === 'function' ? sidebar(store) : sidebar
     },
 
