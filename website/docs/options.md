@@ -61,6 +61,14 @@ interface SidebarItemLink {
 }
 ```
 
+- If you want to automatically generate a sidebar from nav header, set sidebar to auto mode
+
+```javascript
+{
+  sidebar: 'auto'
+}
+```
+
 ## sourcePath
 
 - Type: `string`
