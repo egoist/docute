@@ -20,6 +20,7 @@
     "marked": "^0.6.1",
     "medium-zoom": "^1.0.2",
     "prismjs": "^1.15.0",
+    "throttle-debounce": "^2.1.0",
     "vue": "^2.6.10",
     "vue-content-loader": "^0.2.1",
     "vue-router": "^3.0.1",

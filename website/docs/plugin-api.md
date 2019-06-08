@@ -49,6 +49,27 @@ Register a component at specific position:
 - `header-right:start`: The start of right nav in site header.
 - `header-right:end`: The end of right nav in site header.
 
+## api.enableSearch(options)
+
+Enable search bar.
+
+Properties in `options`:
+
+|Property|Type|Description|
+|---|---|---|
+|`handler`|`Handler`|A handler function triggered by every user input.|
+
+```ts
+type Handler = (keyword: string) => SearchResult[] | Promise<SearchResult[]>
+
+interface SearchResult {
+  title: string
+  link: string
+  label: string?
+  description: string?
+}
+```
+
 ## api.router
 
 Basically the [Vue Router](https://router.vuejs.org/api/#router-instance-properties) instance.

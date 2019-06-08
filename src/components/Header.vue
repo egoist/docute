@@ -125,10 +125,6 @@ export default {
   height: calc(var(--header-height) - 1px);
   background: var(--header-background);
 
-  @media (max-width: 768px) {
-    display: none;
-  }
-
   @media print {
     display: flex;
     right: 0;

@@ -27,7 +27,11 @@ const defaultCssVariables = {
   loaderSecondaryColor: '#ecebeb',
   tableHeaderBackground: '#fafafa',
   tableHeaderColor: '#666',
-  docuteSelectHeight: '38px'
+  docuteSelectHeight: '38px',
+  searchIconColor: '#999',
+  searchFocusBorderColor: '#ccc',
+  searchFocusIconColor: '#333',
+  searchResultHoverBackground: '#f9f9f9'
 }
 
 const darkCssVariables = {
@@ -52,7 +56,12 @@ const darkCssVariables = {
   contentLinkBorder: '2px solid hsla(0, 0%, 100%, 0.28)',
   contentLinkHoverBorderColor: 'currentColor',
   tableHeaderBackground: 'var(--border-color)',
-  tableHeaderColor: '#868686'
+  tableHeaderColor: '#868686',
+  searchIconColor: '#999',
+  searchFocusBorderColor: '#999',
+  searchFocusIconColor: '#ccc',
+  searchResultBackground: '#27292f',
+  searchResultHoverBackground: '#1e2025'
 }
 
 export {defaultCssVariables, darkCssVariables}

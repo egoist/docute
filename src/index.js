@@ -21,6 +21,7 @@ import evaluateContentPlugin from './plugins/evaluateContent'
 import versionsPlugin from './plugins/versions'
 import bannerFooter from './plugins/banner-footer'
 import darkThemeToggler from './plugins/dark-theme-toggler'
+import searchPlugin from './plugins/search'
 
 Vue.component(ImageZoom.name, ImageZoom)
 Vue.component(Badge.name, Badge)
@@ -59,6 +60,7 @@ class Docute {
       versionsPlugin,
       bannerFooter,
       darkThemeToggler,
+      searchPlugin,
       ...(store.state.originalConfig.plugins || [])
     ]
     this.pluginApi = new PluginAPI({plugins, store, router})
