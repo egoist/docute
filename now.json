@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": {
+        "distDir": "website/dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "^/sw.js",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/sw.js"
+    },
+    {
+      "src": "^/(.+)\\.(.+)",
+      "headers": { "cache-control": "s-maxage=0, public, max-age=0, must-revalidate" },
+      "dest": "/$1.$2"
+    },
+    {
+      "src": "^/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "github": {
+    "silent": true
+  }
+}
