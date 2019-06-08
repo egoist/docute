@@ -17,7 +17,7 @@
   "dependencies": {
     "jump.js": "^1.0.2",
     "loadjs": "^3.5.4",
-    "marked": "^0.5.0",
+    "marked": "^0.6.1",
     "medium-zoom": "^1.0.2",
     "prismjs": "^1.15.0",
     "vue": "^2.6.10",
