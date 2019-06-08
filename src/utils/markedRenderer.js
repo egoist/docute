@@ -78,11 +78,12 @@ export default hooks => {
             : `<span class="code-line">${escapedLine}</span>`
         })
         .join('')
-      res += `<div class="code-mask">${codeMask}</div>`
+      res += `<div${
+        opts.interpolate ? '' : ' v-pre'
+      } class="code-mask">${codeMask}</div>`
     }
 
-    return `<div v-pre data-lang="${lang ||
-      ''}" class="pre-wrapper">${res}</div>`
+    return `<div data-lang="${lang || ''}" class="pre-wrapper">${res}</div>`
   }
 
   return hooks.process('extendMarkedRenderer', renderer)
