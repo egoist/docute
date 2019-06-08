@@ -9,6 +9,7 @@ export default class PluginAPI {
     this.router = router
     this.components = {}
     this.hooks = hooks
+    this.search = {}
 
     Vue.component(InjectedComponents.name, InjectedComponents)
   }
@@ -49,6 +50,12 @@ export default class PluginAPI {
 
   extendMarkdownComponent(fn) {
     this.hooks.add('extendMarkdownComponent', fn)
+    return this
+  }
+
+  enableSearch(search = {}) {
+    this.search = search
+    this.search.enabled = true
     return this
   }
 }
