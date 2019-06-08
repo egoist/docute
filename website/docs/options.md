@@ -20,6 +20,16 @@ The ID of the target element to locate, e.g. `app` or `#app`.
 
 Website title.
 
+## logo
+
+- Type: `string` `object`
+- Default: `<span>{{ $store.getters.config.title }}</span>`
+
+Customize the logo in header.
+
+- `string`: Used as Vue template.
+- `object`: Used as Vue component.
+
 ## nav
 
 - Type: `Array<NavItem>`

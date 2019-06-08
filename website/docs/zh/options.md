@@ -21,6 +21,16 @@ new Docute(options)
 
 网站标题。
 
+## logo
+
+- Type: `string` `object`
+- Default: `<span>{{ $store.getters.config.title }}</span>`
+
+Customize the logo in header.
+
+- `string`: Used as Vue template.
+- `object`: Used as Vue component.
+
 ## nav
 
 - 类型: `Array<NavItem>`

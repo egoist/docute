@@ -5,7 +5,7 @@
         <div class="header-left">
           <h1 class="site-title">
             <SidebarToggle />
-            <router-link to="/">{{ $store.getters.config.title }}</router-link>
+            <router-link to="/"> <component :is="Logo" /> </router-link>
           </h1>
           <HeaderNav v-if="leftNav" :nav="leftNav" />
         </div>
@@ -48,6 +48,24 @@ export default {
           return item.position === 'right' || !item.position
         })
       )
+    },
+
+    Logo() {
+      const {title, logo} = this.$store.getters.config
+
+      if (typeof logo === 'string') {
+        return {template: logo}
+      }
+
+      if (typeof logo === 'object') {
+        return logo
+      }
+
+      return {
+        render(h) {
+          return h('span', null, [title])
+        }
+      }
     }
   }
 }
