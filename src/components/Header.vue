@@ -106,7 +106,6 @@ export default {
   top: 0;
   height: calc(var(--header-height) - 1px);
   background: var(--header-background);
-  padding: 0 20px;
 
   @media (max-width: 768px) {
     display: none;
