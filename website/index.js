@@ -100,7 +100,8 @@ new Docute({
     },
     {
       title: 'GitHub',
-      link: 'https://github.com/egoist/docute'
+      link: 'https://github.com/egoist/docute',
+      openInNewTab: false
     }
   ],
   sidebar: [

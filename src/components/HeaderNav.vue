@@ -11,14 +11,21 @@
             v-for="(childItem, index) in item.children"
             :key="index"
           >
-            <uni-link :to="childItem.link">{{ childItem.title }}</uni-link>
+            <uni-link
+              :to="childItem.link"
+              :openInNewTab="childItem.openInNewTab"
+              >{{ childItem.title }}</uni-link
+            >
           </li>
         </ul>
       </div>
 
-      <uni-link v-if="!item.children" :to="item.link">{{
-        item.title
-      }}</uni-link>
+      <uni-link
+        v-if="!item.children"
+        :to="item.link"
+        :openInNewTab="item.openInNewTab"
+        >{{ item.title }}</uni-link
+      >
     </div>
   </div>
 </template>
