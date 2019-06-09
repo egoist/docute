@@ -40,6 +40,10 @@ An array of navigation items to display at navbar.
 interface NavItem {
   title: string
   link?: string
+  // Whether to open the link in a new tab
+  // Only works for external links
+  // Defaults to `true`
+  openInNewTab?: boolean
   // Or use `children` to display dropdown menu
   children?: Array<NavItemLink>
 }
@@ -47,6 +51,7 @@ interface NavItem {
 interface NavItemLink {
   title: string
   link: string
+  openInNewTab?: boolean
 }
 ```
 
@@ -66,6 +71,10 @@ interface SidebarItem {
 interface SidebarItemLink {
   title: string
   link: string
+  // Whether to open the link in a new tab
+  // Only works for external links
+  // Defaults to `true`
+  openInNewTab?: boolean
   /* Whether to show TOC, true by default */
   toc?: boolean
 }
