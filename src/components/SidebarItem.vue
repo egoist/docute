@@ -16,26 +16,14 @@
     </div>
     <template v-if="!item.collapsable || open">
       <template v-for="(link, index) of children">
-        <a
-          v-if="isExternalLink(link.link)"
-          :key="index"
-          :href="link.link"
+        <uni-link
           class="ItemLink"
-          target="_blank"
-        >
-          {{ link.title }}
-          <external-link-icon />
-        </a>
-        <router-link
-          v-else
           :key="index"
           :to="link.link"
-          :prefetch-files="getPrefetchFiles(link.link)"
-          class="ItemLink"
-          :class="{active: $route.path === link.link}"
+          :openInNewTab="link.openInNewTab"
+          :prefetchFiles="getPrefetchFiles(link.link)"
+          >{{ link.title }}</uni-link
         >
-          {{ link.title }}
-        </router-link>
         <div
           class="LinkToc"
           v-if="
@@ -54,8 +42,7 @@
             v-for="heading in $store.state.page.headings"
             :key="heading.slug"
             v-html="heading.text"
-          >
-          </router-link>
+          ></router-link>
         </div>
       </template>
     </template>
@@ -64,8 +51,12 @@
 
 <script>
 import {isExternalLink, getFileUrl, getFilenameByPath} from '../utils'
+import UniLink from './UniLink.vue'
 
 export default {
+  components: {
+    UniLink
+  },
   props: {
     item: {
       type: Object,
@@ -89,6 +80,7 @@ export default {
   },
   methods: {
     isExternalLink,
+
     getPrefetchFiles(path) {
       const {sourcePath, routes} = this.$store.getters.config
       if (routes && routes[path]) {
@@ -98,6 +90,13 @@ export default {
       const filename = getFilenameByPath(path)
       const fileUrl = getFileUrl(sourcePath, filename)
       return fileUrl ? [fileUrl] : []
+    },
+
+    getLinkTarget(link) {
+      if (!isExternalLink(link) || link.openInNewTab === false) {
+        return '_self'
+      }
+      return '_blank'
     }
   }
 }

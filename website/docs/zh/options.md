@@ -41,6 +41,10 @@ Customize the logo in header.
 interface NavItem {
   title: string
   link?: string
+  // Whether to open the link in a new tab
+  // Only works for external links
+  // Defaults to `true`
+  openInNewTab?: boolean
   // Use `children` instead of `link` to display dropdown
   children?: Array<NavItemLink>
 }
@@ -48,6 +52,7 @@ interface NavItem {
 interface NavItemLink {
   title: string
   link: string
+  openInNewTab?: boolean
 }
 ```
 
@@ -66,6 +71,10 @@ interface SidebarItem {
 interface ItemLink {
   title: string
   link: string
+  // Whether to open the link in a new tab
+  // Only works for external links
+  // Defaults to `true`
+  openInNewTab?: boolean
   /* 是否显示 TOC，默认为 true */
   toc: boolean
 }

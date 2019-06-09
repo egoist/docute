@@ -6,9 +6,11 @@ export default {
 
   render(h, {data, children}) {
     const attrs = {...data.attrs}
-    const {to} = attrs
+    const {to, openInNewTab} = attrs
+    delete attrs.openInNewTab
     if (isExternalLink(to)) {
       delete attrs.to
+      delete attrs.prefetchFiles
       return h(
         'a',
         {
@@ -17,10 +19,15 @@ export default {
           attrs: {
             ...attrs,
             href: to,
-            target: '_blank'
+            target: openInNewTab === false ? '_self' : '_blank'
           }
         },
-        [...children, h('external-link-icon', {class: 'external-link-icon'})]
+        [
+          ...children,
+          openInNewTab === false
+            ? null
+            : h('external-link-icon', {class: 'external-link-icon'})
+        ]
       )
     }
     return h('router-link', data, children)
