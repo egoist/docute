@@ -1,6 +1,6 @@
 <template>
   <div class="ImageZoom" :class="{'with-border': border}">
-    <img ref="img" :src="url" :alt="alt" :width="width" />
+    <img ref="img" :src="imageURL" :alt="alt" :width="width" :title="title" />
   </div>
 </template>
 
@@ -10,8 +10,10 @@ export default {
 
   props: {
     url: {
-      type: String,
-      required: true
+      type: String
+    },
+    src: {
+      type: String
     },
     alt: {
       type: String
@@ -22,6 +24,15 @@ export default {
     },
     width: {
       type: [String, Number]
+    },
+    title: {
+      type: String
+    }
+  },
+
+  computed: {
+    imageURL() {
+      return this.src || this.url
     }
   },
 

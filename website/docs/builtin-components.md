@@ -8,7 +8,8 @@ Use medium-style zoom effect to display certain image.
 
 | Prop   | Type      | Default | Description              |
 | ------ | --------- | ------- | ------------------------ |
-| url    | `string`  | N/A     | URL to image             |
+| src    | `string`  | N/A     | URL to image             |
+| title  | `string`  | N/A     | Image title             |
 | alt    | `string`  | N/A     | Placeholder text         |
 | border | `boolean` | `false` | Show border around image |
 | width  | `string`  | N/A     | Image width              |
@@ -19,13 +20,13 @@ Example:
 
 ```markdown
 <ImageZoom 
-  url="https://i.loli.net/2018/09/24/5ba8e878850e9.png" 
+  src="https://i.loli.net/2018/09/24/5ba8e878850e9.png" 
   :border="true" 
   width="300"
 />
 ```
 
-<ImageZoom url="https://i.loli.net/2018/09/24/5ba8e878850e9.png" :border="true" width="300"/>
+<ImageZoom src="https://i.loli.net/2018/09/24/5ba8e878850e9.png" :border="true" width="300"/>
 
 ## `<Badge>`
 

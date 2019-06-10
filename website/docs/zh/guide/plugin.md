@@ -30,7 +30,7 @@ new Docute({
 {author}
 ```
 
-<ImageZoom :border="true" url="https://i.loli.net/2018/09/28/5bae278dd9c03.png" />
+<ImageZoom :border="true" src="https://i.loli.net/2018/09/28/5bae278dd9c03.png" />
 
 ---
 

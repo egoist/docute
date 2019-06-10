@@ -9,6 +9,7 @@ Docute 附带一些内置的 Vue 组件。
 |属性|类型|默认值|描述|
 |---|---|---|---|
 |url|`string`|N/A|Image 的 URL|
+| title  | `string`  | N/A     | Image title             |
 |alt|`string`|N/A|占位文字|
 |border|`boolean`|`false`|是否显示图像周围的边框|
 |width|`string`|N/A|Image 宽度|
@@ -17,13 +18,13 @@ Docute 附带一些内置的 Vue 组件。
 
 ```markdown
 <ImageZoom 
-  url="https://i.loli.net/2018/09/24/5ba8e878850e9.png" 
+  src="https://i.loli.net/2018/09/24/5ba8e878850e9.png" 
   :border="true" 
   width="300"
 />
 ```
 
-<ImageZoom url="https://i.loli.net/2018/09/24/5ba8e878850e9.png" :border="true" width="300"/>
+<ImageZoom src="https://i.loli.net/2018/09/24/5ba8e878850e9.png" :border="true" width="300"/>
 
 
 ## `<Badge>`

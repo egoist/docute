@@ -22,7 +22,7 @@ Render offers [free static site hosting](https://render.com/docs/static-sites) w
 
 The easiest way to use GitHub Pages is to populate all your files inside `./docs` folder on the master branch, and then use this folder for GitHub Pages:
 
-<ImageZoom url="https://i.loli.net/2018/06/11/5b1e0da0c173a.png" alt="github pages" :border="true" />
+<ImageZoom src="https://i.loli.net/2018/06/11/5b1e0da0c173a.png" alt="github pages" :border="true" />
 
 However you can still use `gh-pages` branch or even `master` branch to serve your docs, it all depends on your needs.
 

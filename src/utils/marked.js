@@ -1123,13 +1123,19 @@ Renderer.prototype.link = function(href, title, text) {
   return out
 }
 
+// @modified
 Renderer.prototype.image = function(href, title, text) {
   if (this.options.baseUrl && !originIndependentUrl.test(href)) {
     href = resolveUrl(this.options.baseUrl, href)
   }
-  var out = '<img src="' + href + '" alt="' + text + '"'
+  var { imageZoom } = this.options.env.config
+  var tag = imageZoom ? 'image-zoom' : 'img'
+  var out = `<${tag} src="` + href + '" alt="' + text + '"'
   if (title) {
     out += ' title="' + title + '"'
+  }
+  if (imageZoom) {
+    out += ' v-bind:border="false"'
   }
   out += this.options.xhtml ? '/>' : '>'
   return out
