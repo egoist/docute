@@ -155,6 +155,13 @@ https://github.com/USER/REPO/blob/master/docs
 
 网站主题。
 
+## detectSystemDarkTheme
+
+- Type: `boolean`
+- Default: `undefined`
+
+In recent versions of macOS (Mojave) and Windows 10, users have been able to enable a system level dark mode. Set this option to `true` so that Docute will use the dark theme by default if your system has it enabled.
+
 ## darkThemeToggler
 
 - Type: `boolean`

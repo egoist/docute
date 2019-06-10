@@ -15,6 +15,20 @@ Vue.use(Vuex)
 
 const initialState = inBrowser && window[INITIAL_STATE_NAME]
 
+const getDefaultTheme = (store, detectSystemDarkTheme) => {
+  if (!inBrowser || !detectSystemDarkTheme) {
+    return 'default'
+  }
+
+  const mq = window.matchMedia('(prefers-color-scheme: dark)')
+
+  mq.addListener(() => {
+    store.commit('SET_THEME', mq.matches ? 'dark' : 'default')
+  })
+
+  return mq.matches ? 'dark' : 'default'
+}
+
 const store = new Vuex.Store({
   state: {
     originalConfig: {},
@@ -36,7 +50,8 @@ const store = new Vuex.Store({
       if (config.centerContent) {
         config.layout = 'narrow'
       }
-      config.theme = config.theme || 'default'
+      config.theme =
+        config.theme || getDefaultTheme(store, config.detectSystemDarkTheme)
       state.originalConfig = config
     },
 
