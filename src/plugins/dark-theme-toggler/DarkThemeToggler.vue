@@ -35,18 +35,22 @@
 <script>
 export default {
   data() {
+    const themeStore = localStorage.getItem('docute:theme')
+    const dark =
+      'dark' in this.$route.query
+        ? true
+        : themeStore === 'dark'
+        ? true
+        : themeStore === 'default'
+        ? false
+        : this.$store.getters.config.theme === 'dark'
     return {
-      dark:
-        localStorage.getItem('docute:theme') === 'dark' ||
-        'dark' in this.$route.query ||
-        this.$store.getters.config.theme === 'dark'
+      dark
     }
   },
 
   created() {
-    if (this.dark) {
-      this.$store.commit('SET_THEME', 'dark')
-    }
+    this.$store.commit('SET_THEME', this.dark ? 'dark' : 'default')
   },
 
   methods: {
@@ -57,11 +61,7 @@ export default {
         'SET_THEME',
         this.dark ? 'dark' : prevTheme === 'dark' ? 'default' : prevTheme
       )
-      if (this.dark) {
-        localStorage.setItem('docute:theme', 'dark')
-      } else {
-        localStorage.removeItem('docute:theme')
-      }
+      localStorage.setItem('docute:theme', this.dark ? 'dark' : 'default')
     }
   }
 }
