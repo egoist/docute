@@ -48,6 +48,7 @@ new Docute({
   router: {
     mode: 'history'
   },
+  detectSystemDarkTheme: true,
   darkThemeToggler: true,
   sourcePath: '/',
   componentMixins: [
