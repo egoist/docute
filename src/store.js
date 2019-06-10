@@ -108,7 +108,8 @@ const store = new Vuex.Store({
 
       const env = {
         headings: [],
-        mixins: []
+        mixins: [],
+        config: getters.config
       }
       if (page.markdown) {
         page.content = marked(page.content, {

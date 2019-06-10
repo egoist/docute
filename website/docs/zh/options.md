@@ -248,6 +248,15 @@ new Docute({
 })
 ```
 
+## imageZoom
+
+- Type: `boolean`
+- Default: `undefined`
+
+Enable Medium-like image zoom effect to all images.
+
+Alternatively you can use the [`<image-zoom>`](./builtin-components.md#imagezoom) component if you only need this in specific images.
+
 ## fetchOptions
 
 - Type: `object`

@@ -36,6 +36,6 @@ Make sure to check out Now's [GitHub Integration](https://zeit.co/docs/v2/integr
 
 使用 Github Pages 最简单的方式是在 master 分支上的 `./docs` 文件夹中加入所有文件，然后将此文件夹用于 Github Pages：
 
-<ImageZoom url="https://i.loli.net/2018/06/11/5b1e0da0c173a.png" alt="github pages" :border="true" />
+<ImageZoom src="https://i.loli.net/2018/06/11/5b1e0da0c173a.png" alt="github pages" :border="true" />
 
 但是你仍然可以使用 `gh-pages` 分支或者 `master` 分支来为你的文档提供服务，这一切都取决于你的需求。
