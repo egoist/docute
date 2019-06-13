@@ -195,6 +195,7 @@ export default {
 
   @media print {
     padding-left: 0;
+    padding-top: 30px;
   }
 }
 
