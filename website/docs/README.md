@@ -10,7 +10,7 @@ It's totally runtime-driven so there's no server-side components involved which 
 
 ## How does it work
 
-In short: URL is the API.
+In short: URL is the [API](./options.md#sourcepath).
 
 We fetch and render corresponding markdown file for the URL you visit:
 
