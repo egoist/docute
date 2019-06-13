@@ -83,7 +83,7 @@ export default {
   background: var(--header-background);
 
   @media print {
-    display: none;
+    position: static;
   }
 }
 
