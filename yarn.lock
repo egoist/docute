@@ -12441,6 +12441,11 @@ vue-router@^3.0.1:
   resolved "https://registry.npmjs.org/vue-router/-/vue-router-3.0.2.tgz#dedc67afe6c4e2bc25682c8b1c2a8c0d7c7e56be"
   integrity sha512-opKtsxjp9eOcFWdp6xLQPLmRGgfM932Tl56U9chYTnoWqKxQ8M20N7AkdEbM5beUh6wICoFGYugAX9vQjyJLFg==
 
+vue-slim-tabs@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/vue-slim-tabs/-/vue-slim-tabs-0.3.0.tgz#5930addbbac27feded2a3e6ecbe4579418acf283"
+  integrity sha512-0KaQRcql5ihRHTwvguWw1vxYnxuChLkhXu6AEp0TEHKm2Ax4Y5HL58AhVHZCyNXhRwDK3J+Fh0jzoOR0VI7j7Q==
+
 vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
   version "4.1.2"
   resolved "https://registry.npmjs.org/vue-style-loader/-/vue-style-loader-4.1.2.tgz#dedf349806f25ceb4e64f3ad7c0a44fba735fcf8"

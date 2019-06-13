@@ -11,6 +11,7 @@ import Badge from './components/Badge.vue'
 import DocuteSelect from './components/DocuteSelect.vue'
 import Note from './components/Note.vue'
 import Gist from './components/Gist.vue'
+import Tabs from './components/Tabs.vue'
 import Loading from './components/Loading.vue'
 import ExternalLinkIcon from './components/icons/ExternalLinkIcon.vue'
 import {INITIAL_STATE_NAME} from './utils/constants'
@@ -23,6 +24,7 @@ import bannerFooter from './plugins/banner-footer'
 import darkThemeToggler from './plugins/dark-theme-toggler'
 import searchPlugin from './plugins/search'
 
+Vue.component(Tabs.name, Tabs)
 Vue.component(ImageZoom.name, ImageZoom)
 Vue.component(Badge.name, Badge)
 Vue.component(DocuteSelect.name, DocuteSelect)
