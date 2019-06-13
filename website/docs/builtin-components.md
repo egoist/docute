@@ -204,3 +204,27 @@ Your favorite fruit: {{ favoriteFruit }}
 A hack for using `<style>` and `<script>` tags Vue template.
 
 In general you don't need to use them directly, since we automatically convert `<style>` and `<script>` tags in Markdown to these components.
+
+
+## `<Tabs>`
+
+Window menu in tabs.
+
+| Prop | Type     | Default | Description |
+| ---- | -------- | ------- | ----------- |
+| titles   | `array` | N/A     | Tab names     |
+| bodies   | `array` | N/A     | Tab bodies    |
+
+Example:
+
+```markdown
+<Tabs 
+  v-bind:titles="['first', 'second']" 
+  v-bind:bodies="['number one', 'last place']"
+/>
+```
+
+<Tabs 
+  v-bind:titles="['first', 'second']" 
+  v-bind:bodies="['number one', 'last place']"
+/>

@@ -1,6 +1,6 @@
 <template>
   <other-tabs>
-    <tab v-for="(title, index) in titles" :key="title" title="title">{{
+    <tab v-for="(title, index) in titles" :key="title" :title="title">{{
       bodies[index]
     }}</tab>
   </other-tabs>
