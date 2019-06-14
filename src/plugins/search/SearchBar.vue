@@ -111,6 +111,10 @@ export default {
       display: block;
     }
   }
+
+  @media print {
+    display: none;
+  }
 }
 
 .search-input-wrapper {

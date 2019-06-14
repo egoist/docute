@@ -81,6 +81,10 @@ export default {
   z-index: 33;
   border-bottom: 1px solid var(--border-color);
   background: var(--header-background);
+
+  @media print {
+    position: static;
+  }
 }
 
 .Wrap {
