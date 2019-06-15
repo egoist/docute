@@ -1,28 +1,56 @@
 <template>
-  <other-tabs>
-    <tab v-for="(title, index) in titles" :key="title" :title="title">{{
-      bodies[index]
-    }}</tab>
-  </other-tabs>
+  <div>
+    <other-tabs>
+      <tab
+        v-for="(item, index) in all"
+        :key="item.title + item.body"
+        :title="item.title"
+        v-html="transformed[index]"
+      >
+      </tab>
+    </other-tabs>
+  </div>
 </template>
 
 <script>
 import {Tabs as otherTabs, Tab} from 'vue-slim-tabs'
+import inlineRender from '../utils/inlineRender'
 
 export default {
   name: 'Tabs',
+  data() {
+    return {
+      transformed: []
+    }
+  },
+  created() {
+    const that = this
+    const {all} = this
+    Promise.all(
+      all.map(x => {
+        const {codeBlock, markdown, body} = x
+        const nl = '\n'
+        if (codeBlock) {
+          const a = inlineRender('```' + codeBlock + nl + body + nl + '```')
+          return a
+        }
+        if (markdown) {
+          return inlineRender(body)
+        }
+        return body
+      })
+    ).then(x => {
+      that.transformed = x
+    })
+  },
   components: {
     otherTabs,
     Tab
   },
   props: {
-    titles: {
+    all: {
       type: Array,
       required: true
-    },
-    bodies: {
-      type: Array,
-      require: true
     }
   }
 }
