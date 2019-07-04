@@ -80,8 +80,3 @@ __输出__:
 
 <ReverseText text="hello world" />
 
-## Trade-offs
-
-- `@` 简写语法不能工作
-
-由于标准的 HTML 属性不允许以 `@` 开头，因此我们使用的 markdown 解析器不会将 `v-on` 的简写 `@` 识别为有效的 HTML。非常欢迎大家发起 Pull Request 解决该问题。
