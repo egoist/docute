@@ -131,7 +131,7 @@ Apply custom fonts to your website is pretty easy, you can simply add a `<style>
 </style>
 ```
 
-<button v-on:click="insertCustomFontsCSS">Click me</button> to toggle the custom fonts on this website.
+<button @click="insertCustomFontsCSS">Click me</button> to toggle the custom fonts on this website.
 
 By default a fresh Docute website will use system default fonts.
 
