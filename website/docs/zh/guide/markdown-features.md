@@ -171,7 +171,7 @@ class SkinnedMesh extends THREE.Mesh {
 Adding a Vue mixin to the Markdown component:
 
 ````markdown
-<button v-on:click="count++">{{ count }}</button> people love Docute.
+<button @click="count++">{{ count }}</button> people love Docute.
 
 ```js {mixin:true}
 {
@@ -184,7 +184,7 @@ Adding a Vue mixin to the Markdown component:
 ```
 ````
 
-<button v-on:click="count++">{{ count }}</button> people love Docute.
+<button @click="count++">{{ count }}</button> people love Docute.
 
 ```js {mixin:true}
 {

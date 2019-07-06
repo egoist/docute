@@ -151,7 +151,7 @@ A customized `<select>` component:
 
 <!-- prettier-ignore -->
 ````vue
-<docute-select :value="favoriteFruit" v-on:change="handleChange">
+<docute-select :value="favoriteFruit" @change="handleChange">
   <option value="apple" :selected="favoriteFruit === 'apple'">Apple</option>
   <option value="banana" :selected="favoriteFruit === 'banana'">Banana</option>
   <option value="watermelon" :selected="favoriteFruit === 'watermelon'">Watermelon</option>
@@ -175,7 +175,7 @@ module.exports = {
 ```
 ````
 
-<docute-select v-on:change="handleChange" :value="favoriteFruit">
+<docute-select @change="handleChange" :value="favoriteFruit">
   <option value="apple" :selected="favoriteFruit === 'apple'">Apple</option>
   <option value="banana" :selected="favoriteFruit === 'banana'">Banana</option>
   <option value="watermelon" :selected="favoriteFruit === 'watermelon'">Watermelon</option>
