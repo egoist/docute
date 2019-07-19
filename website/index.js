@@ -186,6 +186,94 @@ new Docute({
     '/': {
       language: 'English'
     },
+    '/fr/': {
+      language: 'French',
+      editLinkText: 'Modifiez cette page sur GitHub',
+      nav: [
+        {
+          title: 'Accueil',
+          link: '/fr/'
+        },
+        {
+          title: 'GitHub',
+          link: 'https://github.com/egoist/docute'
+        }
+      ],
+      sidebar: [
+        {
+          title: 'Guide',
+          children: [
+            {
+              title: 'Introduction',
+              link: '/fr/'
+            },
+            {
+              title: 'Personnalisation',
+              link: '/fr/guide/customization'
+            },
+            {
+              title: 'Fonctionnalités de Markdown',
+              link: '/fr/guide/markdown-features'
+            },
+            {
+              title: 'Utiliser Vue dans Markdown',
+              link: '/fr/guide/use-vue-in-markdown'
+            },
+            {
+              title: 'Internationalisation',
+              link: '/fr/guide/internationalization'
+            },
+            {
+              title: 'Plugin',
+              link: '/fr/guide/plugin'
+            },
+            {
+              title: 'Déploiement',
+              link: '/fr/guide/deployment'
+            }
+          ]
+        },
+        {
+          title: 'Avancée',
+          children: [
+            {
+              title: 'Utiliser avec des Bundlers',
+              link: '/fr/guide/use-with-bundlers'
+            },
+            {
+              title: 'Support hors ligne',
+              link: '/fr/guide/offline-support'
+            }
+          ]
+        },
+        {
+          title: 'Référence',
+          children: [
+            {
+              title: 'Options',
+              link: '/fr/options'
+            },
+            {
+              title: 'Composants intégrés',
+              link: '/fr/builtin-components'
+            },
+            {
+              title: 'API de plugin',
+              link: '/fr/plugin-api'
+            }
+          ]
+        },
+        {
+          title: 'Divers',
+          children: [
+            {
+              title: 'Crédits',
+              link: '/fr/credits'
+            }
+          ]
+        }
+      ]
+    },
     '/zh/': {
       language: 'Chinese',
       editLinkText: '在 GitHub 上编辑此页',
