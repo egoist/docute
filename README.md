@@ -14,9 +14,8 @@ Effortless documentation, done right.
 
 ## Documentation
 
-Check out: https://docute.org
-
-Are you looking for the v3 docs? See [here](https://v3.docute.org).
+- **v4 (latest) docs**: https://docute.org
+- v3 (legacy) docs: https://v3.docute.org
 
 ## Resources
 
