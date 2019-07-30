@@ -3,22 +3,29 @@
     <div
       class="ItemTitle"
       v-if="item.title"
-      :collapsable="item.collapsable"
-      :class="{collapsable: item.collapsable}"
+      :class="{collapsable: Boolean(children)}"
       @click="$emit('toggle')"
     >
-      {{ item.title }}
-      <span
-        v-if="item.collapsable"
-        class="arrow"
-        :class="open ? 'down' : 'right'"
-      ></span>
+      <span v-if="children" class="arrow" :class="{open}">
+        <svg
+          width="6"
+          height="10"
+          viewBox="0 0 6 10"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1.4 8.56L4.67 5M1.4 1.23L4.66 4.7"
+            stroke="#999"
+            stroke-linecap="square"
+          />
+        </svg> </span
+      >{{ item.title }}
     </div>
-    <template v-if="!item.collapsable || open">
-      <template v-for="(link, index) of children">
+    <div class="ItemChildren" v-if="open">
+      <div class="ItemChild" v-for="(link, index) of children" :key="index">
         <uni-link
           class="ItemLink"
-          :key="index"
           :to="link.link"
           :openInNewTab="link.openInNewTab"
           :prefetchFiles="getPrefetchFiles(link.link)"
@@ -44,8 +51,8 @@
             v-html="heading.text"
           ></router-link>
         </div>
-      </template>
-    </template>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -105,22 +112,21 @@ export default {
 <style scoped>
 .SidebarItem {
   &:not(:last-child) {
-    margin-bottom: 1.2rem;
+    margin-bottom: 10px;
   }
 
-  &.hasTitle {
-    & .ItemLink {
-      font-size: 0.9rem;
+  font-size: 0.875rem;
+
+  & a {
+    color: var(--sidebar-link-color);
+
+    &:hover {
+      color: var(--sidebar-link-active-color);
     }
-  }
-
-  &.hasTitle >>> .TocHeading {
-    font-size: 0.9rem;
   }
 }
 
 .ItemTitle {
-  font-size: 1rem;
   padding: 0 20px;
   margin-bottom: 10px;
   position: relative;
@@ -134,38 +140,54 @@ export default {
   }
 }
 
+.ItemChildren {
+  border-left: 1px solid var(--border-color);
+  margin: 0 20px;
+}
+
+.ItemChild {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
 .ItemLink {
-  padding: 2px 20px;
+  padding: 0 12px;
   display: flex;
-  font-size: 1.1rem;
   position: relative;
+  line-height: 1;
 
   &.active {
     font-weight: bold;
   }
 }
 
+.LinkToc {
+  border-left: 1px solid var(--border-color);
+  margin-left: 12px;
+  margin-top: 10px;
+}
+
 .TocHeading {
   display: flex;
-  line-height: 1.4;
-  margin: 5px 0;
+  line-height: 1;
   position: relative;
 
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
   &[data-level='2'] {
-    padding: 0 20px;
-    &:before {
-      content: '-';
-      margin-right: 5px;
-      color: #979797;
-    }
+    margin-left: 12px;
   }
 
   &[data-level='3'] {
-    padding: 0 20px 0 40px;
+    margin-left: 24px;
   }
 
   &.router-link-exact-active {
     font-weight: bold;
+    color: var(--sidebar-link-active-color);
   }
 }
 
@@ -175,20 +197,17 @@ a {
 }
 
 .arrow {
+  width: 12px;
   display: inline-block;
-  position: relative;
-  top: -0.1em;
-  left: 0.5em;
-  &.right {
-    border-left: 6px solid #ccc;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
+
+  & svg {
+    transition: all 0.15s ease;
   }
 
-  &.down {
-    border-top: 6px solid #ccc;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
+  &.open {
+    & svg {
+      transform: rotate(90deg);
+    }
   }
 }
 </style>
