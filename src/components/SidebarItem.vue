@@ -26,6 +26,7 @@
       <div class="ItemChild" v-for="(link, index) of children" :key="index">
         <uni-link
           class="ItemLink"
+          :class="{active: $route.path === link.link}"
           :to="link.link"
           :openInNewTab="link.openInNewTab"
           :prefetchFiles="getPrefetchFiles(link.link)"
