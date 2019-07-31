@@ -14,8 +14,8 @@
         v-for="(item, index) in $store.getters.sidebar"
         :key="index"
         :item="item"
-        :open="currentOpenIndex === index"
-        @toggle="openSidebar(index)"
+        :open="openItems.indexOf(index) !== -1"
+        @toggle="toggleItem(index)"
       />
     </div>
 
@@ -35,23 +35,33 @@ export default {
   },
   data() {
     return {
-      currentOpenIndex: 0
+      openItems: []
     }
   },
   watch: {
     '$route.path': {
       handler() {
-        this.currentOpenIndex = this.getCurrentIndex(
+        const index = this.getCurrentIndex(
           this.$route.path,
           this.$store.getters.sidebar
         )
+        this.openItem(index)
       },
       immediate: true
     }
   },
   methods: {
-    openSidebar(index) {
-      this.currentOpenIndex = this.currentOpenIndex === index ? -1 : index
+    openItem(index) {
+      if (this.openItems.indexOf(index) === -1) {
+        this.openItems.push(index)
+      }
+    },
+    toggleItem(index) {
+      if (this.openItems.indexOf(index) === -1) {
+        this.openItems.push(index)
+      } else {
+        this.openItems = this.openItems.filter(v => v !== index)
+      }
     },
     getCurrentIndex(currentPath, sidebarItems) {
       for (let idx = 0; idx < sidebarItems.length; idx++) {
@@ -63,7 +73,7 @@ export default {
           return idx
         }
       }
-      return -1
+      return 0
     },
     getChildren(item) {
       return item.children || item.links || []
