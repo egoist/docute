@@ -45,9 +45,9 @@ new Docute({
 ```js
 new Docute({
   sidebar: [
+    // A sidebar item, with child links
     {
-      title: 'Guide', // 可选的
-      collapsable: true, // 可选的
+      title: 'Guide',
       children: [
         {
           title: 'Getting Started',
@@ -56,8 +56,13 @@ new Docute({
         {
           title: 'Installation',
           link: '/guide/installation'
-        },
+        }
       ]
+    },
+    // An external link
+    {
+      title: 'GitHub',
+      link: 'https://github.com/egoist/docute'
     }
   ]
 })

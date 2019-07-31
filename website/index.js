@@ -107,7 +107,6 @@ new Docute({
   sidebar: [
     {
       title: 'Guide',
-      collapsable: false,
       children: [
         {
           title: 'Introduction',

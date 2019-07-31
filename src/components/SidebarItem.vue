@@ -2,6 +2,7 @@
   <div :class="['SidebarItem', item.title && 'hasTitle']">
     <div
       class="ItemTitle"
+      :class="{collapsable: item.collapsable !== false}"
       v-if="item.title && children"
       @click="$emit('toggle')"
     >
@@ -131,7 +132,7 @@ export default {
   color: var(--sidebar-link-color);
   user-select: none;
 
-  &:hover {
+  &.collapsable:hover {
     cursor: pointer;
     color: var(--sidebar-link-active-color);
   }

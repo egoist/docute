@@ -49,8 +49,7 @@ new Docute({
   sidebar: [
     // A sidebar item, with child links
     {
-      title: 'Guide', // Optional
-      collapsable: true, // Optional
+      title: 'Guide',
       children: [
         {
           title: 'Getting Started',
@@ -61,6 +60,11 @@ new Docute({
           link: '/guide/installation'
         }
       ]
+    },
+    // An external link
+    {
+      title: 'GitHub',
+      link: 'https://github.com/egoist/docute'
     }
   ]
 })
