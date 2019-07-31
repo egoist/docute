@@ -2,60 +2,66 @@
   <div :class="['SidebarItem', item.title && 'hasTitle']">
     <div
       class="ItemTitle"
-      v-if="item.title"
-      :collapsable="item.collapsable"
-      :class="{collapsable: item.collapsable}"
+      :class="{collapsable: item.collapsable !== false}"
+      v-if="item.title && children"
       @click="$emit('toggle')"
     >
-      {{ item.title }}
-      <span
-        v-if="item.collapsable"
-        class="arrow"
-        :class="open ? 'down' : 'right'"
-      ></span>
+      <span v-if="item.collapsable !== false" class="arrow" :class="{open}">
+        <svg
+          width="6"
+          height="10"
+          viewBox="0 0 6 10"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1.4 8.56L4.67 5M1.4 1.23L4.66 4.7"
+            stroke="currentColor"
+            stroke-linecap="square"
+          />
+        </svg>
+      </span>
+      <span>{{ item.title }}</span>
     </div>
-    <template v-if="!item.collapsable || open">
-      <template v-for="(link, index) of children">
+    <uni-link
+      class="ItemLink"
+      :class="{active: $route.path === item.link}"
+      v-if="item.title && item.link"
+      :to="item.link"
+      >{{ item.title }}</uni-link
+    >
+    <div class="ItemLinkToc" v-if="item.title && item.link">
+      <PageToc :link="item" />
+    </div>
+
+    <div
+      class="ItemChildren"
+      v-if="children && (open || item.collapsable === false)"
+    >
+      <div class="ItemChild" v-for="(link, index) of children" :key="index">
         <uni-link
-          class="ItemLink"
-          :key="index"
+          class="ItemChildLink"
+          :class="{active: $route.path === link.link}"
           :to="link.link"
           :openInNewTab="link.openInNewTab"
           :prefetchFiles="getPrefetchFiles(link.link)"
           >{{ link.title }}</uni-link
         >
-        <div
-          class="LinkToc"
-          v-if="
-            !$store.state.fetchingFile &&
-              link.toc !== false &&
-              link.link === $route.path &&
-              $store.state.page.headings &&
-              $store.state.page.headings.length > 0
-          "
-          :key="`toc-${index}`"
-        >
-          <router-link
-            class="TocHeading"
-            :to="{hash: heading.slug}"
-            :data-level="heading.level"
-            v-for="heading in $store.state.page.headings"
-            :key="heading.slug"
-            v-html="heading.text"
-          ></router-link>
-        </div>
-      </template>
-    </template>
+        <PageToc :link="link" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import {isExternalLink, getFileUrl, getFilenameByPath} from '../utils'
 import UniLink from './UniLink.vue'
+import PageToc from './PageToc.vue'
 
 export default {
   components: {
-    UniLink
+    UniLink,
+    PageToc
   },
   props: {
     item: {
@@ -75,7 +81,7 @@ export default {
   },
   computed: {
     children() {
-      return this.item.children || this.item.links || []
+      return this.item.children || this.item.links
     }
   },
   methods: {
@@ -105,66 +111,81 @@ export default {
 <style scoped>
 .SidebarItem {
   &:not(:last-child) {
-    margin-bottom: 1.2rem;
+    margin-bottom: 10px;
   }
 
-  &.hasTitle {
-    & .ItemLink {
-      font-size: 0.9rem;
+  font-size: 0.875rem;
+
+  & a {
+    color: var(--sidebar-link-color);
+
+    &:hover {
+      color: var(--sidebar-link-active-color);
     }
-  }
-
-  &.hasTitle >>> .TocHeading {
-    font-size: 0.9rem;
   }
 }
 
 .ItemTitle {
-  font-size: 1rem;
   padding: 0 20px;
   margin-bottom: 10px;
   position: relative;
-  color: var(--sidebar-section-title-color);
-  text-transform: uppercase;
+  color: var(--sidebar-link-color);
+  user-select: none;
+  font-size: 0;
 
-  &.collapsable {
-    &:hover {
-      cursor: pointer;
-    }
+  &.collapsable:hover {
+    cursor: pointer;
+    color: var(--sidebar-link-active-color);
+  }
+
+  & span {
+    font-size: 0.9rem;
   }
 }
 
 .ItemLink {
-  padding: 2px 20px;
+  margin: 0 20px;
   display: flex;
-  font-size: 1.1rem;
-  position: relative;
+  align-items: center;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--sidebar-link-arrow-color);
+    margin-right: 8px;
+  }
 
   &.active {
+    color: var(--sidebar-link-active-color);
     font-weight: bold;
   }
 }
 
-.TocHeading {
+.ItemLinkToc {
+  margin: 0 8px;
+}
+
+.ItemChildren {
+  border-left: 1px solid var(--border-color);
+  margin: 0 20px;
+}
+
+.ItemChild {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.ItemChildLink {
+  padding-left: 16px;
   display: flex;
-  line-height: 1.4;
-  margin: 5px 0;
   position: relative;
+  line-height: 1;
 
-  &[data-level='2'] {
-    padding: 0 20px;
-    &:before {
-      content: '-';
-      margin-right: 5px;
-      color: #979797;
-    }
-  }
-
-  &[data-level='3'] {
-    padding: 0 20px 0 40px;
-  }
-
-  &.router-link-exact-active {
+  &.active {
     font-weight: bold;
   }
 }
@@ -175,20 +196,18 @@ a {
 }
 
 .arrow {
+  width: 16px;
   display: inline-block;
-  position: relative;
-  top: -0.1em;
-  left: 0.5em;
-  &.right {
-    border-left: 6px solid #ccc;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
+  color: var(--sidebar-link-arrow-color);
+
+  & svg {
+    transition: all 0.15s ease;
   }
 
-  &.down {
-    border-top: 6px solid #ccc;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
+  &.open {
+    & svg {
+      transform: rotate(90deg);
+    }
   }
 }
 </style>
