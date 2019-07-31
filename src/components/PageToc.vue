@@ -51,10 +51,6 @@ export default {
     margin-left: 12px;
   }
 
-  &[data-level='3'] {
-    margin-left: 24px;
-  }
-
   &.router-link-exact-active {
     font-weight: bold;
     color: var(--sidebar-link-active-color);
