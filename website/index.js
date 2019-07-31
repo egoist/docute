@@ -107,7 +107,7 @@ new Docute({
   sidebar: [
     {
       title: 'Guide',
-      collapsable: true,
+      collapsable: false,
       children: [
         {
           title: 'Introduction',
@@ -141,7 +141,6 @@ new Docute({
     },
     {
       title: 'Advanced',
-      collapsable: true,
       children: [
         {
           title: 'Use With Bundlers',
@@ -155,7 +154,6 @@ new Docute({
     },
     {
       title: 'References',
-      collapsable: true,
       children: [
         {
           title: 'Options',
@@ -172,14 +170,8 @@ new Docute({
       ]
     },
     {
-      title: 'Misc',
-      collapsable: true,
-      children: [
-        {
-          title: 'Credits',
-          link: '/credits'
-        }
-      ]
+      title: 'Credits',
+      link: '/credits'
     }
   ],
   overrides: {
@@ -264,13 +256,8 @@ new Docute({
           ]
         },
         {
-          title: '其它',
-          children: [
-            {
-              title: '致谢',
-              link: '/zh/credits'
-            }
-          ]
+          title: '致谢',
+          link: '/zh/credits'
         }
       ]
     }

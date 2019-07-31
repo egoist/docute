@@ -63,20 +63,30 @@ interface NavItemLink {
 在侧边栏中显示的导航栏。
 
 ```ts
-interface SidebarItem {
-  title?: string
-  children: Array<ItemLink>
-}
+type SidebarItem = SingleItem | MultiItem
 
-interface ItemLink {
+interface SingleItem {
   title: string
   link: string
   // Whether to open the link in a new tab
   // Only works for external links
   // Defaults to `true`
   openInNewTab?: boolean
-  /* 是否显示 TOC，默认为 true */
-  toc: boolean
+}
+
+interface MultiItem {
+  title: string
+  children: Array<SingleItem>
+  /**
+   * Whether to show TOC
+   * Default to `true`
+   */
+  toc?: boolean
+  /**
+   * Whether to make children collapsable
+   * Default to `true` 
+   */
+  collapsable?: boolean
 }
 ```
 

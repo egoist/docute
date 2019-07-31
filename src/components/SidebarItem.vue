@@ -2,11 +2,10 @@
   <div :class="['SidebarItem', item.title && 'hasTitle']">
     <div
       class="ItemTitle"
-      v-if="item.title"
-      :class="{collapsable: Boolean(children)}"
+      v-if="item.title && children"
       @click="$emit('toggle')"
     >
-      <span v-if="children" class="arrow" :class="{open}">
+      <span v-if="item.collapsable !== false" class="arrow" :class="{open}">
         <svg
           width="6"
           height="10"
@@ -16,42 +15,38 @@
         >
           <path
             d="M1.4 8.56L4.67 5M1.4 1.23L4.66 4.7"
-            stroke="#999"
+            stroke="currentColor"
             stroke-linecap="square"
           />
-        </svg> </span
-      >{{ item.title }}
+        </svg>
+      </span>
+      {{ item.title }}
     </div>
-    <div class="ItemChildren" v-if="open">
+    <uni-link
+      class="ItemLink"
+      :class="{active: $route.path === item.link}"
+      v-if="item.title && item.link"
+      :to="item.link"
+      >{{ item.title }}</uni-link
+    >
+    <div class="ItemLinkToc" v-if="item.title && item.link">
+      <PageToc :link="item" />
+    </div>
+
+    <div
+      class="ItemChildren"
+      v-if="children && (open || item.collapsable === false)"
+    >
       <div class="ItemChild" v-for="(link, index) of children" :key="index">
         <uni-link
-          class="ItemLink"
+          class="ItemChildLink"
           :class="{active: $route.path === link.link}"
           :to="link.link"
           :openInNewTab="link.openInNewTab"
           :prefetchFiles="getPrefetchFiles(link.link)"
           >{{ link.title }}</uni-link
         >
-        <div
-          class="LinkToc"
-          v-if="
-            !$store.state.fetchingFile &&
-              link.toc !== false &&
-              link.link === $route.path &&
-              $store.state.page.headings &&
-              $store.state.page.headings.length > 0
-          "
-          :key="`toc-${index}`"
-        >
-          <router-link
-            class="TocHeading"
-            :to="{hash: heading.slug}"
-            :data-level="heading.level"
-            v-for="heading in $store.state.page.headings"
-            :key="heading.slug"
-            v-html="heading.text"
-          ></router-link>
-        </div>
+        <PageToc :link="link" />
       </div>
     </div>
   </div>
@@ -60,10 +55,12 @@
 <script>
 import {isExternalLink, getFileUrl, getFilenameByPath} from '../utils'
 import UniLink from './UniLink.vue'
+import PageToc from './PageToc.vue'
 
 export default {
   components: {
-    UniLink
+    UniLink,
+    PageToc
   },
   props: {
     item: {
@@ -83,7 +80,7 @@ export default {
   },
   computed: {
     children() {
-      return this.item.children || this.item.links || []
+      return this.item.children || this.item.links
     }
   },
   methods: {
@@ -131,14 +128,38 @@ export default {
   padding: 0 20px;
   margin-bottom: 10px;
   position: relative;
-  color: var(--sidebar-section-title-color);
-  text-transform: uppercase;
+  color: var(--sidebar-link-color);
+  user-select: none;
 
-  &.collapsable {
-    &:hover {
-      cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
+    color: var(--sidebar-link-active-color);
   }
+}
+
+.ItemLink {
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--sidebar-link-arrow-color);
+    margin-right: 8px;
+  }
+
+  &.active {
+    color: var(--sidebar-link-active-color);
+    font-weight: bold;
+  }
+}
+
+.ItemLinkToc {
+  margin: 0 8px;
 }
 
 .ItemChildren {
@@ -152,7 +173,7 @@ export default {
   }
 }
 
-.ItemLink {
+.ItemChildLink {
   padding: 0 12px;
   display: flex;
   position: relative;
@@ -160,35 +181,6 @@ export default {
 
   &.active {
     font-weight: bold;
-  }
-}
-
-.LinkToc {
-  border-left: 1px solid var(--border-color);
-  margin-left: 12px;
-  margin-top: 10px;
-}
-
-.TocHeading {
-  display: flex;
-  line-height: 1;
-  position: relative;
-
-  &:not(:last-child) {
-    margin-bottom: 8px;
-  }
-
-  &[data-level='2'] {
-    margin-left: 12px;
-  }
-
-  &[data-level='3'] {
-    margin-left: 24px;
-  }
-
-  &.router-link-exact-active {
-    font-weight: bold;
-    color: var(--sidebar-link-active-color);
   }
 }
 
@@ -200,6 +192,7 @@ a {
 .arrow {
   width: 12px;
   display: inline-block;
+  color: var(--sidebar-link-arrow-color);
 
   & svg {
     transition: all 0.15s ease;
