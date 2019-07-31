@@ -21,7 +21,7 @@
           />
         </svg>
       </span>
-      {{ item.title }}
+      <span>{{ item.title }}</span>
     </div>
     <uni-link
       class="ItemLink"
@@ -131,10 +131,15 @@ export default {
   position: relative;
   color: var(--sidebar-link-color);
   user-select: none;
+  font-size: 0;
 
   &.collapsable:hover {
     cursor: pointer;
     color: var(--sidebar-link-active-color);
+  }
+
+  & span {
+    font-size: 0.9rem;
   }
 }
 
@@ -175,7 +180,7 @@ export default {
 }
 
 .ItemChildLink {
-  padding: 0 12px;
+  padding-left: 16px;
   display: flex;
   position: relative;
   line-height: 1;
@@ -191,7 +196,7 @@ a {
 }
 
 .arrow {
-  width: 12px;
+  width: 16px;
   display: inline-block;
   color: var(--sidebar-link-arrow-color);
 
