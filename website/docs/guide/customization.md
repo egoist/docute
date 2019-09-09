@@ -1,6 +1,6 @@
 # Customization
 
-Cusotmizing Docute is as fun as playing with Lego bricks.
+Customizing Docute is as fun as playing with Lego bricks.
 
 ## Navbar
 
