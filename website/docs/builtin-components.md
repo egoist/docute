@@ -204,3 +204,87 @@ Your favorite fruit: {{ favoriteFruit }}
 A hack for using `<style>` and `<script>` tags Vue template.
 
 In general you don't need to use them directly, since we automatically convert `<style>` and `<script>` tags in Markdown to these components.
+
+
+## `<Tabs>`
+
+Window menu in tabs. If choosing codeBlock entire body is treated as code block. Some headings look bad when parsed as markdown. Pure html is supported if markdown is false. Pay attention to the fact that backticks are used for passing body arguments, and that there's no space between opening backtick and next character of body.
+
+| Prop | Type     | Default | Description |
+| ---- | -------- | ------- | ----------- |
+| all   | `array` | N/A     | Array of objects     |
+| all.title   | `string` | N/A     | Tab name    |
+| all.body   | `string` | N/A     | Tab body    |
+| all.codeBlock   | `string` | N/A     | Type of highlighting    |
+| all.markdown   | `boolean` | false     | Parse as markdown    |
+Example:
+
+```markdown
+<Tabs 
+  v-bind:all="[
+    {
+      title: 'mixed',
+      body: 
+`##### will equal 444
+\`\`\`js
+const a= 123
+const b = 321
+return a + b
+\`\`\`
+      `,
+      markdown: 'true',
+    },
+    {
+      title: 'markdown',
+      body: 
+`### asdf
+*sdf*`,
+      markdown: 'true',
+    },
+    {
+      title: 'javascript',
+      body: 
+`const a= 123
+const b = 321
+return a + b
+      `,
+      codeBlock: 'js',
+    },
+  ]"
+/>
+```
+
+<Tabs 
+  v-bind:all="[
+    {
+      title: 'mixed',
+      body: 
+`##### will equal 444
+\`\`\`js
+const a= 123
+const b = 321
+return a + b
+\`\`\`
+      `,
+      markdown: 'true',
+    },
+    {
+      title: 'markdown',
+      body: 
+`### asdf
+*sdf*`,
+      markdown: 'true',
+    },
+    {
+      title: 'javascript',
+      body: 
+`const a= 123
+const b = 321
+return a + b
+      `,
+      codeBlock: 'js',
+    },
+  ]"
+/>
+
+
