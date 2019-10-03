@@ -17,7 +17,6 @@ a {
 }
 
 .Content a {
-  color: var(--accent-color);
   &:hover {
     text-decoration: underline;
   }
@@ -33,7 +32,7 @@ a {
 }
 
 .Wrap {
-  max-width: 1060px;
+  max-width: 1180px;
 }
 
 .layout-wide .Wrap {

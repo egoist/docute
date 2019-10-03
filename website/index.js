@@ -38,7 +38,6 @@ const PatreonIcon = {
 new Docute({
   target: 'app',
   title: 'Docute',
-  layout: 'wide',
   highlight: ['typescript', 'bash', 'json', 'markdown'],
   plugins: [
     process.env.NODE_ENV === 'production' && googleAnalytics('UA-54857209-11')
@@ -262,7 +261,9 @@ new Docute({
     }
   },
   footer: `
-  &copy; ${new Date().getFullYear()} Made by <a href="https://egoist.sh">EGOIST</a> While Watching Anime.
+  <div style="border-top:1px solid var(--border-color);padding-top:30px;margin: 40px 0;color:#999999;font-size: .9rem;">
+  &copy; ${new Date().getFullYear()} Developed by <a href="https://egoist.sh" target="_blank">EGOIST</a>. Released under MIT license.
+  </div>
   `,
   banner: {
     template: html`

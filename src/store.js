@@ -45,7 +45,7 @@ const store = new Vuex.Store({
 
   mutations: {
     SET_CONFIG(state, config = {}) {
-      config.layout = config.layout || 'wide'
+      config.layout = config.layout || 'narrow'
       // TODO: remove `centerContent` in next major version
       if (config.centerContent) {
         config.layout = 'narrow'

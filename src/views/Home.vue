@@ -184,8 +184,10 @@ export default {
 <style scoped>
 .Main {
   padding-left: var(--sidebar-width);
-  padding-top: calc(var(--header-height) + 30px);
+  padding-top: calc(var(--header-height) + 40px);
   padding-bottom: 2rem;
+  background: var(--main-background);
+  min-height: 100vh;
 
   @media screen and (max-width: 768px) {
     padding-left: 0;

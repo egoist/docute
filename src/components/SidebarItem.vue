@@ -116,7 +116,7 @@ export default {
 
   font-size: 0.875rem;
 
-  & a {
+  & /deep/ a {
     color: var(--sidebar-link-color);
 
     &:hover {

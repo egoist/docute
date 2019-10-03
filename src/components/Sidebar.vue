@@ -14,7 +14,7 @@
         v-for="(item, index) in $store.getters.sidebar"
         :key="index"
         :item="item"
-        :open="openItems.indexOf(index) !== -1"
+        :open="closedItems.indexOf(index) === -1"
         @toggle="toggleItem(index)"
       />
     </div>
@@ -35,7 +35,7 @@ export default {
   },
   data() {
     return {
-      openItems: []
+      closedItems: []
     }
   },
   watch: {
@@ -52,15 +52,15 @@ export default {
   },
   methods: {
     openItem(index) {
-      if (this.openItems.indexOf(index) === -1) {
-        this.openItems.push(index)
+      if (this.closedItems.indexOf(index) > -1) {
+        this.closedItems = this.closedItems.filter(v => v !== index)
       }
     },
     toggleItem(index) {
-      if (this.openItems.indexOf(index) === -1) {
-        this.openItems.push(index)
+      if (this.closedItems.indexOf(index) === -1) {
+        this.closedItems.push(index)
       } else {
-        this.openItems = this.openItems.filter(v => v !== index)
+        this.closedItems = this.closedItems.filter(v => v !== index)
       }
     },
     getCurrentIndex(currentPath, sidebarItems) {
@@ -91,9 +91,8 @@ export default {
   bottom: 0;
   z-index: 9;
   overflow-y: auto;
-  padding: 30px 0;
+  padding: 40px 0 30px 0;
   word-break: break-word;
-  border-right: 1px solid var(--border-color);
 
   & a {
     text-decoration: none;
@@ -105,6 +104,8 @@ export default {
     transform: translateX(-100%);
     width: 80%;
     transition: transform 0.5s cubic-bezier(0.5, 0.32, 0.01, 1);
+    padding: 30px 0;
+    border-right: 1px solid var(--border-color);
 
     &.isShown {
       transform: translateX(0);

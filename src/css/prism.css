@@ -1,120 +1,89 @@
+
+/* https://github.com/SaraVieira/prism-theme-night-owl */
+
 .token.comment,
-.token.block-comment,
 .token.prolog,
-.token.doctype,
 .token.cdata {
-	color: #7D8B99;
+  color: rgb(99, 119, 119);
+  font-style: italic;
 }
 
 .token.punctuation {
-	color: #5F6364;
-}
-
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.function-name,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	color: #c92c2c;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.function,
-.token.builtin,
-.token.inserted {
-	color: #2f9c0a;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.token.variable {
-	color: #a67f59;
-	background: transparent;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword,
-.token.class-name {
-	color: #1990b8;
-}
-
-.token.regex,
-.token.important {
-	color: #e90;
-}
-
-.language-css .token.string,
-.style .token.string {
-	color: #a67f59;
-	background: rgba(255, 255, 255, 0.5);
-}
-
-.token.important {
-	font-weight: normal;
-}
-
-.token.bold {
-	font-weight: bold;
-}
-.token.italic {
-	font-style: italic;
-}
-
-.token.entity {
-	cursor: help;
+  color: rgb(199, 146, 234);
 }
 
 .namespace {
-	opacity: .7;
+  color: rgb(178, 204, 214);
 }
 
-@media screen and (max-width: 767px) {
-	pre[class*="language-"]:before,
-	pre[class*="language-"]:after {
-		bottom: 14px;
-		box-shadow: none;
-	}
-
+.token.deleted {
+  color: rgba(239, 83, 80, 0.56);
+  font-style: italic;
 }
 
-/* Plugin styles */
-.token.tab:not(:empty):before,
-.token.cr:before,
-.token.lf:before {
-	color: #e0d7d1;
+.token.symbol,
+.token.property {
+  color: rgb(128, 203, 196);
 }
 
-/* Plugin styles: Line Numbers */
-pre[class*="language-"].line-numbers.line-numbers {
-	padding-left: 0;
+.token.tag,
+.token.operator,
+.token.keyword {
+  color: rgb(127, 219, 202);
 }
 
-pre[class*="language-"].line-numbers.line-numbers code {
-	padding-left: 3.8em;
+.token.boolean {
+  color: rgb(255, 88, 116);
 }
 
-pre[class*="language-"].line-numbers.line-numbers .line-numbers-rows {
-	left: 0;
+.token.number {
+  color: rgb(247, 140, 108);
 }
 
-/* Plugin styles: Line Highlight */
-pre[class*="language-"][data-line] {
-	padding-top: 0;
-	padding-bottom: 0;
-	padding-left: 0;
+.token.constant,
+.token.function,
+.token.builtin,
+.token.char {
+  color: rgb(130, 170, 255);
 }
-pre[data-line] code {
-	position: relative;
-	padding-left: 4em;
+
+.token.selector,
+.token.doctype {
+  color: rgb(199, 146, 234);
+  font-style: italic;
 }
-pre .line-highlight {
-	margin-top: 0;
+
+.token.attr-name,
+.token.inserted {
+  color: rgb(173, 219, 103);
+  font-style: italic;
+}
+
+.token.string,
+.token.url,
+.token.entity,
+.language-css .token.string,
+.style .token.string {
+  color: rgb(173, 219, 103);
+}
+
+.token.class-name,
+.token.atrule,
+.token.attr-value {
+  color: rgb(255, 203, 139);
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: rgb(214, 222, 235);
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
 }
