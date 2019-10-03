@@ -78,7 +78,7 @@ export default {
   }
 
   & > /deep/ a {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     line-height: 1.4;
     height: 100%;
@@ -96,6 +96,7 @@ export default {
     }
 
     &.router-link-exact-active {
+      color: var(--accent-color);
       &:after {
         background-color: var(--nav-link-border-color);
       }
