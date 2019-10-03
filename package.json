@@ -17,7 +17,7 @@
   "dependencies": {
     "jump.js": "^1.0.2",
     "loadjs": "^3.5.4",
-    "marked": "^0.6.1",
+    "marked": "^0.7.0",
     "medium-zoom": "^1.0.2",
     "prismjs": "^1.15.0",
     "throttle-debounce": "^2.1.0",
@@ -35,7 +35,7 @@
     "@semantic-release/git": "^7.0.5",
     "babel-preset-minimal": "^0.1.1",
     "babel-preset-power-assert": "^3.0.0",
-    "bili": "^3.4.2",
+    "bili": "^4.8.1",
     "commitizen": "^3.0.5",
     "cz-conventional-changelog": "^2.1.0",
     "docute-google-analytics": "^1.1.0",
@@ -102,7 +102,7 @@
   },
   "lint-staged": {
     "*.{js,css,md,vue}": [
-      "yarn lint --fix",
+      "xo --fix",
       "git add"
     ]
   },
