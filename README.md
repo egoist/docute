@@ -1,4 +1,4 @@
-## ATTENTION: this project no longer actively maintained (I still push some code once in a while), if you want to see improvements on this project, please consider [sponsoring me](https://github.com/sponsors/egoist).
+## ATTENTION: this project is no longer actively maintained (I still push some code once in a while), if you want to see improvements on this project, please consider [sponsoring me](https://github.com/sponsors/egoist).
 
 
 # Docute
