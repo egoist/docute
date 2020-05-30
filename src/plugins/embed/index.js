@@ -16,10 +16,7 @@ async function getFile(url, api, type) {
   return url
 }
 
-function compileMedia(type, url, api, codeType = '', ...args) {
-  const attributes = args ? args[0].join(' ') : ''
-  const overRideAttrs = String(codeType) + ' ' + attributes
-
+function compileMedia(type, url, api, codeType = '') {
   switch (type) {
     case 'fragment':
       return getFile(url, api).then(inlineRender)
