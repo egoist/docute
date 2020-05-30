@@ -23,12 +23,6 @@ function compileMedia(type, url, api, codeType = '', ...args) {
   switch (type) {
     case 'fragment':
       return getFile(url, api).then(inlineRender)
-    case 'iframe':
-      return `<iframe src="${url}" width=100% height=400 ${overRideAttrs}></iframe>`
-    case 'video':
-      return `<video src="${url}" controls width=100% ${overRideAttrs}>Outdated browser version, no video</video>`
-    case 'audio':
-      return `<audio src="${url}" controls ${overRideAttrs}>Outdated browser version, no audio</audio>`
     case 'code':
       return getFile(url, api, type)
         .then(x => `\`\`\`${codeType}\n${x}\n\`\`\``)
