@@ -112,9 +112,7 @@ export default {
           })
         ],
         name: 'PageContent',
-        template: `<div class="page-content">${
-          this.$store.state.page.content
-        }</div>`
+        template: `<div class="page-content">${this.$store.state.page.content}</div>`
       }
 
       hooks.process('extendMarkdownComponent', component)

@@ -6,9 +6,7 @@ export default opts => {
       opts = fn()
     } catch (error) {
       console.error(
-        `You're using invalid options for code fences, it must be JSON or JS object!\n${
-          error.message
-        }`
+        `You're using invalid options for code fences, it must be JSON or JS object!\n${error.message}`
       )
     }
   }
