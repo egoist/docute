@@ -25,7 +25,7 @@ function compileMedia(type, url, api, codeType = '') {
         .then(x => `\`\`\`${codeType}\n${x}\n\`\`\``)
         .then(inlineRender)
     default:
-      return <h1>Missing embed kind</h1>
+      return 'Missing embed kind'
   }
 }
 
