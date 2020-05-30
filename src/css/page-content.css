@@ -94,13 +94,16 @@
       font-size: 12px;
       color: #cacaca;
     }
+
+    & code {
+      color: var(--code-block-text-color);
+    }
   }
 
   & pre,
   & .code-mask {
     overflow: auto;
     position: relative;
-    font-size: 13px;
     margin: 0;
     z-index: 2;
     font-family: var(--code-font);
@@ -111,7 +114,7 @@
       margin: 0;
       padding: 0;
       border: none;
-      font-size: 100%;
+      font-size: 1em;
       background: transparent;
     }
 

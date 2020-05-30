@@ -4,10 +4,12 @@ import {isExternalLink} from '../utils'
 export default {
   functional: true,
 
-  render(h, {data, children}) {
+  props: ['openInNewTab', 'externalLinkIcon'],
+
+  render(h, {data, children, props: {openInNewTab, externalLinkIcon}}) {
     const attrs = {...data.attrs}
-    const {to, openInNewTab} = attrs
-    delete attrs.openInNewTab
+    const {to} = attrs
+
     if (isExternalLink(to)) {
       delete attrs.to
       delete attrs.prefetchFiles
@@ -24,7 +26,7 @@ export default {
         },
         [
           ...children,
-          openInNewTab === false
+          openInNewTab === false || externalLinkIcon === false
             ? null
             : h('external-link-icon', {class: 'external-link-icon'})
         ]

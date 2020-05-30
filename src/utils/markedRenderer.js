@@ -21,7 +21,7 @@ export default hooks => {
       return ''
     }
 
-    if (level === 2 || level === 3) {
+    if (level === 2) {
       env.headings.push({
         level,
         raw,

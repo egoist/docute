@@ -81,6 +81,7 @@ export default {
   z-index: 33;
   border-bottom: 1px solid var(--border-color);
   background: var(--header-background);
+  color: var(--header-text-color);
 
   @media print {
     position: static;
@@ -100,7 +101,7 @@ export default {
   white-space: nowrap;
 
   & a {
-    color: var(--text-color);
+    color: inherit;
     text-decoration: none;
   }
 }
@@ -126,7 +127,7 @@ export default {
   position: absolute;
   right: 20px;
   top: 0;
-  height: calc(var(--header-height) - 1px);
+  height: 100%;
   background: var(--header-background);
 
   @media print {

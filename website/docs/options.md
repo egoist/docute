@@ -62,21 +62,30 @@ interface NavItemLink {
 An array of navigation items to display at sidebar.
 
 ```ts
-interface SidebarItem {
-  title?: string
-  collapsable?: boolean
-  children: Array<SidebarItemLink>
-}
+type SidebarItem = SingleItem | MultiItem
 
-interface SidebarItemLink {
+interface SingleItem {
   title: string
   link: string
   // Whether to open the link in a new tab
   // Only works for external links
   // Defaults to `true`
   openInNewTab?: boolean
-  /* Whether to show TOC, true by default */
+}
+
+interface MultiItem {
+  title: string
+  children: Array<SingleItem>
+  /**
+   * Whether to show TOC
+   * Default to `true`
+   */
   toc?: boolean
+  /**
+   * Whether to make children collapsable
+   * Default to `true` 
+   */
+  collapsable?: boolean
 }
 ```
 

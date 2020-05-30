@@ -1,3 +1,5 @@
+## ATTENTION: this project is no longer actively maintained (I still push some code once in a while), if you want to see improvements on this project, please consider [sponsoring me](https://github.com/sponsors/egoist).
+
 
 # Docute
 
@@ -14,9 +16,8 @@ Effortless documentation, done right.
 
 ## Documentation
 
-Check out: https://docute.org
-
-Are you looking for the v3 docs? See [here](https://v3.docute.org).
+- **v4 (latest) docs**: https://docute.org
+- v3 (legacy) docs: https://v3.docute.org
 
 ## Resources
 

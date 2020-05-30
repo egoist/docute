@@ -4,41 +4,15 @@ import Docute from '../src'
 import prismLanguages from '../src/utils/prismLanguages'
 import ColorBox from './components/ColorBox.vue'
 
-const PatreonIcon = {
+const SponsorIcon = {
   template: html`
-    <svg
-      width="569px"
-      height="546px"
-      viewBox="0 0 569 546"
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <title>Patreon logo</title>
-      <g>
-        <circle
-          fill="rgb(249, 104, 84)"
-          id="Oval"
-          cx="362.589996"
-          cy="204.589996"
-          r="204.589996"
-        ></circle>
-        <rect
-          fill="rgb(5, 45, 73)"
-          id="Rectangle"
-          x="0"
-          y="0"
-          width="100"
-          height="545.799988"
-        ></rect>
-      </g>
-    </svg>
+  <svg style="color:#ea4aaa;" fill="currentColor" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.727 3C7.091 3 6.001 4.65 6.001 4.65S4.909 3 3.273 3C1.636 3 0 4.1 0 6.3 0 9.6 6 14 6 14s6-4.4 6-7.7C12 4.1 10.364 3 8.727 3z"></path></svg>
   `
 }
 
 new Docute({
   target: 'app',
   title: 'Docute',
-  layout: 'wide',
   highlight: ['typescript', 'bash', 'json', 'markdown'],
   plugins: [
     process.env.NODE_ENV === 'production' && googleAnalytics('UA-54857209-11')
@@ -107,7 +81,6 @@ new Docute({
   sidebar: [
     {
       title: 'Guide',
-      collapsable: true,
       children: [
         {
           title: 'Introduction',
@@ -145,7 +118,6 @@ new Docute({
     },
     {
       title: 'Advanced',
-      collapsable: true,
       children: [
         {
           title: 'Use With Bundlers',
@@ -159,7 +131,6 @@ new Docute({
     },
     {
       title: 'References',
-      collapsable: true,
       children: [
         {
           title: 'Options',
@@ -176,14 +147,8 @@ new Docute({
       ]
     },
     {
-      title: 'Misc',
-      collapsable: true,
-      children: [
-        {
-          title: 'Credits',
-          link: '/credits'
-        }
-      ]
+      title: 'Credits',
+      link: '/credits'
     }
   ],
   overrides: {
@@ -268,33 +233,30 @@ new Docute({
           ]
         },
         {
-          title: '其它',
-          children: [
-            {
-              title: '致谢',
-              link: '/zh/credits'
-            }
-          ]
+          title: '致谢',
+          link: '/zh/credits'
         }
       ]
     }
   },
   footer: `
-  &copy; ${new Date().getFullYear()} Made by <a href="https://egoist.sh">EGOIST</a> While Watching Anime.
+  <div style="border-top:1px solid var(--border-color);padding-top:30px;margin: 40px 0;color:#999999;font-size: .9rem;">
+  &copy; ${new Date().getFullYear()} Developed by <a href="https://egoist.sh" target="_blank">EGOIST</a>. Released under MIT license.
+  </div>
   `,
   banner: {
     template: html`
       <div class="docute-banner">
         <note :label="false"
-          ><PatreonIcon width="16" height="16" style="position:relative;top:2px;margin-right:8px;" />Support Docute development by
-          <a href="https://patreon.com/egoist" target="_blank"
-            >becoming a patron or one-time donation <ExternalLinkIcon /></a
-          >.</note
+          ><SponsorIcon width="16" height="16" style="position:relative;top:2px;margin-right:8px;" />Sponsor the author on
+          <a href="https://github.com/sponsors/egoist" target="_blank"
+            >GitHub<ExternalLinkIcon /></a
+          > to support Docute.</note
         >
       </div>
     `,
     components: {
-      PatreonIcon
+      SponsorIcon
     }
   }
 })

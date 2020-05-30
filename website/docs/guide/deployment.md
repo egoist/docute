@@ -2,7 +2,15 @@
 
 Keep in mind, it's just a static HTML file that can be served anywhere.
 
-## Render <Badge type="success">Recommended</Badge>
+## Vercel <Badge type="success">Recommended</Badge>
+
+[Vercel](https://zeit.co) is a platform for Global Static, Jamstack and Serverless Deployments.
+
+On the Vercel Dashboard, you can import a project from Git Repository, and the only field you need to fill is `output directory`, which should be the directory to your `index.html`.
+
+<ImageZoom src="https://user-images.githubusercontent.com/8784712/81292070-88f14580-909d-11ea-9c69-ed9d1854cad2.png" alt="vercel deploy" border />
+
+## Render
 
 Render offers [free static site hosting](https://render.com/docs/static-sites) with fully managed SSL, a global CDN and continuous auto deploys from GitHub.
 
@@ -26,26 +34,8 @@ The easiest way to use GitHub Pages is to populate all your files inside `./docs
 
 However you can still use `gh-pages` branch or even `master` branch to serve your docs, it all depends on your needs.
 
-## ZEIT Now
+<Note type="warning">
 
-[ZEIT Now](https://zeit.co/now) is a platform for Global Serverless Deployments, it's also perfectly suitable for deploying a static website with or without build process.
+You need to populate a `.nojekyll` file (with empty content) in that folder to disable GitHub Pages' default behaviors for the Jekyll framework (which we don't use at all).
 
-Assuming you have your docs in `./docs` folder, to deploy it you can simply populate a `now.json` in your project:
-
-```json
-{
-  "version": 2,
-  "builds": [
-    {
-      "src": "docs/**",
-      "use": "@now/static"
-    }
-  ]
-}
-```
-
-Then [install Now](https://zeit.co/docs/v2/getting-started/installation/) on your machine.
-
-After that, you can run the command `now` in your project and you're all set.
-
-Make sure to check out Now's [GitHub Integration](https://zeit.co/docs/v2/integrations/now-for-github/) if you want automatic deployments on every push and pull request.
+</Note>

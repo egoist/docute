@@ -3,7 +3,8 @@
     <div class="header-nav-item" v-for="(item, index) in nav" :key="index">
       <div class="dropdown-wrapper" v-if="item.children">
         <span class="dropdown-trigger">
-          {{ item.title }} <span class="arrow"></span>
+          {{ item.title }}
+          <span class="arrow"></span>
         </span>
         <ul class="dropdown-list" v-if="item.children">
           <li
@@ -14,6 +15,7 @@
             <uni-link
               :to="childItem.link"
               :openInNewTab="childItem.openInNewTab"
+              :externalLinkIcon="false"
               >{{ childItem.title }}</uni-link
             >
           </li>
@@ -24,6 +26,7 @@
         v-if="!item.children"
         :to="item.link"
         :openInNewTab="item.openInNewTab"
+        :externalLinkIcon="false"
         >{{ item.title }}</uni-link
       >
     </div>
@@ -56,7 +59,7 @@ export default {
 .header-nav {
   display: flex;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
 
   @media (max-width: 768px) {
     display: none;
@@ -68,21 +71,35 @@ export default {
 }
 
 .header-nav-item {
+  height: 100%;
+
   &:not(:first-child) {
     margin-left: 25px;
   }
 
   & > /deep/ a {
-    border-bottom: 2px solid transparent;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     line-height: 1.4;
+    height: 100%;
+    position: relative;
 
-    &:not(.is-external-link):hover {
-      border-color: var(--nav-link-hover-border-color);
+    &:after {
+      content: '';
+      height: 2px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
     }
 
-    &:not(.is-external-link).router-link-exact-active {
-      border-color: var(--accent-color);
+    &.router-link-exact-active {
+      color: var(--accent-color);
+      &:after {
+        background-color: var(--nav-link-border-color);
+      }
     }
   }
 }

@@ -5,7 +5,7 @@ You don't have to use a bundler in order to use Docute, however if you want, you
 First you need to install Docute as a dependency in your project:
 
 ```bash
-yarn add docute --dev
+npm install docute
 ```
 
 Then see below for the usage with your bundler of choice.

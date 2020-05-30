@@ -583,7 +583,11 @@ inline.autolink = edit(inline.autolink)
   .replace('email', inline._email)
   .getRegex()
 
-inline._attribute = /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/
+// @modified
+// old
+// inline._attribute = /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/
+// new for support `@` attribute names
+inline._attribute = /\s+[a-zA-Z@:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/
 
 inline.tag = edit(inline.tag)
   .replace('comment', block._comment)
