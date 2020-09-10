@@ -25,13 +25,13 @@
   & h2 {
     font-size: 2rem;
     border-bottom: 1px solid var(--border-color);
-    margin-top: 7rem;
+    margin-top: 2em;
     padding-bottom: 5px;
   }
 
   & h3 {
     font-size: 1.7rem;
-    margin: 40px 0 30px 0;
+    margin: 50px 0 30px 0;
   }
 
   & h4 {
@@ -179,7 +179,7 @@
   }
 
   & img {
-    max-width: 100%;
+    max-width: 85%;
   }
 
   & blockquote {

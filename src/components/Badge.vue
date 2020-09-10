@@ -24,11 +24,11 @@ export default {
 <style>
 .badge {
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
   font-size: 12px;
   height: 18px;
   line-height: 18px;
-  border-radius: 9px;
+  border-radius: 4px;
   padding: 0 6px;
   color: #fff;
   margin-right: 5px;

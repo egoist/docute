@@ -24,8 +24,8 @@
           <InjectedComponents position="content:start" />
           <component v-if="pageTitle" :is="MarkdownTitle" class="page-title" />
           <component :class="{'has-page-title': pageTitle}" :is="PageContent" />
-          <EditLink />
-          <PrevNextLinks />
+          <!-- <EditLink /> -->
+          <!-- <PrevNextLinks /> -->
           <InjectedComponents position="content:end" />
         </div>
       </div>

@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg viewBox="0 0 832 584" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs id="defs_block">
+    <filter height="1.504" id="filter_blur" inkspace:collect="always" width="1.1575" x="-0.07875" y="-0.252">
+      <feGaussianBlur id="feGaussianBlur3780" inkspace:collect="always" stdDeviation="4.2" />
+    </filter>
+  </defs>
+  <title>blockdiag</title>
+  <desc />
+  <rect fill="rgb(0,0,0)" height="421" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="8" x="127" y="141" />
+  <rect fill="rgb(0,0,0)" height="180" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="8" x="319" y="141" />
+  <rect fill="rgb(0,0,0)" height="46" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="8" x="319" y="516" />
+  <rect fill="rgb(0,0,0)" height="50" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="8" x="511" y="206" />
+  <rect fill="rgb(0,0,0)" height="111" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="8" x="511" y="451" />
+  <rect fill="rgb(0,0,0)" height="176" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="8" x="703" y="386" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="67" y="46" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="259" y="46" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="451" y="46" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="643" y="46" />
+  <path d="M 128 80 L 128 572" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="8 4" />
+  <rect fill="moccasin" height="421" stroke="rgb(0,0,0)" width="8" x="124" y="135" />
+  <path d="M 320 80 L 320 572" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="8 4" />
+  <rect fill="moccasin" height="180" stroke="rgb(0,0,0)" width="8" x="316" y="135" />
+  <rect fill="moccasin" height="46" stroke="rgb(0,0,0)" width="8" x="316" y="510" />
+  <path d="M 512 80 L 512 572" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="8 4" />
+  <rect fill="moccasin" height="50" stroke="rgb(0,0,0)" width="8" x="508" y="200" />
+  <rect fill="moccasin" height="111" stroke="rgb(0,0,0)" width="8" x="508" y="445" />
+  <path d="M 704 80 L 704 572" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="8 4" />
+  <rect fill="moccasin" height="176" stroke="rgb(0,0,0)" width="8" x="700" y="380" />
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="64" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="31" x="128" y="66">Buyer</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="256" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="49" x="320" y="66">Merchant</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="448" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="85" x="512" y="66">PASHA Bank API</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="640" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="73" x="704" y="66">Payment Page</text>
+  <path d="M 136 135 L 312 135" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="304,131 312,135 304,139" stroke="rgb(0,0,0)" />
+  <path d="M 328 200 L 504 200" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="496,196 504,200 496,204" stroke="rgb(0,0,0)" />
+  <path d="M 328 250 L 504 250" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <polygon fill="rgb(0,0,0)" points="336,246 328,250 336,254" stroke="rgb(0,0,0)" />
+  <path d="M 136 315 L 312 315" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <polygon fill="rgb(0,0,0)" points="144,311 136,315 144,319" stroke="rgb(0,0,0)" />
+  <path d="M 136 380 L 696 380" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="688,376 696,380 688,384" stroke="rgb(0,0,0)" />
+  <path d="M 520 445 L 696 445" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <polygon fill="rgb(0,0,0)" points="528,441 520,445 528,449" stroke="rgb(0,0,0)" />
+  <path d="M 328 510 L 504 510" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <polygon fill="rgb(0,0,0)" points="336,506 328,510 336,514" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="97" x="188" y="133">Requests product</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="115" x="389" y="198">POST /payment-links</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="97" x="263" y="313">Link for payment</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="158" x="219" y="378">Redirected to payment page</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="103" x="644" y="443">Payment completed</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="122" x="443" y="508">Callback with status</text>
+</svg>

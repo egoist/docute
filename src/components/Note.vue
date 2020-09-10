@@ -28,8 +28,9 @@ export default {
   line-height: 1;
   padding: 15px 20px;
   border-radius: 4px;
-  border: 1px solid var(--border-color);
+  /* border: 1px solid var(--border-color); */
   margin: 20px 0;
+  background-color: var(--note-background);
 
   & > *:not(.note-label) {
     line-height: 1.7;
@@ -44,30 +45,34 @@ export default {
   }
 
   &.is-tip {
-    border-color: var(--tip-color);
+    border-color: var(--note-tip-background);
+    background-color: var(--note-tip-background);
     & .note-label {
-      color: var(--tip-color);
+      color: var(--note-tip-dark);
     }
   }
 
   &.is-danger {
-    border-color: var(--danger-color);
+    border-color: var(--note-danger-background);
+    background-color: var(--note-danger-background);
     & .note-label {
-      color: var(--danger-color);
+      color: var(--note-danger-dark);
     }
   }
 
   &.is-warning {
-    border-color: var(--warning-color);
+    border-color: var(--note-warning-background);
+    background-color: var(--note-warning-background);
     & .note-label {
-      color: var(--warning-color);
+      color: var(--note-warning-dark);
     }
   }
 
   &.is-success {
-    border-color: var(--success-color);
+    border-color: var(--note-success-background);
+    background-color: var(--note-success-background);
     & .note-label {
-      color: var(--success-color);
+      color: var(--note-success-dark);
     }
   }
 }

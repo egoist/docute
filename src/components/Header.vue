@@ -5,7 +5,10 @@
         <div class="header-left">
           <h1 class="site-title">
             <SidebarToggle />
-            <router-link to="/"> <component :is="Logo" /> </router-link>
+            <router-link to="/">
+              <b><component :is="Logo"/></b>
+              <span class="text-muted">Developer</span>
+            </router-link>
           </h1>
           <HeaderNav v-if="leftNav" :nav="leftNav" />
         </div>
@@ -139,5 +142,14 @@ export default {
       display: flex;
     }
   }
+}
+.text-muted {
+  color: var(--muted-text-color);
+}
+.text-muted::before {
+  content: ' ';
+  border-left: 1px solid var(--border-color);
+  margin: 0px 10px 0px 5px;
+  vertical-align: -1px;
 }
 </style>

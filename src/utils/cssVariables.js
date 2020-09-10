@@ -4,6 +4,7 @@ const defaultCssVariables = {
   headerBackground: '#fff',
   headerTextColor: 'var(--text-color)',
   textColor: '#000',
+  mutedTextColor: '#444',
   linkColor: 'var(--accent-color)',
   sidebarWidth: '280px',
   sidebarBackground: 'var(--page-background)',
@@ -26,8 +27,8 @@ const defaultCssVariables = {
   codeBlockShadowWidth: '0px',
   highlightedLineBackground: '#022a4b',
   highlightedLineBorderColor: '#ffa7c4',
-  inlineCodeColor: 'rgb(116, 66, 16)',
-  inlineCodeBackground: 'rgb(254, 252, 191)',
+  inlineCodeColor: '#000',
+  inlineCodeBackground: '#e5e5e5',
   loaderPrimaryColor: '#f3f3f3',
   loaderSecondaryColor: '#ecebeb',
   tableHeaderBackground: '#fafafa',
@@ -36,7 +37,16 @@ const defaultCssVariables = {
   searchIconColor: '#999',
   searchFocusBorderColor: '#ccc',
   searchFocusIconColor: '#333',
-  searchResultHoverBackground: '#f9f9f9'
+  searchResultHoverBackground: '#f9f9f9',
+  noteSuccessBackground: '#d2f9d2',
+  noteSuccessDark: '#094409',
+  noteBackground: '#eee',
+  noteWarningBackground: '#fff1cc',
+  noteWarningDark: '#664b00',
+  noteDangerBackground: '#ffdacc',
+  noteDangerDark: '#651b01',
+  noteTipBackground: '#e0f2ff',
+  noteTipDark: '#002b4d'
 }
 
 const darkCssVariables = {
@@ -45,6 +55,7 @@ const darkCssVariables = {
   sidebarLinkColor: 'var(--text-color)',
   sidebarLinkActiveColor: 'var(--text-color)',
   textColor: 'hsla(0,0%,100%,0.88)',
+  mutedTextColor: '#ccc',
   pageBackground: '#2f3136',
   navLinkColor: 'var(--text-color)',
   borderColor: '#3e4147',
@@ -62,7 +73,16 @@ const darkCssVariables = {
   searchFocusBorderColor: '#999',
   searchFocusIconColor: '#ccc',
   searchResultBackground: '#27292f',
-  searchResultHoverBackground: '#1e2025'
+  searchResultHoverBackground: '#1e2025',
+  noteBackground: '#242424',
+  noteSuccessBackground: '#094409',
+  noteSuccessDark: '#d2f9d2',
+  noteWarningBackground: '#664b00',
+  noteWarningDark: '#fff1cc',
+  noteDangerBackground: '#651b01',
+  noteDangerDark: '#ffdacc',
+  noteTipBackground: '#002b4d',
+  noteTipDark: '#a3d7ff'
 }
 
 export {defaultCssVariables, darkCssVariables}
