@@ -77,7 +77,7 @@ If you care about SEO, you may like using [presite](https://github.com/egoist/pr
 
 [Docsify](https://docsify.js.org/#/) and Docute are pretty much the same, but with different UI and different usages.
 
-Docute (60kB) is 3 times bigger than Docisfy (20kB), because we use Vue, Vue Router and Vuex while Docsify uses vanilla JavaScript under the hood.
+Docute (60kB) is 3 times bigger than Docsify (20kB), because we use Vue, Vue Router and Vuex while Docsify uses vanilla JavaScript under the hood.
 
 ## Browser Compatibility
 
