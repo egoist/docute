@@ -16,8 +16,8 @@ Effortless documentation, done right.
 
 ## Documentation
 
-- **v4 (latest) docs**: https://docute.org
-- v3 (legacy) docs: https://v3.docute.org
+- **v4 (latest) docs**: https://docute.egoist.sh
+- v3 (legacy) docs: https://docute3.egoist.sh
 
 ## Resources
 
