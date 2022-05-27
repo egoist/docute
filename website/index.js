@@ -65,7 +65,7 @@ new Docute({
       link: '/'
     },
     v3: {
-      link: 'https://v3.docute.org'
+      link: 'https://docute3.egoist.sh'
     }
   },
   nav: [
