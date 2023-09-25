@@ -16,8 +16,8 @@ Effortless documentation, done right.
 
 ## Documentation
 
-- **v4 (latest) docs**: https://docute.egoist.sh
-- v3 (legacy) docs: https://docute3.egoist.sh
+- **v4 (latest) docs**: https://docute.egoist.dev
+- v3 (legacy) docs: https://docute3.egoist.dev
 
 ## Resources
 
@@ -37,4 +37,4 @@ Effortless documentation, done right.
 **Docute** © [EGOIST](https://github.com/egoist), Released under the [MIT](./LICENSE) License.<br>
 Authored and maintained by EGOIST with help from contributors ([list](https://github.com/egoist/docute/contributors)).
 
-> [Website](https://egoist.sh) · GitHub [@EGOIST](https://github.com/egoist) · Twitter [@_egoistlily](https://twitter.com/_egoistlily)
+> [Website](https://egoist.dev) · GitHub [@EGOIST](https://github.com/egoist) · Twitter [@localhost_5173](https://twitter.com/localhost_5173)
