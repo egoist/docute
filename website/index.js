@@ -107,6 +107,10 @@ new Docute({
           link: '/guide/plugin'
         },
         {
+          title: 'Embed',
+          link: '/guide/embed'
+        },
+        {
           title: 'Deployment',
           link: '/guide/deployment'
         }

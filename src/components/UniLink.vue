@@ -6,14 +6,7 @@ export default {
 
   props: ['openInNewTab', 'externalLinkIcon'],
 
-  render(
-    h,
-    {
-      data,
-      children,
-      props: {openInNewTab, externalLinkIcon}
-    }
-  ) {
+  render(h, {data, children, props: {openInNewTab, externalLinkIcon}}) {
     const attrs = {...data.attrs}
     const {to} = attrs
 
