@@ -65,7 +65,7 @@ new Docute({
       link: '/'
     },
     v3: {
-      link: 'https://docute3.egoist.sh'
+      link: 'https://docute3.egoist.dev'
     }
   },
   nav: [
@@ -237,7 +237,7 @@ new Docute({
   },
   footer: `
   <div style="border-top:1px solid var(--border-color);padding-top:30px;margin: 40px 0;color:#999999;font-size: .9rem;">
-  &copy; ${new Date().getFullYear()} Developed by <a href="https://egoist.sh" target="_blank">EGOIST</a>. Released under MIT license.
+  &copy; ${new Date().getFullYear()} Developed by <a href="https://egoist.dev" target="_blank">EGOIST</a>. Released under MIT license.
   </div>
   `,
   banner: {
