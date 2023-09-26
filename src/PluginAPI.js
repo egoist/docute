@@ -58,4 +58,33 @@ export default class PluginAPI {
     this.search.enabled = true
     return this
   }
+
+  enableLocalSearch() {
+    const entries = []
+    for (let x = 0; x < this.store.getters.sidebar.length; x++) {
+      const obj = this.store.getters.sidebar[x]
+      if (obj && obj.title && obj.link) {
+        entries.push({
+          title: obj.title,
+          link: obj.link
+        })
+      }
+      if (obj.children) {
+        for (let y = 0; y < obj.children.length; y++) {
+          const obj2 = obj.children[y]
+          entries.push(obj2)
+        }
+      }
+    }
+
+    this.search = {
+      handler: keyword => {
+        return entries.filter(value =>
+          value.title.toLowerCase().includes(keyword.toLowerCase())
+        )
+      }
+    }
+    this.search.enabled = true
+    return this
+  }
 }
