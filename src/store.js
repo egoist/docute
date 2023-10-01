@@ -152,7 +152,7 @@ const store = new Vuex.Store({
             )
           })
           .map(lang => {
-            return `https://unpkg.com/prismjs@${__PRISM_VERSION__}/components/prism-${lang}.js`
+            return `https://unpkg.com/prismjs@${__PRISM_VERSION__}/components/prism-${lang}.min.js`
           }),
         'prism-languages'
       )
