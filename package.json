@@ -17,7 +17,7 @@
   "dependencies": {
     "jump.js": "^1.0.2",
     "loadjs": "^3.5.4",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "medium-zoom": "^1.0.2",
     "prismjs": "^1.15.0",
     "throttle-debounce": "^2.1.0",
