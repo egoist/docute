@@ -226,8 +226,20 @@ const store = new Vuex.Store({
         : []
     },
 
-    sidebar(_, {config}) {
+    sidebar(state, {config}) {
       const sidebar = config.sidebar || []
+      if (sidebar === 'auto') {
+        return [
+          {
+            children: [
+              {
+                title: state.page && state.page.title,
+                link: state.route && state.route.path
+              }
+            ]
+          }
+        ]
+      }
       return typeof sidebar === 'function' ? sidebar(store) : sidebar
     },
 

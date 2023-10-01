@@ -90,6 +90,14 @@ interface MultiItem {
 }
 ```
 
+- 如果要从导航标题自动生成侧边栏，请将侧边栏设置为自动模式
+
+```javascript
+{
+  sidebar: 'auto'
+}
+```
+
 ## sourcePath
 
 - 类型：`string`
