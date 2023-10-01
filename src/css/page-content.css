@@ -104,6 +104,7 @@
   & .code-mask {
     overflow: auto;
     position: relative;
+    padding: 20px;
     margin: 0;
     z-index: 2;
     font-family: var(--code-font);
@@ -124,9 +125,6 @@
     }
   }
 
-  & pre {
-    padding: 20px;
-  }
 
   & .code-mask {
     position: absolute;
