@@ -49,9 +49,9 @@
     "postcss-import": "^12.0.0",
     "postcss-preset-env": "^6.0.3",
     "power-assert": "^1.6.1",
-    "rollup-plugin-vue": "^4.3.2",
+    "rollup-plugin-vue": "^6.0.0",
     "semantic-release": "^15.12.0",
-    "vue-compile": "^0.3.1",
+    "vue-compile": "^1.1.2",
     "webpack-node-externals": "^1.7.2",
     "xo": "^0.23.0"
   },
